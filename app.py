@@ -200,7 +200,7 @@ def render_tree(people: List[Dict], start_person_id: str):
     start_person_id : str
         Person ID to build the tree from.
     """
-    graph = build_graph(people, start_person_id)
+    graph = build_graph(people, start_person_id, max_generations=20)
     st.graphviz_chart(graph)
 
 
