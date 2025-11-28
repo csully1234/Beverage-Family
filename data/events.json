@@ -1,0 +1,778 @@
+[
+    {
+        "id": "event_birth_james_beveridge_sr_1700",
+        "date": "1700-01-01",
+        "title": "Birth of James Beveridge Sr.",
+        "description": "James Beveridge Sr. was born around 1700, likely in Scotland (family tradition places his birth in Dunfermline, Fife). He later migrated to Marblehead, Massachusetts and became the patriarch of the Beverage family.",
+        "people_involved": ["james_beveridge_sr_1700"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_marriage_james_sr_sarah_bennett_1723",
+        "date": "1723-12-16",
+        "title": "Marriage of James Beveridge Sr. and Sarah Bennett",
+        "description": "James Beveridge Sr. married Sarah Bennett at St. Michael's Church in Marblehead, Massachusetts. This was his first marriage.",
+        "people_involved": ["james_beveridge_sr_1700", "sarah_bennett_1705"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_marriage_james_sr_mary_white_1730",
+        "date": "1730-02-24",
+        "title": "Marriage of James Beveridge Sr. and Mary White",
+        "description": "After the death of his first wife Sarah Bennett, James Beveridge Sr. married Mary White in Marblehead, Massachusetts.",
+        "people_involved": ["james_beveridge_sr_1700", "mary_white_1728"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_marriage_james_sr_sarah_holman_1734",
+        "date": "1734-02-07",
+        "title": "Marriage of James Beveridge Sr. and Sarah Holman",
+        "description": "James Beveridge Sr. married his third wife, Sarah Holman, in Marblehead, Massachusetts.",
+        "people_involved": ["james_beveridge_sr_1700", "sarah_holman_1734"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_birth_james_beveridge_jr_1724",
+        "date": "1724-08-27",
+        "title": "Birth of James Beveridge Jr.",
+        "description": "James Beveridge Jr. was born in Marblehead, Massachusetts. He later settled on the Fox Islands (North Haven) and married Jean McKinney White.",
+        "people_involved": ["james_beveridge_jr_1724"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_birth_sarah_beveridge_1727",
+        "date": "1727-01-01",
+        "title": "Birth of Sarah Beveridge",
+        "description": "Sarah Beveridge, daughter of James Beveridge Sr. and Sarah Bennett, was born in Marblehead, Massachusetts. She later married Peter Ayers.",
+        "people_involved": ["sarah_beveridge_1727"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_birth_susannah_beveridge_1735",
+        "date": "1735-01-01",
+        "title": "Birth of Susannah Beveridge",
+        "description": "Susannah Beveridge, daughter of James Beveridge Sr. and Mary White, was born in Marblehead, Massachusetts.",
+        "people_involved": ["susannah_beveridge_1735"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_birth_jane_beveridge_1737",
+        "date": "1737-01-01",
+        "title": "Birth of Jane Beveridge",
+        "description": "Jane Beveridge, daughter of James Beveridge Sr. and Mary White, was born in Marblehead, Massachusetts.",
+        "people_involved": ["jane_beveridge_1737"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_birth_mary_beveridge_1739",
+        "date": "1739-01-01",
+        "title": "Birth of Mary Beveridge",
+        "description": "Mary Beveridge, daughter of James Beveridge Sr. and Mary White, was born in Marblehead, Massachusetts.",
+        "people_involved": ["mary_beveridge_1739"],
+        "sources": ["Find A Grave memorial 157242087"]
+    },
+    {
+        "id": "event_marriage_james_jr_jean_white_1749",
+        "date": "1749-02-06",
+        "title": "Marriage of James Beveridge Jr. and Jean McKinney White",
+        "description": "James Beveridge Jr. married Jean (Jane) McKinney White, widow of Nicholas White, in Georgetown, Maine. This union linked the Beveridge and White families.",
+        "people_involved": ["james_beveridge_jr_1724", "jean_mckinney_white_1725"],
+        "sources": ["Brunswick marriage intention, 6 Feb 1749"]
+    },
+    {
+        "id": "event_birth_thomas_beverage_1750",
+        "date": "1750-11-28",
+        "title": "Birth of Capt. Thomas Beverage",
+        "description": "Capt. Thomas Beverage (born Thomas Beveridge) was born at Mere’s Point, Topsham, Maine, in a stockaded house built by Capt. John Minot. He would later become a privateer and town clerk of North Haven.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_mercy_beveridge_henry_1753",
+        "date": "1753-01-01",
+        "title": "Birth of Mercy Beveridge Henry",
+        "description": "Mercy Beveridge Henry, daughter of James Beveridge Jr. and Jean McKinney White, was born. She later married Henry Henry.",
+        "people_involved": ["mercy_beveridge_henry_1753"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_mercy_kent_1754",
+        "date": "1754-10-02",
+        "title": "Birth of Mercy Kent",
+        "description": "Mercy Kent was born in Marshfield, Massachusetts. She married Capt. Thomas Beverage and settled on North Haven Island.",
+        "people_involved": ["mercy_kent_1754"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_sarah_beveridge_kent_1758",
+        "date": "1758-01-01",
+        "title": "Birth of Sarah Beveridge Kent",
+        "description": "Sarah Beveridge Kent, daughter of James Beveridge Jr. and Jean McKinney White, was born. She later married Benjamin Kent, creating a double in-law tie between the Beveridge and Kent families.",
+        "people_involved": ["sarah_beveridge_kent_1758"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_boston_tea_party_1773",
+        "date": "1773-12-16",
+        "title": "Boston Tea Party participation",
+        "description": "Family letters and deeds indicate that Capt. Thomas Beverage participated in the Boston Tea Party on 16 December 1773. He traveled from the Fox Islands to Marblehead and joined the group of patriots who destroyed tea in Boston Harbor.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_land_sale_blackler_1774",
+        "date": "1774-01-03",
+        "title": "Thomas sells 120 acres on North Fox Island",
+        "description": "On 3 January 1774, Thomas Beveridge of Marblehead sold a 120-acre tract on North Fox Island to William Blackler for 53 pounds 13 shillings. The land bounded on William Perry’s land, a pond, Ezekiel Kent’s land and the thoroughfare.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_marriage_thomas_beverage_mercy_kent_1774",
+        "date": "1774-04-13",
+        "title": "Marriage of Thomas Beverage and Mercy Kent",
+        "description": "Thomas Beverage married Mercy Kent at Trinity Church in Boston, Massachusetts. Mercy was the daughter of Ezekiel Kent and Susanna Bryant Winslow.",
+        "people_involved": ["thomas_beverage_1750", "mercy_kent_1754"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_land_reconvey_blackler_1779",
+        "date": "1779-03-01",
+        "title": "William Blackler reconveys land to Thomas",
+        "description": "On 1 March 1779, William Blackler reconveyed the 120-acre tract on North Fox Island back to Thomas Beverage for £200. The land now measured 125 acres.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_john_white_beverage_1774",
+        "date": "1774-08-15",
+        "title": "Birth of John White Beverage",
+        "description": "John White Beverage, eldest son of Thomas and Mercy Beverage, was born on North Haven Island. He was named after Mercy’s son by her first husband John White.",
+        "people_involved": ["john_white_beverage_1774"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_nathaniel_winslow_beverage_1776",
+        "date": "1776-01-17",
+        "title": "Birth of Nathaniel Winslow Beverage",
+        "description": "Nathaniel Winslow Beverage, second son of Thomas and Mercy Beverage, was born on North Haven Island. He later became a deacon in Camden.",
+        "people_involved": ["nathaniel_winslow_beverage_1776"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_benjamin_kent_beverage_1779",
+        "date": "1779-09-19",
+        "title": "Birth of Benjamin Kent Beverage",
+        "description": "Benjamin Kent Beverage, third son of Thomas and Mercy Beverage, was born on North Haven Island. He was named after his uncle Benjamin Kent.",
+        "people_involved": ["benjamin_kent_beverage_1779"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_testimony_1781",
+        "date": "1781-06-01",
+        "title": "Thomas Beverage testifies about Robert Duglase",
+        "description": "In 1781, Thomas Beverage testified that Robert Duglase of Fox Island procured a pass from Capt. Henry Mowitt for fishing and bought a schooner from Billings Putnam of Newburyport. This testimony was recorded on 1 June 1786.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Documentary History of the State of Maine"]
+    },
+    {
+        "id": "event_land_petition_1785",
+        "date": "1785-03-01",
+        "title": "Fox Islands petition for land titles",
+        "description": "In March 1785, the inhabitants of the Fox Islands Plantation met at the home of Benjamin Kent and Sarah Beveridge Kent to petition the Massachusetts General Court for clear title to lands occupied before 1 June 1784. James Beveridge Sr. was chosen moderator and Thomas Beverage was elected Plantation Clerk.",
+        "people_involved": ["thomas_beverage_1750", "james_beveridge_jr_1724", "benjamin_kent_1755", "sarah_beveridge_kent_1758"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_mercy_kent_beverage_1782",
+        "date": "1782-10-15",
+        "title": "Birth of Mercy Kent Beverage",
+        "description": "Mercy Kent Beverage, fourth child of Thomas and Mercy Beverage, was born on North Haven Island.",
+        "people_involved": ["mercy_kent_beverage_1782"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_sarah_beverage_1785",
+        "date": "1785-03-20",
+        "title": "Birth of Sarah \"Sally\" Beverage",
+        "description": "Sarah (\"Sally\") Beverage, fifth child of Thomas and Mercy Beverage, was born on North Haven Island. She later married Benjamin Kent.",
+        "people_involved": ["sarah_beverage_1785"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_lydia_winslow_beverage_1787",
+        "date": "1787-04-01",
+        "title": "Birth of Lydia Winslow Beverage (first)",
+        "description": "Lydia Winslow Beverage, sixth child of Thomas and Mercy Beverage, was born on North Haven Island. She died young in 1792.",
+        "people_involved": ["lydia_winslow_beverage_1787"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_james_beverage_1789",
+        "date": "1789-10-03",
+        "title": "Birth of James Beverage",
+        "description": "James Beverage, seventh child of Thomas and Mercy Beverage, was born on North Haven Island. He later became a tanner and landowner.",
+        "people_involved": ["james_beverage_1789"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_josiah_winslow_beverage_1793",
+        "date": "1793-07-10",
+        "title": "Birth of Josiah Winslow Beverage",
+        "description": "Josiah Winslow Beverage, eighth child of Thomas and Mercy Beverage, was born on North Haven Island. He later served as town selectman and co-owned the family mill.",
+        "people_involved": ["josiah_winslow_beverage_1793"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_lydia_winslow_beverage_1796",
+        "date": "1796-04-11",
+        "title": "Birth of Lydia Winslow Beverage (second)",
+        "description": "Lydia Winslow Beverage, ninth child of Thomas and Mercy Beverage, was born on North Haven Island. She died in 1829.",
+        "people_involved": ["lydia_winslow_beverage_1796"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_birth_abigail_beverage_1803",
+        "date": "1803-02-21",
+        "title": "Birth of Abigail Beverage",
+        "description": "Abigail Beverage, tenth child of Thomas and Mercy Beverage, was born on North Haven Island. She died the following day.",
+        "people_involved": ["abigail_beverage_1803"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_death_abigail_beverage_1803",
+        "date": "1803-02-22",
+        "title": "Death of Abigail Beverage",
+        "description": "Abigail Beverage, infant daughter of Thomas and Mercy Beverage, died the day after her birth on North Haven Island.",
+        "people_involved": ["abigail_beverage_1803"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_purchase_land_crockett_1784",
+        "date": "1784-12-10",
+        "title": "Thomas purchases 100 acres from Nathaniel Crockett Jr.",
+        "description": "Thomas Beverage purchased 100 acres on North Haven from Nathaniel Crockett Jr. This land later formed part of the family estate. The deed was registered in 1806.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_land_samuel_thomas_1784",
+        "date": "1784-11-03",
+        "title": "Thomas sells 120 acres to Samuel Thomas",
+        "description": "On 3 November 1784, Thomas Beverage sold 120 acres of land on North Fox Island to Samuel Thomas for 150 pounds. The land later came into Kent and Beverage hands.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_land_witness_wooster_1781",
+        "date": "1781-03-09",
+        "title": "Witness to Woster land transaction",
+        "description": "On 9 March 1781, Thomas Beverage and Abigail Dyer witnessed David Woster Sr. transferring half of his North Haven land to his infant son David Woster Jr. for $500. The transaction was recorded in 1801.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Documentary History of the State of Maine"]
+    },
+    {
+        "id": "event_settlement_abel_whitman_1788",
+        "date": "1788-05-21",
+        "title": "Settlement with Abel Whitman",
+        "description": "On 21 May 1788, Thomas Beverage settled accounts with Abel Whitman, receiving payment in full for half of the island he had sold him.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Gertrude Beverage Foltz deed"]
+    },
+    {
+        "id": "event_cattle_mark_1789",
+        "date": "1789-03-09",
+        "title": "Thomas Beverage registers his cattle mark",
+        "description": "On 9 March 1789, Thomas Beverage registered his cattle mark in the town records: the left ear split and a half-penny out of the foreside of the right ear.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Vinalhaven Vital Records"]
+    },
+    {
+        "id": "event_census_1790",
+        "date": "1790-08-02",
+        "title": "1790 Census enumeration of the Beverage household",
+        "description": "The 1790 U.S. Census recorded the household of Thomas Beverage on North Haven with two males over 16 (Thomas and John), four males under 16 (Nathaniel, Benjamin, James, Josiah) and five females (Mercy, Mercy Jr., Sarah, Lydia and an unknown female).",
+        "people_involved": ["thomas_beverage_1750", "mercy_kent_1754", "john_white_beverage_1774", "nathaniel_winslow_beverage_1776", "benjamin_kent_beverage_1779", "sarah_beverage_1785", "lydia_winslow_beverage_1787", "james_beverage_1789", "josiah_winslow_beverage_1793"],
+        "sources": ["1790 Vinalhaven census"]
+    },
+    {
+        "id": "event_witness_heard_sale_1791",
+        "date": "1791-10-10",
+        "title": "Witness to Heard land sale",
+        "description": "On 10 October 1791, Thomas Beverage and William Cooper witnessed James and Elizabeth Heard selling Pulpit Harbor land for 90 pounds. The land was near Samuel Lewis’s property.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_witness_eames_sale_1792",
+        "date": "1792-03-27",
+        "title": "Witness to Eames Island sale",
+        "description": "On 27 March 1792, Thomas Beverage and Levi Smith witnessed Charles Stewart and Abel Whitman selling Eames Island (40 acres) to John Brooks for 30 pounds.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_witness_newbury_sale_1795",
+        "date": "1795-04-06",
+        "title": "Witness to Newbury land sale",
+        "description": "On 6 April 1795, Thomas Beverage and his son Nathaniel Beverage witnessed Charles Stewart selling 38¾ acres to John Newbury.",
+        "people_involved": ["thomas_beverage_1750", "nathaniel_winslow_beverage_1776"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_witness_cooper_sale_1796",
+        "date": "1796-05-20",
+        "title": "Witness to Cooper land sale",
+        "description": "On 20 May 1796, Thomas Beverage and Cornelius Bramhall witnessed Levi Smith selling 50 acres to Thomas Cooper for $250.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_land_sale_vinal_1797",
+        "date": "1797-04-18",
+        "title": "Thomas sells land to William Vinal",
+        "description": "On 18 April 1797, Thomas Beverage sold a parcel of land near the North Harbor to William Vinal of Vinalhaven for $4. The deed was witnessed by Gabriel Johonnot and George Ulmer.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_witness_white_sale_1800",
+        "date": "1800-09-16",
+        "title": "Witness to George White land sale",
+        "description": "On 16 September 1800, Thomas Beverage and his son John White Beverage witnessed George White selling land by the Pond Swamp to Joseph Maddocks for $100.",
+        "people_involved": ["thomas_beverage_1750", "john_white_beverage_1774", "josiah_winslow_beverage_1793"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_mill_share_1806",
+        "date": "1806-02-28",
+        "title": "Sale of mill shares to Henry Alexander",
+        "description": "On 28 February 1806, Thomas Beverage sold Henry Alexander 1/8 share of the sawmill and 1/4 share of the grist mill for $300. The deed was witnessed by William Vinall and William Norwood.",
+        "people_involved": ["thomas_beverage_1750", "henry_alexander_1780", "william_vinall", "william_norwood"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_repurchase_mill_1807",
+        "date": "1807-12-15",
+        "title": "Repurchase of land and mills from Henry Alexander",
+        "description": "On 15 December 1807, Henry Alexander sold back to Thomas Beverage 115 acres, a dwelling house, barn, and shares in a sawmill and grist mill for $1500.",
+        "people_involved": ["thomas_beverage_1750", "henry_alexander_1780"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_robert_henry_1808",
+        "date": "1808-02-17",
+        "title": "Robert Henry sells 100 acres to Oliver Amsbury",
+        "description": "On 17 February 1808, Robert Henry of Topsham sold 100 acres on North Haven to Oliver Amsbury of Vinalhaven for $350, reserving 60 acres previously conveyed to David Perry. The deed was witnessed by Thomas Beverage and David Wooster Jr.",
+        "people_involved": ["robert_henry_1780", "oliver_amsbury", "thomas_beverage_1750"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_josiah_james_1811",
+        "date": "1811-05-11",
+        "title": "Thomas sells 115 acres to Josiah and James",
+        "description": "On 11 May 1811, Thomas Beverage sold 115 acres, a dwelling house, barn, and shares in a sawmill and grist mill to his sons Josiah Winslow Beverage and James Beverage for $2,500.",
+        "people_involved": ["thomas_beverage_1750", "josiah_winslow_beverage_1793", "james_beverage_1789"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_bramhall_1813",
+        "date": "1813-04-17",
+        "title": "Sale of 12 acres to Cornelius Bramhall",
+        "description": "On 17 April 1813, Thomas Beverage sold 12 acres on the northeast cove of North Harbor to Cornelius Bramhall for $150. The deed was witnessed by Sarah and Sally Bramhall.",
+        "people_involved": ["thomas_beverage_1750", "cornelius_bramhall"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_sale_luce_smith_1814",
+        "date": "1814-01-23",
+        "title": "Sale of land to Malatiah Luce and Jonathan Smith",
+        "description": "On 23 January 1814, Thomas Beverage sold land at the head of the Mill Pond to Malatiah Luce and Jonathan Smith for $150. The deed was witnessed by John Wagg and Nathaniel Beverage.",
+        "people_involved": ["thomas_beverage_1750", "malatiah_luce", "jonathan_smith", "nathaniel_winslow_beverage_1776"],
+        "sources": ["Hancock County deeds"]
+    },
+    {
+        "id": "event_convention_delegate_1816",
+        "date": "1816-09-01",
+        "title": "Thomas Beverage appointed delegate to Brunswick convention",
+        "description": "In September 1816, Thomas Beverage was selected by the town to serve as delegate to the convention at Brunswick to discuss the separation of Maine from Massachusetts.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_death_mercy_kent_1819",
+        "date": "1819-02-28",
+        "title": "Death of Mercy Kent Beverage",
+        "description": "Mercy Kent Beverage, wife of Capt. Thomas Beverage, died on North Haven Island.",
+        "people_involved": ["mercy_kent_1754"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_marriage_james_jemima_1822",
+        "date": "1822-01-10",
+        "title": "Marriage of James Beverage and Jemima Crabtree",
+        "description": "James Beverage married Jemima Crabtree on North Haven Island. Their union connected the Beverage family with the Crabtrees, another prominent island family.",
+        "people_involved": ["james_beverage_1789", "jemima_crabtree_1792"],
+        "sources": ["Independent Chronicle & Boston Patriot (24 Apr 1822)"]
+    },
+    {
+        "id": "event_birth_benjamin_crabtree_1822",
+        "date": "1822-10-02",
+        "title": "Birth of Benjamin Crabtree Beverage",
+        "description": "Benjamin Crabtree Beverage, eldest son of James Beverage and Jemima Crabtree, was born on North Haven Island.",
+        "people_involved": ["benjamin_beverage_1822"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_birth_harrison_beverage_1825",
+        "date": "1825-09-04",
+        "title": "Birth of Harrison Beverage",
+        "description": "Harrison Beverage, second son of James and Jemima Beverage, was born on North Haven Island.",
+        "people_involved": ["harrison_beverage_1825"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_birth_albert_glover_beverage_1827",
+        "date": "1827-10-31",
+        "title": "Birth of Albert Glover Beverage",
+        "description": "Albert Glover Beverage, third son of James and Jemima Beverage, was born on North Haven Island. He later became a deacon and farmer.",
+        "people_involved": ["albert_glover_beverage_1827"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_birth_lucy_c_beverage_1830",
+        "date": "1830-01-01",
+        "title": "Birth of Lucy C. Beverage",
+        "description": "Lucy C. Beverage, only daughter of James and Jemima Beverage, was born on North Haven Island. She later died in 1850 after exposure to mercury in her father’s tannery.",
+        "people_involved": ["lucy_c_beverage_1830"],
+        "sources": ["Find A Grave memorial 157233276"]
+    },
+    {
+        "id": "event_death_thomas_beverage_1834",
+        "date": "1834-10-04",
+        "title": "Death of Capt. Thomas Beverage",
+        "description": "Capt. Thomas Beverage died on North Haven Island. His grave is marked with a title recognizing his service during the Revolutionary War.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_death_jemima_crabtree_1837",
+        "date": "1837-05-12",
+        "title": "Death of Jemima Crabtree Beverage",
+        "description": "Jemima Crabtree Beverage died on North Haven Island, likely from a hemorrhage linked to mercurial poisoning from the tannery.",
+        "people_involved": ["jemima_crabtree_1792"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_marriage_benjamin_crabtree_amelia_1854",
+        "date": "1854-02-19",
+        "title": "Marriage of Benjamin Crabtree Beverage and Amelia Beverage",
+        "description": "After his divorce from Sarah W. Loveland, Benjamin Crabtree Beverage married his second cousin Amelia Beverage on North Haven Island.",
+        "people_involved": ["benjamin_beverage_1822", "amelia_beverage_1833"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_death_james_beverage_1850",
+        "date": "1850-12-05",
+        "title": "Death of James Beverage",
+        "description": "James Beverage died on North Haven Island. His death, and that of his daughter Lucy two days later, were attributed to mercury poisoning from his tannery.",
+        "people_involved": ["james_beverage_1789"],
+        "sources": ["Find A Grave memorial 157233276"]
+    },
+    {
+        "id": "event_death_lucy_c_beverage_1850",
+        "date": "1850-12-07",
+        "title": "Death of Lucy C. Beverage",
+        "description": "Lucy C. Beverage, daughter of James and Jemima Beverage, died two days after her father due to mercury poisoning from the tannery.",
+        "people_involved": ["lucy_c_beverage_1830"],
+        "sources": ["Find A Grave memorial 157233276"]
+    },
+    {
+        "id": "event_death_benjamin_kent_beverage_1851",
+        "date": "1851-12-20",
+        "title": "Death of Benjamin Kent Beverage",
+        "description": "Benjamin Kent Beverage died on North Haven Island at age 72.",
+        "people_involved": ["benjamin_kent_beverage_1779"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_death_benjamin_crabtree_1875",
+        "date": "1875-12-07",
+        "title": "Death of Benjamin Crabtree Beverage",
+        "description": "Benjamin Crabtree Beverage died during a diphtheria epidemic on North Haven Island. He was a deacon and farmer.",
+        "people_involved": ["benjamin_beverage_1822"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_marriage_samuel_carver_ruth_leadbetter_1883",
+        "date": "1883-02-08",
+        "title": "Marriage of Samuel Carver Beverage and Ruth Margaret Leadbetter",
+        "description": "Samuel Carver Beverage married Ruth Margaret Leadbetter in a double wedding on North Haven. Ruth’s brother Isaac Leadbetter married Jennie Sawyer at the same ceremony.",
+        "people_involved": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+        "sources": ["Find A Grave memorial 1862"]
+    },
+    {
+        "id": "event_birth_hiram_stone_beverage_1886",
+        "date": "1886-05-13",
+        "title": "Birth of Hiram Stone Beverage",
+        "description": "Hiram Stone Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island. He later operated the family farm at Sunnyside.",
+        "people_involved": ["hiram_stone_beverage_1886"],
+        "sources": ["Find A Grave memorial", "Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_birth_albert_lewis_beverage_1888",
+        "date": "1888-01-01",
+        "title": "Birth of Albert Lewis Beverage",
+        "description": "Albert Lewis Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["albert_lewis_beverage_1888"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_marston_leadbetter_beverage_1890",
+        "date": "1890-01-01",
+        "title": "Birth of Marston Leadbetter Beverage",
+        "description": "Marston Leadbetter Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["marston_leadbetter_beverage_1890"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_olive_mary_beverage_1892",
+        "date": "1892-01-01",
+        "title": "Birth of Olive Mary Beverage",
+        "description": "Olive Mary Beverage, daughter of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["olive_mary_beverage_1892"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_nettie_ellen_beverage_1894",
+        "date": "1894-01-01",
+        "title": "Birth of Nettie Ellen Beverage",
+        "description": "Nettie Ellen Beverage, daughter of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["nett_ie_ellen_beverage_1894"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_elroy_victor_beverage_1896",
+        "date": "1896-01-01",
+        "title": "Birth of Elroy Victor Beverage",
+        "description": "Elroy Victor Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["elroy_victor_beverage_1896"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_george_dewey_beverage_1898",
+        "date": "1898-01-01",
+        "title": "Birth of George Dewey Beverage",
+        "description": "George Dewey Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["george_dewey_beverage_1898"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_edith_etta_beverage_1900",
+        "date": "1900-01-01",
+        "title": "Birth of Edith Etta Beverage",
+        "description": "Edith Etta Beverage, daughter of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["edith_etta_beverage_1900"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_wilson_freemont_beverage_1902",
+        "date": "1902-01-01",
+        "title": "Birth of Wilson Freemont Beverage",
+        "description": "Wilson Freemont Beverage, son of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island.",
+        "people_involved": ["wilson_freemont_beverage_1902"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_alma_marie_beverage_1905",
+        "date": "1905-01-01",
+        "title": "Birth of Alma Marie Beverage",
+        "description": "Alma Marie Beverage, daughter of Samuel Carver Beverage and Ruth Leadbetter, was born on North Haven Island. She died in infancy.",
+        "people_involved": ["alma_marie_beverage_1905"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_rev_albion_beverage_1907",
+        "date": "1907-04-09",
+        "title": "Birth of Rev. Albion Pierson Beverage",
+        "description": "Rev. Albion Pierson Beverage was born in Dorchester, Massachusetts. He later became a minister and father of Albion Pierson Beverage III.",
+        "people_involved": ["rev_albion_beverage_1907"],
+        "sources": ["Find A Grave memorial 157487569"]
+    },
+    {
+        "id": "event_marriage_orris_rose_1887",
+        "date": "1887-06-30",
+        "title": "Marriage of Orris Lyford Beverage and Rose Emma Pierson",
+        "description": "Orris Lyford Beverage married Rose Emma Pierson at Tenants Harbor, Maine. Their marriage produced eight children.",
+        "people_involved": ["orris_beverage_1860", "rose_pierson_1866"],
+        "sources": ["Find A Grave memorial 157499548"]
+    },
+    {
+        "id": "event_marriage_albion_grace_1928",
+        "date": "1928-02-16",
+        "title": "Marriage of Rev. Albion Pierson Beverage and Grace Elizabeth Reed",
+        "description": "Rev. Albion Pierson Beverage married Grace Elizabeth Reed in Dorchester, Massachusetts. They later raised their family in Dresden, Maine.",
+        "people_involved": ["rev_albion_beverage_1907", "grace_reed_1909"],
+        "sources": ["FamilySearch", "Grace Beverage obituary"]
+    },
+    {
+        "id": "event_birth_nancy_beverage_1929",
+        "date": "1929-01-01",
+        "title": "Birth of Nancy Beverage",
+        "description": "Nancy Beverage, daughter of Rev. Albion Pierson Beverage and Grace Reed, was born. She later lived in Maine.",
+        "people_involved": ["nancy_beverage_1929"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_grace_pauline_beverage_1933",
+        "date": "1933-01-01",
+        "title": "Birth of Grace Pauline Beverage",
+        "description": "Grace Pauline Beverage, daughter of Rev. Albion Pierson Beverage and Grace Reed, was born.",
+        "people_involved": ["grace_pauline_beverage_1933"],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_birth_albion_beverage_1939",
+        "date": "1939-05-01",
+        "title": "Birth of Albion Pierson Beverage III",
+        "description": "Albion Pierson Beverage III, son of Rev. Albion Pierson Beverage and Grace Elizabeth Reed, was born (approximate date). He later maintained the family cottage on North Haven.",
+        "people_involved": ["albion_beverage_1939"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_birth_janice_marshall_1940",
+        "date": "1940-01-01",
+        "title": "Birth of Janice Lynn Marshall",
+        "description": "Janice Lynn Marshall (later Beverage) was born around 1940. She married Albion Pierson Beverage III around 1962 and was the family genealogist.",
+        "people_involved": ["janice_marshall_1940"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_marriage_hiram_stone_ruby_1916",
+        "date": "1916-01-01",
+        "title": "Marriage of Hiram Stone Beverage and Ruby Hazel Taylor",
+        "description": "Hiram Stone Beverage married Ruby Hazel Taylor around 1916 on North Haven Island. They had one son, Samuel Hiram Beverage.",
+        "people_involved": ["hiram_stone_beverage_1886", "ruby_hazel_taylor_1893"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_birth_samuel_hiram_beverage_1917",
+        "date": "1917-12-06",
+        "title": "Birth of Samuel Hiram Beverage",
+        "description": "Samuel Hiram Beverage, only child of Hiram Stone Beverage and Ruby Hazel Taylor, was born at Sunnyside farm on North Haven Island.",
+        "people_involved": ["samuel_hiram_beverage_1917"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_marriage_samuel_hiram_eleor_1945",
+        "date": "1945-01-01",
+        "title": "Marriage of Samuel Hiram Beverage and Eleanor Mae Sargent",
+        "description": "Samuel Hiram Beverage married Eleanor Mae Sargent in Somerville, Massachusetts in 1945. They raised five children and were instrumental in preserving North Haven history.",
+        "people_involved": ["samuel_hiram_beverage_1917", "eleanor_sargent_1920"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_death_rev_albion_beverage_1951",
+        "date": "1951-01-30",
+        "title": "Death of Rev. Albion Pierson Beverage",
+        "description": "Rev. Albion Pierson Beverage died in Silver Spring, Maryland at age 43. He was buried in Fuller Cemetery on North Haven Island.",
+        "people_involved": ["rev_albion_beverage_1907"],
+        "sources": ["Find A Grave memorial 157487569"]
+    },
+    {
+        "id": "event_death_ruth_leadbetter_1956",
+        "date": "1956-04-16",
+        "title": "Death of Ruth Margaret Leadbetter Beverage",
+        "description": "Ruth Margaret Leadbetter Beverage died on North Haven Island at age 92, having raised twelve children.",
+        "people_involved": ["ruth_leadbetter_1863"],
+        "sources": ["Find A Grave memorial"]
+    },
+    {
+        "id": "event_death_ruby_hazel_1964",
+        "date": "1964-12-15",
+        "title": "Death of Ruby Hazel Taylor Beverage",
+        "description": "Ruby Hazel Taylor Beverage, wife of Hiram Stone Beverage and mother of Samuel Hiram Beverage, died on North Haven Island.",
+        "people_involved": ["ruby_hazel_taylor_1893"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_birth_robert_beverage_1968",
+        "date": "1968-08-01",
+        "title": "Birth of Robert Elliot Beverage",
+        "description": "Robert Elliot Beverage, son of Albion Pierson Beverage III and Janice Marshall, was born (approximate date). He later married Heather Beverage and co-owns property on North Haven.",
+        "people_involved": ["robert_beverage_1968"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_marriage_albion_janice_1962",
+        "date": "1962-01-01",
+        "title": "Marriage of Albion Pierson Beverage III and Janice Marshall",
+        "description": "Albion Pierson Beverage III married Janice Lynn Marshall around 1962. They celebrated over 60 years of marriage and preserved the family cottage on North Haven.",
+        "people_involved": ["albion_beverage_1939", "janice_marshall_1940"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_marriage_robert_heather_1990",
+        "date": "1990-01-01",
+        "title": "Marriage of Robert Elliot Beverage and Heather Ellen Beverage",
+        "description": "Robert Elliot Beverage married Heather Ellen Beverage (approximate date). They have three children: Lauren, Sarah and Daniel.",
+        "people_involved": ["robert_beverage_1968", "heather_beverage_1970"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_purchase_home_walliford_1997",
+        "date": "1997-01-01",
+        "title": "Purchase of 128 S Orchard Street, Wallingford",
+        "description": "Robert Elliot Beverage and Heather Beverage purchased a home at 128 S Orchard Street in Wallingford, Connecticut, where they raised their family.",
+        "people_involved": ["robert_beverage_1968", "heather_beverage_1970"],
+        "sources": ["Homes.com property records"]
+    },
+    {
+        "id": "event_found_historical_society_1973",
+        "date": "1973-01-01",
+        "title": "Founding of North Haven Historical Society",
+        "description": "After returning permanently to North Haven in 1973, Samuel Hiram Beverage and his wife Eleanor helped found the North Haven Historical Society to preserve island history.",
+        "people_involved": ["samuel_hiram_beverage_1917", "eleanor_sargent_1920"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_sale_old_barn_hill_1974",
+        "date": "1974-01-01",
+        "title": "Sale of Old Barn Hill",
+        "description": "In 1974, Arthur Walter Beverage Sr., a great-great-grandson of Capt. Thomas Beverage, sold Old Barn Hill to Henry Meigs. The hill was later developed as a private residence.",
+        "people_involved": [],
+        "sources": ["Family records"]
+    },
+    {
+        "id": "event_death_grace_reed_2008",
+        "date": "2008-01-01",
+        "title": "Death of Grace Elizabeth Reed Beverage",
+        "description": "Grace Elizabeth Reed Beverage, widow of Rev. Albion Pierson Beverage, died in Dresden, Maine at age 99.",
+        "people_involved": ["grace_reed_1909"],
+        "sources": ["Grace Beverage obituary"]
+    },
+    {
+        "id": "event_death_samuel_hiram_2014",
+        "date": "2014-12-18",
+        "title": "Death of Samuel Hiram Beverage",
+        "description": "Samuel Hiram Beverage died on North Haven Island at age 97. He was a radio enthusiast, WWII veteran, and co-founder of the North Haven Historical Society.",
+        "people_involved": ["samuel_hiram_beverage_1917"],
+        "sources": ["Riposta Funeral Home obituary"]
+    },
+    {
+        "id": "event_death_janice_marshall_2023",
+        "date": "2023-02-08",
+        "title": "Death of Janice Lynn Marshall Beverage",
+        "description": "Janice Lynn Marshall Beverage died in Ocala, Florida after a long life dedicated to her family and genealogy research.",
+        "people_involved": ["janice_marshall_1940"],
+        "sources": ["Janice Beverage obituary"]
+    },
+    {
+        "id": "event_property_record_2024",
+        "date": "2024-01-01",
+        "title": "North Haven property record",
+        "description": "The 2024 North Haven tax commitment list recorded Albion Pierson Beverage III and Robert E. Beverage as co-owners of parcel 13-004-D at 216 Beverage Colony Road, continuing the family’s land ownership on the island.",
+        "people_involved": ["albion_beverage_1939", "robert_beverage_1968"],
+        "sources": ["North Haven Tax Commitment Book 2024"]
+    }
+]
