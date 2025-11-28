@@ -260,16 +260,8 @@ def main():
             Welcome to the Beverage family genealogy site!  This project traces the
             lineage of the Beverage (Beveridge) family from modern-day members
             back to the 18th century founders on North Haven Island, Maine.
-
-            Use the sidebar to explore the family tree, view individual profiles,
-            browse a timeline of major events, or review sources and
-            acknowledgments.  This site is dedicated to preserving the
-            research of Sarah’s grandmother and sharing the family’s rich history
-            with future generations.
             """
         )
-        # Optionally include a commemorative quote or image.
-        st.info("In loving memory of the family’s ancestry wizard.")
 
     elif page == "Family Tree":
         st.title("Family Tree")
@@ -328,13 +320,6 @@ def main():
             - Hancock and Knox County land deed abstracts
             - Obituaries from Maine newspapers and funeral homes
             - Family research notes compiled by descendants
-
-            ### Acknowledgments
-            This site is a gift for the Beverage family, inspired by Sarah’s
-            grandmother, whose dedication to genealogy preserved the stories of
-            their ancestors.  Additional thanks to all family members who
-            contributed documents, photos and stories over the years.
-            """
         )
 
 
