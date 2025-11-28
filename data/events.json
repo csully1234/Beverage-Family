@@ -1,0 +1,58 @@
+[
+    {
+        "id": "event_birth_thomas_1750",
+        "date": "1750-11-28",
+        "title": "Birth of Capt. Thomas Beverage",
+        "description": "Capt. Thomas Beverage (born Thomas Beveridge) was born at Mere’s Point, Topsham, Maine.",
+        "people_involved": ["thomas_beverage_1750"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_marriage_thomas_mercy_1774",
+        "date": "1774-04-13",
+        "title": "Marriage of Thomas Beverage and Mercy Kent",
+        "description": "Thomas Beverage married Mercy Kent at Trinity Church in Boston, Massachusetts.",
+        "people_involved": ["thomas_beverage_1750", "mercy_kent_1754"],
+        "sources": ["Find A Grave memorial 157241769"]
+    },
+    {
+        "id": "event_land_purchase_1811",
+        "date": "1811-05-11",
+        "title": "James and Josiah purchase 115 acres",
+        "description": "James Beverage and his brother Josiah purchased 115 acres of land and mill shares from their parents, Thomas and Mercy Beverage.",
+        "people_involved": ["james_beverage_1789", "josiah_winslow_beverage_1793", "thomas_beverage_1750", "mercy_kent_1754"],
+        "sources": ["Hancock County Deeds, Book 64"]
+    },
+    {
+        "id": "event_marriage_james_jemima_1822",
+        "date": "1822-01-10",
+        "title": "Marriage of James Beverage and Jemima Crabtree",
+        "description": "James Beverage married Jemima Crabtree on North Haven Island.",
+        "people_involved": ["james_beverage_1789", "jemima_crabtree_1792"],
+        "sources": ["Independent Chronicle & Boston Patriot, 24 Apr 1822"]
+    },
+    {
+        "id": "event_death_benjamin_crabtree_1875",
+        "date": "1875-12-07",
+        "title": "Death of Benjamin Crabtree Beverage",
+        "description": "Benjamin Crabtree Beverage died during a diphtheria epidemic on North Haven Island.",
+        "people_involved": ["benjamin_beverage_1822"],
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "event_birth_rev_albion_1907",
+        "date": "1907-04-09",
+        "title": "Birth of Rev. Albion Pierson Beverage",
+        "description": "Albion Pierson Beverage was born in Dorchester, Massachusetts.",
+        "people_involved": ["rev_albion_beverage_1907"],
+        "sources": ["Find A Grave memorial 157487569"]
+    },
+    {
+        "id": "event_death_rev_albion_1951",
+        "date": "1951-01-30",
+        "title": "Death of Rev. Albion Pierson Beverage",
+        "description": "Rev. Albion Pierson Beverage died in Silver Spring, Maryland.",
+        "people_involved": ["rev_albion_beverage_1907"],
+        "sources": ["Find A Grave memorial 157487569"]
+    }
+]
