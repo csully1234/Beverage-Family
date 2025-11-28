@@ -1,0 +1,154 @@
+[
+    {
+        "id": "sarah_beverage_1999",
+        "full_name": "Sarah Beverage",
+        "birth_date": "1999-01-01",
+        "birth_place": "Wallingford, Connecticut",
+        "death_date": null,
+        "death_place": null,
+        "parents": ["robert_beverage_1968", "heather_beverage_1970"],
+        "siblings": ["lauren_beverage_1997", "daniel_beverage_2001"],
+        "spouses": [],
+        "children": [],
+        "residences": [
+            {"location": "Wallingford, Connecticut", "period": "1999–present"},
+            {"location": "North Haven, Maine", "period": "summers"}
+        ],
+        "notes": "Modern generation. Connection to historic line assumed.",
+        "sources": ["Janice Beverage obituary, 2023"]
+    },
+    {
+        "id": "robert_beverage_1968",
+        "full_name": "Robert Elliot Beverage",
+        "birth_date": "1968-08-01",
+        "birth_place": "Maine or Connecticut",
+        "death_date": null,
+        "death_place": null,
+        "parents": ["albion_beverage_1939", "janice_marshall_1940"],
+        "siblings": ["betsy_beverage_1964", "albion_beverage_1966", "ruth_meneo_1970", "john_beverage_1972"],
+        "spouses": ["heather_beverage_1970"],
+        "children": ["lauren_beverage_1997", "sarah_beverage_1999", "daniel_beverage_2001"],
+        "residences": [
+            {"location": "Wallingford, Connecticut", "period": "1997–present"},
+            {"location": "North Haven, Maine", "period": "summers"}
+        ],
+        "notes": "Modern branch of the family; owns property on Beverage Colony Road.",
+        "sources": ["Janice Beverage obituary, 2023", "North Haven tax commitment, 2024"]
+    },
+    {
+        "id": "albion_beverage_1939",
+        "full_name": "Albion Pierson Beverage III",
+        "birth_date": "1939-05-01",
+        "birth_place": "Massachusetts",
+        "death_date": null,
+        "death_place": null,
+        "parents": ["rev_albion_beverage_1907", "grace_reed_1909"],
+        "siblings": ["nancy_beverage_1929", "grace_pauline_beverage_1933"],
+        "spouses": ["janice_marshall_1940"],
+        "children": ["betsy_beverage_1964", "albion_beverage_1966", "ruth_meneo_1970", "robert_beverage_1968", "john_beverage_1972"],
+        "residences": [
+            {"location": "Dresden, Maine", "period": "1950s–1970s"},
+            {"location": "Wallingford, Connecticut", "period": "1970s–present"},
+            {"location": "North Haven, Maine", "period": "summers"}
+        ],
+        "notes": "Maintains family cottage on North Haven.",
+        "sources": ["Janice Beverage obituary, 2023", "North Haven tax commitment, 2024"]
+    },
+    {
+        "id": "rev_albion_beverage_1907",
+        "full_name": "Rev. Albion Pierson Beverage",
+        "birth_date": "1907-04-09",
+        "birth_place": "Dorchester, Massachusetts",
+        "death_date": "1951-01-30",
+        "death_place": "Silver Spring, Maryland",
+        "parents": ["orris_beverage_1860", "rose_pierson_1866"],
+        "siblings": ["olive_beveridge_1890", "helen_barclay_1896", "arnold_beveridge_1903", "lowell_beveridge_1905", "elliot_beverage_1908", "norwood_beveridge_1911"],
+        "spouses": ["grace_reed_1909"],
+        "children": ["nancy_beverage_1929", "albion_beverage_1939", "grace_pauline_beverage_1933"],
+        "residences": [
+            {"location": "Dorchester, Massachusetts", "period": "1907–c.1930"},
+            {"location": "North Haven, Maine", "period": "summers"},
+            {"location": "Silver Spring, Maryland", "period": "late 1940s–1951"}
+        ],
+        "notes": "Baptist minister; died at age 43.",
+        "sources": ["Find A Grave memorial 157487569"]
+    },
+    {
+        "id": "orris_beverage_1860",
+        "full_name": "Orris Lyford Beverage",
+        "birth_date": "1860-08-11",
+        "birth_place": "North Haven, Maine",
+        "death_date": "1921-05-04",
+        "death_place": "Dorchester, Massachusetts",
+        "parents": ["benjamin_beverage_1822", "amelia_beverage_1833"],
+        "siblings": ["theodore_beverage_1855", "harriet_beverage_1856", "james_beverage_1858", "charles_beverage_1863", "james_norwood_beverage_1866", "jemima_beverage_1866", "mary_beverage_1869", "robert_edwin_beverage_1872"],
+        "spouses": ["rose_pierson_1866"],
+        "children": ["olive_beveridge_1890", "helen_barclay_1896", "arnold_beveridge_1903", "lowell_beveridge_1905", "albion_beverage_1907", "elliot_beverage_1908", "norwood_beveridge_1911"],
+        "residences": [
+            {"location": "North Haven, Maine", "period": "1860–1880s"},
+            {"location": "Hallowell, Maine", "period": "1880s–1890s"},
+            {"location": "Boston, Massachusetts", "period": "1890s–1921"}
+        ],
+        "notes": "School teacher and education advocate; changed family name spelling to Beveridge for some children.",
+        "sources": ["Find A Grave memorial 157499548"]
+    },
+    {
+        "id": "benjamin_beverage_1822",
+        "full_name": "Benjamin Crabtree Beverage",
+        "birth_date": "1822-10-02",
+        "birth_place": "North Haven, Maine",
+        "death_date": "1875-12-07",
+        "death_place": "North Haven, Maine",
+        "parents": ["james_beverage_1789", "jemima_crabtree_1792"],
+        "siblings": ["harrison_beverage_1825", "albert_glover_beverage_1827", "lucy_c_beverage_1830"],
+        "spouses": ["amelia_beverage_1833"],
+        "children": ["theodore_beverage_1855", "harriet_beverage_1856", "james_beverage_1858", "orris_beverage_1860", "charles_beverage_1863", "james_norwood_beverage_1866", "jemima_beverage_1866", "mary_beverage_1869", "robert_edwin_beverage_1872"],
+        "residences": [
+            {"location": "North Haven, Maine", "period": "1822–1875"}
+        ],
+        "notes": "Deacon of Pulpit Harbor Church; died in diphtheria epidemic.",
+        "sources": ["Find A Grave memorial 157232830"]
+    },
+    {
+        "id": "james_beverage_1789",
+        "full_name": "James Beverage",
+        "birth_date": "1789-10-03",
+        "birth_place": "North Haven, Maine",
+        "death_date": "1850-12-05",
+        "death_place": "North Haven, Maine",
+        "parents": ["thomas_beverage_1750", "mercy_kent_1754"],
+        "siblings": [
+            "john_white_beverage_1774", "nathaniel_winslow_beverage_1776", "benjamin_kent_beverage_1779", "mercy_kent_beverage_1782",
+            "sarah_beverage_1785", "lydia_winslow_beverage_1787", "josiah_winslow_beverage_1793", "lydia_winslow_beverage_1796", "abigail_beverage_1803"
+        ],
+        "spouses": ["jemima_crabtree_1792"],
+        "children": ["benjamin_beverage_1822", "harrison_beverage_1825", "albert_glover_beverage_1827", "lucy_c_beverage_1830"],
+        "residences": [
+            {"location": "North Haven, Maine", "period": "1789–1850"}
+        ],
+        "notes": "Tanner and landowner; built home on Middle Road.",
+        "sources": ["Find A Grave memorial 157233276"]
+    },
+    {
+        "id": "thomas_beverage_1750",
+        "full_name": "Capt. Thomas Beverage",
+        "birth_date": "1750-11-28",
+        "birth_place": "Topsham, Maine",
+        "death_date": "1834-10-04",
+        "death_place": "North Haven, Maine",
+        "parents": ["james_beveridge_1724", "jean_mckinney_white_1725"],
+        "siblings": ["mercy_beveridge_1753", "sarah_beveridge_1758"],
+        "spouses": ["mercy_kent_1754"],
+        "children": [
+            "john_white_beverage_1774", "nathaniel_winslow_beverage_1776", "benjamin_kent_beverage_1779", "mercy_kent_beverage_1782",
+            "sarah_beverage_1785", "lydia_winslow_beverage_1787", "james_beverage_1789", "josiah_winslow_beverage_1793",
+            "lydia_winslow_beverage_1796", "abigail_beverage_1803"
+        ],
+        "residences": [
+            {"location": "North Haven, Maine", "period": "1770s–1834"},
+            {"location": "Marblehead, Massachusetts", "period": "early 1770s"}
+        ],
+        "notes": "Privateer and town clerk; built grist mill; changed surname from Beveridge to Beverage.",
+        "sources": ["Find A Grave memorial 157241769"]
+    }
+]
