@@ -434,8 +434,6 @@
         "notes": "Mother of eight children; some children used the Beveridge spelling.",
         "sources": ["Find A Grave memorial 157499548"]
     },
-
-    // Children of Benjamin Crabtree Beverage
     {
         "id": "theodore_beverage_1855",
         "full_name": "Theodore E. Beverage",
@@ -556,8 +554,6 @@
         "notes": "Youngest son of Benjamin Crabtree Beverage.",
         "sources": ["Family records"]
     },
-
-    // Siblings of James Beverage (1789)
     {
         "id": "harrison_beverage_1825",
         "full_name": "Harrison Beverage",
@@ -605,8 +601,6 @@
         "notes": "Daughter of James Beverage; died of mercury poisoning along with her father.",
         "sources": ["Find A Grave memorial 157233276"]
     },
-
-    // Spouses and related individuals
     {
         "id": "amelia_beverage_1833",
         "full_name": "Amelia Beverage",
@@ -817,8 +811,6 @@
         "notes": "Fifth child of Samuel Hiram Beverage; name not recorded in obituary.",
         "sources": ["Riposta Funeral Home obituary"]
     },
-
-    // Early generations
     {
         "id": "mercy_kent_1754",
         "full_name": "Mercy Kent",
@@ -1253,7 +1245,6 @@
         "notes": "Youngest son of Norwood and Hannah; details limited.",
         "sources": ["FamilySearch"]
     },
-    // Children of Nathaniel Winslow Beverage
     {
         "id": "thomas_beverage_1810",
         "full_name": "Thomas Beverage (1810)",
@@ -1314,8 +1305,6 @@
         "notes": "Daughter of Nathaniel Winslow Beverage.",
         "sources": ["FamilySearch"]
     },
-
-    // Children of Josiah Winslow Beverage
     {
         "id": "josiah_b_beverage_1821",
         "full_name": "Josiah B. \"Si\" Beverage",
@@ -1391,8 +1380,6 @@
         "notes": "Daughter of Josiah Winslow Beverage; limited records.",
         "sources": ["Family records"]
     },
-
-    // Earlier ancestors
     {
         "id": "mercy_beveridge_henry_1753",
         "full_name": "Mercy Beveridge Henry",
