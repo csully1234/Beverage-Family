@@ -18,7 +18,7 @@ def check_password():
         entered = st.text_input("Enter Password:", type="password")
         if entered == PASSWORD:
             st.session_state["password_correct"] = True
-            st.experimental_rerun()
+            st.rerun()
         elif entered:
             st.error("❌ Incorrect password")
             st.stop()
