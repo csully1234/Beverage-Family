@@ -7,7 +7,7 @@ from graphviz import Digraph
 
 import streamlit as st
 
-# ---- SIMPLE PASSWORD PROTECTION ----
+# ---- PASSWORD PROTECTION ----
 PASSWORD = "BEVERAGE"
 
 def check_password():
@@ -27,16 +27,6 @@ def check_password():
 
 check_password()
 # ---- END PASSWORD PROTECTION ----
-
-
-###############################################################
-# Beverage Family Genealogy Application
-#
-# This Streamlit app lets visitors explore the Beverage family
-# of North Haven, Maine.  It is designed to be easy to modify
-# and extend.  To add or update family members or events,
-# modify the JSON files in the `data/` directory.
-###############################################################
 
 
 def load_json(path: Path) -> List[Dict]:
