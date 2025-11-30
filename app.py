@@ -254,12 +254,10 @@ def main():
     profile_param = query_params.get("profile")
 
     if page == "Home":
-        st.title("Beverage Family of North Haven, Maine")
+        st.title("Beverage Family")
         st.markdown(
             """
-            Welcome to the Beverage family genealogy site!  This project traces the
-            lineage of the Beverage (Beveridge) family from modern-day members
-            back to the 18th century founders on North Haven Island, Maine.
+            Designed to make things less confusing but I'm slightly more confused now
             """
         )
 
