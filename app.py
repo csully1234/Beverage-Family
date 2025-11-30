@@ -5,6 +5,29 @@ from typing import Dict, List, Optional
 import streamlit as st
 from graphviz import Digraph
 
+import streamlit as st
+
+# ---- SIMPLE PASSWORD PROTECTION ----
+PASSWORD = "BEVERAGE"
+
+def check_password():
+    if "password_correct" not in st.session_state:
+        st.session_state["password_correct"] = False
+
+    if not st.session_state["password_correct"]:
+        entered = st.text_input("Enter Password:", type="password")
+        if entered == PASSWORD:
+            st.session_state["password_correct"] = True
+            st.experimental_rerun()
+        elif entered:
+            st.error("❌ Incorrect password")
+            st.stop()
+        else:
+            st.stop()
+
+check_password()
+# ---- END PASSWORD PROTECTION ----
+
 
 ###############################################################
 # Beverage Family Genealogy Application
