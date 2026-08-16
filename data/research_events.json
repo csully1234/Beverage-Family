@@ -1,0 +1,166 @@
+[
+  {
+    "id": "event_boston_tea_party_1773",
+    "date": "1773-12-16",
+    "title": "Boston Tea Party tradition reassessed",
+    "description": "American Ancestors’ 2025 research project, created with the Boston Tea Party Ships & Museum, places Thomas Beverage in its “Eyewitness” category rather than among documented participants. The partner project explains that this category covers people likely not aboard the tea ships but linked to the event through family tradition. The precise nature of Thomas’s connection remains unproven.",
+    "people_involved": [
+      "thomas_beverage_1750"
+    ],
+    "sources": [
+      "[American Ancestors: Boston Tea Party biographies (2025)](https://dbnews.americanancestors.org/2025/01/03/new-sketches-boston-tea-party-biographies-3/)",
+      "[Boston Tea Party Ships & Museum: participant and eyewitness categories](https://www.bostonteapartyship.com/participants-in-the-boston-tea-party)"
+    ],
+    "evidence_status": "Qualified family tradition"
+  },
+  {
+    "id": "event_marriage_thomas_beverage_mercy_kent_1774",
+    "date": "1774-04-13",
+    "title": "Marriage of Thomas Beverage and Mercy Kent",
+    "description": "A published Kent family genealogy reports that Thomas Beverage and Mercy Kent married at Trinity Church in Boston on 13 April 1774. The original parish-register image has not yet been inspected.",
+    "people_involved": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754"
+    ],
+    "sources": [
+      "[Genealogies of the Different Families Bearing the Name of Kent (1898)](https://archive.org/stream/genealogiesofdif00byubrig/genealogiesofdif00byubrig_djvu.txt)"
+    ],
+    "evidence_status": "Published genealogy; original register not yet reviewed"
+  },
+  {
+    "id": "event_land_petition_1785",
+    "date": "1785-03-11",
+    "title": "Earliest recorded Fox Islands plantation meeting",
+    "description": "Vinalhaven’s 1889 town history says the earliest preserved meeting record was made at Benjamin Kent’s house on 11 March 1785, when Thomas Beverage was chosen clerk. The prior version of this site described additional petition actions that the cited source did not establish.",
+    "people_involved": [
+      "thomas_beverage_1750",
+      "benjamin_kent_1755"
+    ],
+    "sources": [
+      "[A brief historical sketch of the town of Vinalhaven (1889)](https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt)"
+    ],
+    "evidence_status": "Published transcription of early municipal records"
+  },
+  {
+    "id": "event_census_1790",
+    "date": "1790-08-02",
+    "title": "1790 Census enumeration of the Beverage household",
+    "description": "The 1790 census transcription lists Thomas’s surname as “Beverege” and reports a household of 11: two free white males age 16 or older, four under 16, and five free white females, with no other free persons or enslaved people recorded. Only the head of household is named; assigning the ten other entries to particular relatives would be inference, not a census fact.",
+    "people_involved": [
+      "thomas_beverage_1750"
+    ],
+    "sources": [
+      "[U.S. Census Bureau: Heads of Families at the First Census—Maine](https://www2.census.gov/prod2/decennial/documents/1790c-01.pdf)",
+      "[1790 Census transcription for Vinalhaven, Hancock County](https://archives.mainegenealogy.net/2006/10/1790-census-vinalhaven-hancock-county.html)"
+    ],
+    "evidence_status": "Federal census count; household-member identities not enumerated"
+  },
+  {
+    "id": "event_convention_delegate_1816",
+    "date": "1816-09-01",
+    "title": "Thomas Beverage appointed delegate to Brunswick convention",
+    "description": "Vinalhaven’s town history records that in early September 1816 Thomas Beverage was chosen to attend the Brunswick convention on separation from Massachusetts.",
+    "people_involved": [
+      "thomas_beverage_1750"
+    ],
+    "sources": [
+      "[A brief historical sketch of the town of Vinalhaven (1889)](https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt)"
+    ],
+    "evidence_status": "Published transcription of municipal records"
+  },
+  {
+    "id": "event_mill_stream_industry_1824",
+    "date": "1824-01-01",
+    "title": "Mill Stream industries documented by 1824",
+    "description": "North Haven Historical Society research reports that by 1824 the Mill Stream site included a grist mill operated by Thomas Beverage, a tannery run by his son James, and a bark-grinding mill. The account helps connect the family’s work to North Haven’s early local economy.",
+    "people_involved": [
+      "thomas_beverage_1750",
+      "james_beverage_1789"
+    ],
+    "evidence_status": "Institutional local history",
+    "sources": [
+      "[North Haven Historical Society: The Mill Stream](https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf)"
+    ]
+  },
+  {
+    "id": "event_harrison_representative_1859",
+    "date": "1859-01-01",
+    "title": "Harrison Beverage chosen as representative",
+    "description": "Vinalhaven’s town history records that North Haven chose Harrison Beverage as its representative in 1859. After he resigned, the town held a special election in December to choose a replacement.",
+    "people_involved": [
+      "harrison_beverage_1825"
+    ],
+    "evidence_status": "Published transcription of municipal records",
+    "sources": [
+      "[A brief historical sketch of the town of Vinalhaven (1889)](https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt)"
+    ]
+  },
+  {
+    "id": "event_birth_harold_h_beverage_1893",
+    "date": "1893-10-14",
+    "title": "Birth of Harold H. Beverage",
+    "description": "Harold Henry Beverage was born on North Haven, Maine. He later became a pioneering radio engineer and the namesake of the Beverage antenna.",
+    "people_involved": [
+      "harold_h_beverage_1893",
+      "fremont_beverage_1856",
+      "lottie_henrietta_smith_1863"
+    ],
+    "evidence_status": "Institutional biography; parent linkage from compiled genealogy",
+    "sources": [
+      "[IEEE Engineering and Technology History Wiki: Harold H. Beverage](https://ethw.org/Harold_H._Beverage)",
+      "[FamilySearch compiled profile: Fremont Beverage (1856–1930)](https://ancestors.familysearch.org/en/LH7T-GV1/fremont-beverage-1856-1930)"
+    ]
+  },
+  {
+    "id": "event_harold_graduation_1915",
+    "date": "1915-01-01",
+    "title": "Harold Beverage graduates from the University of Maine",
+    "description": "Harold Beverage completed a degree in electrical engineering at the University of Maine in 1915 before beginning his radio-research career.",
+    "people_involved": [
+      "harold_h_beverage_1893"
+    ],
+    "evidence_status": "Institutional biography and oral history",
+    "sources": [
+      "[IEEE Engineering and Technology History Wiki: Harold H. Beverage](https://ethw.org/Harold_H._Beverage)",
+      "[IEEE History Center oral history with Harold H. Beverage](https://ethw.org/Oral-History%3AHarold_H._Beverage)"
+    ]
+  },
+  {
+    "id": "event_harold_patent_1921",
+    "date": "1921-06-07",
+    "title": "Directional receiving-antenna patent issued",
+    "description": "U.S. Patent 1,381,089, “Radio Receiving System,” was issued to Harold H. Beverage on 7 June 1921 after an application filed on 10 April 1920. The patent describes a highly directional receiving system that became associated with the Beverage antenna.",
+    "people_involved": [
+      "harold_h_beverage_1893"
+    ],
+    "evidence_status": "Primary patent record",
+    "sources": [
+      "[U.S. Patent 1,381,089, Radio Receiving System](https://patents.google.com/patent/US1381089A/en)"
+    ]
+  },
+  {
+    "id": "event_harold_medal_1945",
+    "date": "1945-01-01",
+    "title": "Harold Beverage receives the IRE Medal of Honor",
+    "description": "The Institute of Radio Engineers awarded Harold H. Beverage its Medal of Honor in 1945 for radio research, invention, practical communications engineering, and service to the institute.",
+    "people_involved": [
+      "harold_h_beverage_1893"
+    ],
+    "evidence_status": "IEEE institutional award record",
+    "sources": [
+      "[IEEE Medal of Honor recipient list](https://ethw.org/IEEE_Medal_of_Honor)",
+      "[IEEE Engineering and Technology History Wiki: Harold H. Beverage](https://ethw.org/Harold_H._Beverage)"
+    ]
+  },
+  {
+    "id": "event_purchase_home_walliford_1997",
+    "date": "1997-01-01",
+    "title": "Modern family record withheld",
+    "description": "A modern family-home event is intentionally generalized to protect living relatives. Street-level property details are not published.",
+    "people_involved": [],
+    "sources": [
+      "Private family record (details withheld)"
+    ],
+    "evidence_status": "Private family record"
+  }
+]
