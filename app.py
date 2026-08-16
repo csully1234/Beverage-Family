@@ -42,12 +42,33 @@ def load_json(path: Path) -> List[Dict[str, Any]]:
     return []
 
 
+def merge_records(
+    base_records: List[Dict[str, Any]],
+    overlay_records: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """Merge evidence-reviewed overlays by stable record ID."""
+    merged = {record.get("id"): record for record in base_records if record.get("id")}
+    for record in overlay_records:
+        record_id = record.get("id")
+        if record_id:
+            merged[record_id] = record
+    return list(merged.values())
+
+
 @st.cache_data(show_spinner=False)
 def load_data() -> Dict[str, List[Dict[str, Any]]]:
     data_dir = Path(__file__).parent / "data"
+    people = merge_records(
+        load_json(data_dir / "people.json"),
+        load_json(data_dir / "research_people.json"),
+    )
+    events = merge_records(
+        load_json(data_dir / "events.json"),
+        load_json(data_dir / "research_events.json"),
+    )
     return {
-        "people": load_json(data_dir / "people.json"),
-        "events": load_json(data_dir / "events.json"),
+        "people": people,
+        "events": events,
         "research": load_json(data_dir / "research.json"),
     }
 
