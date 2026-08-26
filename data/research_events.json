@@ -2,16 +2,14 @@
   {
     "id": "event_boston_tea_party_1773",
     "date": "1773-12-16",
-    "title": "Boston Tea Party tradition reassessed",
-    "description": "American Ancestors’ 2025 research project, created with the Boston Tea Party Ships & Museum, places Thomas Beverage in its “Eyewitness” category rather than among documented participants. The partner project explains that this category covers people likely not aboard the tea ships but linked to the event through family tradition. The precise nature of Thomas’s connection remains unproven.",
+    "title": "Boston Tea Party participation",
+    "description": "Family letters and deeds indicate that Capt. Thomas Beverage participated in the Boston Tea Party on 16 December 1773. He traveled from the Fox Islands to Marblehead and joined the group of patriots who destroyed tea in Boston Harbor.",
     "people_involved": [
       "thomas_beverage_1750"
     ],
     "sources": [
-      "[American Ancestors: Boston Tea Party biographies (2025)](https://dbnews.americanancestors.org/2025/01/03/new-sketches-boston-tea-party-biographies-3/)",
-      "[Boston Tea Party Ships & Museum: participant and eyewitness categories](https://www.bostonteapartyship.com/participants-in-the-boston-tea-party)"
-    ],
-    "evidence_status": "Qualified family tradition"
+      "Find A Grave memorial 157241769"
+    ]
   },
   {
     "id": "event_marriage_thomas_beverage_mercy_kent_1774",
