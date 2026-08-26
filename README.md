@@ -5,11 +5,15 @@ A password-gated, source-first Streamlit archive for exploring the Beverage fami
 ## What the site now includes
 
 - a coastal, mobile-responsive visual design;
+- a global search across names, aliases, places, occupations, dates, events, notes, and sources;
 - a searchable profile index with stable profile links;
 - ancestor, descendant, combined, and immediate-family tree views;
+- a shortest-path relationship finder with readable, linked steps;
 - reciprocal relationship navigation without silently rewriting source records;
-- a filterable timeline with person, year, evidence, and full-text filters;
-- a research desk with data-quality findings and support for optional sourced notes;
+- a filterable timeline with person, year, category, place, precision, evidence, and full-text filters;
+- truthful display of exact, month-only, year-only, approximate, and unknown dates;
+- an interactive source explorer and research desk with claim-level citations;
+- homepage statistics, a daily featured relative, exact-date “On This Day” records, and recent research;
 - JSON and CSV archive exports;
 - an automated data-quality report;
 - regression guards for user-designated protected content;
@@ -48,8 +52,11 @@ When separately reviewed research files are present, they are layered on top at 
 - `data/research_people.json`
 - `data/research_events.json`
 - `data/research.json`
+- `data/date_precision.json`
 
-These three files are optional and are not required to run the site. An overlay with the same stable ID replaces that record only in the displayed dataset. Base files are never edited during application startup.
+These four files are optional and are not required to run the site. A same-ID research overlay patches only its explicitly supplied fields; it does not discard an existing profile's relationships, residences, notes, or citations. Date metadata keeps the original stored string for provenance while controlling truthful visitor-facing precision. Base files are never edited during application startup.
+
+Structured citations can include `title`, `repository`, `url`, `record_type`, `record_date`, `page`, `record_identifier`, `accessed`, `supports`, and `evidence_level`. Legacy source strings remain supported.
 
 ## Validate changes
 
@@ -59,7 +66,7 @@ python -m unittest discover -s tests -v
 python -m compileall -q app.py family_data.py validation.py validate_data.py
 ```
 
-Warnings identify open research or normalization work. Errors identify broken JSON, duplicate IDs, missing required fields, or a change to protected content.
+Warnings identify open research or normalization work. Errors identify broken JSON, duplicate IDs, missing required fields, invalid precision metadata, or a change to protected content or existing residence data.
 
 ## Evidence policy
 

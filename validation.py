@@ -21,7 +21,14 @@ PROTECTED_EVENT_HASHES = {
     "event_purchase_home_walliford_1997": (
         "b1dd762ff1c6ace355dc8d72bb0da664a82f4ef792c20ab4193031c7d8ad9188"
     ),
+    "event_property_record_2024": (
+        "88e15c5b3eccf18287c31be3537f227e130cae94381ab4d8b3739fd88388449b"
+    ),
 }
+
+PROTECTED_RESIDENCE_HASH = (
+    "b62538ff644549b4f95106b2fd41abb5110fd28e0b04dbdbf1d93c20e1253a29"
+)
 
 
 @dataclass(frozen=True)
@@ -102,9 +109,12 @@ def _validate_dates(
             value = person.get(field_name)
             if value and value != "Unknown" and not supported.fullmatch(str(value)):
                 malformed.append(f"{person.get('id')}:{field_name}")
+            if (
+                re.fullmatch(r"\d{4}-01-01", str(value or ""))
+                and person.get(f"{field_name}_precision") not in {"year", "approximate"}
+            ):
+                january_first += 1
         birth_date = str(person.get("birth_date") or "")
-        if re.fullmatch(r"\d{4}-01-01", birth_date):
-            january_first += 1
         identifier_match = re.search(r"_(\d{4})$", str(person.get("id", "")))
         if identifier_match and re.match(r"\d{4}", birth_date):
             if identifier_match.group(1) != birth_date[:4]:
@@ -114,6 +124,11 @@ def _validate_dates(
         value = event.get("date")
         if value and value != "Unknown" and not supported.fullmatch(str(value)):
             malformed.append(f"{event.get('id')}:date")
+        if (
+            re.fullmatch(r"\d{4}-01-01", str(value or ""))
+            and event.get("date_precision") not in {"year", "approximate"}
+        ):
+            january_first += 1
 
     if malformed:
         report.add(
@@ -125,7 +140,7 @@ def _validate_dates(
         report.add(
             "warning",
             "possible_year_only_dates",
-            f"{january_first} birth dates use January 1 and may represent year-only placeholders.",
+            f"{january_first} date values use January 1 without reviewed year-only or approximate metadata.",
         )
     if id_year_mismatches:
         report.add(
@@ -245,6 +260,60 @@ def _validate_protected_records(
             )
 
 
+def _validate_residences(
+    report: ValidationReport,
+    base_people: list[Record],
+    research_people: list[Record],
+) -> None:
+    """Protect every existing residence array while allowing new profiles."""
+
+    base_snapshot = [
+        {"id": person.get("id"), "residences": person.get("residences", [])}
+        for person in base_people
+    ]
+    payload = json.dumps(base_snapshot, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    if hashlib.sha256(payload.encode("utf-8")).hexdigest() != PROTECTED_RESIDENCE_HASH:
+        report.add("error", "protected_residences_base_changed", "One or more base residence entries changed.")
+
+    effective = {person["id"]: person for person in merge_records(base_people, research_people)}
+    changed = [
+        str(person.get("id"))
+        for person in base_people
+        if effective.get(person.get("id"), {}).get("residences", []) != person.get("residences", [])
+    ]
+    if changed:
+        report.add(
+            "error",
+            "protected_residences_overlay_changed",
+            f"Research overlays change {len(changed)} existing residence record(s): {', '.join(changed[:8])}",
+        )
+
+
+def _validate_date_precision(
+    report: ValidationReport,
+    data: dict[str, list[Record]],
+) -> None:
+    allowed = {"exact", "month", "year", "approximate", "unknown"}
+    base_lookup = {
+        (kind, str(record.get("id"))): record
+        for kind, records in (("person", data["base_people"]), ("event", data["base_events"]))
+        for record in records
+    }
+    seen: set[tuple[str, str, str]] = set()
+    for item in data.get("date_precision", []):
+        key = (str(item.get("record_type")), str(item.get("record_id")), str(item.get("field")))
+        if key in seen:
+            report.add("error", "duplicate_date_precision", f"Duplicate date precision entry: {key}")
+        seen.add(key)
+        if item.get("precision") not in allowed:
+            report.add("error", "invalid_date_precision", f"Unsupported precision for {key}")
+        base = base_lookup.get((key[0], key[1]))
+        if not base:
+            report.add("error", "unknown_date_precision_record", f"Date precision references unknown record {key[:2]}")
+        elif base.get(key[2]) != item.get("original_value"):
+            report.add("error", "date_precision_provenance_mismatch", f"Original value mismatch for {key}")
+
+
 def validate_site_data(data: dict[str, list[Record]]) -> ValidationReport:
     """Run structural, referential, and protected-content checks."""
 
@@ -284,4 +353,10 @@ def validate_site_data(data: dict[str, list[Record]]) -> ValidationReport:
         data["base_events"],
         data["research_events"],
     )
+    _validate_residences(
+        report,
+        data["base_people"],
+        data["research_people"],
+    )
+    _validate_date_precision(report, data)
     return report

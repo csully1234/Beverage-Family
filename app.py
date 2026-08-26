@@ -5,16 +5,18 @@ from __future__ import annotations
 import hmac
 import json
 import os
+from datetime import date
 from html import escape
 from pathlib import Path
 from typing import Any, Mapping
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 import streamlit as st
 from graphviz import Digraph
 
 from family_data import (
     Record,
+    date_sort_key,
     format_date,
     friendly_identifier,
     index_people,
@@ -23,6 +25,8 @@ from family_data import (
     person_sort_key,
     records_to_csv,
     relationship_index,
+    relationship_step_label,
+    shortest_relationship_path,
     source_search_text,
     unique_places,
     year_from_date,
@@ -48,6 +52,7 @@ LEGACY_COMPATIBILITY_PASSWORD = "BEVERAGE"
 
 PAGE_SLUGS = {
     "Home": "home",
+    "Search": "search",
     "Explore the Tree": "tree",
     "People": "people",
     "Timeline": "timeline",
@@ -232,8 +237,6 @@ def apply_theme() -> None:
         """,
         unsafe_allow_html=True,
     )
-
-
 def get_query_value(key: str) -> str | None:
     value = st.query_params.get(key)
     if isinstance(value, list):
@@ -294,6 +297,10 @@ def person_url(person_id: str) -> str:
     return f"?page=people&profile={quote(person_id)}"
 
 
+def event_url(event_id: str) -> str:
+    return f"?page=timeline&event={quote(event_id)}"
+
+
 def person_link(people_by_id: Mapping[str, Record], person_id: str) -> str:
     person = people_by_id.get(person_id)
     if not person:
@@ -304,12 +311,58 @@ def person_link(people_by_id: Mapping[str, Record], person_id: str) -> str:
 
 def source_markdown(source: Any) -> str:
     if isinstance(source, dict):
-        title = source.get("title", "Untitled source")
+        title = markdown_escape(source.get("title", "Untitled source"))
         url = source.get("url")
-        record_type = source.get("record_type")
-        label = f"[{title}]({url})" if url else str(title)
+        record_type = markdown_escape(source.get("record_type", ""))
+        parsed = urlparse(str(url)) if url else None
+        safe_url = (
+            str(url).replace("(", "%28").replace(")", "%29")
+            if parsed and parsed.scheme in {"http", "https"}
+            else None
+        )
+        label = f"[{title}]({safe_url})" if safe_url else str(title)
         return f"{label} — {record_type}" if record_type else label
-    return str(source)
+    return markdown_escape(source)
+
+
+def unique_sources(data: dict[str, list[Record]]) -> list[Any]:
+    """Return de-duplicated sources across profiles, events, and notes."""
+
+    sources: list[Any] = []
+    seen: set[str] = set()
+    for collection in (data["people"], data["events"], data["research"]):
+        for record in collection:
+            for source in record.get("sources", []):
+                key = (
+                    str(source.get("url") or source.get("title") or source).strip().casefold()
+                    if isinstance(source, dict)
+                    else str(source).strip().casefold()
+                )
+                if key not in seen:
+                    seen.add(key)
+                    sources.append(source)
+    return sources
+
+
+def generation_count(
+    people_by_id: Mapping[str, Record],
+    relationships: dict[str, dict[str, set[str]]],
+) -> int:
+    """Measure the longest known parent chain without looping on bad data."""
+
+    def depth(person_id: str, trail: frozenset[str]) -> int:
+        if person_id in trail:
+            return 0
+        parents = [
+            parent_id
+            for parent_id in relationships["parents"].get(person_id, set())
+            if parent_id in people_by_id
+        ]
+        if not parents:
+            return 1
+        return 1 + max(depth(parent_id, trail | {person_id}) for parent_id in parents)
+
+    return max((depth(person_id, frozenset()) for person_id in people_by_id), default=0)
 
 
 def render_sources(sources: list[Any], heading: str | None = None) -> None:
@@ -350,6 +403,8 @@ def navigate(page: str) -> None:
     st.query_params["page"] = PAGE_SLUGS[page]
     if page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
+    if page != "Timeline" and "event" in st.query_params:
+        del st.query_params["event"]
 
 
 def open_profile(person_id: str) -> None:
@@ -357,6 +412,8 @@ def open_profile(person_id: str) -> None:
     st.session_state["profile_selector"] = person_id
     st.query_params["page"] = "people"
     st.query_params["profile"] = person_id
+    if "event" in st.query_params:
+        del st.query_params["event"]
 
 
 def sync_sidebar_route() -> None:
@@ -364,6 +421,8 @@ def sync_sidebar_route() -> None:
     st.query_params["page"] = PAGE_SLUGS[page]
     if page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
+    if page != "Timeline" and "event" in st.query_params:
+        del st.query_params["event"]
 
 
 def sync_profile_route() -> None:
@@ -434,6 +493,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
 def render_home(
     data: dict[str, list[Record]],
     people_by_id: Mapping[str, Record],
+    relationships: dict[str, dict[str, set[str]]],
 ) -> None:
     people = data["people"]
     events = data["events"]
@@ -448,19 +508,23 @@ def render_home(
           <div class="bev-kicker">North Haven · Maine · Family archive</div>
           <h1>The Beverage Family</h1>
           <p>Three centuries of people, places, work, and family connections—organized into one searchable, source-first record.</p>
+          <p><em>Designed to make things less confusing but I'm slightly more confused now</em></p>
         </section>
         """,
         unsafe_allow_html=True,
     )
 
-    metric_columns = st.columns(4)
+    source_count = len(unique_sources(data))
+    metric_columns = st.columns(6)
     metric_columns[0].metric("People", len(people))
     metric_columns[1].metric("Timeline records", len(events))
     metric_columns[2].metric("Places", len(unique_places(people)))
-    metric_columns[3].metric("Recorded span", span)
+    metric_columns[3].metric("Sources", source_count)
+    metric_columns[4].metric("Generations", generation_count(people_by_id, relationships))
+    metric_columns[5].metric("Recorded span", span)
 
     st.write("")
-    action_columns = st.columns(3)
+    action_columns = st.columns(4)
     action_columns[0].button(
         "Explore the family tree",
         type="primary",
@@ -479,6 +543,12 @@ def render_home(
         width="stretch",
         on_click=navigate,
         args=("Timeline",),
+    )
+    action_columns[3].button(
+        "Search the whole archive",
+        width="stretch",
+        on_click=navigate,
+        args=("Search",),
     )
 
     st.divider()
@@ -514,8 +584,8 @@ def render_home(
         st.markdown("<div class='bev-eyebrow'>Featured records</div>", unsafe_allow_html=True)
         st.subheader("Stories anchored to sources")
         featured_ids = (
-            "research_clerk_1785",
-            "research_mill_stream_1824",
+            "research_civic_harrison_1859",
+            "research_lowell_music_career",
             "research_harold_antenna",
         )
         research_by_id = {record.get("id"): record for record in research}
@@ -531,11 +601,52 @@ def render_home(
                     f"{record.get('evidence_level', 'Evidence not rated')}"
                 )
 
+    st.divider()
+    today = date.today()
+    on_this_day = [
+        event
+        for event in events
+        if event.get("date_precision", "exact") == "exact"
+        and isinstance(event.get("date"), str)
+        and len(str(event["date"])) == 10
+        and str(event["date"])[5:] == today.strftime("%m-%d")
+    ]
+    random_person = sorted_people(people)[today.toordinal() % len(people)] if people else None
+    day_column, relative_column, recent_column = st.columns(3, gap="large")
+    with day_column:
+        st.markdown("<div class='bev-eyebrow'>On this day</div>", unsafe_allow_html=True)
+        st.subheader("Beverage history today")
+        if on_this_day:
+            for event in sorted(on_this_day, key=date_sort_key)[:3]:
+                st.markdown(f"[{event.get('title', 'Untitled event')}]({event_url(str(event['id']))})")
+                st.caption(format_date(event.get("date"), event.get("date_precision")))
+        else:
+            st.caption("No exact-date event is recorded for this calendar day yet.")
+    with relative_column:
+        st.markdown("<div class='bev-eyebrow'>Random relative</div>", unsafe_allow_html=True)
+        st.subheader(random_person.get("full_name") if random_person else "No profile")
+        if random_person:
+            st.caption(life_span(random_person))
+            notes = str(random_person.get("notes") or random_person.get("biography") or "Profile ready to explore.")
+            st.write(notes if len(notes) <= 220 else notes[:217] + "…")
+            st.markdown(f"[Open profile →]({person_url(str(random_person['id']))})")
+    with recent_column:
+        st.markdown("<div class='bev-eyebrow'>Recently researched</div>", unsafe_allow_html=True)
+        st.subheader("Newly documented")
+        recent = sorted(
+            research,
+            key=lambda item: (str(item.get("checked_on", "")), str(item.get("record_date", ""))),
+            reverse=True,
+        )[:3]
+        for record in recent:
+            st.markdown(f"**{record.get('title', 'Research note')}**")
+            st.caption(str(record.get("evidence_level", "Evidence not rated")))
+
 
 def related_events(events: list[Record], person_id: str) -> list[Record]:
     return sorted(
         [event for event in events if person_id in event.get("people_involved", [])],
-        key=lambda event: str(event.get("date", "")),
+        key=date_sort_key,
     )
 
 
@@ -547,7 +658,12 @@ def render_event_card(
     with st.container(border=True):
         date_column, story_column = st.columns([1, 3.4])
         with date_column:
-            st.markdown(f"**{format_date(event.get('date'))}**")
+            st.markdown(
+                f"**{format_date(event.get('date'), event.get('date_precision'))}**"
+            )
+            precision = event.get("date_precision")
+            if precision and precision != "exact":
+                st.caption(f"{str(precision).replace('_', ' ').title()} date")
         with story_column:
             st.markdown(f"### {event.get('title', 'Untitled event')}")
             if event.get("evidence_status"):
@@ -602,30 +718,64 @@ def render_person_profile(
         """,
         unsafe_allow_html=True,
     )
+    alternate_names = person.get("alternate_names", [])
+    if alternate_names:
+        st.caption("Also recorded as: " + " · ".join(str(name) for name in alternate_names))
 
     born, died = st.columns(2)
     with born:
         st.markdown("**Born**")
-        st.write(f"{format_date(person.get('birth_date'))} — {person.get('birth_place') or 'Unknown'}")
+        st.write(
+            f"{format_date(person.get('birth_date'), person.get('birth_date_precision'))} "
+            f"— {person.get('birth_place') or 'Unknown'}"
+        )
     with died:
         st.markdown("**Died**")
         if person.get("death_date") or person.get("death_place"):
-            st.write(f"{format_date(person.get('death_date'))} — {person.get('death_place') or 'Unknown'}")
+            st.write(
+                f"{format_date(person.get('death_date'), person.get('death_date_precision'))} "
+                f"— {person.get('death_place') or 'Unknown'}"
+            )
         else:
             st.write("No death record entered")
 
     render_evidence_status(person.get("evidence_status"))
+    if person.get("needs_research"):
+        st.warning("Needs more research — this profile contains one or more provisional leads.")
+    if person.get("research_completeness"):
+        st.caption(f"Research status: {person['research_completeness']}")
 
     story_tab, family_tab, places_tab, sources_tab = st.tabs(
         ["Story", "Family", "Places", "Sources & research"]
     )
 
     with story_tab:
+        if person.get("biography"):
+            st.subheader("Biography")
+            st.write(person["biography"])
         if person.get("notes"):
             st.subheader("Life and historical context")
             st.write(person["notes"])
-        else:
+        elif not person.get("biography"):
             st.info("A narrative biography has not been added yet.")
+
+        detail_groups = (
+            ("Occupations", "occupations"),
+            ("Education", "education"),
+            ("Military service", "military_service"),
+            ("Civic and professional roles", "civic_offices"),
+            ("Accomplishments", "accomplishments"),
+        )
+        populated = [(label, person.get(field, [])) for label, field in detail_groups if person.get(field)]
+        if populated:
+            st.subheader("At a glance")
+            detail_columns = st.columns(2)
+            for index, (label, values) in enumerate(populated):
+                with detail_columns[index % 2]:
+                    with st.container(border=True):
+                        st.markdown(f"**{label}**")
+                        for value in values:
+                            st.markdown(f"- {markdown_escape(value)}")
 
         person_events = related_events(events, person_id)
         st.subheader(f"Timeline records involving this person ({len(person_events)})")
@@ -672,6 +822,25 @@ def render_person_profile(
     with sources_tab:
         st.subheader("Profile sources")
         render_sources(person.get("sources", []))
+
+        date_provenance = person.get("date_provenance", {})
+        if date_provenance:
+            st.subheader("Date precision")
+            for field_name, details in date_provenance.items():
+                label = field_name.replace("_", " ").title()
+                st.markdown(f"**{label}:** {person.get(field_name + '_precision', 'unknown').title()}")
+                if details.get("determination"):
+                    st.caption(str(details["determination"]))
+
+        conflicts = person.get("conflicting_evidence", [])
+        if conflicts:
+            st.subheader("Evidence conflicts for family review")
+            for conflict in conflicts:
+                with st.container(border=True):
+                    st.markdown(f"**{conflict.get('claim', 'Conflicting claim')}**")
+                    st.write(f"Existing record: {conflict.get('existing_record', 'Not recorded')}")
+                    st.write(f"Reviewed source: {conflict.get('reviewed_source', 'Not recorded')}")
+                    st.caption(str(conflict.get("status", "Unresolved")))
 
         linked_research = [
             record
@@ -729,6 +898,102 @@ def render_people_page(
     )
 
 
+def record_search_blob(record: Record) -> str:
+    """Flatten a curated record for case-insensitive archive search."""
+
+    return json.dumps(record, ensure_ascii=False, default=str).casefold()
+
+
+def render_search_page(
+    data: dict[str, list[Record]],
+    people_by_id: Mapping[str, Record],
+) -> None:
+    st.title("Search the Whole Archive")
+    st.write(
+        "Search names and alternate spellings, places, dates, occupations, notes, "
+        "events, repositories, and source titles from one place."
+    )
+    query = st.text_input(
+        "Global search",
+        placeholder="Try Beverage antenna, North Haven, nurse, 1921, or Columbia…",
+    ).strip().casefold()
+    if not query:
+        st.info("Enter a word, name, place, year, occupation, event, or source.")
+        return
+
+    people_matches = [person for person in data["people"] if query in record_search_blob(person)]
+    event_matches = [event for event in data["events"] if query in record_search_blob(event)]
+    research_matches = [record for record in data["research"] if query in record_search_blob(record)]
+
+    source_matches: list[tuple[Any, str, str]] = []
+    for collection_name, records in (
+        ("person", data["people"]),
+        ("event", data["events"]),
+        ("research", data["research"]),
+    ):
+        for record in records:
+            for source in record.get("sources", []):
+                if query in source_search_text(source).casefold():
+                    source_matches.append((source, collection_name, str(record["id"])))
+
+    metrics = st.columns(4)
+    metrics[0].metric("People", len(people_matches))
+    metrics[1].metric("Events", len(event_matches))
+    metrics[2].metric("Research notes", len(research_matches))
+    metrics[3].metric("Source links", len(source_matches))
+
+    people_tab, events_tab, research_tab, sources_tab = st.tabs(
+        ["People", "Events", "Research", "Sources"]
+    )
+    with people_tab:
+        if not people_matches:
+            st.caption("No people matched.")
+        for person in sorted(people_matches, key=person_sort_key)[:30]:
+            with st.container(border=True):
+                st.markdown(f"### [{markdown_escape(person.get('full_name', 'Unnamed'))}]({person_url(str(person['id']))})")
+                st.caption(life_span(person))
+                context = str(person.get("biography") or person.get("notes") or "Profile available")
+                st.write(context if len(context) < 280 else context[:277] + "…")
+    with events_tab:
+        if not event_matches:
+            st.caption("No events matched.")
+        for event in sorted(event_matches, key=date_sort_key)[:30]:
+            with st.container(border=True):
+                st.markdown(f"### [{markdown_escape(event.get('title', 'Untitled event'))}]({event_url(str(event['id']))})")
+                st.caption(format_date(event.get("date"), event.get("date_precision")))
+                description = str(event.get("description", ""))
+                st.write(description if len(description) < 320 else description[:317] + "…")
+    with research_tab:
+        if not research_matches:
+            st.caption("No research notes matched.")
+        for record in research_matches[:30]:
+            with st.container(border=True):
+                st.markdown(f"### {markdown_escape(record.get('title', 'Research note'))}")
+                st.caption(
+                    f"{record.get('category', 'Uncategorized')} · "
+                    f"{record.get('evidence_level', 'Evidence not rated')}"
+                )
+                st.write(record.get("summary", ""))
+    with sources_tab:
+        if not source_matches:
+            st.caption("No sources matched.")
+        seen_matches: set[tuple[str, str, str]] = set()
+        for source, owner_type, owner_id in source_matches[:50]:
+            key = (source_search_text(source), owner_type, owner_id)
+            if key in seen_matches:
+                continue
+            seen_matches.add(key)
+            if owner_type == "person":
+                owner_link = person_link(people_by_id, owner_id)
+            elif owner_type == "event":
+                event = next((item for item in data["events"] if item.get("id") == owner_id), {})
+                owner_link = f"[{markdown_escape(event.get('title', 'Timeline event'))}]({event_url(owner_id)})"
+            else:
+                record = next((item for item in data["research"] if item.get("id") == owner_id), {})
+                owner_link = markdown_escape(record.get("title", "Research note"))
+            st.markdown(f"- {source_markdown(source)}  \n  Supports: {owner_link}")
+
+
 def graph_node_label(person: Record | None, person_id: str) -> str:
     if not person:
         return f"{friendly_identifier(person_id)}\nUnresolved profile"
@@ -778,16 +1043,23 @@ def build_family_graph(
             "relative": ("#fffdf8", "#19313a", "#8ca1a5"),
         }
         fill, font, border = palettes.get(role, palettes["relative"])
+        node_attributes = {
+            "fillcolor": fill,
+            "fontcolor": font,
+            "color": border,
+            "penwidth": "2" if role == "focus" else "1",
+            "tooltip": person_name(people_by_id, person_id),
+        }
+        if person_id in people_by_id:
+            node_attributes.update(
+                URL=person_url(person_id),
+                target="_self",
+                tooltip=f"Open {person_name(people_by_id, person_id)}",
+            )
         graph.node(
             person_id,
             graph_node_label(people_by_id.get(person_id), person_id),
-            fillcolor=fill,
-            fontcolor=font,
-            color=border,
-            penwidth="2" if role == "focus" else "1",
-            URL=person_url(person_id),
-            target="_self",
-            tooltip=f"Open {person_name(people_by_id, person_id)}",
+            **node_attributes,
         )
 
     add_node(focus_id, "focus")
@@ -883,6 +1155,42 @@ def render_tree_page(
                 open_profile(focus_id)
                 st.rerun()
 
+    st.divider()
+    st.subheader("Relationship finder")
+    st.write("Select two documented profiles to see the shortest connection supported by the current family graph.")
+    relationship_columns = st.columns(2)
+    with relationship_columns[0]:
+        start_id = st.selectbox(
+            "First person",
+            person_ids,
+            format_func=lambda person_id: person_name(people_by_id, person_id),
+            key="relationship_start",
+        )
+    with relationship_columns[1]:
+        default_end = 1 if len(person_ids) > 1 else 0
+        end_id = st.selectbox(
+            "Second person",
+            person_ids,
+            index=default_end,
+            format_func=lambda person_id: person_name(people_by_id, person_id),
+            key="relationship_end",
+        )
+
+    path = shortest_relationship_path(relationships, start_id, end_id)
+    if not path:
+        st.info("No connection is established by the current records.")
+    elif len(path) == 1:
+        st.success("You selected the same person twice.")
+    else:
+        st.success(f"Connected in {len(path) - 1} relationship step(s).")
+        path_parts: list[str] = []
+        for index, person_id in enumerate(path):
+            path_parts.append(person_link(people_by_id, person_id))
+            if index < len(path) - 1:
+                step = relationship_step_label(relationships, person_id, path[index + 1])
+                path_parts.append(f"— *{step}* →")
+        st.markdown(" ".join(path_parts))
+
 
 def event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:
     involved_names = " ".join(
@@ -894,6 +1202,8 @@ def event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:
             str(event.get("date", "")),
             str(event.get("title", "")),
             str(event.get("description", "")),
+            str(event.get("category", "")),
+            str(event.get("place", "")),
             involved_names,
             " ".join(source_search_text(source) for source in event.get("sources", [])),
             str(event.get("evidence_status", "")),
@@ -917,6 +1227,16 @@ def render_timeline_page(
         "Search timeline",
         placeholder="Person, place, event, occupation, or source…",
     ).strip().lower()
+    requested_event_id = get_query_value("event")
+    known_event_ids = {str(event.get("id")) for event in events}
+    if requested_event_id in known_event_ids:
+        selected_title = next(
+            str(event.get("title", "Timeline event"))
+            for event in events
+            if str(event.get("id")) == requested_event_id
+        )
+        st.info(f"Direct link opened: {selected_title}")
+
     filter_columns = st.columns([1.5, 1.3, 1, 1])
     with filter_columns[0]:
         person_options = [None, *[str(person["id"]) for person in sorted_people(people)]]
@@ -940,6 +1260,28 @@ def render_timeline_page(
     with filter_columns[3]:
         direction = st.selectbox("Order", ("Oldest first", "Newest first"))
 
+    categories = sorted({str(event.get("category")) for event in events if event.get("category")})
+    places = sorted({str(event.get("place")) for event in events if event.get("place")})
+    secondary_filters = st.columns(3)
+    with secondary_filters[0]:
+        category = st.selectbox(
+            "Category",
+            [None, *categories],
+            format_func=lambda value: "All categories" if value is None else value,
+        )
+    with secondary_filters[1]:
+        place = st.selectbox(
+            "Place",
+            [None, *places],
+            format_func=lambda value: "All places" if value is None else value,
+        )
+    with secondary_filters[2]:
+        precision_filter = st.selectbox(
+            "Date precision",
+            [None, "exact", "year", "month", "approximate", "unknown"],
+            format_func=lambda value: "All precision levels" if value is None else value.title(),
+        )
+
     filtered: list[Record] = []
     for event in events:
         year = year_from_date(event.get("date"))
@@ -949,11 +1291,20 @@ def render_timeline_page(
             continue
         if evidence and event.get("evidence_status") != evidence:
             continue
+        if category and event.get("category") != category:
+            continue
+        if place and event.get("place") != place:
+            continue
+        event_precision = str(event.get("date_precision", "exact"))
+        if precision_filter and event_precision != precision_filter:
+            continue
         if search and search not in event_search_blob(event, people_by_id):
             continue
         filtered.append(event)
 
-    filtered.sort(key=lambda event: str(event.get("date", "")), reverse=direction == "Newest first")
+    filtered.sort(key=date_sort_key, reverse=direction == "Newest first")
+    if requested_event_id in known_event_ids:
+        filtered.sort(key=lambda event: str(event.get("id")) != requested_event_id)
     display_limit = st.selectbox("Records shown", (10, 25, 50, "All"), index=1)
     visible = filtered if display_limit == "All" else filtered[: int(display_limit)]
     st.caption(f"Showing {len(visible)} of {len(filtered)} matching records · {len(events)} total")
@@ -988,8 +1339,16 @@ def render_research_page(
 ) -> None:
     research = data["research"]
     report = validate_site_data(data)
-    primary_count = sum("primary" in str(record.get("evidence_level", "")).lower() for record in research)
-    institutional_count = sum("institution" in str(record.get("evidence_level", "")).lower() for record in research)
+    primary_count = sum(
+        "primary" in str(record.get("evidence_level", "")).lower()
+        or "tier 1" in str(record.get("evidence_level", "")).lower()
+        for record in research
+    )
+    institutional_count = sum(
+        "institution" in str(record.get("evidence_level", "")).lower()
+        or "tier 2" in str(record.get("evidence_level", "")).lower()
+        for record in research
+    )
 
     st.title("Research Desk")
     st.write("The working evidence library: what is documented, what is provisional, and what still needs an original record.")
@@ -1086,9 +1445,87 @@ def render_research_page(
         )
 
 
-def render_sources_page() -> None:
+def render_sources_page(
+    data: dict[str, list[Record]],
+    people_by_id: Mapping[str, Record],
+) -> None:
     st.title("Sources & Method")
     st.write("How the archive separates a documented fact, a published account, and a lead that still needs verification.")
+
+    catalog: list[dict[str, Any]] = []
+    for owner_type, records in (
+        ("Person", data["people"]),
+        ("Event", data["events"]),
+        ("Research", data["research"]),
+    ):
+        for record in records:
+            for source in record.get("sources", []):
+                details = source if isinstance(source, dict) else {"title": str(source)}
+                catalog.append(
+                    {
+                        "source": source,
+                        "repository": str(details.get("repository", "Legacy citation")),
+                        "record_type": str(details.get("record_type", "Unstructured source")),
+                        "evidence_level": str(details.get("evidence_level", "Not rated")),
+                        "access_status": str(details.get("access_status", "")),
+                        "supports": str(details.get("supports", "See linked record")),
+                        "owner_type": owner_type,
+                        "owner_id": str(record.get("id")),
+                        "owner_title": str(record.get("full_name") or record.get("title") or "Linked record"),
+                    }
+                )
+
+    st.subheader("Research source explorer")
+    search = st.text_input(
+        "Search sources",
+        placeholder="Repository, record type, person, event, or supported claim…",
+    ).strip().casefold()
+    repositories = sorted({item["repository"] for item in catalog})
+    record_types = sorted({item["record_type"] for item in catalog})
+    explorer_filters = st.columns(3)
+    with explorer_filters[0]:
+        repository = st.selectbox(
+            "Repository",
+            [None, *repositories],
+            format_func=lambda value: "All repositories" if value is None else value,
+        )
+    with explorer_filters[1]:
+        record_type = st.selectbox(
+            "Record type",
+            [None, *record_types],
+            format_func=lambda value: "All record types" if value is None else value,
+        )
+    with explorer_filters[2]:
+        owner_type = st.selectbox("Linked to", [None, "Person", "Event", "Research"], format_func=lambda value: "All records" if value is None else value)
+
+    filtered_catalog = []
+    for item in catalog:
+        blob = " ".join(str(value) for value in item.values()).casefold()
+        if search and search not in blob:
+            continue
+        if repository and item["repository"] != repository:
+            continue
+        if record_type and item["record_type"] != record_type:
+            continue
+        if owner_type and item["owner_type"] != owner_type:
+            continue
+        filtered_catalog.append(item)
+
+    st.caption(f"Showing {min(len(filtered_catalog), 50)} of {len(filtered_catalog)} matching citations · {len(catalog)} linked citations total")
+    for item in filtered_catalog[:50]:
+        if item["owner_type"] == "Person":
+            owner = person_link(people_by_id, item["owner_id"])
+        elif item["owner_type"] == "Event":
+            owner = f"[{markdown_escape(item['owner_title'])}]({event_url(item['owner_id'])})"
+        else:
+            owner = markdown_escape(item["owner_title"])
+        with st.container(border=True):
+            st.markdown(f"**{source_markdown(item['source'])}**")
+            st.caption(f"{item['repository']} · {item['record_type']} · {item['evidence_level']}")
+            st.write(item["supports"])
+            if item["access_status"]:
+                st.caption(f"Access check: {item['access_status']}")
+            st.markdown(f"Linked record: {owner}")
 
     st.subheader("Evidence ladder")
     evidence_rows = (
@@ -1156,7 +1593,9 @@ def main() -> None:
     page = render_sidebar(data["people"], people_by_id)
 
     if page == "Home":
-        render_home(data, people_by_id)
+        render_home(data, people_by_id, relationships)
+    elif page == "Search":
+        render_search_page(data, people_by_id)
     elif page == "Explore the Tree":
         render_tree_page(data, people_by_id, relationships)
     elif page == "People":
@@ -1166,7 +1605,7 @@ def main() -> None:
     elif page == "Research Desk":
         render_research_page(data, people_by_id)
     elif page == "Sources & Method":
-        render_sources_page()
+        render_sources_page(data, people_by_id)
 
     render_footer()
 

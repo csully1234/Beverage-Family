@@ -10,7 +10,7 @@ import csv
 import io
 import json
 import re
-from collections import defaultdict
+from collections import defaultdict, deque
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -55,7 +55,13 @@ def load_optional_json_records(path: Path) -> list[Record]:
 
 
 def merge_records(base_records: Iterable[Record], overlays: Iterable[Record]) -> list[Record]:
-    """Merge reviewed overlays by stable ID while preserving base ordering."""
+    """Patch reviewed overlays by stable ID while preserving base ordering.
+
+    Existing records are updated only for keys explicitly present in an
+    overlay. This additive-first behavior is important for profiles that carry
+    residences, relationships, or family notes that a research patch does not
+    need to repeat. New IDs are appended in overlay order.
+    """
 
     merged: dict[str, Record] = {}
     for record in base_records:
@@ -65,8 +71,42 @@ def merge_records(base_records: Iterable[Record], overlays: Iterable[Record]) ->
     for record in overlays:
         record_id = record.get("id")
         if record_id:
-            merged[str(record_id)] = dict(record)
+            key = str(record_id)
+            merged[key] = {**merged.get(key, {}), **dict(record)}
     return list(merged.values())
+
+
+def apply_date_precision(
+    records: Iterable[Record],
+    metadata: Iterable[Record],
+    record_type: str,
+) -> list[Record]:
+    """Attach display precision without rewriting legacy date strings."""
+
+    relevant = {
+        (str(item.get("record_id")), str(item.get("field"))): item
+        for item in metadata
+        if item.get("record_type") == record_type
+    }
+    enriched: list[Record] = []
+    for source_record in records:
+        record = dict(source_record)
+        record_id = str(record.get("id", ""))
+        provenance = dict(record.get("date_provenance", {}))
+        for field_name in ("birth_date", "death_date", "date"):
+            item = relevant.get((record_id, field_name))
+            if not item:
+                continue
+            record[f"{field_name}_precision"] = item.get("precision", "unknown")
+            provenance[field_name] = {
+                key: value
+                for key, value in item.items()
+                if key not in {"record_type", "record_id", "field", "precision"}
+            }
+        if provenance:
+            record["date_provenance"] = provenance
+        enriched.append(record)
+    return enriched
 
 
 def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
@@ -77,14 +117,19 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     research_people = load_optional_json_records(data_dir / "research_people.json")
     research_events = load_optional_json_records(data_dir / "research_events.json")
     research = load_optional_json_records(data_dir / "research.json")
+    date_precision = load_optional_json_records(data_dir / "date_precision.json")
+
+    effective_people = merge_records(base_people, research_people)
+    effective_events = merge_records(base_events, research_events)
 
     return {
         "base_people": base_people,
         "base_events": base_events,
         "research_people": research_people,
         "research_events": research_events,
-        "people": merge_records(base_people, research_people),
-        "events": merge_records(base_events, research_events),
+        "date_precision": date_precision,
+        "people": apply_date_precision(effective_people, date_precision, "person"),
+        "events": apply_date_precision(effective_events, date_precision, "event"),
         "research": research,
     }
 
@@ -137,6 +182,12 @@ def relationship_index(people: Iterable[Record]) -> dict[str, dict[str, set[str]
             indexes["siblings"][person_id].add(sibling_id)
             indexes["siblings"][sibling_id].add(person_id)
 
+    # Explicitly shared parents establish sibling connections even when older
+    # records listed the children only on the parent's profile.
+    for child_ids in indexes["children"].values():
+        for child_id in child_ids:
+            indexes["siblings"][child_id].update(child_ids - {child_id})
+
     return {
         field: {person_id: set(related) for person_id, related in mapping.items()}
         for field, mapping in indexes.items()
@@ -162,12 +213,26 @@ def year_from_date(value: Any) -> int | None:
     return int(match.group(1)) if match else None
 
 
-def format_date(value: Any) -> str:
-    """Display ISO dates naturally without altering the underlying value."""
+def format_date(value: Any, precision: str | None = None) -> str:
+    """Display a date truthfully at its documented level of precision."""
 
     if value in (None, "", "Unknown"):
         return "Unknown"
     text = str(value)
+    normalized_precision = str(precision or "").lower()
+    year = year_from_date(text)
+    if normalized_precision == "unknown":
+        return "Unknown"
+    if normalized_precision == "approximate" and year:
+        return f"circa {year}"
+    if normalized_precision == "year" and year:
+        return str(year)
+    if normalized_precision == "month" and re.fullmatch(r"\d{4}-\d{2}(?:-\d{2})?", text):
+        try:
+            parsed = datetime.strptime(text[:7], "%Y-%m")
+            return parsed.strftime("%B %Y")
+        except ValueError:
+            return text
     if re.fullmatch(r"\d{4}", text):
         return text
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
@@ -184,13 +249,81 @@ def life_span(person: Mapping[str, Any]) -> str:
 
     birth_year = year_from_date(person.get("birth_date"))
     death_year = year_from_date(person.get("death_date"))
+    birth_prefix = "c. " if person.get("birth_date_precision") == "approximate" else ""
+    death_prefix = "c. " if person.get("death_date_precision") == "approximate" else ""
     if birth_year and death_year:
-        return f"{birth_year}–{death_year}"
+        return f"{birth_prefix}{birth_year}–{death_prefix}{death_year}"
     if birth_year:
         return f"b. {birth_year}"
     if death_year:
         return f"d. {death_year}"
     return "Dates unknown"
+
+
+def date_sort_key(record: Mapping[str, Any], field: str = "date") -> tuple[int, int, int, int]:
+    """Sort exact, partial, approximate, and unknown dates predictably."""
+
+    value = record.get(field)
+    precision = str(record.get(f"{field}_precision", "exact"))
+    if not isinstance(value, str):
+        return (9999, 12, 31, 3)
+    exact_match = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", value)
+    if exact_match:
+        year, month, day = (int(part) for part in exact_match.groups())
+        rank = {"exact": 0, "month": 1, "year": 2, "approximate": 2}.get(precision, 2)
+        return (year, month if precision in {"exact", "month"} else 1, day if precision == "exact" else 1, rank)
+    year = year_from_date(value)
+    if year:
+        return (year, 1, 1, 2 if precision != "exact" else 0)
+    return (9999, 12, 31, 3)
+
+
+def shortest_relationship_path(
+    relationships: Mapping[str, Mapping[str, set[str]]],
+    start_id: str,
+    end_id: str,
+) -> list[str]:
+    """Return the shortest supported family connection, or an empty list."""
+
+    if start_id == end_id:
+        return [start_id]
+    neighbors: defaultdict[str, set[str]] = defaultdict(set)
+    for mapping in relationships.values():
+        for person_id, related_ids in mapping.items():
+            neighbors[str(person_id)].update(str(item) for item in related_ids)
+
+    queue: deque[list[str]] = deque([[start_id]])
+    visited = {start_id}
+    while queue:
+        path = queue.popleft()
+        for neighbor in sorted(neighbors.get(path[-1], set())):
+            if neighbor in visited:
+                continue
+            candidate = [*path, neighbor]
+            if neighbor == end_id:
+                return candidate
+            visited.add(neighbor)
+            queue.append(candidate)
+    return []
+
+
+def relationship_step_label(
+    relationships: Mapping[str, Mapping[str, set[str]]],
+    from_id: str,
+    to_id: str,
+) -> str:
+    """Describe one directed step without inferring beyond recorded links."""
+
+    labels = (
+        ("parents", "parent"),
+        ("children", "child"),
+        ("spouses", "spouse"),
+        ("siblings", "sibling"),
+    )
+    for field, label in labels:
+        if to_id in relationships.get(field, {}).get(from_id, set()):
+            return label
+    return "relative"
 
 
 def unique_places(people: Iterable[Record]) -> list[str]:

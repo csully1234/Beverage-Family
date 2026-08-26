@@ -11,18 +11,24 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class StreamlitSmokeTests(unittest.TestCase):
-    def test_login_and_every_page_render_without_exceptions(self) -> None:
+    def logged_in_app(self, **query_params: str) -> AppTest:
         os.environ["APP_PASSWORD"] = "test-family-password"
-        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
-
-        self.assertEqual(len(app.exception), 0)
+        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30)
+        for key, value in query_params.items():
+            app.query_params[key] = value
+        app.run()
         app.text_input[0].input("test-family-password")
         app.button[0].click()
         app.run()
         self.assertEqual(len(app.exception), 0)
+        return app
+
+    def test_login_and_every_page_render_without_exceptions(self) -> None:
+        app = self.logged_in_app()
 
         for page in (
             "Home",
+            "Search",
             "Explore the Tree",
             "People",
             "Timeline",
@@ -37,6 +43,36 @@ class StreamlitSmokeTests(unittest.TestCase):
                     0,
                     [exception.value for exception in app.exception],
                 )
+
+    def test_major_interactions_and_direct_routes(self) -> None:
+        app = self.logged_in_app()
+
+        app.radio[0].set_value("Search")
+        app.run()
+        app.text_input[0].input("Harold")
+        app.run()
+        self.assertGreater(int(app.metric[0].value), 0)
+
+        app.radio[0].set_value("Explore the Tree")
+        app.run()
+        app.selectbox[2].select("harold_h_beverage_1893")
+        app.selectbox[3].select("albert_glover_beverage_1827")
+        app.run()
+        self.assertIn("Connected in 2 relationship step", app.success[0].value)
+
+        app.radio[0].set_value("Timeline")
+        app.run()
+        app.text_input[0].input("patent")
+        app.run()
+        self.assertTrue(any("1 of 1 matching" in item.value for item in app.caption))
+
+        profile = self.logged_in_app(page="people", profile="harold_h_beverage_1893")
+        self.assertEqual(profile.radio[0].value, "People")
+        self.assertEqual(profile.selectbox[0].value, "harold_h_beverage_1893")
+
+        event = self.logged_in_app(page="timeline", event="event_harold_patent_1921")
+        self.assertEqual(event.radio[0].value, "Timeline")
+        self.assertTrue(any("Direct link opened" in item.value for item in event.info))
 
 
 if __name__ == "__main__":
