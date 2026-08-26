@@ -1,30 +1,5 @@
 [
   {
-    "id": "research_tea_party_reassessment",
-    "title": "Thomas Beverage’s Tea Party connection is family tradition, not documented shipboard participation",
-    "record_date": "1773-12-16",
-    "category": "Claim review",
-    "evidence_level": "Qualified",
-    "summary": "American Ancestors’ 2025 Boston Tea Party biographies list Thomas Beverage as an “Eyewitness.” The partner museum’s framework distinguishes eyewitnesses—people likely not aboard the ships but associated through family lore—from documented participants.",
-    "why_it_matters": "This replaces a confident participation claim with the narrower conclusion the current evidence supports.",
-    "people_involved": [
-      "thomas_beverage_1750"
-    ],
-    "sources": [
-      {
-        "title": "American Ancestors: new Boston Tea Party biography sketches (2025)",
-        "url": "https://dbnews.americanancestors.org/2025/01/03/new-sketches-boston-tea-party-biographies-3/",
-        "record_type": "Institutional research update"
-      },
-      {
-        "title": "Boston Tea Party Ships & Museum: participant categories",
-        "url": "https://www.bostonteapartyship.com/participants-in-the-boston-tea-party",
-        "record_type": "Partner-project methodology"
-      }
-    ],
-    "checked_on": "2026-08-16"
-  },
-  {
     "id": "research_marriage_1774",
     "title": "Published genealogy places the Thomas–Mercy marriage at Trinity Church",
     "record_date": "1774-04-13",
