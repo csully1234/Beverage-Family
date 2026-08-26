@@ -249,7 +249,7 @@ def render_research_library(
 
     search = st.text_input(
         "Search research",
-        placeholder="Try Tea Party, census, antenna, clerk, or a surname",
+        placeholder="Try census, antenna, clerk, or a surname",
     ).strip().lower()
     categories = sorted(
         {record.get("category") for record in research if record.get("category")}
@@ -332,7 +332,6 @@ def render_home(
 
     st.subheader("Research highlights")
     highlight_ids = {
-        "research_tea_party_reassessment",
         "research_census_1790",
         "research_harold_antenna",
     }
@@ -354,7 +353,6 @@ def render_sources_page() -> None:
 - **Institutional archive or transcription:** a curated biography, oral history, local-history report, or transcription maintained by a recognized repository.
 - **Published secondary source:** a town history or genealogy that must still be checked against the original record where possible.
 - **Compiled or user-contributed source:** useful as a lead, but not treated as proof by itself.
-- **Qualified tradition:** a family account whose exact details remain unproven.
 
 Dates marked only by a year may be approximate. A household count does not identify unnamed household members, and a relationship copied from a compiled tree remains provisional until an original record is reviewed.
 
@@ -366,7 +364,6 @@ Dates marked only by a year may be approximate. A household count does not ident
 - [North Haven Historical Society](https://www.northhavenmainehistoricalsociety.org/)
 - [IEEE Engineering and Technology History Wiki](https://ethw.org/Harold_H._Beverage)
 - [U.S. Patent 1,381,089](https://patents.google.com/patent/US1381089A/en)
-- [American Ancestors: Boston Tea Party biography update](https://dbnews.americanancestors.org/2025/01/03/new-sketches-boston-tea-party-biographies-3/)
 - [Maine Genealogy Archives](https://archives.mainegenealogy.net/)
 
 ### Privacy
