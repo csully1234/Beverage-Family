@@ -1,0 +1,696 @@
+name: Apply verified collateral family expansion
+
+on:
+  push:
+    branches:
+      - research/extensive-collateral-family-expansion
+    paths:
+      - .github/workflows/apply-collateral-expansion.yml
+
+permissions:
+  contents: write
+
+jobs:
+  research-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: research/extensive-collateral-family-expansion
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Apply source-backed collateral profiles
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+
+          DATA = Path("data")
+          BASE = DATA / "people.json"
+          RESEARCH = DATA / "research_people.json"
+          ACCESSED = "2026-08-31"
+
+          def src(title, repository, url, record_type, supports, evidence_level, record_date=None, record_identifier=None):
+              item = {
+                  "title": title,
+                  "repository": repository,
+                  "url": url,
+                  "record_type": record_type,
+                  "accessed": ACCESSED,
+                  "supports": supports,
+                  "evidence_level": evidence_level,
+              }
+              if record_date:
+                  item["record_date"] = record_date
+              if record_identifier:
+                  item["record_identifier"] = record_identifier
+              return item
+
+          LEADBETTER = src(
+              "Leadbetter Records",
+              "Internet Archive; original by Jessie E. Ames",
+              "https://archive.org/details/leadbetterrecord00ames",
+              "Published family genealogy",
+              "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+              "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+              "1917",
+          )
+          LEADBETTER_CATALOG = src(
+              "Leadbetter records catalog entry",
+              "Geneanet Library",
+              "https://en.geneanet.org/library/doc/5931098/leadbetter-records",
+              "Digitized-book catalog",
+              "1917 publication metadata and extensive Beverage coverage in the volume",
+              "Tier 4 — catalog corroboration",
+              "1917",
+          )
+          FULLER = src(
+              "Fuller Cemetery, North Haven",
+              "FamilySearch Cemeteries",
+              "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+              "Compiled cemetery index",
+              "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+              "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established",
+          )
+          FULLER_PAGE2 = src(
+              "Fuller Cemetery, North Haven — additional entries",
+              "FamilySearch Cemeteries",
+              "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+              "Compiled cemetery index",
+              "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+              "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries",
+          )
+          GERALD_OBIT = src(
+              "Gerald Gibson Beverage obituary",
+              "Bangor Daily News",
+              "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+              "Newspaper obituary",
+              "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+              "Tier 3 — contemporary published obituary",
+              "2008-09-07",
+          )
+          VIOLA_OBIT = src(
+              "Viola Joy Beverage obituary",
+              "Bangor Daily News",
+              "https://www.bangordailynews.com/2008/09/25/obituaries/viola-joy-beverage/",
+              "Newspaper obituary",
+              "Exact birth and death dates, parents, and 63-year marriage to Gerald G. Beverage",
+              "Tier 3 — contemporary published obituary",
+              "2005-10",
+          )
+          JOHN_OBIT = src(
+              "John Miller Beverage obituary",
+              "Tahlequah Daily Press",
+              "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+              "Newspaper obituary",
+              "Exact birth and death dates; parents Albert L. and Julia P. (Miller) Beverage; marriage to Janet Kihlgren",
+              "Tier 3 — contemporary published obituary",
+              "2011-07-25",
+          )
+          JANET_OBIT = src(
+              "Janet Beverage obituary",
+              "Hart Funeral Home, Tahlequah",
+              "https://tahlequah.hartfuneralhome.net/obituaries/Janet-Beverage",
+              "Funeral-home obituary",
+              "Exact birth and death dates and May 25, 1957 marriage to John Miller Beverage",
+              "Tier 3 — detailed obituary",
+              "2020-12-03",
+          )
+          RAYMOND_OBIT = src(
+              "Raymond Albert Beverage obituary",
+              "PenBay Pilot",
+              "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+              "Newspaper obituary",
+              "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+              "Tier 3 — contemporary local obituary",
+              "2024-06-03",
+          )
+          MICHELLE_OBIT = src(
+              "Michelle Rebecca Campbell obituary",
+              "Bangor Daily News",
+              "https://obituaries.bangordailynews.com/obituary/michelle-campbell-1086638068",
+              "Newspaper obituary",
+              "Exact birth and death dates and parents Raymond and Cheryl Beverage",
+              "Tier 3 — contemporary published obituary",
+              "2022-11-11",
+          )
+          FREDA_OBIT = src(
+              "Freda Mills Smith obituary",
+              "Burpee, Carpenter & Hutchins via Tribute Archive",
+              "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+              "Funeral-home obituary",
+              "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+              "Tier 3 — detailed obituary",
+              "2024-11",
+          )
+          ALDEN_TOWN = src(
+              "North Haven 2023 Town Report — Town Clerk vital statistics",
+              "Town of North Haven, Maine",
+              "https://webgen1files1.revize.com/northhavenme/North%20Haven%20Report%202023%20Final.pdf",
+              "Municipal annual report / vital statistics",
+              "Alden Ray Mills death on September 1, 2023",
+              "Tier 1/2 — municipal clerk report",
+              "2023",
+          )
+          AGNES_OBIT = src(
+              "Agnes Beverage Dailey obituary",
+              "Portland Press Herald",
+              "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/",
+              "Newspaper obituary",
+              "Exact birth and death dates; parents Agnes Tait Beverage and George Dewey Beverage of North Haven",
+              "Tier 3 — contemporary published obituary",
+              "2018-11-30",
+          )
+          NORWOOD_OBIT = src(
+              "Norwood Pierson Beveridge Jr. obituary",
+              "Legacy Remembers",
+              "https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014",
+              "Published obituary",
+              "Exact birth and death dates; parents Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge; North Haven family connection",
+              "Tier 3 — detailed published obituary",
+              "2020-11-08",
+          )
+          ARTHUR_OBIT = src(
+              "Arthur Woodrow Beveridge obituary",
+              "Connection Newspapers",
+              "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+              "Newspaper obituary",
+              "Exact birth and death dates; father Norwood Pierson Beveridge; mother Winifred Dorothy Woodrow Beveridge; siblings Norwood Jr. and Deborah; grandparents Orris Lyford Beverage and Rose Emma Pierson Beverage",
+              "Tier 3 — detailed contemporary obituary",
+              "2013-09-19",
+          )
+          HARRISON_COMPILED = src(
+              "Harrison Beverage / Eldora M. Brown Alexander compiled profiles",
+              "WikiTree Suggestions / linked compiled records",
+              "https://plus.wikitree.com/Profiles/Suggestions/Challenge_426_Orphans/593_1800-1899_3.htm",
+              "Compiled genealogy index",
+              "Eldora Brown's 1849–1909 year range and Harrison Beverage association; used only alongside the 1917 Leadbetter genealogy",
+              "Tier 4 — compiled genealogy; relationship independently supported by Leadbetter Records",
+          )
+          MAINE_REGISTER = src(
+              "Maine Register, State Year-Book and Legislative Manual — North Haven",
+              "Internet Archive transcription via LDSGenealogy",
+              "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm",
+              "Historical state/town directory",
+              "Jesse A. Brown appears among North Haven selectmen, independently placing Florence Beverage's documented husband in the community",
+              "Tier 2/3 — contemporary historical directory transcription",
+              "1910",
+          )
+
+          base_people = json.loads(BASE.read_text())
+          research_people = json.loads(RESEARCH.read_text()) if RESEARCH.exists() else []
+          base_by_id = {str(p["id"]): p for p in base_people}
+          research_by_id = {str(p["id"]): p for p in research_people}
+
+          new_profiles = [
+              {
+                  "id": "julia_priscilla_miller_1888", "full_name": "Julia Priscilla Miller Beverage",
+                  "birth_date": "1888-12-08", "birth_date_precision": "exact", "birth_place": None,
+                  "death_date": "1959", "death_date_precision": "year", "death_place": None,
+                  "parents": [], "siblings": [], "spouses": ["albert_lewis_beverage_1888"],
+                  "children": ["gerald_gibson_beverage_1914", "elston_albert_beverage_1916", "john_miller_beverage_1927"],
+                  "residences": [], "notes": "Wife of Albert Lewis Beverage. Leadbetter Records documents their 1913 marriage and sons Gerald and Elston; John's obituary independently identifies the same parents.",
+                  "evidence_status": "Relationship chain corroborated by 1917 genealogy and descendant obituaries; death year corroborated by cemetery index",
+                  "research_completeness": "Strong family linkage; original marriage and death records remain desirable",
+                  "sources": [LEADBETTER, FULLER_PAGE2, JOHN_OBIT, GERALD_OBIT],
+              },
+              {
+                  "id": "gerald_gibson_beverage_1914", "full_name": "Gerald Gibson Beverage",
+                  "birth_date": "1914-08-21", "birth_date_precision": "exact", "birth_place": "Pulpit Harbor, North Haven, Maine",
+                  "death_date": "2008-09-04", "death_date_precision": "exact", "death_place": "Rockport, Maine",
+                  "parents": ["albert_lewis_beverage_1888", "julia_priscilla_miller_1888"], "siblings": ["elston_albert_beverage_1916", "john_miller_beverage_1927"],
+                  "spouses": ["viola_joy_1914"], "children": [], "residences": [],
+                  "occupations": ["Engineer", "Attorney", "U.S. Navy veteran"],
+                  "notes": "North Haven-born son of Albert L. and Julia P. Beverage. His obituary documents engineering and law degrees, wartime naval service, and his marriage to Viola Joy. Living descendants named in the obituary are intentionally not added here.",
+                  "evidence_status": "Exact dates and parentage documented by contemporary obituary; birth independently present in 1917 genealogy",
+                  "research_completeness": "Strong; living descendants intentionally excluded from this expansion",
+                  "sources": [LEADBETTER, GERALD_OBIT, VIOLA_OBIT],
+              },
+              {
+                  "id": "viola_joy_1914", "full_name": "Viola Joy Beverage",
+                  "birth_date": "1914-12-25", "birth_date_precision": "exact", "birth_place": "Manset, Southwest Harbor, Maine",
+                  "death_date": "2005-10-10", "death_date_precision": "exact", "death_place": "Rockport, Maine",
+                  "parents": [], "siblings": [], "spouses": ["gerald_gibson_beverage_1914"], "children": [], "residences": [],
+                  "notes": "Wife of Gerald Gibson Beverage for 63 years. Living descendants are intentionally omitted.",
+                  "evidence_status": "Exact dates and marriage documented by contemporary obituary",
+                  "research_completeness": "Good obituary coverage",
+                  "sources": [VIOLA_OBIT, GERALD_OBIT],
+              },
+              {
+                  "id": "elston_albert_beverage_1916", "full_name": "Elston Albert Beverage",
+                  "birth_date": "1916-05-09", "birth_date_precision": "exact", "birth_place": "North Haven, Maine",
+                  "death_date": "1976", "death_date_precision": "year", "death_place": None,
+                  "parents": ["albert_lewis_beverage_1888", "julia_priscilla_miller_1888"], "siblings": ["gerald_gibson_beverage_1914", "john_miller_beverage_1927"],
+                  "spouses": ["greta_morrison_1918"], "children": ["raymond_albert_beverage", "sandra_beverage_snow"], "residences": [],
+                  "notes": "Son of Albert L. and Julia P. Beverage; father of Raymond Albert Beverage and Sandra Beverage Snow.",
+                  "evidence_status": "Birth documented in 1917 genealogy; death year from cemetery index; children and spouse corroborated by Raymond's obituary",
+                  "research_completeness": "Strong family linkage; exact death date remains to be located",
+                  "sources": [LEADBETTER, FULLER, RAYMOND_OBIT],
+              },
+              {
+                  "id": "greta_morrison_1918", "full_name": "Greta H. Morrison Beverage",
+                  "birth_date": "1918", "birth_date_precision": "year", "birth_place": None,
+                  "death_date": "2004", "death_date_precision": "year", "death_place": None,
+                  "parents": [], "siblings": [], "spouses": ["elston_albert_beverage_1916"],
+                  "children": ["raymond_albert_beverage", "sandra_beverage_snow"], "residences": [],
+                  "notes": "Wife of Elston Albert Beverage and mother of Raymond Albert Beverage and Sandra Beverage Snow.",
+                  "evidence_status": "Relationship documented by son's obituary; year range corroborated by Fuller Cemetery index",
+                  "research_completeness": "Relationship strong; exact vital dates remain to be located",
+                  "sources": [RAYMOND_OBIT, FULLER_PAGE2],
+              },
+              {
+                  "id": "john_miller_beverage_1927", "full_name": "John Miller Beverage",
+                  "birth_date": "1927-03-29", "birth_date_precision": "exact", "birth_place": "Owls Head, Maine",
+                  "death_date": "2011-07-21", "death_date_precision": "exact", "death_place": None,
+                  "parents": ["albert_lewis_beverage_1888", "julia_priscilla_miller_1888"], "siblings": ["gerald_gibson_beverage_1914", "elston_albert_beverage_1916"],
+                  "spouses": ["janet_kihlgren_beverage_1930"], "children": [], "residences": [],
+                  "occupations": ["Missionary", "Seminary administrator", "Librarian"],
+                  "notes": "Youngest documented son of Albert L. and Julia P. (Miller) Beverage. Living children named in his obituary are intentionally omitted.",
+                  "evidence_status": "Exact dates, parentage, and marriage documented by contemporary obituary",
+                  "research_completeness": "Strong obituary coverage; living descendants intentionally excluded",
+                  "sources": [JOHN_OBIT, GERALD_OBIT, JANET_OBIT],
+              },
+              {
+                  "id": "janet_kihlgren_beverage_1930", "full_name": "Janet Edman Kihlgren Beverage",
+                  "birth_date": "1930-07-21", "birth_date_precision": "exact", "birth_place": "Staten Island, New York",
+                  "death_date": "2020-12-03", "death_date_precision": "exact", "death_place": "Tahlequah, Oklahoma",
+                  "parents": [], "siblings": [], "spouses": ["john_miller_beverage_1927"], "children": [], "residences": [],
+                  "notes": "Wife of John Miller Beverage; they married May 25, 1957 and served as missionaries in Guatemala before living in Dallas and Tahlequah.",
+                  "evidence_status": "Exact dates and marriage documented by funeral-home obituary and husband's obituary",
+                  "research_completeness": "Strong obituary coverage",
+                  "sources": [JANET_OBIT, JOHN_OBIT],
+              },
+              {
+                  "id": "raymond_albert_beverage", "full_name": "Raymond Albert Beverage",
+                  "birth_date": None, "birth_place": "North Haven, Maine",
+                  "death_date": "2024-05-17", "death_date_precision": "exact", "death_place": "North Haven, Maine",
+                  "parents": ["elston_albert_beverage_1916", "greta_morrison_1918"], "siblings": ["sandra_beverage_snow"],
+                  "spouses": [], "children": ["michelle_beverage_campbell_1969"], "residences": [],
+                  "occupations": ["Carpenter", "Fisherman", "Craftsman"],
+                  "notes": "Son of Elston and Greta Morrison Beverage. The obituary reports age 81 but does not supply a birth date, so no exact birth year is inferred. Living spouse and sons are intentionally not added.",
+                  "evidence_status": "Death and parentage documented by contemporary local obituary",
+                  "research_completeness": "Strong connection; birth record still needed",
+                  "sources": [RAYMOND_OBIT, MICHELLE_OBIT],
+              },
+              {
+                  "id": "sandra_beverage_snow", "full_name": "Sandra Beverage Snow",
+                  "birth_date": None, "birth_place": None, "death_date": None, "death_place": None,
+                  "parents": ["elston_albert_beverage_1916", "greta_morrison_1918"], "siblings": ["raymond_albert_beverage"],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Elston and Greta Morrison Beverage and sister of Raymond Albert Beverage. Raymond's 2024 obituary identifies her as predeceased and of Yarmouth; dates remain unresolved.",
+                  "evidence_status": "Relationship and deceased status documented by brother's obituary; vital dates unresolved",
+                  "research_completeness": "Partial — locate obituary or vital record before adding dates",
+                  "sources": [RAYMOND_OBIT, GERALD_OBIT],
+              },
+              {
+                  "id": "michelle_beverage_campbell_1969", "full_name": "Michelle Rebecca Beverage Campbell",
+                  "birth_date": "1969-03-01", "birth_date_precision": "exact", "birth_place": None,
+                  "death_date": "2022-07-02", "death_date_precision": "exact", "death_place": "North Haven, Maine",
+                  "parents": ["raymond_albert_beverage"], "siblings": [], "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Raymond and Cheryl Beverage. Her mother, siblings, children and grandchildren were living when the obituary was published and are intentionally not added in this research expansion.",
+                  "evidence_status": "Exact dates and parentage documented by contemporary obituary; father independently confirms her as his daughter",
+                  "research_completeness": "Strong connection; living-family privacy deliberately preserved",
+                  "sources": [MICHELLE_OBIT, RAYMOND_OBIT],
+              },
+              {
+                  "id": "jesse_ames_brown_1869", "full_name": "Jesse Ames Brown",
+                  "birth_date": "1869", "birth_date_precision": "year", "birth_place": None,
+                  "death_date": "1941", "death_date_precision": "year", "death_place": None,
+                  "parents": [], "siblings": [], "spouses": ["florence_mertice_beverage_1883"],
+                  "children": ["marjorie_annette_brown_1912"], "residences": [
+                      {"location": "North Haven, Maine", "period": "early 1900s"}
+                  ],
+                  "notes": "Husband of Florence Mertice Beverage. Leadbetter Records gives their May 11, 1910 marriage and daughter Marjorie; a contemporary Maine register lists Jesse A. Brown among North Haven selectmen.",
+                  "evidence_status": "Marriage and child documented by 1917 genealogy; North Haven residence/civic role independently corroborated; cemetery index supplies year range",
+                  "research_completeness": "Strong relationship; exact vital dates remain to be located",
+                  "sources": [LEADBETTER, FULLER, MAINE_REGISTER],
+              },
+              {
+                  "id": "marjorie_annette_brown_1912", "full_name": "Marjorie Annette Brown",
+                  "birth_date": "1912-05-24", "birth_date_precision": "exact", "birth_place": None,
+                  "death_date": "1982", "death_date_precision": "year", "death_place": None,
+                  "parents": ["florence_mertice_beverage_1883", "jesse_ames_brown_1869"], "siblings": [],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Florence M. Beverage and Jesse A. Brown.",
+                  "evidence_status": "Birth and parentage documented by 1917 genealogy; death year corroborated by Fuller Cemetery index",
+                  "research_completeness": "Strong parentage; later-life records remain to be researched",
+                  "sources": [LEADBETTER, FULLER],
+              },
+              {
+                  "id": "bernard_ray_mills_1903", "full_name": "Bernard Ray Mills",
+                  "birth_date": "1903", "birth_date_precision": "year", "birth_place": None,
+                  "death_date": "1986", "death_date_precision": "year", "death_place": None,
+                  "parents": [], "siblings": [], "spouses": ["edith_etta_beverage_1900"],
+                  "children": ["freda_rose_mills_smith_1930", "priscilla_jean_mills_dempsey_1932", "alden_ray_mills"], "residences": [],
+                  "notes": "Husband of Edith Etta Beverage Mills and father of Freda, Priscilla and Alden. Freda's obituary establishes the immediate family; Fuller Cemetery corroborates his 1903–1986 year range.",
+                  "evidence_status": "Immediate family documented by daughter's obituary; year range corroborated by cemetery index",
+                  "research_completeness": "Strong relationship; original marriage and vital records remain desirable",
+                  "sources": [FREDA_OBIT, FULLER_PAGE2],
+              },
+              {
+                  "id": "freda_rose_mills_smith_1930", "full_name": "Freda Rose Mills Smith",
+                  "birth_date": "1930-08-05", "birth_date_precision": "exact", "birth_place": "Rockland, Maine",
+                  "death_date": "2024-11-14", "death_date_precision": "exact", "death_place": "Rockport, Maine",
+                  "parents": ["edith_etta_beverage_1900", "bernard_ray_mills_1903"], "siblings": ["priscilla_jean_mills_dempsey_1932", "alden_ray_mills"],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Bernard Ray Mills and Edith Etta Beverage Mills. Her obituary documents her North Haven upbringing and identifies siblings Priscilla and Alden. Living descendants are intentionally omitted.",
+                  "evidence_status": "Exact dates and immediate family documented by detailed obituary",
+                  "research_completeness": "Strong obituary coverage; living descendants intentionally excluded",
+                  "sources": [FREDA_OBIT],
+              },
+              {
+                  "id": "priscilla_jean_mills_dempsey_1932", "full_name": "Priscilla Jean Mills Dempsey",
+                  "birth_date": "1932", "birth_date_precision": "year", "birth_place": None,
+                  "death_date": "2014", "death_date_precision": "year", "death_place": None,
+                  "parents": ["edith_etta_beverage_1900", "bernard_ray_mills_1903"], "siblings": ["freda_rose_mills_smith_1930", "alden_ray_mills"],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Bernard Ray Mills and Edith Etta Beverage Mills; identified as Freda's predeceased sister.",
+                  "evidence_status": "Sibling/parent chain documented by Freda's obituary; year range corroborated by Fuller Cemetery index",
+                  "research_completeness": "Strong relationship; exact dates and spouse record remain to be located",
+                  "sources": [FREDA_OBIT, FULLER_PAGE2],
+              },
+              {
+                  "id": "alden_ray_mills", "full_name": "Alden Ray Mills",
+                  "birth_date": None, "birth_place": None,
+                  "death_date": "2023-09-01", "death_date_precision": "exact", "death_place": "North Haven, Maine",
+                  "parents": ["edith_etta_beverage_1900", "bernard_ray_mills_1903"], "siblings": ["freda_rose_mills_smith_1930", "priscilla_jean_mills_dempsey_1932"],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Son of Bernard Ray Mills and Edith Etta Beverage Mills. Freda's obituary identifies him as her brother; the North Haven Town Clerk records his death on September 1, 2023.",
+                  "evidence_status": "Sibling/parent chain from family obituary; exact death independently documented by municipal vital statistics",
+                  "research_completeness": "Strong death and relationship evidence; birth record remains to be located",
+                  "sources": [FREDA_OBIT, ALDEN_TOWN],
+              },
+              {
+                  "id": "agnes_beverage_dailey_1935", "full_name": "Agnes Beverage Dailey",
+                  "birth_date": "1935-08-05", "birth_date_precision": "exact", "birth_place": "Rockland, Maine",
+                  "death_date": "2018-11-21", "death_date_precision": "exact", "death_place": "Brunswick, Maine",
+                  "parents": ["george_dewey_beverage_1898"], "siblings": [], "spouses": [], "children": [], "residences": [],
+                  "occupations": ["Teacher"],
+                  "notes": "Daughter of George Dewey Beverage and Agnes Tait Beverage of North Haven. Her mother is named in the obituary but is not added as a separate profile because this pass did not establish her vital record independently. Living descendants are intentionally omitted.",
+                  "evidence_status": "Exact dates and parentage documented by contemporary newspaper obituary",
+                  "research_completeness": "Strong connection to George Dewey Beverage; maternal vital records remain to be located",
+                  "sources": [AGNES_OBIT],
+              },
+              {
+                  "id": "norwood_pierson_beveridge_jr_1936", "full_name": "Norwood Pierson Beveridge Jr.",
+                  "birth_date": "1936-11-05", "birth_date_precision": "exact", "birth_place": "Boston, Massachusetts",
+                  "death_date": "2020-10-31", "death_date_precision": "exact", "death_place": None,
+                  "parents": ["norwood_beveridge_1911"], "siblings": ["deborah_woodrow_beveridge_1935", "arthur_woodrow_beveridge_1943"],
+                  "spouses": [], "children": [], "residences": [],
+                  "occupations": ["Attorney", "Law professor"],
+                  "notes": "Son of Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge. His mother and living descendants are not added as separate profiles in this pass without an independently confirmed deceased vital record.",
+                  "evidence_status": "Exact dates and parentage documented by published obituary; sibling structure corroborated by Arthur's obituary",
+                  "research_completeness": "Strong family linkage; living descendants intentionally excluded",
+                  "sources": [NORWOOD_OBIT, ARTHUR_OBIT],
+              },
+              {
+                  "id": "deborah_woodrow_beveridge_1935", "full_name": "Deborah Woodrow Beveridge",
+                  "birth_date": "1935", "birth_date_precision": "year", "birth_place": None,
+                  "death_date": "2015", "death_date_precision": "year", "death_place": None,
+                  "parents": ["norwood_beveridge_1911"], "siblings": ["norwood_pierson_beveridge_jr_1936", "arthur_woodrow_beveridge_1943"],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Daughter of Norwood Pierson and Winifred Dorothy Woodrow Beveridge; Arthur's obituary names her as his sister. Fuller Cemetery supplies the 1935–2015 year range.",
+                  "evidence_status": "Sibling/parent relationship documented by Arthur's obituary; year range corroborated by cemetery index",
+                  "research_completeness": "Strong relationship; exact vital dates remain to be located",
+                  "sources": [ARTHUR_OBIT, FULLER],
+              },
+              {
+                  "id": "arthur_woodrow_beveridge_1943", "full_name": "Arthur Woodrow Beveridge",
+                  "birth_date": "1943-05-13", "birth_date_precision": "exact", "birth_place": "New York City, New York",
+                  "death_date": "2013-08-07", "death_date_precision": "exact", "death_place": "Falls Church, Virginia",
+                  "parents": ["norwood_beveridge_1911"], "siblings": ["norwood_pierson_beveridge_jr_1936", "deborah_woodrow_beveridge_1935"],
+                  "spouses": [], "children": [], "residences": [],
+                  "occupations": ["Musician", "Music teacher"],
+                  "notes": "Son of Norwood Pierson Beveridge and Winifred Dorothy Woodrow Beveridge. His detailed obituary explicitly traces his father to Orris Lyford Beverage and Rose Emma Pierson Beverage of the established North Haven line.",
+                  "evidence_status": "Exact dates and multigenerational Beverage parentage documented by detailed obituary; cemetery index corroborates year range",
+                  "research_completeness": "Strong; living wife and son intentionally excluded",
+                  "sources": [ARTHUR_OBIT, FULLER],
+              },
+              {
+                  "id": "eldora_brown_beverage_alexander_1849", "full_name": "Eldora M. Brown Beverage Alexander",
+                  "birth_date": "1849", "birth_date_precision": "year", "birth_place": "North Haven, Maine",
+                  "death_date": "1909", "death_date_precision": "year", "death_place": None,
+                  "parents": [], "siblings": [], "spouses": ["harrison_beverage_1825"], "children": ["everett_beverage_harrison_line"], "residences": [],
+                  "notes": "Leadbetter Records identifies Eldora Brown as a wife of Harrison Beverage and records their son Everett; it also indicates a later marriage to Fred Alexander. Exact day/month claims from compiled trees are deliberately not adopted here.",
+                  "evidence_status": "Marriage and child relationship documented by 1917 genealogy; 1849–1909 year range supported only by compiled genealogy and therefore retained at year precision",
+                  "research_completeness": "Relationship useful and source-backed; original marriage/death records remain high priority",
+                  "sources": [LEADBETTER, HARRISON_COMPILED],
+              },
+              {
+                  "id": "everett_beverage_harrison_line", "full_name": "Everett Beverage",
+                  "birth_date": None, "birth_place": None, "death_date": None, "death_place": None,
+                  "parents": ["harrison_beverage_1825", "eldora_brown_beverage_alexander_1849"], "siblings": [],
+                  "spouses": [], "children": [], "residences": [],
+                  "notes": "Son of Harrison Beverage and Eldora Brown as recorded in the 1917 Leadbetter genealogy. No vital dates are assigned because this research pass did not locate a sufficiently specific independent record for the correct Everett Beverage.",
+                  "evidence_status": "Parentage supported by near-contemporary published genealogy; vital dates unresolved",
+                  "research_completeness": "Partial — identity is connected, but later-life records still need to be distinguished from same-name people",
+                  "sources": [LEADBETTER, LEADBETTER_CATALOG],
+              },
+          ]
+
+          new_ids = {p["id"] for p in new_profiles}
+          existing_effective_ids = set(base_by_id) | set(research_by_id)
+          collisions = sorted(new_ids & existing_effective_ids)
+          if collisions:
+              raise SystemExit(f"New-profile IDs already exist: {collisions}")
+
+          for profile in new_profiles:
+              research_by_id[profile["id"]] = profile
+
+          def effective(person_id):
+              result = dict(base_by_id.get(person_id, {}))
+              result.update(research_by_id.get(person_id, {}))
+              return result
+
+          def merge_sources(existing, additions):
+              output = []
+              seen = set()
+              for item in list(existing or []) + list(additions or []):
+                  key = json.dumps(item, sort_keys=True, ensure_ascii=False) if isinstance(item, dict) else f"text:{item}"
+                  if key not in seen:
+                      seen.add(key)
+                      output.append(item)
+              return output
+
+          def patch_existing(person_id, relation_additions, source_additions, note=None):
+              current = effective(person_id)
+              if not current:
+                  raise SystemExit(f"Missing anchor profile: {person_id}")
+              overlay = dict(research_by_id.get(person_id, {}))
+              overlay["id"] = person_id
+              for field, additions in relation_additions.items():
+                  values = [str(v) for v in current.get(field, [])]
+                  for value in additions:
+                      if value not in values:
+                          values.append(value)
+                  overlay[field] = values
+              overlay["sources"] = merge_sources(current.get("sources", []), source_additions)
+              if note:
+                  existing_note = str(current.get("notes") or "").strip()
+                  if note not in existing_note:
+                      overlay["notes"] = (existing_note + " " + note).strip()
+              research_by_id[person_id] = overlay
+
+          patch_existing(
+              "albert_lewis_beverage_1888",
+              {"spouses": ["julia_priscilla_miller_1888"], "children": ["gerald_gibson_beverage_1914", "elston_albert_beverage_1916", "john_miller_beverage_1927"]},
+              [LEADBETTER, GERALD_OBIT, JOHN_OBIT],
+              "Verified collateral research adds wife Julia P. Miller and sons Gerald, Elston and John.",
+          )
+          patch_existing(
+              "florence_mertice_beverage_1883",
+              {"spouses": ["jesse_ames_brown_1869"], "children": ["marjorie_annette_brown_1912"]},
+              [LEADBETTER, FULLER, MAINE_REGISTER],
+              "Leadbetter Records documents her 1910 marriage to Jesse A. Brown and daughter Marjorie.",
+          )
+          patch_existing(
+              "edith_etta_beverage_1900",
+              {"spouses": ["bernard_ray_mills_1903"], "children": ["freda_rose_mills_smith_1930", "priscilla_jean_mills_dempsey_1932", "alden_ray_mills"]},
+              [FREDA_OBIT, FULLER_PAGE2, ALDEN_TOWN],
+              "Freda Mills Smith's obituary establishes Edith's marriage to Bernard Ray Mills and children Freda, Priscilla and Alden.",
+          )
+          patch_existing(
+              "george_dewey_beverage_1898",
+              {"children": ["agnes_beverage_dailey_1935"]},
+              [AGNES_OBIT],
+              "Agnes Beverage Dailey's obituary identifies George Dewey Beverage of North Haven as her father.",
+          )
+          patch_existing(
+              "norwood_beveridge_1911",
+              {"children": ["norwood_pierson_beveridge_jr_1936", "deborah_woodrow_beveridge_1935", "arthur_woodrow_beveridge_1943"]},
+              [NORWOOD_OBIT, ARTHUR_OBIT, FULLER],
+              "Published obituaries establish children Norwood Jr., Deborah and Arthur and independently reconnect this branch to Orris Lyford Beverage and Rose Emma Pierson Beverage.",
+          )
+          patch_existing(
+              "harrison_beverage_1825",
+              {"spouses": ["eldora_brown_beverage_alexander_1849"], "children": ["everett_beverage_harrison_line"]},
+              [LEADBETTER, HARRISON_COMPILED],
+              "Leadbetter Records documents Eldora Brown as Harrison's wife and Everett as their son; exact vital dates remain conservative pending original records.",
+          )
+
+          # Add reciprocal links among the new profiles and anchor people explicitly,
+          # rather than relying only on runtime relationship repair.
+          for profile in list(research_by_id.values()):
+              if str(profile.get("id")) not in new_ids:
+                  continue
+              for parent_id in profile.get("parents", []):
+                  if parent_id in base_by_id or parent_id in research_by_id:
+                      patch_existing(parent_id, {"children": [profile["id"]]}, [], None)
+              for spouse_id in profile.get("spouses", []):
+                  if spouse_id in base_by_id or spouse_id in research_by_id:
+                      patch_existing(spouse_id, {"spouses": [profile["id"]]}, [], None)
+              for child_id in profile.get("children", []):
+                  if child_id in base_by_id or child_id in research_by_id:
+                      patch_existing(child_id, {"parents": [profile["id"]]}, [], None)
+
+          # Stable ordering: retain existing file order, then append new IDs alphabetically.
+          original_ids = [str(p["id"]) for p in research_people]
+          ordered_ids = original_ids + sorted(pid for pid in research_by_id if pid not in original_ids)
+          RESEARCH.write_text(json.dumps([research_by_id[pid] for pid in ordered_ids], indent=2, ensure_ascii=False) + "\n")
+
+          memo = Path("research/collateral_family_expansion_2026-08-31.md")
+          memo.parent.mkdir(exist_ok=True)
+          memo.write_text("""# Collateral family expansion — 2026-08-31
+
+This pass deliberately expands sideways from already-established Beverage ancestors rather than accepting surname matches.
+
+## Admission rule
+
+A new profile is included only when its connection to an existing anchor is supported by a published genealogy close to the family period, a contemporary obituary, a municipal vital-statistics report, or a combination of those sources. Cemetery indexes are used to corroborate dates, not by themselves to invent a relationship.
+
+## Added branches
+
+- Albert Lewis Beverage + Julia P. Miller: Gerald, Elston, John and selected deceased descendants/spouses.
+- Florence Mertice Beverage + Jesse Ames Brown: daughter Marjorie.
+- Edith Etta Beverage + Bernard Ray Mills: Freda, Priscilla and Alden.
+- George Dewey Beverage: daughter Agnes Beverage Dailey.
+- Norwood Pierson Beveridge: deceased children Norwood Jr., Deborah and Arthur.
+- Harrison Beverage + Eldora Brown: son Everett, with vital dates intentionally left unresolved.
+
+## Privacy boundary
+
+Living spouses, children, grandchildren and great-grandchildren named in modern obituaries were not converted into new profiles. The source trail may mention that living descendants exist, but no new private contact/location data is recorded.
+
+## Leads intentionally held back
+
+Several Beverage/Beveridge names occur in Fuller Cemetery and online compiled trees but were not added because this pass did not establish a reliable parent-child or spouse bridge to an existing profile. The large James Beverage (born about 1805) / Waterman collateral line is also held back until James's exact connection to the established Capt. Thomas Beverage tree is proven from a record rather than inferred from surname and location.
+""")
+          PY
+      - name: Add regression coverage for the expansion
+        run: |
+          cat > tests/test_collateral_expansion.py <<'PY'
+          from __future__ import annotations
+
+          import unittest
+          from pathlib import Path
+
+          from family_data import index_people, load_site_data, relationship_index
+
+
+          ROOT = Path(__file__).resolve().parents[1]
+
+          ADDED = {
+              "julia_priscilla_miller_1888",
+              "gerald_gibson_beverage_1914",
+              "viola_joy_1914",
+              "elston_albert_beverage_1916",
+              "greta_morrison_1918",
+              "john_miller_beverage_1927",
+              "janet_kihlgren_beverage_1930",
+              "raymond_albert_beverage",
+              "sandra_beverage_snow",
+              "michelle_beverage_campbell_1969",
+              "jesse_ames_brown_1869",
+              "marjorie_annette_brown_1912",
+              "bernard_ray_mills_1903",
+              "freda_rose_mills_smith_1930",
+              "priscilla_jean_mills_dempsey_1932",
+              "alden_ray_mills",
+              "agnes_beverage_dailey_1935",
+              "norwood_pierson_beveridge_jr_1936",
+              "deborah_woodrow_beveridge_1935",
+              "arthur_woodrow_beveridge_1943",
+              "eldora_brown_beverage_alexander_1849",
+              "everett_beverage_harrison_line",
+          }
+
+
+          class CollateralExpansionTests(unittest.TestCase):
+              @classmethod
+              def setUpClass(cls) -> None:
+                  cls.data = load_site_data(ROOT / "data")
+                  cls.people = index_people(cls.data["people"])
+                  cls.relationships = relationship_index(cls.data["people"])
+
+              def test_all_verified_additions_load(self) -> None:
+                  self.assertTrue(ADDED.issubset(self.people))
+                  self.assertGreaterEqual(len(self.people), 159)
+
+              def test_albert_lewis_branch_is_connected(self) -> None:
+                  self.assertIn("julia_priscilla_miller_1888", self.relationships["spouses"]["albert_lewis_beverage_1888"])
+                  for child in ("gerald_gibson_beverage_1914", "elston_albert_beverage_1916", "john_miller_beverage_1927"):
+                      self.assertIn(child, self.relationships["children"]["albert_lewis_beverage_1888"])
+                      self.assertIn("albert_lewis_beverage_1888", self.relationships["parents"][child])
+
+              def test_mills_branch_is_connected(self) -> None:
+                  for child in ("freda_rose_mills_smith_1930", "priscilla_jean_mills_dempsey_1932", "alden_ray_mills"):
+                      self.assertIn(child, self.relationships["children"]["edith_etta_beverage_1900"])
+                      self.assertIn("edith_etta_beverage_1900", self.relationships["parents"][child])
+
+              def test_norwood_branch_is_connected(self) -> None:
+                  for child in ("norwood_pierson_beveridge_jr_1936", "deborah_woodrow_beveridge_1935", "arthur_woodrow_beveridge_1943"):
+                      self.assertIn(child, self.relationships["children"]["norwood_beveridge_1911"])
+
+              def test_harrison_branch_is_conservative(self) -> None:
+                  everett = self.people["everett_beverage_harrison_line"]
+                  self.assertIsNone(everett.get("birth_date"))
+                  self.assertIsNone(everett.get("death_date"))
+                  self.assertEqual(set(everett["parents"]), {"harrison_beverage_1825", "eldora_brown_beverage_alexander_1849"})
+
+              def test_new_profiles_have_source_urls(self) -> None:
+                  for person_id in ADDED:
+                      with self.subTest(person_id=person_id):
+                          sources = self.people[person_id].get("sources", [])
+                          structured = [source for source in sources if isinstance(source, dict) and source.get("url")]
+                          self.assertTrue(structured, person_id)
+                          self.assertTrue(all(source.get("evidence_level") for source in structured))
+
+              def test_modern_obituary_descendants_are_not_added(self) -> None:
+                  deliberately_excluded = {
+                      "parker_joy_beverage",
+                      "clare_beverage_warner",
+                      "david_beverage_john_line",
+                      "peter_beverage_john_line",
+                      "raymond_m_beverage",
+                      "timothy_beverage_raymond_line",
+                      "judith_smith_fearing",
+                      "janice_smith_hopkins",
+                      "lynn_smith_peters",
+                  }
+                  self.assertTrue(deliberately_excluded.isdisjoint(self.people))
+
+
+          if __name__ == "__main__":
+              unittest.main()
+          PY
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip -r requirements.txt
+      - name: Validate expanded archive
+        run: |
+          python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
+          python validate_data.py
+          python -m unittest discover -s tests -v
+          git diff --check
+      - name: Commit verified research and remove one-time workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/apply-collateral-expansion.yml
+          git add data/research_people.json tests/test_collateral_expansion.py research/collateral_family_expansion_2026-08-31.md
+          git diff --cached --check
+          git commit -m "Expand verified collateral Beverage family branches"
+          git push origin HEAD:research/extensive-collateral-family-expansion
