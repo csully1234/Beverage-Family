@@ -265,7 +265,7 @@ def build_full_tree_html(
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Drag to pan · use the wheel or +/− to zoom · click a profile to open it</div>
+    <div id="help">Drag to pan · use the wheel or +/− to zoom · click a profile to center it</div>
   </div>
 </div>
 <script>
@@ -346,8 +346,8 @@ for (const node of DATA.nodes) {{
   if (!node.unresolved) {{
     g.addEventListener("click", () => {{
       if (dragged) return;
-      const target = `${{window.parent.location.pathname}}?page=people&profile=${{encodeURIComponent(node.id)}}`;
-      window.parent.location.assign(target);
+      select.value=node.id;
+      focusNode(node.id);
     }});
   }}
   world.appendChild(g);

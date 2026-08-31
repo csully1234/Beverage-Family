@@ -40,6 +40,7 @@ class FullTreeTests(unittest.TestCase):
         self.assertIn("Find and center a person", html)
         self.assertIn("pointerdown", html)
         self.assertIn("wheel", html)
+        self.assertNotIn("window.parent.location.assign", html)
         self.assertNotIn("<script src=", html)
 
     def test_full_tree_marks_unresolved_relationship_nodes(self) -> None:

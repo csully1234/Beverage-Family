@@ -1301,6 +1301,27 @@ def render_full_tree_page(
     metrics[2].metric("Parent-child links", len(parent_edges))
     metrics[3].metric("Spouse links", len(spouse_edges))
 
+    ordered = sorted_people(data["people"])
+    person_ids = [str(person["id"]) for person in ordered]
+    profile_picker, profile_action = st.columns([3, 1])
+    with profile_picker:
+        selected_profile = st.selectbox(
+            "Open a profile from the full map",
+            options=person_ids,
+            format_func=lambda person_id: (
+                f"{person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
+            ),
+            key="full_map_profile_selector",
+        )
+    with profile_action:
+        st.write("")
+        st.button(
+            "Open selected profile",
+            on_click=open_profile,
+            args=(selected_profile,),
+            width="stretch",
+        )
+
     controls, note = st.columns([1, 3])
     with controls:
         st.button(
