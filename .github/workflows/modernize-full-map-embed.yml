@@ -1,0 +1,67 @@
+name: Modernize full map embed
+
+on:
+  push:
+    branches:
+      - final/family-archive-hardening
+    paths:
+      - .github/workflows/modernize-full-map-embed.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-test-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: final/family-archive-hardening
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Replace deprecated component embed
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          app = Path("app.py")
+          text = app.read_text()
+          old_import = "import streamlit as st\nimport streamlit.components.v1 as components\nfrom graphviz import Digraph"
+          new_import = "import streamlit as st\nfrom graphviz import Digraph"
+          if text.count(old_import) != 1:
+              raise SystemExit("Expected one deprecated components import")
+          text = text.replace(old_import, new_import, 1)
+
+          old_embed = '''    components.html(\n        build_full_tree_html(people_by_id, relationships),\n        height=820,\n        scrolling=False,\n    )'''
+          new_embed = '''    st.iframe(\n        build_full_tree_html(people_by_id, relationships),\n        height=820,\n    )'''
+          if text.count(old_embed) != 1:
+              raise SystemExit("Expected one deprecated components embed")
+          app.write_text(text.replace(old_embed, new_embed, 1))
+
+          full_tree = Path("full_tree.py")
+          text = full_tree.read_text()
+          old_help = "Drag to pan · wheel/pinch or +/− to zoom · click a profile to open it"
+          new_help = "Drag to pan · use the wheel or +/− to zoom · click a profile to open it"
+          if text.count(old_help) != 1:
+              raise SystemExit("Expected one full-tree help label")
+          full_tree.write_text(text.replace(old_help, new_help, 1))
+          PY
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip -r requirements.txt
+      - name: Validate current API usage
+        run: |
+          python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
+          python validate_data.py
+          python -m unittest discover -s tests -v
+          ! grep -R "components.v1" -n app.py full_tree.py tests
+      - name: Commit modernization
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/modernize-full-map-embed.yml
+          git add app.py full_tree.py
+          git diff --cached --check
+          git commit -m "Use current Streamlit iframe API for full map"
+          git push origin HEAD:final/family-archive-hardening
