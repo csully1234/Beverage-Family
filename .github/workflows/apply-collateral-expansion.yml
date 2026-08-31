@@ -40,3 +40,5 @@ jobs:
           git diff --cached --check
           git commit -m "Expand verified collateral Beverage family branches"
           git push origin HEAD:research/extensive-collateral-family-expansion
+
+# rerun after making the research-growth test extensible
