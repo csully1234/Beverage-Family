@@ -30,6 +30,7 @@ class StreamlitSmokeTests(unittest.TestCase):
             "Home",
             "Search",
             "Explore the Tree",
+            "Full Family Map",
             "People",
             "Timeline",
             "Research Desk",
@@ -81,6 +82,29 @@ class StreamlitSmokeTests(unittest.TestCase):
             selectbox for selectbox in app.selectbox if selectbox.label == "Find a person"
         )
         self.assertEqual(profile_selector.value, target)
+
+    def test_person_profile_centers_tree_with_safe_callback(self) -> None:
+        target = "harold_h_beverage_1893"
+        app = self.logged_in_app(page="people", profile=target)
+
+        center_button = next(
+            button for button in app.button
+            if button.label == "Center this person in the family tree"
+        )
+        center_button.click()
+        app.run()
+
+        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
+        self.assertEqual(app.radio[0].value, "Explore the Tree")
+        tree_picker = next(
+            selectbox for selectbox in app.selectbox if selectbox.label == "Center person"
+        )
+        self.assertEqual(tree_picker.value, target)
+
+    def test_full_family_map_direct_route(self) -> None:
+        app = self.logged_in_app(page="full-tree")
+        self.assertEqual(app.radio[0].value, "Full Family Map")
+        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
 
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
