@@ -4,10 +4,11 @@ A password-gated, source-first Streamlit archive for exploring the Beverage fami
 
 ## What the site now includes
 
-- a coastal, mobile-responsive visual design;
+- a coastal, mobile-responsive visual design with high-contrast controls and status messages;
 - a global search across names, aliases, places, occupations, dates, events, notes, and sources;
 - a searchable profile index with stable profile links;
-- ancestor, descendant, combined, and immediate-family tree views;
+- the original focused family-tree explorer with ancestor, descendant, combined, and immediate-family views;
+- a separate **Full Family Map** containing every indexed profile plus unresolved relationship nodes, with drag-to-pan, wheel/button zoom, fit-to-screen, 100% reset, and person jump controls;
 - a shortest-path relationship finder with readable, linked steps;
 - reciprocal relationship navigation without silently rewriting source records;
 - a filterable timeline with person, year, category, place, precision, evidence, and full-text filters;
@@ -16,8 +17,8 @@ A password-gated, source-first Streamlit archive for exploring the Beverage fami
 - homepage statistics, a daily featured relative, exact-date “On This Day” records, and recent research;
 - JSON and CSV archive exports;
 - an automated data-quality report;
-- regression guards for user-designated protected content;
-- GitHub Actions checks for syntax, data validity, and tests.
+- regression guards for user-designated protected content and navigation-state bugs;
+- GitHub Actions checks on Python 3.12 and 3.13 for syntax, data validity, and tests.
 
 ## Run locally
 
@@ -54,7 +55,7 @@ When separately reviewed research files are present, they are layered on top at 
 - `data/research.json`
 - `data/date_precision.json`
 
-These four files are optional and are not required to run the site. A same-ID research overlay patches only its explicitly supplied fields; it does not discard an existing profile's relationships, residences, notes, or citations. Date metadata keeps the original stored string for provenance while controlling truthful visitor-facing precision. Base files are never edited during application startup.
+These four files are optional and are not required to run the site. A same-ID research overlay patches only its explicitly supplied fields; it does not discard an existing profile's relationships, residences, notes, or citations unless that field is intentionally supplied by the overlay. Date metadata keeps the original stored string for provenance while controlling truthful visitor-facing precision. Base files are never edited during application startup.
 
 Structured citations can include `title`, `repository`, `url`, `record_type`, `record_date`, `page`, `record_identifier`, `accessed`, `supports`, and `evidence_level`. Legacy source strings remain supported.
 
@@ -63,7 +64,7 @@ Structured citations can include `title`, `repository`, `url`, `record_type`, `r
 ```bash
 python validate_data.py
 python -m unittest discover -s tests -v
-python -m compileall -q app.py family_data.py validation.py validate_data.py
+python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
 ```
 
 Warnings identify open research or normalization work. Errors identify broken JSON, duplicate IDs, missing required fields, invalid precision metadata, or a change to protected content or existing residence data.
@@ -79,12 +80,13 @@ Warnings identify open research or normalization work. Errors identify broken JS
 ## Project structure
 
 ```text
-app.py                 Streamlit interface and navigation
+app.py                 Streamlit interface, navigation, and page rendering
 family_data.py         Shared loading, formatting, and relationship logic
+full_tree.py           Dependency-free full-family map layout and interactive HTML
 validation.py          Structural and protected-content checks
 validate_data.py       Command-line audit
 data/                  Base records and optional reviewed research overlays
-tests/                 Regression tests
-.github/workflows/     Continuous validation
-.streamlit/            Theme and secrets example
+tests/                 Regression and data-integrity tests
+.github/workflows/     Continuous validation on Python 3.12 and 3.13
+.streamlit/            Theme, production client settings, and secrets example
 ```
