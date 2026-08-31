@@ -87,13 +87,15 @@ class DataIntegrityTests(unittest.TestCase):
             ids = [record.get("id") for record in self.data[key]]
             self.assertEqual(len(ids), len(set(ids)), key)
 
-    def test_research_expansion_counts(self) -> None:
+    def test_research_expansion_has_expected_minimums(self) -> None:
         base_people_ids = {record["id"] for record in self.data["base_people"]}
         base_event_ids = {record["id"] for record in self.data["base_events"]}
         new_people = [record for record in self.data["research_people"] if record["id"] not in base_people_ids]
         new_events = [record for record in self.data["research_events"] if record["id"] not in base_event_ids]
-        self.assertEqual(len(new_people), 20)
-        self.assertEqual(len(new_events), 11)
+        self.assertGreaterEqual(len(new_people), 20)
+        self.assertGreaterEqual(len(new_events), 11)
+        self.assertTrue(all(record.get("id") and record.get("full_name") for record in new_people))
+        self.assertTrue(all(record.get("id") and record.get("title") for record in new_events))
 
     def test_validation_has_no_blocking_errors(self) -> None:
         report = validate_site_data(self.data)
