@@ -44,6 +44,23 @@ class StreamlitSmokeTests(unittest.TestCase):
                     [exception.value for exception in app.exception],
                 )
 
+    def test_tree_open_profile_uses_safe_callback_navigation(self) -> None:
+        app = self.logged_in_app()
+
+        app.radio[0].set_value("Explore the Tree")
+        app.run()
+        target = "harold_h_beverage_1893"
+        app.selectbox[0].select(target)
+        app.run()
+
+        open_button = next(button for button in app.button if button.label == "Open full profile")
+        open_button.click()
+        app.run()
+
+        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
+        self.assertEqual(app.radio[0].value, "People")
+        self.assertEqual(app.selectbox[0].value, target)
+
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
 

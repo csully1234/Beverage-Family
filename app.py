@@ -477,10 +477,13 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             ),
             key="sidebar_person_lookup",
         )
-        if st.button("Open profile", disabled=quick_person is None, width="stretch"):
-            if quick_person:
-                open_profile(quick_person)
-                st.rerun()
+        st.button(
+            "Open profile",
+            disabled=quick_person is None,
+            width="stretch",
+            on_click=open_profile if quick_person else None,
+            args=(quick_person,) if quick_person else (),
+        )
 
         st.divider()
         if st.button("Log out", width="stretch"):
@@ -568,9 +571,12 @@ def render_home(
             key="home_person_lookup",
             label_visibility="collapsed",
         )
-        if st.button("View this profile", type="primary"):
-            open_profile(chosen)
-            st.rerun()
+        st.button(
+            "View this profile",
+            type="primary",
+            on_click=open_profile,
+            args=(chosen,),
+        )
 
         st.markdown("<div class='bev-eyebrow'>Research standard</div>", unsafe_allow_html=True)
         st.subheader("Evidence stays visible")
@@ -1151,9 +1157,13 @@ def render_tree_page(
                 notes = str(focus["notes"])
                 st.write(notes if len(notes) <= 280 else notes[:277] + "…")
         with action:
-            if st.button("Open full profile", type="primary", width="stretch"):
-                open_profile(focus_id)
-                st.rerun()
+            st.button(
+                "Open full profile",
+                type="primary",
+                width="stretch",
+                on_click=open_profile,
+                args=(focus_id,),
+            )
 
     st.divider()
     st.subheader("Relationship finder")
