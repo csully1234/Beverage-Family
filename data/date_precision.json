@@ -1,0 +1,1422 @@
+[
+  {
+    "record_type": "person",
+    "record_id": "heather_beverage_1970",
+    "field": "birth_date",
+    "original_value": "1970-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "daniel_beverage_2001",
+    "field": "birth_date",
+    "original_value": "2001-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "betsy_swiniarski_1964",
+    "field": "birth_date",
+    "original_value": "1964-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "albion_beverage_1966",
+    "field": "birth_date",
+    "original_value": "1966-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "ruth_meneo_1970",
+    "field": "birth_date",
+    "original_value": "1970-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "john_beverage_1972",
+    "field": "birth_date",
+    "original_value": "1972-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "janice_marshall_1940",
+    "field": "birth_date",
+    "original_value": "1940-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "nancy_beverage_1929",
+    "field": "birth_date",
+    "original_value": "1929-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "grace_pauline_beverage_1933",
+    "field": "birth_date",
+    "original_value": "1933-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "olive_beveridge_1890",
+    "field": "birth_date",
+    "original_value": "1890-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "olive_beveridge_1890",
+    "field": "death_date",
+    "original_value": "1968-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "helen_barclay_1896",
+    "field": "birth_date",
+    "original_value": "1896-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "helen_barclay_1896",
+    "field": "death_date",
+    "original_value": "1984-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "arnold_beveridge_1903",
+    "field": "birth_date",
+    "original_value": "1903-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "arnold_beveridge_1903",
+    "field": "death_date",
+    "original_value": "1987-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "elliot_beverage_1908",
+    "field": "birth_date",
+    "original_value": "1908-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "elliot_beverage_1908",
+    "field": "death_date",
+    "original_value": "1982-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "norwood_beveridge_1911",
+    "field": "birth_date",
+    "original_value": "1911-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "norwood_beveridge_1911",
+    "field": "death_date",
+    "original_value": "1980-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "rose_pierson_1866",
+    "field": "birth_date",
+    "original_value": "1866-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "rose_pierson_1866",
+    "field": "death_date",
+    "original_value": "1939-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "theodore_beverage_1855",
+    "field": "birth_date",
+    "original_value": "1855-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "theodore_beverage_1855",
+    "field": "death_date",
+    "original_value": "1874-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "harriet_beverage_1856",
+    "field": "birth_date",
+    "original_value": "1856-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "harriet_beverage_1856",
+    "field": "death_date",
+    "original_value": "1900-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_beverage_1858",
+    "field": "birth_date",
+    "original_value": "1858-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_beverage_1858",
+    "field": "death_date",
+    "original_value": "1863-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "charles_beverage_1863",
+    "field": "birth_date",
+    "original_value": "1863-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "charles_beverage_1863",
+    "field": "death_date",
+    "original_value": "1938-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_norwood_beverage_1866",
+    "field": "birth_date",
+    "original_value": "1866-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_norwood_beverage_1866",
+    "field": "death_date",
+    "original_value": "1922-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "jemima_beverage_1866",
+    "field": "birth_date",
+    "original_value": "1866-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "jemima_beverage_1866",
+    "field": "death_date",
+    "original_value": "1894-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_beverage_1869",
+    "field": "birth_date",
+    "original_value": "1869-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_edwin_beverage_1872",
+    "field": "birth_date",
+    "original_value": "1872-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_edwin_beverage_1872",
+    "field": "death_date",
+    "original_value": "1944-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "lucy_c_beverage_1830",
+    "field": "birth_date",
+    "original_value": "1830-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "amelia_beverage_1833",
+    "field": "death_date",
+    "original_value": "1908-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sandra_beverage_1947",
+    "field": "birth_date",
+    "original_value": "1947-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "barry_beverage_1950",
+    "field": "birth_date",
+    "original_value": "1950-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "stephen_beverage_1952",
+    "field": "birth_date",
+    "original_value": "1952-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "julia_beverage_1954",
+    "field": "birth_date",
+    "original_value": "1954-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "unnamed_beverage_child_1956",
+    "field": "birth_date",
+    "original_value": "1956-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_dyer_1795",
+    "field": "birth_date",
+    "original_value": "1795-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "henry_alexander_1780",
+    "field": "birth_date",
+    "original_value": "1780-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "benjamin_kent_1755",
+    "field": "birth_date",
+    "original_value": "1755-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "rachel_crosby_1778",
+    "field": "birth_date",
+    "original_value": "1778-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "rachel_crosby_1778",
+    "field": "death_date",
+    "original_value": "1863-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "hannah_grant_1811",
+    "field": "birth_date",
+    "original_value": "1811-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "hannah_grant_1811",
+    "field": "death_date",
+    "original_value": "1875-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_beverage_1807",
+    "field": "birth_date",
+    "original_value": "1807-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_beverage_1807",
+    "field": "death_date",
+    "original_value": "1854-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sarah_beverage_1802_child",
+    "field": "birth_date",
+    "original_value": "1802-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "abigail_beverage_1805_child",
+    "field": "birth_date",
+    "original_value": "1805-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "thomas_beverage_1800_child",
+    "field": "birth_date",
+    "original_value": "1800-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "thomas_beverage_1800_child",
+    "field": "death_date",
+    "original_value": "1808-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "amelia_beverage_1833_child",
+    "field": "birth_date",
+    "original_value": "1833-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "amelia_beverage_1833_child",
+    "field": "death_date",
+    "original_value": "1908-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_beverage_1835",
+    "field": "birth_date",
+    "original_value": "1835-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "robert_beverage_1835",
+    "field": "death_date",
+    "original_value": "1850-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "orris_beverage_1836",
+    "field": "birth_date",
+    "original_value": "1836-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "orris_beverage_1836",
+    "field": "death_date",
+    "original_value": "1850-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "lyford_beverage_1842",
+    "field": "birth_date",
+    "original_value": "1842-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "lyford_beverage_1842",
+    "field": "death_date",
+    "original_value": "1908-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "thomas_beverage_1845",
+    "field": "birth_date",
+    "original_value": "1845-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "thomas_beverage_1845",
+    "field": "death_date",
+    "original_value": "1845-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "dana_hanson_beverage_1847",
+    "field": "birth_date",
+    "original_value": "1847-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "dana_hanson_beverage_1847",
+    "field": "death_date",
+    "original_value": "1909-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "harriet_beverage_1812",
+    "field": "birth_date",
+    "original_value": "1812-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "susan_beverage_1814",
+    "field": "birth_date",
+    "original_value": "1814-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_beverage_1816",
+    "field": "birth_date",
+    "original_value": "1816-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "josiah_b_beverage_1821",
+    "field": "birth_date",
+    "original_value": "1821-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "josiah_b_beverage_1821",
+    "field": "death_date",
+    "original_value": "1918-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "harvey_beverage_1830",
+    "field": "birth_date",
+    "original_value": "1830-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "harvey_beverage_1830",
+    "field": "death_date",
+    "original_value": "1864-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "henry_beverage_1842",
+    "field": "birth_date",
+    "original_value": "1842-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "henry_beverage_1842",
+    "field": "death_date",
+    "original_value": "1908-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "moses_beverage_1844",
+    "field": "birth_date",
+    "original_value": "1844-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "helen_beverage_1846",
+    "field": "birth_date",
+    "original_value": "1846-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mercy_beveridge_henry_1753",
+    "field": "birth_date",
+    "original_value": "1753-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mercy_beveridge_henry_1753",
+    "field": "death_date",
+    "original_value": "1831-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sarah_beveridge_kent_1758",
+    "field": "birth_date",
+    "original_value": "1758-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sarah_beveridge_kent_1758",
+    "field": "death_date",
+    "original_value": "1821-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "jean_mckinney_white_1725",
+    "field": "birth_date",
+    "original_value": "1725-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "jean_mckinney_white_1725",
+    "field": "death_date",
+    "original_value": "1786-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_beveridge_sr_1700",
+    "field": "birth_date",
+    "original_value": "1700-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "james_beveridge_sr_1700",
+    "field": "death_date",
+    "original_value": "1768-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sarah_bennett_1705",
+    "field": "birth_date",
+    "original_value": "1705-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "sarah_bennett_1705",
+    "field": "death_date",
+    "original_value": "1727-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_white_1728",
+    "field": "birth_date",
+    "original_value": "1728-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_white_1728",
+    "field": "death_date",
+    "original_value": "1731-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "nicholas_white_1720",
+    "field": "birth_date",
+    "original_value": "1720-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "nicholas_white_1720",
+    "field": "death_date",
+    "original_value": "1748-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "major_george_white_1746",
+    "field": "birth_date",
+    "original_value": "1746-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "major_george_white_1746",
+    "field": "death_date",
+    "original_value": "1826-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "john_white_1748",
+    "field": "birth_date",
+    "original_value": "1748-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "matthew_mckinney_1700",
+    "field": "birth_date",
+    "original_value": "1700-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "ezekiel_kent_1720",
+    "field": "birth_date",
+    "original_value": "1720-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "susanna_bryant_1725",
+    "field": "birth_date",
+    "original_value": "1725-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "penelope_kent_1752",
+    "field": "birth_date",
+    "original_value": "1752-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "israel_carver_jr_1800",
+    "field": "birth_date",
+    "original_value": "1800-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "susannah_jewell_1805",
+    "field": "birth_date",
+    "original_value": "1805-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "lewis_leadbetter_1830",
+    "field": "birth_date",
+    "original_value": "1830-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_calderwood_1835",
+    "field": "birth_date",
+    "original_value": "1835-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "alonzo_taylor_1870",
+    "field": "birth_date",
+    "original_value": "1870-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_windsor_1875",
+    "field": "birth_date",
+    "original_value": "1875-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "eleazer_crabtree_1760",
+    "field": "birth_date",
+    "original_value": "1760-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "lucy_train_1765",
+    "field": "birth_date",
+    "original_value": "1765-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "henry_dyer_1770",
+    "field": "birth_date",
+    "original_value": "1770-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "henry_henry_1750",
+    "field": "birth_date",
+    "original_value": "1750-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "susannah_beveridge_1735",
+    "field": "birth_date",
+    "original_value": "1735-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "jane_beveridge_1737",
+    "field": "birth_date",
+    "original_value": "1737-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "mary_beveridge_1739",
+    "field": "birth_date",
+    "original_value": "1739-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "person",
+    "record_id": "samuel_beveridge_1702",
+    "field": "birth_date",
+    "original_value": "1702-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_james_beveridge_sr_1700",
+    "field": "date",
+    "original_value": "1700-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_sarah_beveridge_1727",
+    "field": "date",
+    "original_value": "1727-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_susannah_beveridge_1735",
+    "field": "date",
+    "original_value": "1735-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_jane_beveridge_1737",
+    "field": "date",
+    "original_value": "1737-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_mary_beveridge_1739",
+    "field": "date",
+    "original_value": "1739-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_mercy_beveridge_henry_1753",
+    "field": "date",
+    "original_value": "1753-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_sarah_beveridge_kent_1758",
+    "field": "date",
+    "original_value": "1758-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_lucy_c_beverage_1830",
+    "field": "date",
+    "original_value": "1830-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_albert_lewis_beverage_1888",
+    "field": "date",
+    "original_value": "1888-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_marston_leadbetter_beverage_1890",
+    "field": "date",
+    "original_value": "1890-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_olive_mary_beverage_1892",
+    "field": "date",
+    "original_value": "1892-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_nettie_ellen_beverage_1894",
+    "field": "date",
+    "original_value": "1894-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_elroy_victor_beverage_1896",
+    "field": "date",
+    "original_value": "1896-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_george_dewey_beverage_1898",
+    "field": "date",
+    "original_value": "1898-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_edith_etta_beverage_1900",
+    "field": "date",
+    "original_value": "1900-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_wilson_freemont_beverage_1902",
+    "field": "date",
+    "original_value": "1902-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_alma_marie_beverage_1905",
+    "field": "date",
+    "original_value": "1905-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_nancy_beverage_1929",
+    "field": "date",
+    "original_value": "1929-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_grace_pauline_beverage_1933",
+    "field": "date",
+    "original_value": "1933-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_birth_janice_marshall_1940",
+    "field": "date",
+    "original_value": "1940-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_marriage_hiram_stone_ruby_1916",
+    "field": "date",
+    "original_value": "1916-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_marriage_samuel_hiram_eleor_1945",
+    "field": "date",
+    "original_value": "1945-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_marriage_albion_janice_1962",
+    "field": "date",
+    "original_value": "1962-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_marriage_robert_heather_1990",
+    "field": "date",
+    "original_value": "1990-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_purchase_home_walliford_1997",
+    "field": "date",
+    "original_value": "1997-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_found_historical_society_1973",
+    "field": "date",
+    "original_value": "1973-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_sale_old_barn_hill_1974",
+    "field": "date",
+    "original_value": "1974-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  },
+  {
+    "record_type": "event",
+    "record_id": "event_property_record_2024",
+    "field": "date",
+    "original_value": "2024-01-01",
+    "precision": "year",
+    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
+    "confidence": "medium",
+    "checked_on": "2026-08-26"
+  }
+]

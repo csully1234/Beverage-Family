@@ -1,0 +1,247 @@
+[
+  {
+    "id": "event_death_grace_reed_2008",
+    "date": "2008-06-07",
+    "date_precision": "exact",
+    "sources": [
+      "Grace Beverage obituary",
+      {
+        "title": "Grace Beverage obituary",
+        "repository": "Kennebec Journal via Legacy.com",
+        "url": "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664",
+        "record_type": "Newspaper obituary",
+        "record_date": "2008-06-11",
+        "accessed": "2026-08-26",
+        "supports": "Death on June 7, 2008",
+        "evidence_level": "Tier 3 — contemporary published obituary"
+      }
+    ]
+  },
+  {
+    "id": "event_harrison_representative_1859",
+    "date": "1859",
+    "date_precision": "year",
+    "title": "Harrison Beverage chosen as a representative",
+    "description": "Vinalhaven's published town history records that Harrison Beverage of North Haven was chosen as a representative in 1859 and later resigned; Lewis Leadbetter was elected in his place at a December special meeting.",
+    "category": "Civic service",
+    "place": "Vinalhaven and North Haven, Maine",
+    "people_involved": ["harrison_beverage_1825"],
+    "evidence_status": "Documented in a published 1889 town history",
+    "sources": [
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Internet Archive",
+        "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt",
+        "record_type": "Published town history",
+        "record_date": "1889",
+        "page": "31 (digital text lines 1550–1557)",
+        "accessed": "2026-08-26",
+        "supports": "Harrison Beverage of North Haven chosen representative in 1859, subsequent resignation, and replacement",
+        "evidence_level": "Tier 3 — near-contemporary town history"
+      }
+    ]
+  },
+  {
+    "id": "event_albert_glover_representative_1878",
+    "date": "1878",
+    "date_precision": "year",
+    "title": "Albert G. Beverage listed as a representative",
+    "description": "The representative list in Vinalhaven's published town history names Albert G. Beverage of North Haven for 1878.",
+    "category": "Civic service",
+    "place": "Vinalhaven and North Haven, Maine",
+    "people_involved": ["albert_glover_beverage_1827"],
+    "evidence_status": "Documented in a published 1889 town history",
+    "sources": [
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Internet Archive",
+        "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt",
+        "record_type": "Published town history",
+        "record_date": "1889",
+        "page": "35 (digital text lines 1729–1746)",
+        "accessed": "2026-08-26",
+        "supports": "Albert G. Beverage of North Haven listed as the 1878 representative",
+        "evidence_level": "Tier 3 — near-contemporary town history"
+      }
+    ]
+  },
+  {
+    "id": "event_fremont_justice_1915",
+    "date": "1915-02-25",
+    "date_precision": "exact",
+    "title": "Fremont Beverage's justice appointment date",
+    "description": "A Maine state year-book entry for North Haven lists Fremont Beverage as school superintendent and gives February 25, 1915 as the date associated with his service as a justice.",
+    "category": "Civic service",
+    "place": "North Haven, Maine",
+    "people_involved": ["fremont_beverage_1856"],
+    "evidence_status": "Historical directory transcription; appointment record remains a useful follow-up",
+    "sources": [
+      {
+        "title": "Maine Register, State Year-Book and Legislative Manual",
+        "repository": "Historical directory transcription at LDSGenealogy",
+        "url": "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm",
+        "record_type": "Historical state directory",
+        "accessed": "2026-08-26",
+        "supports": "Fremont Beverage listed as North Haven superintendent and justice, with date February 25, 1915",
+        "evidence_level": "Tier 3 — published historical directory transcription"
+      }
+    ]
+  },
+  {
+    "id": "event_harold_umaine_graduation_1915",
+    "date": "1915",
+    "date_precision": "year",
+    "title": "Harold Beverage graduates from the University of Maine",
+    "description": "Harold H. Beverage completed his electrical-engineering degree at the University of Maine in 1915 before beginning his engineering career with General Electric.",
+    "category": "Education",
+    "place": "Orono, Maine",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Corroborated by IEEE biography and oral history",
+    "sources": [
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Institutional biography",
+        "accessed": "2026-08-26",
+        "supports": "University of Maine graduation in 1915",
+        "evidence_level": "Tier 2 — professional institutional archive"
+      },
+      {
+        "title": "The 1915 Prism",
+        "repository": "University of Maine Raymond H. Fogler Library",
+        "url": "https://digitalcommons.library.umaine.edu/yearbooks/20/",
+        "record_type": "University yearbook",
+        "record_date": "1915",
+        "accessed": "2026-08-26",
+        "supports": "University class-year context",
+        "evidence_level": "Tier 2 — institutional collection"
+      }
+    ]
+  },
+  {
+    "id": "event_harold_patent_1921",
+    "date": "1921-06-07",
+    "date_precision": "exact",
+    "title": "Harold Beverage receives radio receiving-system patent",
+    "description": "U.S. Patent 1,381,089 was issued to Harold H. Beverage for a directional radio receiving system after an application filed on April 10, 1920. The patent was assigned to General Electric Company.",
+    "category": "Invention",
+    "place": "United States",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Original U.S. patent record",
+    "sources": [
+      {
+        "title": "U.S. Patent 1,381,089 — Radio Receiving System",
+        "repository": "United States Patent Office via Google Patents",
+        "url": "https://patents.google.com/patent/US1381089A/en",
+        "record_type": "Patent",
+        "record_date": "1921-06-07",
+        "record_identifier": "US1381089A; application serial 372,933",
+        "accessed": "2026-08-26",
+        "supports": "Inventor, assignee, filing date, issue date, and directional receiving-system design",
+        "evidence_level": "Tier 1 — original government record"
+      }
+    ]
+  },
+  {
+    "id": "event_harold_liebmann_prize_1923",
+    "date": "1923",
+    "date_precision": "year",
+    "title": "Harold Beverage receives the Liebmann Memorial Prize",
+    "description": "The Institute of Radio Engineers recognized Harold Beverage with its Morris N. Liebmann Memorial Prize for his contributions to transoceanic radio and directional antennas.",
+    "category": "Award",
+    "place": "United States",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Documented by IEEE's institutional biography",
+    "sources": [
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Institutional biography",
+        "accessed": "2026-08-26",
+        "supports": "Morris N. Liebmann Memorial Prize in 1923",
+        "evidence_level": "Tier 2 — professional institutional archive"
+      }
+    ]
+  },
+  {
+    "id": "event_hiram_mill_stream_dam_1932",
+    "date": "1932",
+    "date_precision": "year",
+    "title": "Hiram Beverage builds the Mill Stream dam",
+    "description": "Two independent local-history accounts identify Hiram “Hightie” Beverage as the builder of the present Mill Stream dam in 1932. The resulting brackish pond became known locally as Hightie's Pond and later supported oyster aquaculture.",
+    "category": "Land and water",
+    "place": "Mill Stream, North Haven, Maine",
+    "people_involved": ["hiram_stone_beverage_1886"],
+    "evidence_status": "Corroborated by two independent local-history accounts; town or engineering record still sought",
+    "sources": [
+      {
+        "title": "Growing Oysters in Oyster Nirvana: The Story of North Haven Oyster Co",
+        "repository": "The Briny Babe",
+        "url": "https://www.thebrinybabe.com/oyster-farms/northhavenoysterco",
+        "record_type": "Published local-history feature",
+        "accessed": "2026-08-26",
+        "supports": "Hiram Beverage built the present dam in 1932 and its effect on Hightie's Pond",
+        "evidence_level": "Tier 3 — published local-history account"
+      },
+      {
+        "title": "Two centuries on Middle Road",
+        "repository": "Sailor's Bakery + Studio",
+        "url": "https://sailorsbakery.com/",
+        "record_type": "Property history citing North Haven Historical Society research",
+        "accessed": "2026-08-26",
+        "supports": "Hiram Beverage dammed the Mill Stream in 1932",
+        "evidence_level": "Tier 3 — locally sourced property history"
+      }
+    ]
+  },
+  {
+    "id": "event_harold_ire_president_1937",
+    "date": "1937",
+    "date_precision": "year",
+    "title": "Harold Beverage serves as IRE president",
+    "description": "Harold H. Beverage served as president of the Institute of Radio Engineers in 1937.",
+    "category": "Professional leadership",
+    "place": "United States",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Documented by IEEE's institutional biography",
+    "sources": [{"title": "Harold H. Beverage", "repository": "IEEE Engineering and Technology History Wiki", "url": "https://ethw.org/Harold_H._Beverage", "record_type": "Institutional biography", "accessed": "2026-08-26", "supports": "Service as IRE president in 1937", "evidence_level": "Tier 2 — professional institutional archive"}]
+  },
+  {
+    "id": "event_harold_ire_medal_1945",
+    "date": "1945",
+    "date_precision": "year",
+    "title": "Harold Beverage receives the IRE Medal of Honor",
+    "description": "The Institute of Radio Engineers awarded Harold H. Beverage its Medal of Honor in recognition of his radio research, inventions, practical engineering work, and service to the institute.",
+    "category": "Award",
+    "place": "United States",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Documented by IEEE's institutional biography",
+    "sources": [{"title": "Harold H. Beverage", "repository": "IEEE Engineering and Technology History Wiki", "url": "https://ethw.org/Harold_H._Beverage", "record_type": "Institutional biography", "accessed": "2026-08-26", "supports": "IRE Medal of Honor in 1945 and stated basis for the award", "evidence_level": "Tier 2 — professional institutional archive"}]
+  },
+  {
+    "id": "event_harold_retirement_1958",
+    "date": "1958",
+    "date_precision": "year",
+    "title": "Harold Beverage retires from RCA leadership",
+    "description": "Harold Beverage retired in 1958 from his RCA Communications research-and-development leadership and radio-research directorship, then continued working as a communications consultant.",
+    "category": "Career",
+    "place": "United States",
+    "people_involved": ["harold_h_beverage_1893"],
+    "evidence_status": "Documented by IEEE's institutional biography",
+    "sources": [{"title": "Harold H. Beverage", "repository": "IEEE Engineering and Technology History Wiki", "url": "https://ethw.org/Harold_H._Beverage", "record_type": "Institutional biography", "accessed": "2026-08-26", "supports": "RCA retirement in 1958 and continued consulting", "evidence_level": "Tier 2 — professional institutional archive"}]
+  },
+  {
+    "id": "event_samuel_boston_post_cane_2010",
+    "date": "2010-12-04",
+    "date_precision": "exact",
+    "title": "Samuel H. Beverage receives North Haven's Boston Post Cane",
+    "description": "North Haven awarded its Boston Post Cane to Samuel H. Beverage on December 4, 2010, two days before his ninety-third birthday, recognizing him as the town's oldest resident.",
+    "category": "Community honor",
+    "place": "North Haven, Maine",
+    "people_involved": ["samuel_hiram_beverage_1917"],
+    "evidence_status": "Contemporary community register corroborated by obituary",
+    "sources": [{"title": "Maine Boston Post Cane holders — North Haven", "repository": "Boston Post Cane Information Center", "url": "https://bostonpostcane.org/the-canes/maine", "record_type": "Community historical register", "record_date": "2010-12-04", "accessed": "2026-08-26", "supports": "Award date, age context, and status as North Haven's oldest resident", "evidence_level": "Tier 3 — independently maintained historical register"}, {"title": "Samuel Hiram Beverage obituary", "repository": "Tribute Archive", "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage", "record_type": "Funeral-home obituary", "record_date": "2014-12-18", "accessed": "2026-08-26", "supports": "Receipt of the Boston Post Cane in 2010", "evidence_level": "Tier 3 — detailed obituary"}]
+  }
+]
