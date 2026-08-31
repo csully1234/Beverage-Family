@@ -1,0 +1,64 @@
+name: Build historical research queue
+
+on:
+  push:
+    branches:
+      - research/historical-life-timeline-expansion
+    paths:
+      - .github/workflows/build-historical-research-queue.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: research/historical-life-timeline-expansion
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Build research queue
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data')
+          base=json.loads((p/'people.json').read_text())
+          overlay=json.loads((p/'research_people.json').read_text())
+          merged={x['id']:dict(x) for x in base}
+          for x in overlay:
+              merged[x['id']]={**merged.get(x['id'],{}),**x}
+          events=json.loads((p/'events.json').read_text())
+          rev=json.loads((p/'research_events.json').read_text())
+          event_ids={e['id'] for e in events}|{e['id'] for e in rev}
+          lines=['# Historical life research queue','',f'Effective profiles: {len(merged)}',f'Effective event IDs: {len(event_ids)}','']
+          historical=[]
+          for x in merged.values():
+              death=x.get('death_date')
+              birth=x.get('birth_date')
+              by=int(str(birth)[:4]) if str(birth)[:4].isdigit() else None
+              dy=int(str(death)[:4]) if str(death)[:4].isdigit() else None
+              if dy or (by and by <= 1915):
+                  historical.append(x)
+          historical.sort(key=lambda x:(str(x.get('birth_date') or '9999'),x.get('full_name','')))
+          for x in historical:
+              fields=[]
+              for k in ('occupations','military_service','civic_offices','education','accomplishments','businesses','vessels'):
+                  if x.get(k): fields.append(k)
+              srcs=x.get('sources',[])
+              weak=sum(1 for s in srcs if isinstance(s,str) and ('Find A Grave' in s or 'Family records' in s))
+              lines.append(f"- `{x['id']}` | {x.get('full_name')} | {x.get('birth_date')}–{x.get('death_date')} | enriched: {','.join(fields) or 'none'} | sources={len(srcs)} weak-string-sources={weak}")
+          Path('research/historical_research_queue_2026-08-31.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          print('historical profiles',len(historical))
+          PY
+      - name: Commit queue and remove helper workflow
+        run: |
+          rm .github/workflows/build-historical-research-queue.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add historical life research queue'
+          git push origin HEAD:research/historical-life-timeline-expansion
