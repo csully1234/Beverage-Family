@@ -106,6 +106,30 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertEqual(app.radio[0].value, "Full Family Map")
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
 
+    def test_full_family_map_profile_open_uses_safe_callback_navigation(self) -> None:
+        target = "harold_h_beverage_1893"
+        app = self.logged_in_app(page="full-tree")
+
+        map_picker = next(
+            selectbox for selectbox in app.selectbox
+            if selectbox.label == "Open a profile from the full map"
+        )
+        map_picker.select(target)
+        app.run()
+
+        open_button = next(
+            button for button in app.button if button.label == "Open selected profile"
+        )
+        open_button.click()
+        app.run()
+
+        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
+        self.assertEqual(app.radio[0].value, "People")
+        profile_selector = next(
+            selectbox for selectbox in app.selectbox if selectbox.label == "Find a person"
+        )
+        self.assertEqual(profile_selector.value, target)
+
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
 
