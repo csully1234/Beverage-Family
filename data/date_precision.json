@@ -1154,10 +1154,10 @@
     "record_id": "event_birth_sarah_beveridge_1727",
     "field": "date",
     "original_value": "1727-01-01",
-    "precision": "year",
-    "determination": "No reviewed cited source explicitly established January 1; display only the documented year until an exact record is found.",
-    "confidence": "medium",
-    "checked_on": "2026-08-26"
+    "precision": "exact",
+    "determination": "Exact June 1, 1727 birth date documented in the Marblehead vital-record transcription.",
+    "confidence": "high",
+    "checked_on": "2026-08-31"
   },
   {
     "record_type": "event",
