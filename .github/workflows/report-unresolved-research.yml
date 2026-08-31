@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
-      - name: Print unresolved relationship and event targets
+      - name: Print unresolved targets and historical research candidates
         run: |
           python - <<'PY'
           from collections import defaultdict
@@ -43,6 +43,20 @@ jobs:
               print(target)
               for source_id, source_name, field in refs[target]:
                   print(f"  {field} of {source_id} | {source_name}")
+
+          print("=== HISTORICAL PROFILES WITH EXPANSION POTENTIAL ===")
+          for person in sorted(people, key=lambda p: str(p.get("birth_date") or "9999")):
+              birth = str(person.get("birth_date") or "")
+              year = int(birth[:4]) if len(birth) >= 4 and birth[:4].isdigit() else 9999
+              if year > 1930:
+                  continue
+              spouses = person.get("spouses", [])
+              children = person.get("children", [])
+              if not spouses or not children:
+                  print(
+                      f"{person.get('id')} | {person.get('full_name')} | {birth or '?'} | "
+                      f"parents={person.get('parents', [])} | spouses={spouses} | children={children}"
+                  )
 
           event_refs = defaultdict(list)
           for event in data["events"]:
