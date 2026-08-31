@@ -1,0 +1,69 @@
+name: Profile navigation hotfix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/profile-navigation-hotfix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-test-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip -r requirements.txt
+      - name: Apply safe Streamlit callback navigation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path("app.py")
+          s = p.read_text()
+          changes = [
+              (
+                  '        if st.button("Open profile", disabled=quick_person is None, width="stretch"):\n            if quick_person:\n                open_profile(quick_person)\n                st.rerun()',
+                  '        st.button(\n            "Open profile",\n            disabled=quick_person is None,\n            width="stretch",\n            on_click=open_profile if quick_person else None,\n            args=(quick_person,) if quick_person else (),\n        )',
+              ),
+              (
+                  '        if st.button("View this profile", type="primary"):\n            open_profile(chosen)\n            st.rerun()',
+                  '        st.button(\n            "View this profile",\n            type="primary",\n            on_click=open_profile,\n            args=(chosen,),\n        )',
+              ),
+              (
+                  '            if st.button("Open full profile", type="primary", width="stretch"):\n                open_profile(focus_id)\n                st.rerun()',
+                  '            st.button(\n                "Open full profile",\n                type="primary",\n                width="stretch",\n                on_click=open_profile,\n                args=(focus_id,),\n            )',
+              ),
+          ]
+          for old, new in changes:
+              assert s.count(old) == 1, (old, s.count(old))
+              s = s.replace(old, new, 1)
+          p.write_text(s)
+
+          p = Path("tests/test_app_smoke.py")
+          s = p.read_text()
+          anchor = '    def test_major_interactions_and_direct_routes(self) -> None:\n'
+          assert s.count(anchor) == 1
+          test = '''    def test_tree_open_profile_uses_safe_callback_navigation(self) -> None:\n        app = self.logged_in_app()\n\n        app.radio[0].set_value("Explore the Tree")\n        app.run()\n        target = "harold_h_beverage_1893"\n        app.selectbox[0].select(target)\n        app.run()\n\n        open_button = next(button for button in app.button if button.label == "Open full profile")\n        open_button.click()\n        app.run()\n\n        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])\n        self.assertEqual(app.radio[0].value, "People")\n        self.assertEqual(app.selectbox[0].value, target)\n\n'''
+          p.write_text(s.replace(anchor, test + anchor, 1))
+          PY
+      - name: Validate everything
+        run: |
+          python -m compileall -q app.py family_data.py validation.py validate_data.py
+          python validate_data.py
+          python -m unittest discover -s tests -v
+      - name: Commit hotfix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.py tests/test_app_smoke.py
+          git diff --cached --check
+          git commit -m "Fix profile navigation session state"
+          git push origin HEAD:main
