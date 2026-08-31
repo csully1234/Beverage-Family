@@ -6,9 +6,16 @@
     "birth_place": "Boston, Massachusetts",
     "death_date": "2008-06-07",
     "death_date_precision": "exact",
-    "alternate_names": ["Grace Elizabeth Reed Beverage"],
-    "occupations": ["Insurance agency employee"],
-    "education": ["Boston schools", "Northfield School for Girls"],
+    "alternate_names": [
+      "Grace Elizabeth Reed Beverage"
+    ],
+    "occupations": [
+      "Insurance agency employee"
+    ],
+    "education": [
+      "Boston schools",
+      "Northfield School for Girls"
+    ],
     "notes": "Widow of Rev. Albion Pierson Beverage; raised children in Dresden after his death. Her published obituary records more than forty years of work at the Richmond Insurance Agency and Carl M. P. Larabee Agency in Wiscasset, as well as retirement years spent with family in Florida and North Haven.",
     "conflicting_evidence": [
       {
@@ -41,9 +48,21 @@
     "death_date": "1991-06-18",
     "death_date_precision": "exact",
     "death_place": "Rockville, Maryland",
-    "alternate_names": ["Lowell P. Beveridge"],
-    "occupations": ["Music professor", "Choral conductor", "Organist", "Episcopal priest", "Musicologist"],
-    "education": ["Harvard University", "Royal College of Music, London", "Virginia Theological Seminary"],
+    "alternate_names": [
+      "Lowell P. Beveridge"
+    ],
+    "occupations": [
+      "Music professor",
+      "Choral conductor",
+      "Organist",
+      "Episcopal priest",
+      "Musicologist"
+    ],
+    "education": [
+      "Harvard University",
+      "Royal College of Music, London",
+      "Virginia Theological Seminary"
+    ],
     "biography": "Lowell Beveridge taught at Columbia University from 1930 to 1952, served as university organist, conducted several Columbia and Barnard ensembles, and helped strengthen Columbia's music-library collections. Ordained an Episcopal priest in 1952, he later taught speech and music at Virginia Theological Seminary until retiring in 1974.",
     "notes": "Child of Orris Lyford Beverage. A professor, conductor, organist, musicologist, and Episcopal priest whose academic career included Columbia University, Union Theological Seminary, and Virginia Theological Seminary.",
     "conflicting_evidence": [
@@ -96,14 +115,26 @@
   },
   {
     "id": "samuel_hiram_beverage_1917",
-    "alternate_names": ["Sam Beverage"],
-    "occupations": ["Radio technician", "Communications supervisor", "Historical society co-founder"],
+    "alternate_names": [
+      "Sam Beverage"
+    ],
+    "occupations": [
+      "Radio technician",
+      "Communications supervisor",
+      "Historical society co-founder"
+    ],
     "military_service": [
       "U.S. Army Signal Corps, 1941–1945; Master Sergeant and radio communications chief in the Mediterranean theater",
       "U.S. Air Force, 1947–1950"
     ],
-    "education": ["North Haven schools", "RCA Institute radio training in Boston"],
-    "civic_offices": ["Co-founder and officer, North Haven Historical Society", "North Haven Boston Post Cane holder, 2010–2014"],
+    "education": [
+      "North Haven schools",
+      "RCA Institute radio training in Boston"
+    ],
+    "civic_offices": [
+      "Co-founder and officer, North Haven Historical Society",
+      "North Haven Boston Post Cane holder, 2010–2014"
+    ],
     "biography": "Born at Sunnyside beside North Haven's Mill Pond, Samuel developed an early interest in radio. His wartime communications service included North Africa and the Mediterranean theater. He later worked for radio companies, returned permanently to North Haven in 1973, and helped establish the island's historical society.",
     "notes": "Master Sergeant in U.S. Army Signal Corps; radio enthusiast; helped found North Haven Historical Society. A detailed family-published obituary also documents his radio training, military communications work, postwar career, return to North Haven, and receipt of the Boston Post Cane.",
     "evidence_status": "Exact dates and life history documented by a detailed obituary; cane award independently corroborated",
@@ -137,10 +168,19 @@
     "death_date": "2016-07-13",
     "death_date_precision": "exact",
     "death_place": "Rockland, Maine",
-    "alternate_names": ["Eleanor Mae Sargent Beverage"],
-    "occupations": ["Registered nurse", "Historical society secretary"],
-    "education": ["Knox County General Hospital School of Nursing"],
-    "civic_offices": ["Secretary, North Haven Historical Society"],
+    "alternate_names": [
+      "Eleanor Mae Sargent Beverage"
+    ],
+    "occupations": [
+      "Registered nurse",
+      "Historical society secretary"
+    ],
+    "education": [
+      "Knox County General Hospital School of Nursing"
+    ],
+    "civic_offices": [
+      "Secretary, North Haven Historical Society"
+    ],
     "notes": "Secretary of the North Haven Historical Society; co‑authored genealogical research with her husband. Her obituary documents her nursing education, May 1945 marriage, church service, family life in Massachusetts, and later years in Maine.",
     "conflicting_evidence": [
       {
@@ -169,21 +209,36 @@
   {
     "id": "harold_h_beverage_1893",
     "full_name": "Harold Henry Beverage",
-    "alternate_names": ["Harold H. Beverage", "Bev"],
+    "alternate_names": [
+      "Harold H. Beverage",
+      "Bev"
+    ],
     "birth_date": "1893-10-14",
     "birth_date_precision": "exact",
     "birth_place": "North Haven, Maine",
     "death_date": "1993-01-27",
     "death_date_precision": "exact",
     "death_place": "Port Jefferson, New York",
-    "parents": ["fremont_beverage_1856"],
+    "parents": [
+      "fremont_beverage_1856"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
     "residences": [],
-    "occupations": ["Electrical engineer", "Inventor", "RCA research executive", "Communications consultant"],
-    "education": ["B.S. in electrical engineering, University of Maine, 1915", "Honorary Doctor of Engineering, University of Maine"],
-    "civic_offices": ["President, Institute of Radio Engineers, 1937"],
+    "occupations": [
+      "Electrical engineer",
+      "Inventor",
+      "RCA research executive",
+      "Communications consultant"
+    ],
+    "education": [
+      "B.S. in electrical engineering, University of Maine, 1915",
+      "Honorary Doctor of Engineering, University of Maine"
+    ],
+    "civic_offices": [
+      "President, Institute of Radio Engineers, 1937"
+    ],
     "accomplishments": [
       "Developed the directional receiving system known as the Beverage antenna",
       "Held more than forty patents according to IEEE's oral-history introduction",
@@ -258,14 +313,38 @@
     "death_date": "1930",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
-    "siblings": ["ellen_beverage_1853", "nora_beverage_1858", "frank_beverage_1861", "samuel_carver_beverage_1862", "lucy_etta_beverage_1864", "julia_waterman_beverage_1866", "unnamed_son_1872", "nett_ie_m_beverage_1874"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
+    "siblings": [
+      "ellen_beverage_1853",
+      "nora_beverage_1858",
+      "frank_beverage_1861",
+      "samuel_carver_beverage_1862",
+      "lucy_etta_beverage_1864",
+      "julia_waterman_beverage_1866",
+      "unnamed_son_1872",
+      "nett_ie_m_beverage_1874"
+    ],
     "spouses": [],
-    "children": ["harold_h_beverage_1893"],
+    "children": [
+      "harold_h_beverage_1893"
+    ],
     "residences": [],
-    "occupations": ["Teacher", "Farmer", "School superintendent", "Justice"],
-    "education": ["Eastern State Normal School, Castine"],
-    "civic_offices": ["North Haven school superintendent", "North Haven justice, appointment dated February 25, 1915"],
+    "occupations": [
+      "Teacher",
+      "Farmer",
+      "School superintendent",
+      "Justice"
+    ],
+    "education": [
+      "Eastern State Normal School, Castine"
+    ],
+    "civic_offices": [
+      "North Haven school superintendent",
+      "North Haven justice, appointment dated February 25, 1915"
+    ],
     "notes": "Already named as a son of Albert Glover Beverage and Olive Carver in the family archive. Historical directories identify him as North Haven's school superintendent and a justice; an 1880 normal-school catalog lists him as a North Haven student.",
     "evidence_status": "Institutional roles are documented; life years and parent-child links remain provisional pending vital records",
     "needs_research": true,
@@ -310,12 +389,27 @@
     "birth_place": "North Haven, Maine",
     "death_date": null,
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
-    "siblings": ["ellen_beverage_1853", "fremont_beverage_1856", "nora_beverage_1858", "samuel_carver_beverage_1862", "lucy_etta_beverage_1864", "julia_waterman_beverage_1866", "unnamed_son_1872", "nett_ie_m_beverage_1874"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
+    "siblings": [
+      "ellen_beverage_1853",
+      "fremont_beverage_1856",
+      "nora_beverage_1858",
+      "samuel_carver_beverage_1862",
+      "lucy_etta_beverage_1864",
+      "julia_waterman_beverage_1866",
+      "unnamed_son_1872",
+      "nett_ie_m_beverage_1874"
+    ],
     "spouses": [],
     "children": [],
     "residences": [],
-    "occupations": ["Butcher", "Wool and hides dealer"],
+    "occupations": [
+      "Butcher",
+      "Wool and hides dealer"
+    ],
     "notes": "Already named in the family archive as a son of Albert Glover Beverage and Olive Carver. A 1954 autograph-album entry transcribed by the artifact's researcher gives his own statement of birth on January 14, 1861 and age 93; a Maine directory lists his North Haven businesses.",
     "evidence_status": "Exact birth date comes from a transcribed self-authored 1954 entry; occupation independently appears in a historical directory",
     "needs_research": true,
@@ -352,8 +446,20 @@
     "death_date": "1892",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
-    "siblings": ["ellen_beverage_1853", "fremont_beverage_1856", "nora_beverage_1858", "frank_beverage_1861", "samuel_carver_beverage_1862", "julia_waterman_beverage_1866", "unnamed_son_1872", "nett_ie_m_beverage_1874"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
+    "siblings": [
+      "ellen_beverage_1853",
+      "fremont_beverage_1856",
+      "nora_beverage_1858",
+      "frank_beverage_1861",
+      "samuel_carver_beverage_1862",
+      "julia_waterman_beverage_1866",
+      "unnamed_son_1872",
+      "nett_ie_m_beverage_1874"
+    ],
     "spouses": [],
     "children": [],
     "residences": [],
@@ -384,7 +490,10 @@
     "death_date": "1958",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -392,7 +501,19 @@
     "notes": "Existing family relationships place Chester among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter; a cemetery index supplies the 1884–1958 year range.",
     "evidence_status": "Compiled cemetery entry; original record corroboration required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person MNG1-VNJ", "accessed": "2026-08-26", "supports": "Name and 1884–1958 year range", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person MNG1-VNJ",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1884–1958 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
+    ]
   },
   {
     "id": "albert_lewis_beverage_1888",
@@ -403,27 +524,83 @@
     "death_date": "1973",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
-    "spouses": [],
-    "children": [],
+    "spouses": [
+      "julia_priscilla_miller_1888"
+    ],
+    "children": [
+      "gerald_gibson_beverage_1914",
+      "elston_albert_beverage_1916",
+      "john_miller_beverage_1927"
+    ],
     "residences": [],
-    "notes": "Existing family relationships place Albert among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter; a cemetery index supplies the 1888–1973 year range.",
+    "notes": "Existing family relationships place Albert among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter; a cemetery index supplies the 1888–1973 year range. Verified collateral research adds wife Julia P. Miller and sons Gerald, Elston and John.",
     "evidence_status": "Compiled cemetery entry; original record corroboration required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person MY9W-3K3", "accessed": "2026-08-26", "supports": "Name and 1888–1973 year range", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person MY9W-3K3",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1888–1973 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      },
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      },
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. (Miller) Beverage; marriage to Janet Kihlgren",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2011-07-25"
+      }
+    ]
   },
   {
     "id": "olive_mary_beverage_1892",
     "full_name": "Olive Mary Beverage Gregory",
-    "alternate_names": ["Olive Mary Beverage"],
+    "alternate_names": [
+      "Olive Mary Beverage"
+    ],
     "birth_date": "1892",
     "birth_date_precision": "year",
     "birth_place": "North Haven, Maine",
     "death_date": "1983",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -431,19 +608,45 @@
     "notes": "Existing family relationships place Olive among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. Independent compiled cemetery indexes identify her married surname as Gregory and give the 1892–1983 year range.",
     "evidence_status": "Two compiled cemetery references agree; original vital and marriage records required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person MY9W-32M", "accessed": "2026-08-26", "supports": "Name and 1892–1983 year range", "evidence_level": "Tier 4 — compiled cemetery source"}, {"title": "Olive Mary Beverage Gregory burial index", "repository": "PeopleLegacy", "url": "https://peoplelegacy.com/burial-records/olive/gregory/", "record_type": "Compiled burial index", "accessed": "2026-08-26", "supports": "Married surname Gregory, North Haven birthplace, 1892–1983 years, and Fuller Cemetery", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person MY9W-32M",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1892–1983 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      },
+      {
+        "title": "Olive Mary Beverage Gregory burial index",
+        "repository": "PeopleLegacy",
+        "url": "https://peoplelegacy.com/burial-records/olive/gregory/",
+        "record_type": "Compiled burial index",
+        "accessed": "2026-08-26",
+        "supports": "Married surname Gregory, North Haven birthplace, 1892–1983 years, and Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
+    ]
   },
   {
     "id": "nett_ie_ellen_beverage_1894",
     "full_name": "Nettie Ellen Beverage Crockett",
-    "alternate_names": ["Nettie Ellen Beverage"],
+    "alternate_names": [
+      "Nettie Ellen Beverage"
+    ],
     "birth_date": "1894",
     "birth_date_precision": "year",
     "birth_place": "North Haven, Maine",
     "death_date": "1985",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -451,7 +654,18 @@
     "notes": "Existing family relationships place Nettie among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. A compiled burial index identifies her married surname as Crockett and associates her with Fuller Cemetery.",
     "evidence_status": "Compiled burial entry; original vital and marriage records required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Nettie Ellen Beverage Crockett burial index", "repository": "PeopleLegacy", "url": "https://peoplelegacy.com/burial-records/nettie/crockett/", "record_type": "Compiled burial index", "accessed": "2026-08-26", "supports": "Name, married surname Crockett, North Haven birthplace, 1894–1985 years, and Fuller Cemetery", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Nettie Ellen Beverage Crockett burial index",
+        "repository": "PeopleLegacy",
+        "url": "https://peoplelegacy.com/burial-records/nettie/crockett/",
+        "record_type": "Compiled burial index",
+        "accessed": "2026-08-26",
+        "supports": "Name, married surname Crockett, North Haven birthplace, 1894–1985 years, and Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
+    ]
   },
   {
     "id": "george_dewey_beverage_1898",
@@ -462,34 +676,123 @@
     "death_date": "1997",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
-    "children": [],
+    "children": [
+      "agnes_beverage_dailey_1935"
+    ],
     "residences": [],
-    "notes": "Existing family relationships place George among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. A cemetery index gives 1898–1997; a daughter's published obituary independently identifies George Dewey Beverage and Agnes Tait Beverage as her North Haven parents.",
+    "notes": "Existing family relationships place George among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. A cemetery index gives 1898–1997; a daughter's published obituary independently identifies George Dewey Beverage and Agnes Tait Beverage as her North Haven parents. Agnes Beverage Dailey's obituary identifies George Dewey Beverage of North Haven as her father.",
     "evidence_status": "Year range is compiled; identity and parent role are independently supported by a contemporary obituary",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person 9KBJ-B6Z", "accessed": "2026-08-26", "supports": "Name and 1898–1997 year range", "evidence_level": "Tier 4 — compiled cemetery source"}, {"title": "Agnes Beverage Dailey obituary", "repository": "Portland Press Herald", "url": "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/", "record_type": "Newspaper obituary", "record_date": "2018-11-30", "accessed": "2026-08-26", "supports": "George Dewey Beverage and Agnes Tait Beverage as parents in North Haven", "evidence_level": "Tier 3 — contemporary newspaper obituary"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person 9KBJ-B6Z",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1898–1997 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      },
+      {
+        "title": "Agnes Beverage Dailey obituary",
+        "repository": "Portland Press Herald",
+        "url": "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/",
+        "record_type": "Newspaper obituary",
+        "record_date": "2018-11-30",
+        "accessed": "2026-08-26",
+        "supports": "George Dewey Beverage and Agnes Tait Beverage as parents in North Haven",
+        "evidence_level": "Tier 3 — contemporary newspaper obituary"
+      },
+      {
+        "title": "Agnes Beverage Dailey obituary",
+        "repository": "Portland Press Herald",
+        "url": "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Agnes Tait Beverage and George Dewey Beverage of North Haven",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2018-11-30"
+      }
+    ]
   },
   {
     "id": "edith_etta_beverage_1900",
     "full_name": "Edith Etta Beverage Mills",
-    "alternate_names": ["Edith Etta Beverage"],
+    "alternate_names": [
+      "Edith Etta Beverage"
+    ],
     "birth_date": "1900",
     "birth_date_precision": "year",
     "birth_place": "North Haven, Maine",
     "death_date": null,
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
-    "spouses": [],
-    "children": [],
+    "spouses": [
+      "bernard_ray_mills_1903"
+    ],
+    "children": [
+      "freda_rose_mills_smith_1930",
+      "priscilla_jean_mills_dempsey_1932",
+      "alden_ray_mills"
+    ],
     "residences": [],
-    "notes": "Existing family relationships place Edith among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. Her daughter's obituary identifies her as Edith Etta Beverage Mills and names Bernard Ray Mills as the other parent.",
+    "notes": "Existing family relationships place Edith among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. Her daughter's obituary identifies her as Edith Etta Beverage Mills and names Bernard Ray Mills as the other parent. Freda Mills Smith's obituary establishes Edith's marriage to Bernard Ray Mills and children Freda, Priscilla and Alden.",
     "evidence_status": "Married name and child relationship supported by an obituary; exact life dates remain unresolved",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Freda Mills Smith obituary", "repository": "Tribute Archive", "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith", "record_type": "Funeral-home obituary", "record_date": "2024-11-14", "accessed": "2026-08-26", "supports": "Edith Etta Beverage Mills as mother of Freda Rose Mills and Bernard Ray Mills as Freda's father", "evidence_level": "Tier 3 — detailed obituary"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "record_date": "2024-11-14",
+        "accessed": "2026-08-26",
+        "supports": "Edith Etta Beverage Mills as mother of Freda Rose Mills and Bernard Ray Mills as Freda's father",
+        "evidence_level": "Tier 3 — detailed obituary"
+      },
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Burpee, Carpenter & Hutchins via Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2024-11"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven — additional entries",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+        "evidence_level": "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries"
+      },
+      {
+        "title": "North Haven 2023 Town Report — Town Clerk vital statistics",
+        "repository": "Town of North Haven, Maine",
+        "url": "https://webgen1files1.revize.com/northhavenme/North%20Haven%20Report%202023%20Final.pdf",
+        "record_type": "Municipal annual report / vital statistics",
+        "accessed": "2026-08-31",
+        "supports": "Alden Ray Mills death on September 1, 2023",
+        "evidence_level": "Tier 1/2 — municipal clerk report",
+        "record_date": "2023"
+      }
+    ]
   },
   {
     "id": "wilson_freemont_beverage_1902",
@@ -500,7 +803,10 @@
     "death_date": "1999",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -508,7 +814,19 @@
     "notes": "Existing family relationships place Wilson among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter; a cemetery index supplies the 1902–1999 year range.",
     "evidence_status": "Compiled cemetery entry; original record corroboration required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person LZRF-3CF", "accessed": "2026-08-26", "supports": "Name and 1902–1999 year range", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person LZRF-3CF",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1902–1999 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
+    ]
   },
   {
     "id": "alma_marie_beverage_1905",
@@ -519,7 +837,10 @@
     "death_date": "1906",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -527,7 +848,19 @@
     "notes": "Existing family relationships place Alma among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter; a cemetery index supplies the 1905–1906 year range.",
     "evidence_status": "Compiled cemetery entry; original record corroboration required",
     "needs_research": true,
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "record_identifier": "FamilySearch person MZTB-X67", "accessed": "2026-08-26", "supports": "Name and 1905–1906 year range", "evidence_level": "Tier 4 — compiled cemetery source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "record_identifier": "FamilySearch person MZTB-X67",
+        "accessed": "2026-08-26",
+        "supports": "Name and 1905–1906 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
+    ]
   },
   {
     "id": "ellen_beverage_1853",
@@ -538,7 +871,10 @@
     "death_date": "1886",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -547,19 +883,36 @@
     "evidence_status": "Compiled genealogy lead; original vital, church, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Ellen Beverage (1853–1886)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/M6JS-5MW/ellen-beverage-1853-1886", "record_type": "Compiled genealogy profile", "record_identifier": "FamilySearch person M6JS-5MW", "accessed": "2026-08-26", "supports": "Name, North Haven birthplace, parents, and 1853–1886 year range", "evidence_level": "Tier 4 — compiled genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Ellen Beverage (1853–1886)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/M6JS-5MW/ellen-beverage-1853-1886",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "FamilySearch person M6JS-5MW",
+        "accessed": "2026-08-26",
+        "supports": "Name, North Haven birthplace, parents, and 1853–1886 year range",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      }
+    ]
   },
   {
     "id": "nora_beverage_1858",
     "full_name": "Leonora Carver Beverage",
-    "alternate_names": ["Nora Beverage"],
+    "alternate_names": [
+      "Nora Beverage"
+    ],
     "birth_date": "1858",
     "birth_date_precision": "year",
     "birth_place": null,
     "death_date": "1875",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -568,19 +921,36 @@
     "evidence_status": "Compiled genealogy lead; original vital, church, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Beverage family sibling list (1872 child profile)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872", "record_type": "Compiled genealogy profile", "record_identifier": "FamilySearch person 9C27-C8B", "accessed": "2026-08-26", "supports": "Leonora 'Nora' Carver Beverage as a sibling and the 1858–1875 year range", "evidence_level": "Tier 4 — compiled genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Beverage family sibling list (1872 child profile)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "FamilySearch person 9C27-C8B",
+        "accessed": "2026-08-26",
+        "supports": "Leonora 'Nora' Carver Beverage as a sibling and the 1858–1875 year range",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      }
+    ]
   },
   {
     "id": "julia_waterman_beverage_1866",
     "full_name": "Julia W. Beverage",
-    "alternate_names": ["Julia Waterman Beverage (existing relationship label)"],
+    "alternate_names": [
+      "Julia Waterman Beverage (existing relationship label)"
+    ],
     "birth_date": "1866",
     "birth_date_precision": "year",
     "birth_place": null,
     "death_date": "1876",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -589,7 +959,19 @@
     "evidence_status": "Compiled genealogy lead; original vital, church, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity, middle name, and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Julia W. Beverage (1866–1876)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/M6J3-SGR/julia-w-beverage-1866-1876", "record_type": "Compiled genealogy profile", "record_identifier": "FamilySearch person M6J3-SGR", "accessed": "2026-08-26", "supports": "Name, parents, siblings, and 1866–1876 year range", "evidence_level": "Tier 4 — compiled genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Julia W. Beverage (1866–1876)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/M6J3-SGR/julia-w-beverage-1866-1876",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "FamilySearch person M6J3-SGR",
+        "accessed": "2026-08-26",
+        "supports": "Name, parents, siblings, and 1866–1876 year range",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      }
+    ]
   },
   {
     "id": "unnamed_son_1872",
@@ -600,7 +982,10 @@
     "death_date": "1872",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -609,7 +994,19 @@
     "evidence_status": "Compiled genealogy lead; original vital, church, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity and year range are provisional; given name remains unknown",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Beverage (1872–1872)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872", "record_type": "Compiled genealogy profile", "record_identifier": "FamilySearch person 9C27-C8B", "accessed": "2026-08-26", "supports": "Unnamed child, parents, and 1872 birth-and-death year", "evidence_level": "Tier 4 — compiled genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Beverage (1872–1872)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "FamilySearch person 9C27-C8B",
+        "accessed": "2026-08-26",
+        "supports": "Unnamed child, parents, and 1872 birth-and-death year",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      }
+    ]
   },
   {
     "id": "nett_ie_m_beverage_1874",
@@ -620,7 +1017,10 @@
     "death_date": "1876",
     "death_date_precision": "year",
     "death_place": "Maine",
-    "parents": ["albert_glover_beverage_1827", "olive_carver_1829"],
+    "parents": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -629,28 +1029,88 @@
     "evidence_status": "Compiled genealogy lead; original vital, church, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Beverage genealogy index", "repository": "WikiTree", "url": "https://www.wikitree.com/genealogy/BEVERAGE", "record_type": "Compiled surname index", "accessed": "2026-08-26", "supports": "Nettie M. Beverage, Maine locations, and 1874–1876 year range", "evidence_level": "Tier 4 — user-contributed genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Beverage genealogy index",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/genealogy/BEVERAGE",
+        "record_type": "Compiled surname index",
+        "accessed": "2026-08-26",
+        "supports": "Nettie M. Beverage, Maine locations, and 1874–1876 year range",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      }
+    ]
   },
   {
     "id": "florence_mertice_beverage_1883",
     "full_name": "Florence Mertice Beverage Brown",
-    "alternate_names": ["Florence Mertice Beverage"],
+    "alternate_names": [
+      "Florence Mertice Beverage"
+    ],
     "birth_date": "1883",
     "birth_date_precision": "year",
     "birth_place": null,
     "death_date": "1980",
     "death_date_precision": "year",
     "death_place": null,
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
-    "spouses": [],
-    "children": [],
+    "spouses": [
+      "jesse_ames_brown_1869"
+    ],
+    "children": [
+      "marjorie_annette_brown_1912"
+    ],
     "residences": [],
-    "notes": "The existing family tree names Florence Mertice among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. A compiled WikiTree profile supplies the married surname Brown and the 1883–1980 year range; no exact dates are promoted here.",
+    "notes": "The existing family tree names Florence Mertice among the children of Samuel Carver Beverage and Ruth Margaret Leadbetter. A compiled WikiTree profile supplies the married surname Brown and the 1883–1980 year range; no exact dates are promoted here. Leadbetter Records documents her 1910 marriage to Jesse A. Brown and daughter Marjorie.",
     "evidence_status": "Compiled genealogy lead; original vital, marriage, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Married name and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Florence Mertice (Beverage) Brown (1883–1980)", "repository": "WikiTree", "url": "https://www.wikitree.com/wiki/Beverage-64", "record_type": "Compiled genealogy profile", "accessed": "2026-08-26", "supports": "Name, married surname Brown, sibling context, and 1883–1980 year range", "evidence_level": "Tier 4 — user-contributed genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Florence Mertice (Beverage) Brown (1883–1980)",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/wiki/Beverage-64",
+        "record_type": "Compiled genealogy profile",
+        "accessed": "2026-08-26",
+        "supports": "Name, married surname Brown, sibling context, and 1883–1980 year range",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      },
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      },
+      {
+        "title": "Maine Register, State Year-Book and Legislative Manual — North Haven",
+        "repository": "Internet Archive transcription via LDSGenealogy",
+        "url": "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm",
+        "record_type": "Historical state/town directory",
+        "accessed": "2026-08-31",
+        "supports": "Jesse A. Brown appears among North Haven selectmen, independently placing Florence Beverage's documented husband in the community",
+        "evidence_level": "Tier 2/3 — contemporary historical directory transcription",
+        "record_date": "1910"
+      }
+    ]
   },
   {
     "id": "marston_leadbetter_beverage_1890",
@@ -661,7 +1121,10 @@
     "death_date": "1983",
     "death_date_precision": "year",
     "death_place": "Camden, Maine",
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -670,7 +1133,18 @@
     "evidence_status": "Compiled genealogy lead; original vital or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity, year range, and death place are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Marston Leadbetter Beverage (1890–1983)", "repository": "WikiTree", "url": "https://www.wikitree.com/wiki/Beverage-101", "record_type": "Compiled genealogy profile", "accessed": "2026-08-26", "supports": "Name, 1890–1983 year range, and Camden death location", "evidence_level": "Tier 4 — user-contributed genealogy source"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Marston Leadbetter Beverage (1890–1983)",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/wiki/Beverage-101",
+        "record_type": "Compiled genealogy profile",
+        "accessed": "2026-08-26",
+        "supports": "Name, 1890–1983 year range, and Camden death location",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      }
+    ]
   },
   {
     "id": "elroy_victor_beverage_1896",
@@ -681,7 +1155,10 @@
     "death_date": "1959",
     "death_date_precision": "year",
     "death_place": "Maine",
-    "parents": ["samuel_carver_beverage_1862", "ruth_leadbetter_1863"],
+    "parents": [
+      "samuel_carver_beverage_1862",
+      "ruth_leadbetter_1863"
+    ],
     "siblings": [],
     "spouses": [],
     "children": [],
@@ -690,6 +1167,1137 @@
     "evidence_status": "Compiled memorial lead; original military, vital, or cemetery record required",
     "needs_research": true,
     "research_completeness": "Identity and year range are provisional",
-    "sources": ["Existing Beverage Family relationship reference", {"title": "Elroy Victor Beverage Sr. memorial", "repository": "Find a Grave", "url": "https://www.findagrave.com/memorial/157955850/elroy-victor-beverage", "record_type": "Compiled memorial", "record_identifier": "Memorial 157955850", "accessed": "2026-08-26", "supports": "Name, 1896–1959 year range, Maine locations, veteran marker, and Mountain View Cemetery burial", "evidence_level": "Tier 4 — user-contributed memorial"}]
+    "sources": [
+      "Existing Beverage Family relationship reference",
+      {
+        "title": "Elroy Victor Beverage Sr. memorial",
+        "repository": "Find a Grave",
+        "url": "https://www.findagrave.com/memorial/157955850/elroy-victor-beverage",
+        "record_type": "Compiled memorial",
+        "record_identifier": "Memorial 157955850",
+        "accessed": "2026-08-26",
+        "supports": "Name, 1896–1959 year range, Maine locations, veteran marker, and Mountain View Cemetery burial",
+        "evidence_level": "Tier 4 — user-contributed memorial"
+      }
+    ]
+  },
+  {
+    "id": "agnes_beverage_dailey_1935",
+    "full_name": "Agnes Beverage Dailey",
+    "birth_date": "1935-08-05",
+    "birth_date_precision": "exact",
+    "birth_place": "Rockland, Maine",
+    "death_date": "2018-11-21",
+    "death_date_precision": "exact",
+    "death_place": "Brunswick, Maine",
+    "parents": [
+      "george_dewey_beverage_1898"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Teacher"
+    ],
+    "notes": "Daughter of George Dewey Beverage and Agnes Tait Beverage of North Haven. Her mother is named in the obituary but is not added as a separate profile because this pass did not establish her vital record independently. Living descendants are intentionally omitted.",
+    "evidence_status": "Exact dates and parentage documented by contemporary newspaper obituary",
+    "research_completeness": "Strong connection to George Dewey Beverage; maternal vital records remain to be located",
+    "sources": [
+      {
+        "title": "Agnes Beverage Dailey obituary",
+        "repository": "Portland Press Herald",
+        "url": "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Agnes Tait Beverage and George Dewey Beverage of North Haven",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2018-11-30"
+      }
+    ]
+  },
+  {
+    "id": "alden_ray_mills",
+    "full_name": "Alden Ray Mills",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": "2023-09-01",
+    "death_date_precision": "exact",
+    "death_place": "North Haven, Maine",
+    "parents": [
+      "edith_etta_beverage_1900",
+      "bernard_ray_mills_1903"
+    ],
+    "siblings": [
+      "freda_rose_mills_smith_1930",
+      "priscilla_jean_mills_dempsey_1932"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Son of Bernard Ray Mills and Edith Etta Beverage Mills. Freda's obituary identifies him as her brother; the North Haven Town Clerk records his death on September 1, 2023.",
+    "evidence_status": "Sibling/parent chain from family obituary; exact death independently documented by municipal vital statistics",
+    "research_completeness": "Strong death and relationship evidence; birth record remains to be located",
+    "sources": [
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Burpee, Carpenter & Hutchins via Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2024-11"
+      },
+      {
+        "title": "North Haven 2023 Town Report — Town Clerk vital statistics",
+        "repository": "Town of North Haven, Maine",
+        "url": "https://webgen1files1.revize.com/northhavenme/North%20Haven%20Report%202023%20Final.pdf",
+        "record_type": "Municipal annual report / vital statistics",
+        "accessed": "2026-08-31",
+        "supports": "Alden Ray Mills death on September 1, 2023",
+        "evidence_level": "Tier 1/2 — municipal clerk report",
+        "record_date": "2023"
+      }
+    ]
+  },
+  {
+    "id": "arthur_woodrow_beveridge_1943",
+    "full_name": "Arthur Woodrow Beveridge",
+    "birth_date": "1943-05-13",
+    "birth_date_precision": "exact",
+    "birth_place": "New York City, New York",
+    "death_date": "2013-08-07",
+    "death_date_precision": "exact",
+    "death_place": "Falls Church, Virginia",
+    "parents": [
+      "norwood_beveridge_1911"
+    ],
+    "siblings": [
+      "norwood_pierson_beveridge_jr_1936",
+      "deborah_woodrow_beveridge_1935"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Musician",
+      "Music teacher"
+    ],
+    "notes": "Son of Norwood Pierson Beveridge and Winifred Dorothy Woodrow Beveridge. His detailed obituary explicitly traces his father to Orris Lyford Beverage and Rose Emma Pierson Beverage of the established North Haven line.",
+    "evidence_status": "Exact dates and multigenerational Beverage parentage documented by detailed obituary; cemetery index corroborates year range",
+    "research_completeness": "Strong; living wife and son intentionally excluded",
+    "sources": [
+      {
+        "title": "Arthur Woodrow Beveridge obituary",
+        "repository": "Connection Newspapers",
+        "url": "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; father Norwood Pierson Beveridge; mother Winifred Dorothy Woodrow Beveridge; siblings Norwood Jr. and Deborah; grandparents Orris Lyford Beverage and Rose Emma Pierson Beverage",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2013-09-19"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      }
+    ]
+  },
+  {
+    "id": "bernard_ray_mills_1903",
+    "full_name": "Bernard Ray Mills",
+    "birth_date": "1903",
+    "birth_date_precision": "year",
+    "birth_place": null,
+    "death_date": "1986",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "edith_etta_beverage_1900"
+    ],
+    "children": [
+      "freda_rose_mills_smith_1930",
+      "priscilla_jean_mills_dempsey_1932",
+      "alden_ray_mills"
+    ],
+    "residences": [],
+    "notes": "Husband of Edith Etta Beverage Mills and father of Freda, Priscilla and Alden. Freda's obituary establishes the immediate family; Fuller Cemetery corroborates his 1903–1986 year range.",
+    "evidence_status": "Immediate family documented by daughter's obituary; year range corroborated by cemetery index",
+    "research_completeness": "Strong relationship; original marriage and vital records remain desirable",
+    "sources": [
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Burpee, Carpenter & Hutchins via Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2024-11"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven — additional entries",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+        "evidence_level": "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries"
+      }
+    ]
+  },
+  {
+    "id": "deborah_woodrow_beveridge_1935",
+    "full_name": "Deborah Woodrow Beveridge",
+    "birth_date": "1935",
+    "birth_date_precision": "year",
+    "birth_place": null,
+    "death_date": "2015",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [
+      "norwood_beveridge_1911"
+    ],
+    "siblings": [
+      "norwood_pierson_beveridge_jr_1936",
+      "arthur_woodrow_beveridge_1943"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Norwood Pierson and Winifred Dorothy Woodrow Beveridge; Arthur's obituary names her as his sister. Fuller Cemetery supplies the 1935–2015 year range.",
+    "evidence_status": "Sibling/parent relationship documented by Arthur's obituary; year range corroborated by cemetery index",
+    "research_completeness": "Strong relationship; exact vital dates remain to be located",
+    "sources": [
+      {
+        "title": "Arthur Woodrow Beveridge obituary",
+        "repository": "Connection Newspapers",
+        "url": "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; father Norwood Pierson Beveridge; mother Winifred Dorothy Woodrow Beveridge; siblings Norwood Jr. and Deborah; grandparents Orris Lyford Beverage and Rose Emma Pierson Beverage",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2013-09-19"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      }
+    ]
+  },
+  {
+    "id": "eldora_brown_beverage_alexander_1849",
+    "full_name": "Eldora M. Brown Beverage Alexander",
+    "birth_date": "1849",
+    "birth_date_precision": "year",
+    "birth_place": "North Haven, Maine",
+    "death_date": "1909",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "harrison_beverage_1825"
+    ],
+    "children": [
+      "everett_beverage_harrison_line"
+    ],
+    "residences": [],
+    "notes": "Leadbetter Records identifies Eldora Brown as a wife of Harrison Beverage and records their son Everett; it also indicates a later marriage to Fred Alexander. Exact day/month claims from compiled trees are deliberately not adopted here.",
+    "evidence_status": "Marriage and child relationship documented by 1917 genealogy; 1849–1909 year range supported only by compiled genealogy and therefore retained at year precision",
+    "research_completeness": "Relationship useful and source-backed; original marriage/death records remain high priority",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Harrison Beverage / Eldora M. Brown Alexander compiled profiles",
+        "repository": "WikiTree Suggestions / linked compiled records",
+        "url": "https://plus.wikitree.com/Profiles/Suggestions/Challenge_426_Orphans/593_1800-1899_3.htm",
+        "record_type": "Compiled genealogy index",
+        "accessed": "2026-08-31",
+        "supports": "Eldora Brown's 1849–1909 year range and Harrison Beverage association; used only alongside the 1917 Leadbetter genealogy",
+        "evidence_level": "Tier 4 — compiled genealogy; relationship independently supported by Leadbetter Records"
+      }
+    ]
+  },
+  {
+    "id": "elston_albert_beverage_1916",
+    "full_name": "Elston Albert Beverage",
+    "birth_date": "1916-05-09",
+    "birth_date_precision": "exact",
+    "birth_place": "North Haven, Maine",
+    "death_date": "1976",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [
+      "albert_lewis_beverage_1888",
+      "julia_priscilla_miller_1888"
+    ],
+    "siblings": [
+      "gerald_gibson_beverage_1914",
+      "john_miller_beverage_1927"
+    ],
+    "spouses": [
+      "greta_morrison_1918"
+    ],
+    "children": [
+      "raymond_albert_beverage",
+      "sandra_beverage_snow"
+    ],
+    "residences": [],
+    "notes": "Son of Albert L. and Julia P. Beverage; father of Raymond Albert Beverage and Sandra Beverage Snow.",
+    "evidence_status": "Birth documented in 1917 genealogy; death year from cemetery index; children and spouse corroborated by Raymond's obituary",
+    "research_completeness": "Strong family linkage; exact death date remains to be located",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      },
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+        "evidence_level": "Tier 3 — contemporary local obituary",
+        "record_date": "2024-06-03"
+      }
+    ]
+  },
+  {
+    "id": "everett_beverage_harrison_line",
+    "full_name": "Everett Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "harrison_beverage_1825",
+      "eldora_brown_beverage_alexander_1849"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Son of Harrison Beverage and Eldora Brown as recorded in the 1917 Leadbetter genealogy. No vital dates are assigned because this research pass did not locate a sufficiently specific independent record for the correct Everett Beverage.",
+    "evidence_status": "Parentage supported by near-contemporary published genealogy; vital dates unresolved",
+    "research_completeness": "Partial — identity is connected, but later-life records still need to be distinguished from same-name people",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Leadbetter records catalog entry",
+        "repository": "Geneanet Library",
+        "url": "https://en.geneanet.org/library/doc/5931098/leadbetter-records",
+        "record_type": "Digitized-book catalog",
+        "accessed": "2026-08-31",
+        "supports": "1917 publication metadata and extensive Beverage coverage in the volume",
+        "evidence_level": "Tier 4 — catalog corroboration",
+        "record_date": "1917"
+      }
+    ]
+  },
+  {
+    "id": "freda_rose_mills_smith_1930",
+    "full_name": "Freda Rose Mills Smith",
+    "birth_date": "1930-08-05",
+    "birth_date_precision": "exact",
+    "birth_place": "Rockland, Maine",
+    "death_date": "2024-11-14",
+    "death_date_precision": "exact",
+    "death_place": "Rockport, Maine",
+    "parents": [
+      "edith_etta_beverage_1900",
+      "bernard_ray_mills_1903"
+    ],
+    "siblings": [
+      "priscilla_jean_mills_dempsey_1932",
+      "alden_ray_mills"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Bernard Ray Mills and Edith Etta Beverage Mills. Her obituary documents her North Haven upbringing and identifies siblings Priscilla and Alden. Living descendants are intentionally omitted.",
+    "evidence_status": "Exact dates and immediate family documented by detailed obituary",
+    "research_completeness": "Strong obituary coverage; living descendants intentionally excluded",
+    "sources": [
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Burpee, Carpenter & Hutchins via Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2024-11"
+      }
+    ]
+  },
+  {
+    "id": "gerald_gibson_beverage_1914",
+    "full_name": "Gerald Gibson Beverage",
+    "birth_date": "1914-08-21",
+    "birth_date_precision": "exact",
+    "birth_place": "Pulpit Harbor, North Haven, Maine",
+    "death_date": "2008-09-04",
+    "death_date_precision": "exact",
+    "death_place": "Rockport, Maine",
+    "parents": [
+      "albert_lewis_beverage_1888",
+      "julia_priscilla_miller_1888"
+    ],
+    "siblings": [
+      "elston_albert_beverage_1916",
+      "john_miller_beverage_1927"
+    ],
+    "spouses": [
+      "viola_joy_1914"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Engineer",
+      "Attorney",
+      "U.S. Navy veteran"
+    ],
+    "notes": "North Haven-born son of Albert L. and Julia P. Beverage. His obituary documents engineering and law degrees, wartime naval service, and his marriage to Viola Joy. Living descendants named in the obituary are intentionally not added here.",
+    "evidence_status": "Exact dates and parentage documented by contemporary obituary; birth independently present in 1917 genealogy",
+    "research_completeness": "Strong; living descendants intentionally excluded from this expansion",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      },
+      {
+        "title": "Viola Joy Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/25/obituaries/viola-joy-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates, parents, and 63-year marriage to Gerald G. Beverage",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2005-10"
+      }
+    ]
+  },
+  {
+    "id": "greta_morrison_1918",
+    "full_name": "Greta H. Morrison Beverage",
+    "birth_date": "1918",
+    "birth_date_precision": "year",
+    "birth_place": null,
+    "death_date": "2004",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "elston_albert_beverage_1916"
+    ],
+    "children": [
+      "raymond_albert_beverage",
+      "sandra_beverage_snow"
+    ],
+    "residences": [],
+    "notes": "Wife of Elston Albert Beverage and mother of Raymond Albert Beverage and Sandra Beverage Snow.",
+    "evidence_status": "Relationship documented by son's obituary; year range corroborated by Fuller Cemetery index",
+    "research_completeness": "Relationship strong; exact vital dates remain to be located",
+    "sources": [
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+        "evidence_level": "Tier 3 — contemporary local obituary",
+        "record_date": "2024-06-03"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven — additional entries",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+        "evidence_level": "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries"
+      }
+    ]
+  },
+  {
+    "id": "harrison_beverage_1825",
+    "spouses": [
+      "eldora_brown_beverage_alexander_1849"
+    ],
+    "children": [
+      "everett_beverage_harrison_line"
+    ],
+    "sources": [
+      "Find A Grave memorial",
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Harrison Beverage / Eldora M. Brown Alexander compiled profiles",
+        "repository": "WikiTree Suggestions / linked compiled records",
+        "url": "https://plus.wikitree.com/Profiles/Suggestions/Challenge_426_Orphans/593_1800-1899_3.htm",
+        "record_type": "Compiled genealogy index",
+        "accessed": "2026-08-31",
+        "supports": "Eldora Brown's 1849–1909 year range and Harrison Beverage association; used only alongside the 1917 Leadbetter genealogy",
+        "evidence_level": "Tier 4 — compiled genealogy; relationship independently supported by Leadbetter Records"
+      }
+    ],
+    "notes": "Second son of James Beverage and Jemima Crabtree; farmer and mariner. Leadbetter Records documents Eldora Brown as Harrison's wife and Everett as their son; exact vital dates remain conservative pending original records."
+  },
+  {
+    "id": "janet_kihlgren_beverage_1930",
+    "full_name": "Janet Edman Kihlgren Beverage",
+    "birth_date": "1930-07-21",
+    "birth_date_precision": "exact",
+    "birth_place": "Staten Island, New York",
+    "death_date": "2020-12-03",
+    "death_date_precision": "exact",
+    "death_place": "Tahlequah, Oklahoma",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "john_miller_beverage_1927"
+    ],
+    "children": [],
+    "residences": [],
+    "notes": "Wife of John Miller Beverage; they married May 25, 1957 and served as missionaries in Guatemala before living in Dallas and Tahlequah.",
+    "evidence_status": "Exact dates and marriage documented by funeral-home obituary and husband's obituary",
+    "research_completeness": "Strong obituary coverage",
+    "sources": [
+      {
+        "title": "Janet Beverage obituary",
+        "repository": "Hart Funeral Home, Tahlequah",
+        "url": "https://tahlequah.hartfuneralhome.net/obituaries/Janet-Beverage",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates and May 25, 1957 marriage to John Miller Beverage",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2020-12-03"
+      },
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. (Miller) Beverage; marriage to Janet Kihlgren",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2011-07-25"
+      }
+    ]
+  },
+  {
+    "id": "jesse_ames_brown_1869",
+    "full_name": "Jesse Ames Brown",
+    "birth_date": "1869",
+    "birth_date_precision": "year",
+    "birth_place": null,
+    "death_date": "1941",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "florence_mertice_beverage_1883"
+    ],
+    "children": [
+      "marjorie_annette_brown_1912"
+    ],
+    "residences": [
+      {
+        "location": "North Haven, Maine",
+        "period": "early 1900s"
+      }
+    ],
+    "notes": "Husband of Florence Mertice Beverage. Leadbetter Records gives their May 11, 1910 marriage and daughter Marjorie; a contemporary Maine register lists Jesse A. Brown among North Haven selectmen.",
+    "evidence_status": "Marriage and child documented by 1917 genealogy; North Haven residence/civic role independently corroborated; cemetery index supplies year range",
+    "research_completeness": "Strong relationship; exact vital dates remain to be located",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      },
+      {
+        "title": "Maine Register, State Year-Book and Legislative Manual — North Haven",
+        "repository": "Internet Archive transcription via LDSGenealogy",
+        "url": "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm",
+        "record_type": "Historical state/town directory",
+        "accessed": "2026-08-31",
+        "supports": "Jesse A. Brown appears among North Haven selectmen, independently placing Florence Beverage's documented husband in the community",
+        "evidence_level": "Tier 2/3 — contemporary historical directory transcription",
+        "record_date": "1910"
+      }
+    ]
+  },
+  {
+    "id": "john_miller_beverage_1927",
+    "full_name": "John Miller Beverage",
+    "birth_date": "1927-03-29",
+    "birth_date_precision": "exact",
+    "birth_place": "Owls Head, Maine",
+    "death_date": "2011-07-21",
+    "death_date_precision": "exact",
+    "death_place": null,
+    "parents": [
+      "albert_lewis_beverage_1888",
+      "julia_priscilla_miller_1888"
+    ],
+    "siblings": [
+      "gerald_gibson_beverage_1914",
+      "elston_albert_beverage_1916"
+    ],
+    "spouses": [
+      "janet_kihlgren_beverage_1930"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Missionary",
+      "Seminary administrator",
+      "Librarian"
+    ],
+    "notes": "Youngest documented son of Albert L. and Julia P. (Miller) Beverage. Living children named in his obituary are intentionally omitted.",
+    "evidence_status": "Exact dates, parentage, and marriage documented by contemporary obituary",
+    "research_completeness": "Strong obituary coverage; living descendants intentionally excluded",
+    "sources": [
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. (Miller) Beverage; marriage to Janet Kihlgren",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2011-07-25"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      },
+      {
+        "title": "Janet Beverage obituary",
+        "repository": "Hart Funeral Home, Tahlequah",
+        "url": "https://tahlequah.hartfuneralhome.net/obituaries/Janet-Beverage",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates and May 25, 1957 marriage to John Miller Beverage",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2020-12-03"
+      }
+    ]
+  },
+  {
+    "id": "julia_priscilla_miller_1888",
+    "full_name": "Julia Priscilla Miller Beverage",
+    "birth_date": "1888-12-08",
+    "birth_date_precision": "exact",
+    "birth_place": null,
+    "death_date": "1959",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "albert_lewis_beverage_1888"
+    ],
+    "children": [
+      "gerald_gibson_beverage_1914",
+      "elston_albert_beverage_1916",
+      "john_miller_beverage_1927"
+    ],
+    "residences": [],
+    "notes": "Wife of Albert Lewis Beverage. Leadbetter Records documents their 1913 marriage and sons Gerald and Elston; John's obituary independently identifies the same parents.",
+    "evidence_status": "Relationship chain corroborated by 1917 genealogy and descendant obituaries; death year corroborated by cemetery index",
+    "research_completeness": "Strong family linkage; original marriage and death records remain desirable",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven — additional entries",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+        "evidence_level": "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries"
+      },
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. (Miller) Beverage; marriage to Janet Kihlgren",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2011-07-25"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      }
+    ]
+  },
+  {
+    "id": "marjorie_annette_brown_1912",
+    "full_name": "Marjorie Annette Brown",
+    "birth_date": "1912-05-24",
+    "birth_date_precision": "exact",
+    "birth_place": null,
+    "death_date": "1982",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [
+      "florence_mertice_beverage_1883",
+      "jesse_ames_brown_1869"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Florence M. Beverage and Jesse A. Brown.",
+    "evidence_status": "Birth and parentage documented by 1917 genealogy; death year corroborated by Fuller Cemetery index",
+    "research_completeness": "Strong parentage; later-life records remain to be researched",
+    "sources": [
+      {
+        "title": "Leadbetter Records",
+        "repository": "Internet Archive; original by Jessie E. Ames",
+        "url": "https://archive.org/details/leadbetterrecord00ames",
+        "record_type": "Published family genealogy",
+        "accessed": "2026-08-31",
+        "supports": "North Haven Leadbetter/Beverage section: Samuel C. Beverage and Ruth M. Leadbetter family; Florence M. Beverage marriage and daughter; Albert L. Beverage marriage to Julia P. Miller and sons Gerald and Elston; Harrison Beverage marriage to Eldora Brown and son Everett",
+        "evidence_level": "Tier 3 — near-contemporary published genealogy; corroborated where possible by obituaries and cemetery records",
+        "record_date": "1917"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      }
+    ]
+  },
+  {
+    "id": "michelle_beverage_campbell_1969",
+    "full_name": "Michelle Rebecca Beverage Campbell",
+    "birth_date": "1969-03-01",
+    "birth_date_precision": "exact",
+    "birth_place": null,
+    "death_date": "2022-07-02",
+    "death_date_precision": "exact",
+    "death_place": "North Haven, Maine",
+    "parents": [
+      "raymond_albert_beverage"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Raymond and Cheryl Beverage. Her mother, siblings, children and grandchildren were living when the obituary was published and are intentionally not added in this research expansion.",
+    "evidence_status": "Exact dates and parentage documented by contemporary obituary; father independently confirms her as his daughter",
+    "research_completeness": "Strong connection; living-family privacy deliberately preserved",
+    "sources": [
+      {
+        "title": "Michelle Rebecca Campbell obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://obituaries.bangordailynews.com/obituary/michelle-campbell-1086638068",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates and parents Raymond and Cheryl Beverage",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2022-11-11"
+      },
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+        "evidence_level": "Tier 3 — contemporary local obituary",
+        "record_date": "2024-06-03"
+      }
+    ]
+  },
+  {
+    "id": "norwood_beveridge_1911",
+    "children": [
+      "norwood_pierson_beveridge_jr_1936",
+      "deborah_woodrow_beveridge_1935",
+      "arthur_woodrow_beveridge_1943"
+    ],
+    "sources": [
+      "Family records",
+      {
+        "title": "Norwood Pierson Beveridge Jr. obituary",
+        "repository": "Legacy Remembers",
+        "url": "https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014",
+        "record_type": "Published obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge; North Haven family connection",
+        "evidence_level": "Tier 3 — detailed published obituary",
+        "record_date": "2020-11-08"
+      },
+      {
+        "title": "Arthur Woodrow Beveridge obituary",
+        "repository": "Connection Newspapers",
+        "url": "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; father Norwood Pierson Beveridge; mother Winifred Dorothy Woodrow Beveridge; siblings Norwood Jr. and Deborah; grandparents Orris Lyford Beverage and Rose Emma Pierson Beverage",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2013-09-19"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      }
+    ],
+    "notes": "Child of Orris Lyford Beverage. Published obituaries establish children Norwood Jr., Deborah and Arthur and independently reconnect this branch to Orris Lyford Beverage and Rose Emma Pierson Beverage."
+  },
+  {
+    "id": "norwood_pierson_beveridge_jr_1936",
+    "full_name": "Norwood Pierson Beveridge Jr.",
+    "birth_date": "1936-11-05",
+    "birth_date_precision": "exact",
+    "birth_place": "Boston, Massachusetts",
+    "death_date": "2020-10-31",
+    "death_date_precision": "exact",
+    "death_place": null,
+    "parents": [
+      "norwood_beveridge_1911"
+    ],
+    "siblings": [
+      "deborah_woodrow_beveridge_1935",
+      "arthur_woodrow_beveridge_1943"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Attorney",
+      "Law professor"
+    ],
+    "notes": "Son of Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge. His mother and living descendants are not added as separate profiles in this pass without an independently confirmed deceased vital record.",
+    "evidence_status": "Exact dates and parentage documented by published obituary; sibling structure corroborated by Arthur's obituary",
+    "research_completeness": "Strong family linkage; living descendants intentionally excluded",
+    "sources": [
+      {
+        "title": "Norwood Pierson Beveridge Jr. obituary",
+        "repository": "Legacy Remembers",
+        "url": "https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014",
+        "record_type": "Published obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge; North Haven family connection",
+        "evidence_level": "Tier 3 — detailed published obituary",
+        "record_date": "2020-11-08"
+      },
+      {
+        "title": "Arthur Woodrow Beveridge obituary",
+        "repository": "Connection Newspapers",
+        "url": "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; father Norwood Pierson Beveridge; mother Winifred Dorothy Woodrow Beveridge; siblings Norwood Jr. and Deborah; grandparents Orris Lyford Beverage and Rose Emma Pierson Beverage",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2013-09-19"
+      }
+    ]
+  },
+  {
+    "id": "priscilla_jean_mills_dempsey_1932",
+    "full_name": "Priscilla Jean Mills Dempsey",
+    "birth_date": "1932",
+    "birth_date_precision": "year",
+    "birth_place": null,
+    "death_date": "2014",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [
+      "edith_etta_beverage_1900",
+      "bernard_ray_mills_1903"
+    ],
+    "siblings": [
+      "freda_rose_mills_smith_1930",
+      "alden_ray_mills"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Bernard Ray Mills and Edith Etta Beverage Mills; identified as Freda's predeceased sister.",
+    "evidence_status": "Sibling/parent chain documented by Freda's obituary; year range corroborated by Fuller Cemetery index",
+    "research_completeness": "Strong relationship; exact dates and spouse record remain to be located",
+    "sources": [
+      {
+        "title": "Freda Mills Smith obituary",
+        "repository": "Burpee, Carpenter & Hutchins via Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/33815815/freda-rose-smith",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Bernard Ray Mills and Edith Etta Beverage Mills; siblings Priscilla Mills Dempsey and Alden Ray Mills",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2024-11"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven — additional entries",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/pt/cemeteries/sites/46772/fuller-cemetery?page=2&pageSize=50&relativeId=&relativesOnly=false&showMap=false&showOriginal=false&sortOrder=asc",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-31",
+        "supports": "Julia Priscilla Miller, Bernard Ray Mills, Priscilla Jean Mills, and Greta H. Morrison year ranges",
+        "evidence_level": "Tier 4 — compiled cemetery index; relationships corroborated by published genealogy or obituaries"
+      }
+    ]
+  },
+  {
+    "id": "raymond_albert_beverage",
+    "full_name": "Raymond Albert Beverage",
+    "birth_date": null,
+    "birth_place": "North Haven, Maine",
+    "death_date": "2024-05-17",
+    "death_date_precision": "exact",
+    "death_place": "North Haven, Maine",
+    "parents": [
+      "elston_albert_beverage_1916",
+      "greta_morrison_1918"
+    ],
+    "siblings": [
+      "sandra_beverage_snow"
+    ],
+    "spouses": [],
+    "children": [
+      "michelle_beverage_campbell_1969"
+    ],
+    "residences": [],
+    "occupations": [
+      "Carpenter",
+      "Fisherman",
+      "Craftsman"
+    ],
+    "notes": "Son of Elston and Greta Morrison Beverage. The obituary reports age 81 but does not supply a birth date, so no exact birth year is inferred. Living spouse and sons are intentionally not added.",
+    "evidence_status": "Death and parentage documented by contemporary local obituary",
+    "research_completeness": "Strong connection; birth record still needed",
+    "sources": [
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+        "evidence_level": "Tier 3 — contemporary local obituary",
+        "record_date": "2024-06-03"
+      },
+      {
+        "title": "Michelle Rebecca Campbell obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://obituaries.bangordailynews.com/obituary/michelle-campbell-1086638068",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates and parents Raymond and Cheryl Beverage",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2022-11-11"
+      }
+    ]
+  },
+  {
+    "id": "sandra_beverage_snow",
+    "full_name": "Sandra Beverage Snow",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "elston_albert_beverage_1916",
+      "greta_morrison_1918"
+    ],
+    "siblings": [
+      "raymond_albert_beverage"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Daughter of Elston and Greta Morrison Beverage and sister of Raymond Albert Beverage. Raymond's 2024 obituary identifies her as predeceased and of Yarmouth; dates remain unresolved.",
+    "evidence_status": "Relationship and deceased status documented by brother's obituary; vital dates unresolved",
+    "research_completeness": "Partial — locate obituary or vital record before adding dates",
+    "sources": [
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Death on May 17, 2024; parents Elston and Greta Morrison Beverage; sister Sandra Beverage Snow; daughter Michelle Beverage Campbell",
+        "evidence_level": "Tier 3 — contemporary local obituary",
+        "record_date": "2024-06-03"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      }
+    ]
+  },
+  {
+    "id": "viola_joy_1914",
+    "full_name": "Viola Joy Beverage",
+    "birth_date": "1914-12-25",
+    "birth_date_precision": "exact",
+    "birth_place": "Manset, Southwest Harbor, Maine",
+    "death_date": "2005-10-10",
+    "death_date_precision": "exact",
+    "death_place": "Rockport, Maine",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "gerald_gibson_beverage_1914"
+    ],
+    "children": [],
+    "residences": [],
+    "notes": "Wife of Gerald Gibson Beverage for 63 years. Living descendants are intentionally omitted.",
+    "evidence_status": "Exact dates and marriage documented by contemporary obituary",
+    "research_completeness": "Good obituary coverage",
+    "sources": [
+      {
+        "title": "Viola Joy Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/25/obituaries/viola-joy-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates, parents, and 63-year marriage to Gerald G. Beverage",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2005-10"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Exact birth and death dates; parents Albert L. and Julia P. Beverage; wife Viola Joy; brother John; North Haven origin",
+        "evidence_level": "Tier 3 — contemporary published obituary",
+        "record_date": "2008-09-07"
+      }
+    ]
   }
 ]
