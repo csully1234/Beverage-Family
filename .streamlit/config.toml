@@ -9,3 +9,8 @@ font = "sans-serif"
 [client]
 showSidebarNavigation = false
 toolbarMode = "minimal"
+showErrorDetails = "type"
+showErrorLinks = false
+
+[browser]
+gatherUsageStats = false
