@@ -1,0 +1,105 @@
+name: Apply final app hardening
+
+on:
+  push:
+    branches:
+      - final/family-archive-hardening
+    paths:
+      - .github/workflows/apply-final-app-hardening.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-test-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out hardening branch
+        uses: actions/checkout@v7
+        with:
+          ref: final/family-archive-hardening
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Patch app safely
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("app.py")
+          text = path.read_text()
+
+          replacements = [
+              (
+                  'from datetime import date\n',
+                  'from datetime import datetime\n',
+              ),
+              (
+                  'from urllib.parse import quote, urlparse\n\nimport streamlit as st\nfrom graphviz import Digraph\n\nfrom family_data import (',
+                  'from urllib.parse import quote, urlparse\nfrom zoneinfo import ZoneInfo\n\nimport streamlit as st\nimport streamlit.components.v1 as components\nfrom graphviz import Digraph\n\nfrom full_tree import build_full_tree_html\nfrom family_data import (',
+              ),
+              (
+                  '    "Explore the Tree": "tree",\n    "People": "people",',
+                  '    "Explore the Tree": "tree",\n    "Full Family Map": "full-tree",\n    "People": "people",',
+              ),
+              (
+                  '''        .stButton > button[kind="primary"],\n        .stDownloadButton > button[kind="primary"] {\n            background: var(--bev-navy);\n            border-color: var(--bev-navy);\n        }\n\n        .bev-hero {''',
+                  '''        .stButton > button[kind="primary"],\n        .stDownloadButton > button[kind="primary"] {\n            background: var(--bev-navy);\n            border-color: var(--bev-navy);\n        }\n\n        .stButton > button[kind="primary"] p,\n        .stDownloadButton > button[kind="primary"] p {\n            color: #fffdf8 !important;\n        }\n\n        [data-testid="stAlert"],\n        [data-testid="stAlert"] * {\n            color: var(--bev-ink) !important;\n        }\n\n        [data-testid="stAlert"] a {\n            color: #0b5265 !important;\n            text-decoration: underline;\n        }\n\n        [data-baseweb="select"] > div,\n        [data-baseweb="input"] > div {\n            background-color: var(--bev-paper) !important;\n            color: var(--bev-ink) !important;\n        }\n\n        [data-baseweb="select"] input,\n        [data-baseweb="input"] input,\n        textarea {\n            color: var(--bev-ink) !important;\n            -webkit-text-fill-color: var(--bev-ink) !important;\n        }\n\n        [data-baseweb="popover"],\n        [data-baseweb="popover"] * {\n            color: var(--bev-ink) !important;\n        }\n\n        [role="option"] {\n            background-color: var(--bev-paper) !important;\n            color: var(--bev-ink) !important;\n        }\n\n        [role="option"]:hover,\n        [role="option"][aria-selected="true"] {\n            background-color: var(--bev-sky) !important;\n            color: var(--bev-navy) !important;\n        }\n\n        .bev-hero {''',
+              ),
+              (
+                  '''def navigate(page: str) -> None:\n    st.session_state["nav_page"] = page\n    st.query_params["page"] = PAGE_SLUGS[page]\n    if page != "People" and "profile" in st.query_params:\n        del st.query_params["profile"]\n    if page != "Timeline" and "event" in st.query_params:\n        del st.query_params["event"]\n\n\ndef open_profile(person_id: str) -> None:''',
+                  '''def navigate(page: str) -> None:\n    st.session_state["nav_page"] = page\n    st.query_params["page"] = PAGE_SLUGS[page]\n    if page != "People" and "profile" in st.query_params:\n        del st.query_params["profile"]\n    if page != "Timeline" and "event" in st.query_params:\n        del st.query_params["event"]\n\n\ndef center_tree_on(person_id: str) -> None:\n    """Safely move from a profile to the focused tree during a callback."""\n\n    st.session_state["tree_person"] = person_id\n    navigate("Explore the Tree")\n\n\ndef open_profile(person_id: str) -> None:''',
+              ),
+              (
+                  '''        if st.button("Center this person in the family tree", type="primary"):\n            st.session_state["tree_person"] = person_id\n            navigate("Explore the Tree")\n            st.rerun()''',
+                  '''        st.button(\n            "Center this person in the family tree",\n            type="primary",\n            on_click=center_tree_on,\n            args=(person_id,),\n        )''',
+              ),
+              (
+                  '''    st.title("Explore the Family Tree")\n    st.write("Choose a person and switch between their ancestors, descendants, or immediate family.")\n\n    ordered = sorted_people(data["people"])''',
+                  '''    st.title("Explore the Family Tree")\n    st.write("Choose a person and switch between their ancestors, descendants, or immediate family.")\n    st.button(\n        "Open the full family map",\n        on_click=navigate,\n        args=("Full Family Map",),\n    )\n\n    ordered = sorted_people(data["people"])''',
+              ),
+              (
+                  '''        st.markdown(" ".join(path_parts))\n\n\ndef event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:''',
+                  '''        st.markdown(" ".join(path_parts))\n\n\ndef render_full_tree_page(\n    data: dict[str, list[Record]],\n    people_by_id: Mapping[str, Record],\n    relationships: dict[str, dict[str, set[str]]],\n) -> None:\n    """Render a separate, interactive map containing the entire known tree."""\n\n    st.title("Full Family Map")\n    st.write(\n        "This is an additional whole-family view. The existing focused tree remains unchanged. "\n        "Use the map controls to fit everything on screen, zoom in without shrinking labels permanently, "\n        "drag around the canvas, or jump directly to a person."\n    )\n\n    all_referenced = set(people_by_id)\n    for mapping in relationships.values():\n        for person_id, related_ids in mapping.items():\n            all_referenced.add(str(person_id))\n            all_referenced.update(str(item) for item in related_ids)\n    unresolved_count = sum(person_id not in people_by_id for person_id in all_referenced)\n    parent_edges = {\n        (str(parent_id), str(child_id))\n        for child_id, parent_ids in relationships["parents"].items()\n        for parent_id in parent_ids\n    }\n    spouse_edges = {\n        tuple(sorted((str(person_id), str(spouse_id))))\n        for person_id, spouse_ids in relationships["spouses"].items()\n        for spouse_id in spouse_ids\n        if str(person_id) != str(spouse_id)\n    }\n\n    metrics = st.columns(4)\n    metrics[0].metric("Profiles", len(data["people"]))\n    metrics[1].metric("Unresolved relatives", unresolved_count)\n    metrics[2].metric("Parent-child links", len(parent_edges))\n    metrics[3].metric("Spouse links", len(spouse_edges))\n\n    controls, note = st.columns([1, 3])\n    with controls:\n        st.button(\n            "Back to focused tree",\n            on_click=navigate,\n            args=("Explore the Tree",),\n            width="stretch",\n        )\n    with note:\n        st.caption(\n            "Solid lines are parent-child relationships; dashed lines are spouses. "\n            "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."\n        )\n\n    components.html(\n        build_full_tree_html(people_by_id, relationships),\n        height=820,\n        scrolling=False,\n    )\n\n\ndef event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:''',
+              ),
+              (
+                  '    today = date.today()\n',
+                  '    today = datetime.now(ZoneInfo("America/New_York")).date()\n',
+              ),
+              (
+                  '''    elif page == "Explore the Tree":\n        render_tree_page(data, people_by_id, relationships)\n    elif page == "People":''',
+                  '''    elif page == "Explore the Tree":\n        render_tree_page(data, people_by_id, relationships)\n    elif page == "Full Family Map":\n        render_full_tree_page(data, people_by_id, relationships)\n    elif page == "People":''',
+              ),
+          ]
+
+          for old, new in replacements:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"Expected exactly one app.py match, found {count}: {old[:90]!r}")
+              text = text.replace(old, new, 1)
+
+          path.write_text(text)
+          PY
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip -r requirements.txt
+
+      - name: Validate patched application
+        run: |
+          python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
+          python validate_data.py
+          python -m unittest discover -s tests -v
+
+      - name: Commit tested app changes and remove patch workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/apply-final-app-hardening.yml
+          git add app.py
+          git diff --cached --check
+          git commit -m "Add full family map and harden navigation UX"
+          git push origin HEAD:final/family-archive-hardening
