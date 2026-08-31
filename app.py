@@ -13,7 +13,6 @@ from urllib.parse import quote, urlparse
 from zoneinfo import ZoneInfo
 
 import streamlit as st
-import streamlit.components.v1 as components
 from graphviz import Digraph
 
 from full_tree import build_full_tree_html
@@ -1316,10 +1315,9 @@ def render_full_tree_page(
             "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
         )
 
-    components.html(
+    st.iframe(
         build_full_tree_html(people_by_id, relationships),
         height=820,
-        scrolling=False,
     )
 
 

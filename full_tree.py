@@ -265,7 +265,7 @@ def build_full_tree_html(
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Drag to pan · wheel/pinch or +/− to zoom · click a profile to open it</div>
+    <div id="help">Drag to pan · use the wheel or +/− to zoom · click a profile to open it</div>
   </div>
 </div>
 <script>
