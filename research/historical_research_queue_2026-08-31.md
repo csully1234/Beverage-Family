@@ -1,0 +1,161 @@
+# Historical life research queue
+
+Effective profiles: 180
+Effective event IDs: 108
+
+- `james_beveridge_sr_1700` | James Beveridge Sr. | 1700-01-01–1768-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `matthew_mckinney_1700` | Matthew McKinney | 1700-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `samuel_beveridge_1702` | Samuel Beveridge | 1702-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `sarah_bennett_1705` | Sarah Bennett | 1705-01-01–1727-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `ezekiel_kent_1720` | Ezekiel Kent | 1720-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `nicholas_white_1720` | Nicholas White | 1720-01-01–1748-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `james_beveridge_jr_1724` | James Beveridge Jr. | 1724-08-27–1785-03-01 | enriched: none | sources=1 weak-string-sources=1
+- `jean_mckinney_white_1725` | Jean (Jane) McKinney White Beveridge | 1725-01-01–1786-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `susanna_bryant_1725` | Susanna Bryant Winslow Kent | 1725-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `sarah_beveridge_1727` | Sarah Beveridge | 1727-06-01–None | enriched: none | sources=1 weak-string-sources=0
+- `mary_white_1728` | Mary White | 1728-01-01–1731-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `sarah_holman_1734` | Sarah Holman | 1734-02-07–None | enriched: none | sources=1 weak-string-sources=1
+- `susannah_beveridge_1735` | Susannah Beveridge | 1735-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `jane_beveridge_1737` | Jane Beveridge | 1737-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `mary_beveridge_1739` | Mary Beveridge | 1739-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `major_george_white_1746` | Major George White | 1746-01-01–1826-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `john_white_1748` | John White (1748) | 1748-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `henry_henry_1750` | Henry Henry | 1750-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `thomas_beverage_1750` | Capt. Thomas Beverage | 1750-11-28–1834-10-04 | enriched: none | sources=1 weak-string-sources=1
+- `penelope_kent_1752` | Penelope Kent | 1752-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `mercy_beveridge_henry_1753` | Mercy Beveridge Henry | 1753-01-01–1831-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `mercy_kent_1754` | Mercy Kent | 1754-10-02–1819-02-28 | enriched: none | sources=2 weak-string-sources=1
+- `benjamin_kent_1755` | Benjamin Kent | 1755-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `sarah_beveridge_kent_1758` | Sarah Beveridge Kent | 1758-01-01–1821-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `eleazer_crabtree_1760` | Capt. Eleazer Crabtree | 1760-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `lucy_train_1765` | Lucy Train | 1765-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `henry_dyer_1770` | Henry Dyer | 1770-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `john_white_beverage_1774` | John White Beverage | 1774-08-15–1839-06-01 | enriched: none | sources=2 weak-string-sources=1
+- `nathaniel_winslow_beverage_1776` | Nathaniel Winslow Beverage | 1776-01-17–1864-11-20 | enriched: none | sources=1 weak-string-sources=1
+- `rachel_crosby_1778` | Rachel Lucy Crosby | 1778-01-01–1863-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `benjamin_kent_beverage_1779` | Benjamin Kent Beverage | 1779-09-19–1851-12-20 | enriched: none | sources=1 weak-string-sources=1
+- `henry_alexander_1780` | Henry Alexander | 1780-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `diana_daggett_1780` | Diana Daggett | 1780-12-31–1856-02-22 | enriched: none | sources=1 weak-string-sources=0
+- `mercy_kent_beverage_1782` | Mercy Kent Beverage | 1782-10-15–1817-04-04 | enriched: none | sources=1 weak-string-sources=1
+- `sarah_beverage_1785` | Sarah "Sally" Beverage | 1785-03-20–1844-11-28 | enriched: none | sources=1 weak-string-sources=1
+- `lydia_winslow_beverage_1787` | Lydia Winslow Beverage | 1787-04-01–1792-11-24 | enriched: none | sources=1 weak-string-sources=1
+- `james_beverage_1789` | James Beverage | 1789-10-03–1850-12-05 | enriched: none | sources=1 weak-string-sources=1
+- `jemima_crabtree_1792` | Jemima Crabtree | 1792-06-15–1837-05-12 | enriched: none | sources=1 weak-string-sources=1
+- `josiah_winslow_beverage_1793` | Josiah Winslow Beverage | 1793-07-10–1857-12-20 | enriched: none | sources=1 weak-string-sources=1
+- `mary_dyer_1795` | Mary Dyer | 1795-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `lydia_winslow_beverage_1796` | Lydia Winslow Beverage (second) | 1796-04-11–1829-02-19 | enriched: none | sources=1 weak-string-sources=1
+- `israel_carver_jr_1800` | Israel Carver Jr. | 1800-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `thomas_beverage_1800_child` | Thomas Beverage (1800) | 1800-01-01–1808-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `sarah_beverage_1802_child` | Sarah Beverage (1802) | 1802-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `abigail_beverage_1803` | Abigail Beverage | 1803-02-21–1803-02-22 | enriched: none | sources=1 weak-string-sources=1
+- `abigail_beverage_1805_child` | Abigail "Nabby" Beverage (1805) | 1805-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `susannah_jewell_1805` | Susannah Jewell | 1805-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `robert_beverage_1807` | Robert Beverage (1807) | 1807-01-01–1854-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `norwood_beverage_1810` | Norwood Beverage | 1810-02-16–1868-03-28 | enriched: none | sources=1 weak-string-sources=0
+- `thomas_beverage_1810` | Thomas Beverage (1810) | 1810-10-05–1876-04-24 | enriched: none | sources=1 weak-string-sources=0
+- `hannah_grant_1811` | Hannah Grant | 1811-01-01–1875-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `harriet_beverage_1812` | Harriet Beverage | 1812-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `susan_beverage_1814` | Susan Beverage | 1814-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `mary_beverage_1816` | Mary Beverage | 1816-01-01–None | enriched: none | sources=1 weak-string-sources=0
+- `josiah_b_beverage_1821` | Josiah B. "Si" Beverage | 1821-01-01–1918-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `benjamin_beverage_1822` | Benjamin Crabtree Beverage | 1822-10-02–1875-12-07 | enriched: none | sources=1 weak-string-sources=1
+- `harrison_beverage_1825` | Harrison Beverage | 1825-09-04–1901-04-16 | enriched: none | sources=3 weak-string-sources=1
+- `albert_glover_beverage_1827` | Albert Glover Beverage | 1827-10-31–1888-12-25 | enriched: none | sources=1 weak-string-sources=1
+- `olive_carver_1829` | Olive Leadbetter Carver | 1829-08-12–1909-10-17 | enriched: none | sources=1 weak-string-sources=1
+- `harvey_beverage_1830` | Harvey Beverage | 1830-01-01–1864-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `lewis_leadbetter_1830` | Lewis Leadbetter | 1830-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `lucy_c_beverage_1830` | Lucy C. Beverage | 1830-01-01–1850-12-07 | enriched: none | sources=1 weak-string-sources=1
+- `amelia_beverage_1833_child` | Amelia Beverage (daughter of Norwood) | 1833-01-01–1908-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `amelia_beverage_1833` | Amelia Beverage | 1833-01-31–1908-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `mary_calderwood_1835` | Mary Calderwood | 1835-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `robert_beverage_1835` | Robert Beverage (1835) | 1835-01-01–1850-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `orris_beverage_1836` | Orris Beverage (1836) | 1836-01-01–1850-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `henry_beverage_1842` | Henry Beverage | 1842-01-01–1908-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `lyford_beverage_1842` | Lyford Beverage | 1842-01-01–1908-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `moses_beverage_1844` | Moses Beverage | 1844-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `thomas_beverage_1845` | Thomas Beverage (1845) | 1845-01-01–1845-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `helen_beverage_1846` | Helen Beverage | 1846-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `dana_hanson_beverage_1847` | Dana Hanson Beverage | 1847-01-01–1909-01-01 | enriched: none | sources=1 weak-string-sources=0
+- `eldora_brown_beverage_alexander_1849` | Eldora M. Brown Beverage Alexander | 1849–1909 | enriched: none | sources=2 weak-string-sources=0
+- `ellen_beverage_1853` | Ellen Beverage | 1853–1886 | enriched: none | sources=2 weak-string-sources=0
+- `theodore_beverage_1855` | Theodore E. Beverage | 1855-01-01–1874-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `fremont_beverage_1856` | Fremont Beverage | 1856–1930 | enriched: occupations,civic_offices,education | sources=5 weak-string-sources=0
+- `harriet_beverage_1856` | Harriet N. Beverage | 1856-01-01–1900-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `nora_beverage_1858` | Leonora Carver Beverage | 1858–1875 | enriched: none | sources=2 weak-string-sources=0
+- `james_beverage_1858` | James Beverage (young) | 1858-01-01–1863-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `orris_beverage_1860` | Orris Lyford Beverage | 1860-08-11–1921-05-04 | enriched: none | sources=1 weak-string-sources=1
+- `frank_beverage_1861` | Frank Beverage | 1861-01-14–None | enriched: occupations | sources=3 weak-string-sources=0
+- `samuel_carver_beverage_1862` | Samuel Carver Beverage | 1862-09-28–1905-03-18 | enriched: none | sources=2 weak-string-sources=1
+- `lottie_h_smith_beverage_1863` | Lottie H. Smith Beverage | 1863–1938 | enriched: none | sources=2 weak-string-sources=0
+- `charles_beverage_1863` | Charles Howard Beverage | 1863-01-01–1938-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `ruth_leadbetter_1863` | Ruth Margaret Leadbetter | 1863-07-06–1956-04-16 | enriched: none | sources=2 weak-string-sources=1
+- `lucy_etta_beverage_1864` | Lucy Etta Beverage | 1864–1892 | enriched: none | sources=2 weak-string-sources=0
+- `julia_waterman_beverage_1866` | Julia W. Beverage | 1866–1876 | enriched: none | sources=2 weak-string-sources=0
+- `james_norwood_beverage_1866` | James Norwood Beverage | 1866-01-01–1922-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `jemima_beverage_1866` | Jemima Anna Beverage | 1866-01-01–1894-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `rose_pierson_1866` | Rose Emma Pierson | 1866-01-01–1939-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `jesse_ames_brown_1869` | Jesse Ames Brown | 1869–1941 | enriched: none | sources=3 weak-string-sources=0
+- `mary_beverage_1869` | Mary E. Beverage | 1869-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `alonzo_taylor_1870` | Alonzo H. Taylor | 1870-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `unnamed_son_1872` | Unnamed son of Albert and Olive Beverage | 1872–1872 | enriched: none | sources=2 weak-string-sources=0
+- `robert_edwin_beverage_1872` | Robert Edwin Beverage | 1872-01-01–1944-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `nett_ie_m_beverage_1874` | Nettie M. Beverage | 1874–1876 | enriched: none | sources=2 weak-string-sources=0
+- `mary_windsor_1875` | Mary E. Windsor | 1875-01-01–None | enriched: none | sources=1 weak-string-sources=1
+- `leforest_thurston_1882` | LeForest Thurston | 1882-04-14–None | enriched: none | sources=1 weak-string-sources=0
+- `florence_mertice_beverage_1883` | Florence Mertice Beverage Brown | 1883-06-03–1980 | enriched: none | sources=6 weak-string-sources=0
+- `chester_josiah_beverage_1884` | Chester Josiah Beverage | 1884-09-25–1958 | enriched: none | sources=3 weak-string-sources=0
+- `hiram_stone_beverage_1886` | Hiram Stone Beverage | 1886-05-13–1980-04-27 | enriched: none | sources=3 weak-string-sources=1
+- `alida_beverage_thurston_1887` | Alida E. Beverage Thurston | 1887-11-11–1910-12-22 | enriched: none | sources=2 weak-string-sources=0
+- `albert_lewis_beverage_1888` | Albert Lewis Beverage | 1888-11-12–1973 | enriched: none | sources=6 weak-string-sources=0
+- `julia_priscilla_miller_1888` | Julia Priscilla Miller Beverage | 1888-12-08–1959 | enriched: none | sources=4 weak-string-sources=0
+- `olive_beveridge_1890` | Olive Amelia Beveridge | 1890-01-01–1968-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `marston_leadbetter_beverage_1890` | Marston Leadbetter Beverage | 1890-12-26–1983 | enriched: none | sources=3 weak-string-sources=0
+- `olive_mary_beverage_1892` | Olive Mary Beverage Gregory | 1892-08-17–1983 | enriched: none | sources=4 weak-string-sources=0
+- `ruby_hazel_taylor_1893` | Ruby Hazel Taylor | 1893-02-03–1964-12-15 | enriched: none | sources=1 weak-string-sources=0
+- `harold_h_beverage_1893` | Harold Henry Beverage | 1893-10-14–1993-01-27 | enriched: occupations,civic_offices,education,accomplishments | sources=6 weak-string-sources=0
+- `nett_ie_ellen_beverage_1894` | Nettie Ellen Beverage Crockett | 1894-04-22–1985 | enriched: none | sources=3 weak-string-sources=0
+- `helen_barclay_1896` | Helen Beveridge Barclay | 1896-01-01–1984-01-01 | enriched: none | sources=2 weak-string-sources=1
+- `elroy_victor_beverage_1896` | Elroy Victor Beverage Sr. | 1896-03-05–1959 | enriched: none | sources=4 weak-string-sources=0
+- `george_dewey_beverage_1898` | George Dewey Beverage | 1898-02-28–1997 | enriched: none | sources=5 weak-string-sources=0
+- `petronele_jurgeliute_beverage_1898` | Petronėlė Jurgeliūtė Beverage | 1898-09-29–1979-04-26 | enriched: occupations,civic_offices | sources=1 weak-string-sources=0
+- `edith_etta_beverage_1900` | Edith Etta Beverage Mills | 1900-05-12–None | enriched: none | sources=6 weak-string-sources=0
+- `wilson_freemont_beverage_1902` | Wilson Freemont Beverage | 1902-03-23–1999 | enriched: none | sources=3 weak-string-sources=0
+- `bernard_ray_mills_1903` | Bernard Ray Mills | 1903–1986 | enriched: none | sources=2 weak-string-sources=0
+- `arnold_beveridge_1903` | Arnold Pierson Beveridge | 1903-01-01–1987-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `lowell_beveridge_1905` | Lowell Pierson Beveridge | 1905-09-19–1991-06-18 | enriched: occupations,education | sources=4 weak-string-sources=1
+- `alma_marie_beverage_1905` | Alma Marie Beverage | 1905-10-02–1906-01-24 | enriched: none | sources=3 weak-string-sources=0
+- `rev_albion_beverage_1907` | Rev. Albion Pierson Beverage | 1907-04-09–1951-01-30 | enriched: none | sources=1 weak-string-sources=1
+- `elliot_beverage_1908` | Elliot Pierson Beverage | 1908-01-01–1982-01-01 | enriched: none | sources=1 weak-string-sources=1
+- `grace_reed_1909` | Grace Elizabeth Reed | 1909-10-31–2008-06-07 | enriched: occupations,education | sources=2 weak-string-sources=0
+- `carl_lyman_thurston_1910` | Carl Lyman Thurston | 1910-12-03–None | enriched: none | sources=1 weak-string-sources=0
+- `norwood_beveridge_1911` | Norwood Pierson Beveridge | 1911-01-01–1980-01-01 | enriched: none | sources=4 weak-string-sources=1
+- `marjorie_annette_brown_1912` | Marjorie Annette Brown | 1912-05-24–1982 | enriched: none | sources=2 weak-string-sources=0
+- `gerald_gibson_beverage_1914` | Gerald Gibson Beverage | 1914-08-21–2008-09-04 | enriched: occupations | sources=3 weak-string-sources=0
+- `viola_joy_1914` | Viola Joy Beverage | 1914-12-25–2005-10-10 | enriched: none | sources=2 weak-string-sources=0
+- `elston_albert_beverage_1916` | Elston Albert Beverage | 1916-05-09–1976 | enriched: none | sources=3 weak-string-sources=0
+- `samuel_hiram_beverage_1917` | Samuel Hiram Beverage | 1917-12-06–2014-12-18 | enriched: occupations,military_service,civic_offices,education | sources=3 weak-string-sources=0
+- `greta_morrison_1918` | Greta H. Morrison Beverage | 1918–2004 | enriched: none | sources=2 weak-string-sources=0
+- `eleanor_sargent_1920` | Eleanor Mae Sargent | 1920-08-28–2016-07-13 | enriched: occupations,civic_offices,education | sources=2 weak-string-sources=0
+- `dorothy_beverage_brownell_1921` | Dorothy B. Beverage Brownell | 1921-09-17–2012-11-13 | enriched: none | sources=1 weak-string-sources=0
+- `estelle_nettie_beverage_libby_1922` | Estelle Nettie Beverage Libby | 1922-10-09–2026-05-17 | enriched: none | sources=3 weak-string-sources=0
+- `elsie_louise_curit_beverage_1925` | Elsie Louise Curit Beverage | 1925-02-19–2012-08-25 | enriched: none | sources=1 weak-string-sources=0
+- `john_miller_beverage_1927` | John Miller Beverage | 1927-03-29–2011-07-21 | enriched: occupations | sources=3 weak-string-sources=0
+- `florence_adele_pearse_beverage_1927` | Florence Adele Pearse Beverage | 1927-04-06–2020-08-31 | enriched: none | sources=2 weak-string-sources=0
+- `hartley_george_beverage_sr_1927` | Hartley George Beverage Sr. | 1927-05-28–2018-05-20 | enriched: none | sources=1 weak-string-sources=0
+- `amedeo_c_merolla_1929` | Amedeo C. “Armie” Merolla | 1929–2017-04-28 | enriched: occupations,education | sources=2 weak-string-sources=0
+- `janet_kihlgren_beverage_1930` | Janet Edman Kihlgren Beverage | 1930-07-21–2020-12-03 | enriched: none | sources=2 weak-string-sources=0
+- `freda_rose_mills_smith_1930` | Freda Rose Mills Smith | 1930-08-05–2024-11-14 | enriched: none | sources=1 weak-string-sources=0
+- `priscilla_jean_mills_dempsey_1932` | Priscilla Jean Mills Dempsey | 1932–2014 | enriched: none | sources=2 weak-string-sources=0
+- `deborah_woodrow_beveridge_1935` | Deborah Woodrow Beveridge | 1935–2015 | enriched: none | sources=2 weak-string-sources=0
+- `agnes_beverage_dailey_1935` | Agnes Beverage Dailey | 1935-08-05–2018-11-21 | enriched: occupations | sources=1 weak-string-sources=0
+- `norwood_pierson_beveridge_jr_1936` | Norwood Pierson Beveridge Jr. | 1936-11-05–2020-10-31 | enriched: occupations | sources=3 weak-string-sources=0
+- `janice_marshall_1940` | Janice Lynn Marshall Beverage | 1940-01-01–2023-02-08 | enriched: none | sources=1 weak-string-sources=0
+- `arthur_woodrow_beveridge_1943` | Arthur Woodrow Beveridge | 1943-05-13–2013-08-07 | enriched: occupations | sources=2 weak-string-sources=0
+- `cynthia_e_libby_tuplin_1952` | Cynthia E. Libby Tuplin | 1952-12-15–2023-05-29 | enriched: none | sources=2 weak-string-sources=0
+- `michelle_beverage_campbell_1969` | Michelle Rebecca Beverage Campbell | 1969-03-01–2022-07-02 | enriched: none | sources=2 weak-string-sources=0
+- `alden_ray_mills` | Alden Ray Mills | None–2023-09-01 | enriched: none | sources=2 weak-string-sources=0
+- `elroy_v_beverage_jr` | Elroy V. Beverage Jr. | None–1995 | enriched: none | sources=3 weak-string-sources=0
+- `frederick_w_brownell` | Frederick W. Brownell | None–2012 | enriched: none | sources=1 weak-string-sources=0
+- `norma_helen_barclay_merolla` | Norma Helen Barclay Merolla | None–2026-06-16 | enriched: occupations,education | sources=2 weak-string-sources=0
+- `raymond_albert_beverage` | Raymond Albert Beverage | None–2024-05-17 | enriched: occupations | sources=2 weak-string-sources=0
+- `sylvia_jean_libby_soucier` | Sylvia Jean Libby Soucier | None–2021-04-08 | enriched: none | sources=3 weak-string-sources=0
