@@ -8,7 +8,10 @@
     "checked_on": "2026-08-26",
     "summary": "Every birth, death, and timeline date was parsed and inventoried. Legacy values ending in January 1 were compared with their cited source descriptions and prioritized for direct-record searches. Where no reviewed source explicitly established January 1, the original stored value remains available for provenance while the public display now shows only the supported year. Exact replacements are limited to dates directly stated by reviewed sources.",
     "why_it_matters": "The timeline no longer turns a known year into a fictional New Year's Day. Exact, year-only, approximate, and unknown values now sort consistently and display honestly.",
-    "people_involved": ["grace_reed_1909", "lowell_beveridge_1905"],
+    "people_involved": [
+      "grace_reed_1909",
+      "lowell_beveridge_1905"
+    ],
     "claims_added_or_updated": [
       "Grace Reed Beverage birth: 1909-01-01 to 1909-10-31, exact",
       "Grace Reed Beverage death: 2008-01-01 to 2008-06-07, exact",
@@ -21,9 +24,35 @@
       "Confirm whether any retained January 1 values are genuine exact dates before marking them exact"
     ],
     "sources": [
-      {"title": "Grace Beverage obituary", "repository": "Kennebec Journal via Legacy.com", "url": "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664", "record_type": "Newspaper obituary", "record_date": "2008-06-11", "accessed": "2026-08-26", "supports": "Exact birth and death dates for Grace", "evidence_level": "Tier 3 — contemporary published obituary"},
-      {"title": "The Rev. Lowell Beveridge, Professor of Music, Dies", "repository": "The Washington Post", "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/", "record_type": "Newspaper obituary", "record_date": "1991-06-20", "accessed": "2026-08-26", "supports": "Exact death date for Lowell", "evidence_level": "Tier 3 — contemporary newspaper"},
-      {"title": "Lowell P. Beveridge composer authority record", "repository": "Musica International", "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-", "record_type": "Specialist biographical index", "accessed": "2026-08-26", "supports": "Exact birth and death dates for Lowell", "evidence_level": "Tier 3 — specialist reference"}
+      {
+        "title": "Grace Beverage obituary",
+        "repository": "Kennebec Journal via Legacy.com",
+        "url": "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664",
+        "record_type": "Newspaper obituary",
+        "record_date": "2008-06-11",
+        "accessed": "2026-08-26",
+        "supports": "Exact birth and death dates for Grace",
+        "evidence_level": "Tier 3 — contemporary published obituary"
+      },
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Newspaper obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-08-26",
+        "supports": "Exact death date for Lowell",
+        "evidence_level": "Tier 3 — contemporary newspaper"
+      },
+      {
+        "title": "Lowell P. Beveridge composer authority record",
+        "repository": "Musica International",
+        "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-",
+        "record_type": "Specialist biographical index",
+        "accessed": "2026-08-26",
+        "supports": "Exact birth and death dates for Lowell",
+        "evidence_level": "Tier 3 — specialist reference"
+      }
     ]
   },
   {
@@ -35,9 +64,24 @@
     "checked_on": "2026-08-26",
     "summary": "The Kennebec Journal obituary states that Grace was born to Robert George Reed and Annie MacKinnon Reed on October 31, 1909 in Boston and died June 7, 2008 at her son's home in Pittsfield. It also documents her schooling, insurance-agency work, 1948 home purchase, five children, and time in Florida and North Haven.",
     "why_it_matters": "It supplies two full dates and a much richer life history while exposing a place-and-age conflict for family review rather than silently erasing the earlier narrative.",
-    "people_involved": ["grace_reed_1909"],
-    "unresolved_conflicts": ["The existing profile and timeline associate the death with Dresden and age 99; the obituary says Pittsfield and age 98. The existing non-date wording remains preserved."],
-    "sources": [{"title": "Grace Beverage obituary", "repository": "Kennebec Journal via Legacy.com", "url": "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664", "record_type": "Newspaper obituary", "record_date": "2008-06-11", "accessed": "2026-08-26", "supports": "Birth, parents, death, education, employment, residences, and children", "evidence_level": "Tier 3 — contemporary published obituary"}]
+    "people_involved": [
+      "grace_reed_1909"
+    ],
+    "unresolved_conflicts": [
+      "The existing profile and timeline associate the death with Dresden and age 99; the obituary says Pittsfield and age 98. The existing non-date wording remains preserved."
+    ],
+    "sources": [
+      {
+        "title": "Grace Beverage obituary",
+        "repository": "Kennebec Journal via Legacy.com",
+        "url": "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664",
+        "record_type": "Newspaper obituary",
+        "record_date": "2008-06-11",
+        "accessed": "2026-08-26",
+        "supports": "Birth, parents, death, education, employment, residences, and children",
+        "evidence_level": "Tier 3 — contemporary published obituary"
+      }
+    ]
   },
   {
     "id": "research_lowell_music_career",
@@ -48,12 +92,41 @@
     "checked_on": "2026-08-26",
     "summary": "Lowell Beveridge was a Harvard-trained musicologist, organist, conductor, educator, and Episcopal priest. Columbia University documents his 1930–1952 faculty service, university-organist role, and efforts to strengthen its music collections. His obituary traces later service at Union Theological Seminary and Virginia Theological Seminary and records his death on June 18, 1991.",
     "why_it_matters": "A previously skeletal profile now has exact life dates and a documented multi-institution career.",
-    "people_involved": ["lowell_beveridge_1905"],
-    "unresolved_conflicts": ["The existing profile says North Haven as birthplace; published references say Boston or Dorchester. The existing place remains pending a birth record."],
+    "people_involved": [
+      "lowell_beveridge_1905"
+    ],
+    "unresolved_conflicts": [
+      "The existing profile says North Haven as birthplace; published references say Boston or Dorchester. The existing place remains pending a birth record."
+    ],
     "sources": [
-      {"title": "The Rev. Lowell Beveridge, Professor of Music, Dies", "repository": "The Washington Post", "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/", "record_type": "Newspaper obituary", "record_date": "1991-06-20", "accessed": "2026-08-26", "supports": "Death date, education, Columbia and seminary career, ordination, scholarship, and family", "evidence_level": "Tier 3 — contemporary newspaper"},
-      {"title": "Music at Columbia: Music Librarianship — Lowell Pierson Beveridge", "repository": "Columbia University Libraries", "url": "https://exhibitions.library.columbia.edu/exhibits/show/music-centennial/music-librarianship", "record_type": "University archival exhibit", "accessed": "2026-08-26", "supports": "Faculty dates, university-organist role, and music-collection work", "evidence_level": "Tier 2 — institutional archive"},
-      {"title": "Lowell P. Beveridge composer authority record", "repository": "Musica International", "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-", "record_type": "Specialist biographical index", "accessed": "2026-08-26", "supports": "Exact birth and death dates", "evidence_level": "Tier 3 — specialist reference"}
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Newspaper obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-08-26",
+        "supports": "Death date, education, Columbia and seminary career, ordination, scholarship, and family",
+        "evidence_level": "Tier 3 — contemporary newspaper"
+      },
+      {
+        "title": "Music at Columbia: Music Librarianship — Lowell Pierson Beveridge",
+        "repository": "Columbia University Libraries",
+        "url": "https://exhibitions.library.columbia.edu/exhibits/show/music-centennial/music-librarianship",
+        "record_type": "University archival exhibit",
+        "accessed": "2026-08-26",
+        "supports": "Faculty dates, university-organist role, and music-collection work",
+        "evidence_level": "Tier 2 — institutional archive"
+      },
+      {
+        "title": "Lowell P. Beveridge composer authority record",
+        "repository": "Musica International",
+        "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-",
+        "record_type": "Specialist biographical index",
+        "accessed": "2026-08-26",
+        "supports": "Exact birth and death dates",
+        "evidence_level": "Tier 3 — specialist reference"
+      }
     ]
   },
   {
@@ -65,12 +138,45 @@
     "checked_on": "2026-08-26",
     "summary": "IEEE sources identify North Haven-born Harold Henry Beverage as a pioneer of transoceanic radio reception. His 1921 U.S. patent describes the directional receiving system later known as the Beverage antenna. IEEE's biography and oral history document his University of Maine education, GE and RCA career, professional leadership, wartime consulting, more than forty patents, and major engineering honors.",
     "why_it_matters": "This is the strongest newly documented career story in the archive, grounded in an original patent and professional institutional records.",
-    "people_involved": ["harold_h_beverage_1893", "fremont_beverage_1856"],
-    "remaining_questions": ["Obtain Harold's birth record to confirm the parent link", "Locate reusable public-domain copies of the 1915 yearbook portrait and patent drawings before adding images"],
+    "people_involved": [
+      "harold_h_beverage_1893",
+      "fremont_beverage_1856"
+    ],
+    "remaining_questions": [
+      "Obtain Harold's birth record to confirm the parent link",
+      "Locate reusable public-domain copies of the 1915 yearbook portrait and patent drawings before adding images"
+    ],
     "sources": [
-      {"title": "U.S. Patent 1,381,089 — Radio Receiving System", "repository": "United States Patent Office via Google Patents", "url": "https://patents.google.com/patent/US1381089A/en", "record_type": "Patent", "record_date": "1921-06-07", "record_identifier": "US1381089A; application serial 372,933", "accessed": "2026-08-26", "supports": "Inventorship, filing, issue date, assignee, and receiving-system design", "evidence_level": "Tier 1 — original government record"},
-      {"title": "Harold H. Beverage", "repository": "IEEE Engineering and Technology History Wiki", "url": "https://ethw.org/Harold_H._Beverage", "record_type": "Institutional biography", "accessed": "2026-08-26", "supports": "Exact dates, birthplace, education, career, invention, leadership, awards, and retirement", "evidence_level": "Tier 2 — professional institutional archive"},
-      {"title": "Oral History: Harold H. Beverage", "repository": "IEEE History Center", "url": "https://ethw.org/Oral-History%3AHarold_H._Beverage", "record_type": "Institutional oral history", "record_date": "1992-03-16", "accessed": "2026-08-26", "supports": "First-person career history, patent count, wartime consulting, and D-Day communications", "evidence_level": "Tier 2 — first-person institutional oral history"}
+      {
+        "title": "U.S. Patent 1,381,089 — Radio Receiving System",
+        "repository": "United States Patent Office via Google Patents",
+        "url": "https://patents.google.com/patent/US1381089A/en",
+        "record_type": "Patent",
+        "record_date": "1921-06-07",
+        "record_identifier": "US1381089A; application serial 372,933",
+        "accessed": "2026-08-26",
+        "supports": "Inventorship, filing, issue date, assignee, and receiving-system design",
+        "evidence_level": "Tier 1 — original government record"
+      },
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Institutional biography",
+        "accessed": "2026-08-26",
+        "supports": "Exact dates, birthplace, education, career, invention, leadership, awards, and retirement",
+        "evidence_level": "Tier 2 — professional institutional archive"
+      },
+      {
+        "title": "Oral History: Harold H. Beverage",
+        "repository": "IEEE History Center",
+        "url": "https://ethw.org/Oral-History%3AHarold_H._Beverage",
+        "record_type": "Institutional oral history",
+        "record_date": "1992-03-16",
+        "accessed": "2026-08-26",
+        "supports": "First-person career history, patent count, wartime consulting, and D-Day communications",
+        "evidence_level": "Tier 2 — first-person institutional oral history"
+      }
     ]
   },
   {
@@ -82,8 +188,22 @@
     "checked_on": "2026-08-26",
     "summary": "An 1889 history of Vinalhaven records that Harrison Beverage of North Haven was chosen representative in 1859. It also reports his resignation and the December election of Lewis Leadbetter to replace him.",
     "why_it_matters": "It adds a specific public-service episode to Harrison's profile and ties the North Haven branch to regional civic history.",
-    "people_involved": ["harrison_beverage_1825"],
-    "sources": [{"title": "A Brief Historical Sketch of the Town of Vinalhaven", "repository": "Internet Archive", "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt", "record_type": "Published town history", "record_date": "1889", "page": "31 (digital text lines 1550–1557)", "accessed": "2026-08-26", "supports": "Election, resignation, and replacement in 1859", "evidence_level": "Tier 3 — near-contemporary town history"}]
+    "people_involved": [
+      "harrison_beverage_1825"
+    ],
+    "sources": [
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Internet Archive",
+        "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt",
+        "record_type": "Published town history",
+        "record_date": "1889",
+        "page": "31 (digital text lines 1550–1557)",
+        "accessed": "2026-08-26",
+        "supports": "Election, resignation, and replacement in 1859",
+        "evidence_level": "Tier 3 — near-contemporary town history"
+      }
+    ]
   },
   {
     "id": "research_civic_albert_1878",
@@ -94,8 +214,22 @@
     "checked_on": "2026-08-26",
     "summary": "The representative roster in Vinalhaven's 1889 town history lists Albert G. Beverage of North Haven for 1878.",
     "why_it_matters": "It adds a documented civic role to a profile previously centered on family land and church activity.",
-    "people_involved": ["albert_glover_beverage_1827"],
-    "sources": [{"title": "A Brief Historical Sketch of the Town of Vinalhaven", "repository": "Internet Archive", "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt", "record_type": "Published town history", "record_date": "1889", "page": "35 (digital text lines 1729–1746)", "accessed": "2026-08-26", "supports": "Albert G. Beverage of North Haven listed for 1878", "evidence_level": "Tier 3 — near-contemporary town history"}]
+    "people_involved": [
+      "albert_glover_beverage_1827"
+    ],
+    "sources": [
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Internet Archive",
+        "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt",
+        "record_type": "Published town history",
+        "record_date": "1889",
+        "page": "35 (digital text lines 1729–1746)",
+        "accessed": "2026-08-26",
+        "supports": "Albert G. Beverage of North Haven listed for 1878",
+        "evidence_level": "Tier 3 — near-contemporary town history"
+      }
+    ]
   },
   {
     "id": "research_fremont_and_frank_public_records",
@@ -106,12 +240,45 @@
     "checked_on": "2026-08-26",
     "summary": "A historical Maine register lists Fremont Beverage as North Haven school superintendent and justice and lists Frank Beverage as a butcher and dealer in wool and hides. An 1880 Eastern State Normal School catalog transcription places Fremont in A Class. A separately described autograph album preserves Frank's 1954 self-report that he was born January 14, 1861.",
     "why_it_matters": "These records resolve two previously missing profile links and add specific education, civic, occupation, and birth information.",
-    "people_involved": ["fremont_beverage_1856", "frank_beverage_1861"],
-    "remaining_questions": ["Locate original Maine vital records for both men", "Locate the original state-register page image", "Determine Frank's death and household relationships"],
+    "people_involved": [
+      "fremont_beverage_1856",
+      "frank_beverage_1861"
+    ],
+    "remaining_questions": [
+      "Locate original Maine vital records for both men",
+      "Locate the original state-register page image",
+      "Determine Frank's death and household relationships"
+    ],
     "sources": [
-      {"title": "Maine Register, State Year-Book and Legislative Manual", "repository": "Historical directory transcription at LDSGenealogy", "url": "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm", "record_type": "Historical state directory", "accessed": "2026-08-26", "supports": "Fremont's civic and school roles and Frank's businesses", "evidence_level": "Tier 3 — historical directory transcription"},
-      {"title": "Eastern State Normal School at Castine — 1880 catalog transcription", "repository": "Heirlooms Reunited", "url": "https://www.heirloomsreunited.com/2014/10/eastern-state-normal-school-at-castine.html", "record_type": "Historical school catalog transcription", "record_date": "1880", "accessed": "2026-08-26", "supports": "Fremont Beverage of North Haven in A Class", "evidence_level": "Tier 3 — historical publication transcription"},
-      {"title": "Autograph album of Elizabeth Bean Calderwood Carter", "repository": "Heirlooms Reunited", "url": "https://www.heirloomsreunited.com/2014/01/1880s1890s-autograph-album-of-north.html", "record_type": "Transcription of signed family artifact", "record_date": "1954-07-19", "accessed": "2026-08-26", "supports": "Frank's self-reported exact birth date and North Haven residence", "evidence_level": "Tier 2/3 — transcription of first-person artifact"}
+      {
+        "title": "Maine Register, State Year-Book and Legislative Manual",
+        "repository": "Historical directory transcription at LDSGenealogy",
+        "url": "https://ldsgenealogy.com/ME/books/Maine-register-state-year-book-and-legislative-manual-part-69.htm",
+        "record_type": "Historical state directory",
+        "accessed": "2026-08-26",
+        "supports": "Fremont's civic and school roles and Frank's businesses",
+        "evidence_level": "Tier 3 — historical directory transcription"
+      },
+      {
+        "title": "Eastern State Normal School at Castine — 1880 catalog transcription",
+        "repository": "Heirlooms Reunited",
+        "url": "https://www.heirloomsreunited.com/2014/10/eastern-state-normal-school-at-castine.html",
+        "record_type": "Historical school catalog transcription",
+        "record_date": "1880",
+        "accessed": "2026-08-26",
+        "supports": "Fremont Beverage of North Haven in A Class",
+        "evidence_level": "Tier 3 — historical publication transcription"
+      },
+      {
+        "title": "Autograph album of Elizabeth Bean Calderwood Carter",
+        "repository": "Heirlooms Reunited",
+        "url": "https://www.heirloomsreunited.com/2014/01/1880s1890s-autograph-album-of-north.html",
+        "record_type": "Transcription of signed family artifact",
+        "record_date": "1954-07-19",
+        "accessed": "2026-08-26",
+        "supports": "Frank's self-reported exact birth date and North Haven residence",
+        "evidence_level": "Tier 2/3 — transcription of first-person artifact"
+      }
     ]
   },
   {
@@ -123,11 +290,35 @@
     "checked_on": "2026-08-26",
     "summary": "Samuel's detailed obituary traces his childhood at Sunnyside, radio training, Army Signal Corps work as a master sergeant and communications chief in the Mediterranean theater, later Air Force service, civilian radio career, 1973 return to North Haven, historical-society work, and receipt of the Boston Post Cane.",
     "why_it_matters": "The profile now tells a coherent story connecting North Haven, radio technology, wartime communications, and local historical preservation.",
-    "people_involved": ["samuel_hiram_beverage_1917", "eleanor_sargent_1920"],
-    "remaining_questions": ["Request Samuel's Official Military Personnel File and separation papers", "Locate founding minutes for the North Haven Historical Society"],
+    "people_involved": [
+      "samuel_hiram_beverage_1917",
+      "eleanor_sargent_1920"
+    ],
+    "remaining_questions": [
+      "Request Samuel's Official Military Personnel File and separation papers",
+      "Locate founding minutes for the North Haven Historical Society"
+    ],
     "sources": [
-      {"title": "Samuel Hiram Beverage obituary", "repository": "Tribute Archive", "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage", "record_type": "Funeral-home obituary", "record_date": "2014-12-18", "accessed": "2026-08-26", "supports": "Dates, parents, education, military service, career, family, civic work, and honor", "evidence_level": "Tier 3 — detailed obituary"},
-      {"title": "Maine Boston Post Cane holders — North Haven", "repository": "Boston Post Cane Information Center", "url": "https://bostonpostcane.org/the-canes/maine", "record_type": "Community historical register", "record_date": "2010-12-04", "accessed": "2026-08-26", "supports": "Exact award date and birth date", "evidence_level": "Tier 3 — independently maintained historical register"}
+      {
+        "title": "Samuel Hiram Beverage obituary",
+        "repository": "Tribute Archive",
+        "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage",
+        "record_type": "Funeral-home obituary",
+        "record_date": "2014-12-18",
+        "accessed": "2026-08-26",
+        "supports": "Dates, parents, education, military service, career, family, civic work, and honor",
+        "evidence_level": "Tier 3 — detailed obituary"
+      },
+      {
+        "title": "Maine Boston Post Cane holders — North Haven",
+        "repository": "Boston Post Cane Information Center",
+        "url": "https://bostonpostcane.org/the-canes/maine",
+        "record_type": "Community historical register",
+        "record_date": "2010-12-04",
+        "accessed": "2026-08-26",
+        "supports": "Exact award date and birth date",
+        "evidence_level": "Tier 3 — independently maintained historical register"
+      }
     ]
   },
   {
@@ -139,11 +330,32 @@
     "checked_on": "2026-08-26",
     "summary": "Two current local-history accounts identify Hiram “Hightie” Beverage as the builder of the present Mill Stream dam in 1932. They describe the brackish pond that became known as Hightie's Pond and explain its later importance to North Haven oyster cultivation.",
     "why_it_matters": "It connects a family member's work to a named island landscape and to a continuing local industry.",
-    "people_involved": ["hiram_stone_beverage_1886"],
-    "remaining_questions": ["Locate town minutes, land records, or engineering documentation for the 1932 dam", "Review the North Haven Historical Society's Mill Stream materials in person if the online PDF remains unavailable"],
+    "people_involved": [
+      "hiram_stone_beverage_1886"
+    ],
+    "remaining_questions": [
+      "Locate town minutes, land records, or engineering documentation for the 1932 dam",
+      "Review the North Haven Historical Society's Mill Stream materials in person if the online PDF remains unavailable"
+    ],
     "sources": [
-      {"title": "Growing Oysters in Oyster Nirvana: The Story of North Haven Oyster Co", "repository": "The Briny Babe", "url": "https://www.thebrinybabe.com/oyster-farms/northhavenoysterco", "record_type": "Published local-history feature", "accessed": "2026-08-26", "supports": "Hiram Beverage built the present dam in 1932 and its effect on the pond", "evidence_level": "Tier 3 — published local-history account"},
-      {"title": "Two centuries on Middle Road", "repository": "Sailor's Bakery + Studio", "url": "https://sailorsbakery.com/", "record_type": "Property history citing North Haven Historical Society research", "accessed": "2026-08-26", "supports": "Hiram Beverage dammed the Mill Stream in 1932 and farmed on Middle Road", "evidence_level": "Tier 3 — locally sourced property history"}
+      {
+        "title": "Growing Oysters in Oyster Nirvana: The Story of North Haven Oyster Co",
+        "repository": "The Briny Babe",
+        "url": "https://www.thebrinybabe.com/oyster-farms/northhavenoysterco",
+        "record_type": "Published local-history feature",
+        "accessed": "2026-08-26",
+        "supports": "Hiram Beverage built the present dam in 1932 and its effect on the pond",
+        "evidence_level": "Tier 3 — published local-history account"
+      },
+      {
+        "title": "Two centuries on Middle Road",
+        "repository": "Sailor's Bakery + Studio",
+        "url": "https://sailorsbakery.com/",
+        "record_type": "Property history citing North Haven Historical Society research",
+        "accessed": "2026-08-26",
+        "supports": "Hiram Beverage dammed the Mill Stream in 1932 and farmed on Middle Road",
+        "evidence_level": "Tier 3 — locally sourced property history"
+      }
     ]
   },
   {
@@ -155,12 +367,49 @@
     "checked_on": "2026-08-26",
     "summary": "FamilySearch cemetery indexes supply year ranges for Lucy Etta, Chester Josiah, Albert Lewis, Olive Mary, George Dewey, Wilson Freemont, and Alma Marie Beverage. A separate burial index supplies Nettie Ellen Beverage Crockett's married name and year range. These profiles remain explicitly provisional because index entries are compiled rather than original vital records.",
     "why_it_matters": "Eight previously unresolved historical relatives now have navigable profiles without pretending that year-only cemetery entries are exact dates.",
-    "people_involved": ["lucy_etta_beverage_1864", "chester_josiah_beverage_1884", "albert_lewis_beverage_1888", "olive_mary_beverage_1892", "nett_ie_ellen_beverage_1894", "george_dewey_beverage_1898", "wilson_freemont_beverage_1902", "alma_marie_beverage_1905"],
-    "remaining_questions": ["Inspect marker photographs and cemetery registers", "Corroborate each year range with civil or church vital records", "Identify spouses and children from primary records"],
+    "people_involved": [
+      "lucy_etta_beverage_1864",
+      "chester_josiah_beverage_1884",
+      "albert_lewis_beverage_1888",
+      "olive_mary_beverage_1892",
+      "nett_ie_ellen_beverage_1894",
+      "george_dewey_beverage_1898",
+      "wilson_freemont_beverage_1902",
+      "alma_marie_beverage_1905"
+    ],
+    "remaining_questions": [
+      "Inspect marker photographs and cemetery registers",
+      "Corroborate each year range with civil or church vital records",
+      "Identify spouses and children from primary records"
+    ],
     "sources": [
-      {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "accessed": "2026-08-26", "supports": "Year ranges and cemetery associations for seven newly profiled relatives", "evidence_level": "Tier 4 — compiled cemetery source"},
-      {"title": "Browns Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/89820/browns-cemetery?pageSize=50&placeId=333&relativesOnly=false&selectedSiteTypes=CEMETERY&showMap=false&showOriginal=false", "record_type": "Compiled cemetery index", "accessed": "2026-08-26", "supports": "Lucy Etta Beverage's name and 1864–1892 year range", "evidence_level": "Tier 4 — compiled cemetery source"},
-      {"title": "Nettie Ellen Beverage Crockett burial index", "repository": "PeopleLegacy", "url": "https://peoplelegacy.com/burial-records/nettie/crockett/", "record_type": "Compiled burial index", "accessed": "2026-08-26", "supports": "Married name, birthplace, 1894–1985 years, and Fuller Cemetery", "evidence_level": "Tier 4 — compiled cemetery source"}
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-26",
+        "supports": "Year ranges and cemetery associations for seven newly profiled relatives",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      },
+      {
+        "title": "Browns Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/89820/browns-cemetery?pageSize=50&placeId=333&relativesOnly=false&selectedSiteTypes=CEMETERY&showMap=false&showOriginal=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-26",
+        "supports": "Lucy Etta Beverage's name and 1864–1892 year range",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      },
+      {
+        "title": "Nettie Ellen Beverage Crockett burial index",
+        "repository": "PeopleLegacy",
+        "url": "https://peoplelegacy.com/burial-records/nettie/crockett/",
+        "record_type": "Compiled burial index",
+        "accessed": "2026-08-26",
+        "supports": "Married name, birthplace, 1894–1985 years, and Fuller Cemetery",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
     ]
   },
   {
@@ -172,9 +421,25 @@
     "checked_on": "2026-08-26",
     "summary": "Eleanor's obituary gives October 7, 1921 in Medford, Massachusetts, while the existing family profile records August 28, 1920 in Somerville. The obituary securely adds her July 13, 2016 death in Rockland, but the birth claim has not been overwritten without a primary vital record.",
     "why_it_matters": "The disagreement is visible for review, and the archive avoids silently choosing between two exact claims.",
-    "people_involved": ["eleanor_sargent_1920"],
-    "remaining_questions": ["Order or inspect Eleanor's Massachusetts birth certificate", "Check the 1930 census and nursing-school register as independent age evidence"],
-    "sources": [{"title": "Eleanor Sargent Beverage obituary", "repository": "Direct Cremation of Maine", "url": "https://directcremationofmaine.com/tribute/details/12554/Eleanor-Sargent-Beverage", "record_type": "Funeral-home obituary", "record_date": "2016-07-13", "accessed": "2026-08-26", "supports": "Obituary-reported birth claim, exact death date and place, nursing education, marriage, residences, and church life", "evidence_level": "Tier 3 — detailed obituary"}]
+    "people_involved": [
+      "eleanor_sargent_1920"
+    ],
+    "remaining_questions": [
+      "Order or inspect Eleanor's Massachusetts birth certificate",
+      "Check the 1930 census and nursing-school register as independent age evidence"
+    ],
+    "sources": [
+      {
+        "title": "Eleanor Sargent Beverage obituary",
+        "repository": "Direct Cremation of Maine",
+        "url": "https://directcremationofmaine.com/tribute/details/12554/Eleanor-Sargent-Beverage",
+        "record_type": "Funeral-home obituary",
+        "record_date": "2016-07-13",
+        "accessed": "2026-08-26",
+        "supports": "Obituary-reported birth claim, exact death date and place, nursing education, marriage, residences, and church life",
+        "evidence_level": "Tier 3 — detailed obituary"
+      }
+    ]
   },
   {
     "id": "research_compiled_relationship_leads_2026",
@@ -185,16 +450,89 @@
     "checked_on": "2026-08-26",
     "summary": "Public FamilySearch, WikiTree, and Find a Grave pages corroborate the identities and year ranges of eight people already named by stable relationship IDs in the base family tree. The site now gives them navigable profiles while displaying only year precision and labeling every one as provisional.",
     "why_it_matters": "Existing family connections are easier to explore without presenting user-contributed genealogy as exact or conclusive evidence.",
-    "people_involved": ["ellen_beverage_1853", "nora_beverage_1858", "julia_waterman_beverage_1866", "unnamed_son_1872", "nett_ie_m_beverage_1874", "florence_mertice_beverage_1883", "marston_leadbetter_beverage_1890", "elroy_victor_beverage_1896"],
-    "remaining_questions": ["Locate North Haven town returns, church registers, and marker photographs", "Verify exact dates and names against original records", "Confirm marriages, military service, and burial details independently"],
+    "people_involved": [
+      "ellen_beverage_1853",
+      "nora_beverage_1858",
+      "julia_waterman_beverage_1866",
+      "unnamed_son_1872",
+      "nett_ie_m_beverage_1874",
+      "florence_mertice_beverage_1883",
+      "marston_leadbetter_beverage_1890",
+      "elroy_victor_beverage_1896"
+    ],
+    "remaining_questions": [
+      "Locate North Haven town returns, church registers, and marker photographs",
+      "Verify exact dates and names against original records",
+      "Confirm marriages, military service, and burial details independently"
+    ],
     "sources": [
-      {"title": "Ellen Beverage (1853–1886)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/M6JS-5MW/ellen-beverage-1853-1886", "record_type": "Compiled genealogy profile", "record_identifier": "M6JS-5MW", "accessed": "2026-08-26", "supports": "Ellen's name, parent context, birthplace, and year range", "evidence_level": "Tier 4 — compiled genealogy source"},
-      {"title": "Julia W. Beverage (1866–1876)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/M6J3-SGR/julia-w-beverage-1866-1876", "record_type": "Compiled genealogy profile", "record_identifier": "M6J3-SGR", "accessed": "2026-08-26", "supports": "Julia's name, parents, siblings, and year range", "evidence_level": "Tier 4 — compiled genealogy source"},
-      {"title": "Beverage child (1872–1872)", "repository": "FamilySearch compiled profiles", "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872", "record_type": "Compiled genealogy profile", "record_identifier": "9C27-C8B", "accessed": "2026-08-26", "supports": "Unnamed 1872 child and sibling context including Nora", "evidence_level": "Tier 4 — compiled genealogy source"},
-      {"title": "Beverage genealogy index", "repository": "WikiTree", "url": "https://www.wikitree.com/genealogy/BEVERAGE", "record_type": "Compiled surname index", "accessed": "2026-08-26", "supports": "Nettie M. Beverage year range and Maine locations", "evidence_level": "Tier 4 — user-contributed genealogy source"},
-      {"title": "Florence Mertice (Beverage) Brown", "repository": "WikiTree", "url": "https://www.wikitree.com/wiki/Beverage-64", "record_type": "Compiled genealogy profile", "accessed": "2026-08-26", "supports": "Florence's married name and year range", "evidence_level": "Tier 4 — user-contributed genealogy source"},
-      {"title": "Marston Leadbetter Beverage", "repository": "WikiTree", "url": "https://www.wikitree.com/wiki/Beverage-101", "record_type": "Compiled genealogy profile", "accessed": "2026-08-26", "supports": "Marston's year range and Camden death location", "evidence_level": "Tier 4 — user-contributed genealogy source"},
-      {"title": "Elroy Victor Beverage Sr. memorial", "repository": "Find a Grave", "url": "https://www.findagrave.com/memorial/157955850/elroy-victor-beverage", "record_type": "Compiled memorial", "record_identifier": "157955850", "accessed": "2026-08-26", "supports": "Elroy's year range, locations, veteran marker, and burial", "evidence_level": "Tier 4 — user-contributed memorial"}
+      {
+        "title": "Ellen Beverage (1853–1886)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/M6JS-5MW/ellen-beverage-1853-1886",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "M6JS-5MW",
+        "accessed": "2026-08-26",
+        "supports": "Ellen's name, parent context, birthplace, and year range",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      },
+      {
+        "title": "Julia W. Beverage (1866–1876)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/M6J3-SGR/julia-w-beverage-1866-1876",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "M6J3-SGR",
+        "accessed": "2026-08-26",
+        "supports": "Julia's name, parents, siblings, and year range",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      },
+      {
+        "title": "Beverage child (1872–1872)",
+        "repository": "FamilySearch compiled profiles",
+        "url": "https://ancestors.familysearch.org/en/9C27-C8B/beverage-1872-1872",
+        "record_type": "Compiled genealogy profile",
+        "record_identifier": "9C27-C8B",
+        "accessed": "2026-08-26",
+        "supports": "Unnamed 1872 child and sibling context including Nora",
+        "evidence_level": "Tier 4 — compiled genealogy source"
+      },
+      {
+        "title": "Beverage genealogy index",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/genealogy/BEVERAGE",
+        "record_type": "Compiled surname index",
+        "accessed": "2026-08-26",
+        "supports": "Nettie M. Beverage year range and Maine locations",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      },
+      {
+        "title": "Florence Mertice (Beverage) Brown",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/wiki/Beverage-64",
+        "record_type": "Compiled genealogy profile",
+        "accessed": "2026-08-26",
+        "supports": "Florence's married name and year range",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      },
+      {
+        "title": "Marston Leadbetter Beverage",
+        "repository": "WikiTree",
+        "url": "https://www.wikitree.com/wiki/Beverage-101",
+        "record_type": "Compiled genealogy profile",
+        "accessed": "2026-08-26",
+        "supports": "Marston's year range and Camden death location",
+        "evidence_level": "Tier 4 — user-contributed genealogy source"
+      },
+      {
+        "title": "Elroy Victor Beverage Sr. memorial",
+        "repository": "Find a Grave",
+        "url": "https://www.findagrave.com/memorial/157955850/elroy-victor-beverage",
+        "record_type": "Compiled memorial",
+        "record_identifier": "157955850",
+        "accessed": "2026-08-26",
+        "supports": "Elroy's year range, locations, veteran marker, and burial",
+        "evidence_level": "Tier 4 — user-contributed memorial"
+      }
     ]
   },
   {
@@ -222,9 +560,34 @@
       "Family-held Bibles, certificates, diaries, photographs, and obituaries"
     ],
     "sources": [
-      {"title": "North Haven Historical Society digital collection", "repository": "Digital Maine", "url": "https://digitalmaine.com/north_haven/", "record_type": "Institutional collection landing page", "accessed": "2026-08-26", "supports": "Repository identification and future local-history research path", "evidence_level": "Tier 2 — institutional archive"},
-      {"title": "A Brief Historical Sketch of the Town of Vinalhaven", "repository": "Internet Archive", "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt", "record_type": "Published town history", "record_date": "1889", "accessed": "2026-08-26", "supports": "Regional civic and town-history search coverage", "evidence_level": "Tier 3 — historical publication"},
-      {"title": "Fuller Cemetery, North Haven", "repository": "FamilySearch Cemeteries", "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false", "record_type": "Compiled cemetery index", "accessed": "2026-08-26", "supports": "Cemetery search coverage and profile leads", "evidence_level": "Tier 4 — compiled cemetery source"}
+      {
+        "title": "North Haven Historical Society digital collection",
+        "repository": "Digital Maine",
+        "url": "https://digitalmaine.com/north_haven/",
+        "record_type": "Institutional collection landing page",
+        "accessed": "2026-08-26",
+        "supports": "Repository identification and future local-history research path",
+        "evidence_level": "Tier 2 — institutional archive"
+      },
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Internet Archive",
+        "url": "https://archive.org/stream/briefhistoricals00vina/briefhistoricals00vina_djvu.txt",
+        "record_type": "Published town history",
+        "record_date": "1889",
+        "accessed": "2026-08-26",
+        "supports": "Regional civic and town-history search coverage",
+        "evidence_level": "Tier 3 — historical publication"
+      },
+      {
+        "title": "Fuller Cemetery, North Haven",
+        "repository": "FamilySearch Cemeteries",
+        "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+        "record_type": "Compiled cemetery index",
+        "accessed": "2026-08-26",
+        "supports": "Cemetery search coverage and profile leads",
+        "evidence_level": "Tier 4 — compiled cemetery source"
+      }
     ]
   },
   {
@@ -238,12 +601,284 @@
     "why_it_matters": "Visitors can distinguish a broken source from a source that is merely indexed, redirected, account-gated, or potentially paywalled.",
     "people_involved": [],
     "sources": [
-      {"title": "Harold H. Beverage", "repository": "IEEE Engineering and Technology History Wiki", "url": "https://ethw.org/Harold_H._Beverage", "record_type": "Institutional biography", "accessed": "2026-08-26", "access_status": "Public content retrieved", "supports": "Link-access audit", "evidence_level": "Tier 2"},
-      {"title": "U.S. Patent 1,381,089", "repository": "Google Patents", "url": "https://patents.google.com/patent/US1381089A/en", "record_type": "Patent", "accessed": "2026-08-26", "access_status": "Public content retrieved", "supports": "Link-access audit", "evidence_level": "Tier 1"},
-      {"title": "Lowell Beveridge obituary", "repository": "The Washington Post", "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/", "record_type": "Newspaper obituary", "accessed": "2026-08-26", "access_status": "Article content retrieved; access limits may vary", "supports": "Link-access audit", "evidence_level": "Tier 3"},
-      {"title": "Lowell P. Beveridge composer authority record", "repository": "Musica International", "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-", "record_type": "Specialist biographical index", "accessed": "2026-08-26", "access_status": "Public profile content retrieved", "supports": "Link-access audit", "evidence_level": "Tier 3"},
-      {"title": "The 1915 Prism", "repository": "University of Maine Raymond H. Fogler Library", "url": "https://digitalcommons.library.umaine.edu/yearbooks/20/", "record_type": "University yearbook", "accessed": "2026-08-26", "access_status": "Legacy link redirects to Primo discovery", "supports": "Link-access audit", "evidence_level": "Tier 2"},
-      {"title": "North Haven Historical Society Mill Stream PDF", "repository": "North Haven Historical Society", "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf", "record_type": "Local-history report", "accessed": "2026-08-26", "access_status": "Server error during review; not used for an added claim", "supports": "Documents an inaccessible high-value follow-up", "evidence_level": "Not assessed"}
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Institutional biography",
+        "accessed": "2026-08-26",
+        "access_status": "Public content retrieved",
+        "supports": "Link-access audit",
+        "evidence_level": "Tier 2"
+      },
+      {
+        "title": "U.S. Patent 1,381,089",
+        "repository": "Google Patents",
+        "url": "https://patents.google.com/patent/US1381089A/en",
+        "record_type": "Patent",
+        "accessed": "2026-08-26",
+        "access_status": "Public content retrieved",
+        "supports": "Link-access audit",
+        "evidence_level": "Tier 1"
+      },
+      {
+        "title": "Lowell Beveridge obituary",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-26",
+        "access_status": "Article content retrieved; access limits may vary",
+        "supports": "Link-access audit",
+        "evidence_level": "Tier 3"
+      },
+      {
+        "title": "Lowell P. Beveridge composer authority record",
+        "repository": "Musica International",
+        "url": "https://www.musicanet.org/bdd/en/composer/21423-beveridge--lowell-p-",
+        "record_type": "Specialist biographical index",
+        "accessed": "2026-08-26",
+        "access_status": "Public profile content retrieved",
+        "supports": "Link-access audit",
+        "evidence_level": "Tier 3"
+      },
+      {
+        "title": "The 1915 Prism",
+        "repository": "University of Maine Raymond H. Fogler Library",
+        "url": "https://digitalcommons.library.umaine.edu/yearbooks/20/",
+        "record_type": "University yearbook",
+        "accessed": "2026-08-26",
+        "access_status": "Legacy link redirects to Primo discovery",
+        "supports": "Link-access audit",
+        "evidence_level": "Tier 2"
+      },
+      {
+        "title": "North Haven Historical Society Mill Stream PDF",
+        "repository": "North Haven Historical Society",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf",
+        "record_type": "Local-history report",
+        "accessed": "2026-08-26",
+        "access_status": "Server error during review; not used for an added claim",
+        "supports": "Documents an inaccessible high-value follow-up",
+        "evidence_level": "Not assessed"
+      }
+    ]
+  },
+  {
+    "id": "research_historical_life_timeline_expansion_2026",
+    "title": "Repository-wide historical life and timeline expansion",
+    "record_date": "2026-08-31",
+    "category": "Historical-life research",
+    "evidence_level": "Source-first review emphasizing official, institutional and contemporary records",
+    "checked_on": "2026-08-31",
+    "summary": "A systematic pass over the 180-profile archive targeted historical substance rather than new relationships. Strong discoveries include the Beverage family’s multigenerational Vinalhaven town-office service; Benjamin Beverage’s 1819 constitutional-convention role, surviving history manuscript and 1823 Maine House service; Nathaniel Beverage’s 1828 House service; the 1848 Pulpit Harbor bridge authorization adjoining James and Josiah Beverage land; Orris Beverage’s Colby/education record; Frank Beverage’s town-finance, auction and federal-petition activity; Harold Beverage’s early Carpathia wireless episode; and richer military, professional, missionary, maritime and community histories for twentieth-century relatives.",
+    "why_it_matters": "The archive now shows what family members did and how they interacted with island, state, national and world events instead of presenting most people only as names and dates.",
+    "people_involved": [
+      "james_beveridge_jr_1724",
+      "thomas_beverage_1750",
+      "john_white_beverage_1774",
+      "nathaniel_winslow_beverage_1776",
+      "benjamin_kent_beverage_1779",
+      "james_beverage_1789",
+      "josiah_winslow_beverage_1793",
+      "orris_beverage_1860",
+      "frank_beverage_1861",
+      "harold_h_beverage_1893",
+      "gerald_gibson_beverage_1914",
+      "samuel_hiram_beverage_1917",
+      "john_miller_beverage_1927",
+      "norwood_pierson_beveridge_jr_1936"
+    ],
+    "remaining_questions": [
+      "Obtain original military service files for Samuel Hiram Beverage and Gerald Gibson Beverage",
+      "Resolve Civil War sailor-index leads for Edgar, Lyford and Nathan Beverage before attaching service claims",
+      "Find primary death evidence for the Benjamin Crabtree Beverage diphtheria tradition",
+      "Continue deed/probate research around Pulpit Harbor and the 1848 bridge company",
+      "Search additional unindexed Rockland/Belfast newspaper runs for island accidents, maritime incidents and court cases"
+    ],
+    "sources": [
+      {
+        "title": "History of Brunswick, Topsham, and Harpswell, Maine",
+        "repository": "George Augustus Wheeler and Henry Warren Wheeler",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+        "record_type": "Published town history using municipal records",
+        "accessed": "2026-08-31",
+        "supports": "First Topsham town meeting on May 9, 1764 and election of James Beverage as hog constable",
+        "evidence_level": "Tier 2/3 — published local history reproducing municipal records",
+        "record_date": "1878"
+      },
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "Journal of the House of Representatives of the Commonwealth of Massachusetts, 1808",
+        "repository": "Commonwealth of Massachusetts",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Journal_of_the_House_of_Representatives_of_the_Commonwealth_of_Massachusetts._%28IA_journalofhouseof1808mass%29.pdf",
+        "record_type": "Official legislative journal",
+        "accessed": "2026-08-31",
+        "supports": "January 19, 1808 memorial of John Beverage and other Vinalhaven inhabitants opposing removal of Hancock County courts from Castine to Buckstown",
+        "evidence_level": "Tier 1 — official legislative record",
+        "record_date": "1808-01-19"
+      },
+      {
+        "title": "Constitution of Maine with 1819 Convention delegate list",
+        "repository": "Maine Legislature",
+        "url": "https://legislature.maine.gov/uploads/originals/const1820.pdf",
+        "record_type": "Official constitutional convention record",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage listed as Vinalhaven delegate to the 1819 Maine Constitutional Convention",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1819"
+      },
+      {
+        "title": "History of Vinalhaven, 1819",
+        "repository": "Maine Historical Society via Maine Memory Network",
+        "url": "https://www.mainememory.net/record/20801",
+        "record_type": "Original manuscript letter",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage authored a December 20, 1819 manuscript describing Vinalhaven settlement, land distribution, vessels and religion",
+        "evidence_level": "Tier 1/2 — surviving original manuscript in institutional collection",
+        "record_date": "1819-12-20"
+      },
+      {
+        "title": "Civil Government of Maine, 1823",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1823/Laws1823res_s0189-0195_CivGov.pdf",
+        "record_type": "Official state legislative record",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage represented Vinalhaven and neighboring islands in the Maine House of Representatives in 1823",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1823"
+      },
+      {
+        "title": "Pay Roll — House, 1828",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1828/1828_RES_c064.pdf",
+        "record_type": "Official state legislative payroll",
+        "accessed": "2026-08-31",
+        "supports": "Nathaniel Beverage listed as the Vinalhaven representative in the 1828 Maine House payroll",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1828"
+      },
+      {
+        "title": "An act to establish the North Haven Bridge Company, Chapter 154",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf",
+        "record_type": "Official state private and special law",
+        "accessed": "2026-08-31",
+        "supports": "Authorization for a toll bridge over the head of Pulpit Harbor from Enos Cooper land to land of James and Josiah Beverage, at least 12 feet wide with a draw for vessels",
+        "evidence_level": "Tier 1 — official state law",
+        "record_date": "1848"
+      },
+      {
+        "title": "Second General Catalogue of the Officers and Graduates of Colby University, 1820–1887",
+        "repository": "Colby University",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Second_general_catalogue_of_the_officers_and_graduates_of_Colby_University%2C_Waterville%2C_Maine%2C_1820-1887_%28IA_secondgeneralcat01colb%29.pdf",
+        "record_type": "University catalogue",
+        "accessed": "2026-08-31",
+        "supports": "Orris Lyford Beverage in the Class of 1887; contemporary alumni entry identifies him as principal of the high school at Hallowell",
+        "evidence_level": "Tier 2 — institutional publication",
+        "record_date": "1887"
+      },
+      {
+        "title": "Congressional Record — House, 1912",
+        "repository": "U.S. Government Publishing Office",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1912-pt3-v48/pdf/GPO-CRECB-1912-pt3-v48-11.pdf",
+        "record_type": "Official Congressional Record",
+        "accessed": "2026-08-31",
+        "supports": "Frank Beverage and other North Haven residents petitioned Congress for passage of the Kenyon-Sheppard interstate liquor bill",
+        "evidence_level": "Tier 1 — official federal record",
+        "record_date": "1912"
+      },
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Professional institutional biography",
+        "accessed": "2026-08-31",
+        "supports": "Early homemade wireless work, reception of signals from Carpathia after the Titanic disaster, education, radio research, RCA career and engineering honors",
+        "evidence_level": "Tier 2 — professional institutional archive"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "North Haven schooling, University of Maine and Yale education, U.S. Navy Pacific service in World War II, Central Maine Power career, municipal and community leadership",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2008-09-07"
+      },
+      {
+        "title": "Samuel Hiram Beverage obituary",
+        "repository": "Tribute Archive / Riposta Funeral Home material",
+        "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage",
+        "record_type": "Detailed obituary",
+        "accessed": "2026-08-31",
+        "supports": "1941–45 Army Signal Corps service, July 16, 1942 overseas departure, Master Sergeant communications work across the Mediterranean theater, later Air Force service, radio career and North Haven Historical Society work",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2014-12-18"
+      },
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Gordon College and Dallas Theological Seminary education, Guatemala missionary service, Dallas Seminary admissions/library career and church work",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2011-07-25"
+      },
+      {
+        "title": "Norwood P. Beveridge Jr. obituary",
+        "repository": "Legacy Remembers",
+        "url": "https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014",
+        "record_type": "Published obituary",
+        "accessed": "2026-08-31",
+        "supports": "Harvard education, corporate legal career, Oklahoma City University law professorship, retirement and death from COVID-19 on October 31, 2020",
+        "evidence_level": "Tier 3 — detailed published obituary",
+        "record_date": "2020-11-08"
+      }
+    ]
+  },
+  {
+    "id": "research_mercury_tannery_claim_2026",
+    "title": "Mercury/tannery death story remains uncorroborated",
+    "record_date": "2026-08-31",
+    "category": "Cause-of-death evidence audit",
+    "evidence_level": "Research Lead — existing cemetery-derived claim, no independent contemporaneous corroboration located",
+    "checked_on": "2026-08-31",
+    "summary": "The inherited timeline attributes Jemima Crabtree Beverage’s 1837 death and the December 1850 deaths of James Beverage and daughter Lucy C. Beverage to mercury or mercurial exposure associated with James’s tannery. The current base entries ultimately cite a Find a Grave memorial. Targeted searches were run for the three people, North Haven/Vinalhaven, tannery/tanning, mercury/mercurial/quicksilver, hemorrhage and poisoning variants, including historical newspapers and the 1889 Vinalhaven history. No independent contemporaneous or official source establishing mercury poisoning was located in this pass.",
+    "why_it_matters": "This is a memorable family story and therefore especially important to label honestly. The archive preserves the tradition but no longer presents the poisoning mechanism as if it had already been independently verified.",
+    "people_involved": [
+      "james_beverage_1789",
+      "jemima_crabtree_1792",
+      "lucy_c_beverage_1830"
+    ],
+    "remaining_questions": [
+      "Locate North Haven/Vinalhaven physician, coroner, church or town death records for 1837 and December 1850",
+      "Search unindexed regional newspaper microfilm around December 5–10, 1850",
+      "Identify the original source behind the Find a Grave narrative and determine whether it cites a family manuscript or primary record",
+      "Investigate what tanning chemicals James Beverage’s operation actually used before assuming mercury exposure"
+    ],
+    "sources": [
+      "Existing cemetery-derived citations preserved in data/events.json",
+      {
+        "title": "A Brief Historical Sketch of the Town of Vinalhaven",
+        "repository": "Vinalhaven Centennial Committee / Library of Congress scan",
+        "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+        "record_type": "Published town history searched for corroboration",
+        "accessed": "2026-08-31",
+        "supports": "Used in the 2026 historical-event audit; extensive text searches did not independently corroborate the mercury/tannery cause-of-death tradition",
+        "evidence_level": "Tier 3 — near-contemporary town history used as a negative-search source",
+        "record_date": "1889"
+      }
     ]
   }
 ]
