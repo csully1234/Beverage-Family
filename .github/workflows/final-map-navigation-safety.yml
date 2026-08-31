@@ -25,6 +25,7 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
 
           app = Path("app.py")
           text = app.read_text()
@@ -42,11 +43,15 @@ jobs:
               raise SystemExit(f"Expected one help label, found {text.count(old_help)}")
           text = text.replace(old_help, new_help, 1)
 
-          old_click = '''  if (!node.unresolved) {{\n    g.addEventListener("click", () => {{\n      if (dragged) return;\n      const target = `${{window.parent.location.pathname}}?page=people&profile=${{encodeURIComponent(node.id)}}`;\n      window.parent.location.assign(target);\n    }});\n  }}'''
-          new_click = '''  if (!node.unresolved) {{\n    g.addEventListener("click", () => {{\n      if (dragged) return;\n      select.value=node.id;\n      focusNode(node.id);\n    }});\n  }}'''
-          if text.count(old_click) != 1:
-              raise SystemExit(f"Expected one full-page click handler, found {text.count(old_click)}")
-          tree.write_text(text.replace(old_click, new_click, 1))
+          pattern = re.compile(
+              r'      const target = `.*?`;\n'
+              r'      window\.parent\.location\.assign\(target\);'
+          )
+          replacement = '      select.value=node.id;\n      focusNode(node.id);'
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1:
+              raise SystemExit(f"Expected one full-page navigation handler, found {count}")
+          tree.write_text(text)
 
           tests = Path("tests/test_full_tree.py")
           text = tests.read_text()
@@ -63,7 +68,7 @@ jobs:
           python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
           python validate_data.py
           python -m unittest discover -s tests -v
-          ! grep -n "window.parent.location.assign" full_tree.py
+          if grep -n "window.parent.location.assign" full_tree.py; then exit 1; fi
       - name: Commit session-safe map and remove patch workflow
         run: |
           git config user.name "github-actions[bot]"
