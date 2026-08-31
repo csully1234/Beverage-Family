@@ -5,15 +5,18 @@ from __future__ import annotations
 import hmac
 import json
 import os
-from datetime import date
+from datetime import datetime
 from html import escape
 from pathlib import Path
 from typing import Any, Mapping
 from urllib.parse import quote, urlparse
+from zoneinfo import ZoneInfo
 
 import streamlit as st
+import streamlit.components.v1 as components
 from graphviz import Digraph
 
+from full_tree import build_full_tree_html
 from family_data import (
     Record,
     date_sort_key,
@@ -54,6 +57,7 @@ PAGE_SLUGS = {
     "Home": "home",
     "Search": "search",
     "Explore the Tree": "tree",
+    "Full Family Map": "full-tree",
     "People": "people",
     "Timeline": "timeline",
     "Research Desk": "research",
@@ -144,6 +148,50 @@ def apply_theme() -> None:
         .stDownloadButton > button[kind="primary"] {
             background: var(--bev-navy);
             border-color: var(--bev-navy);
+        }
+
+        .stButton > button[kind="primary"] p,
+        .stDownloadButton > button[kind="primary"] p {
+            color: #fffdf8 !important;
+        }
+
+        [data-testid="stAlert"],
+        [data-testid="stAlert"] * {
+            color: var(--bev-ink) !important;
+        }
+
+        [data-testid="stAlert"] a {
+            color: #0b5265 !important;
+            text-decoration: underline;
+        }
+
+        [data-baseweb="select"] > div,
+        [data-baseweb="input"] > div {
+            background-color: var(--bev-paper) !important;
+            color: var(--bev-ink) !important;
+        }
+
+        [data-baseweb="select"] input,
+        [data-baseweb="input"] input,
+        textarea {
+            color: var(--bev-ink) !important;
+            -webkit-text-fill-color: var(--bev-ink) !important;
+        }
+
+        [data-baseweb="popover"],
+        [data-baseweb="popover"] * {
+            color: var(--bev-ink) !important;
+        }
+
+        [role="option"] {
+            background-color: var(--bev-paper) !important;
+            color: var(--bev-ink) !important;
+        }
+
+        [role="option"]:hover,
+        [role="option"][aria-selected="true"] {
+            background-color: var(--bev-sky) !important;
+            color: var(--bev-navy) !important;
         }
 
         .bev-hero {
@@ -407,6 +455,13 @@ def navigate(page: str) -> None:
         del st.query_params["event"]
 
 
+def center_tree_on(person_id: str) -> None:
+    """Safely move from a profile to the focused tree during a callback."""
+
+    st.session_state["tree_person"] = person_id
+    navigate("Explore the Tree")
+
+
 def open_profile(person_id: str) -> None:
     st.session_state["nav_page"] = "People"
     st.session_state["profile_selector"] = person_id
@@ -608,7 +663,7 @@ def render_home(
                 )
 
     st.divider()
-    today = date.today()
+    today = datetime.now(ZoneInfo("America/New_York")).date()
     on_this_day = [
         event
         for event in events
@@ -808,10 +863,12 @@ def render_person_profile(
             with relation_columns[position % 2]:
                 render_relation_group(label, related_ids, people_by_id)
 
-        if st.button("Center this person in the family tree", type="primary"):
-            st.session_state["tree_person"] = person_id
-            navigate("Explore the Tree")
-            st.rerun()
+        st.button(
+            "Center this person in the family tree",
+            type="primary",
+            on_click=center_tree_on,
+            args=(person_id,),
+        )
 
     with places_tab:
         residences = person.get("residences", [])
@@ -1121,6 +1178,11 @@ def render_tree_page(
 ) -> None:
     st.title("Explore the Family Tree")
     st.write("Choose a person and switch between their ancestors, descendants, or immediate family.")
+    st.button(
+        "Open the full family map",
+        on_click=navigate,
+        args=("Full Family Map",),
+    )
 
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
@@ -1200,6 +1262,65 @@ def render_tree_page(
                 step = relationship_step_label(relationships, person_id, path[index + 1])
                 path_parts.append(f"— *{step}* →")
         st.markdown(" ".join(path_parts))
+
+
+def render_full_tree_page(
+    data: dict[str, list[Record]],
+    people_by_id: Mapping[str, Record],
+    relationships: dict[str, dict[str, set[str]]],
+) -> None:
+    """Render a separate, interactive map containing the entire known tree."""
+
+    st.title("Full Family Map")
+    st.write(
+        "This is an additional whole-family view. The existing focused tree remains unchanged. "
+        "Use the map controls to fit everything on screen, zoom in without shrinking labels permanently, "
+        "drag around the canvas, or jump directly to a person."
+    )
+
+    all_referenced = set(people_by_id)
+    for mapping in relationships.values():
+        for person_id, related_ids in mapping.items():
+            all_referenced.add(str(person_id))
+            all_referenced.update(str(item) for item in related_ids)
+    unresolved_count = sum(person_id not in people_by_id for person_id in all_referenced)
+    parent_edges = {
+        (str(parent_id), str(child_id))
+        for child_id, parent_ids in relationships["parents"].items()
+        for parent_id in parent_ids
+    }
+    spouse_edges = {
+        tuple(sorted((str(person_id), str(spouse_id))))
+        for person_id, spouse_ids in relationships["spouses"].items()
+        for spouse_id in spouse_ids
+        if str(person_id) != str(spouse_id)
+    }
+
+    metrics = st.columns(4)
+    metrics[0].metric("Profiles", len(data["people"]))
+    metrics[1].metric("Unresolved relatives", unresolved_count)
+    metrics[2].metric("Parent-child links", len(parent_edges))
+    metrics[3].metric("Spouse links", len(spouse_edges))
+
+    controls, note = st.columns([1, 3])
+    with controls:
+        st.button(
+            "Back to focused tree",
+            on_click=navigate,
+            args=("Explore the Tree",),
+            width="stretch",
+        )
+    with note:
+        st.caption(
+            "Solid lines are parent-child relationships; dashed lines are spouses. "
+            "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
+        )
+
+    components.html(
+        build_full_tree_html(people_by_id, relationships),
+        height=820,
+        scrolling=False,
+    )
 
 
 def event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:
@@ -1608,6 +1729,8 @@ def main() -> None:
         render_search_page(data, people_by_id)
     elif page == "Explore the Tree":
         render_tree_page(data, people_by_id, relationships)
+    elif page == "Full Family Map":
+        render_full_tree_page(data, people_by_id, relationships)
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":
