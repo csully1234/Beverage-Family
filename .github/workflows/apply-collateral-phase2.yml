@@ -1,0 +1,536 @@
+name: Apply verified collateral expansion
+
+on:
+  push:
+    branches:
+      - research/extensive-collateral-family-expansion
+    paths:
+      - .github/workflows/apply-collateral-phase2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: research/extensive-collateral-family-expansion
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Apply source-first genealogy additions
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+
+          ROOT = Path('.')
+          DATA = ROOT / 'data'
+          people_base = json.loads((DATA / 'people.json').read_text(encoding='utf-8'))
+          people_overlay_path = DATA / 'research_people.json'
+          people_overlay = json.loads(people_overlay_path.read_text(encoding='utf-8'))
+          events_base = json.loads((DATA / 'events.json').read_text(encoding='utf-8'))
+          events_overlay_path = DATA / 'research_events.json'
+          events_overlay = json.loads(events_overlay_path.read_text(encoding='utf-8'))
+          precision_path = DATA / 'date_precision.json'
+          precision = json.loads(precision_path.read_text(encoding='utf-8'))
+
+          base_by_id = {p['id']: p for p in people_base}
+          overlay_by_id = {p['id']: p for p in people_overlay}
+
+          def effective_person(pid):
+              return {**base_by_id.get(pid, {}), **overlay_by_id.get(pid, {})}
+
+          def dedupe_sources(items):
+              seen = set()
+              out = []
+              for item in items:
+                  key = json.dumps(item, sort_keys=True, ensure_ascii=False) if isinstance(item, dict) else str(item)
+                  if key not in seen:
+                      seen.add(key)
+                      out.append(item)
+              return out
+
+          def upsert_patch(pid, *, source=None, **fields):
+              rec = dict(overlay_by_id.get(pid, {'id': pid}))
+              rec.update(fields)
+              if source is not None:
+                  current_sources = list(effective_person(pid).get('sources', []))
+                  current_sources.extend(rec.get('sources', []))
+                  current_sources.append(source)
+                  rec['sources'] = dedupe_sources(current_sources)
+              overlay_by_id[pid] = rec
+
+          def new_person(**record):
+              pid = record['id']
+              if pid in base_by_id or pid in overlay_by_id:
+                  raise RuntimeError(f'new person id already exists: {pid}')
+              for field in ('parents', 'siblings', 'spouses', 'children', 'sources'):
+                  record.setdefault(field, [])
+              overlay_by_id[pid] = record
+
+          accessed = '2026-08-31'
+          leadbetter = {
+              'title': 'Leadbetter Records',
+              'repository': '1917 genealogy by J. E. Ames; digitized scan at SeekingMyRoots',
+              'url': 'https://www.seekingmyroots.com/members/files/G004024.pdf',
+              'record_type': 'Published genealogy',
+              'record_date': '1917',
+              'pages': '90–91, 104',
+              'accessed': accessed,
+              'supports': 'Ruth M. Leadbetter and Samuel C. Beverage dates; all twelve children and their exact birth dates; Alida Beverage marriage, death, and Carl Lyman Thurston birth',
+              'evidence_level': 'Tier 3 — published genealogy with independent corroboration used where available'
+          }
+          marblehead = {
+              'title': 'Vital Records of Marblehead, Massachusetts, to the End of the Year 1849',
+              'repository': 'Marblehead vital-record transcription',
+              'url': 'https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm',
+              'record_type': 'Published transcription of town vital records',
+              'record_date': '1903',
+              'accessed': accessed,
+              'supports': 'James Beveridge born August 27, 1724 and Sarah Beveridge born June 1, 1727 to James and Sarah',
+              'evidence_level': 'Tier 1/2 — published transcription of municipal vital records'
+          }
+          lottie_probate = {
+              'title': 'Estate of Lottie H. Beverage probate notice',
+              'repository': 'Courier-Gazette, Rockland, Maine',
+              'url': 'https://fileserver-az.core.ac.uk/download/pdf/270236887.pdf',
+              'record_type': 'Contemporary newspaper probate notice',
+              'record_date': '1939-11-04',
+              'accessed': accessed,
+              'supports': 'Lottie H. Beverage of North Haven was deceased and Harold H. Beverage of Riverhead, New York served as administrator',
+              'evidence_level': 'Tier 2/3 — contemporary legal notice'
+          }
+          harold_family = {
+              'title': 'Harold Henry Beverage biographical family summary',
+              'repository': 'Compiled biography citing Alberta I. Wallen, Genius at Riverhead (North Haven Historical Society, 1988)',
+              'url': 'https://de.wikipedia.org/wiki/Harold_Henry_Beverage',
+              'record_type': 'Compiled biography used with probate and published genealogy corroboration',
+              'accessed': accessed,
+              'supports': 'Harold as son of Fremont Beverage and Lottie H. Smith; older sister Alida; family life years',
+              'evidence_level': 'Tier 4 lead corroborated by North Haven historical biography references and probate evidence'
+          }
+          petronele_src = {
+              'title': 'Mirė Petronėlė Jurgeliūtė-Beverage',
+              'repository': 'Vienybė Lithuanian-American newspaper',
+              'url': 'https://www.spauda2.org/vienybe/archive/1979/1979-04-27-VIENYBE.pdf',
+              'record_type': 'Contemporary newspaper death notice',
+              'record_date': '1979-04-27',
+              'accessed': accessed,
+              'supports': 'Petronėlė Jurgeliūtė-Beverage birth September 29, 1898 in Shenandoah, Pennsylvania; marriage to Harold H. Beverage in 1946; death overnight April 25–26, 1979; career and Lithuanian-American civic work',
+              'evidence_level': 'Tier 3 — contemporary ethnic-community newspaper'
+          }
+          dorothy_src = {
+              'title': 'Dorothy B. Brownell obituary',
+              'repository': 'The Lincoln County News',
+              'url': 'https://lcnme.com/obituaries/dorothy-b-brownell/',
+              'record_type': 'Contemporary newspaper obituary',
+              'record_date': '2012-11-30',
+              'accessed': accessed,
+              'supports': 'Dorothy born September 17, 1921; parents Elroy V. and Marjorie Mank Beverage; husband Frederick W. Brownell; sibling Elroy Jr.',
+              'evidence_level': 'Tier 3 — contemporary newspaper obituary'
+          }
+          estelle_src = {
+              'title': 'Estelle Beverage Libby obituary',
+              'repository': 'PenBay Pilot',
+              'url': 'https://www.penbaypilot.com/article/estelle-beverage-libby-obituary/271766',
+              'record_type': 'Contemporary obituary',
+              'record_date': '2026-06-26',
+              'accessed': accessed,
+              'supports': 'Estelle born October 9, 1922; parents Marjorie Mank and father reported as Leroy; husband Malcolm Libby; seven children; deceased siblings Dorothy, Elroy and Hartley and deceased children David, Sylvia and Cynthia',
+              'evidence_level': 'Tier 3 — contemporary obituary'
+          }
+          hartley_src = {
+              'title': 'Hartley George Beverage, Sr. obituary',
+              'repository': 'PenBay Pilot',
+              'url': 'https://www.penbaypilot.com/article/hartley-george-beverage-sr-obituary/102205',
+              'record_type': 'Contemporary obituary',
+              'record_date': '2018-05-21',
+              'accessed': accessed,
+              'supports': 'Hartley born May 28, 1927 and died May 20, 2018; parents Marjorie and Elroy Beverage Sr.; marriage to Florence Pearse June 2, 1945; siblings',
+              'evidence_level': 'Tier 3 — contemporary obituary'
+          }
+          florence_src = {
+              'title': 'Florence Pearse Beverage obituary',
+              'repository': 'PenBay Pilot',
+              'url': 'https://www.penbaypilot.com/article/florence-pearse-beverage-obituary/138141',
+              'record_type': 'Contemporary obituary',
+              'record_date': '2020-09-04',
+              'accessed': accessed,
+              'supports': 'Florence Adele Pearse born April 6, 1927, died August 31, 2020, parents, and marriage to Hartley George Beverage June 2, 1945',
+              'evidence_level': 'Tier 3 — contemporary obituary'
+          }
+          elsie_src = {
+              'title': 'Elsie Beverage obituary',
+              'repository': 'Kincer Funeral Home',
+              'url': 'https://www.kincerfuneralhome.com/2012-obituaries/942-elsie-beverage',
+              'record_type': 'Funeral-home obituary',
+              'record_date': '2012-08-25',
+              'accessed': accessed,
+              'supports': 'Elsie Louise Curit born February 19, 1925, died August 25, 2012; husband Elroy V. Beverage Jr. predeceased her in 1995; four daughters',
+              'evidence_level': 'Tier 3 — detailed obituary'
+          }
+          sylvia_src = {
+              'title': 'Sylvia Jean (Libby) Soucier obituary',
+              'repository': 'Carmon Funeral Home',
+              'url': 'https://www.carmonfuneralhome.com/obituaries/Sylvia-Jean-Libby-Soucier?obId=20758314',
+              'record_type': 'Funeral-home obituary',
+              'record_date': '2021-04-08',
+              'accessed': accessed,
+              'supports': 'Sylvia died April 8, 2021 at age 72; parents Estelle (Beverage) Libby and Malcolm Libby; sibling list',
+              'evidence_level': 'Tier 3 — detailed obituary'
+          }
+          cynthia_src = {
+              'title': 'Cynthia E. Tuplin obituary',
+              'repository': 'Riposta Funeral Home',
+              'url': 'https://ripostafh.com/tribute/details/18429/Cynthia-Tuplin/obituary.html',
+              'record_type': 'Funeral-home obituary',
+              'record_date': '2023-05-29',
+              'accessed': accessed,
+              'supports': 'Cynthia born December 15, 1952 and died May 29, 2023; parents Malcolm Plummer Libby and Estelle Nettie (Beverage) Libby; David and Sylvia identified as deceased siblings',
+              'evidence_level': 'Tier 3 — detailed obituary'
+          }
+          norwich_src = {
+              'title': 'Norwich University Record, July 18, 1925',
+              'repository': 'Norwich University Archives',
+              'url': 'https://archives.norwich.edu/digital/api/collection/p16663coll2/id/8826/download',
+              'record_type': 'University alumni periodical',
+              'record_date': '1925-07-18',
+              'accessed': accessed,
+              'supports': 'Helen Beveridge, former Spaulding High School teacher, married Robert W. T. Barclay ’22 at her Dorchester home on June 26, 1925 and spent the summer in North Haven',
+              'evidence_level': 'Tier 2 — contemporary institutional periodical'
+          }
+          norma_src = {
+              'title': 'Norma Helen Merolla obituary',
+              'repository': 'Urquhart-Murphy Funeral Home',
+              'url': 'https://www.murphyfuneralhomes.org/obituary/Norma-Merolla',
+              'record_type': 'Funeral-home obituary',
+              'record_date': '2026-06-17',
+              'accessed': accessed,
+              'supports': 'Norma H. Barclay Merolla died June 16, 2026; daughter of Robert and Helen (Beveridge) Barclay; wife of Amedeo C. Merolla; marriage in 1953',
+              'evidence_level': 'Tier 3 — detailed obituary'
+          }
+          amedeo_src = {
+              'title': 'Amedeo C. Merolla obituary',
+              'repository': 'The Providence Journal via Legacy',
+              'url': 'https://www.legacy.com/us/obituaries/providence/name/amedeo-merolla-obituary?id=12062457',
+              'record_type': 'Newspaper obituary',
+              'record_date': '2017-05-03',
+              'accessed': accessed,
+              'supports': 'Amedeo C. Merolla died April 28, 2017 at age 88; husband of Norma H. Barclay Merolla for 64 years; education, legal and military career',
+              'evidence_level': 'Tier 3 — contemporary newspaper obituary'
+          }
+          norwood_jr_src = {
+              'title': 'Norwood P. Beveridge Jr. obituary',
+              'repository': 'Legacy Remembers',
+              'url': 'https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014',
+              'record_type': 'Published obituary',
+              'record_date': '2020-11-08',
+              'accessed': accessed,
+              'supports': 'Norwood Pierson Beveridge Jr. born November 5, 1936 and died October 31, 2020; parents Norwood Pierson and Dorothy Winifred Woodrow Beveridge; North Haven family connection',
+              'evidence_level': 'Tier 3 — published obituary'
+          }
+
+          # Resolve obsolete relationship IDs to the already-existing child profiles.
+          replacements = {
+              'thomas_beverage_1800': 'thomas_beverage_1800_child',
+              'sarah_beverage_1802': 'sarah_beverage_1802_child',
+              'abigail_beverage_1805': 'abigail_beverage_1805_child',
+          }
+          for pid in sorted(set(base_by_id) | set(overlay_by_id)):
+              person = effective_person(pid)
+              changes = {}
+              for field in ('parents', 'siblings', 'spouses', 'children'):
+                  original = list(person.get(field, []))
+                  corrected = [replacements.get(x, x) for x in original]
+                  # preserve order while removing duplicates introduced by alias repair
+                  corrected = list(dict.fromkeys(corrected))
+                  if corrected != original:
+                      changes[field] = corrected
+              if changes:
+                  upsert_patch(pid, **changes)
+
+          # Sarah Beveridge is directly documented in Marblehead's vital records.
+          new_person(
+              id='sarah_beveridge_1727', full_name='Sarah Beveridge',
+              birth_date='1727-06-01', birth_date_precision='exact', birth_place='Marblehead, Massachusetts',
+              death_date=None, death_place=None,
+              parents=['james_beveridge_sr_1700', 'sarah_bennett_1705'], siblings=['james_beveridge_jr_1724'], spouses=[], children=[],
+              evidence_status='Verified — municipal vital-record transcription names both parents and exact birth date',
+              research_completeness='Exact birth and parentage established; marriage and death remain open research questions',
+              notes='The Marblehead birth register records Sarah as a daughter of James and Sarah Beveridge/Befridge and places her in the same family as James Beveridge Jr.',
+              sources=[marblehead]
+          )
+
+          # Upgrade the Samuel Carver Beverage / Ruth Leadbetter generation from year-only to exact published dates.
+          exact_updates = {
+              'ruth_leadbetter_1863': {'birth_date': '1863-07-06', 'birth_date_precision': 'exact'},
+              'samuel_carver_beverage_1862': {'birth_date': '1862-09-28', 'birth_date_precision': 'exact', 'death_date': '1905-03-18', 'death_date_precision': 'exact'},
+              'florence_mertice_beverage_1883': {'birth_date': '1883-06-03', 'birth_date_precision': 'exact'},
+              'chester_josiah_beverage_1884': {'birth_date': '1884-09-25', 'birth_date_precision': 'exact'},
+              'hiram_stone_beverage_1886': {'birth_date': '1886-05-13', 'birth_date_precision': 'exact'},
+              'albert_lewis_beverage_1888': {'birth_date': '1888-11-12', 'birth_date_precision': 'exact'},
+              'marston_leadbetter_beverage_1890': {'birth_date': '1890-12-26', 'birth_date_precision': 'exact'},
+              'olive_mary_beverage_1892': {'birth_date': '1892-08-17', 'birth_date_precision': 'exact'},
+              'nett_ie_ellen_beverage_1894': {'birth_date': '1894-04-22', 'birth_date_precision': 'exact'},
+              'elroy_victor_beverage_1896': {'birth_date': '1896-03-05', 'birth_date_precision': 'exact'},
+              'george_dewey_beverage_1898': {'birth_date': '1898-02-28', 'birth_date_precision': 'exact'},
+              'edith_etta_beverage_1900': {'birth_date': '1900-05-12', 'birth_date_precision': 'exact'},
+              'wilson_freemont_beverage_1902': {'birth_date': '1902-03-23', 'birth_date_precision': 'exact'},
+              'alma_marie_beverage_1905': {'birth_date': '1905-10-02', 'birth_date_precision': 'exact', 'death_date': '1906-01-24', 'death_date_precision': 'exact'},
+          }
+          for pid, fields in exact_updates.items():
+              if pid not in base_by_id and pid not in overlay_by_id:
+                  raise RuntimeError(f'expected existing profile not found: {pid}')
+              upsert_patch(pid, source=leadbetter, **fields)
+
+          # Fremont / Lottie / Alida / Thurston collateral line.
+          new_person(
+              id='lottie_h_smith_beverage_1863', full_name='Lottie H. Smith Beverage',
+              birth_date='1863', birth_date_precision='year', death_date='1938', death_date_precision='year',
+              parents=[], siblings=[], spouses=['fremont_beverage_1856'], children=['alida_beverage_thurston_1887', 'harold_h_beverage_1893'],
+              evidence_status='Strongly supported — North Haven historical biography-derived family identification plus a 1939 probate notice naming Harold H. Beverage as administrator of Lottie H. Beverage’s estate',
+              research_completeness='Family connection is strongly supported; original marriage and vital records remain desirable',
+              notes='Current public profile intentionally lists only deceased documented children. Other reported descendants are not added without equivalent evidence.',
+              sources=[lottie_probate, harold_family]
+          )
+          new_person(
+              id='alida_beverage_thurston_1887', full_name='Alida E. Beverage Thurston',
+              birth_date='1887-11-11', birth_date_precision='exact', death_date='1910-12-22', death_date_precision='exact',
+              parents=['fremont_beverage_1856', 'lottie_h_smith_beverage_1863'], siblings=['harold_h_beverage_1893'], spouses=['leforest_thurston_1882'], children=['carl_lyman_thurston_1910'],
+              evidence_status='Strongly supported — exact marriage/life data in 1917 Leadbetter genealogy; parentage supported by North Haven historical biography-derived sources',
+              research_completeness='Marriage, death, child, and parent line documented; original vital records remain a useful corroboration step',
+              sources=[leadbetter, harold_family]
+          )
+          new_person(
+              id='leforest_thurston_1882', full_name='LeForest Thurston',
+              birth_date='1882-04-14', birth_date_precision='exact', death_date=None,
+              parents=[], siblings=[], spouses=['alida_beverage_thurston_1887'], children=['carl_lyman_thurston_1910'],
+              evidence_status='Strongly supported — 1917 Leadbetter genealogy gives birth, marriage, spouse and child',
+              research_completeness='Birth, marriage and child documented; death remains unresolved',
+              sources=[leadbetter]
+          )
+          new_person(
+              id='carl_lyman_thurston_1910', full_name='Carl Lyman Thurston',
+              birth_date='1910-12-03', birth_date_precision='exact', birth_place='North Haven, Maine', death_date=None,
+              parents=['leforest_thurston_1882', 'alida_beverage_thurston_1887'], siblings=[], spouses=[], children=[],
+              evidence_status='Strongly supported — 1917 Leadbetter genealogy explicitly names him as the child of LeForest Thurston and Alida Beverage',
+              research_completeness='Exact birth and parentage documented; later life remains open',
+              sources=[leadbetter]
+          )
+          upsert_patch('fremont_beverage_1856', spouses=['lottie_h_smith_beverage_1863'], children=list(dict.fromkeys(effective_person('fremont_beverage_1856').get('children', []) + ['alida_beverage_thurston_1887', 'harold_h_beverage_1893'])), source=harold_family)
+          upsert_patch('harold_h_beverage_1893', parents=['fremont_beverage_1856', 'lottie_h_smith_beverage_1863'], spouses=list(dict.fromkeys(effective_person('harold_h_beverage_1893').get('spouses', []) + ['petronele_jurgeliute_beverage_1898'])), source=lottie_probate)
+
+          new_person(
+              id='petronele_jurgeliute_beverage_1898', full_name='Petronėlė Jurgeliūtė Beverage',
+              alternate_names=['Patricia Yurgel Beverage'],
+              birth_date='1898-09-29', birth_date_precision='exact', birth_place='Shenandoah, Pennsylvania',
+              death_date='1979-04-26', death_date_precision='exact', death_place='Stony Brook, New York',
+              parents=[], siblings=[], spouses=['harold_h_beverage_1893'], children=[],
+              occupations=['Social worker', 'Probation officer'],
+              civic_offices=['Secretary, Lithuanian Alliance of America (1920–1932)', 'Treasurer in Lithuanian-American relief organizations'],
+              evidence_status='Verified/strongly supported — contemporary Lithuanian-American newspaper supplies birth, marriage, career and death details',
+              research_completeness='Strong contemporary biographical notice; civil marriage record remains desirable',
+              notes='The death notice says she died during the night of April 25–26, 1979; April 26 is used as the recorded date with that caveat.',
+              sources=[petronele_src]
+          )
+
+          # Elroy Victor Beverage Sr. line, restricted to deceased relatives explicitly documented by obituaries.
+          new_person(
+              id='marjorie_mank_beverage', full_name='Marjorie Mank Beverage',
+              birth_date=None, death_date=None, parents=[], siblings=[], spouses=['elroy_victor_beverage_1896'],
+              children=['dorothy_beverage_brownell_1921', 'estelle_nettie_beverage_libby_1922', 'elroy_v_beverage_jr', 'hartley_george_beverage_sr_1927'],
+              evidence_status='Verified relationship — independently named as mother with Elroy/Elroy V. Beverage Sr. in multiple children’s obituaries',
+              research_completeness='Parentage role is strong; her own vital dates remain unresolved',
+              notes='Only deceased children with independently documented records are profiled; living descendants named in modern obituaries are intentionally withheld.',
+              sources=[dorothy_src, hartley_src, estelle_src]
+          )
+          new_person(
+              id='dorothy_beverage_brownell_1921', full_name='Dorothy B. Beverage Brownell',
+              birth_date='1921-09-17', birth_date_precision='exact', birth_place='Camden, Maine', death_date='2012-11-13', death_date_precision='exact',
+              parents=['elroy_victor_beverage_1896', 'marjorie_mank_beverage'], siblings=[], spouses=['frederick_w_brownell'], children=[],
+              evidence_status='Verified — contemporary obituary directly names parents, husband, birth and death',
+              research_completeness='Strong obituary record; living descendants intentionally not profiled',
+              notes='Her obituary states Frederick died six weeks before her after 65 years of marriage.', sources=[dorothy_src]
+          )
+          new_person(
+              id='frederick_w_brownell', full_name='Frederick W. Brownell', birth_date=None, death_date='2012', death_date_precision='year',
+              parents=[], siblings=[], spouses=['dorothy_beverage_brownell_1921'], children=[],
+              evidence_status='Strongly supported — Dorothy Brownell obituary identifies him as her husband of 65 years and reports his death six weeks before hers',
+              research_completeness='Marriage/death context established; exact vital dates not asserted from cemetery-only evidence',
+              sources=[dorothy_src]
+          )
+          new_person(
+              id='estelle_nettie_beverage_libby_1922', full_name='Estelle Nettie Beverage Libby',
+              birth_date='1922-10-09', birth_date_precision='exact', birth_place='Camden, Maine', death_date='2026-05-17', death_date_precision='exact',
+              parents=['elroy_victor_beverage_1896', 'marjorie_mank_beverage'], siblings=[], spouses=['malcolm_plummer_libby'],
+              children=['david_libby_estelle_branch', 'sylvia_jean_libby_soucier', 'cynthia_e_libby_tuplin_1952'],
+              evidence_status='Verified with noted name conflict — obituary directly names parents, spouse, siblings and children; father appears as “Leroy” in this obituary while sibling obituaries independently identify Elroy',
+              research_completeness='Immediate family and exact dates strong; original birth record would resolve the Leroy/Elroy transcription conflict',
+              conflicting_evidence=[{'claim':'Father’s given name','source':'2026 Estelle obituary','reported':'Leroy Beverage','corroboration':'Dorothy and Hartley obituaries independently name the same father as Elroy V./Elroy Beverage Sr.','status':'Recorded as a source conflict; Elroy retained as the connected parent'}],
+              notes='The obituary says Estelle and Malcolm raised seven children. Four living sons are not converted into public profiles; only deceased children are included.',
+              sources=[estelle_src, dorothy_src, hartley_src]
+          )
+          new_person(
+              id='malcolm_plummer_libby', full_name='Malcolm Plummer Libby', birth_date=None, death_date=None,
+              parents=[], siblings=[], spouses=['estelle_nettie_beverage_libby_1922'], children=['david_libby_estelle_branch', 'sylvia_jean_libby_soucier', 'cynthia_e_libby_tuplin_1952'],
+              evidence_status='Verified relationship — named as Estelle’s husband and as father by independent obituaries of Sylvia and Cynthia',
+              research_completeness='Spouse/parent relationships established; vital dates remain open',
+              notes='Living children are intentionally not profiled.', sources=[estelle_src, sylvia_src, cynthia_src]
+          )
+          new_person(
+              id='david_libby_estelle_branch', full_name='David Libby', birth_date=None, death_date=None,
+              parents=['malcolm_plummer_libby', 'estelle_nettie_beverage_libby_1922'], siblings=[], spouses=[], children=[],
+              evidence_status='Verified deceased child — Estelle’s 2026 obituary names deceased son David; Cynthia’s 2023 obituary independently names deceased brother David',
+              research_completeness='Relationship and deceased status established; identity-specific vital dates not yet safely isolated from other Maine David Libbys',
+              sources=[estelle_src, cynthia_src]
+          )
+          new_person(
+              id='sylvia_jean_libby_soucier', full_name='Sylvia Jean Libby Soucier', birth_date=None, death_date='2021-04-08', death_date_precision='exact', birth_place='Camden, Maine',
+              parents=['malcolm_plummer_libby', 'estelle_nettie_beverage_libby_1922'], siblings=[], spouses=[], children=[],
+              evidence_status='Verified — detailed obituary names both parents and exact death date',
+              research_completeness='Parentage and death verified; exact birth date not inferred from age',
+              notes='Her living spouse and children are not converted into public profiles.', sources=[sylvia_src, estelle_src, cynthia_src]
+          )
+          new_person(
+              id='cynthia_e_libby_tuplin_1952', full_name='Cynthia E. Libby Tuplin',
+              birth_date='1952-12-15', birth_date_precision='exact', birth_place='Camden, Maine', death_date='2023-05-29', death_date_precision='exact', death_place='Sidney, Maine',
+              parents=['malcolm_plummer_libby', 'estelle_nettie_beverage_libby_1922'], siblings=[], spouses=[], children=[],
+              evidence_status='Verified — obituary gives exact birth/death dates and both parents',
+              research_completeness='Strong obituary record; living relatives intentionally not profiled', sources=[cynthia_src, estelle_src]
+          )
+          new_person(
+              id='elroy_v_beverage_jr', full_name='Elroy V. Beverage Jr.', birth_date=None, death_date='1995', death_date_precision='year',
+              parents=['elroy_victor_beverage_1896', 'marjorie_mank_beverage'], siblings=[], spouses=['elsie_louise_curit_beverage_1925'], children=[],
+              evidence_status='Verified relationship/strong death year — independently named as sibling in Dorothy and Hartley obituaries; Elsie’s obituary identifies him as her husband and says he died in 1995',
+              research_completeness='Parent/spouse connection and death year established; birth and exact death date remain open',
+              notes='Four daughters are mentioned in Elsie’s obituary but are not profiled because they may be living.', sources=[elsie_src, dorothy_src, hartley_src]
+          )
+          new_person(
+              id='elsie_louise_curit_beverage_1925', full_name='Elsie Louise Curit Beverage',
+              birth_date='1925-02-19', birth_date_precision='exact', birth_place='Camden, Maine', death_date='2012-08-25', death_date_precision='exact',
+              parents=[], siblings=[], spouses=['elroy_v_beverage_jr'], children=[],
+              evidence_status='Verified — detailed obituary gives exact dates, parents and spouse',
+              research_completeness='Strong obituary coverage; living daughters intentionally not profiled', sources=[elsie_src]
+          )
+          new_person(
+              id='hartley_george_beverage_sr_1927', full_name='Hartley George Beverage Sr.',
+              birth_date='1927-05-28', birth_date_precision='exact', birth_place='Camden, Maine', death_date='2018-05-20', death_date_precision='exact', death_place='Rockland, Maine',
+              parents=['elroy_victor_beverage_1896', 'marjorie_mank_beverage'], siblings=[], spouses=['florence_adele_pearse_beverage_1927'], children=[],
+              evidence_status='Verified — contemporary obituary gives exact dates, parents, spouse, sibling set and family life',
+              research_completeness='Strong obituary record; living children intentionally not profiled', sources=[hartley_src]
+          )
+          new_person(
+              id='florence_adele_pearse_beverage_1927', full_name='Florence Adele Pearse Beverage',
+              birth_date='1927-04-06', birth_date_precision='exact', death_date='2020-08-31', death_date_precision='exact',
+              parents=[], siblings=[], spouses=['hartley_george_beverage_sr_1927'], children=[],
+              evidence_status='Verified — contemporary obituary gives exact dates, parents and marriage to Hartley',
+              research_completeness='Strong obituary coverage; living children intentionally not profiled', sources=[florence_src, hartley_src]
+          )
+          elroy_children = ['dorothy_beverage_brownell_1921', 'estelle_nettie_beverage_libby_1922', 'elroy_v_beverage_jr', 'hartley_george_beverage_sr_1927']
+          upsert_patch('elroy_victor_beverage_1896', spouses=['marjorie_mank_beverage'], children=elroy_children, source=hartley_src,
+                       evidence_status='Verified/strongly supported branch — 1917 genealogy supplies exact birth; multiple independent descendants’ obituaries establish spouse Marjorie Mank and deceased children',
+                       notes='Only deceased children with public corroborating records are profiled. Modern obituaries name additional living daughters, which are intentionally withheld.')
+
+          # Helen Beveridge Barclay collateral line.
+          new_person(
+              id='robert_w_t_barclay', full_name='Robert W. T. Barclay', birth_date=None, death_date=None,
+              parents=[], siblings=[], spouses=['helen_barclay_1896'], children=['norma_helen_barclay_merolla'],
+              evidence_status='Verified relationship — 1925 Norwich University alumni periodical reports his marriage to Helen Beveridge; their daughter’s 2026 obituary independently names both parents',
+              research_completeness='Marriage and daughter independently corroborated; vital dates remain open', sources=[norwich_src, norma_src]
+          )
+          new_person(
+              id='norma_helen_barclay_merolla', full_name='Norma Helen Barclay Merolla', alternate_names=['Kitty'],
+              birth_date=None, birth_place='Boston, Massachusetts', death_date='2026-06-16', death_date_precision='exact',
+              parents=['robert_w_t_barclay', 'helen_barclay_1896'], siblings=[], spouses=['amedeo_c_merolla_1929'], children=[],
+              occupations=['Teacher'], education=['Cushing Academy', 'Brown University'],
+              evidence_status='Verified — 2026 obituary names both parents, spouse, birthplace, education and exact death date; parents’ marriage independently documented in 1925',
+              research_completeness='Parentage and marriage strong; exact birth date not inferred from age',
+              notes='Her children and grandchildren are living and intentionally not converted into public profiles.', sources=[norma_src, norwich_src]
+          )
+          new_person(
+              id='amedeo_c_merolla_1929', full_name='Amedeo C. “Armie” Merolla', birth_date='1929', birth_date_precision='year', death_date='2017-04-28', death_date_precision='exact',
+              parents=[], siblings=[], spouses=['norma_helen_barclay_merolla'], children=[],
+              occupations=['Attorney', 'Rhode Island National Guard brigadier general'],
+              education=['Brown University', 'Harvard Law School', 'U.S. Army Command and General Staff College', 'U.S. Army War College'],
+              evidence_status='Verified — contemporary obituary and spouse’s obituary independently establish marriage and death; published professional sources support birth year and career',
+              research_completeness='Strong obituary/professional record; living descendants intentionally not profiled', sources=[amedeo_src, norma_src]
+          )
+          helen_children = list(dict.fromkeys(effective_person('helen_barclay_1896').get('children', []) + ['norma_helen_barclay_merolla']))
+          helen_spouses = list(dict.fromkeys(effective_person('helen_barclay_1896').get('spouses', []) + ['robert_w_t_barclay']))
+          upsert_patch('helen_barclay_1896', spouses=helen_spouses, children=helen_children, source=norwich_src)
+
+          # Improve the already-added Norwood Jr. record with exact obituary dates.
+          upsert_patch('norwood_pierson_beveridge_jr_1936', birth_date='1936-11-05', birth_date_precision='exact', death_date='2020-10-31', death_date_precision='exact', source=norwood_jr_src)
+
+          # Update date precision metadata for base records whose placeholder dates are now replaced by exact sourced dates.
+          exact_fields = {(pid, field) for pid, fields in exact_updates.items() for field, value in fields.items() if field in {'birth_date','death_date'} and fields.get(field + '_precision') == 'exact'}
+          for item in precision:
+              key = (item.get('record_id'), item.get('field'))
+              if item.get('record_type') == 'person' and key in exact_fields:
+                  item['precision'] = 'exact'
+                  item['determination'] = 'Exact date supplied by the 1917 Leadbetter Records and applied through the reviewed research overlay.'
+                  item['confidence'] = 'high'
+                  item['checked_on'] = accessed
+
+          # Patch Sarah's existing timeline event to the exact documented birth date.
+          event_base_by_id = {e['id']: e for e in events_base}
+          event_overlay_by_id = {e['id']: e for e in events_overlay}
+          sarah_event_id = 'event_birth_sarah_beveridge_1727'
+          if sarah_event_id in event_base_by_id or sarah_event_id in event_overlay_by_id:
+              erec = dict(event_overlay_by_id.get(sarah_event_id, {'id': sarah_event_id}))
+              erec.update({'date': '1727-06-01', 'date_precision': 'exact', 'people_involved': ['sarah_beveridge_1727']})
+              esources = list(({**event_base_by_id.get(sarah_event_id, {}), **event_overlay_by_id.get(sarah_event_id, {})}).get('sources', []))
+              esources.append(marblehead)
+              erec['sources'] = dedupe_sources(esources)
+              event_overlay_by_id[sarah_event_id] = erec
+              for item in precision:
+                  if item.get('record_type') == 'event' and item.get('record_id') == sarah_event_id and item.get('field') == 'date':
+                      item['precision'] = 'exact'
+                      item['determination'] = 'Exact June 1, 1727 birth date documented in the Marblehead vital-record transcription.'
+                      item['confidence'] = 'high'
+                      item['checked_on'] = accessed
+
+          # Preserve original overlay order, then append new records deterministically.
+          original_order = [p['id'] for p in people_overlay]
+          ordered_ids = original_order + sorted(set(overlay_by_id) - set(original_order))
+          people_overlay_path.write_text(json.dumps([overlay_by_id[i] for i in ordered_ids], indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          original_event_order = [e['id'] for e in events_overlay]
+          ordered_event_ids = original_event_order + sorted(set(event_overlay_by_id) - set(original_event_order))
+          events_overlay_path.write_text(json.dumps([event_overlay_by_id[i] for i in ordered_event_ids], indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          precision_path.write_text(json.dumps(precision, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          # Dedicated regression coverage for the new relationship chains and privacy rule.
+          test_path = ROOT / 'tests' / 'test_verified_collateral_phase2.py'
+          test_path.write_text('''from __future__ import annotations\n\nimport sys\nfrom pathlib import Path\nimport unittest\n\nROOT = Path(__file__).resolve().parents[1]\nsys.path.insert(0, str(ROOT))\n\nfrom family_data import index_people, load_site_data, relationship_index, shortest_relationship_path\nfrom validation import validate_site_data\n\n\nclass VerifiedCollateralPhase2Tests(unittest.TestCase):\n    @classmethod\n    def setUpClass(cls):\n        cls.data = load_site_data(ROOT / "data")\n        cls.people = index_people(cls.data["people"])\n        cls.relationships = relationship_index(cls.data["people"])\n\n    def test_expansion_reaches_at_least_180_profiles(self):\n        self.assertGreaterEqual(len(self.people), 180)\n\n    def test_marblehead_sarah_bridge(self):\n        sarah = self.people["sarah_beveridge_1727"]\n        self.assertEqual(sarah["birth_date"], "1727-06-01")\n        self.assertEqual(set(sarah["parents"]), {"james_beveridge_sr_1700", "sarah_bennett_1705"})\n\n    def test_obsolete_child_ids_are_repaired(self):\n        obsolete = {"thomas_beverage_1800", "sarah_beverage_1802", "abigail_beverage_1805"}\n        for person in self.people.values():\n            for field in ("parents", "siblings", "spouses", "children"):\n                self.assertTrue(obsolete.isdisjoint(person.get(field, [])), (person["id"], field))\n\n    def test_samuel_ruth_twelve_child_dates(self):\n        expected = {\n            "florence_mertice_beverage_1883": "1883-06-03",\n            "chester_josiah_beverage_1884": "1884-09-25",\n            "hiram_stone_beverage_1886": "1886-05-13",\n            "albert_lewis_beverage_1888": "1888-11-12",\n            "marston_leadbetter_beverage_1890": "1890-12-26",\n            "olive_mary_beverage_1892": "1892-08-17",\n            "nett_ie_ellen_beverage_1894": "1894-04-22",\n            "elroy_victor_beverage_1896": "1896-03-05",\n            "george_dewey_beverage_1898": "1898-02-28",\n            "edith_etta_beverage_1900": "1900-05-12",\n            "wilson_freemont_beverage_1902": "1902-03-23",\n            "alma_marie_beverage_1905": "1905-10-02",\n        }\n        for pid, birth in expected.items():\n            self.assertEqual(self.people[pid]["birth_date"], birth, pid)\n            self.assertEqual(self.people[pid].get("birth_date_precision"), "exact", pid)\n\n    def test_fremont_thurston_chain(self):\n        path = shortest_relationship_path(self.relationships, "harold_h_beverage_1893", "carl_lyman_thurston_1910")\n        self.assertTrue(path)\n        self.assertIn("alida_beverage_thurston_1887", path)\n\n    def test_elroy_branch_chain(self):\n        cynthia = self.people["cynthia_e_libby_tuplin_1952"]\n        self.assertEqual(set(cynthia["parents"]), {"malcolm_plummer_libby", "estelle_nettie_beverage_libby_1922"})\n        path = shortest_relationship_path(self.relationships, "elroy_victor_beverage_1896", "cynthia_e_libby_tuplin_1952")\n        self.assertTrue(path)\n        self.assertIn("estelle_nettie_beverage_libby_1922", path)\n\n    def test_helen_barclay_merolla_chain(self):\n        norma = self.people["norma_helen_barclay_merolla"]\n        self.assertEqual(set(norma["parents"]), {"robert_w_t_barclay", "helen_barclay_1896"})\n        self.assertIn("amedeo_c_merolla_1929", norma["spouses"])\n\n    def test_living_modern_descendants_not_profiled(self):\n        withheld_names = {\n            "barry_libby", "alan_libby", "dennis_libby", "douglas_libby",\n            "hartley_g_beverage_jr", "kenneth_beverage_hartley_branch",\n            "katherine_merolla", "julie_merolla", "sandra_merolla", "steven_merolla",\n        }\n        self.assertTrue(withheld_names.isdisjoint(self.people))\n\n    def test_data_validator_still_has_no_blocking_errors(self):\n        self.assertEqual(validate_site_data(self.data).errors, [])\n\n\nif __name__ == "__main__":\n    unittest.main()\n''', encoding='utf-8')
+
+          report_path = ROOT / 'research' / 'collateral_family_expansion_2026-08-31.md'
+          with report_path.open('a', encoding='utf-8') as fh:
+              fh.write('''\n\n## Verified phase-two expansion\n\nThis pass adds another source-first layer after the initial 22 collateral profiles. It resolves Sarah Beveridge (1727) from Marblehead vital records, repairs obsolete Thomas/Sarah/Abigail child IDs instead of creating duplicates, upgrades the Samuel Carver Beverage–Ruth Leadbetter twelve-child generation to exact published dates, and extends documented deceased collateral lines through Fremont/Alida Thurston, Harold/Petronėlė Jurgeliūtė, Elroy Victor Beverage Sr., and Helen Beveridge Barclay.\n\nModern obituaries were used to prove historical/deceased relationship chains, but living children, grandchildren, current addresses, phone numbers, and other modern personal details were deliberately not turned into profiles.\n\n### Withheld research leads\n\n- **Charles Beverage / Annie Ursula Leadbetter / Vernon Linwood Beverage:** the 1917 Leadbetter genealogy clearly documents Charles + Annie and Vernon, but the repository’s existing `charles_beverage_1863` is labeled Charles Howard while outside compiled sources suggest Charles Hanson (1862–1938). The identity bridge is not strong enough to merge them yet.\n- **James Beverage (born 1805) / Sarah Waterman branch:** published Waterman genealogy exposes a large descendant network, but James’s parentage has not been independently tied to the established North Haven tree.\n- **Ruel Kent Beverage and Lyford/Waterman branches:** substantial descendant material exists, but the crucial parent-to-established-tree link remains unproven.\n- **Benjamin Kent / Sarah Beverage parentage conflict:** chronology strongly suggests an older Sarah rather than the repository’s younger Sarah profile; this remains a documented conflict pending an original vital/probate/deed record.\n- **Modern spouse IDs:** unresolved spouse references that may belong to living people remain intentionally unresolved rather than populated from internet searches.\n''')
+
+          print('research_people entries:', len(overlay_by_id))
+          print('new effective profiles:', len(set(base_by_id) | set(overlay_by_id)))
+          print('research_events entries:', len(event_overlay_by_id))
+          PY
+
+      - name: Install tested dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate data and regression suite
+        run: |
+          python validate_data.py
+          python -m unittest discover -s tests -v
+      - name: Remove temporary research workflows and commit results
+        shell: bash
+        run: |
+          rm -f .github/workflows/report-unresolved-research.yml
+          rm -f .github/workflows/apply-collateral-phase2.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add verified collateral family expansion phase two'
+          git push origin HEAD:research/extensive-collateral-family-expansion
