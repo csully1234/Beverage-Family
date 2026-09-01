@@ -121,11 +121,15 @@
     "occupations": [
       "Radio technician",
       "Communications supervisor",
-      "Historical society co-founder"
+      "Historical society co-founder",
+      "National Radio Company employee, 1950–1970"
     ],
     "military_service": [
       "U.S. Army Signal Corps, 1941–1945; Master Sergeant and radio communications chief in the Mediterranean theater",
-      "U.S. Air Force, 1947–1950"
+      "U.S. Air Force, 1947–1950",
+      "Drafted June 1941; U.S. Army Signal Corps, Master Sergeant and Radio/Communications Chief, 1060th Signal Company, 323rd Air Service Group; overseas July 16, 1942–May 1945 in Libya, Tunisia, Egypt, Lebanon, Palestine and Italy",
+      "European-African-Middle Eastern service medal with three Bronze Campaign Stars, as reported in obituary",
+      "U.S. Air Force, June 1947–June 1950"
     ],
     "education": [
       "North Haven schools",
@@ -133,9 +137,10 @@
     ],
     "civic_offices": [
       "Co-founder and officer, North Haven Historical Society",
-      "North Haven Boston Post Cane holder, 2010–2014"
+      "North Haven Boston Post Cane holder, 2010–2014",
+      "Instrumental with Lewis and Ida Haskell in establishing the North Haven Historical Society after returning permanently to the island in 1973"
     ],
-    "biography": "Born at Sunnyside beside North Haven's Mill Pond, Samuel developed an early interest in radio. His wartime communications service included North Africa and the Mediterranean theater. He later worked for radio companies, returned permanently to North Haven in 1973, and helped establish the island's historical society.",
+    "biography": "Born at Sunnyside beside North Haven's Mill Pond, Samuel developed an early interest in radio. His wartime communications service included North Africa and the Mediterranean theater. He later worked for radio companies, returned permanently to North Haven in 1973, and helped establish the island's historical society. Samuel Hiram Beverage’s obituary preserves a detailed communications-service history: drafted in 1941, he departed New York on July 16, 1942 and served as a Master Sergeant and radio/communications chief with the 1060th Signal Company, 323rd Air Service Group across North Africa, the Middle East and Italy. After later Air Force service and a career at National Radio Company, he returned permanently to North Haven in 1973 and helped establish the North Haven Historical Society.",
     "notes": "Master Sergeant in U.S. Army Signal Corps; radio enthusiast; helped found North Haven Historical Society. A detailed family-published obituary also documents his radio training, military communications work, postwar career, return to North Haven, and receipt of the Boston Post Cane.",
     "evidence_status": "Exact dates and life history documented by a detailed obituary; cane award independently corroborated",
     "research_completeness": "Strong narrative record; service file and discharge papers remain high-value primary sources",
@@ -160,6 +165,16 @@
         "accessed": "2026-08-26",
         "supports": "Award of the North Haven Boston Post Cane on December 4, 2010 and birth on December 6, 1917",
         "evidence_level": "Tier 3 — independently maintained historical register"
+      },
+      {
+        "title": "Samuel Hiram Beverage obituary",
+        "repository": "Tribute Archive / Riposta Funeral Home material",
+        "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage",
+        "record_type": "Detailed obituary",
+        "accessed": "2026-08-31",
+        "supports": "1941–45 Army Signal Corps service, July 16, 1942 overseas departure, Master Sergeant communications work across the Mediterranean theater, later Air Force service, radio career and North Haven Historical Society work",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2014-12-18"
       }
     ]
   },
@@ -247,9 +262,10 @@
       "Held more than forty patents according to IEEE's oral-history introduction",
       "IRE Morris N. Liebmann Memorial Prize, 1923",
       "IRE Medal of Honor, 1945",
-      "AIEE Lamme Gold Medal, 1957"
+      "AIEE Lamme Gold Medal, 1957",
+      "As a teenager, used a homemade wireless station to receive signals from Carpathia after the Titanic disaster, according to IEEE’s institutional biography"
     ],
-    "biography": "A North Haven-born pioneer of long-distance radio reception, Harold Beverage graduated from the University of Maine in 1915 and began his career at General Electric. At RCA he led transoceanic receiver development, rose to vice president of research and development, and applied his communications expertise to wartime work including radio links supporting D-Day.",
+    "biography": "A North Haven-born pioneer of long-distance radio reception, Harold Beverage graduated from the University of Maine in 1915 and began his career at General Electric. At RCA he led transoceanic receiver development, rose to vice president of research and development, and applied his communications expertise to wartime work including radio links supporting D-Day. IEEE’s institutional biography records an unusually vivid early-radio episode: as a teenager on North Haven, Harold Beverage built a homemade wireless station and received signals from Carpathia after it rescued Titanic survivors, years before his professional work on long-distance radio and the Beverage antenna.",
     "notes": "His experiments with long receiving wires produced the highly directional wave antenna that still carries his surname. IEEE records document a career spanning early radio, global communications, engineering leadership, and more than forty patents.",
     "evidence_status": "Exact dates, education, career, honors, and invention documented by IEEE and an original U.S. patent",
     "needs_research": true,
@@ -314,6 +330,15 @@
         "accessed": "2026-08-31",
         "supports": "Lottie H. Beverage of North Haven was deceased and Harold H. Beverage of Riverhead, New York served as administrator",
         "evidence_level": "Tier 2/3 — contemporary legal notice"
+      },
+      {
+        "title": "Harold H. Beverage",
+        "repository": "IEEE Engineering and Technology History Wiki",
+        "url": "https://ethw.org/Harold_H._Beverage",
+        "record_type": "Professional institutional biography",
+        "accessed": "2026-08-31",
+        "supports": "Early homemade wireless work, reception of signals from Carpathia after the Titanic disaster, education, radio research, RCA career and engineering honors",
+        "evidence_level": "Tier 2 — professional institutional archive"
       }
     ]
   },
@@ -433,10 +458,11 @@
     "residences": [],
     "occupations": [
       "Butcher",
-      "Wool and hides dealer"
+      "Wool and hides dealer",
+      "Auctioneer"
     ],
     "notes": "Already named in the family archive as a son of Albert Glover Beverage and Olive Carver. A 1954 autograph-album entry transcribed by the artifact's researcher gives his own statement of birth on January 14, 1861 and age 93; a Maine directory lists his North Haven businesses.",
-    "evidence_status": "Exact birth date comes from a transcribed self-authored 1954 entry; occupation independently appears in a historical directory",
+    "evidence_status": "Verified/strongly supported civic/business activity — federal record and contemporary newspapers",
     "needs_research": true,
     "research_completeness": "Death, marriage, and household records remain unresolved",
     "sources": [
@@ -459,8 +485,45 @@
         "accessed": "2026-08-26",
         "supports": "North Haven wool-and-hides and butcher businesses",
         "evidence_level": "Tier 3 — published historical directory transcription"
+      },
+      {
+        "title": "Congressional Record — House, 1912",
+        "repository": "U.S. Government Publishing Office",
+        "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1912-pt3-v48/pdf/GPO-CRECB-1912-pt3-v48-11.pdf",
+        "record_type": "Official Congressional Record",
+        "accessed": "2026-08-31",
+        "supports": "Frank Beverage and other North Haven residents petitioned Congress for passage of the Kenyon-Sheppard interstate liquor bill",
+        "evidence_level": "Tier 1 — official federal record",
+        "record_date": "1912"
+      },
+      {
+        "title": "North Haven Water Loan Bonds notice",
+        "repository": "Courier-Gazette, Rockland, Maine",
+        "url": "https://files01.core.ac.uk/download/pdf/270234656.pdf",
+        "record_type": "Contemporary newspaper legal/financial notice",
+        "accessed": "2026-08-31",
+        "supports": "Frank Beverage, identified as North Haven treasurer, called specified town water-loan bonds for payment on August 23, 1926",
+        "evidence_level": "Tier 2/3 — contemporary public notice",
+        "record_date": "1926-08-23"
+      },
+      {
+        "title": "Public Auction — Sands H. Witherspoon homestead, Pulpit Harbor",
+        "repository": "Courier-Gazette, Rockland, Maine",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Courier_Gazette_July_30_1927.pdf",
+        "record_type": "Contemporary newspaper advertisement",
+        "accessed": "2026-08-31",
+        "supports": "Frank Beverage named as auctioneer for an August 24, 1927 Pulpit Harbor property sale",
+        "evidence_level": "Tier 2/3 — contemporary newspaper advertisement",
+        "record_date": "1927-08-24"
       }
-    ]
+    ],
+    "civic_offices": [
+      "Treasurer, Town of North Haven, documented 1926"
+    ],
+    "accomplishments": [
+      "Joined other North Haven residents in a 1912 petition to Congress supporting the Kenyon-Sheppard interstate liquor bill"
+    ],
+    "biography": "Frank Beverage’s later public record extends well beyond his butcher and hides/wool businesses. The Congressional Record lists him among North Haven petitioners on federal liquor legislation in 1912; a 1926 public notice identifies him as town treasurer handling North Haven water-loan bonds; and a 1927 newspaper advertisement names him auctioneer for a Pulpit Harbor property sale."
   },
   {
     "id": "lucy_etta_beverage_1864",
@@ -1361,7 +1424,8 @@
     "children": [],
     "residences": [],
     "occupations": [
-      "Teacher"
+      "Teacher",
+      "Language Arts teacher, Brunswick Junior High School"
     ],
     "notes": "Daughter of George Dewey Beverage and Agnes Tait Beverage of North Haven. Her mother is named in the obituary but is not added as a separate profile because this pass did not establish her vital record independently. Living descendants are intentionally omitted.",
     "evidence_status": "Exact dates and parentage documented by contemporary newspaper obituary",
@@ -1376,8 +1440,19 @@
         "supports": "Exact birth and death dates; parents Agnes Tait Beverage and George Dewey Beverage of North Haven",
         "evidence_level": "Tier 3 — contemporary published obituary",
         "record_date": "2018-11-30"
+      },
+      {
+        "title": "Agnes Beverage Dailey obituary",
+        "repository": "Portland Press Herald",
+        "url": "https://www.pressherald.com/2018/11/30/agnes-beverage-dailey/",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Teaching career in several states and later Language Arts teaching at Brunswick Junior High School",
+        "evidence_level": "Tier 3 — contemporary newspaper obituary",
+        "record_date": "2018-11-30"
       }
-    ]
+    ],
+    "biography": "Agnes Beverage Dailey taught elementary and junior-high students in multiple states while her family moved with military assignments, and later taught Language Arts at Brunswick Junior High School in Maine."
   },
   {
     "id": "alden_ray_mills",
@@ -1445,10 +1520,13 @@
     "residences": [],
     "occupations": [
       "Musician",
-      "Music teacher"
+      "Music teacher",
+      "Musician and band leader",
+      "Tae Kwon Do instructor",
+      "Recording-studio operator"
     ],
     "notes": "Son of Norwood Pierson Beveridge and Winifred Dorothy Woodrow Beveridge. His detailed obituary explicitly traces his father to Orris Lyford Beverage and Rose Emma Pierson Beverage of the established North Haven line.",
-    "evidence_status": "Exact dates and multigenerational Beverage parentage documented by detailed obituary; cemetery index corroborates year range",
+    "evidence_status": "Strongly supported life history — detailed newspaper obituary",
     "research_completeness": "Strong; living wife and son intentionally excluded",
     "sources": [
       {
@@ -1469,8 +1547,26 @@
         "accessed": "2026-08-31",
         "supports": "Burial-linked year ranges for Beverage/Beveridge and collateral relatives at Fuller Cemetery",
         "evidence_level": "Tier 4 — compiled cemetery index; used for dates only when relationship is independently established"
+      },
+      {
+        "title": "Arthur Woodrow Beveridge obituary",
+        "repository": "Connection Newspapers",
+        "url": "https://m.connectionnewspapers.com/news/2013/sep/19/obituary-arthur-woodrow-beveridge-70-springfield-m/",
+        "record_type": "Newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Colby music education, music teaching and performance, Tae Kwon Do instruction, AB Records home studio and church music service",
+        "evidence_level": "Tier 3 — detailed newspaper obituary",
+        "record_date": "2013-09-19"
       }
-    ]
+    ],
+    "education": [
+      "Colby College, Class of 1965; music major"
+    ],
+    "accomplishments": [
+      "Operated AB Records, a home recording studio that recorded multiple artists",
+      "More than 25 years of choir/keyboard service at Our Lady of Lourdes"
+    ],
+    "biography": "Arthur Woodrow Beveridge built a varied working life around music and teaching. A Colby music major, he played trumpet, bass and keyboards, led bands, taught school music, later taught Tae Kwon Do, and operated the AB Records studio from his home while contributing decades of music to his church."
   },
   {
     "id": "bernard_ray_mills_1903",
@@ -1766,10 +1862,11 @@
     "occupations": [
       "Engineer",
       "Attorney",
-      "U.S. Navy veteran"
+      "U.S. Navy veteran",
+      "Central Maine Power claims and right-of-way executive"
     ],
     "notes": "North Haven-born son of Albert L. and Julia P. Beverage. His obituary documents engineering and law degrees, wartime naval service, and his marriage to Viola Joy. Living descendants named in the obituary are intentionally not added here.",
-    "evidence_status": "Exact dates and parentage documented by contemporary obituary; birth independently present in 1917 genealogy",
+    "evidence_status": "Strongly supported life history — detailed contemporary newspaper obituary",
     "research_completeness": "Strong; living descendants intentionally excluded from this expansion",
     "sources": [
       {
@@ -1801,8 +1898,36 @@
         "supports": "Exact birth and death dates, parents, and 63-year marriage to Gerald G. Beverage",
         "evidence_level": "Tier 3 — contemporary published obituary",
         "record_date": "2005-10"
+      },
+      {
+        "title": "Gerald Gibson Beverage obituary",
+        "repository": "Bangor Daily News",
+        "url": "https://www.bangordailynews.com/2008/09/07/obituaries/gerald-gibson-beverage/",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "North Haven schooling, University of Maine and Yale education, U.S. Navy Pacific service in World War II, Central Maine Power career, municipal and community leadership",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2008-09-07"
       }
-    ]
+    ],
+    "education": [
+      "North Haven High School, Class of 1932",
+      "University of Maine, general engineering, 1936",
+      "Yale Law School, 1942"
+    ],
+    "military_service": [
+      "U.S. Navy, December 1942–late 1945; Pacific Theater service reported in campaigns including Kwajalein, Saipan, Guam, the Philippines and Iwo Jima; released as lieutenant"
+    ],
+    "civic_offices": [
+      "President, Augusta City Council",
+      "Chair, Lithgow Library Trustees",
+      "Chair, Augusta Sanitary District Commissioners",
+      "Board leadership, Augusta General Hospital"
+    ],
+    "accomplishments": [
+      "Boy Scouts of America Silver Beaver Award"
+    ],
+    "biography": "Gerald G. Beverage combined engineering, law, wartime naval service and decades of Maine civic leadership. After North Haven High School, the University of Maine and Yale Law School, he entered the Navy in December 1942 and served in the Pacific. He later spent his career with Central Maine Power in claims, rights-of-way, real estate and management, while serving Augusta through the city council, library, sanitary district, hospital, church and Scouting."
   },
   {
     "id": "greta_morrison_1918",
@@ -1876,9 +2001,25 @@
         "accessed": "2026-08-31",
         "supports": "Eldora Brown's 1849–1909 year range and Harrison Beverage association; used only alongside the 1917 Leadbetter genealogy",
         "evidence_level": "Tier 4 — compiled genealogy; relationship independently supported by Leadbetter Records"
+      },
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
       }
     ],
-    "notes": "Second son of James Beverage and Jemima Crabtree; farmer and mariner. Leadbetter Records documents Eldora Brown as Harrison's wife and Everett as their son; exact vital dates remain conservative pending original records."
+    "notes": "Second son of James Beverage and Jemima Crabtree; farmer and mariner. Leadbetter Records documents Eldora Brown as Harrison's wife and Everett as their son; exact vital dates remain conservative pending original records.",
+    "civic_offices": [
+      "Maine House representative associated with North Haven, 1859",
+      "Justice in North Haven; state register records appointments including April 29, 1885"
+    ],
+    "biography": "In addition to his already documented 1859 representative service, state-era records place Harrison Beverage among North Haven’s local justices later in life, illustrating a long span of public service.",
+    "evidence_status": "Strong civic-service record; representative service and later justice role documented in historical state/town publications"
   },
   {
     "id": "janet_kihlgren_beverage_1930",
@@ -2005,10 +2146,13 @@
     "occupations": [
       "Missionary",
       "Seminary administrator",
-      "Librarian"
+      "Librarian",
+      "Missionary in Guatemala",
+      "Dallas Theological Seminary admissions administrator",
+      "Public-services librarian"
     ],
     "notes": "Youngest documented son of Albert L. and Julia P. (Miller) Beverage. Living children named in his obituary are intentionally omitted.",
-    "evidence_status": "Exact dates, parentage, and marriage documented by contemporary obituary",
+    "evidence_status": "Strongly supported education, missionary and professional history — contemporary obituary",
     "research_completeness": "Strong obituary coverage; living descendants intentionally excluded",
     "sources": [
       {
@@ -2040,8 +2184,27 @@
         "supports": "Exact birth and death dates and May 25, 1957 marriage to John Miller Beverage",
         "evidence_level": "Tier 3 — detailed obituary",
         "record_date": "2020-12-03"
+      },
+      {
+        "title": "John Miller Beverage obituary",
+        "repository": "Tahlequah Daily Press",
+        "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Gordon College and Dallas Theological Seminary education, Guatemala missionary service, Dallas Seminary admissions/library career and church work",
+        "evidence_level": "Tier 3 — detailed contemporary obituary",
+        "record_date": "2011-07-25"
       }
-    ]
+    ],
+    "education": [
+      "Gordon College, 1949",
+      "Dallas Theological Seminary, 1953",
+      "Master of Library Science, North Texas State University, 1983"
+    ],
+    "civic_offices": [
+      "Church elder; library, choir and adult Sunday-school service"
+    ],
+    "biography": "After Gordon College and Dallas Theological Seminary, John Miller Beverage was appointed by Central American Mission and served as a missionary in Guatemala until 1972. He then worked at Dallas Theological Seminary in admissions and library service, later earning a library-science master’s degree and remaining active in church leadership."
   },
   {
     "id": "julia_priscilla_miller_1888",
@@ -2254,10 +2417,12 @@
     "residences": [],
     "occupations": [
       "Attorney",
-      "Law professor"
+      "Law professor",
+      "Corporate attorney / chief legal officer, Amerace Corporation",
+      "Law professor, Oklahoma City University"
     ],
     "notes": "Son of Norwood Pierson and Dorothy Winifred (Woodrow) Beveridge. His mother and living descendants are not added as separate profiles in this pass without an independently confirmed deceased vital record.",
-    "evidence_status": "Exact dates and parentage documented by published obituary; sibling structure corroborated by Arthur's obituary",
+    "evidence_status": "Strongly supported education/career and cause of death — detailed published obituary",
     "research_completeness": "Strong family linkage; living descendants intentionally excluded",
     "sources": [
       {
@@ -2289,8 +2454,24 @@
         "accessed": "2026-08-31",
         "supports": "Norwood Pierson Beveridge Jr. born November 5, 1936 and died October 31, 2020; parents Norwood Pierson and Dorothy Winifred Woodrow Beveridge; North Haven family connection",
         "evidence_level": "Tier 3 — published obituary"
+      },
+      {
+        "title": "Norwood P. Beveridge Jr. obituary",
+        "repository": "Legacy Remembers",
+        "url": "https://www.legacy.com/us/obituaries/legacyremembers/norwood-beveridge-obituary?id=8272014",
+        "record_type": "Published obituary",
+        "accessed": "2026-08-31",
+        "supports": "Harvard education, corporate legal career, Oklahoma City University law professorship, retirement and death from COVID-19 on October 31, 2020",
+        "evidence_level": "Tier 3 — detailed published obituary",
+        "record_date": "2020-11-08"
       }
-    ]
+    ],
+    "education": [
+      "Harvard College, 1958",
+      "Harvard Law School, 1962",
+      "LL.M., New York University"
+    ],
+    "biography": "Norwood Pierson Beveridge Jr. graduated from Harvard College and Harvard Law School, later earned an LL.M. at New York University, served as chief legal officer of Amerace Corporation in New York, and became a law professor at Oklahoma City University. His obituary states that he died from COVID-19 on October 31, 2020."
   },
   {
     "id": "priscilla_jean_mills_dempsey_1932",
@@ -2360,10 +2541,12 @@
     "occupations": [
       "Carpenter",
       "Fisherman",
-      "Craftsman"
+      "Craftsman",
+      "Lobsterman",
+      "Groundskeeper and property caretaker"
     ],
     "notes": "Son of Elston and Greta Morrison Beverage. The obituary reports age 81 but does not supply a birth date, so no exact birth year is inferred. Living spouse and sons are intentionally not added.",
-    "evidence_status": "Death and parentage documented by contemporary local obituary",
+    "evidence_status": "Strongly supported occupational/community history — detailed local obituary",
     "research_completeness": "Strong connection; birth record still needed",
     "sources": [
       {
@@ -2385,8 +2568,23 @@
         "supports": "Exact birth and death dates and parents Raymond and Cheryl Beverage",
         "evidence_level": "Tier 3 — contemporary published obituary",
         "record_date": "2022-11-11"
+      },
+      {
+        "title": "Raymond Albert Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/raymond-albert-beverage-obituary/187215",
+        "record_type": "Contemporary local obituary",
+        "accessed": "2026-08-31",
+        "supports": "North Haven carpentry and lobstering career, work in the island fleet through age 76, traditional knowledge and long service as groundskeeper/caretaker",
+        "evidence_level": "Tier 3 — detailed local obituary",
+        "record_date": "2024-06-03"
       }
-    ]
+    ],
+    "accomplishments": [
+      "Worked in the North Haven lobster fleet until age 76",
+      "Passed traditional woodworking, lobstering and hunting knowledge to younger generations"
+    ],
+    "biography": "Raymond Albert Beverage’s obituary depicts a life deeply tied to North Haven’s working waterfront and land. He worked as a carpenter and lobsterman, remained active in the island fleet until age 76, and spent more than thirty years as groundskeeper/property caretaker at Crabtree Point. His practical knowledge included tides, weather, bathymetry, woodworking, hunting and fishing."
   },
   {
     "id": "sandra_beverage_snow",
@@ -2643,8 +2841,25 @@
         "accessed": "2026-08-31",
         "supports": "Estelle born October 9, 1922; parents Marjorie Mank and father reported as Leroy; husband Malcolm Libby; seven children; deceased siblings Dorothy, Elroy and Hartley and deceased children David, Sylvia and Cynthia",
         "evidence_level": "Tier 3 — contemporary obituary"
+      },
+      {
+        "title": "Cynthia E. Tuplin obituary",
+        "repository": "Riposta Funeral Home",
+        "url": "https://ripostafh.com/tribute/details/18429/Cynthia-Tuplin/obituary.html",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Camden-Rockport High School Class of 1971 and practical carpentry/mechanical interests",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2023-05-29"
       }
-    ]
+    ],
+    "education": [
+      "Camden-Rockport High School, Class of 1971"
+    ],
+    "accomplishments": [
+      "Practical carpentry and automotive repair interests"
+    ],
+    "biography": "Cynthia Libby Tuplin’s obituary notes a preference for practical outdoor and mechanical work, including carpentry and repairing her own vehicles."
   },
   {
     "id": "david_libby_estelle_branch",
@@ -2713,8 +2928,27 @@
         "accessed": "2026-08-31",
         "supports": "Dorothy born September 17, 1921; parents Elroy V. and Marjorie Mank Beverage; husband Frederick W. Brownell; sibling Elroy Jr.",
         "evidence_level": "Tier 3 — contemporary newspaper obituary"
+      },
+      {
+        "title": "Dorothy B. Brownell obituary",
+        "repository": "The Lincoln County News",
+        "url": "https://lcnme.com/obituaries/dorothy-b-brownell/",
+        "record_type": "Contemporary newspaper obituary",
+        "accessed": "2026-08-31",
+        "supports": "Seasonal agricultural work, homemaking, gardening/canning, Grange and church involvement and antique-car clubs",
+        "evidence_level": "Tier 3 — contemporary newspaper obituary",
+        "record_date": "2012-11-30"
       }
-    ]
+    ],
+    "occupations": [
+      "Homemaker",
+      "Seasonal agricultural worker packing apples and canning squash"
+    ],
+    "civic_offices": [
+      "Hope Grange and Seven Tree Grange member",
+      "Peoples United Methodist Church member"
+    ],
+    "biography": "Dorothy Beverage Brownell’s obituary records the labor of a rural Maine household: homemaking, gardening and canning, plus seasonal work packing apples and canning squash. She also participated in local Granges, church and antique-car clubs."
   },
   {
     "id": "elroy_v_beverage_jr",
@@ -2731,7 +2965,7 @@
       "elsie_louise_curit_beverage_1925"
     ],
     "children": [],
-    "evidence_status": "Verified relationship/strong death year — independently named as sibling in Dorothy and Hartley obituaries; Elsie’s obituary identifies him as her husband and says he died in 1995",
+    "evidence_status": "Spouse/parent links and World War II Army service strongly supported by family obituaries; exact service record still sought",
     "research_completeness": "Parent/spouse connection and death year established; birth and exact death date remain open",
     "notes": "Four daughters are mentioned in Elsie’s obituary but are not profiled because they may be living.",
     "sources": [
@@ -2764,7 +2998,20 @@
         "accessed": "2026-08-31",
         "supports": "Hartley born May 28, 1927 and died May 20, 2018; parents Marjorie and Elroy Beverage Sr.; marriage to Florence Pearse June 2, 1945; siblings",
         "evidence_level": "Tier 3 — contemporary obituary"
+      },
+      {
+        "title": "Elsie Beverage obituary",
+        "repository": "Kincer Funeral Home",
+        "url": "https://www.kincerfuneralhome.com/2012-obituaries/942-elsie-beverage",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Homemaking, sewing/alterations for income, doll-clothing work for Totsy Manufacturing, and husband Elroy V. Beverage Jr. returning from World War II Army service",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2012-08-25"
       }
+    ],
+    "military_service": [
+      "U.S. Army, World War II service; wife Elsie’s obituary reports that he had returned from an Army tour when they met"
     ]
   },
   {
@@ -2793,8 +3040,24 @@
         "accessed": "2026-08-31",
         "supports": "Elsie Louise Curit born February 19, 1925, died August 25, 2012; husband Elroy V. Beverage Jr. predeceased her in 1995; four daughters",
         "evidence_level": "Tier 3 — detailed obituary"
+      },
+      {
+        "title": "Elsie Beverage obituary",
+        "repository": "Kincer Funeral Home",
+        "url": "https://www.kincerfuneralhome.com/2012-obituaries/942-elsie-beverage",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Homemaking, sewing/alterations for income, doll-clothing work for Totsy Manufacturing, and husband Elroy V. Beverage Jr. returning from World War II Army service",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2012-08-25"
       }
-    ]
+    ],
+    "occupations": [
+      "Homemaker",
+      "Seamstress and alterations work",
+      "Doll-clothing worker for Totsy Manufacturing Company"
+    ],
+    "biography": "Elsie Curit Beverage supplemented homemaking through sewing and alterations and produced doll clothing for Totsy Manufacturing Company. Her obituary also records that Elroy V. Beverage Jr. had returned from a World War II Army tour when they met."
   },
   {
     "id": "estelle_nettie_beverage_libby_1922",
@@ -2859,8 +3122,31 @@
         "accessed": "2026-08-31",
         "supports": "Hartley born May 28, 1927 and died May 20, 2018; parents Marjorie and Elroy Beverage Sr.; marriage to Florence Pearse June 2, 1945; siblings",
         "evidence_level": "Tier 3 — contemporary obituary"
+      },
+      {
+        "title": "Estelle Beverage Libby obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/estelle-beverage-libby-obituary/271766",
+        "record_type": "Contemporary obituary",
+        "accessed": "2026-08-31",
+        "supports": "One-room school and Camden High education, 4-H/Grange/community activity and 22-year MSAD #28 food-service career",
+        "evidence_level": "Tier 3 — contemporary obituary",
+        "record_date": "2026-06-26"
       }
-    ]
+    ],
+    "education": [
+      "Hope Corner one-room school",
+      "Camden High School, Class of 1941"
+    ],
+    "occupations": [
+      "MSAD #28 food service, 22 years"
+    ],
+    "civic_offices": [
+      "4-H participant",
+      "Hope Grange member",
+      "Charter member, RFD Club of Hope"
+    ],
+    "biography": "Estelle Beverage Libby attended the one-room Hope Corner school and Camden High School, remained active in 4-H, Grange and community clubs, and later completed a 22-year career in MSAD #28 food service."
   },
   {
     "id": "florence_adele_pearse_beverage_1927",
@@ -2897,8 +3183,30 @@
         "accessed": "2026-08-31",
         "supports": "Hartley born May 28, 1927 and died May 20, 2018; parents Marjorie and Elroy Beverage Sr.; marriage to Florence Pearse June 2, 1945; siblings",
         "evidence_level": "Tier 3 — contemporary obituary"
+      },
+      {
+        "title": "Florence Pearse Beverage obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/florence-pearse-beverage-obituary/138141",
+        "record_type": "Contemporary obituary",
+        "accessed": "2026-08-31",
+        "supports": "Work at GTE Sylvania, camp laundry, Union Upholstery, Knox Woolen Mill and the family poultry farm, plus Grange/church/community activities",
+        "evidence_level": "Tier 3 — contemporary obituary",
+        "record_date": "2020-09-04"
       }
-    ]
+    ],
+    "occupations": [
+      "GTE Sylvania employee",
+      "Summer-camp laundry worker",
+      "Union Upholstery Shop employee",
+      "Knox Woolen Mill employee",
+      "Poultry-farm worker"
+    ],
+    "civic_offices": [
+      "Pioneer Grange member",
+      "Methodist church and community service"
+    ],
+    "biography": "Florence Pearse Beverage’s obituary documents varied industrial, service and farm work, including GTE Sylvania, camp laundry, Union Upholstery, Knox Woolen Mill and the family poultry operation, alongside long-running Grange, church and community activities."
   },
   {
     "id": "frederick_w_brownell",
@@ -2957,8 +3265,31 @@
         "accessed": "2026-08-31",
         "supports": "Hartley born May 28, 1927 and died May 20, 2018; parents Marjorie and Elroy Beverage Sr.; marriage to Florence Pearse June 2, 1945; siblings",
         "evidence_level": "Tier 3 — contemporary obituary"
+      },
+      {
+        "title": "Hartley George Beverage Sr. obituary",
+        "repository": "PenBay Pilot",
+        "url": "https://www.penbaypilot.com/article/hartley-george-beverage-sr-obituary/102205",
+        "record_type": "Contemporary obituary",
+        "accessed": "2026-08-31",
+        "supports": "Truck driving, commercial vegetable growing, poultry farming, Knox Woolen Mill work, Grange/Masonic leadership and Union Fire Department service",
+        "evidence_level": "Tier 3 — contemporary obituary",
+        "record_date": "2018-05-21"
       }
-    ]
+    ],
+    "occupations": [
+      "Truck driver",
+      "Commercial vegetable grower",
+      "Poultry farmer",
+      "Weaver, Knox Woolen Mill",
+      "Later employee, Shaw’s"
+    ],
+    "civic_offices": [
+      "Past Master, Pioneer Grange",
+      "Past Master, Union Masonic Lodge No. 31",
+      "Former member, Union Fire Department"
+    ],
+    "biography": "Hartley Beverage’s working life crossed trucking, commercial vegetable growing for canneries, poultry farming and textile work at Knox Woolen Mill before later employment at Shaw’s. He also held leadership roles in the Grange and Masons and served with the Union Fire Department."
   },
   {
     "id": "helen_barclay_1896",
@@ -3010,6 +3341,35 @@
       "abigail_beverage_1805_child",
       "thomas_beverage_1800_child",
       "norwood_beverage_1810"
+    ],
+    "civic_offices": [
+      "Vinalhaven town clerk, 1799–1812"
+    ],
+    "biography": "John Beverage succeeded Thomas Beverage as Vinalhaven town clerk and appears in the annual office roster for fourteen consecutive years, 1799–1812. In January 1808, the Massachusetts House received a memorial from John Beverage and other Vinalhaven inhabitants opposing a proposed removal of Hancock County courts from Castine to Buckstown.",
+    "evidence_status": "Verified/strongly supported civic activity — official legislative journal plus near-contemporary town roster",
+    "sources": [
+      "Find A Grave memorial",
+      "FamilySearch",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "Journal of the House of Representatives of the Commonwealth of Massachusetts, 1808",
+        "repository": "Commonwealth of Massachusetts",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Journal_of_the_House_of_Representatives_of_the_Commonwealth_of_Massachusetts._%28IA_journalofhouseof1808mass%29.pdf",
+        "record_type": "Official legislative journal",
+        "accessed": "2026-08-31",
+        "supports": "January 19, 1808 memorial of John Beverage and other Vinalhaven inhabitants opposing removal of Hancock County courts from Castine to Buckstown",
+        "evidence_level": "Tier 1 — official legislative record",
+        "record_date": "1808-01-19"
+      }
     ]
   },
   {
@@ -3466,6 +3826,241 @@
         "accessed": "2026-08-31",
         "supports": "Cynthia born December 15, 1952 and died May 29, 2023; parents Malcolm Plummer Libby and Estelle Nettie (Beverage) Libby; David and Sylvia identified as deceased siblings",
         "evidence_level": "Tier 3 — detailed obituary"
+      },
+      {
+        "title": "Sylvia Jean (Libby) Soucier obituary",
+        "repository": "Carmon Funeral Home",
+        "url": "https://www.carmonfuneralhome.com/obituaries/Sylvia-Jean-Libby-Soucier?obId=20758314",
+        "record_type": "Funeral-home obituary",
+        "accessed": "2026-08-31",
+        "supports": "Move from Appleton, Maine to Vernon, Connecticut in 1967, parish life and Salvation Army volunteer service",
+        "evidence_level": "Tier 3 — detailed obituary",
+        "record_date": "2021-04-08"
+      }
+    ],
+    "civic_offices": [
+      "Parishioner, St. Bernard Church",
+      "Salvation Army volunteer for several years"
+    ],
+    "biography": "Sylvia Libby Soucier moved from Appleton, Maine to Vernon, Connecticut in 1967 and later participated in parish life at St. Bernard Church and several years of Salvation Army volunteer work."
+  },
+  {
+    "id": "benjamin_kent_beverage_1779",
+    "civic_offices": [
+      "Vinalhaven selectman, 13 annual listings between 1806 and 1822",
+      "Delegate, Maine Constitutional Convention, 1819",
+      "Maine House of Representatives, 1823"
+    ],
+    "accomplishments": [
+      "Authored a surviving December 20, 1819 manuscript history of Vinalhaven now held in the William D. Williamson papers at the Maine Historical Society"
+    ],
+    "biography": "Benjamin Beverage combined local government, state formation and historical writing. Vinalhaven’s office roster lists him as a selectman in thirteen years between 1806 and 1822. Maine’s constitutional record names him as Vinalhaven’s delegate to the 1819 convention, and the Maine Historical Society preserves his December 20, 1819 manuscript account of Vinalhaven settlement, land distribution, vessels and religion. He later represented Vinalhaven and surrounding islands in the Maine House in 1823.",
+    "evidence_status": "Verified/strongly supported — official state records, surviving manuscript and town roster",
+    "sources": [
+      "Find A Grave memorial",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "Constitution of Maine with 1819 Convention delegate list",
+        "repository": "Maine Legislature",
+        "url": "https://legislature.maine.gov/uploads/originals/const1820.pdf",
+        "record_type": "Official constitutional convention record",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage listed as Vinalhaven delegate to the 1819 Maine Constitutional Convention",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1819"
+      },
+      {
+        "title": "History of Vinalhaven, 1819",
+        "repository": "Maine Historical Society via Maine Memory Network",
+        "url": "https://www.mainememory.net/record/20801",
+        "record_type": "Original manuscript letter",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage authored a December 20, 1819 manuscript describing Vinalhaven settlement, land distribution, vessels and religion",
+        "evidence_level": "Tier 1/2 — surviving original manuscript in institutional collection",
+        "record_date": "1819-12-20"
+      },
+      {
+        "title": "Civil Government of Maine, 1823",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1823/Laws1823res_s0189-0195_CivGov.pdf",
+        "record_type": "Official state legislative record",
+        "accessed": "2026-08-31",
+        "supports": "Benjamin Beverage represented Vinalhaven and neighboring islands in the Maine House of Representatives in 1823",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1823"
+      }
+    ]
+  },
+  {
+    "id": "james_beverage_1789",
+    "civic_offices": [
+      "Vinalhaven selectman, 1833, 1834 and 1842"
+    ],
+    "biography": "The 1889 Vinalhaven town-history roster independently documents James Beverage as a selectman in 1833, 1834 and 1842. An 1848 Maine law also identifies land of James and Josiah Beverage at the head of Pulpit Harbor as one terminus of a state-authorized toll bridge, providing unusually specific evidence of the family’s property context.",
+    "evidence_status": "Strongly supported civic/property context; the separate tannery-mercury death tradition remains uncorroborated",
+    "sources": [
+      "Find A Grave memorial 157233276",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "An act to establish the North Haven Bridge Company, Chapter 154",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf",
+        "record_type": "Official state private and special law",
+        "accessed": "2026-08-31",
+        "supports": "Authorization for a toll bridge over the head of Pulpit Harbor from Enos Cooper land to land of James and Josiah Beverage, at least 12 feet wide with a draw for vessels",
+        "evidence_level": "Tier 1 — official state law",
+        "record_date": "1848"
+      }
+    ]
+  },
+  {
+    "id": "james_beveridge_jr_1724",
+    "civic_offices": [
+      "Topsham hog constable, elected at the first town meeting, May 9, 1764",
+      "Topsham selectman, 1774–1775"
+    ],
+    "biography": "Municipal records reproduced in a nineteenth-century Topsham history place James Beverage in the town’s first formal government: he was elected hog constable at the first town meeting in 1764 and later served as a selectman in 1774 and 1775.",
+    "evidence_status": "Strongly supported civic history — published Topsham history reproduces early municipal records",
+    "sources": [
+      "Find A Grave memorial",
+      {
+        "title": "History of Brunswick, Topsham, and Harpswell, Maine",
+        "repository": "George Augustus Wheeler and Henry Warren Wheeler",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+        "record_type": "Published town history using municipal records",
+        "accessed": "2026-08-31",
+        "supports": "First Topsham town meeting on May 9, 1764 and election of James Beverage as hog constable",
+        "evidence_level": "Tier 2/3 — published local history reproducing municipal records",
+        "record_date": "1878"
+      }
+    ]
+  },
+  {
+    "id": "josiah_winslow_beverage_1793",
+    "civic_offices": [
+      "Vinalhaven selectman, 1846"
+    ],
+    "biography": "Josiah Beverage appears as a Vinalhaven selectman in 1846. Two years later, a Maine legislative act described land of James and Josiah Beverage at the head of Pulpit Harbor as the proposed terminus of the North Haven Bridge Company toll bridge.",
+    "evidence_status": "Verified/strongly supported civic/property context — town roster and official state law",
+    "sources": [
+      "Find A Grave memorial",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "An act to establish the North Haven Bridge Company, Chapter 154",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf",
+        "record_type": "Official state private and special law",
+        "accessed": "2026-08-31",
+        "supports": "Authorization for a toll bridge over the head of Pulpit Harbor from Enos Cooper land to land of James and Josiah Beverage, at least 12 feet wide with a draw for vessels",
+        "evidence_level": "Tier 1 — official state law",
+        "record_date": "1848"
+      }
+    ]
+  },
+  {
+    "id": "nathaniel_winslow_beverage_1776",
+    "civic_offices": [
+      "Vinalhaven treasurer, 1813–1819",
+      "Vinalhaven selectman, 1812, 1818 and 1828",
+      "Maine House of Representatives, Vinalhaven, 1828"
+    ],
+    "biography": "Nathaniel Beverage held repeated local office in Vinalhaven and then represented the town in the Maine House in 1828; the official House payroll records him as the Vinalhaven representative.",
+    "evidence_status": "Verified/strongly supported public service — official Maine House record plus town-office roster",
+    "sources": [
+      "Find A Grave memorial",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
+      },
+      {
+        "title": "Pay Roll — House, 1828",
+        "repository": "Maine Legislature Law and Legislative Digital Library",
+        "url": "https://lldc.mainelegislature.org/Open/Laws/1828/1828_RES_c064.pdf",
+        "record_type": "Official state legislative payroll",
+        "accessed": "2026-08-31",
+        "supports": "Nathaniel Beverage listed as the Vinalhaven representative in the 1828 Maine House payroll",
+        "evidence_level": "Tier 1 — official state record",
+        "record_date": "1828"
+      }
+    ]
+  },
+  {
+    "id": "orris_beverage_1860",
+    "occupations": [
+      "Educator",
+      "High school principal"
+    ],
+    "education": [
+      "Colby University, Class of 1887 (A.B.; later references also style him A.M.)"
+    ],
+    "biography": "Colby University’s 1887 catalogue places Orris Lyford Beverage in the Class of 1887 and identifies him as principal of the high school in Hallowell, Maine. Later professional references describe a career as a school principal, giving documentary substance to the archive’s earlier note that he was an education advocate.",
+    "evidence_status": "Strongly supported education/career — contemporary university catalogue",
+    "sources": [
+      "Find A Grave memorial 157499548",
+      {
+        "title": "Second General Catalogue of the Officers and Graduates of Colby University, 1820–1887",
+        "repository": "Colby University",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Second_general_catalogue_of_the_officers_and_graduates_of_Colby_University%2C_Waterville%2C_Maine%2C_1820-1887_%28IA_secondgeneralcat01colb%29.pdf",
+        "record_type": "University catalogue",
+        "accessed": "2026-08-31",
+        "supports": "Orris Lyford Beverage in the Class of 1887; contemporary alumni entry identifies him as principal of the high school at Hallowell",
+        "evidence_level": "Tier 2 — institutional publication",
+        "record_date": "1887"
+      }
+    ]
+  },
+  {
+    "id": "thomas_beverage_1750",
+    "civic_offices": [
+      "Vinalhaven town clerk, 1790–1798",
+      "Vinalhaven selectman, 1797"
+    ],
+    "biography": "The Vinalhaven centennial town-officer roster shows Thomas Beverage as the town clerk for nine consecutive years, 1790 through 1798, and also as a selectman in 1797, documenting a sustained role in the government of the island community.",
+    "evidence_status": "Strongly supported public service — near-contemporary Vinalhaven office roster",
+    "sources": [
+      "Find A Grave memorial 157241769",
+      {
+        "title": "Vinalhaven Town Officers, 1790–1889",
+        "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+        "record_type": "Published town-history office roster",
+        "accessed": "2026-08-31",
+        "supports": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+        "evidence_level": "Tier 2/3 — near-contemporary municipal-history roster",
+        "record_date": "1889"
       }
     ]
   }
