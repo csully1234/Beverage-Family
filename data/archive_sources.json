@@ -1,0 +1,912 @@
+[
+  {
+    "id": "src_vinalhaven_officers",
+    "title": "Vinalhaven Town Officers, 1790–1889",
+    "short_title": "Vinalhaven Town Officers, 1790–1889",
+    "date": "1889",
+    "date_precision": "year",
+    "source_type": "town_history",
+    "repository": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives",
+    "collection": null,
+    "url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html",
+    "citation": "Vinalhaven Centennial Committee, 1889; transcription at Maine Genealogy Archives. Vinalhaven Town Officers, 1790–1889. 1889.",
+    "excerpt": null,
+    "summary": "Annual town-clerk, treasurer, and selectman rosters including Thomas, John, Nathaniel, Benjamin, James and Josiah Beverage",
+    "people_ids": [
+      "john_white_beverage_1774",
+      "thomas_beverage_1750"
+    ],
+    "place_ids": [
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_john_vinalhaven_town_clerk_1799",
+      "event_thomas_vinalhaven_town_clerk_1790"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://archives.mainegenealogy.net/2007/01/vinalhaven-town-officers-1790-1889.html"
+    }
+  },
+  {
+    "id": "src_court_memorial_1808",
+    "title": "Journal of the House of Representatives of the Commonwealth of Massachusetts, 1808",
+    "short_title": "Journal of the House of Representatives of the Commonwealth of Massachusetts, 1808",
+    "date": "1808-01-19",
+    "date_precision": "exact",
+    "source_type": "legislative_journal",
+    "repository": "Commonwealth of Massachusetts",
+    "collection": null,
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Journal_of_the_House_of_Representatives_of_the_Commonwealth_of_Massachusetts._%28IA_journalofhouseof1808mass%29.pdf",
+    "citation": "Commonwealth of Massachusetts. Journal of the House of Representatives of the Commonwealth of Massachusetts, 1808. 1808-01-19.",
+    "excerpt": null,
+    "summary": "January 19, 1808 memorial of John Beverage and other Vinalhaven inhabitants opposing removal of Hancock County courts from Castine to Buckstown",
+    "people_ids": [
+      "john_white_beverage_1774"
+    ],
+    "place_ids": [
+      "bucksport_me",
+      "castine_me",
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_john_hancock_courts_memorial_1808"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Journal_of_the_House_of_Representatives_of_the_Commonwealth_of_Massachusetts._%28IA_journalofhouseof1808mass%29.pdf"
+    }
+  },
+  {
+    "id": "src_vinalhaven_manuscript_1819",
+    "title": "History of Vinalhaven, 1819",
+    "short_title": "History of Vinalhaven, 1819",
+    "date": "1819-12-20",
+    "date_precision": "exact",
+    "source_type": "manuscript",
+    "repository": "Maine Historical Society via Maine Memory Network",
+    "collection": "William D. Williamson papers, Coll. 62",
+    "url": "https://www.mainememory.net/record/20801",
+    "citation": "Maine Historical Society via Maine Memory Network. History of Vinalhaven, 1819. 1819-12-20.",
+    "excerpt": null,
+    "summary": "Benjamin Beverage authored a December 20, 1819 manuscript describing Vinalhaven settlement, land distribution, vessels and religion",
+    "people_ids": [
+      "benjamin_kent_beverage_1779"
+    ],
+    "place_ids": [
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_benjamin_vinalhaven_history_manuscript_1819"
+    ],
+    "evidence_level": "verified",
+    "notes": [
+      "Maine Memory Network item 20801; ink on paper. Catalog metadata confirms creator, collection and date. No transcription is supplied here."
+    ],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.mainememory.net/record/20801"
+    }
+  },
+  {
+    "id": "src_constitution_1819",
+    "title": "Constitution of Maine with 1819 Convention delegate list",
+    "short_title": "Constitution of Maine with 1819 Convention delegate list",
+    "date": "1819",
+    "date_precision": "year",
+    "source_type": "government_record",
+    "repository": "Maine Legislature",
+    "collection": null,
+    "url": "https://legislature.maine.gov/uploads/originals/const1820.pdf",
+    "citation": "Maine Legislature. Constitution of Maine with 1819 Convention delegate list. 1819.",
+    "excerpt": null,
+    "summary": "Benjamin Beverage listed as Vinalhaven delegate to the 1819 Maine Constitutional Convention",
+    "people_ids": [
+      "benjamin_kent_beverage_1779"
+    ],
+    "place_ids": [
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_benjamin_maine_constitutional_convention_1819"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://legislature.maine.gov/uploads/originals/const1820.pdf"
+    }
+  },
+  {
+    "id": "src_maine_house_1823",
+    "title": "Civil Government of Maine, 1823",
+    "short_title": "Civil Government of Maine, 1823",
+    "date": "1823",
+    "date_precision": "year",
+    "source_type": "legislative_journal",
+    "repository": "Maine Legislature Law and Legislative Digital Library",
+    "collection": null,
+    "url": "https://lldc.mainelegislature.org/Open/Laws/1823/Laws1823res_s0189-0195_CivGov.pdf",
+    "citation": "Maine Legislature Law and Legislative Digital Library. Civil Government of Maine, 1823. 1823.",
+    "excerpt": null,
+    "summary": "Benjamin Beverage represented Vinalhaven and neighboring islands in the Maine House of Representatives in 1823",
+    "people_ids": [
+      "benjamin_kent_beverage_1779"
+    ],
+    "place_ids": [
+      "portland_me",
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_benjamin_maine_house_1823"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://lldc.mainelegislature.org/Open/Laws/1823/Laws1823res_s0189-0195_CivGov.pdf"
+    }
+  },
+  {
+    "id": "src_maine_payroll_1828",
+    "title": "Pay Roll — House, 1828",
+    "short_title": "Pay Roll — House, 1828",
+    "date": "1828",
+    "date_precision": "year",
+    "source_type": "government_record",
+    "repository": "Maine Legislature Law and Legislative Digital Library",
+    "collection": null,
+    "url": "https://lldc.mainelegislature.org/Open/Laws/1828/1828_RES_c064.pdf",
+    "citation": "Maine Legislature Law and Legislative Digital Library. Pay Roll — House, 1828. 1828.",
+    "excerpt": null,
+    "summary": "Nathaniel Beverage listed as the Vinalhaven representative in the 1828 Maine House payroll",
+    "people_ids": [
+      "nathaniel_winslow_beverage_1776"
+    ],
+    "place_ids": [
+      "portland_me",
+      "vinalhaven_me"
+    ],
+    "event_ids": [
+      "event_nathaniel_maine_house_1828"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://lldc.mainelegislature.org/Open/Laws/1828/1828_RES_c064.pdf"
+    }
+  },
+  {
+    "id": "src_bridge_act_1848",
+    "title": "An act to establish the North Haven Bridge Company, Chapter 154",
+    "short_title": "An act to establish the North Haven Bridge Company, Chapter 154",
+    "date": "1848-08-08",
+    "date_precision": "exact",
+    "source_type": "government_record",
+    "repository": "Maine Legislature Law and Legislative Digital Library",
+    "collection": null,
+    "url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf",
+    "citation": "Maine, Private and Special Laws (1848), chapter 154, pp. 216–217, approved August 8, 1848.",
+    "excerpt": null,
+    "summary": "Authorization for a toll bridge over the head of Pulpit Harbor from Enos Cooper land to land of James and Josiah Beverage, at least 12 feet wide with a draw for vessels",
+    "people_ids": [
+      "james_beverage_1789",
+      "josiah_winslow_beverage_1793"
+    ],
+    "place_ids": [
+      "pulpit_harbor_me"
+    ],
+    "event_ids": [
+      "event_north_haven_bridge_act_1848"
+    ],
+    "evidence_level": "verified",
+    "notes": [
+      "Approval date checked on PDF page 5. The existing year-only timeline date is retained."
+    ],
+    "conflicts": [
+      "Authorization does not establish construction, surviving bridge identity, parcel boundaries, or exact endpoints."
+    ],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf"
+    }
+  },
+  {
+    "id": "src_ieee_harold",
+    "title": "Harold H. Beverage",
+    "short_title": "Harold H. Beverage — IEEE biography",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "institutional_biography",
+    "repository": "IEEE Engineering and Technology History Wiki",
+    "collection": null,
+    "url": "https://ethw.org/Harold_H._Beverage",
+    "citation": "IEEE Engineering and Technology History Wiki. Harold H. Beverage.",
+    "excerpt": null,
+    "summary": "Early homemade wireless work, reception of signals from Carpathia after the Titanic disaster, education, radio research, RCA career and engineering honors",
+    "people_ids": [
+      "harold_h_beverage_1893"
+    ],
+    "place_ids": [
+      "north_haven_me",
+      "orono_me"
+    ],
+    "event_ids": [
+      "event_harold_carpathia_wireless_1912",
+      "event_harold_umaine_graduation_1915"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [
+      "The biography is undated in the merged citation. The 1912 event date is not its publication date. No precise wireless-station position is asserted."
+    ],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://ethw.org/Harold_H._Beverage"
+    }
+  },
+  {
+    "id": "src_topsham_history",
+    "title": "History of Brunswick, Topsham, and Harpswell, Maine",
+    "short_title": "History of Brunswick, Topsham, and Harpswell, Maine",
+    "date": "1878",
+    "date_precision": "year",
+    "source_type": "town_history",
+    "repository": "George Augustus Wheeler and Henry Warren Wheeler",
+    "collection": null,
+    "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+    "citation": "George Augustus Wheeler and Henry Warren Wheeler. History of Brunswick, Topsham, and Harpswell, Maine. 1878.",
+    "excerpt": null,
+    "summary": "First Topsham town meeting on May 9, 1764 and election of James Beverage as hog constable",
+    "people_ids": [
+      "james_beveridge_jr_1724"
+    ],
+    "place_ids": [
+      "topsham_me"
+    ],
+    "event_ids": [
+      "event_james_topsham_first_town_meeting_1764"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm"
+    }
+  },
+  {
+    "id": "src_colby_catalogue_1887",
+    "title": "Second General Catalogue of the Officers and Graduates of Colby University, 1820–1887",
+    "short_title": "Second General Catalogue of the Officers and Graduates of Colby University, 1820–1887",
+    "date": "1887",
+    "date_precision": "year",
+    "source_type": "catalog",
+    "repository": "Colby University",
+    "collection": null,
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Second_general_catalogue_of_the_officers_and_graduates_of_Colby_University%2C_Waterville%2C_Maine%2C_1820-1887_%28IA_secondgeneralcat01colb%29.pdf",
+    "citation": "Colby University. Second General Catalogue of the Officers and Graduates of Colby University, 1820–1887. 1887.",
+    "excerpt": null,
+    "summary": "Orris Lyford Beverage in the Class of 1887; contemporary alumni entry identifies him as principal of the high school at Hallowell",
+    "people_ids": [
+      "orris_beverage_1860"
+    ],
+    "place_ids": [
+      "hallowell_me",
+      "waterville_me"
+    ],
+    "event_ids": [
+      "event_orris_colby_hallowell_1887"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Second_general_catalogue_of_the_officers_and_graduates_of_Colby_University%2C_Waterville%2C_Maine%2C_1820-1887_%28IA_secondgeneralcat01colb%29.pdf"
+    }
+  },
+  {
+    "id": "src_congress_petition_1912",
+    "title": "Congressional Record — House, 1912",
+    "short_title": "Congressional Record — House, 1912",
+    "date": "1912",
+    "date_precision": "year",
+    "source_type": "legislative_journal",
+    "repository": "U.S. Government Publishing Office",
+    "collection": null,
+    "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1912-pt3-v48/pdf/GPO-CRECB-1912-pt3-v48-11.pdf",
+    "citation": "U.S. Government Publishing Office. Congressional Record — House, 1912. 1912.",
+    "excerpt": null,
+    "summary": "Frank Beverage and other North Haven residents petitioned Congress for passage of the Kenyon-Sheppard interstate liquor bill",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [
+      "event_frank_kenyon_sheppard_petition_1912"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1912-pt3-v48/pdf/GPO-CRECB-1912-pt3-v48-11.pdf"
+    }
+  },
+  {
+    "id": "src_pulpit_auction_1927",
+    "title": "Public Auction — Sands H. Witherspoon homestead, Pulpit Harbor",
+    "short_title": "Public Auction — Sands H. Witherspoon homestead, Pulpit Harbor",
+    "date": "1927-07-30",
+    "date_precision": "exact",
+    "source_type": "newspaper",
+    "repository": "Courier-Gazette, Rockland, Maine",
+    "collection": null,
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Courier_Gazette_July_30_1927.pdf",
+    "citation": "Courier-Gazette, Rockland, Maine. Public Auction — Sands H. Witherspoon homestead, Pulpit Harbor. 1927-07-30.",
+    "excerpt": null,
+    "summary": "Frank Beverage named as auctioneer for an August 24, 1927 Pulpit Harbor property sale",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "pulpit_harbor_me"
+    ],
+    "event_ids": [
+      "event_frank_pulpit_harbor_auction_1927"
+    ],
+    "evidence_level": "verified",
+    "notes": [
+      "The scan is the July 30 issue; August 24 is the advertised auction date. The inherited event describes an announced sale; completion is not independently demonstrated. No homestead marker is created."
+    ],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Courier_Gazette_July_30_1927.pdf"
+    }
+  },
+  {
+    "id": "src_water_bonds_1926",
+    "title": "North Haven Water Loan Bonds notice",
+    "short_title": "North Haven Water Loan Bonds notice",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "newspaper",
+    "repository": "Courier-Gazette, Rockland, Maine",
+    "collection": null,
+    "url": "https://files01.core.ac.uk/download/pdf/270234656.pdf",
+    "citation": "Courier-Gazette, Rockland, Maine. North Haven Water Loan Bonds notice. 1926-08-23.",
+    "excerpt": null,
+    "summary": "Frank Beverage, identified as North Haven treasurer, called specified town water-loan bonds for payment on August 23, 1926",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [
+      "event_frank_water_bonds_treasurer_1926"
+    ],
+    "evidence_level": "verified",
+    "notes": [
+      "August 23, 1926 is the date of the notice in the merged citation. Newspaper issue/publication date has not been independently established."
+    ],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://files01.core.ac.uk/download/pdf/270234656.pdf"
+    }
+  },
+  {
+    "id": "src_samuel_obituary",
+    "title": "Samuel Hiram Beverage obituary",
+    "short_title": "Samuel Hiram Beverage obituary",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "obituary",
+    "repository": "Tribute Archive / Riposta Funeral Home material",
+    "collection": null,
+    "url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage",
+    "citation": "Tribute Archive / Riposta Funeral Home material. Samuel Hiram Beverage obituary. 2014-12-18.",
+    "excerpt": null,
+    "summary": "1941–45 Army Signal Corps service, July 16, 1942 overseas departure, Master Sergeant communications work across the Mediterranean theater, later Air Force service, radio career and North Haven Historical Society work",
+    "people_ids": [
+      "samuel_hiram_beverage_1917"
+    ],
+    "place_ids": [
+      "new_york_ny",
+      "north_haven_me"
+    ],
+    "event_ids": [
+      "event_samuel_north_haven_historical_society_1973",
+      "event_samuel_signal_corps_deployment_1942"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [
+      "December 18, 2014 is the death date. Obituary publication date is not established; military assertions remain obituary-supported."
+    ],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.tributearchive.com/obituaries/990096/Samuel-Hiram-Beverage"
+    }
+  },
+  {
+    "id": "src_john_miller_obituary",
+    "title": "John Miller Beverage obituary",
+    "short_title": "John Miller Beverage obituary",
+    "date": "2011-07-25",
+    "date_precision": "exact",
+    "source_type": "obituary",
+    "repository": "Tahlequah Daily Press",
+    "collection": null,
+    "url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102",
+    "citation": "Tahlequah Daily Press. John Miller Beverage obituary. 2011-07-25.",
+    "excerpt": null,
+    "summary": "Documents North Haven schooling, Dallas seminary education and work, and Guatemala missionary service.",
+    "people_ids": [
+      "john_miller_beverage_1927"
+    ],
+    "place_ids": [
+      "dallas_tx",
+      "guatemala"
+    ],
+    "event_ids": [
+      "event_john_miller_guatemala_mission_1953"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://obituaries.tahlequahdailypress.com/obituary/john-beverage-744038102"
+    }
+  },
+  {
+    "id": "src_hartley_obituary",
+    "title": "Hartley George Beverage, Sr. obituary",
+    "short_title": "Hartley George Beverage, Sr. obituary",
+    "date": "2018-05-21",
+    "date_precision": "exact",
+    "source_type": "obituary",
+    "repository": "PenBay Pilot",
+    "collection": null,
+    "url": "https://www.penbaypilot.com/article/hartley-george-beverage-sr-obituary/102205",
+    "citation": "PenBay Pilot. Hartley George Beverage, Sr. obituary. 2018-05-21.",
+    "excerpt": null,
+    "summary": "Documents Camden birth, Hope schooling, Union civic work, textile and agricultural occupations, and later employment in Rockland.",
+    "people_ids": [
+      "hartley_george_beverage_sr_1927"
+    ],
+    "place_ids": [
+      "camden_me",
+      "hope_me",
+      "rockland_me",
+      "union_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.penbaypilot.com/article/hartley-george-beverage-sr-obituary/102205"
+    }
+  },
+  {
+    "id": "src_florence_obituary",
+    "title": "Florence Pearse Beverage obituary",
+    "short_title": "Florence Pearse Beverage obituary",
+    "date": "2020-09-04",
+    "date_precision": "exact",
+    "source_type": "obituary",
+    "repository": "PenBay Pilot",
+    "collection": null,
+    "url": "https://www.penbaypilot.com/article/florence-pearse-beverage-obituary/138141",
+    "citation": "PenBay Pilot. Florence Pearse Beverage obituary. 2020-09-04.",
+    "excerpt": null,
+    "summary": "Documents Florence Pearse Beverage’s industrial, service and agricultural work, including GTE Sylvania in Waldoboro and the Union Upholstery Shop.",
+    "people_ids": [
+      "florence_adele_pearse_beverage_1927"
+    ],
+    "place_ids": [
+      "union_me",
+      "waldoboro_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.penbaypilot.com/article/florence-pearse-beverage-obituary/138141"
+    }
+  },
+  {
+    "id": "src_estelle_obituary",
+    "title": "Estelle Beverage Libby obituary",
+    "short_title": "Estelle Beverage Libby obituary",
+    "date": "2026-06-26",
+    "date_precision": "exact",
+    "source_type": "obituary",
+    "repository": "PenBay Pilot",
+    "collection": null,
+    "url": "https://www.penbaypilot.com/article/estelle-beverage-libby-obituary/271766",
+    "citation": "PenBay Pilot. Estelle Beverage Libby obituary. 2026-06-26.",
+    "excerpt": null,
+    "summary": "Documents Camden birth, Hope Corner schooling, Camden High School graduation in 1941, and a 22-year food-service career.",
+    "people_ids": [
+      "estelle_nettie_beverage_libby_1922"
+    ],
+    "place_ids": [
+      "camden_me",
+      "hope_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [
+      "The obituary calls her father Leroy; other merged family records use Elroy. Parentage is not changed by this archive phase."
+    ],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.penbaypilot.com/article/estelle-beverage-libby-obituary/271766"
+    }
+  },
+  {
+    "id": "src_petronele_notice_1979",
+    "title": "Mirė Petronėlė Jurgeliūtė-Beverage",
+    "short_title": "Mirė Petronėlė Jurgeliūtė-Beverage",
+    "date": "1979-04-27",
+    "date_precision": "exact",
+    "source_type": "newspaper",
+    "repository": "Vienybė Lithuanian-American newspaper",
+    "collection": null,
+    "url": "https://www.spauda2.org/vienybe/archive/1979/1979-04-27-VIENYBE.pdf",
+    "citation": "Vienybė Lithuanian-American newspaper. Mirė Petronėlė Jurgeliūtė-Beverage. 1979-04-27.",
+    "excerpt": null,
+    "summary": "Contemporary Lithuanian-American notice documents Shenandoah birth, marriage to Harold Beverage, and civic and occupational life.",
+    "people_ids": [
+      "petronele_jurgeliute_beverage_1898"
+    ],
+    "place_ids": [
+      "shenandoah_pa"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [
+      "Normalized from the merged research; re-fetch returned HTTP 403 in this phase. The prior access date is retained."
+    ],
+    "conflicts": [
+      "Death described as overnight April 25–26, 1979; the archive retains that uncertainty."
+    ],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.spauda2.org/vienybe/archive/1979/1979-04-27-VIENYBE.pdf"
+    }
+  },
+  {
+    "id": "src_marblehead_vitals",
+    "title": "Vital Records of Marblehead, Massachusetts, to the End of the Year 1849",
+    "short_title": "Vital Records of Marblehead, Massachusetts, to the End of the Year 1849",
+    "date": "1903",
+    "date_precision": "year",
+    "source_type": "vital_record",
+    "repository": "Marblehead vital-record transcription",
+    "collection": null,
+    "url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+    "citation": "Marblehead vital-record transcription. Vital Records of Marblehead, Massachusetts, to the End of the Year 1849. 1903.",
+    "excerpt": null,
+    "summary": "Published transcription records James (August 27, 1724) and Sarah (June 1, 1727), children of James and Sarah Beveridge in Marblehead.",
+    "people_ids": [
+      "james_beveridge_jr_1724",
+      "sarah_beveridge_1727"
+    ],
+    "place_ids": [
+      "marblehead_ma"
+    ],
+    "event_ids": [
+      "event_birth_sarah_beveridge_1727"
+    ],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-31",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm"
+    }
+  },
+  {
+    "id": "src_fuller_index",
+    "title": "Fuller Cemetery, North Haven",
+    "short_title": "Fuller Cemetery, North Haven",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "cemetery_index",
+    "repository": "FamilySearch Cemeteries",
+    "collection": null,
+    "url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false",
+    "citation": "FamilySearch Cemeteries. Fuller Cemetery, North Haven.",
+    "excerpt": null,
+    "summary": "Compiled cemetery index corroborates already established historical profiles. Entries are not treated as proof of relationships or precise grave locations.",
+    "people_ids": [
+      "albert_lewis_beverage_1888",
+      "elston_albert_beverage_1916",
+      "george_dewey_beverage_1898"
+    ],
+    "place_ids": [
+      "fuller_cemetery_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "corroboration",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-08-26",
+    "provenance": {
+      "origin": "merged research citation",
+      "base_commit": "73ba56a",
+      "legacy_url": "https://www.familysearch.org/en/cemeteries/sites/46772/fuller-cemetery?showMap=false"
+    }
+  },
+  {
+    "id": "src_census_coordinates",
+    "title": "2025 U.S. Census Gazetteer Files",
+    "short_title": "2025 U.S. Census Gazetteer Files",
+    "date": "2025",
+    "date_precision": "year",
+    "source_type": "geographic_reference",
+    "repository": "U.S. Census Bureau",
+    "collection": null,
+    "url": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html",
+    "citation": "U.S. Census Bureau. 2025 U.S. Census Gazetteer Files. 2025.",
+    "excerpt": null,
+    "summary": "Representative modern points for towns and cities; these are not historical boundaries or event sites.",
+    "people_ids": [],
+    "place_ids": [
+      "bucksport_me",
+      "camden_me",
+      "castine_me",
+      "dallas_tx",
+      "hallowell_me",
+      "hope_me",
+      "marblehead_ma",
+      "new_york_ny",
+      "north_haven_me",
+      "orono_me",
+      "portland_me",
+      "rockland_me",
+      "shenandoah_pa",
+      "topsham_me",
+      "union_me",
+      "vinalhaven_me",
+      "waldoboro_me",
+      "waterville_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "verified",
+    "notes": [
+      "Representative coordinates read from the 2025 national county-subdivision and place files, matched by state and exact municipality name; GEOIDs are retained in place coordinate notes. No address geocoding was performed.",
+      "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_cousubs_national.zip",
+      "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip"
+    ],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_noaa_pulpit",
+    "title": "NOAA tide station 8414888 — Pulpit Harbor",
+    "short_title": "NOAA tide station 8414888 — Pulpit Harbor",
+    "date": "2004-05-21",
+    "date_precision": "exact",
+    "source_type": "geographic_reference",
+    "repository": "NOAA",
+    "collection": null,
+    "url": "https://tidesandcurrents.noaa.gov/benchmarks/8414888.html",
+    "citation": "NOAA. NOAA tide station 8414888 — Pulpit Harbor. 2004-05-21.",
+    "excerpt": null,
+    "summary": "Harbor reference point at 44.15670, -68.88670. Used to represent the harbor, not the 1848 bridge site.",
+    "people_ids": [],
+    "place_ids": [
+      "pulpit_harbor_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "verified",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_fuller_location",
+    "title": "Fuller Cemetery location",
+    "short_title": "Fuller Cemetery location",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "geographic_reference",
+    "repository": "Find a Grave",
+    "collection": null,
+    "url": "https://www.findagrave.com/cemetery/89947/fuller-cemetery",
+    "citation": "Find a Grave. Fuller Cemetery location.",
+    "excerpt": null,
+    "summary": "Compiled cemetery location, rounded to 44.153, -68.879; approximate cemetery point only.",
+    "people_ids": [],
+    "place_ids": [
+      "fuller_cemetery_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "corroboration",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_guatemala_coordinates",
+    "title": "Guatemala geographic overview",
+    "short_title": "Guatemala geographic overview",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "geographic_reference",
+    "repository": "Columbia University / geographic overview",
+    "collection": null,
+    "url": "https://iri.columbia.edu/~idb_enso/luisbrito/Geography.html",
+    "citation": "Columbia University / geographic overview. Guatemala geographic overview.",
+    "excerpt": null,
+    "summary": "Country-level reference at 15°30′ N, 90°15′ W; no mission town or station is identified.",
+    "people_ids": [],
+    "place_ids": [
+      "guatemala"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_north_haven_history",
+    "title": "About North Haven",
+    "short_title": "About North Haven",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "institutional_history",
+    "repository": "Town of North Haven",
+    "collection": null,
+    "url": "https://www.northhavenmaine.org/about_north_haven.php",
+    "citation": "Town of North Haven. About North Haven.",
+    "excerpt": null,
+    "summary": "Municipal historical context for North Haven and the Fox Islands, formerly administered with Vinalhaven.",
+    "people_ids": [],
+    "place_ids": [
+      "north_haven_me",
+      "vinalhaven_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_maine_capital_history",
+    "title": "History of the Maine State House",
+    "short_title": "History of the Maine State House",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "institutional_history",
+    "repository": "Maine Legislature",
+    "collection": null,
+    "url": "https://legislature.maine.gov/general/history-of-the-state-house/9137",
+    "citation": "Maine Legislature. History of the Maine State House.",
+    "excerpt": null,
+    "summary": "Portland served as the seat of Maine government until 1832.",
+    "people_ids": [],
+    "place_ids": [
+      "portland_me"
+    ],
+    "event_ids": [
+      "event_benjamin_maine_house_1823",
+      "event_nathaniel_maine_house_1828"
+    ],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  },
+  {
+    "id": "src_bucksport_name_history",
+    "title": "Bucksport public library history",
+    "short_title": "Buckstown / Bucksport name history",
+    "date": null,
+    "date_precision": "unknown",
+    "source_type": "institutional_history",
+    "repository": "Town of Bucksport",
+    "collection": null,
+    "url": "https://www.bucksportmaine.gov/community/public_library/index.php",
+    "citation": "Town of Bucksport. Public Library: library history, including the 1817 change of town name.",
+    "excerpt": null,
+    "summary": "The municipal library history identifies the change from Buckstown to Bucksport in 1817, supporting the historical place-name match for the 1808 memorial.",
+    "people_ids": [],
+    "place_ids": [
+      "bucksport_me"
+    ],
+    "event_ids": [],
+    "evidence_level": "strongly_supported",
+    "notes": [],
+    "conflicts": [],
+    "accessed": "2026-09-02",
+    "provenance": {
+      "origin": "geographic/context reference reviewed in archive phase"
+    }
+  }
+]

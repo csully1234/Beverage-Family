@@ -31,6 +31,9 @@ class StreamlitSmokeTests(unittest.TestCase):
             "Search",
             "Explore the Tree",
             "Full Family Map",
+            "Historical Map",
+            "Historical Places",
+            "Source Archive",
             "People",
             "Timeline",
             "Research Desk",
@@ -105,6 +108,39 @@ class StreamlitSmokeTests(unittest.TestCase):
         app = self.logged_in_app(page="full-tree")
         self.assertEqual(app.radio[0].value, "Full Family Map")
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
+
+    def test_historical_map_and_archive_direct_routes(self) -> None:
+        for params, page in (
+            ({"page":"map", "person":"harold_h_beverage_1893"}, "Historical Map"),
+            ({"page":"map", "event":"event_north_haven_bridge_act_1848"}, "Historical Map"),
+            ({"page":"places", "place":"pulpit_harbor_me"}, "Historical Places"),
+            ({"page":"archive", "source":"src_bridge_act_1848"}, "Source Archive"),
+            ({"page":"archive", "source":"nonexistent"}, "Source Archive"),
+        ):
+            with self.subTest(params=params):
+                app = self.logged_in_app(**params)
+                self.assertEqual(app.radio[0].value, page)
+                self.assertEqual(len(app.exception), 0)
+
+    def test_source_search_and_place_selection(self) -> None:
+        app = self.logged_in_app(page="archive")
+        app.text_input(key="archive_search").input("Pulpit").run()
+        self.assertTrue(any("source records" in c.value for c in app.caption))
+        self.assertFalse(app.exception)
+        app = self.logged_in_app(page="places", place="pulpit_harbor_me")
+        app.selectbox(key="archive_place_selector").select("guatemala").run()
+        self.assertEqual(app.query_params["place"], ["guatemala"])
+        self.assertTrue(any("country point" in c.value for c in app.caption))
+        app.radio[0].set_value("Home").run()
+        self.assertNotIn("place", app.query_params)
+
+    def test_map_still_requires_family_login(self) -> None:
+        os.environ["APP_PASSWORD"] = "test-family-password"
+        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30)
+        app.query_params["page"] = "map"
+        app.run()
+        self.assertEqual(len(app.radio), 0)
+        self.assertEqual(len(app.text_input), 1)
 
     def test_full_family_map_profile_open_uses_safe_callback_navigation(self) -> None:
         target = "harold_h_beverage_1893"

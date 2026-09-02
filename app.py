@@ -16,6 +16,11 @@ import streamlit as st
 from graphviz import Digraph
 
 from full_tree import build_full_tree_html
+from archive import ArchiveIndex
+from archive_ui import (
+    render_archive_page, render_places_page, render_map_page,
+    render_person_archive, render_event_archive, source_link,
+)
 from family_data import (
     Record,
     date_sort_key,
@@ -57,6 +62,9 @@ PAGE_SLUGS = {
     "Search": "search",
     "Explore the Tree": "tree",
     "Full Family Map": "full-tree",
+    "Historical Map": "map",
+    "Historical Places": "places",
+    "Source Archive": "archive",
     "People": "people",
     "Timeline": "timeline",
     "Research Desk": "research",
@@ -336,6 +344,11 @@ def load_data() -> dict[str, list[Record]]:
     return load_site_data(DATA_DIR)
 
 
+@st.cache_data(show_spinner=False)
+def load_archive() -> ArchiveIndex:
+    return ArchiveIndex(load_data())
+
+
 def markdown_escape(value: Any) -> str:
     return str(value).replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
 
@@ -450,8 +463,16 @@ def navigate(page: str) -> None:
     st.query_params["page"] = PAGE_SLUGS[page]
     if page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
-    if page != "Timeline" and "event" in st.query_params:
+    if page not in {"Timeline", "Historical Map"} and "event" in st.query_params:
         del st.query_params["event"]
+    clear_archive_route(page)
+
+
+def clear_archive_route(page: str) -> None:
+    for parameter, allowed in (("place", {"Historical Map", "Historical Places"}),
+                               ("person", {"Historical Map"}), ("source", {"Source Archive"})):
+        if page not in allowed and parameter in st.query_params:
+            del st.query_params[parameter]
 
 
 def center_tree_on(person_id: str) -> None:
@@ -468,6 +489,7 @@ def open_profile(person_id: str) -> None:
     st.query_params["profile"] = person_id
     if "event" in st.query_params:
         del st.query_params["event"]
+    clear_archive_route("People")
 
 
 def sync_sidebar_route() -> None:
@@ -475,8 +497,9 @@ def sync_sidebar_route() -> None:
     st.query_params["page"] = PAGE_SLUGS[page]
     if page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
-    if page != "Timeline" and "event" in st.query_params:
+    if page not in {"Timeline", "Historical Map"} and "event" in st.query_params:
         del st.query_params["event"]
+    clear_archive_route(page)
 
 
 def sync_profile_route() -> None:
@@ -736,6 +759,7 @@ def render_event_card(
             ]
             if involved:
                 st.markdown("**People:** " + ", ".join(involved))
+            render_event_archive(str(event["id"]), load_archive())
             if event.get("sources"):
                 if compact:
                     st.caption(f"{len(event['sources'])} cited source(s)")
@@ -870,6 +894,7 @@ def render_person_profile(
         )
 
     with places_tab:
+        render_person_archive(person_id, load_archive())
         residences = person.get("residences", [])
         if residences:
             st.subheader("Known residences")
@@ -882,6 +907,11 @@ def render_person_profile(
             st.info("No residence history has been entered for this profile.")
 
     with sources_tab:
+        archive_records = load_archive().sources_for("person", person_id)
+        if archive_records:
+            st.subheader("Source Archive records")
+            for source in archive_records:
+                st.markdown(f"- {source_link(source)}")
         st.subheader("Profile sources")
         render_sources(person.get("sources", []))
 
@@ -1750,6 +1780,12 @@ def main() -> None:
         render_tree_page(data, people_by_id, relationships)
     elif page == "Full Family Map":
         render_full_tree_page(data, people_by_id, relationships)
+    elif page == "Historical Map":
+        render_map_page(load_archive())
+    elif page == "Historical Places":
+        render_places_page(load_archive())
+    elif page == "Source Archive":
+        render_archive_page(load_archive())
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":

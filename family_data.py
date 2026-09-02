@@ -122,7 +122,14 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     effective_people = merge_records(base_people, research_people)
     effective_events = merge_records(base_events, research_events)
 
+    # Additive archive files are optional, like the existing research overlays.
+    # Keep the names here explicit to avoid an archive <-> family_data import cycle.
+    archive = {key: load_optional_json_records(data_dir / filename) for key, filename in (
+        ("archive_sources", "archive_sources.json"), ("places", "places.json"),
+        ("place_links", "place_links.json"),
+    )}
     return {
+        **archive,
         "base_people": base_people,
         "base_events": base_events,
         "research_people": research_people,

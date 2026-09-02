@@ -25,6 +25,9 @@ def main() -> int:
         f"Validated {len(data['people'])} people, {len(data['events'])} events, "
         f"and {len(data['research'])} research notes."
     )
+    print(f"Archive: {len(data.get('places', []))} places, "
+          f"{len(data.get('archive_sources', []))} sources, "
+          f"{len(data.get('place_links', []))} place assertions.")
     for issue in report.issues:
         print(f"{issue.severity.upper():7} {issue.code}: {issue.message}")
 

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Beverage family historical places</title>
+  <style>/* LEAFLET_CSS */</style>
+  <style>/* ARCHIVE_CSS */</style>
+</head>
+<body>
+  <form id="filters" aria-label="Historical map filters">
+    <label>Person<select id="person"><option value="">All mapped people</option></select></label>
+    <label>Jump to an event<select id="event"><option value="">All mapped events</option></select></label>
+    <label>Connection category<select id="category"><option value="">All categories</option></select></label>
+    <div class="years">
+      <label>From year<input id="from" type="number" step="1" aria-describedby="date-help"></label>
+      <label>Through year<input id="to" type="number" step="1" aria-describedby="date-help"></label>
+    </div>
+    <label class="check"><input id="undated" type="checkbox" checked> Include undated connections</label>
+    <div class="actions"><button id="reset" type="button">Reset filters</button><button id="fit" type="button">Fit results</button><button id="bay" type="button">Penobscot Bay</button></div>
+  </form>
+  <p id="date-help" class="hint">Years filter documented connections. Pins represent modern places; historic boundaries and private homes are not mapped.</p>
+  <p id="status" role="status" aria-live="polite"></p>
+  <div class="workspace">
+    <section class="geography" aria-label="Historical map">
+      <div id="map" aria-label="Interactive geographic map"></div>
+      <p id="map-warning" role="status" hidden></p>
+      <div class="legend"><span class="key municipality"></span>Town / city <span class="key harbor"></span>Harbor <span class="key cemetery"></span>Cemetery <span class="key country"></span>Broad region <span class="key selected"></span>Selected</div>
+      <nav id="place-list" aria-label="Places matching filters"></nav>
+    </section>
+    <aside id="detail" aria-label="Selected place details" tabindex="-1"><h2>Explore a place</h2><p>Select a pin or a place in the list to see its people, events, and evidence.</p></aside>
+  </div>
+  <script id="archive-data" type="application/json">ARCHIVE_JSON</script>
+  <script>/* LEAFLET_JS */</script>
+  <script>/* ARCHIVE_JS */</script>
+</body>
+</html>
