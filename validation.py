@@ -359,4 +359,6 @@ def validate_site_data(data: dict[str, list[Record]]) -> ValidationReport:
         data["research_people"],
     )
     _validate_date_precision(report, data)
+    from archive_validation import validate_archive
+    validate_archive(data, report)
     return report

@@ -14,6 +14,7 @@ A password-gated, source-first Streamlit archive for exploring the Beverage fami
 - a filterable timeline with person, year, category, place, precision, evidence, and full-text filters;
 - truthful display of exact, month-only, year-only, approximate, and unknown dates;
 - an interactive source explorer and research desk with claim-level citations;
+- a normalized **Source Archive**, **Historical Places** records, and a **Historical Map** with cited person/event connections, category and year filters, and person/event navigation;
 - homepage statistics, a daily featured relative, exact-date “On This Day” records, and recent research;
 - JSON and CSV archive exports;
 - an automated data-quality report;
@@ -59,6 +60,23 @@ These four files are optional and are not required to run the site. A same-ID re
 
 Structured citations can include `title`, `repository`, `url`, `record_type`, `record_date`, `page`, `record_identifier`, `accessed`, `supports`, and `evidence_level`. Legacy source strings remain supported.
 
+### Source archive and geographic history
+
+The historical archive extends the overlays without changing them:
+
+- `data/archive_sources.json`: stable bibliographic records, evidence summaries, conflicts, and people/event/place references;
+- `data/places.json`: public historical places, parent places, modern representative coordinates, and coordinate provenance;
+- `data/place_links.json`: dated, cited assertions connecting one existing person or event to one place;
+- `schemas/archive.schema.json`: version 1 JSON Schema, enforced by the genealogy validator.
+
+Open `?page=map`, `?page=places`, or `?page=archive`. Deep links support `?page=map&person=harold_h_beverage_1893`, `?page=map&event=event_north_haven_bridge_act_1848`, `?page=places&place=pulpit_harbor_me`, and `?page=archive&source=src_bridge_act_1848`. These use the existing Streamlit query routing and family-password gate.
+
+The map uses locally vendored Leaflet 1.9.4 and OpenStreetMap tiles. It needs no API key or geocoder. Pins and a keyboard-accessible list share the same detail panel. Tiles require internet access; records remain usable if tiles fail. External map requests send only tile coordinates and the site origin, not profile IDs or residence data. Read the [OpenStreetMap tile policy](https://operations.osmfoundation.org/policies/tiles/) before materially scaling traffic or changing caching.
+
+Place confidence describes the geographic reference, not certainty about every historical claim. Town/country points are not buildings, travel paths, or historical boundaries. Dates filter **documented connections**, not a person's inferred lifetime. Undated links have an explicit toggle. Event locations do not automatically become person locations: for example, a court petition's subject towns do not prove the petitioner's presence there.
+
+For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
+
 ## Validate changes
 
 ```bash
@@ -66,6 +84,15 @@ python validate_data.py
 python -m unittest discover -s tests -v
 python -m compileall -q app.py family_data.py full_tree.py validation.py validate_data.py
 ```
+
+The map's DOM and interaction tests are development-only and require Node 22+:
+
+```bash
+npm ci --ignore-scripts
+npm test
+```
+
+Node is not needed to run the Streamlit site. These tests execute the bundled map document and Leaflet in jsdom, with network fetching disabled. They complement Streamlit route tests; they do not substitute for a visual browser review on the normal Streamlit deployment.
 
 Warnings identify open research or normalization work. Errors identify broken JSON, duplicate IDs, missing required fields, invalid precision metadata, or a change to protected content or existing residence data.
 

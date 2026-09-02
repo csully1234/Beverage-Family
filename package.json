@@ -1,0 +1,7 @@
+{
+  "name": "beverage-family-map-tests",
+  "private": true,
+  "description": "DOM regression tests for the historical map; production remains Streamlit",
+  "scripts": {"test": "node --test tests/test_historical_map.cjs"},
+  "devDependencies": {"jsdom": "26.1.0"}
+}

@@ -1,0 +1,467 @@
+[
+  {
+    "id": "north_haven_me",
+    "name": "North Haven, Maine",
+    "alternate_names": [
+      "North Island of Vinalhaven",
+      "Fox Isle"
+    ],
+    "type": "municipality",
+    "latitude": 44.1428,
+    "longitude": -68.9084,
+    "parent_place_id": null,
+    "historical_notes": "Island community central to the archive. Earlier records may describe the north island under Vinalhaven. The pin represents the modern municipality; no home or wireless station is located here.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_congress_petition_1912",
+      "src_ieee_harold",
+      "src_north_haven_history",
+      "src_samuel_obituary",
+      "src_water_bonds_1926"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census North Haven town, GEOID 2301351620; rounded representative point."
+  },
+  {
+    "id": "vinalhaven_me",
+    "name": "Vinalhaven, Maine",
+    "alternate_names": [
+      "South Fox Island"
+    ],
+    "type": "municipality",
+    "latitude": 44.0216,
+    "longitude": -68.7935,
+    "parent_place_id": null,
+    "historical_notes": "Early municipal and legislative records concern a jurisdiction that also included the north island before separation. This modern point is a geographic reference, not a town hall or a reconstruction of former town boundaries.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_constitution_1819",
+      "src_court_memorial_1808",
+      "src_maine_house_1823",
+      "src_maine_payroll_1828",
+      "src_north_haven_history",
+      "src_vinalhaven_manuscript_1819",
+      "src_vinalhaven_officers"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Vinalhaven town, GEOID 2301379130; rounded representative point."
+  },
+  {
+    "id": "pulpit_harbor_me",
+    "name": "Pulpit Harbor",
+    "alternate_names": [],
+    "type": "harbor",
+    "latitude": 44.1567,
+    "longitude": -68.8867,
+    "parent_place_id": "north_haven_me",
+    "historical_notes": "The 1848 act authorized a bridge across the head of this harbor to land of James and Josiah Beverage. The same harbor appears in Frank Beverage’s 1927 auction notice. The NOAA reference point does not identify either historic property or the proposed bridge.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_bridge_act_1848",
+      "src_noaa_pulpit",
+      "src_pulpit_auction_1927"
+    ],
+    "public": true,
+    "coordinate_precision": "harbor",
+    "coordinate_source_id": "src_noaa_pulpit",
+    "coordinate_notes": "Rounded modern reference point from the cited geographic source."
+  },
+  {
+    "id": "fuller_cemetery_me",
+    "name": "Fuller Cemetery",
+    "alternate_names": [],
+    "type": "cemetery",
+    "latitude": 44.153,
+    "longitude": -68.879,
+    "parent_place_id": "north_haven_me",
+    "historical_notes": "Cemetery associated with multiple established family profiles in the merged research. Burial-index links are labeled corroboration; no grave plot or family relationship is inferred from this marker.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "medium",
+    "sources": [
+      "src_fuller_index",
+      "src_fuller_location"
+    ],
+    "public": true,
+    "coordinate_precision": "approximate_site",
+    "coordinate_source_id": "src_fuller_location",
+    "coordinate_notes": "Rounded modern reference point from the cited geographic source."
+  },
+  {
+    "id": "topsham_me",
+    "name": "Topsham, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 43.965,
+    "longitude": -69.9556,
+    "parent_place_id": null,
+    "historical_notes": "James Beverage appears in the published account of the first town meeting in 1764.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_topsham_history"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Topsham town, GEOID 2302376960; rounded representative point."
+  },
+  {
+    "id": "waterville_me",
+    "name": "Waterville / Colby, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.5453,
+    "longitude": -69.6614,
+    "parent_place_id": null,
+    "historical_notes": "Colby’s 1887 catalogue connects Orris Lyford Beverage with Waterville. This city-level marker does not place his studies on today’s campus.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_colby_catalogue_1887"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Waterville city, GEOID 2301180740; rounded representative point."
+  },
+  {
+    "id": "hallowell_me",
+    "name": "Hallowell, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.2872,
+    "longitude": -69.818,
+    "parent_place_id": null,
+    "historical_notes": "The 1887 Colby catalogue identifies Orris Lyford Beverage as a high-school principal here; no school building is identified.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_colby_catalogue_1887"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Hallowell city, GEOID 2301130550; rounded representative point."
+  },
+  {
+    "id": "orono_me",
+    "name": "Orono / University of Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.8817,
+    "longitude": -68.7386,
+    "parent_place_id": null,
+    "historical_notes": "Harold Beverage’s 1915 University of Maine graduation is represented at town scale.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_ieee_harold"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Orono town, GEOID 2301955565; rounded representative point."
+  },
+  {
+    "id": "rockland_me",
+    "name": "Rockland, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.1239,
+    "longitude": -69.1305,
+    "parent_place_id": null,
+    "historical_notes": "Mainland employment connection for Hartley Beverage. A newspaper published here is not by itself evidence that a subject lived here.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_hartley_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Rockland city, GEOID 2301363590; rounded representative point."
+  },
+  {
+    "id": "camden_me",
+    "name": "Camden, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.2223,
+    "longitude": -69.0631,
+    "parent_place_id": null,
+    "historical_notes": "Documented birth and education connections for Hartley Beverage and Estelle Beverage Libby.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_estelle_obituary",
+      "src_hartley_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Camden town, GEOID 2301309725; rounded representative point."
+  },
+  {
+    "id": "hope_me",
+    "name": "Hope, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.2412,
+    "longitude": -69.1885,
+    "parent_place_id": null,
+    "historical_notes": "Hope schooling connects Hartley Beverage and Estelle Beverage Libby; neither a school building nor a private home is pinned.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_estelle_obituary",
+      "src_hartley_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Hope town, GEOID 2301333840; rounded representative point."
+  },
+  {
+    "id": "union_me",
+    "name": "Union, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.2294,
+    "longitude": -69.2871,
+    "parent_place_id": null,
+    "historical_notes": "Community service and work connections documented in Hartley and Florence Beverage’s obituaries.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_florence_obituary",
+      "src_hartley_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Union town, GEOID 2301378115; rounded representative point."
+  },
+  {
+    "id": "waldoboro_me",
+    "name": "Waldoboro, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.1221,
+    "longitude": -69.3834,
+    "parent_place_id": null,
+    "historical_notes": "Florence Pearse Beverage’s obituary identifies employment at GTE Sylvania here.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_florence_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Waldoboro town, GEOID 2301579550; rounded representative point."
+  },
+  {
+    "id": "castine_me",
+    "name": "Castine, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 44.409,
+    "longitude": -68.8155,
+    "parent_place_id": null,
+    "historical_notes": "Named in the 1808 court-location memorial as the existing court location. A subject-of-petition link does not establish John Beverage’s presence here.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_court_memorial_1808"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Castine town, GEOID 2300911265; rounded representative point."
+  },
+  {
+    "id": "bucksport_me",
+    "name": "Bucksport / historic Buckstown, Maine",
+    "alternate_names": [
+      "Buckstown"
+    ],
+    "type": "municipality",
+    "latitude": 44.642,
+    "longitude": -68.7597,
+    "parent_place_id": null,
+    "historical_notes": "Buckstown is named as the proposed destination in the 1808 court memorial. The marker supplies town-level context, not a court site or evidence of John Beverage’s travel.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_court_memorial_1808",
+      "src_bucksport_name_history"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Bucksport town, GEOID 2300908815; rounded representative point."
+  },
+  {
+    "id": "portland_me",
+    "name": "Portland, Maine",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 43.6332,
+    "longitude": -70.1853,
+    "parent_place_id": null,
+    "historical_notes": "Maine’s first seat of state government. The city-level marker gives context for early state legislative service; no building footprint is asserted.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_maine_capital_history",
+      "src_maine_house_1823",
+      "src_maine_payroll_1828"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Portland city, GEOID 2300560545; rounded representative point."
+  },
+  {
+    "id": "marblehead_ma",
+    "name": "Marblehead, Massachusetts",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 42.4956,
+    "longitude": -70.8358,
+    "parent_place_id": null,
+    "historical_notes": "The published town vital-record transcription documents births in the early Beveridge generation. No church or household address is mapped.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_marblehead_vitals"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Marblehead town, GEOID 2500938400; rounded representative point."
+  },
+  {
+    "id": "new_york_ny",
+    "name": "New York City, New York",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 40.6627,
+    "longitude": -73.9387,
+    "parent_place_id": null,
+    "historical_notes": "Samuel Hiram Beverage’s obituary identifies New York as his July 16, 1942 overseas departure location. The embarkation pier is unknown.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_samuel_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census New York city, GEOID 3651000; rounded representative point."
+  },
+  {
+    "id": "dallas_tx",
+    "name": "Dallas, Texas",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 32.7933,
+    "longitude": -96.7665,
+    "parent_place_id": null,
+    "historical_notes": "John Miller Beverage studied at Dallas Theological Seminary and later worked there in admissions and library service. The city marker does not assert a historic campus building.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_john_miller_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Dallas city, GEOID 4819000; rounded representative point."
+  },
+  {
+    "id": "shenandoah_pa",
+    "name": "Shenandoah, Pennsylvania",
+    "alternate_names": [],
+    "type": "municipality",
+    "latitude": 40.8171,
+    "longitude": -76.2007,
+    "parent_place_id": null,
+    "historical_notes": "Petronėlė Jurgeliūtė Beverage’s documented birthplace in the merged newspaper research. No birth address is known or mapped.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "high",
+    "sources": [
+      "src_census_coordinates",
+      "src_petronele_notice_1979"
+    ],
+    "public": true,
+    "coordinate_precision": "municipality",
+    "coordinate_source_id": "src_census_coordinates",
+    "coordinate_notes": "2025 Census Shenandoah borough, GEOID 4210770056; rounded representative point."
+  },
+  {
+    "id": "guatemala",
+    "name": "Guatemala",
+    "alternate_names": [],
+    "type": "country",
+    "latitude": 15.5,
+    "longitude": -90.25,
+    "parent_place_id": null,
+    "historical_notes": "Country-level connection for John Miller Beverage’s missionary service, 1953–1972. A specific mission location has not been established; the point does not indicate Guatemala City.",
+    "date_from": null,
+    "date_to": null,
+    "confidence": "medium",
+    "sources": [
+      "src_guatemala_coordinates",
+      "src_john_miller_obituary"
+    ],
+    "public": true,
+    "coordinate_precision": "country",
+    "coordinate_source_id": "src_guatemala_coordinates",
+    "coordinate_notes": "Rounded modern reference point from the cited geographic source."
+  }
+]

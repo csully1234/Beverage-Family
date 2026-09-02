@@ -1,0 +1,1024 @@
+[
+  {
+    "id": "event_event_thomas_vinalhaven_town_clerk_1790__vinalhaven_me__town_clerk__1790",
+    "subject_type": "event",
+    "subject_id": "event_thomas_vinalhaven_town_clerk_1790",
+    "place_id": "vinalhaven_me",
+    "relation": "town_clerk",
+    "category": "civic",
+    "date_from": "1790",
+    "date_to": "1798",
+    "date_precision": "year",
+    "source_ids": [
+      "src_vinalhaven_officers"
+    ],
+    "summary": "Vinalhaven’s centennial office roster lists Thomas Beverage as town clerk every year from 1790 through 1798. He also appears among the selectmen in 1797, documenting sustained involvement in the island town’s early civil government.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_thomas_beverage_1750__vinalhaven_me__town_clerk__1790",
+    "subject_type": "person",
+    "subject_id": "thomas_beverage_1750",
+    "place_id": "vinalhaven_me",
+    "relation": "town_clerk",
+    "category": "civic",
+    "date_from": "1790",
+    "date_to": "1798",
+    "date_precision": "year",
+    "source_ids": [
+      "src_vinalhaven_officers"
+    ],
+    "summary": "Vinalhaven’s centennial office roster lists Thomas Beverage as town clerk every year from 1790 through 1798. He also appears among the selectmen in 1797, documenting sustained involvement in the island town’s early civil government.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_john_vinalhaven_town_clerk_1799__vinalhaven_me__town_clerk__1799",
+    "subject_type": "event",
+    "subject_id": "event_john_vinalhaven_town_clerk_1799",
+    "place_id": "vinalhaven_me",
+    "relation": "town_clerk",
+    "category": "civic",
+    "date_from": "1799",
+    "date_to": "1812",
+    "date_precision": "year",
+    "source_ids": [
+      "src_vinalhaven_officers"
+    ],
+    "summary": "John Beverage appears as Vinalhaven town clerk in every annual roster from 1799 through 1812, a fourteen-year span immediately following Thomas Beverage’s nine-year tenure.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_john_white_beverage_1774__vinalhaven_me__town_clerk__1799",
+    "subject_type": "person",
+    "subject_id": "john_white_beverage_1774",
+    "place_id": "vinalhaven_me",
+    "relation": "town_clerk",
+    "category": "civic",
+    "date_from": "1799",
+    "date_to": "1812",
+    "date_precision": "year",
+    "source_ids": [
+      "src_vinalhaven_officers"
+    ],
+    "summary": "John Beverage appears as Vinalhaven town clerk in every annual roster from 1799 through 1812, a fourteen-year span immediately following Thomas Beverage’s nine-year tenure.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_john_hancock_courts_memorial_1808__vinalhaven_me__petitioning_community__1808_01_19",
+    "subject_type": "event",
+    "subject_id": "event_john_hancock_courts_memorial_1808",
+    "place_id": "vinalhaven_me",
+    "relation": "petitioning_community",
+    "category": "legal",
+    "date_from": "1808-01-19",
+    "date_to": "1808-01-19",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_court_memorial_1808"
+    ],
+    "summary": "The Massachusetts House journal recorded a memorial from John Beverage and other inhabitants of Vinalhaven remonstrating against removal of the Hancock County courts from Castine to Buckstown. The petition shows island residents engaging directly with state government over access to county institutions.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_john_white_beverage_1774__vinalhaven_me__petitioning_community__1808_01_19",
+    "subject_type": "person",
+    "subject_id": "john_white_beverage_1774",
+    "place_id": "vinalhaven_me",
+    "relation": "petitioning_community",
+    "category": "legal",
+    "date_from": "1808-01-19",
+    "date_to": "1808-01-19",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_court_memorial_1808"
+    ],
+    "summary": "The Massachusetts House journal recorded a memorial from John Beverage and other inhabitants of Vinalhaven remonstrating against removal of the Hancock County courts from Castine to Buckstown. The petition shows island residents engaging directly with state government over access to county institutions.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_john_hancock_courts_memorial_1808__castine_me__existing_court_town__1808_01_19",
+    "subject_type": "event",
+    "subject_id": "event_john_hancock_courts_memorial_1808",
+    "place_id": "castine_me",
+    "relation": "existing_court_town",
+    "category": "legal",
+    "date_from": "1808-01-19",
+    "date_to": "1808-01-19",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_court_memorial_1808"
+    ],
+    "summary": "Named as a court-location subject in the 1808 memorial. This is not evidence of the petitioner’s presence or travel.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_john_hancock_courts_memorial_1808__bucksport_me__proposed_court_town__1808_01_19",
+    "subject_type": "event",
+    "subject_id": "event_john_hancock_courts_memorial_1808",
+    "place_id": "bucksport_me",
+    "relation": "proposed_court_town",
+    "category": "legal",
+    "date_from": "1808-01-19",
+    "date_to": "1808-01-19",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_court_memorial_1808"
+    ],
+    "summary": "Named as a court-location subject in the 1808 memorial. This is not evidence of the petitioner’s presence or travel.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_benjamin_vinalhaven_history_manuscript_1819__vinalhaven_me__manuscript_subject__1819_12_20",
+    "subject_type": "event",
+    "subject_id": "event_benjamin_vinalhaven_history_manuscript_1819",
+    "place_id": "vinalhaven_me",
+    "relation": "manuscript_subject",
+    "category": "historical_writing",
+    "date_from": "1819-12-20",
+    "date_to": "1819-12-20",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_vinalhaven_manuscript_1819"
+    ],
+    "summary": "Benjamin Beverage’s dated manuscript concerns Vinalhaven. This subject-place association does not establish his exact writing location.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_benjamin_kent_beverage_1779__vinalhaven_me__manuscript_subject__1819_12_20",
+    "subject_type": "person",
+    "subject_id": "benjamin_kent_beverage_1779",
+    "place_id": "vinalhaven_me",
+    "relation": "manuscript_subject",
+    "category": "historical_writing",
+    "date_from": "1819-12-20",
+    "date_to": "1819-12-20",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_vinalhaven_manuscript_1819"
+    ],
+    "summary": "Benjamin Beverage’s dated manuscript concerns Vinalhaven. This subject-place association does not establish his exact writing location.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_benjamin_maine_constitutional_convention_1819__vinalhaven_me__represented_community__1819",
+    "subject_type": "event",
+    "subject_id": "event_benjamin_maine_constitutional_convention_1819",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1819",
+    "date_to": "1819",
+    "date_precision": "year",
+    "source_ids": [
+      "src_constitution_1819"
+    ],
+    "summary": "Benjamin Beverage was Vinalhaven’s delegate to the 1819 convention that framed the constitution for the new State of Maine as separation from Massachusetts approached.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_benjamin_kent_beverage_1779__vinalhaven_me__represented_community__1819",
+    "subject_type": "person",
+    "subject_id": "benjamin_kent_beverage_1779",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1819",
+    "date_to": "1819",
+    "date_precision": "year",
+    "source_ids": [
+      "src_constitution_1819"
+    ],
+    "summary": "Benjamin Beverage was Vinalhaven’s delegate to the 1819 convention that framed the constitution for the new State of Maine as separation from Massachusetts approached.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_benjamin_maine_house_1823__vinalhaven_me__represented_community__1823",
+    "subject_type": "event",
+    "subject_id": "event_benjamin_maine_house_1823",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1823",
+    "date_to": "1823",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_house_1823"
+    ],
+    "summary": "The State of Maine’s 1823 civil-government record lists Benjamin Beverage as representative for Vinalhaven together with a long group of neighboring islands.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_benjamin_kent_beverage_1779__vinalhaven_me__represented_community__1823",
+    "subject_type": "person",
+    "subject_id": "benjamin_kent_beverage_1779",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1823",
+    "date_to": "1823",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_house_1823"
+    ],
+    "summary": "The State of Maine’s 1823 civil-government record lists Benjamin Beverage as representative for Vinalhaven together with a long group of neighboring islands.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_nathaniel_maine_house_1828__vinalhaven_me__represented_community__1828",
+    "subject_type": "event",
+    "subject_id": "event_nathaniel_maine_house_1828",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1828",
+    "date_to": "1828",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_payroll_1828"
+    ],
+    "summary": "The official 1828 Maine House payroll lists Nathaniel Beverage as the representative from Vinalhaven, extending the family’s documented participation from island offices into state government.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_nathaniel_winslow_beverage_1776__vinalhaven_me__represented_community__1828",
+    "subject_type": "person",
+    "subject_id": "nathaniel_winslow_beverage_1776",
+    "place_id": "vinalhaven_me",
+    "relation": "represented_community",
+    "category": "civic",
+    "date_from": "1828",
+    "date_to": "1828",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_payroll_1828"
+    ],
+    "summary": "The official 1828 Maine House payroll lists Nathaniel Beverage as the representative from Vinalhaven, extending the family’s documented participation from island offices into state government.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_benjamin_maine_house_1823__portland_me__seat_of_government__1823",
+    "subject_type": "event",
+    "subject_id": "event_benjamin_maine_house_1823",
+    "place_id": "portland_me",
+    "relation": "seat_of_government",
+    "category": "civic",
+    "date_from": "1823",
+    "date_to": "1823",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_house_1823",
+      "src_maine_capital_history"
+    ],
+    "summary": "City-level context: the legislature met in Portland during this service year. Building and individual attendance details are not reconstructed.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_nathaniel_maine_house_1828__portland_me__seat_of_government__1828",
+    "subject_type": "event",
+    "subject_id": "event_nathaniel_maine_house_1828",
+    "place_id": "portland_me",
+    "relation": "seat_of_government",
+    "category": "civic",
+    "date_from": "1828",
+    "date_to": "1828",
+    "date_precision": "year",
+    "source_ids": [
+      "src_maine_payroll_1828",
+      "src_maine_capital_history"
+    ],
+    "summary": "City-level context: the legislature met in Portland during this service year. Building and individual attendance details are not reconstructed.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_north_haven_bridge_act_1848__pulpit_harbor_me__authorized_bridge__1848",
+    "subject_type": "event",
+    "subject_id": "event_north_haven_bridge_act_1848",
+    "place_id": "pulpit_harbor_me",
+    "relation": "authorized_bridge",
+    "category": "infrastructure",
+    "date_from": "1848",
+    "date_to": "1848",
+    "date_precision": "year",
+    "source_ids": [
+      "src_bridge_act_1848"
+    ],
+    "summary": "A Maine act established the North Haven Bridge Company and authorized a toll bridge over the head of Pulpit Harbor from Enos Cooper’s land to land belonging to James and Josiah Beverage. The law required a bridge at least twelve feet wide and a draw to allow vessels to pass. The act proves the property relationship and proposed infrastructure; it does not by itself prove that the bridge was ultimately built.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_james_beverage_1789__pulpit_harbor_me__authorized_bridge__1848",
+    "subject_type": "person",
+    "subject_id": "james_beverage_1789",
+    "place_id": "pulpit_harbor_me",
+    "relation": "authorized_bridge",
+    "category": "infrastructure",
+    "date_from": "1848",
+    "date_to": "1848",
+    "date_precision": "year",
+    "source_ids": [
+      "src_bridge_act_1848"
+    ],
+    "summary": "A Maine act established the North Haven Bridge Company and authorized a toll bridge over the head of Pulpit Harbor from Enos Cooper’s land to land belonging to James and Josiah Beverage. The law required a bridge at least twelve feet wide and a draw to allow vessels to pass. The act proves the property relationship and proposed infrastructure; it does not by itself prove that the bridge was ultimately built.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_josiah_winslow_beverage_1793__pulpit_harbor_me__authorized_bridge__1848",
+    "subject_type": "person",
+    "subject_id": "josiah_winslow_beverage_1793",
+    "place_id": "pulpit_harbor_me",
+    "relation": "authorized_bridge",
+    "category": "infrastructure",
+    "date_from": "1848",
+    "date_to": "1848",
+    "date_precision": "year",
+    "source_ids": [
+      "src_bridge_act_1848"
+    ],
+    "summary": "A Maine act established the North Haven Bridge Company and authorized a toll bridge over the head of Pulpit Harbor from Enos Cooper’s land to land belonging to James and Josiah Beverage. The law required a bridge at least twelve feet wide and a draw to allow vessels to pass. The act proves the property relationship and proposed infrastructure; it does not by itself prove that the bridge was ultimately built.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_harold_carpathia_wireless_1912__north_haven_me__wireless_experiments__1912",
+    "subject_type": "event",
+    "subject_id": "event_harold_carpathia_wireless_1912",
+    "place_id": "north_haven_me",
+    "relation": "wireless_experiments",
+    "category": "engineering",
+    "date_from": "1912",
+    "date_to": "1912",
+    "date_precision": "year",
+    "source_ids": [
+      "src_ieee_harold"
+    ],
+    "summary": "IEEE’s institutional biography reports that Harold Beverage, already experimenting with a homemade wireless station as a teenager, picked up signals from Carpathia, the ship that rescued survivors of the Titanic disaster. The episode foreshadowed the long-distance radio work that later made his name internationally known.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_harold_h_beverage_1893__north_haven_me__wireless_experiments__1912",
+    "subject_type": "person",
+    "subject_id": "harold_h_beverage_1893",
+    "place_id": "north_haven_me",
+    "relation": "wireless_experiments",
+    "category": "engineering",
+    "date_from": "1912",
+    "date_to": "1912",
+    "date_precision": "year",
+    "source_ids": [
+      "src_ieee_harold"
+    ],
+    "summary": "IEEE’s institutional biography reports that Harold Beverage, already experimenting with a homemade wireless station as a teenager, picked up signals from Carpathia, the ship that rescued survivors of the Titanic disaster. The episode foreshadowed the long-distance radio work that later made his name internationally known.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_harold_umaine_graduation_1915__orono_me__education__1915",
+    "subject_type": "event",
+    "subject_id": "event_harold_umaine_graduation_1915",
+    "place_id": "orono_me",
+    "relation": "education",
+    "category": "education",
+    "date_from": "1915",
+    "date_to": "1915",
+    "date_precision": "year",
+    "source_ids": [
+      "src_ieee_harold"
+    ],
+    "summary": "Harold H. Beverage completed his electrical-engineering degree at the University of Maine in 1915 before beginning his engineering career with General Electric.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_harold_h_beverage_1893__orono_me__education__1915",
+    "subject_type": "person",
+    "subject_id": "harold_h_beverage_1893",
+    "place_id": "orono_me",
+    "relation": "education",
+    "category": "education",
+    "date_from": "1915",
+    "date_to": "1915",
+    "date_precision": "year",
+    "source_ids": [
+      "src_ieee_harold"
+    ],
+    "summary": "Harold H. Beverage completed his electrical-engineering degree at the University of Maine in 1915 before beginning his engineering career with General Electric.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_james_topsham_first_town_meeting_1764__topsham_me__town_office__1764_05_09",
+    "subject_type": "event",
+    "subject_id": "event_james_topsham_first_town_meeting_1764",
+    "place_id": "topsham_me",
+    "relation": "town_office",
+    "category": "civic",
+    "date_from": "1764-05-09",
+    "date_to": "1764-05-09",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_topsham_history"
+    ],
+    "summary": "At Topsham’s first town meeting after incorporation, James Beverage was elected hog constable. The office was modest, but the record places the Beveridge/Beverage family inside the first formal municipal government of the town where the family lived before the Fox Islands generation.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_james_beveridge_jr_1724__topsham_me__town_office__1764_05_09",
+    "subject_type": "person",
+    "subject_id": "james_beveridge_jr_1724",
+    "place_id": "topsham_me",
+    "relation": "town_office",
+    "category": "civic",
+    "date_from": "1764-05-09",
+    "date_to": "1764-05-09",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_topsham_history"
+    ],
+    "summary": "At Topsham’s first town meeting after incorporation, James Beverage was elected hog constable. The office was modest, but the record places the Beveridge/Beverage family inside the first formal municipal government of the town where the family lived before the Fox Islands generation.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_orris_colby_hallowell_1887__waterville_me__college_education__1887",
+    "subject_type": "event",
+    "subject_id": "event_orris_colby_hallowell_1887",
+    "place_id": "waterville_me",
+    "relation": "college_education",
+    "category": "education",
+    "date_from": "1887",
+    "date_to": "1887",
+    "date_precision": "year",
+    "source_ids": [
+      "src_colby_catalogue_1887"
+    ],
+    "summary": "Colby University’s 1887 catalogue places Orris Lyford Beverage in the graduating class and identifies him as principal of the high school at Hallowell, documenting the start of the education career later associated with him.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_orris_beverage_1860__waterville_me__college_education__1887",
+    "subject_type": "person",
+    "subject_id": "orris_beverage_1860",
+    "place_id": "waterville_me",
+    "relation": "college_education",
+    "category": "education",
+    "date_from": "1887",
+    "date_to": "1887",
+    "date_precision": "year",
+    "source_ids": [
+      "src_colby_catalogue_1887"
+    ],
+    "summary": "Colby University’s 1887 catalogue places Orris Lyford Beverage in the graduating class and identifies him as principal of the high school at Hallowell, documenting the start of the education career later associated with him.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_orris_colby_hallowell_1887__hallowell_me__school_principal__1887",
+    "subject_type": "event",
+    "subject_id": "event_orris_colby_hallowell_1887",
+    "place_id": "hallowell_me",
+    "relation": "school_principal",
+    "category": "education",
+    "date_from": "1887",
+    "date_to": "1887",
+    "date_precision": "year",
+    "source_ids": [
+      "src_colby_catalogue_1887"
+    ],
+    "summary": "Colby University’s 1887 catalogue places Orris Lyford Beverage in the graduating class and identifies him as principal of the high school at Hallowell, documenting the start of the education career later associated with him.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_orris_beverage_1860__hallowell_me__school_principal__1887",
+    "subject_type": "person",
+    "subject_id": "orris_beverage_1860",
+    "place_id": "hallowell_me",
+    "relation": "school_principal",
+    "category": "education",
+    "date_from": "1887",
+    "date_to": "1887",
+    "date_precision": "year",
+    "source_ids": [
+      "src_colby_catalogue_1887"
+    ],
+    "summary": "Colby University’s 1887 catalogue places Orris Lyford Beverage in the graduating class and identifies him as principal of the high school at Hallowell, documenting the start of the education career later associated with him.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_frank_pulpit_harbor_auction_1927__pulpit_harbor_me__advertised_auction__1927_08_24",
+    "subject_type": "event",
+    "subject_id": "event_frank_pulpit_harbor_auction_1927",
+    "place_id": "pulpit_harbor_me",
+    "relation": "advertised_auction",
+    "category": "occupation",
+    "date_from": "1927-08-24",
+    "date_to": "1927-08-24",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_pulpit_auction_1927"
+    ],
+    "summary": "A July 30 newspaper advertisement names Frank Beverage as auctioneer for a planned August 24 property sale at Pulpit Harbor. The harbor marker does not locate the homestead or establish completion of the sale.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_frank_beverage_1861__pulpit_harbor_me__advertised_auction__1927_08_24",
+    "subject_type": "person",
+    "subject_id": "frank_beverage_1861",
+    "place_id": "pulpit_harbor_me",
+    "relation": "advertised_auction",
+    "category": "occupation",
+    "date_from": "1927-08-24",
+    "date_to": "1927-08-24",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_pulpit_auction_1927"
+    ],
+    "summary": "A July 30 newspaper advertisement names Frank Beverage as auctioneer for a planned August 24 property sale at Pulpit Harbor. The harbor marker does not locate the homestead or establish completion of the sale.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_frank_kenyon_sheppard_petition_1912__north_haven_me__petitioning_community__1912",
+    "subject_type": "event",
+    "subject_id": "event_frank_kenyon_sheppard_petition_1912",
+    "place_id": "north_haven_me",
+    "relation": "petitioning_community",
+    "category": "civic",
+    "date_from": "1912",
+    "date_to": "1912",
+    "date_precision": "year",
+    "source_ids": [
+      "src_congress_petition_1912"
+    ],
+    "summary": "The Congressional Record lists Frank Beverage and other North Haven residents among petitioners asking Congress to pass the Kenyon-Sheppard interstate liquor bill, showing direct participation in a nationally contested Progressive Era policy issue.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_frank_beverage_1861__north_haven_me__petitioning_community__1912",
+    "subject_type": "person",
+    "subject_id": "frank_beverage_1861",
+    "place_id": "north_haven_me",
+    "relation": "petitioning_community",
+    "category": "civic",
+    "date_from": "1912",
+    "date_to": "1912",
+    "date_precision": "year",
+    "source_ids": [
+      "src_congress_petition_1912"
+    ],
+    "summary": "The Congressional Record lists Frank Beverage and other North Haven residents among petitioners asking Congress to pass the Kenyon-Sheppard interstate liquor bill, showing direct participation in a nationally contested Progressive Era policy issue.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_frank_water_bonds_treasurer_1926__north_haven_me__town_treasurer__1926_08_23",
+    "subject_type": "event",
+    "subject_id": "event_frank_water_bonds_treasurer_1926",
+    "place_id": "north_haven_me",
+    "relation": "town_treasurer",
+    "category": "civic",
+    "date_from": "1926-08-23",
+    "date_to": "1926-08-23",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_water_bonds_1926"
+    ],
+    "summary": "A contemporary Courier-Gazette notice signed by Frank Beverage as North Haven treasurer called a numbered group of municipal water-loan bonds for payment effective September 1, 1926. The notice documents his responsibility for the town’s public finance and water infrastructure debt.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_frank_beverage_1861__north_haven_me__town_treasurer__1926_08_23",
+    "subject_type": "person",
+    "subject_id": "frank_beverage_1861",
+    "place_id": "north_haven_me",
+    "relation": "town_treasurer",
+    "category": "civic",
+    "date_from": "1926-08-23",
+    "date_to": "1926-08-23",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_water_bonds_1926"
+    ],
+    "summary": "A contemporary Courier-Gazette notice signed by Frank Beverage as North Haven treasurer called a numbered group of municipal water-loan bonds for payment effective September 1, 1926. The notice documents his responsibility for the town’s public finance and water infrastructure debt.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "event_event_samuel_signal_corps_deployment_1942__new_york_ny__military_departure__1942_07_16",
+    "subject_type": "event",
+    "subject_id": "event_samuel_signal_corps_deployment_1942",
+    "place_id": "new_york_ny",
+    "relation": "military_departure",
+    "category": "military",
+    "date_from": "1942-07-16",
+    "date_to": "1942-07-16",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_samuel_obituary"
+    ],
+    "summary": "Samuel’s obituary gives New York as his departure point on July 16, 1942. The pier and exact embarkation site are unknown; overseas service locations are not inferred from this marker.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_samuel_hiram_beverage_1917__new_york_ny__military_departure__1942_07_16",
+    "subject_type": "person",
+    "subject_id": "samuel_hiram_beverage_1917",
+    "place_id": "new_york_ny",
+    "relation": "military_departure",
+    "category": "military",
+    "date_from": "1942-07-16",
+    "date_to": "1942-07-16",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_samuel_obituary"
+    ],
+    "summary": "Samuel’s obituary gives New York as his departure point on July 16, 1942. The pier and exact embarkation site are unknown; overseas service locations are not inferred from this marker.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_samuel_north_haven_historical_society_1973__north_haven_me__historical_preservation__1973",
+    "subject_type": "event",
+    "subject_id": "event_samuel_north_haven_historical_society_1973",
+    "place_id": "north_haven_me",
+    "relation": "historical_preservation",
+    "category": "community",
+    "date_from": "1973",
+    "date_to": "1973",
+    "date_precision": "year",
+    "source_ids": [
+      "src_samuel_obituary"
+    ],
+    "summary": "After retiring back to North Haven in 1973, Samuel Hiram Beverage worked with Lewis and Ida Haskell in efforts that his obituary credits as instrumental in establishing the North Haven Historical Society, linking his later life directly to preservation of island history.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_samuel_hiram_beverage_1917__north_haven_me__historical_preservation__1973",
+    "subject_type": "person",
+    "subject_id": "samuel_hiram_beverage_1917",
+    "place_id": "north_haven_me",
+    "relation": "historical_preservation",
+    "category": "community",
+    "date_from": "1973",
+    "date_to": "1973",
+    "date_precision": "year",
+    "source_ids": [
+      "src_samuel_obituary"
+    ],
+    "summary": "After retiring back to North Haven in 1973, Samuel Hiram Beverage worked with Lewis and Ida Haskell in efforts that his obituary credits as instrumental in establishing the North Haven Historical Society, linking his later life directly to preservation of island history.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_john_miller_guatemala_mission_1953__guatemala__missionary_service__1953",
+    "subject_type": "event",
+    "subject_id": "event_john_miller_guatemala_mission_1953",
+    "place_id": "guatemala",
+    "relation": "missionary_service",
+    "category": "religion",
+    "date_from": "1953",
+    "date_to": "1972",
+    "date_precision": "year",
+    "source_ids": [
+      "src_john_miller_obituary"
+    ],
+    "summary": "John Miller Beverage served as a missionary in Guatemala from 1953 until 1972. Only the country is established in the cited obituary; no mission settlement is identified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_john_miller_beverage_1927__guatemala__missionary_service__1953",
+    "subject_type": "person",
+    "subject_id": "john_miller_beverage_1927",
+    "place_id": "guatemala",
+    "relation": "missionary_service",
+    "category": "religion",
+    "date_from": "1953",
+    "date_to": "1972",
+    "date_precision": "year",
+    "source_ids": [
+      "src_john_miller_obituary"
+    ],
+    "summary": "John Miller Beverage served as a missionary in Guatemala from 1953 until 1972. Only the country is established in the cited obituary; no mission settlement is identified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "event_event_birth_sarah_beveridge_1727__marblehead_ma__birth__1727_06_01",
+    "subject_type": "event",
+    "subject_id": "event_birth_sarah_beveridge_1727",
+    "place_id": "marblehead_ma",
+    "relation": "birth",
+    "category": "birth",
+    "date_from": "1727-06-01",
+    "date_to": "1727-06-01",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_marblehead_vitals"
+    ],
+    "summary": "The published town vital records identify Sarah’s June 1, 1727 birth in Marblehead.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_sarah_beveridge_1727__marblehead_ma__birth__1727_06_01",
+    "subject_type": "person",
+    "subject_id": "sarah_beveridge_1727",
+    "place_id": "marblehead_ma",
+    "relation": "birth",
+    "category": "birth",
+    "date_from": "1727-06-01",
+    "date_to": "1727-06-01",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_marblehead_vitals"
+    ],
+    "summary": "The published town vital records identify Sarah’s June 1, 1727 birth in Marblehead.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_james_beveridge_jr_1724__marblehead_ma__birth__1724_08_27",
+    "subject_type": "person",
+    "subject_id": "james_beveridge_jr_1724",
+    "place_id": "marblehead_ma",
+    "relation": "birth",
+    "category": "birth",
+    "date_from": "1724-08-27",
+    "date_to": "1724-08-27",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_marblehead_vitals"
+    ],
+    "summary": "Town vital-record transcription documents James, child of James and Sarah, born August 27, 1724.",
+    "evidence_level": "verified",
+    "notes": []
+  },
+  {
+    "id": "person_john_miller_beverage_1927__dallas_tx__seminary_education__1953",
+    "subject_type": "person",
+    "subject_id": "john_miller_beverage_1927",
+    "place_id": "dallas_tx",
+    "relation": "seminary_education",
+    "category": "education",
+    "date_from": "1953",
+    "date_to": "1953",
+    "date_precision": "year",
+    "source_ids": [
+      "src_john_miller_obituary"
+    ],
+    "summary": "Graduated from Dallas Theological Seminary in 1953.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_john_miller_beverage_1927__dallas_tx__seminary_work__1972",
+    "subject_type": "person",
+    "subject_id": "john_miller_beverage_1927",
+    "place_id": "dallas_tx",
+    "relation": "seminary_work",
+    "category": "occupation",
+    "date_from": "1972",
+    "date_to": "1992",
+    "date_precision": "year",
+    "source_ids": [
+      "src_john_miller_obituary"
+    ],
+    "summary": "Served on the Dallas Seminary staff from 1972 until retirement in 1992, working in admissions and library service.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_hartley_george_beverage_sr_1927__camden_me__birth__1927_05_28",
+    "subject_type": "person",
+    "subject_id": "hartley_george_beverage_sr_1927",
+    "place_id": "camden_me",
+    "relation": "birth",
+    "category": "birth",
+    "date_from": "1927-05-28",
+    "date_to": "1927-05-28",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_hartley_obituary"
+    ],
+    "summary": "Obituary records his birth in Camden on May 28, 1927.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_hartley_george_beverage_sr_1927__hope_me__schooling__undated",
+    "subject_type": "person",
+    "subject_id": "hartley_george_beverage_sr_1927",
+    "place_id": "hope_me",
+    "relation": "schooling",
+    "category": "education",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_hartley_obituary"
+    ],
+    "summary": "Grew up and attended school in Hope; attendance years are not specified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_hartley_george_beverage_sr_1927__union_me__community_service__undated",
+    "subject_type": "person",
+    "subject_id": "hartley_george_beverage_sr_1927",
+    "place_id": "union_me",
+    "relation": "community_service",
+    "category": "community",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_hartley_obituary"
+    ],
+    "summary": "Union Fire Department service and leadership in the Union Grange and Masonic lodge; service dates unspecified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_hartley_george_beverage_sr_1927__rockland_me__employment__undated",
+    "subject_type": "person",
+    "subject_id": "hartley_george_beverage_sr_1927",
+    "place_id": "rockland_me",
+    "relation": "employment",
+    "category": "occupation",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_hartley_obituary"
+    ],
+    "summary": "Worked at Shaw’s in Rockland after his retirement as a weaver. Exact employment years are not given.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_florence_adele_pearse_beverage_1927__union_me__employment__undated",
+    "subject_type": "person",
+    "subject_id": "florence_adele_pearse_beverage_1927",
+    "place_id": "union_me",
+    "relation": "employment",
+    "category": "occupation",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_florence_obituary"
+    ],
+    "summary": "Worked at the Union Upholstery Shop; employment dates unspecified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_florence_adele_pearse_beverage_1927__waldoboro_me__employment__undated",
+    "subject_type": "person",
+    "subject_id": "florence_adele_pearse_beverage_1927",
+    "place_id": "waldoboro_me",
+    "relation": "employment",
+    "category": "occupation",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_florence_obituary"
+    ],
+    "summary": "Worked at GTE Sylvania in Waldoboro; employment dates unspecified.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_estelle_nettie_beverage_libby_1922__hope_me__schooling__undated",
+    "subject_type": "person",
+    "subject_id": "estelle_nettie_beverage_libby_1922",
+    "place_id": "hope_me",
+    "relation": "schooling",
+    "category": "education",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_estelle_obituary"
+    ],
+    "summary": "Attended the one-room Hope Corner school; exact attendance years are not given.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_estelle_nettie_beverage_libby_1922__camden_me__school_graduation__1941",
+    "subject_type": "person",
+    "subject_id": "estelle_nettie_beverage_libby_1922",
+    "place_id": "camden_me",
+    "relation": "school_graduation",
+    "category": "education",
+    "date_from": "1941",
+    "date_to": "1941",
+    "date_precision": "year",
+    "source_ids": [
+      "src_estelle_obituary"
+    ],
+    "summary": "Graduated from Camden High School in 1941.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_petronele_jurgeliute_beverage_1898__shenandoah_pa__birth__1898_09_29",
+    "subject_type": "person",
+    "subject_id": "petronele_jurgeliute_beverage_1898",
+    "place_id": "shenandoah_pa",
+    "relation": "birth",
+    "category": "birth",
+    "date_from": "1898-09-29",
+    "date_to": "1898-09-29",
+    "date_precision": "exact",
+    "source_ids": [
+      "src_petronele_notice_1979"
+    ],
+    "summary": "Merged contemporary newspaper research records her birth in Shenandoah on September 29, 1898.",
+    "evidence_level": "strongly_supported",
+    "notes": []
+  },
+  {
+    "id": "person_albert_lewis_beverage_1888__fuller_cemetery_me__burial_index__undated",
+    "subject_type": "person",
+    "subject_id": "albert_lewis_beverage_1888",
+    "place_id": "fuller_cemetery_me",
+    "relation": "burial_index",
+    "category": "burial",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_fuller_index"
+    ],
+    "summary": "Compiled cemetery index associates this established deceased profile with Fuller Cemetery. Corroboration only; burial date and plot are not established.",
+    "evidence_level": "corroboration",
+    "notes": []
+  },
+  {
+    "id": "person_elston_albert_beverage_1916__fuller_cemetery_me__burial_index__undated",
+    "subject_type": "person",
+    "subject_id": "elston_albert_beverage_1916",
+    "place_id": "fuller_cemetery_me",
+    "relation": "burial_index",
+    "category": "burial",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_fuller_index"
+    ],
+    "summary": "Compiled cemetery index associates this established deceased profile with Fuller Cemetery. Corroboration only; burial date and plot are not established.",
+    "evidence_level": "corroboration",
+    "notes": []
+  },
+  {
+    "id": "person_george_dewey_beverage_1898__fuller_cemetery_me__burial_index__undated",
+    "subject_type": "person",
+    "subject_id": "george_dewey_beverage_1898",
+    "place_id": "fuller_cemetery_me",
+    "relation": "burial_index",
+    "category": "burial",
+    "date_from": null,
+    "date_to": null,
+    "date_precision": "unknown",
+    "source_ids": [
+      "src_fuller_index"
+    ],
+    "summary": "Compiled cemetery index associates this established deceased profile with Fuller Cemetery. Corroboration only; burial date and plot are not established.",
+    "evidence_level": "corroboration",
+    "notes": []
+  }
+]
