@@ -294,6 +294,10 @@ def render_media_page() -> None:
     collection = load_collection()
     st.title("Photographs & Documents")
     st.write("Explore archival items and read historical records. We display original image files only when reuse rights and source identification are established.")
+    with st.container(border=True):
+        st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
+        st.write("Explore all 305 original pages, including 103 indexed photographic, map and illustration pages, with author credits and their printed captions.")
+        route_link("Open the complete book and its visual collection", "?page=family-books")
     images_tab, documents_tab = st.tabs(["Historical image catalog", "Historical documents"])
     with images_tab:
         search = st.text_input("Search images, captions, people or places", key="media_search").strip()
