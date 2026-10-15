@@ -1,0 +1,153 @@
+[
+  {
+    "source_id": "CRS001",
+    "url": "https://archive.org/details/vitalrecordsofed00edgar/page/29/mode/1up",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://archive.org/details/vitalrecordsofed00edgar/page/29/mode/1up"
+  },
+  {
+    "source_id": "CRS002",
+    "url": "https://archive.org/details/cu31924092204308/page/n37/mode/1up",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://archive.org/details/cu31924092204308/page/n37/mode/1up"
+  },
+  {
+    "source_id": "CRS003",
+    "url": "https://www.columbia.edu/cu/lweb/digital/collections/cul/texts/ldpd_5949068_000/pages/ldpd_5949068_000_00000045.html",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": "HTTP Error 403: Forbidden"
+  },
+  {
+    "source_id": "CRS004",
+    "url": "https://www.thecrimson.com/article/1934/5/21/name-recipients-of-31-fellowships-and/",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": "HTTP Error 403: Forbidden"
+  },
+  {
+    "source_id": "CRS005",
+    "url": "https://ancestors.familysearch.org/en/MF45-BHM/theodore-e.-beverage-1855-1874",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://ancestors.familysearch.org/en/MF45-BHM/theodore-e.-beverage-1855-1874"
+  },
+  {
+    "source_id": "SRC001",
+    "url": "https://github.com/csully1234/Beverage-Family/tree/4e3d4860d3c8d9ae9cbcb19567dafa17e1a93db1",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://github.com/csully1234/Beverage-Family/tree/4e3d4860d3c8d9ae9cbcb19567dafa17e1a93db1"
+  },
+  {
+    "source_id": "SRC089",
+    "url": "https://www.northhavenmainehistoricalsociety.org/cemetery-records.html",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/cemetery-records.html"
+  },
+  {
+    "source_id": "SRC090",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/fuller_cemetery.pdf",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/fuller_cemetery.pdf"
+  },
+  {
+    "source_id": "SRC091",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/seaview_cemetery.pdf",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/seaview_cemetery.pdf"
+  },
+  {
+    "source_id": "SRC092",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/kent_cemetery.pdf",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/kent_cemetery.pdf"
+  },
+  {
+    "source_id": "SRC116",
+    "url": "https://www.northhavenmainehistoricalsociety.org/islebuilt-boats.html",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/islebuilt-boats.html"
+  },
+  {
+    "source_id": "SRC119",
+    "url": "https://archive.org/details/essexantiquarian09perluoft",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://archive.org/details/essexantiquarian09perluoft"
+  },
+  {
+    "source_id": "SRC121",
+    "url": "https://archive.org/details/historyofdoggett00indogg",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://archive.org/details/historyofdoggett00indogg"
+  },
+  {
+    "source_id": "SRC123",
+    "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage"
+  },
+  {
+    "source_id": "SRC125",
+    "url": "https://wilfordwoodruffpapers.org/subjects/benjamin-kent",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://wilfordwoodruffpapers.org/subjects/benjamin-kent"
+  },
+  {
+    "source_id": "SRC129",
+    "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf"
+  },
+  {
+    "source_id": "NHHS-contact",
+    "url": "https://www.northhavenmainehistoricalsociety.org/contact.html",
+    "checked_on": "2026-10-15",
+    "method": "HEAD",
+    "meaning": "Transport check only; source examination is recorded separately in the ledger.",
+    "status": 200,
+    "final_url": "https://www.northhavenmainehistoricalsociety.org/contact.html"
+  }
+]
