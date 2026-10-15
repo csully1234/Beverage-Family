@@ -1302,6 +1302,23 @@ def build_family_graph(
     return graph
 
 
+def available_generations(relationships, focus_id: str, view: str) -> int:
+    """Maximum documented distance from a focus, without following cycles."""
+    kinds = ("parents", "children") if view == "Both" else (("parents",) if view == "Ancestors" else ("children",))
+    if view == "Immediate family":
+        return 1
+    maximum = 0
+    for kind in kinds:
+        stack = [(focus_id, 0, frozenset({focus_id}))]
+        while stack:
+            person_id, depth, seen = stack.pop()
+            maximum = max(maximum, depth)
+            for relative in relationships[kind].get(person_id, set()):
+                if relative not in seen:
+                    stack.append((relative, depth + 1, seen | {relative}))
+    return max(1, maximum)
+
+
 def render_tree_page(
     data: dict[str, list[Record]],
     people_by_id: Mapping[str, Record],
@@ -1334,8 +1351,16 @@ def render_tree_page(
             ("Ancestors", "Descendants", "Both", "Immediate family"),
             index=2,
         )
+    maximum = available_generations(relationships, focus_id, view)
+    tree_context = (focus_id, view)
+    if st.session_state.get("_tree_depth_context") != tree_context:
+        st.session_state["tree_depth"] = maximum
+        st.session_state["_tree_depth_context"] = tree_context
+    elif st.session_state.get("tree_depth", maximum) > maximum:
+        st.session_state["tree_depth"] = maximum
     with depth:
-        generations = st.slider("Generations", 1, 8, 4, disabled=view == "Immediate family")
+        generations = st.slider("Generations", 1, maximum, key="tree_depth", disabled=view == "Immediate family")
+    st.caption(f"Showing up to {generations} of {maximum} documented generation steps for this person and view.")
 
     st.caption("Prefer a readable list? Open the profile’s Family tab for linked relatives. Recorded links can include unresolved research questions.")
     render_profile_review(focus_id, load_collection(), people_by_id)
