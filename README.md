@@ -181,3 +181,46 @@ These are evidence-reviewed proposals, **not family approval**.
 Read the [evidence review and source register](research/conflict_review_2026-10-15/README.md),
 [unsent retrieval requests](research/conflict_review_2026-10-15/retrieval_requests.md),
 and [verification report](research/conflict_review_2026-10-15/verification.md).
+
+### Museum-style family exploration (draft PR #11, 15 October 2026)
+
+Six navigation groups are retained. The **Stories & Discoveries** page contains
+six grounded, linked narratives. The **People** directory defaults to surname
+A–Z, with first-name and chronological sort choices also available in the
+individual profile selector. Profile pages display core family relationships
+above the existing detailed tabs.
+
+The **Full Family Map** opens around a selected person, with an adjustable
+one- to four-step relative neighborhood, a separate whole-family overview,
+and a synchronized selected-person dropdown when clicking tree nodes.
+The focused tree initializes with the maximum documented depth for the chosen
+relative/direction and permits reducing that depth.
+
+The **Complete Family Timeline** combines:
+- Existing events and profile birth, baptism, and death records.
+- All 57 research findings, including probable, disputed and possible leads.
+- Additional research notes, historical place connections, source records,
+  archival photo/scan/object descriptions, family stories and documents.
+- An undated category for leads without a defensible historical year.
+
+Each chronology entry identifies the *type of date*: event, archival record,
+research-associated date, historical connection, publication or story period.
+A source's publication year does not establish when its contents happened;
+research confidence affects a label and interpretation, never inclusion.
+
+**Photographs & Documents** allows local original scans only with documented
+rights and matching item identifiers (see `static/approved_media/README.md`).
+External holdings are linked and can appear in in-page previews where the
+archive permits them. The 1786 Thomas Beverage dossier has a linked document
+reader with an annotated summary, scanned-page source links and a brief
+transcribed excerpt; it does not falsely claim to hold a complete original
+handwritten affidavit or original photographs without obtaining scans.
+
+**Security before deployment:** The repository remains public and presently
+contains the legacy family-password fallback in `app.py`. Do not publish
+sensitive living-family information in public source files. Configure a
+deployment-managed secret, rotate previously exposed credentials and verify
+production access before disabling the fallback; removing it first might
+lock out the live website. No visibility, credentials or production settings
+are changed in this draft. Automated CI and a production-browser check should
+both pass before the PR is merged.

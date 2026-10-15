@@ -16,6 +16,8 @@ import streamlit as st
 from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
+from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS, surname_first_label
+from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from archive import ArchiveIndex
 from archive_ui import (
@@ -78,6 +80,9 @@ PAGE_SLUGS = {
     "Research Desk": "research",
     "Research Collection": "collection",
     "Sources & Method": "sources",
+    "Stories & Discoveries": "stories",
+    "Photographs & Documents": "media",
+    "Document Reader": "documents",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
 NAV_GROUPS = {
@@ -85,8 +90,8 @@ NAV_GROUPS = {
     "Search": ["Search"],
     "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
     "Places": ["Historical Places", "Historical Map"],
-    "Archive": ["Source Archive", "Sources & Method"],
-    "Research": ["Research Collection", "Research Desk"],
+    "Archive": ["Photographs & Documents", "Document Reader", "Source Archive", "Sources & Method"],
+    "Research": ["Stories & Discoveries", "Research Collection", "Research Desk"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
 
@@ -566,7 +571,7 @@ def sync_profile_route() -> None:
 
 
 def sorted_people(people: list[Record]) -> list[Record]:
-    return sorted(people, key=person_sort_key)
+    return order_people(people)
 
 
 def person_name(people_by_id: Mapping[str, Record], person_id: str) -> str:
@@ -608,7 +613,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             format_func=lambda person_id: (
                 "Choose a person…"
                 if person_id is None
-                else person_name(people_by_id, person_id) + " · " + life_span(people_by_id[person_id])
+                else surname_first_label(people_by_id[person_id]) + " · " + life_span(people_by_id[person_id])
             ),
             key="sidebar_person_lookup",
         )
@@ -657,9 +662,9 @@ def render_home(
         ("Find a relative", "Search names, nicknames and spelling variants.", "?page=search"),
         ("Explore the family", "Follow parents, spouses and children.", "?page=tree"),
         ("Explore a place", "Visit the places behind family stories.", "?page=places"),
-        ("Photographs & documents", "Find authentic images and their original collections.", "?page=collection&view=Images"),
+        ("Photographs & documents", "Browse original sources and historical image records.", "?page=media"),
         ("Read the family timeline", "Follow people and events through time.", "?page=timeline"),
-        ("What's new in the research", "See what the evidence clarifies and what remains open.", "?page=collection&view=Conflict%20review"),
+        ("Discover family stories", "Explore remarkable people, places and discoveries.", "?page=stories"),
     ]
     for row in (actions[:3], actions[3:]):
         for col, (label, description, url) in zip(st.columns(3), row):
@@ -683,7 +688,7 @@ def render_home(
             "Search the profile index",
             options=person_ids,
             format_func=lambda person_id: (
-                f"{person_name(people_by_id, person_id)} · "
+                f"{surname_first_label(people_by_id[person_id])} · "
                 f"{life_span(people_by_id[person_id])}"
             ),
             key="home_person_lookup",
@@ -864,6 +869,25 @@ def render_person_profile(
         else:
             st.write("No death record entered")
 
+    # Give visitors the important family connections before research terminology.
+    close_relatives = (("Parents", "parents"), ("Spouses", "spouses"), ("Children", "children"))
+    st.markdown("**Family at a glance**")
+    summary_cols = st.columns(3)
+    for column, (heading, relation) in zip(summary_cols, close_relatives):
+        ids = sorted(relationships[relation].get(person_id, set()),
+                     key=lambda pid: person_name(people_by_id, pid).casefold())
+        with column.container(border=True):
+            st.caption(heading)
+            if not ids:
+                st.caption("Not recorded")
+            for pid in ids[:3]:
+                route_link(person_name(people_by_id,pid),
+                           person_url(pid)) if pid in people_by_id else st.caption("Unresolved family record")
+            if len(ids) > 3:
+                st.caption(f"+{len(ids)-3} more in the Family tab")
+    route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
+    route_link("View all records in the timeline", "?page=timeline")
+
     if person.get("baptism_date"):
         route_markdown("**Baptized**")
         st.write(format_date(person["baptism_date"]) + " — " + person.get("baptism_place", "Unknown"))
@@ -915,7 +939,7 @@ def render_person_profile(
             render_event_card(event, people_by_id, compact=True)
         if len(person_events) > 8:
             st.caption(f"{len(person_events) - 8} additional records are available on the Timeline page.")
-        render_context("person", person_id, people_by_id, strong_only=True)
+        render_context("person", person_id, people_by_id, strong_only=False)
 
     with family_tab:
         relation_columns = st.columns(2)
@@ -1011,6 +1035,10 @@ def render_people_page(
     st.title("People")
     st.write("Search the complete profile index, then move directly through connected relatives and records.")
 
+    if not get_query_value("profile"):
+        render_people_directory(data["people"], people_by_id)
+        return
+
     if "return_q" in st.query_params or "return_where" in st.query_params:
         back = "?" + urlencode({"page": "search", "q": st.query_params.get("return_q", ""),
                                 "where": st.query_params.get("return_where", ""),
@@ -1018,7 +1046,8 @@ def render_people_page(
         route_link("← Back to your search results", back)
     if get_query_value("profile") and get_query_value("profile") not in people_by_id:
         st.warning("That profile was not found. Choose a relative below or search by name.")
-    ordered = sorted_people(data["people"])
+    sort_order = st.selectbox("People dropdown order", SORT_OPTIONS, key="profile_order")
+    ordered = order_people(data["people"], sort_order)
     person_ids = [str(person["id"]) for person in ordered]
     query_profile = get_query_value("profile")
     if query_profile in person_ids and st.session_state.get("_last_query_profile") != query_profile:
@@ -1032,7 +1061,7 @@ def render_people_page(
         "Find a person",
         options=person_ids,
         format_func=lambda person_id: (
-            f"{person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
+            f"{surname_first_label(people_by_id[person_id]) if sort_order == 'Surname A–Z' else person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
         ),
         key="profile_selector",
         on_change=sync_profile_route,
@@ -1293,6 +1322,25 @@ def build_family_graph(
     return graph
 
 
+def available_generations(relationships, focus_id: str, view: str) -> int:
+    """Farthest *recorded* relative in the selected direction; cycles are ignored."""
+    kinds = ("parents", "children") if view == "Both" else (("parents",) if view == "Ancestors" else ("children",))
+    if view == "Immediate family":
+        return 1
+    maximum = 0
+    for kind in kinds:
+        frontier = [(focus_id, 0)]
+        visited = {focus_id}
+        while frontier:
+            node, steps = frontier.pop(0)
+            maximum = max(maximum, steps)
+            for relative in relationships[kind].get(node, set()):
+                if relative not in visited:
+                    visited.add(relative)
+                    frontier.append((relative, steps + 1))
+    return max(1, maximum)
+
+
 def render_tree_page(
     data: dict[str, list[Record]],
     people_by_id: Mapping[str, Record],
@@ -1316,7 +1364,7 @@ def render_tree_page(
         focus_id = st.selectbox(
             "Center person",
             options=person_ids,
-            format_func=lambda person_id: person_name(people_by_id, person_id),
+            format_func=lambda person_id: surname_first_label(people_by_id[person_id]),
             key="tree_person",
         )
     with mode:
@@ -1325,8 +1373,20 @@ def render_tree_page(
             ("Ancestors", "Descendants", "Both", "Immediate family"),
             index=2,
         )
+    maximum = available_generations(relationships, focus_id, view)
+    tree_context = (focus_id, view)
+    if st.session_state.get("_tree_depth_context") != tree_context:
+        st.session_state["tree_depth"] = maximum
+        st.session_state["_tree_depth_context"] = tree_context
+    elif st.session_state.get("tree_depth", maximum) > maximum:
+        st.session_state["tree_depth"] = maximum
     with depth:
-        generations = st.slider("Generations", 1, 8, 4, disabled=view == "Immediate family")
+        if maximum <= 1 or view == "Immediate family":
+            generations = 1
+            st.caption("One recorded step")
+        else:
+            generations = st.slider("Generations", 1, maximum, key="tree_depth")
+    st.caption(f"Showing up to {generations} of {maximum} documented generation steps for this person and view.")
 
     st.caption("Prefer a readable list? Open the profile’s Family tab for linked relatives. Recorded links can include unresolved research questions.")
     render_profile_review(focus_id, load_collection(), people_by_id)
@@ -1430,24 +1490,7 @@ def render_full_tree_page(
 
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
-    profile_picker, profile_action = st.columns([3, 1])
-    with profile_picker:
-        selected_profile = st.selectbox(
-            "Open a profile from the full map",
-            options=person_ids,
-            format_func=lambda person_id: (
-                f"{person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
-            ),
-            key="full_map_profile_selector",
-        )
-    with profile_action:
-        st.write("")
-        st.button(
-            "Open selected profile",
-            on_click=open_profile,
-            args=(selected_profile,),
-            width="stretch",
-        )
+    st.caption("Click a box to select that relative. The full-tree search control, selection and profile link stay synchronized inside the map.")
 
     controls, note = st.columns([1, 3])
     with controls:
@@ -1463,9 +1506,9 @@ def render_full_tree_page(
             "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
         )
 
-    st.caption("For a phone-friendly list of relatives, open a profile above and choose Family. Lines show recorded relationships, including those still under review.")
+    st.caption("For a phone-friendly list, use People → Family. The graph has its own synchronized selection and profile shortcut.")
     st.iframe(
-        build_full_tree_html(people_by_id, relationships),
+        build_full_tree_html(people_by_id, relationships, st.session_state.get("tree_person", "")),
         height=820,
     )
 
@@ -1900,13 +1943,19 @@ def main() -> None:
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":
-        render_timeline_page(data["events"], data["people"], people_by_id)
+        render_unified_timeline(data, people_by_id)
     elif page == "Research Desk":
         render_research_page(data, people_by_id)
     elif page == "Research Collection":
         render_collection_page(people_by_id, load_archive().places)
     elif page == "Sources & Method":
         render_sources_page(data, people_by_id)
+    elif page == "Stories & Discoveries":
+        render_stories_page()
+    elif page == "Photographs & Documents":
+        render_media_page()
+    elif page == "Document Reader":
+        render_document_page()
 
     render_footer()
 

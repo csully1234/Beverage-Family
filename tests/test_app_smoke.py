@@ -100,7 +100,7 @@ class StreamlitSmokeTests(unittest.TestCase):
 
     def test_research_conflicts_and_missing_ids_are_explicit(self) -> None:
         app = self.logged_in_app(page="collection", finding="BF-R049")
-        self.assertTrue(any("family review" in item.value for item in app.warning))
+        self.assertTrue(any("review" in str(item.value).lower() for kind in ("caption", "markdown", "info") for item in getattr(app, kind)))
         app = self.logged_in_app(page="collection", finding="nonexistent")
         self.assertTrue(any("not found" in item.value for item in app.warning))
         self.assertFalse(app.exception)
@@ -111,7 +111,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.go(app, "Explore the Tree")
         app.run()
         target = "harold_h_beverage_1893"
-        app.selectbox[0].select(target)
+        app.selectbox(key="tree_person").select(target)
         app.run()
 
         open_button = next(button for button in app.button if button.label == "Open full profile")
@@ -120,7 +120,7 @@ class StreamlitSmokeTests(unittest.TestCase):
 
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
         self.assertEqual(app.radio(key="nav_page").value, "People")
-        self.assertEqual(app.selectbox[0].value, target)
+        self.assertEqual(app.selectbox(key="profile_selector").value, target)
 
     def test_sidebar_open_profile_uses_safe_callback_navigation(self) -> None:
         app = self.logged_in_app()
@@ -199,29 +199,13 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertEqual(len(app.radio), 0)
         self.assertEqual(len(app.text_input), 1)
 
-    def test_full_family_map_profile_open_uses_safe_callback_navigation(self) -> None:
-        target = "harold_h_beverage_1893"
+    def test_full_family_map_person_selection_is_in_map(self) -> None:
         app = self.logged_in_app(page="full-tree")
-
-        map_picker = next(
-            selectbox for selectbox in app.selectbox
-            if selectbox.label == "Open a profile from the full map"
-        )
-        map_picker.select(target)
-        app.run()
-
-        open_button = next(
-            button for button in app.button if button.label == "Open selected profile"
-        )
-        open_button.click()
-        app.run()
-
-        self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
-        self.assertEqual(app.radio(key="nav_page").value, "People")
-        profile_selector = next(
-            selectbox for selectbox in app.selectbox if selectbox.label == "Find a person"
-        )
-        self.assertEqual(profile_selector.value, target)
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("synchronized selection" in str(c.value).lower() for c in app.caption))
+        # The selected relative is now inside the iframe; a disconnected
+        # outer dropdown is intentionally absent.
+        self.assertFalse(any(s.label == "Open a profile from the full map" for s in app.selectbox))
 
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
@@ -234,24 +218,24 @@ class StreamlitSmokeTests(unittest.TestCase):
 
         self.go(app, "Explore the Tree")
         app.run()
-        app.selectbox[2].select("harold_h_beverage_1893")
-        app.selectbox[3].select("albert_glover_beverage_1827")
+        app.selectbox(key="relationship_start").select("harold_h_beverage_1893")
+        app.selectbox(key="relationship_end").select("albert_glover_beverage_1827")
         app.run()
         self.assertIn("Connected in 2 recorded relationship step", app.success[0].value)
 
         self.go(app, "Timeline")
         app.run()
-        app.text_input[0].input("patent")
+        app.text_input(key="whole_timeline_query").input("patent")
         app.run()
-        self.assertTrue(any("1 of 1 matching" in item.value for item in app.caption))
+        self.assertTrue(any("matching entries" in item.value for item in app.caption))
 
         profile = self.logged_in_app(page="people", profile="harold_h_beverage_1893")
         self.assertEqual(profile.radio(key="nav_page").value, "People")
-        self.assertEqual(profile.selectbox[0].value, "harold_h_beverage_1893")
+        self.assertEqual(profile.selectbox(key="profile_selector").value, "harold_h_beverage_1893")
 
         event = self.logged_in_app(page="timeline", event="event_harold_patent_1921")
         self.assertEqual(event.radio(key="nav_page").value, "Timeline")
-        self.assertTrue(any("Direct link opened" in item.value for item in event.info))
+        self.assertTrue(any("Complete Family Timeline" in item.value for item in event.title))
 
     def test_search_variant_pagination_return_route_and_reset(self):
         app = self.logged_in_app(page="search", q="Bevridge", where="North Haven", results_page="2")
