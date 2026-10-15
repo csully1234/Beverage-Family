@@ -448,7 +448,14 @@ function focusNode(id, notify=true) {{
     const base=document.referrer || window.location.href;
     link.href=new URL("?page=people&profile="+encodeURIComponent(id),base).href;
     link.target="_top";link.rel="noopener";
-    link.textContent="Open full profile";selection.append(link);
+    link.textContent="Open full profile";
+    link.addEventListener("click", event => {{
+      if (window.parent!==window) {{
+        event.preventDefault();
+        window.parent.postMessage({{type:"beverage:open-profile",person_id:id}},"*");
+      }}
+    }});
+    selection.append(link);
   }} else selection.append(document.createTextNode("Unresolved relative; no profile yet"));
   redraw();
   if (notify && window.parent!==window) {{
