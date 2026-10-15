@@ -20,7 +20,7 @@ _PAGE_BATCH = 12
 
 @st.cache_data(show_spinner=False)
 def load_colony_photo_catalog() -> dict:
-    return json.loads(_CAPTIONS.read_text(encoding="utf-8"))
+    return json.loads(_CAPTIONS.read_text(encoding="utf-8"))[0]
 
 
 def show_more_photographs() -> None:
