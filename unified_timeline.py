@@ -75,6 +75,29 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
             "?page=collection&finding="+quote(finding["Research ID"]),
             nav.get("people_ids",[]),finding.get("Confidence",""),
             "Research-associated date",finding.get("Notes about uncertainty",""))
+    # Reviewed historical locations and provenance entries are also part of
+    # the chronology, including approximate dates. Place links are not deeds.
+    from archive import ArchiveIndex
+    archive = ArchiveIndex(data)
+    for link in archive.links:
+        place = archive.places.get(link["place_id"])
+        subject = (archive.people if link["subject_type"] == "person" else archive.events).get(link["subject_id"], {})
+        subject_name = subject.get("full_name") or subject.get("title") or "Historical record"
+        place_name = place["name"] if place else "Historical place"
+        period = str(link.get("date_from") or "")
+        if link.get("date_to") and link["date_to"] != link.get("date_from"):
+            period += "–" + str(link["date_to"])
+        add("Place / property connection",link["id"],str(subject_name)+" — "+place_name,
+            period,link.get("summary",""),"?page=places&place="+quote(link["place_id"]),
+            [link["subject_id"]] if link["subject_type"]=="person" else archive.events.get(link["subject_id"],{}).get("people_ids",[]),
+            link.get("evidence_level",""),"Documented connection / period",
+            "This locates a cited historical connection, not exact land ownership, a private address, or a surveyed boundary.")
+    for source in archive.sources.values():
+        add("Historical source",source["id"],source["title"],
+            source.get("date",""),source.get("summary",""),
+            "?page=archive&source="+quote(source["id"]),
+            source.get("people_ids",[]),source.get("evidence_level",""),
+            "Source or publication date","The source date is not necessarily the date of every event described.")
     for index, row in enumerate(collection.inventory_rows("Images and Maps")):
         rid = row.get("Research ID","")
         key = str(row.get("Collection or item identifier") or index)
