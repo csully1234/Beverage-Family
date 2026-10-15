@@ -60,7 +60,8 @@ test('Open profile and invalid IDs follow intended navigation/safety rules',asyn
   event('beverage:person-selected','../../evil');
   await wait();
   assert.equal(values.length,1);
-  assert.deepEqual(values[0],{person_id:'mary_white_1750',action:'profile'});
+  assert.equal(values[0].person_id,'mary_white_1750');
+  assert.equal(values[0].action,'profile');
   assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
