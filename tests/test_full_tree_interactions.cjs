@@ -43,12 +43,15 @@ test('focused explorer loads on prior selected person and synchronizes selector'
    const d=dom.window.document;
    assert.deepEqual(errors,[]);
    assert.equal(d.getElementById('mode').value,'all');
+   assert.equal(d.getElementById('branchDepthControl').hidden,true);
    assert.equal(d.getElementById('personSelect').value,'harold_h_beverage_1893');
    assert.match(d.getElementById('selection').textContent,/Harold/);
    const all=d.querySelectorAll('#world .node').length;
    const visible=d.querySelectorAll('#world .node:not(.is-hidden)').length;
    assert.equal(visible,all,'whole family overview should display every node on arrival');
    change(dom,'mode','branch');
+   assert.equal(d.getElementById('branchDepthControl').hidden,false);
+   assert.equal(d.getElementById('distance').options[0].textContent,'Immediate family');
    const nearby=d.querySelectorAll('#world .node:not(.is-hidden)').length;
    assert(nearby>1&&nearby<all,`expected nearby people instead of all ${all}, got ${nearby}`);
  }finally{dom.window.close();}
@@ -83,6 +86,7 @@ test('steps and full overview show expected nodes without changing selected iden
    const four=d.querySelectorAll('#world .node:not(.is-hidden)').length;
    assert(four>=one);
    change(dom,'mode','all');
+   assert.equal(d.getElementById('branchDepthControl').hidden,true);
    assert.equal(d.querySelectorAll('#world .node.is-hidden').length,0);
    assert.equal(d.getElementById('personSelect').value,selected);
    change(dom,'mode','branch');

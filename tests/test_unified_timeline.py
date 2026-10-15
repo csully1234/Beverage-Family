@@ -68,9 +68,10 @@ class UnifiedTimelineTests(unittest.TestCase):
         book = next(row for row in self.timeline if row["id"]=="colony-book-2016")
         self.assertEqual(book["year"],2016)
         self.assertEqual(book["date_kind"],"Book publication year")
-        leads=[row for row in self.timeline if row["type"]=="Book photograph lead"]
-        self.assertGreaterEqual(len(leads),3)
+        leads=[row for row in self.timeline if row["type"]=="Book photograph or illustration"]
+        self.assertGreaterEqual(len(leads),100)
         self.assertTrue(all(row["year"] is None for row in leads))
+        self.assertTrue(any(row["url"]=="?page=family-books&book_page=49" for row in leads))
         cited=next(row for row in self.timeline if row["id"]=="colony-lowell-1925")
         self.assertEqual(cited["year"],1925)
         self.assertIn("PDF page 245",cited["extra"])

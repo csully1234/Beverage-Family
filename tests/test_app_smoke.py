@@ -90,6 +90,13 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertFalse(any(str(note).strip() == "False" for note in notes))
         self.assertFalse(any(str(element.value).strip() == "False" for element in app.markdown))
 
+    def test_authorized_book_page_route_renders_before_binary_is_uploaded(self) -> None:
+        app = self.logged_in_app(page="family-books", book_page="49")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("The Colony" in str(x.value) for x in app.markdown))
+        self.assertEqual(app.number_input(key="book_selected_page").value, 49)
+        self.assertTrue(any("PDF" in str(x.value) for x in app.caption))
+
     def test_research_deep_links_and_existing_profile_context(self) -> None:
         cases = (
             ({"page": "collection", "finding": "BF-R033"}, "Registration dates are not deed dates"),

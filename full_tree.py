@@ -227,7 +227,9 @@ def build_full_tree_html(
   #selection {{ padding:10px 14px; background:#fffdf8; border-bottom:1px solid var(--line); font-size:13px; }}
   #selection strong {{ color:var(--navy); }}
   #selection a {{ color:#14536e; font-weight:700; }}
-  #distance {{ width:130px; }}
+  #distance {{ width:175px; }}
+  #branchDepthControl {{ display:inline-flex; gap:6px; align-items:center; }}
+  [hidden] {{ display:none !important; }}
   .is-hidden {{ display:none; }}
   #status {{ margin-left:auto; font-size:12px; color:#50686f; white-space:nowrap; }}
   #viewport {{ flex:1; min-height:0; position:relative; overflow:hidden; background:
@@ -263,7 +265,7 @@ def build_full_tree_html(
       <option value="">Find and center a person…</option>
     </select>
     <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option></select>
-    <label for="distance" title="Steps away from selected relative">Steps</label><select id="distance"><option value="1">1 step</option><option value="2" selected>2 steps</option><option value="3">3 steps</option><option value="4">4 steps</option></select>
+    <span id="branchDepthControl" hidden><label for="distance" title="Choose how far to explore from a selected person (family connections, not generations)">Include</label> <select id="distance" aria-label="How many nearby relatives to show"><option value="1">Immediate family</option><option value="2" selected>Close relatives</option><option value="3">Extended family</option><option value="4">Wider family branch</option></select></span>
     <button id="fit" type="button">Fit visible tree</button>
     <button id="centerSelected" type="button">Center selected relative</button>
     <button id="zoomIn" type="button" aria-label="Zoom in">＋</button>
@@ -276,7 +278,7 @@ def build_full_tree_html(
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Click a person to explore relatives · drag to pan · zoom with wheel or +/−</div>
+    <div id="help">Whole family shows everyone · Explore nearby relatives to limit the view · Connections are not generations · Drag to pan</div>
   </div>
 </div>
 <script>
@@ -288,6 +290,7 @@ const select = document.getElementById("personSelect");
 const status = document.getElementById("status");
 const mode = document.getElementById("mode");
 const distance = document.getElementById("distance");
+const branchDepthControl = document.getElementById("branchDepthControl");
 const selection = document.getElementById("selection");
 const links = new Map();
 for(const n of DATA.nodes) links.set(n.id, new Set());
@@ -427,6 +430,7 @@ function redraw() {{
   else visibleBounds={{x:-(largest*(DATA.node_width+26))/2-36,y:-36,
      width:largest*(DATA.node_width+26)+72,
      height:Math.max(220,rows.length*(DATA.node_height+78)+36)}};
+  branchDepthControl.hidden = mode.value==="all";
   distance.disabled=mode.value==="all";
   fitTree();
 }}
@@ -468,7 +472,15 @@ window.addEventListener("message", event => {{
   if(id && nodeById.has(id) && id!==selectedId) focusNode(id,false);
 }});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
-mode.addEventListener("change",redraw);
+mode.addEventListener("change", () => {{
+  if(mode.value==="branch" && !selectedId) {{
+    mode.value="all";
+    selection.textContent="First choose a relative from the search box or click their box, then select Explore nearby relatives.";
+    redraw();
+    return;
+  }}
+  redraw();
+}});
 distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
 document.getElementById("centerSelected").addEventListener("click", () => {{
