@@ -1485,7 +1485,7 @@ def render_full_tree_page(
 
     st.caption("For a phone-friendly list, use People → Family. The graph has its own synchronized selection and profile shortcut.")
     st.iframe(
-        build_full_tree_html(people_by_id, relationships),
+        build_full_tree_html(people_by_id, relationships, st.session_state.get("tree_person", "")),
         height=820,
     )
 
