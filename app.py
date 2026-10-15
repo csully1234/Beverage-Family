@@ -1303,19 +1303,21 @@ def build_family_graph(
 
 
 def available_generations(relationships, focus_id: str, view: str) -> int:
-    """Maximum documented distance from a focus, without following cycles."""
+    """Farthest *recorded* relative in the selected direction; cycles are ignored."""
     kinds = ("parents", "children") if view == "Both" else (("parents",) if view == "Ancestors" else ("children",))
     if view == "Immediate family":
         return 1
     maximum = 0
     for kind in kinds:
-        stack = [(focus_id, 0, frozenset({focus_id}))]
-        while stack:
-            person_id, depth, seen = stack.pop()
-            maximum = max(maximum, depth)
-            for relative in relationships[kind].get(person_id, set()):
-                if relative not in seen:
-                    stack.append((relative, depth + 1, seen | {relative}))
+        frontier = [(focus_id, 0)]
+        visited = {focus_id}
+        while frontier:
+            node, steps = frontier.pop(0)
+            maximum = max(maximum, steps)
+            for relative in relationships[kind].get(node, set()):
+                if relative not in visited:
+                    visited.add(relative)
+                    frontier.append((relative, steps + 1))
     return max(1, maximum)
 
 
