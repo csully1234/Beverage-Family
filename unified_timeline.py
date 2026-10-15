@@ -26,7 +26,12 @@ def historical_year(value: object) -> int | None:
 
 
 def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[dict]:
-    """Preserve records and source meanings; no confidence-level filter."""
+    """Show historical people/events/discoveries, never research activity rows.
+
+    Every evidence level of *historical* findings remains included; research
+    logs, unexamined work queues and source-register administration live only
+    in archived files for provenance.
+    """
     collection = collection or load_collection()
     items = []
     def add(kind, identifier, title, date, description, link, person_ids=(), certainty="", date_kind="Event or source date", extra=""):
@@ -59,12 +64,6 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
                 "Baptism recorded separately from an unverified birth date.",
                 "?page=people&profile="+quote(person["id"]),[person["id"]],
                 person.get("evidence_status",""),"Baptism date")
-    for research in data.get("research", []):
-        add("Research note", research["id"],research.get("title","Research"),
-            research.get("record_date",""), research.get("summary",""),
-            "?page=research", research.get("people_involved",[]),
-            research.get("evidence_level",""),"Record / publication date",
-            "This may date the source or review rather than the historical activity.")
     for finding in collection.findings.values():
         nav = finding.get("Navigation",{})
         raw = finding.get("Date or date range","")
@@ -92,12 +91,6 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
             [link["subject_id"]] if link["subject_type"]=="person" else archive.events.get(link["subject_id"],{}).get("people_ids",[]),
             link.get("evidence_level",""),"Documented connection / period",
             "This locates a cited historical connection, not exact land ownership, a private address, or a surveyed boundary.")
-    for source in archive.sources.values():
-        add("Historical source",source["id"],source["title"],
-            source.get("date",""),source.get("summary",""),
-            "?page=archive&source="+quote(source["id"]),
-            source.get("people_ids",[]),source.get("evidence_level",""),
-            "Source or publication date","The source date is not necessarily the date of every event described.")
     for index, row in enumerate(collection.inventory_rows("Images and Maps")):
         rid = row.get("Research ID","")
         key = str(row.get("Collection or item identifier") or index)
@@ -116,56 +109,6 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
         add("Historical document",document_id,doc["title"],doc["date"],doc["summary"],
             "?page=documents&doc="+quote(document_id),doc_people,"Source transcription and historical context",
             "Document / testimony date",doc["limits"])
-    # Every research register and supporting inventory belongs in the
-    # chronology too. Do not exclude tentative leads or undated material.
-    for source in collection.sources.values():
-        source_id = source["Source ID"]
-        date = source.get("Source date") or source.get("Document date") or source.get("Publication date") or ""
-        add("Research source", source_id, source.get("Title") or source_id,
-            date, source.get("What it supports") or source.get("Notes") or "",
-            "?page=archive&source="+quote(source_id),
-            (), source.get("Viewed status","Source record"),
-            "Historical source date (if known)",
-            "Cataloging or access dates do not establish the date of a historical event.")
-
-    for target in collection.targets.values():
-        target_id = target["Target ID"]
-        add("Unresolved research question", target_id,
-            target.get("Title") or target_id,
-            "", target.get("Research question") or target.get("Why it matters") or target.get("Notes") or "",
-            "?page=collection&target="+quote(target_id), (),
-            target.get("Priority","Not yet verified"),
-            "Undated research target",
-            "A retrieval target is a lead, not a claim that the underlying original has been examined.")
-
-    for inventory_name in collection.inventories:
-        if inventory_name == "Images and Maps":
-            continue  # already included individually with the photo catalog
-        for index, row in enumerate(collection.inventory_rows(inventory_name)):
-            rid = str(row.get("Research ID") or "")
-            key = str(row.get("Candidate ID") or row.get("Item ID") or
-                      row.get("Property ID") or row.get("Record ID") or f"{index+1}")
-            date = (row.get("Date or date range") or row.get("Date") or
-                    row.get("Date range") or row.get("Period") or
-                    row.get("Year") or "")
-            # Some registers don't have a historical date. Keeping the
-            # record undated is better than inferring from a cited book's title.
-            title = (row.get("Subject") or row.get("Person") or row.get("Title") or
-                     row.get("Property") or row.get("Site") or row.get("Name") or
-                     f"{inventory_name} item {index+1}")
-            description = (row.get("Item or caption") or row.get("Finding") or
-                           row.get("Claim") or row.get("Summary") or
-                           row.get("Notes") or row.get("Why it matters") or "")
-            if not description:
-                description = " · ".join(f"{k}: {v}" for k,v in row.items()
-                                         if v is not None and str(v).strip())[:800]
-            nav = collection.findings.get(rid, {}).get("Navigation", {})
-            link = ("?page=collection&finding="+quote(rid) if rid in collection.findings
-                    else "?page=collection&view=Inventories&inventory="+quote(inventory_name))
-            add("Research inventory · "+inventory_name, inventory_name+":"+key+":"+str(index),
-                str(title), date, description, link,
-                nav.get("people_ids", ()), row.get("Confidence","Research inventory"),
-                "Inventory-associated period", "Original details and evidence limits remain in the linked inventory.")
     # Bibliographic publication dates are not mistaken for events mentioned
     # inside the work; photo capture dates remain undated until corroborated.
     from family_books import load_books, illustrated_pages
@@ -196,7 +139,7 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
 
 def render_unified_timeline(data: dict, people_by_id: dict) -> None:
     st.title("Complete Family Timeline")
-    st.write("All family events, births, deaths, research discoveries (including probable and unresolved leads), photos, documents and historical stories are included. Their labels distinguish established events from research and source dates.")
+    st.write("Explore family lives, historical discoveries, photographs, documents, places and stories together in chronological order. Probable and disputed historical findings are included; internal research search logs and work queues are not family-history events.")
     collection = load_collection()
     all_items = build_chronology(data, people_by_id, collection)
     dated = [i for i in all_items if i["year"] is not None]
