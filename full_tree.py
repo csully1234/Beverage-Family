@@ -192,10 +192,12 @@ def build_full_tree_model(
 def build_full_tree_html(
     people_by_id: Mapping[str, Record],
     relationships: Mapping[str, Mapping[str, set[str]]],
+    initial_person_id: str = "",
 ) -> str:
     """Build a self-contained, dependency-free pan/zoom SVG family map."""
 
     model = build_full_tree_model(people_by_id, relationships)
+    model["initial_person"] = initial_person_id if initial_person_id in people_by_id else ""
     payload = json.dumps(model, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
     return f"""<!doctype html>
@@ -475,7 +477,7 @@ function endDrag() {{ dragging=false; svg.classList.remove("dragging"); setTimeo
 svg.addEventListener("pointerup", endDrag);
 svg.addEventListener("pointercancel", endDrag);
 window.addEventListener("resize", fitTree);
-requestAnimationFrame(() => focusNode(sortedNodes.find(n=>!n.unresolved)?.id || sortedNodes[0]?.id));
+requestAnimationFrame(() => focusNode(DATA.initial_person || sortedNodes.find(n=>!n.unresolved)?.id || sortedNodes[0]?.id));
 </script>
 </body>
 </html>"""
