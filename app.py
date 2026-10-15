@@ -1464,24 +1464,7 @@ def render_full_tree_page(
 
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
-    profile_picker, profile_action = st.columns([3, 1])
-    with profile_picker:
-        selected_profile = st.selectbox(
-            "Open a profile from the full map",
-            options=person_ids,
-            format_func=lambda person_id: (
-                f"{person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
-            ),
-            key="full_map_profile_selector",
-        )
-    with profile_action:
-        st.write("")
-        st.button(
-            "Open selected profile",
-            on_click=open_profile,
-            args=(selected_profile,),
-            width="stretch",
-        )
+    st.caption("Click a box to select that relative. The full-tree search control, selection and profile link stay synchronized inside the map.")
 
     controls, note = st.columns([1, 3])
     with controls:
@@ -1497,7 +1480,7 @@ def render_full_tree_page(
             "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
         )
 
-    st.caption("For a phone-friendly list of relatives, open a profile above and choose Family. Lines show recorded relationships, including those still under review.")
+    st.caption("For a phone-friendly list, use People → Family. The graph has its own synchronized selection and profile shortcut.")
     st.iframe(
         build_full_tree_html(people_by_id, relationships),
         height=820,
