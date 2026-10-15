@@ -32,7 +32,7 @@ class UnifiedTimelineTests(unittest.TestCase):
     def test_photos_places_and_documents_included(self):
         kinds={t["type"] for t in self.timeline}
         self.assertTrue({"Photo / scan / object","Place / property connection",
-                         "Historical source","Family story","Historical document"}<=kinds)
+                         "Research finding","Family story","Historical document"}<=kinds)
         self.assertTrue(any(t["id"]=="thomas-1786" for t in self.timeline))
 
     def test_internal_research_activity_is_not_a_family_history_event(self):
