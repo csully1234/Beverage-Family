@@ -296,7 +296,7 @@ def render_media_page() -> None:
     st.write("Explore archival items and read historical records. We display original image files only when reuse rights and source identification are established.")
     with st.container(border=True):
         st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
-        st.write("Explore all 305 original pages, including 103 indexed photographic, map and illustration pages, with author credits and their printed captions.")
+        st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
         route_link("Open the complete book and its visual collection", "?page=family-books")
     from colony_photos import render_colony_photographs
     photos_tab, images_tab, documents_tab = st.tabs(
