@@ -111,8 +111,10 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
             "?page=stories&story="+quote(story["id"]),(), "Narrative with supporting sources",
             "Story period", "Its period does not necessarily identify a single event year.")
     for document_id, doc in DOCUMENTS.items():
+        linked_findings = ("BF-R001", "BF-R002") if document_id == "thomas-1786" else ()
+        doc_people = sorted({pid for rid in linked_findings for pid in collection.findings.get(rid, {}).get("Navigation", {}).get("people_ids", [])})
         add("Historical document",document_id,doc["title"],doc["date"],doc["summary"],
-            "?page=documents&doc="+quote(document_id),(),"Source transcription and historical context",
+            "?page=documents&doc="+quote(document_id),doc_people,"Source transcription and historical context",
             "Document / testimony date",doc["limits"])
     # Every research register and supporting inventory belongs in the
     # chronology too. Do not exclude tentative leads or undated material.
