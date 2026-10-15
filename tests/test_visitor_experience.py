@@ -60,7 +60,8 @@ class VisitorExperienceTests(unittest.TestCase):
         self.assertIn("The Red Cottage",books[0]["sections"])
         self.assertTrue(all("pdf_page" in lead for lead in books[0]["photo_leads"]))
         self.assertEqual(books[0]["pdf_page_count"],305)
-        self.assertEqual(books[0]["pdf_asset_size_bytes"],21948676)
+        self.assertEqual(books[0]["pdf_asset_size_bytes"],22944649)
+        self.assertFalse(books[0]["pdf_demo_watermark"])
         self.assertIn("family website",books[0]["rights"])
         self.assertGreaterEqual(len(books[0]["image_page_numbers"]),100)
 
@@ -74,6 +75,30 @@ class VisitorExperienceTests(unittest.TestCase):
         self.assertIn("Amelia",next(x for x in images if x["pdf_page"]==49)["title"])
         self.assertEqual(book_pdf_path({**book,"pdf_asset":"../../secrets.toml"}),None)
         self.assertFalse(available_book_pdf({**book,"pdf_asset":"../../secrets.toml"}))
+
+    def test_all_annotated_colony_photographs_have_provenance(self):
+        from colony_photos import load_colony_photo_catalog
+        from family_books import load_books
+        catalog = load_colony_photo_catalog()
+        items = catalog["photos"]
+        self.assertGreaterEqual(len(items), 80)
+        self.assertEqual(len(items), len({p["pdf_page"] for p in items}))
+        self.assertTrue(all(1 <= p["pdf_page"] <= 305 for p in items))
+        self.assertTrue(all(p["caption_summary"] and p["title"] and p["section"] for p in items))
+        book = load_books()[0]
+        self.assertTrue({p["pdf_page"] for p in items}.issubset(set(book["image_page_numbers"])))
+        self.assertIn("Amelia", next(p for p in items if p["pdf_page"] == 49)["caption_summary"])
+
+    def test_event_source_records_are_honest_and_linked_when_possible(self):
+        from event_source_access import source_target
+        self.assertEqual(source_target("Find A Grave memorial 157242087"),
+                         ("Find A Grave memorial 157242087","https://www.findagrave.com/memorial/157242087"))
+        self.assertEqual(source_target("Riposta Funeral Home obituary"),
+                         ("Riposta Funeral Home obituary",None))
+        self.assertEqual(source_target({"title":"Original scan","url":"https://archive.org/details/example"}),
+                         ("Original scan","https://archive.org/details/example"))
+        self.assertEqual(source_target({"title":"Unlinked","url":"javascript:alert(1)"}),
+                         ("Unlinked",None))
 
     def test_first_name_order(self):
         self.assertEqual([p["id"] for p in order_people(self.people, "First name A–Z")], ["z", "c", "u", "a"])
