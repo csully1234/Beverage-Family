@@ -10,6 +10,7 @@ import streamlit as st
 from family_data import format_date, life_span, year_from_date
 from research_collection_ui import load_collection
 from routing_ui import route_link
+from event_source_access import render_event_source_access
 from visitor_ui import STORIES, DOCUMENTS, approved_assets
 
 
@@ -164,14 +165,16 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
     requested=st.query_params.get("event","")
     filtered=[]
     for i in all_items:
-        if i["type"] not in chosen_types or (person and person not in i["person_ids"]):
-            continue
-        if i["year"] is None and not show_undated:
-            continue
-        if i["year"] is not None and not years[0]<=i["year"]<=years[1] and i["id"]!=requested:
-            continue
-        if q and q not in json.dumps(i,ensure_ascii=False).casefold():
-            continue
+        is_directly_requested = bool(requested and i["id"] == requested)
+        if not is_directly_requested:
+            if i["type"] not in chosen_types or (person and person not in i["person_ids"]):
+                continue
+            if i["year"] is None and not show_undated:
+                continue
+            if i["year"] is not None and not years[0] <= i["year"] <= years[1]:
+                continue
+            if q and q not in json.dumps(i, ensure_ascii=False).casefold():
+                continue
         filtered.append(i)
     dated_results=sorted((i for i in filtered if i["year"] is not None),
                          key=lambda i:(i["year"],i["date"],i["title"]),
@@ -204,6 +207,11 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
         )
         selected_rows = choice.selection.rows
         selected_index = selected_rows[0] if selected_rows else None
+        # Bookmark links for births and other events open their evidence even
+        # without an additional table click.
+        if selected_index is None and requested:
+            selected_index = next((n for n, entry in enumerate(ordered_items)
+                                   if entry["id"] == requested), None)
         if selected_index is not None and selected_index < len(ordered_items):
             item = ordered_items[selected_index]
             with st.container(border=True):
@@ -216,7 +224,20 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
                 if item["extra"]:
                     with st.expander("Evidence limits and interpretation"):
                         st.write(item["extra"])
-                route_link("Open full record and source material", item["url"])
+                if item["type"] == "Timeline event":
+                    original = next((event for event in data.get("events", [])
+                                     if event.get("id") == item["id"]), None)
+                    if original:
+                        st.markdown("**Original records and citations**")
+                        render_event_source_access(original.get("sources", []))
+                elif item["type"] == "Life event":
+                    person_id, _, event_kind = item["id"].rpartition(":")
+                    subject = people_by_id.get(person_id)
+                    if subject and event_kind in {"birth", "death", "baptism"}:
+                        st.markdown("**Sources cited for this person's life dates**")
+                        render_event_source_access(subject.get("sources", []))
+                        st.caption("These are profile-level references. They are not necessarily proof of this specific birth or death until the original record is checked.")
+                route_link("Open related family profile or record", item["url"])
         else:
             st.caption("Select a row to read its description and follow the original source.")
     if not filtered:
