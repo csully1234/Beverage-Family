@@ -121,11 +121,61 @@ def approved_assets() -> dict[str, dict]:
 SORT_OPTIONS = ("Surname A–Z", "First name A–Z", "Birth year (oldest first)", "Birth year (newest first)")
 
 
+_DISAMBIGUATION = re.compile(r"\\s*\\([^()]*\\)\\s*$")
+_GENERATION_SUFFIX = re.compile(r"^(?:jr\\.?|sr\\.?|ii|iii|iv|v)$",re.I)
+
+
+def _name_parts(person: dict) -> tuple[str, str]:
+    """Find the primary family name, ignoring year/alias and Jr/III suffixes.
+
+    A displayed name such as 'John White (1748)' must sort under W, not
+    under '(1748)'. The original display name is never changed.
+    """
+    full_name = str(person.get("full_name") or "").strip()
+    base = full_name
+    while True:
+        trimmed = _DISAMBIGUATION.sub("", base).strip()
+        if trimmed == base:
+            break
+        base = trimmed
+    words = base.split()
+    while words and _GENERATION_SUFFIX.fullmatch(words[-1]):
+        words.pop()
+    if not words:
+        return "", full_name
+    return words[-1].casefold(), " ".join(words[:-1]).casefold()
+
+
+def surname_first_label(person: dict) -> str:
+    """Make a surname-sorted dropdown visually obvious to people browsing it."""
+    name = str(person.get("full_name") or "")
+    surname, _ = _name_parts(person)
+    if not surname:
+        return name
+    original = name
+    # Remove trailing annotations from the name but keep them in the label.
+    annotations = []
+    while True:
+        m = _DISAMBIGUATION.search(original)
+        if m is None:
+            break
+        annotations.insert(0, m.group().strip())
+        original = original[:m.start()].strip()
+    words = original.split()
+    suffixes = []
+    while words and _GENERATION_SUFFIX.fullmatch(words[-1]):
+        suffixes.insert(0, words.pop())
+    if not words:
+        return name
+    family = words.pop()
+    rest = " ".join(words)
+    extra = " ".join([*suffixes, *annotations])
+    return f"{family}, {rest}" + (f" {extra}" if extra else "")
+
+
 def _surname_first_key(person: dict) -> tuple:
-    parts = str(person.get("full_name") or "").split()
-    last = parts[-1].casefold() if parts else ""
-    given = " ".join(parts[:-1]).casefold()
-    return (last, given, str(person.get("id") or ""))
+    surname, given = _name_parts(person)
+    return (surname, given, str(person.get("full_name") or "").casefold(), str(person.get("id") or ""))
 
 
 def order_people(people, order="Surname A–Z") -> list[dict]:
