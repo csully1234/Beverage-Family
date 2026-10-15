@@ -7,11 +7,13 @@ import io
 import math
 
 import streamlit as st
+from routing_ui import route_markdown, route_link
 
 from archive import archive_url, safe_url
 from research_collection import (
     CONFIDENCE, REPORT_DIR, STRONG, CollectionIndex, matches, source_ids,
 )
+from conflict_review_ui import resolution_for, render_resolution, render_review_page
 
 
 def md(value) -> str:
@@ -33,8 +35,22 @@ def register_link(source: dict) -> str:
 
 def render_finding(record: dict, collection: CollectionIndex, people: dict,
                    *, detail: bool = False) -> None:
+    resolution = resolution_for(record["Research ID"])
+    if resolution:
+        route_markdown(f"### {finding_link(record)}")
+        st.caption(record["Research ID"] + " · Original research finding retained below")
+        render_resolution(resolution, collection, people, detail=detail)
+        if detail:
+            with st.expander("Original 14 October research snapshot"):
+                _render_original_finding(record, collection, people, detail=True)
+        return
+    _render_original_finding(record, collection, people, detail=detail)
+
+
+def _render_original_finding(record: dict, collection: CollectionIndex, people: dict,
+                            *, detail: bool = False) -> None:
     rid = record["Research ID"]
-    st.markdown(f"### {finding_link(record)}")
+    route_markdown(f"### {finding_link(record)}")
     st.caption(f"{rid} · {record['Confidence']} · {record['Change type']} · Family review: {record['Human-review status']}")
     st.caption(f"{record['Date or date range']} · {record['Location']} · {record['Event category']}")
     if record["Confidence"] == "Conflict":
@@ -44,9 +60,9 @@ def render_finding(record: dict, collection: CollectionIndex, people: dict,
     st.write(record["Proposed fact or narrative"])
     # Always visible, including compact profile and search cards. A confirmed
     # catalog entry does not establish every identity or event described by it.
-    st.markdown("**Evidence limits:** " + md(record["Notes about uncertainty"]))
+    route_markdown("**Evidence limits:** " + md(record["Notes about uncertainty"]))
     st.caption("Examined: " + str(record["Evidence basis"]))
-    st.markdown("**Sources:** " + " · ".join(register_link(collection.sources[sid]) for sid in source_ids(record)))
+    route_markdown("**Sources:** " + " · ".join(register_link(collection.sources[sid]) for sid in source_ids(record)))
     if not detail:
         return
     st.subheader("Exact citation and locator")
@@ -54,15 +70,15 @@ def render_finding(record: dict, collection: CollectionIndex, people: dict,
     st.write(record["Locator"])
     nav = record["Navigation"]
     if nav["people_ids"]:
-        st.markdown("**Related profiles:** " + " · ".join(
+        route_markdown("**Related profiles:** " + " · ".join(
             f"[{md(people[pid]['full_name'])}]({archive_url('people', profile=pid)})"
             for pid in nav["people_ids"] if pid in people))
         st.caption("These are research cross-references. They do not create a family relationship or resolve a disputed identity.")
     if nav["place_ids"]:
-        st.markdown("**Historical places:** " + " · ".join(
+        route_markdown("**Historical places:** " + " · ".join(
             f"[{md(pid.replace('_', ' ').title())}]({archive_url('places', place=pid)})" for pid in nav["place_ids"]))
     for eid in nav["event_ids"]:
-        st.link_button("Open related timeline record", archive_url("timeline", event=eid))
+        route_link("Open related timeline record", archive_url("timeline", event=eid))
     for name in ("Properties and Deeds", "Images and Maps", "Candidate People"):
         rows = collection.inventory_rows(name, rid)
         if rows:
@@ -70,13 +86,13 @@ def render_finding(record: dict, collection: CollectionIndex, people: dict,
                 for row in rows:
                     for key, value in row.items():
                         if value is not None:
-                            st.markdown(f"**{md(key)}:** {md(value)}")
+                            route_markdown(f"**{md(key)}:** {md(value)}")
                     st.divider()
     targets = collection.targets_for(record)
     if targets:
         st.subheader("Related retrieval targets")
         for target in targets:
-            st.markdown(f"- [{target['Target ID']} · {md(target['Title'])}]({archive_url('collection', target=target['Target ID'])})")
+            route_markdown(f"- [{target['Target ID']} · {md(target['Title'])}]({archive_url('collection', target=target['Target ID'])})")
 
 
 def render_context(kind: str, identifier: str, people: dict, *, topic: str = "",
@@ -97,7 +113,7 @@ def render_context(kind: str, identifier: str, people: dict, *, topic: str = "",
     params = {kind: identifier} if kind in {"person", "place"} else {}
     if topic:
         params["topic"] = topic
-    st.link_button("Browse the related research collection", archive_url("collection", **params))
+    route_link("Browse the related research collection", archive_url("collection", **params))
 
 
 def paginate(records: list, key: str, size: int = 12) -> list:
@@ -116,26 +132,26 @@ def render_register_source(source: dict, collection: CollectionIndex) -> None:
     st.caption(f"{source['Source ID']} · {source['Repository']} · {source['Source type']}")
     st.info(str(source["Viewed status"]))
     st.write(source["What it supports"])
-    st.markdown("**Exact locator:** " + md(source["Locator"]))
+    route_markdown("**Exact locator:** " + md(source["Locator"]))
     st.caption(f"Access date: {source['Access date']} · {source['Baseline or new']}")
     st.write("Access result recorded during research: " + str(source["URL status"]))
     if source.get("Link check 2026 10 14"):
         st.caption("Link check: " + str(source["Link check 2026 10 14"]))
     if safe_url(source.get("URL")):
-        st.link_button("Open source / catalog record", source["URL"])
+        route_link("Open source / catalog record", source["URL"])
     else:
         st.caption("No verified direct URL was supplied for this citation.")
     if source.get("Alternate locations"):
         st.write("Alternate locations: " + str(source["Alternate locations"]))
-    st.markdown("**Rights and reuse:** " + md(source["Rights"]))
+    route_markdown("**Rights and reuse:** " + md(source["Rights"]))
     linked = collection.for_source(source["Source ID"])
     st.subheader(f"Findings citing this source ({len(linked)})")
     for record in linked:
-        st.markdown(f"- {finding_link(record)} · {record['Confidence']}")
+        route_markdown(f"- {finding_link(record)} · {record['Confidence']}")
         st.write(record["Exact citation"])
     if not linked:
         st.caption("This entry is retained in the baseline or retrieval register; it is not cited by a new finding.")
-    st.link_button("Browse the research source register", archive_url("collection", view="Sources"))
+    route_link("Browse the research source register", archive_url("collection", view="Sources"))
 
 
 def render_register(collection: CollectionIndex, *, prefix: str = "register") -> None:
@@ -148,7 +164,7 @@ def render_register(collection: CollectionIndex, *, prefix: str = "register") ->
     st.caption(f"{len(records)} of {len(collection.sources)} research source records")
     for source in paginate(records, prefix + "_page"):
         with st.container(border=True):
-            st.markdown(f"### {register_link(source)}")
+            route_markdown(f"### {register_link(source)}")
             st.caption(f"{source['Repository']} · {source['Source type']}")
             st.write(source["What it supports"])
             st.caption(str(source["Viewed status"]))
@@ -161,13 +177,13 @@ def render_target(target: dict, collection: CollectionIndex) -> None:
     st.caption(f"Priority {target['Priority']} · {target['Status']}")
     for field in ("Exact research question", "Record or collection target", "Barrier",
                   "Contact or retrieval route", "Suggested request language", "Published fees"):
-        st.markdown(f"**{field}**")
+        route_markdown(f"**{field}**")
         st.write(target[field])
     st.caption("Fees and contacts are recorded as of 14 October 2026; confirm with the repository before ordering.")
     for url in (target.get("Repository links") or "").splitlines():
         if safe_url(url):
-            st.markdown(f"[{md(url)}]({url})")
-    st.markdown("**Source register:** " + " · ".join(register_link(collection.sources[sid]) for sid in source_ids(target, "Source IDs")))
+            route_markdown(f"[{md(url)}]({url})")
+    route_markdown("**Source register:** " + " · ".join(register_link(collection.sources[sid]) for sid in source_ids(target, "Source IDs")))
 
 
 def render_inventory(collection: CollectionIndex) -> None:
@@ -189,9 +205,9 @@ def render_inventory(collection: CollectionIndex) -> None:
                        file_name=name.replace(" ", "_") + ".csv", mime="text/csv")
     ids = list(dict.fromkeys(row.get("Research ID") for row in rows if row.get("Research ID") in collection.findings))
     if ids:
-        st.markdown("**Open a related finding**")
+        route_markdown("**Open a related finding**")
         for rid in ids:
-            st.markdown(f"- {finding_link(collection.findings[rid])}")
+            route_markdown(f"- {finding_link(collection.findings[rid])}")
 
 
 def render_reports(collection: CollectionIndex) -> None:
@@ -205,8 +221,8 @@ def render_reports(collection: CollectionIndex) -> None:
                 "spreadsheetml.sheet" if filename.endswith(".xlsx") else "wordprocessingml.document")
             st.download_button("Download " + filename, (REPORT_DIR / filename).read_bytes(),
                                file_name=filename, mime=mime, key="report_" + filename)
-    st.link_button("Read the full source register on the site", archive_url("collection", view="Sources"))
-    st.link_button("Browse all workbook inventories", archive_url("collection", view="Inventories"))
+    route_link("Read the full source register on the site", archive_url("collection", view="Sources"))
+    route_link("Browse all workbook inventories", archive_url("collection", view="Inventories"))
     st.subheader("Read the dossier")
     sections = collection.raw["dossier"]
     section_id = st.selectbox("Dossier section", range(len(sections)),
@@ -215,14 +231,39 @@ def render_reports(collection: CollectionIndex) -> None:
     st.subheader(section["title"])
     for block in section["blocks"]:
         if block["type"] == "heading":
-            st.markdown("#### " + md(block["text"]))
+            route_markdown("#### " + md(block["text"]))
         elif block["type"] == "table":
             rows = block["rows"]
             if rows:
                 st.dataframe([dict(zip(rows[0], row)) for row in rows[1:]], hide_index=True, width="stretch")
         else:
-            st.markdown(block["text"])
+            route_markdown(block["text"])
     st.caption("Numbered citations resolve in the Endnotes and bibliography section. Source IDs also open in the Source Archive.")
+
+
+def render_images(collection: CollectionIndex) -> None:
+    st.subheader("Photographs, maps and objects")
+    st.write("Open the holding institution’s page to view the authentic item. Captions retain the research limits; permission may be needed to reproduce an image.")
+    query = st.text_input("Find an image, place or person", key="image_query")
+    records = [r for r in collection.inventory_rows("Images and Maps") if matches(query, r)]
+    records.sort(key=lambda r: collection.findings.get(r["Research ID"], {}).get("Navigation", {}).get("sort_year") or 9999)
+    st.caption(f"{len(records)} item descriptions · Ordered by the earliest associated year, which may differ from the image date.")
+    for r in paginate(records, "image_results_page", size=8):
+        with st.container(border=True):
+            route_markdown("### " + md(r["Subject"]))
+            st.caption(str(r["Date"]) + " · " + str(r["Holding institution"]))
+            st.write(r["Item or caption"])
+            st.caption(str(r["Collection or item identifier"]))
+            if safe_url(r["Direct item page"]):
+                route_link("View item at the holding institution", r["Direct item page"])
+            st.caption("Examined: " + str(r["Viewed status"]) + " · " + str(r["Confidence"]))
+            with st.expander("Rights, resolution and evidence"):
+                st.write(r["Rights"])
+                st.write("High resolution: " + str(r["High resolution"]))
+                if r["Research ID"] in collection.findings:
+                    route_markdown(finding_link(collection.findings[r["Research ID"]]))
+    if not records:
+        st.info("No image descriptions match. Try a surname or a broader place.")
 
 
 def reset_collection_filters() -> None:
@@ -258,7 +299,7 @@ def render_collection_page(people: dict, places: dict) -> None:
     metrics = st.columns(4)
     metrics[0].metric("Findings", len(collection.findings))
     metrics[1].metric("Registered sources", len(collection.sources))
-    metrics[2].metric("Conflicts for review", sum(r["Confidence"] == "Conflict" for r in collection.findings.values()))
+    metrics[2].metric("Original conflict records", sum(r["Confidence"] == "Conflict" for r in collection.findings.values()))
     metrics[3].metric("Retrieval targets", len(collection.targets))
     st.caption("14 October 2026 research package · Coverage remains partial. Confirmed can describe a source’s contents or catalog attribution; identity and interpretation limits are stated separately.")
     finding_id = st.query_params.get("finding", "")
@@ -270,14 +311,14 @@ def render_collection_page(people: dict, places: dict) -> None:
             render_target(collection.targets[target_id], collection)
         else:
             st.warning("That research record was not found.")
-        st.link_button("Browse all findings", archive_url("collection"))
-        st.link_button("Browse the retrieval plan", archive_url("collection", view="Retrieval plan"))
+        route_link("Browse all findings", archive_url("collection"))
+        route_link("Browse the retrieval plan", archive_url("collection", view="Retrieval plan"))
         return
 
-    views = ["Findings", "Chronology", "Sources", "Retrieval plan", "Inventories", "Reports"]
+    views = ["Findings", "Conflict review", "Images", "Chronology", "Sources", "Retrieval plan", "Inventories", "Reports"]
     route = tuple((key, st.query_params.get(key, "")) for key in
                   ("view", "person", "place", "topic", "status", "q", "inventory", "location"))
-    if st.session_state.get("_collection_route") != route:
+    if st.session_state.get("_collection_route") != route or "collection_person" not in st.session_state:
         requested = st.query_params.get("view", "Findings")
         st.session_state["collection_view"] = requested if requested in views else "Findings"
         st.session_state["collection_query"] = st.query_params.get("q", "")
@@ -294,6 +335,12 @@ def render_collection_page(people: dict, places: dict) -> None:
         st.session_state["collection_results_page"] = 1
         st.session_state["_collection_route"] = route
     view = st.selectbox("Collection view", views, key="collection_view", on_change=sync_collection_route)
+    if view == "Conflict review":
+        render_review_page(collection, people)
+        return
+    if view == "Images":
+        render_images(collection)
+        return
     if view == "Sources":
         render_register(collection)
         return
@@ -310,7 +357,7 @@ def render_collection_page(people: dict, places: dict) -> None:
         for target in paginate(targets, "target_page"):
             with st.expander(f"Priority {target['Priority']} · {target['Target ID']} · {target['Title']}"):
                 render_target(target, collection)
-                st.link_button("Link to this retrieval target", archive_url("collection", target=target["Target ID"]))
+                route_link("Link to this retrieval target", archive_url("collection", target=target["Target ID"]))
         return
 
     query = st.text_input("Search findings and their sources", key="collection_query", placeholder="Name, property, vessel, institution, date, research ID…", on_change=sync_collection_route)
@@ -348,4 +395,4 @@ def render_timeline_research(people: dict, person_id: str | None, query: str,
         for record in records[:5]:
             with st.container(border=True):
                 render_finding(record, collection, people)
-        st.link_button("Browse the complete research chronology", archive_url("collection", view="Chronology", person=person_id or "", q=query))
+        route_link("Browse the complete research chronology", archive_url("collection", view="Chronology", person=person_id or "", q=query))

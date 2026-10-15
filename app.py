@@ -9,10 +9,11 @@ from datetime import datetime
 from html import escape
 from pathlib import Path
 from typing import Any, Mapping
-from urllib.parse import quote, urlparse
+from urllib.parse import quote, urlparse, urlencode
 from zoneinfo import ZoneInfo
 
 import streamlit as st
+from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
 from full_tree import build_full_tree_html
@@ -39,10 +40,12 @@ from family_data import (
     year_from_date,
 )
 from validation import validate_site_data
+from family_search import matches as archive_matches, person_match
+from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
 from research_collection_ui import (
     load_collection, render_collection_page, render_context, render_finding,
-    register_link, render_timeline_research,
+    register_link, render_timeline_research, paginate,
 )
 
 
@@ -52,7 +55,7 @@ st.set_page_config(
     page_title="Beverage Family of North Haven",
     page_icon="🌊",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
     menu_items={
         "About": "A source-first archive of the Beverage family and its North Haven roots."
     },
@@ -77,12 +80,21 @@ PAGE_SLUGS = {
     "Sources & Method": "sources",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
+NAV_GROUPS = {
+    "Home": ["Home"],
+    "Search": ["Search"],
+    "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
+    "Places": ["Historical Places", "Historical Map"],
+    "Archive": ["Source Archive", "Sources & Method"],
+    "Research": ["Research Collection", "Research Desk"],
+}
+PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
 
 
 def apply_theme() -> None:
     """Apply a restrained coastal-archive visual system."""
 
-    st.markdown(
+    route_markdown(
         """
         <style>
         :root {
@@ -106,7 +118,7 @@ def apply_theme() -> None:
 
         .block-container {
             max-width: 1240px;
-            padding-top: 2rem;
+            padding-top: 4.5rem;
             padding-bottom: 4rem;
         }
 
@@ -122,6 +134,21 @@ def apply_theme() -> None:
 
         [data-testid="stSidebar"] * {
             color: #f7f3ea;
+        }
+
+        [data-testid="stSidebar"] h3,
+        [data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+            color: #f7f3ea !important;
+        }
+        [data-testid="stSidebar"] .stButton > button {
+            background-color: #fffdf8;
+        }
+        [data-testid="stSidebar"] .stButton > button * {
+            color: var(--bev-ink) !important;
+        }
+        [data-testid="stSidebar"] [role="radiogroup"] label {
+            min-height: 44px;
+            align-items: center;
         }
 
         [data-testid="stSidebar"] input,
@@ -155,7 +182,12 @@ def apply_theme() -> None:
             border-radius: 999px;
             border-color: rgba(18,53,66,.32);
             font-weight: 650;
+            min-height: 44px;
         }
+        a:focus-visible, button:focus-visible, input:focus-visible,
+        [tabindex]:focus-visible { outline: 3px solid #b57824 !important; outline-offset: 3px; }
+        [data-testid="stMarkdownContainer"] { overflow-wrap: anywhere; }
+        [data-testid="stTabs"] [role="tab"] { min-height: 44px; }
 
         .stButton > button[kind="primary"],
         .stDownloadButton > button[kind="primary"] {
@@ -291,8 +323,11 @@ def apply_theme() -> None:
         }
 
         @media (max-width: 700px) {
-            .block-container { padding-top: 1rem; }
+            .block-container { padding-top: 4.25rem; }
             .bev-hero { border-radius: 16px; padding: 2rem 1.35rem 2.5rem; }
+            [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
+            [data-testid="stColumn"] { min-width: min(100%, 18rem); flex: 1 1 18rem; }
+            [data-testid="stTabs"] [role="tablist"] { overflow-x: auto; }
         }
         </style>
         """,
@@ -328,7 +363,7 @@ def check_password() -> None:
 
     left, center, right = st.columns([1, 1.35, 1])
     with center:
-        st.markdown("<div class='bev-eyebrow'>Private family archive</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Private family archive</div>", unsafe_allow_html=True)
         st.title("Beverage Family")
         st.write("Enter the family password to explore the tree, timeline, and research records.")
         with st.form("login_form", clear_on_submit=True):
@@ -360,7 +395,11 @@ def markdown_escape(value: Any) -> str:
 
 
 def person_url(person_id: str) -> str:
-    return f"?page=people&profile={quote(person_id)}"
+    params = {"page": "people", "profile": person_id}
+    for key in ("return_q", "return_where", "return_page"):
+        if key in st.query_params:
+            params[key] = st.query_params[key]
+    return "?" + urlencode(params)
 
 
 def event_url(event_id: str) -> str:
@@ -436,9 +475,9 @@ def render_sources(sources: list[Any], heading: str | None = None) -> None:
         st.caption("No source citation has been entered yet.")
         return
     if heading:
-        st.markdown(f"**{heading}**")
+        route_markdown(f"**{heading}**")
     for source in sources:
-        st.markdown(f"- {source_markdown(source)}")
+        route_markdown(f"- {source_markdown(source)}")
 
 
 def evidence_label(status: str) -> tuple[str, bool]:
@@ -466,6 +505,7 @@ def render_evidence_status(status: Any) -> None:
 
 def navigate(page: str) -> None:
     st.session_state["nav_page"] = page
+    st.session_state["nav_group"] = PAGE_GROUP[page]
     st.query_params["page"] = PAGE_SLUGS[page]
     if page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
@@ -477,8 +517,11 @@ def navigate(page: str) -> None:
 def clear_archive_route(page: str) -> None:
     for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Research Collection"}),
                                ("person", {"Historical Map", "Research Collection"}), ("source", {"Source Archive"}),
+                               ("q", {"Search", "Research Collection"}),
+                               *((key, {"Search"}) for key in ("results_page", "where")),
+                               *((key, {"People"}) for key in ("return_q", "return_page", "return_where")),
                                *((key, {"Research Collection"}) for key in
-                                 ("finding", "target", "view", "topic", "status", "q", "inventory", "location"))):
+                                 ("finding", "target", "view", "topic", "status", "inventory", "location"))):
         if page not in allowed and parameter in st.query_params:
             del st.query_params[parameter]
 
@@ -492,6 +535,7 @@ def center_tree_on(person_id: str) -> None:
 
 def open_profile(person_id: str) -> None:
     st.session_state["nav_page"] = "People"
+    st.session_state["nav_group"] = "Family"
     st.session_state["profile_selector"] = person_id
     st.query_params["page"] = "people"
     st.query_params["profile"] = person_id
@@ -508,6 +552,10 @@ def sync_sidebar_route() -> None:
     if page not in {"Timeline", "Historical Map"} and "event" in st.query_params:
         del st.query_params["event"]
     clear_archive_route(page)
+
+
+def sync_nav_group() -> None:
+    navigate(NAV_GROUPS[st.session_state["nav_group"]][0])
 
 
 def sync_profile_route() -> None:
@@ -537,16 +585,18 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
     elif requested_page and st.session_state.get("_last_query_slug") != query_slug:
         st.session_state["nav_page"] = requested_page
     st.session_state["_last_query_slug"] = query_slug
+    st.session_state["nav_group"] = PAGE_GROUP[st.session_state["nav_page"]]
 
     with st.sidebar:
-        st.markdown("### 🌊 Beverage Family")
+        route_markdown("### 🌊 Beverage Family")
         st.caption("North Haven genealogy archive")
+        group = st.radio("Explore", list(NAV_GROUPS), key="nav_group", on_change=sync_nav_group)
         page = st.radio(
-            "Navigation",
-            list(PAGE_SLUGS),
+            "In this section",
+            NAV_GROUPS[group],
             key="nav_page",
             on_change=sync_sidebar_route,
-            label_visibility="collapsed",
+            label_visibility="visible",
         )
         st.divider()
 
@@ -558,7 +608,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             format_func=lambda person_id: (
                 "Choose a person…"
                 if person_id is None
-                else person_name(people_by_id, person_id)
+                else person_name(people_by_id, person_id) + " · " + life_span(people_by_id[person_id])
             ),
             key="sidebar_person_lookup",
         )
@@ -590,66 +640,42 @@ def render_home(
     known_years = [year for year in years if year]
     span = f"{min(known_years)}–{max(known_years)}" if known_years else "Undated"
 
-    st.markdown(
+    route_markdown(
         """
         <section class="bev-hero">
           <div class="bev-kicker">North Haven · Maine · Family archive</div>
           <h1>The Beverage Family</h1>
           <p>Three centuries of people, places, work, and family connections—organized into one searchable, source-first record.</p>
-          <p><em>Designed to make things less confusing but I'm slightly more confused now</em></p>
+          <p>Start with someone you know, follow a family connection, or explore the places and records behind the stories.</p>
         </section>
         """,
         unsafe_allow_html=True,
     )
 
-    source_count = len(unique_sources(data))
-    metric_columns = st.columns(6)
-    metric_columns[0].metric("People", len(people))
-    metric_columns[1].metric("Timeline records", len(events))
-    metric_columns[2].metric("Places", len(unique_places(people)))
-    metric_columns[3].metric("Sources", source_count)
-    metric_columns[4].metric("Generations", generation_count(people_by_id, relationships))
-    metric_columns[5].metric("Recorded span", span)
-
-    st.write("")
-    action_columns = st.columns(4)
-    action_columns[0].button(
-        "Explore the family tree",
-        type="primary",
-        width="stretch",
-        on_click=navigate,
-        args=("Explore the Tree",),
-    )
-    action_columns[1].button(
-        "Browse all people",
-        width="stretch",
-        on_click=navigate,
-        args=("People",),
-    )
-    action_columns[2].button(
-        "Walk through the timeline",
-        width="stretch",
-        on_click=navigate,
-        args=("Timeline",),
-    )
-    action_columns[3].button(
-        "Search the whole archive",
-        width="stretch",
-        on_click=navigate,
-        args=("Search",),
-    )
-
-    with st.container(border=True):
-        st.subheader("New research collection")
-        collection = load_collection()
-        st.write(f"{len(collection.findings)} findings and {len(collection.sources)} registered sources, with evidence ratings, property research, photographs, and a retrieval plan.")
-        st.link_button("Explore the research collection", "?page=collection")
-        st.link_button("Download the five research reports", "?page=collection&view=Reports")
+    st.subheader("Where would you like to start?")
+    actions = [
+        ("Find a relative", "Search names, nicknames and spelling variants.", "?page=search"),
+        ("Explore the family", "Follow parents, spouses and children.", "?page=tree"),
+        ("Explore a place", "Visit the places behind family stories.", "?page=places"),
+        ("Photographs & documents", "Find authentic images and their original collections.", "?page=collection&view=Images"),
+        ("Read the family timeline", "Follow people and events through time.", "?page=timeline"),
+        ("What's new in the research", "See what the evidence clarifies and what remains open.", "?page=collection&view=Conflict%20review"),
+    ]
+    for row in (actions[:3], actions[3:]):
+        for col, (label, description, url) in zip(st.columns(3), row):
+            with col.container(border=True):
+                route_link(label, url, width="stretch")
+                st.caption(description)
+    with st.expander("About this family archive and its research"):
+        st.write(f"{len(people)} profiles · {len(events)} timeline records · {span}. Historical claims carry their sources; dates and relationships can remain uncertain.")
+        st.write("The original research collection includes 57 findings and five downloadable reports. New evidence reviews retain the previous claims and explain any proposed corrections.")
+        route_link("Sources and research method", "?page=sources")
+        route_link("Download the original reports", "?page=collection&view=Reports")
 
     st.divider()
     left, right = st.columns([1.05, 1], gap="large")
     with left:
-        st.markdown("<div class='bev-eyebrow'>Start with a name</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Start with a name</div>", unsafe_allow_html=True)
         st.subheader("Find a family member")
         ordered = sorted_people(people)
         person_ids = [str(person["id"]) for person in ordered]
@@ -670,7 +696,7 @@ def render_home(
             args=(chosen,),
         )
 
-        st.markdown("<div class='bev-eyebrow'>Research standard</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Research standard</div>", unsafe_allow_html=True)
         st.subheader("Evidence stays visible")
         st.write(
             "Original records and institutional archives receive the most weight. "
@@ -679,7 +705,7 @@ def render_home(
         )
 
     with right:
-        st.markdown("<div class='bev-eyebrow'>Featured records</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Featured records</div>", unsafe_allow_html=True)
         st.subheader("Stories anchored to sources")
         featured_ids = (
             "research_civic_harrison_1859",
@@ -692,7 +718,7 @@ def render_home(
             if not record:
                 continue
             with st.container(border=True):
-                st.markdown(f"**{record.get('title', 'Research record')}**")
+                route_markdown(f"**{record.get('title', 'Research record')}**")
                 st.write(record.get("why_it_matters") or record.get("summary", ""))
                 st.caption(
                     f"{record.get('record_date', 'Undated')} · "
@@ -712,24 +738,24 @@ def render_home(
     random_person = sorted_people(people)[today.toordinal() % len(people)] if people else None
     day_column, relative_column, recent_column = st.columns(3, gap="large")
     with day_column:
-        st.markdown("<div class='bev-eyebrow'>On this day</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>On this day</div>", unsafe_allow_html=True)
         st.subheader("Beverage history today")
         if on_this_day:
             for event in sorted(on_this_day, key=date_sort_key)[:3]:
-                st.markdown(f"[{event.get('title', 'Untitled event')}]({event_url(str(event['id']))})")
+                route_markdown(f"[{event.get('title', 'Untitled event')}]({event_url(str(event['id']))})")
                 st.caption(format_date(event.get("date"), event.get("date_precision")))
         else:
             st.caption("No exact-date event is recorded for this calendar day yet.")
     with relative_column:
-        st.markdown("<div class='bev-eyebrow'>Random relative</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Random relative</div>", unsafe_allow_html=True)
         st.subheader(random_person.get("full_name") if random_person else "No profile")
         if random_person:
             st.caption(life_span(random_person))
             notes = str(random_person.get("notes") or random_person.get("biography") or "Profile ready to explore.")
             st.write(notes if len(notes) <= 220 else notes[:217] + "…")
-            st.markdown(f"[Open profile →]({person_url(str(random_person['id']))})")
+            route_markdown(f"[Open profile →]({person_url(str(random_person['id']))})")
     with recent_column:
-        st.markdown("<div class='bev-eyebrow'>Recently researched</div>", unsafe_allow_html=True)
+        route_markdown("<div class='bev-eyebrow'>Recently researched</div>", unsafe_allow_html=True)
         st.subheader("Newly documented")
         recent = sorted(
             research,
@@ -737,7 +763,7 @@ def render_home(
             reverse=True,
         )[:3]
         for record in recent:
-            st.markdown(f"**{record.get('title', 'Research note')}**")
+            route_markdown(f"**{record.get('title', 'Research note')}**")
             st.caption(str(record.get("evidence_level", "Evidence not rated")))
 
 
@@ -756,14 +782,14 @@ def render_event_card(
     with st.container(border=True):
         date_column, story_column = st.columns([1, 3.4])
         with date_column:
-            st.markdown(
+            route_markdown(
                 f"**{format_date(event.get('date'), event.get('date_precision'))}**"
             )
             precision = event.get("date_precision")
             if precision and precision != "exact":
                 st.caption(f"{str(precision).replace('_', ' ').title()} date")
         with story_column:
-            st.markdown(f"### {event.get('title', 'Untitled event')}")
+            route_markdown(f"### {event.get('title', 'Untitled event')}")
             if event.get("evidence_status"):
                 label, provisional = evidence_label(str(event["evidence_status"]))
                 st.caption(label)
@@ -773,7 +799,7 @@ def render_event_card(
                 for person_id in event.get("people_involved", [])
             ]
             if involved:
-                st.markdown("**People:** " + ", ".join(involved))
+                route_markdown("**People:** " + ", ".join(involved))
             render_event_archive(str(event["id"]), load_archive())
             if event.get("sources"):
                 if compact:
@@ -789,14 +815,14 @@ def render_relation_group(
     people_by_id: Mapping[str, Record],
 ) -> None:
     with st.container(border=True):
-        st.markdown(f"**{title}**")
+        route_markdown(f"**{title}**")
         if not related_ids:
             st.caption("No relationship entered")
             return
         for related_id in related_ids:
             related = people_by_id.get(related_id)
             suffix = f" · {life_span(related)}" if related else " · unresolved profile"
-            st.markdown(f"- {person_link(people_by_id, related_id)}{suffix}")
+            route_markdown(f"- {person_link(people_by_id, related_id)}{suffix}")
 
 
 def render_person_profile(
@@ -807,7 +833,7 @@ def render_person_profile(
     research: list[Record],
 ) -> None:
     person_id = str(person["id"])
-    st.markdown(
+    route_markdown(
         f"""
         <section class="bev-profile-banner">
           <div class="bev-eyebrow">Person profile</div>
@@ -823,13 +849,13 @@ def render_person_profile(
 
     born, died = st.columns(2)
     with born:
-        st.markdown("**Born**")
+        route_markdown("**Born**")
         st.write(
             f"{format_date(person.get('birth_date'), person.get('birth_date_precision'))} "
             f"— {person.get('birth_place') or 'Unknown'}"
         )
     with died:
-        st.markdown("**Died**")
+        route_markdown("**Died**")
         if person.get("death_date") or person.get("death_place"):
             st.write(
                 f"{format_date(person.get('death_date'), person.get('death_date_precision'))} "
@@ -838,6 +864,11 @@ def render_person_profile(
         else:
             st.write("No death record entered")
 
+    if person.get("baptism_date"):
+        route_markdown("**Baptized**")
+        st.write(format_date(person["baptism_date"]) + " — " + person.get("baptism_place", "Unknown"))
+        st.caption("This is a baptism date. The birth date is not established; the recorded birthplace remains unverified.")
+    render_profile_review(person_id, load_collection(), people_by_id)
     render_evidence_status(person.get("evidence_status"))
     if person.get("needs_research"):
         st.warning("Needs more research — this profile contains one or more provisional leads.")
@@ -872,9 +903,9 @@ def render_person_profile(
             for index, (label, values) in enumerate(populated):
                 with detail_columns[index % 2]:
                     with st.container(border=True):
-                        st.markdown(f"**{label}**")
+                        route_markdown(f"**{label}**")
                         for value in values:
-                            st.markdown(f"- {markdown_escape(value)}")
+                            route_markdown(f"- {markdown_escape(value)}")
 
         person_events = related_events(events, person_id)
         st.subheader(f"Timeline records involving this person ({len(person_events)})")
@@ -917,7 +948,7 @@ def render_person_profile(
             st.subheader("Known residences")
             for residence in residences:
                 with st.container(border=True):
-                    st.markdown(f"**{residence.get('location', 'Unknown location')}**")
+                    route_markdown(f"**{residence.get('location', 'Unknown location')}**")
                     if residence.get("period"):
                         st.caption(str(residence["period"]))
         else:
@@ -929,7 +960,7 @@ def render_person_profile(
         if archive_records:
             st.subheader("Source Archive records")
             for source in archive_records:
-                st.markdown(f"- {source_link(source)}")
+                route_markdown(f"- {source_link(source)}")
         st.subheader("Profile sources")
         render_sources(person.get("sources", []))
 
@@ -938,16 +969,17 @@ def render_person_profile(
             st.subheader("Date precision")
             for field_name, details in date_provenance.items():
                 label = field_name.replace("_", " ").title()
-                st.markdown(f"**{label}:** {person.get(field_name + '_precision', 'unknown').title()}")
+                route_markdown(f"**{label}:** {person.get(field_name + '_precision', 'unknown').title()}")
                 if details.get("determination"):
                     st.caption(str(details["determination"]))
 
         conflicts = person.get("conflicting_evidence", [])
         if conflicts:
-            st.subheader("Evidence conflicts for family review")
+            st.subheader("Earlier evidence conflicts for family review")
+            st.caption("Preserved original notes. See Dates, identity and evidence notes above for the latest review; these earlier values may differ from the current proposed display.")
             for conflict in conflicts:
                 with st.container(border=True):
-                    st.markdown(f"**{conflict.get('claim', 'Conflicting claim')}**")
+                    route_markdown(f"**{conflict.get('claim', 'Conflicting claim')}**")
                     st.write(f"Existing record: {conflict.get('existing_record', 'Not recorded')}")
                     st.write(f"Reviewed source: {conflict.get('reviewed_source', 'Not recorded')}")
                     st.caption(str(conflict.get("status", "Unresolved")))
@@ -966,7 +998,7 @@ def render_person_profile(
                 )
                 st.write(record.get("summary", ""))
                 if record.get("why_it_matters"):
-                    st.markdown("**Why it matters**")
+                    route_markdown("**Why it matters**")
                     st.write(record["why_it_matters"])
                 render_sources(record.get("sources", []), "Records and repositories")
 
@@ -979,6 +1011,13 @@ def render_people_page(
     st.title("People")
     st.write("Search the complete profile index, then move directly through connected relatives and records.")
 
+    if "return_q" in st.query_params or "return_where" in st.query_params:
+        back = "?" + urlencode({"page": "search", "q": st.query_params.get("return_q", ""),
+                                "where": st.query_params.get("return_where", ""),
+                                "results_page": st.query_params.get("return_page", "1")})
+        route_link("← Back to your search results", back)
+    if get_query_value("profile") and get_query_value("profile") not in people_by_id:
+        st.warning("That profile was not found. Choose a relative below or search by name.")
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
     query_profile = get_query_value("profile")
@@ -1014,112 +1053,130 @@ def record_search_blob(record: Record) -> str:
     return json.dumps(record, ensure_ascii=False, default=str).casefold()
 
 
-def render_search_page(
-    data: dict[str, list[Record]],
-    people_by_id: Mapping[str, Record],
-) -> None:
-    st.title("Search the Whole Archive")
-    st.write(
-        "Search names and alternate spellings, places, dates, occupations, notes, "
-        "events, repositories, and source titles from one place."
-    )
-    query = st.text_input(
-        "Global search",
-        placeholder="Try Beverage antenna, North Haven, nurse, 1921, or Columbia…",
-    ).strip().casefold()
-    if not query:
-        st.info("Enter a word, name, place, year, occupation, event, or source.")
+def sync_search_route() -> None:
+    values = {"q": st.session_state.get("global_query", ""),
+              "where": st.session_state.get("global_where", ""),
+              "results_page": str(st.session_state.get("global_people_page", 1))}
+    st.query_params["page"] = "search"
+    for key, value in values.items():
+        if value:
+            st.query_params[key] = value
+        elif key in st.query_params:
+            del st.query_params[key]
+    st.session_state["_search_memory"] = values
+    st.session_state["_search_route"] = tuple(values.values())
+
+
+def changed_search() -> None:
+    for kind in ("people", "events", "research", "sources", "findings"):
+        st.session_state["global_" + kind + "_page"] = 1
+    sync_search_route()
+
+
+def clear_search() -> None:
+    st.session_state["global_query"] = ""
+    st.session_state["global_where"] = ""
+    changed_search()
+
+
+def render_search_page(data, people_by_id) -> None:
+    st.title("Find a relative")
+    st.write("Search names, places, stories and sources. Known spellings and initials are included; similar names stay separate.")
+    memory = st.session_state.get("_search_memory", {})
+    route = tuple(st.query_params.get(k, memory.get(k, "" if k != "results_page" else "1"))
+                  for k in ("q", "where", "results_page"))
+    if st.session_state.get("_search_route") != route or "global_query" not in st.session_state:
+        st.session_state["global_query"], st.session_state["global_where"] = route[:2]
+        st.session_state["global_people_page"] = int(route[2]) if str(route[2]).isdigit() else 1
+        st.session_state["_search_route"] = route
+        st.session_state["_search_memory"] = dict(zip(("q", "where", "results_page"), route))
+    query = st.text_input("Global search", placeholder="Try Eliot Beveridge, H H Beverage, or antenna…",
+                          key="global_query", on_change=changed_search).strip()
+    place = st.text_input("Place mentioned (optional)", placeholder="For example, North Haven or Marblehead",
+                          key="global_where", on_change=changed_search).strip()
+    st.button("Clear search", on_click=clear_search)
+    if not query and not place:
+        st.info("Enter a name or subject to search, or use a place to browse its records.")
         return
-
-    people_matches = [person for person in data["people"] if query in record_search_blob(person)]
-    event_matches = [event for event in data["events"] if query in record_search_blob(event)]
-    research_matches = [record for record in data["research"] if query in record_search_blob(record)]
+    def selected(record):
+        return archive_matches(query, record) and archive_matches(place, record)
+    reasons = {p["id"]: person_match(query, p) if query else "Place mentioned in profile"
+               for p in data["people"] if archive_matches(place, p)}
     collection = load_collection()
-    finding_matches = collection.select(query=query)
-    related_profile_ids = {pid for record in finding_matches for pid in record["Navigation"]["people_ids"]}
-    matched_profile_ids = {str(person["id"]) for person in people_matches}
-    people_matches.extend(person for person in data["people"]
-                          if person["id"] in related_profile_ids - matched_profile_ids)
-    register_matches = [source for source in collection.sources.values() if research_matches_query(query, source)]
-
-    source_matches: list[tuple[Any, str, str]] = []
-    for collection_name, records in (
-        ("person", data["people"]),
-        ("event", data["events"]),
-        ("research", data["research"]),
-    ):
-        for record in records:
-            for source in record.get("sources", []):
-                if query in source_search_text(source).casefold():
-                    source_matches.append((source, collection_name, str(record["id"])))
-
-    metrics = st.columns(4)
-    metrics[0].metric("People", len(people_matches))
-    metrics[1].metric("Events", len(event_matches))
-    metrics[2].metric("Research notes & findings", len(research_matches) + len(finding_matches))
-    metrics[3].metric("Source links & register entries", len(source_matches) + len(register_matches))
-
-    people_tab, events_tab, research_tab, sources_tab = st.tabs(
-        ["People", "Events", "Research", "Sources"]
-    )
-    with people_tab:
-        if not people_matches:
-            st.caption("No people matched.")
-        for person in sorted(people_matches, key=person_sort_key)[:30]:
+    findings = [r for r in collection.findings.values() if selected(r)]
+    for r in findings:
+        for pid in r["Navigation"]["people_ids"]:
+            if not reasons.get(pid):
+                reasons[pid] = "Linked research — check the finding's identity notes"
+    people = sorted((p for p in data["people"] if reasons.get(p["id"])),
+                    key=lambda p: (reasons[p["id"]] != "Name, initials or spelling variant", person_sort_key(p)))
+    events = sorted((r for r in data["events"] if selected(r)), key=date_sort_key)
+    notes = [r for r in data["research"] if selected(r)]
+    sources = [s for s in collection.sources.values() if selected(s)]
+    review_sources = [s for s in review_data()["sources"] if selected(s)]
+    reviews = [r for r in review_data()["resolutions"] if selected(r)]
+    legacy_sources = {}
+    for kind, records in (("People", data["people"]), ("Timeline", data["events"]), ("Research", data["research"])):
+        for r in records:
+            for source in r.get("sources", []):
+                if selected(source):
+                    legacy_sources.setdefault(source_search_text(source), source)
+    tabs = st.tabs([f"People ({len(people)})", f"Events ({len(events)})",
+                    f"Research ({len(findings) + len(notes) + len(reviews)})",
+                    f"Sources ({len(sources) + len(review_sources) + len(legacy_sources)})"])
+    with tabs[0]:
+        st.caption(f"{len(people)} matching profiles · Matching names do not establish a relationship.")
+        pages = max(1, (len(people) + 11) // 12)
+        value = st.session_state.get("global_people_page", 1)
+        if value < 1 or value > pages:
+            st.session_state["global_people_page"] = 1
+        page = st.selectbox("People results page", range(1, pages + 1), key="global_people_page",
+                            format_func=lambda n: f"{n} of {pages}", on_change=sync_search_route)
+        if not people:
+            st.info("No profiles match. Try a first name, fewer words or a broader place.")
+        for person in people[(page - 1) * 12:page * 12]:
+            url = "?" + urlencode({"page": "people", "profile": person["id"], "return_q": query,
+                                     "return_where": place, "return_page": page})
             with st.container(border=True):
-                st.markdown(f"### [{markdown_escape(person.get('full_name', 'Unnamed'))}]({person_url(str(person['id']))})")
-                st.caption(life_span(person))
-                context = str(person.get("biography") or person.get("notes") or "Profile available")
-                st.write(context if len(context) < 280 else context[:277] + "…")
-    with events_tab:
-        if not event_matches:
-            st.caption("No events matched.")
-        for event in sorted(event_matches, key=date_sort_key)[:30]:
+                route_markdown(f"### [{markdown_escape(person['full_name'])}]({url})")
+                st.caption(life_span(person) + " · " + str(person.get("birth_place") or "Birthplace unknown"))
+                relatives = [person_name(people_by_id, pid) for pid in person.get("parents", [])]
+                if relatives:
+                    st.caption("Parents: " + " · ".join(relatives))
+                st.caption("Match: " + reasons[person["id"]])
+                context = str(person.get("biography") or person.get("notes") or "Open this profile to explore family connections.")
+                st.write(context if len(context) <= 240 else context[:237] + "…")
+                if person.get("conflict_review_ids"):
+                    st.caption("Evidence notes available on this profile.")
+    with tabs[1]:
+        if not events:
+            st.info("No events match these words and place.")
+        for event in paginate(events, "global_events_page"):
+            render_event_card(event, people_by_id, compact=True)
+    with tabs[2]:
+        for r in reviews:
+            route_markdown(f"**[Evidence review: {r['title']}]({review_link(r['research_id'])})**")
+            st.caption(r["resolution_status"])
+        for r in paginate(findings, "global_findings_page"):
             with st.container(border=True):
-                st.markdown(f"### [{markdown_escape(event.get('title', 'Untitled event'))}]({event_url(str(event['id']))})")
-                st.caption(format_date(event.get("date"), event.get("date_precision")))
-                description = str(event.get("description", ""))
-                st.write(description if len(description) < 320 else description[:317] + "…")
-    with research_tab:
-        if finding_matches:
-            st.subheader("Research collection findings")
-            for record in finding_matches[:12]:
-                with st.container(border=True):
-                    render_finding(record, collection, people_by_id)
-            st.link_button("See all matching findings", "?page=collection&q=" + quote(query))
-        if not research_matches and not finding_matches:
-            st.caption("No research notes matched.")
-        for record in research_matches[:30]:
-            with st.container(border=True):
-                st.markdown(f"### {markdown_escape(record.get('title', 'Research note'))}")
-                st.caption(
-                    f"{record.get('category', 'Uncategorized')} · "
-                    f"{record.get('evidence_level', 'Evidence not rated')}"
-                )
-                st.write(record.get("summary", ""))
-    with sources_tab:
-        if register_matches:
-            st.subheader("Research source register")
-            for source in register_matches[:30]:
-                st.markdown(f"- {register_link(source)} — {markdown_escape(source['Viewed status'])}")
-            st.link_button("Browse the complete research source register", "?page=collection&view=Sources")
-        if not source_matches and not register_matches:
-            st.caption("No sources matched.")
-        seen_matches: set[tuple[str, str, str]] = set()
-        for source, owner_type, owner_id in source_matches[:50]:
-            key = (source_search_text(source), owner_type, owner_id)
-            if key in seen_matches:
-                continue
-            seen_matches.add(key)
-            if owner_type == "person":
-                owner_link = person_link(people_by_id, owner_id)
-            elif owner_type == "event":
-                event = next((item for item in data["events"] if item.get("id") == owner_id), {})
-                owner_link = f"[{markdown_escape(event.get('title', 'Timeline event'))}]({event_url(owner_id)})"
-            else:
-                record = next((item for item in data["research"] if item.get("id") == owner_id), {})
-                owner_link = markdown_escape(record.get("title", "Research note"))
-            st.markdown(f"- {source_markdown(source)}  \n  Supports: {owner_link}")
+                render_finding(r, collection, people_by_id)
+        for r in paginate(notes, "global_research_page"):
+            with st.expander(r.get("title", "Research note")):
+                st.write(r.get("summary", ""))
+                render_sources(r.get("sources", []))
+        if not findings and not notes and not reviews:
+            st.info("No research matches. Try a surname or a shorter subject.")
+    with tabs[3]:
+        for source in paginate(sources, "global_sources_page"):
+            route_markdown(f"- {register_link(source)}")
+            st.caption(source["Viewed status"])
+        for source in review_sources:
+            route_markdown(f"- [{source['title']}]({'?page=archive&source=' + source['id']})")
+            st.caption(source["viewed"])
+        with st.expander(f"Citations attached to profiles and events ({len(legacy_sources)})"):
+            render_sources(list(legacy_sources.values()))
+        if not sources and not review_sources and not legacy_sources:
+            st.info("No source citations match.")
 
 
 def graph_node_label(person: Record | None, person_id: str) -> str:
@@ -1271,6 +1328,8 @@ def render_tree_page(
     with depth:
         generations = st.slider("Generations", 1, 8, 4, disabled=view == "Immediate family")
 
+    st.caption("Prefer a readable list? Open the profile’s Family tab for linked relatives. Recorded links can include unresolved research questions.")
+    render_profile_review(focus_id, load_collection(), people_by_id)
     graph = build_family_graph(people_by_id, relationships, focus_id, view, generations)
     st.graphviz_chart(graph, width="stretch")
     st.caption("Nodes include profile links where supported. The family navigator below always opens the selected profile.")
@@ -1279,7 +1338,7 @@ def render_tree_page(
     with st.container(border=True):
         summary, action = st.columns([3, 1])
         with summary:
-            st.markdown(f"**{focus.get('full_name')}** · {life_span(focus)}")
+            route_markdown(f"**{focus.get('full_name')}** · {life_span(focus)}")
             if focus.get("notes"):
                 notes = str(focus["notes"])
                 st.write(notes if len(notes) <= 280 else notes[:277] + "…")
@@ -1294,7 +1353,7 @@ def render_tree_page(
 
     st.divider()
     st.subheader("Relationship finder")
-    st.write("Select two documented profiles to see the shortest connection supported by the current family graph.")
+    st.write("Select two profiles to follow the recorded connections. These may include unresolved relationships; read the evidence notes on each profile.")
     relationship_columns = st.columns(2)
     with relationship_columns[0]:
         start_id = st.selectbox(
@@ -1319,14 +1378,16 @@ def render_tree_page(
     elif len(path) == 1:
         st.success("You selected the same person twice.")
     else:
-        st.success(f"Connected in {len(path) - 1} relationship step(s).")
+        st.success(f"Connected in {len(path) - 1} recorded relationship step(s).")
+        if any(people_by_id.get(pid, {}).get("conflict_review_ids") for pid in path):
+            st.info("This path includes a profile with an open or reviewed evidence question. A path shows recorded links, not proof of every relationship.")
         path_parts: list[str] = []
         for index, person_id in enumerate(path):
             path_parts.append(person_link(people_by_id, person_id))
             if index < len(path) - 1:
                 step = relationship_step_label(relationships, person_id, path[index + 1])
                 path_parts.append(f"— *{step}* →")
-        st.markdown(" ".join(path_parts))
+        route_markdown(" ".join(path_parts))
 
 
 def render_full_tree_page(
@@ -1402,6 +1463,7 @@ def render_full_tree_page(
             "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
         )
 
+    st.caption("For a phone-friendly list of relatives, open a profile above and choose Family. Lines show recorded relationships, including those still under review.")
     st.iframe(
         build_full_tree_html(people_by_id, relationships),
         height=820,
@@ -1616,14 +1678,14 @@ def render_research_page(
             )
             st.write(record.get("summary", ""))
             if record.get("why_it_matters"):
-                st.markdown("**Why it matters**")
+                route_markdown("**Why it matters**")
                 st.write(record["why_it_matters"])
             involved = [
                 person_link(people_by_id, str(person_id))
                 for person_id in record.get("people_involved", [])
             ]
             if involved:
-                st.markdown("**People:** " + ", ".join(involved))
+                route_markdown("**People:** " + ", ".join(involved))
             render_sources(record.get("sources", []), "Records and repositories")
 
     st.divider()
@@ -1675,8 +1737,8 @@ def render_sources_page(
 ) -> None:
     st.title("Sources & Method")
     st.write("How the archive separates a documented fact, a published account, and a lead that still needs verification.")
-    st.link_button("Open the expanded research source register", "?page=collection&view=Sources")
-    st.link_button("Read research coverage and limitations", "?page=collection&view=Inventories&inventory=Source+Coverage")
+    route_link("Open the expanded research source register", "?page=collection&view=Sources")
+    route_link("Read research coverage and limitations", "?page=collection&view=Inventories&inventory=Source+Coverage")
 
     catalog: list[dict[str, Any]] = []
     for owner_type, records in (
@@ -1746,12 +1808,12 @@ def render_sources_page(
         else:
             owner = markdown_escape(item["owner_title"])
         with st.container(border=True):
-            st.markdown(f"**{source_markdown(item['source'])}**")
+            route_markdown(f"**{source_markdown(item['source'])}**")
             st.caption(f"{item['repository']} · {item['record_type']} · {item['evidence_level']}")
             st.write(item["supports"])
             if item["access_status"]:
                 st.caption(f"Access check: {item['access_status']}")
-            st.markdown(f"Linked record: {owner}")
+            route_markdown(f"Linked record: {owner}")
 
     st.subheader("Evidence ladder")
     evidence_rows = (
@@ -1763,11 +1825,11 @@ def render_sources_page(
     )
     for title, explanation in evidence_rows:
         with st.container(border=True):
-            st.markdown(f"**{title}**")
+            route_markdown(f"**{title}**")
             st.write(explanation)
 
     st.subheader("Core online repositories")
-    st.markdown(
+    route_markdown(
         """
         - [U.S. National Archives: 1790 Census](https://www.archives.gov/research/census/1790)
         - [U.S. Census Bureau: 1790 Maine census publication](https://www2.census.gov/prod2/decennial/documents/1790c-01.pdf)
@@ -1780,7 +1842,7 @@ def render_sources_page(
     )
 
     st.subheader("Editorial rules")
-    st.markdown(
+    route_markdown(
         """
         - No person is added solely to make a branch look complete.
         - Unconfirmed relationships remain labeled **UNVERIFIED / PROVISIONAL**.
@@ -1798,13 +1860,14 @@ def render_sources_page(
 
 
 def render_footer() -> None:
-    st.markdown(
+    route_markdown(
         "<div class='bev-footer'>Beverage Family Archive · North Haven, Maine</div>",
         unsafe_allow_html=True,
     )
 
 
 def main() -> None:
+    begin_routes()
     apply_theme()
     check_password()
 
@@ -1817,6 +1880,8 @@ def main() -> None:
     people_by_id = index_people(data["people"])
     relationships = relationship_index(data["people"])
     page = render_sidebar(data["people"], people_by_id)
+    if page != "Home":
+        route_markdown(f"[Home](?page=home) / {PAGE_GROUP[page]} / {page}")
 
     if page == "Home":
         render_home(data, people_by_id, relationships)

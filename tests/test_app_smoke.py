@@ -11,6 +11,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class StreamlitSmokeTests(unittest.TestCase):
+    def go(self, app, page):
+        groups = {"Home": ("Home",), "Search": ("Search",),
+                  "Family": ("People", "Explore the Tree", "Full Family Map", "Timeline"),
+                  "Places": ("Historical Places", "Historical Map"),
+                  "Archive": ("Source Archive", "Sources & Method"),
+                  "Research": ("Research Collection", "Research Desk")}
+        group = next(k for k, v in groups.items() if page in v)
+        if app.radio(key="nav_group").value != group:
+            app.radio(key="nav_group").set_value(group).run()
+        app.radio(key="nav_page").set_value(page).run()
+        return app
+
     def logged_in_app(self, **query_params: str) -> AppTest:
         os.environ["APP_PASSWORD"] = "test-family-password"
         app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30)
@@ -41,7 +53,7 @@ class StreamlitSmokeTests(unittest.TestCase):
             "Sources & Method",
         ):
             with self.subTest(page=page):
-                app.radio[0].set_value(page)
+                self.go(app, page)
                 app.run()
                 self.assertEqual(
                     len(app.exception),
@@ -51,7 +63,7 @@ class StreamlitSmokeTests(unittest.TestCase):
 
     def test_research_collection_views_filters_and_reset(self) -> None:
         app = self.logged_in_app(page="collection", person="elliot_beverage_1908")
-        self.assertEqual(app.radio[0].value, "Research Collection")
+        self.assertEqual(app.radio(key="nav_page").value, "Research Collection")
         self.assertEqual(app.selectbox(key="collection_person").value, "elliot_beverage_1908")
         app.text_input(key="collection_query").input("IsleBuilt").run()
         self.assertTrue(any("BF-R028" in caption.value for caption in app.caption))
@@ -59,7 +71,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertEqual(app.text_input(key="collection_query").value, "")
         self.assertEqual(app.selectbox(key="collection_person").value, "")
         self.assertTrue(any("57 of 57 findings" in caption.value for caption in app.caption))
-        for view in ("Chronology", "Sources", "Retrieval plan", "Inventories", "Reports"):
+        for view in ("Chronology", "Sources", "Retrieval plan", "Inventories", "Images", "Conflict review", "Reports"):
             with self.subTest(view=view):
                 app.selectbox(key="collection_view").select(view).run()
                 self.assertFalse(app.exception, [e.value for e in app.exception])
@@ -80,8 +92,9 @@ class StreamlitSmokeTests(unittest.TestCase):
                 app = self.logged_in_app(**params)
                 self.assertFalse(app.exception, [e.value for e in app.exception])
                 text = " ".join(str(e.value) for kind in ("markdown", "caption", "subheader", "info") for e in getattr(app, kind))
+                text += " " + " ".join(b.label for b in app.button)
                 self.assertIn(expected, text)
-                app.radio[0].set_value("Home").run()
+                self.go(app, "Home")
                 for key in ("finding", "target", "view", "inventory", "person", "source"):
                     self.assertNotIn(key, app.query_params)
 
@@ -95,7 +108,7 @@ class StreamlitSmokeTests(unittest.TestCase):
     def test_tree_open_profile_uses_safe_callback_navigation(self) -> None:
         app = self.logged_in_app()
 
-        app.radio[0].set_value("Explore the Tree")
+        self.go(app, "Explore the Tree")
         app.run()
         target = "harold_h_beverage_1893"
         app.selectbox[0].select(target)
@@ -106,7 +119,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.run()
 
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
-        self.assertEqual(app.radio[0].value, "People")
+        self.assertEqual(app.radio(key="nav_page").value, "People")
         self.assertEqual(app.selectbox[0].value, target)
 
     def test_sidebar_open_profile_uses_safe_callback_navigation(self) -> None:
@@ -124,7 +137,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.run()
 
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
-        self.assertEqual(app.radio[0].value, "People")
+        self.assertEqual(app.radio(key="nav_page").value, "People")
         profile_selector = next(
             selectbox for selectbox in app.selectbox if selectbox.label == "Find a person"
         )
@@ -142,7 +155,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.run()
 
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
-        self.assertEqual(app.radio[0].value, "Explore the Tree")
+        self.assertEqual(app.radio(key="nav_page").value, "Explore the Tree")
         tree_picker = next(
             selectbox for selectbox in app.selectbox if selectbox.label == "Center person"
         )
@@ -150,7 +163,7 @@ class StreamlitSmokeTests(unittest.TestCase):
 
     def test_full_family_map_direct_route(self) -> None:
         app = self.logged_in_app(page="full-tree")
-        self.assertEqual(app.radio[0].value, "Full Family Map")
+        self.assertEqual(app.radio(key="nav_page").value, "Full Family Map")
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
 
     def test_historical_map_and_archive_direct_routes(self) -> None:
@@ -163,7 +176,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         ):
             with self.subTest(params=params):
                 app = self.logged_in_app(**params)
-                self.assertEqual(app.radio[0].value, page)
+                self.assertEqual(app.radio(key="nav_page").value, page)
                 self.assertEqual(len(app.exception), 0)
 
     def test_source_search_and_place_selection(self) -> None:
@@ -175,7 +188,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.selectbox(key="archive_place_selector").select("guatemala").run()
         self.assertEqual(app.query_params["place"], ["guatemala"])
         self.assertTrue(any("country point" in c.value for c in app.caption))
-        app.radio[0].set_value("Home").run()
+        self.go(app, "Home")
         self.assertNotIn("place", app.query_params)
 
     def test_map_still_requires_family_login(self) -> None:
@@ -204,7 +217,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.run()
 
         self.assertEqual(len(app.exception), 0, [exception.value for exception in app.exception])
-        self.assertEqual(app.radio[0].value, "People")
+        self.assertEqual(app.radio(key="nav_page").value, "People")
         profile_selector = next(
             selectbox for selectbox in app.selectbox if selectbox.label == "Find a person"
         )
@@ -213,32 +226,95 @@ class StreamlitSmokeTests(unittest.TestCase):
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
 
-        app.radio[0].set_value("Search")
+        self.go(app, "Search")
         app.run()
         app.text_input[0].input("Harold")
         app.run()
-        self.assertGreater(int(app.metric[0].value), 0)
+        self.assertTrue(any("Harold" in b.label for b in app.button))
 
-        app.radio[0].set_value("Explore the Tree")
+        self.go(app, "Explore the Tree")
         app.run()
         app.selectbox[2].select("harold_h_beverage_1893")
         app.selectbox[3].select("albert_glover_beverage_1827")
         app.run()
-        self.assertIn("Connected in 2 relationship step", app.success[0].value)
+        self.assertIn("Connected in 2 recorded relationship step", app.success[0].value)
 
-        app.radio[0].set_value("Timeline")
+        self.go(app, "Timeline")
         app.run()
         app.text_input[0].input("patent")
         app.run()
         self.assertTrue(any("1 of 1 matching" in item.value for item in app.caption))
 
         profile = self.logged_in_app(page="people", profile="harold_h_beverage_1893")
-        self.assertEqual(profile.radio[0].value, "People")
+        self.assertEqual(profile.radio(key="nav_page").value, "People")
         self.assertEqual(profile.selectbox[0].value, "harold_h_beverage_1893")
 
         event = self.logged_in_app(page="timeline", event="event_harold_patent_1921")
-        self.assertEqual(event.radio[0].value, "Timeline")
+        self.assertEqual(event.radio(key="nav_page").value, "Timeline")
         self.assertTrue(any("Direct link opened" in item.value for item in event.info))
+
+    def test_search_variant_pagination_return_route_and_reset(self):
+        app = self.logged_in_app(page="search", q="Bevridge", where="North Haven", results_page="2")
+        self.assertEqual(app.text_input(key="global_query").value, "Bevridge")
+        self.assertEqual(app.selectbox(key="global_people_page").value, 2)
+        self.assertGreater(len(app.selectbox(key="global_people_page").options), 3)
+        # Profile controls retain callback routes; results beyond the old 30 cap are usable.
+        self.assertTrue(any("Bever" in b.label for b in app.button))
+        self.go(app, "Home")
+        self.go(app, "Search")
+        self.assertEqual(app.text_input(key="global_query").value, "Bevridge")
+        self.assertEqual(app.text_input(key="global_where").value, "North Haven")
+        self.assertEqual(app.selectbox(key="global_people_page").value, 2)
+        app.text_input(key="global_query").input("Eliot Beveridge").run()
+        self.assertEqual(app.selectbox(key="global_people_page").value, 1)
+        self.assertTrue(any("Elliot" in b.label for b in app.button))
+        next(b for b in app.button if b.label == "Clear search").click().run()
+        self.assertEqual(app.text_input(key="global_query").value, "")
+        self.assertEqual(app.text_input(key="global_where").value, "")
+        self.assertFalse(app.exception)
+
+    def test_profile_back_link_survives_connected_relatives(self):
+        app = self.logged_in_app(page="people", profile="harold_h_beverage_1893",
+                                 return_q="Bevridge", return_where="North Haven", return_page="2")
+        # Follow a real family control, then return without logging in again.
+        next(b for b in app.button if b.label == "Fremont Beverage").click().run()
+        self.assertEqual(app.query_params["profile"], ["fremont_beverage_1856"])
+        next(b for b in app.button if "Back to your search" in b.label).click().run()
+        self.assertFalse(app.exception)
+        self.assertEqual(app.selectbox(key="global_people_page").value, 2)
+        self.assertEqual(app.text_input(key="global_query").value, "Bevridge")
+
+    def test_review_routes_corrections_and_authentication(self):
+        cases = (
+            ({"page":"people", "profile":"diana_daggett_1780"}, "Baptized"),
+            ({"page":"people", "profile":"lowell_beveridge_1905"}, "Dorchester, Massachusetts"),
+            ({"page":"collection", "view":"Conflict review"}, "11 of 11 questions"),
+            ({"page":"collection", "finding":"BF-R008"}, "CRS001"),
+            ({"page":"archive", "source":"CRS003"}, "p. xli"),
+            ({"page":"collection", "view":"Images"}, "Photographs, maps and objects"),
+        )
+        for params, expected in cases:
+            with self.subTest(params=params):
+                app = self.logged_in_app(**params)
+                text = " ".join(str(e.value) for kind in ("markdown", "caption", "subheader", "info") for e in getattr(app, kind))
+                text += " " + " ".join(b.label for b in app.button)
+                self.assertIn(expected, text)
+                self.assertFalse(app.exception, [e.value for e in app.exception])
+                gated = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30)
+                for key, value in params.items():
+                    gated.query_params[key] = value
+                gated.run()
+                self.assertEqual(len(gated.radio), 0)
+                self.assertEqual(len(gated.text_input), 1)
+
+    def test_research_filters_survive_leaving_and_returning(self):
+        app = self.logged_in_app(page="collection", person="elliot_beverage_1908")
+        self.go(app, "Home")
+        self.go(app, "Research Collection")
+        self.assertFalse(app.exception)
+        app.selectbox(key="collection_view").select("Images").run()
+        app.selectbox(key="collection_view").select("Findings").run()
+        self.assertFalse(app.exception)
 
 
 if __name__ == "__main__":
