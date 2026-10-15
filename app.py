@@ -16,6 +16,7 @@ import streamlit as st
 from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
+from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory
 from full_tree import build_full_tree_html
 from archive import ArchiveIndex
 from archive_ui import (
@@ -78,14 +79,18 @@ PAGE_SLUGS = {
     "Research Desk": "research",
     "Research Collection": "collection",
     "Sources & Method": "sources",
+    "Stories & Discoveries": "stories",
+    "Photographs & Documents": "media",
+    "Document Reader": "documents",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
 NAV_GROUPS = {
     "Home": ["Home"],
     "Search": ["Search"],
     "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
+    "Stories": ["Stories & Discoveries"],
     "Places": ["Historical Places", "Historical Map"],
-    "Archive": ["Source Archive", "Sources & Method"],
+    "Archive": ["Photographs & Documents", "Document Reader", "Source Archive", "Sources & Method"],
     "Research": ["Research Collection", "Research Desk"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
@@ -657,9 +662,9 @@ def render_home(
         ("Find a relative", "Search names, nicknames and spelling variants.", "?page=search"),
         ("Explore the family", "Follow parents, spouses and children.", "?page=tree"),
         ("Explore a place", "Visit the places behind family stories.", "?page=places"),
-        ("Photographs & documents", "Find authentic images and their original collections.", "?page=collection&view=Images"),
+        ("Photographs & documents", "Browse original sources and historical image records.", "?page=media"),
         ("Read the family timeline", "Follow people and events through time.", "?page=timeline"),
-        ("What's new in the research", "See what the evidence clarifies and what remains open.", "?page=collection&view=Conflict%20review"),
+        ("Discover family stories", "Explore remarkable people, places and discoveries.", "?page=stories"),
     ]
     for row in (actions[:3], actions[3:]):
         for col, (label, description, url) in zip(st.columns(3), row):
@@ -1010,6 +1015,10 @@ def render_people_page(
 ) -> None:
     st.title("People")
     st.write("Search the complete profile index, then move directly through connected relatives and records.")
+
+    if not get_query_value("profile"):
+        render_people_directory(data["people"], people_by_id)
+        return
 
     if "return_q" in st.query_params or "return_where" in st.query_params:
         back = "?" + urlencode({"page": "search", "q": st.query_params.get("return_q", ""),
@@ -1907,6 +1916,12 @@ def main() -> None:
         render_collection_page(people_by_id, load_archive().places)
     elif page == "Sources & Method":
         render_sources_page(data, people_by_id)
+    elif page == "Stories & Discoveries":
+        render_stories_page()
+    elif page == "Photographs & Documents":
+        render_media_page()
+    elif page == "Document Reader":
+        render_document_page()
 
     render_footer()
 
