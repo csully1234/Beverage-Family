@@ -37,6 +37,7 @@ class StreamlitSmokeTests(unittest.TestCase):
             "People",
             "Timeline",
             "Research Desk",
+            "Research Collection",
             "Sources & Method",
         ):
             with self.subTest(page=page):
@@ -47,6 +48,49 @@ class StreamlitSmokeTests(unittest.TestCase):
                     0,
                     [exception.value for exception in app.exception],
                 )
+
+    def test_research_collection_views_filters_and_reset(self) -> None:
+        app = self.logged_in_app(page="collection", person="elliot_beverage_1908")
+        self.assertEqual(app.radio[0].value, "Research Collection")
+        self.assertEqual(app.selectbox(key="collection_person").value, "elliot_beverage_1908")
+        app.text_input(key="collection_query").input("IsleBuilt").run()
+        self.assertTrue(any("BF-R028" in caption.value for caption in app.caption))
+        next(b for b in app.button if b.label == "Clear research filters").click().run()
+        self.assertEqual(app.text_input(key="collection_query").value, "")
+        self.assertEqual(app.selectbox(key="collection_person").value, "")
+        self.assertTrue(any("57 of 57 findings" in caption.value for caption in app.caption))
+        for view in ("Chronology", "Sources", "Retrieval plan", "Inventories", "Reports"):
+            with self.subTest(view=view):
+                app.selectbox(key="collection_view").select(view).run()
+                self.assertFalse(app.exception, [e.value for e in app.exception])
+        app.selectbox(key="dossier_section").select(7).run()
+        self.assertFalse(app.exception)
+
+    def test_research_deep_links_and_existing_profile_context(self) -> None:
+        cases = (
+            ({"page": "collection", "finding": "BF-R033"}, "Registration dates are not deed dates"),
+            ({"page": "collection", "finding": "BF-R049"}, "Duplicate suspected"),
+            ({"page": "archive", "source": "SRC118"}, "Findings citing this source"),
+            ({"page": "people", "profile": "elliot_beverage_1908"}, "IsleBuilt"),
+            ({"page": "collection", "target": "BF-G001"}, "Family Bible pages"),
+            ({"page": "collection", "view": "Inventories", "inventory": "Properties and Deeds"}, "Snapshot of the supplied workbook"),
+        )
+        for params, expected in cases:
+            with self.subTest(params=params):
+                app = self.logged_in_app(**params)
+                self.assertFalse(app.exception, [e.value for e in app.exception])
+                text = " ".join(str(e.value) for kind in ("markdown", "caption", "subheader", "info") for e in getattr(app, kind))
+                self.assertIn(expected, text)
+                app.radio[0].set_value("Home").run()
+                for key in ("finding", "target", "view", "inventory", "person", "source"):
+                    self.assertNotIn(key, app.query_params)
+
+    def test_research_conflicts_and_missing_ids_are_explicit(self) -> None:
+        app = self.logged_in_app(page="collection", finding="BF-R049")
+        self.assertTrue(any("family review" in item.value for item in app.warning))
+        app = self.logged_in_app(page="collection", finding="nonexistent")
+        self.assertTrue(any("not found" in item.value for item in app.warning))
+        self.assertFalse(app.exception)
 
     def test_tree_open_profile_uses_safe_callback_navigation(self) -> None:
         app = self.logged_in_app()

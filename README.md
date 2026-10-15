@@ -14,6 +14,7 @@ A password-gated, source-first Streamlit archive for exploring the Beverage fami
 - a filterable timeline with person, year, category, place, precision, evidence, and full-text filters;
 - truthful display of exact, month-only, year-only, approximate, and unknown dates;
 - an interactive source explorer and research desk with claim-level citations;
+- a **Research Collection** with 57 findings, 163 registered sources, 33 retrieval targets, all workbook inventories, a section-by-section dossier reader, and the five original reports;
 - a normalized **Source Archive**, **Historical Places** records, and a **Historical Map** with cited person/event connections, category and year filters, and person/event navigation;
 - homepage statistics, a daily featured relative, exact-date “On This Day” records, and recent research;
 - JSON and CSV archive exports;
@@ -76,6 +77,43 @@ The map uses locally vendored Leaflet 1.9.4 and OpenStreetMap tiles. It needs no
 Place confidence describes the geographic reference, not certainty about every historical claim. Town/country points are not buildings, travel paths, or historical boundaries. Dates filter **documented connections**, not a person's inferred lifetime. Undated links have an explicit toggle. Event locations do not automatically become person locations: for example, a court petition's subject towns do not prove the petitioner's presence there.
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
+
+### Research collection — 14 October 2026
+
+Open `?page=collection`. Findings link from relevant profiles, places and timeline
+records, and participate in global search. The collection has views for findings,
+chronology, sources, the retrieval plan, inventories, and reports. Subject filters
+include land/property, businesses, images/objects, institutions, and maritime history.
+The existing Source Archive also exposes the complete research source register.
+
+Examples:
+
+- `?page=collection&finding=BF-R033` — island registry entries and their limits;
+- `?page=collection&person=elliot_beverage_1908` — related Eliot / Elliot research;
+- `?page=collection&status=Conflict` — conflicts awaiting family review;
+- `?page=archive&source=SRC118` — source details and the findings citing them;
+- `?page=collection&target=BF-G001` — a specific retrieval request;
+- `?page=collection&view=Reports` — all five original reports and the dossier reader.
+
+`data/collections/2026-10-14.json` is an independent evidence collection, not a
+genealogy overlay. No candidate people, disputed dates, inferred relationships,
+deed ownership or unlocated properties are inserted into the family tree or map.
+Confidence labels, viewed status, exact citations and uncertainty notes are
+preserved from the supplied workbooks. The original baseline files, including
+the Boston Tea Party claim and residence/property records, remain unchanged.
+
+The reports, navigation cross-references and integrity manifest are in
+[`research/collection_2026-10-14`](research/collection_2026-10-14/README.md).
+The reproducible importer uses only the Python standard library:
+
+```bash
+python tools/import_research_package.py research/collection_2026-10-14
+python validate_data.py
+```
+
+The workbook's original review statuses are retained. Adding a finding to this
+research collection does not mark it as family-reviewed or resolve its identity
+questions. All seven source categories still have documented research gaps.
 
 ## Validate changes
 

@@ -7,6 +7,9 @@ import streamlit as st
 from archive import ArchiveIndex, archive_url, safe_url
 from family_data import format_date
 from historical_map import build_historical_map_html
+from research_collection_ui import (
+    load_collection, render_context, render_register, render_register_source,
+)
 
 
 def md(value) -> str:
@@ -76,6 +79,23 @@ def render_source_record(source, archive: ArchiveIndex) -> None:
 
 def render_archive_page(archive: ArchiveIndex) -> None:
     st.title("Source Archive")
+    collection = load_collection()
+    requested = st.query_params.get("source", "")
+    if requested in collection.sources:
+        render_register_source(collection.sources[requested], collection)
+        st.link_button("Browse all sources", archive_url("archive"))
+        return
+    if requested:
+        _render_historical_archive(archive)
+        return
+    historical, research = st.tabs(["Historical archive", "Research source register"])
+    with historical:
+        _render_historical_archive(archive)
+    with research:
+        render_register(collection, prefix="archive_register")
+
+
+def _render_historical_archive(archive: ArchiveIndex) -> None:
     st.write("Browse the records behind the family’s historical places and events.")
     requested = st.query_params.get("source", "")
     if requested:
@@ -106,6 +126,8 @@ def render_archive_page(archive: ArchiveIndex) -> None:
 
 def render_places_page(archive: ArchiveIndex) -> None:
     st.title("Historical Places")
+    st.link_button("Explore land, property and deed research", archive_url("collection", topic="Land and property"))
+    st.link_button("Browse the complete property inventory", archive_url("collection", view="Inventories", inventory="Properties and Deeds"))
     if not archive.places:
         st.info("No reviewed historical places have been added yet.")
         return
@@ -135,7 +157,7 @@ def render_places_page(archive: ArchiveIndex) -> None:
     metrics = st.columns(3)
     for col, key in zip(metrics, ("people", "events", "sources")):
         col.metric(key.title(), len(linked[key]))
-    people_tab, events_tab, sources_tab = st.tabs(["People", "Events", "Sources"])
+    people_tab, events_tab, sources_tab, research_tab = st.tabs(["People", "Events", "Sources", "Additional research"])
     for tab, kind in ((people_tab, "person"), (events_tab, "event")):
         with tab:
             assertions = [link for link in linked["links"] if link["subject_type"] == kind]
@@ -147,6 +169,11 @@ def render_places_page(archive: ArchiveIndex) -> None:
     with sources_tab:
         for source in linked["sources"]:
             st.markdown(f"- {source_link(source)} — {md(source['evidence_level'].replace('_', ' '))}")
+    with research_tab:
+        if load_collection().for_subject("place", pid):
+            render_context("place", pid, archive.people, limit=5)
+        else:
+            st.info("No additional findings are linked to this place yet.")
 
 
 def render_map_page(archive: ArchiveIndex) -> None:
@@ -161,6 +188,7 @@ def render_map_page(archive: ArchiveIndex) -> None:
     st.iframe(html, height=1050)
     st.caption("Source and profile links open in a new tab. Modern map: © OpenStreetMap contributors. Cemetery indexes are corroboration; broad markers do not identify a building, private home, or historic boundary.")
     st.markdown(f"[Browse place records]({archive_url('places')}) · [Browse supporting sources]({archive_url('archive')})")
+    st.link_button("Explore property research and unlocated sites", archive_url("collection", topic="Land and property"))
 
 
 def render_person_archive(person_id: str, archive: ArchiveIndex) -> None:

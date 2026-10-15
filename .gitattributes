@@ -1,0 +1,2 @@
+# Workbook extraction is reproducible; keep editorial code and navigation visible.
+data/collections/*.json linguist-generated=true
