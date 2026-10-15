@@ -54,6 +54,32 @@
         "certainty": "Candidate image; caption and identity require more detailed review",
         "status": "Permission and archival provenance required before web display"
       }
+    ],
+    "research_leads": [
+      {
+        "id": "colony-lowell-1925",
+        "date": "1925",
+        "title": "Lowell Beveridge's education and marriage (author's family recollection)",
+        "summary": "The author recounts that his father Lowell attended Boston Latin School, received an A.B. from Harvard in 1925 at age 19, and later married Ida Louisa Gattrell.",
+        "pdf_page": 245,
+        "evidence": "Family memoir. Establish corresponding identity and corroborate education and marriage with primary records before changing biographical dates."
+      },
+      {
+        "id": "colony-crabtree-house",
+        "date": null,
+        "title": "Historic Crabtree-built house at Southern Harbor",
+        "summary": "A published photograph caption attributes an abandoned house at Southern Harbor to Captain Eleazer Crabtree.",
+        "pdf_page": 21,
+        "evidence": "Caption in the author-supplied family book; original photograph date, ownership, and photographer are not established."
+      },
+      {
+        "id": "colony-amelia-hanson",
+        "date": null,
+        "title": "Amelia and Hanson Beverage outside the family farmhouse",
+        "summary": "The book captions a photograph of Amelia Beverage with her brother Hanson Beverage in front of a farmhouse described as built by Amelia's husband Benjamin.",
+        "pdf_page": 49,
+        "evidence": "Photo identification is attributed to this 2016 book; scan capture date and independently confirmed identities are still required."
+      }
     ]
   }
 ]
