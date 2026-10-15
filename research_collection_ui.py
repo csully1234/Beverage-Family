@@ -48,32 +48,41 @@ def render_finding(record: dict, collection: CollectionIndex, people: dict,
 
 
 def _render_original_finding(record: dict, collection: CollectionIndex, people: dict,
-                            *, detail: bool = False) -> None:
+                             *, detail: bool = False) -> None:
     rid = record["Research ID"]
+    # Tell the historical story first. Review status is workflow metadata, not
+    # a verdict about whether the underlying archival source exists.
     route_markdown(f"### {finding_link(record)}")
-    st.caption(f"{rid} · {record['Confidence']} · {record['Change type']} · Family review: {record['Human-review status']}")
-    st.caption(f"{record['Date or date range']} · {record['Location']} · {record['Event category']}")
-    if record["Confidence"] == "Conflict":
-        st.warning("Research conflict requiring family review. The existing record is preserved.")
-    elif record["Confidence"] in {"Probable", "Possible lead", "Rejected"}:
-        st.info(f"{record['Confidence']} — read the evidence limits before treating this as an established fact.")
     st.write(record["Proposed fact or narrative"])
-    # Always visible, including compact profile and search cards. A confirmed
-    # catalog entry does not establish every identity or event described by it.
-    route_markdown("**Evidence limits:** " + md(record["Notes about uncertainty"]))
-    st.caption("Examined: " + str(record["Evidence basis"]))
-    route_markdown("**Sources:** " + " · ".join(register_link(collection.sources[sid]) for sid in source_ids(record)))
+    st.caption(f"{record['Date or date range']} · {record['Location']}")
+    if record["Confidence"] == "Conflict":
+        st.caption("Competing interpretations remain open; consult the latest evidence review.")
+    elif record["Confidence"] == "Probable":
+        st.caption("The source is documented; this finding's attribution or interpretation remains probable.")
+    elif record["Confidence"] == "Possible lead":
+        st.caption("Research lead — the original material has not yet established the proposed connection.")
+    elif record["Confidence"] == "Rejected":
+        st.caption("Historical research lead rejected by the current evidence review.")
+    # Keep the distinction between source contents and genealogical inference;
+    # do not repeat warnings above every ordinary finding.
+    with st.expander("Evidence, uncertainty and original sources", expanded=detail):
+        st.write("Evidence limits: " + str(record["Notes about uncertainty"]))
+        st.caption("Source review: " + str(record["Evidence basis"]))
+        st.caption(f"Research rating: {record['Confidence']} · Family review: {record['Human-review status']} · {rid}")
+        for sid in source_ids(record):
+            route_markdown(register_link(collection.sources[sid]))
+        if detail:
+            st.markdown("**Exact citation and locator**")
+            st.write(record["Exact citation"])
+            st.write(record["Locator"])
     if not detail:
         return
-    st.subheader("Exact citation and locator")
-    st.write(record["Exact citation"])
-    st.write(record["Locator"])
     nav = record["Navigation"]
     if nav["people_ids"]:
         route_markdown("**Related profiles:** " + " · ".join(
             f"[{md(people[pid]['full_name'])}]({archive_url('people', profile=pid)})"
             for pid in nav["people_ids"] if pid in people))
-        st.caption("These are research cross-references. They do not create a family relationship or resolve a disputed identity.")
+        st.caption("A research cross-reference is not proof of a disputed genealogical identity.")
     if nav["place_ids"]:
         route_markdown("**Historical places:** " + " · ".join(
             f"[{md(pid.replace('_', ' ').title())}]({archive_url('places', place=pid)})" for pid in nav["place_ids"]))
@@ -82,7 +91,7 @@ def _render_original_finding(record: dict, collection: CollectionIndex, people: 
     for name in ("Properties and Deeds", "Images and Maps", "Candidate People"):
         rows = collection.inventory_rows(name, rid)
         if rows:
-            with st.expander(name, expanded=name == "Properties and Deeds"):
+            with st.expander(name):
                 for row in rows:
                     for key, value in row.items():
                         if value is not None:
@@ -96,24 +105,26 @@ def _render_original_finding(record: dict, collection: CollectionIndex, people: 
 
 
 def render_context(kind: str, identifier: str, people: dict, *, topic: str = "",
-                   strong_only: bool = False, limit: int = 3) -> None:
+                   strong_only: bool = False, limit: int = 12) -> None:
     collection = load_collection()
     records = collection.for_subject(kind, identifier)
     if topic:
         records = [r for r in records if topic in r["Navigation"]["topics"]]
-    if strong_only:
-        records = [r for r in records if r["Confidence"] in STRONG]
+    # Even a probable identity or an unresolved manuscript lead belongs in
+    # the person's research story. Preserve precise uncertainty beside it.
     if not records:
         return
-    st.subheader(f"Additional research ({len(records)})")
-    st.caption("Research collection · 14 October 2026 · Evidence and identity limits accompany each finding.")
+    st.subheader(f"Historical discoveries and records ({len(records)})")
+    st.caption("Documented source contents and uncertain family identifications are distinguished within each finding.")
     for record in records[:limit]:
         with st.container(border=True):
             render_finding(record, collection, people)
     params = {kind: identifier} if kind in {"person", "place"} else {}
     if topic:
         params["topic"] = topic
-    route_link("Browse the related research collection", archive_url("collection", **params))
+    if len(records) > limit:
+        st.caption(f"{len(records)-limit} further related findings are in the full research collection.")
+    route_link("Explore all related records and evidence", archive_url("collection", **params))
 
 
 def paginate(records: list, key: str, size: int = 12) -> list:
