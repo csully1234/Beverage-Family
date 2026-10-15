@@ -199,6 +199,13 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertEqual(len(app.radio), 0)
         self.assertEqual(len(app.text_input), 1)
 
+    def test_runtime_source_id_reports_loaded_people_implementation(self) -> None:
+        from app import runtime_source_identity
+        identity, variant = runtime_source_identity()
+        self.assertIn("app ", identity)
+        self.assertIn("people ", identity)
+        self.assertEqual(variant, "continuous")
+
     def test_full_family_map_person_selection_is_in_map(self) -> None:
         app = self.logged_in_app(page="full-tree")
         self.assertFalse(app.exception, [e.value for e in app.exception])
