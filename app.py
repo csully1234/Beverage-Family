@@ -627,6 +627,11 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
     # prior browser sessions before attempting PAGE_GROUP lookup.
     if st.session_state["nav_page"] not in PAGE_GROUP:
         st.session_state["nav_page"] = requested_page or "Home"
+    # Individual document pages remain reachable through source links, but
+    # they are not separate sidebar destinations for everyday family browsing.
+    showing_document = requested_page == "Document Reader"
+    if st.session_state["nav_page"] == "Document Reader":
+        st.session_state["nav_page"] = "Photographs & Documents"
     st.session_state["_last_query_slug"] = query_slug
     st.session_state["nav_group"] = PAGE_GROUP[st.session_state["nav_page"]]
 
@@ -671,7 +676,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
         runtime_id, directory_variant = runtime_source_identity()
         st.caption("Running source: " + runtime_id)
         st.caption("People directory implementation: " + directory_variant)
-    return page
+    return "Document Reader" if showing_document else page
 
 
 def render_home(
