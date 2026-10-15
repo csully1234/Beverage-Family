@@ -17,6 +17,7 @@ from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
 from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS
+from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from archive import ArchiveIndex
 from archive_ui import (
@@ -1919,7 +1920,7 @@ def main() -> None:
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":
-        render_timeline_page(data["events"], data["people"], people_by_id)
+        render_unified_timeline(data, people_by_id)
     elif page == "Research Desk":
         render_research_page(data, people_by_id)
     elif page == "Research Collection":
