@@ -16,7 +16,7 @@ import streamlit as st
 from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
-from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory
+from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS
 from full_tree import build_full_tree_html
 from archive import ArchiveIndex
 from archive_ui import (
@@ -571,7 +571,7 @@ def sync_profile_route() -> None:
 
 
 def sorted_people(people: list[Record]) -> list[Record]:
-    return sorted(people, key=person_sort_key)
+    return order_people(people)
 
 
 def person_name(people_by_id: Mapping[str, Record], person_id: str) -> str:
@@ -1027,7 +1027,8 @@ def render_people_page(
         route_link("← Back to your search results", back)
     if get_query_value("profile") and get_query_value("profile") not in people_by_id:
         st.warning("That profile was not found. Choose a relative below or search by name.")
-    ordered = sorted_people(data["people"])
+    sort_order = st.selectbox("People dropdown order", SORT_OPTIONS, key="profile_order")
+    ordered = order_people(data["people"], sort_order)
     person_ids = [str(person["id"]) for person in ordered]
     query_profile = get_query_value("profile")
     if query_profile in person_ids and st.session_state.get("_last_query_profile") != query_profile:
