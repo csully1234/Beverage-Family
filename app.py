@@ -1554,12 +1554,23 @@ def render_full_tree_page(
     if isinstance(selection, dict):
         clicked_id = selection.get("person_id")
         clicked_action = selection.get("action", "select")
-        if clicked_id in people_by_id and (
-            clicked_id != st.session_state.get("full_map_person") or clicked_action == "profile"
-        ):
-            st.session_state["_pending_full_map_person"] = clicked_id
-            st.session_state["_pending_full_map_action"] = clicked_action
-            st.rerun()
+        event_id = selection.get("event_id")
+        # Component values persist during unrelated Streamlit reruns. Handle
+        # actual mouse-selection events ONCE, never replay a stale click over
+        # a more recent choice made in the top person dropdown.
+        is_new_event = (
+            isinstance(event_id, str)
+            and event_id
+            and st.session_state.get("_last_full_map_event") != event_id
+        )
+        if is_new_event:
+            st.session_state["_last_full_map_event"] = event_id
+            if clicked_id in people_by_id and (
+                clicked_id != st.session_state.get("full_map_person") or clicked_action == "profile"
+            ):
+                st.session_state["_pending_full_map_person"] = clicked_id
+                st.session_state["_pending_full_map_action"] = clicked_action
+                st.rerun()
 
 
 def event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:
