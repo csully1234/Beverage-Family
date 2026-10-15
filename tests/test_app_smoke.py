@@ -122,6 +122,30 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertEqual(app.number_input(key="book_selected_page").value, 49)
         self.assertTrue(any("PDF" in str(x.value) for x in app.caption))
 
+    def test_book_next_previous_buttons_do_not_mutate_initialized_widget(self) -> None:
+        """Regression for production crash at render_book_reader, Next page."""
+        app = self.logged_in_app(page="family-books", book_page="49")
+        self.assertEqual(app.number_input(key="book_selected_page").value, 49)
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        app.button(key="book_next").click().run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.number_input(key="book_selected_page").value, 50)
+        self.assertEqual(app.query_params.get("book_page"), "50")
+        app.button(key="book_prev").click().run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.number_input(key="book_selected_page").value, 49)
+        app.number_input(key="book_selected_page").set_value(305).run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.query_params.get("book_page"), "305")
+        self.assertTrue(app.button(key="book_next").disabled)
+
+    def test_illustration_page_jump_works_without_pdf(self) -> None:
+        app = self.logged_in_app(page="family-books")
+        app.button(key="book_evidence_colony-amelia-hanson").click().run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.number_input(key="book_selected_page").value, 49)
+        self.assertEqual(app.query_params.get("book_page"), "49")
+
     def test_research_deep_links_and_existing_profile_context(self) -> None:
         cases = (
             ({"page": "collection", "finding": "BF-R033"}, "Registration dates are not deed dates"),
