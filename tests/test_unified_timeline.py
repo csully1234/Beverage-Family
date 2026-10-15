@@ -64,6 +64,17 @@ class UnifiedTimelineTests(unittest.TestCase):
         self.assertIn('ordered_items = dated_results + undated_results', code)
         self.assertIn('st.dataframe(', code)
 
+    def test_family_history_book_and_undated_images_are_not_dropped(self):
+        book = next(row for row in self.timeline if row["id"]=="colony-book-2016")
+        self.assertEqual(book["year"],2016)
+        self.assertEqual(book["date_kind"],"Book publication year")
+        leads=[row for row in self.timeline if row["type"]=="Book photograph lead"]
+        self.assertGreaterEqual(len(leads),3)
+        self.assertTrue(all(row["year"] is None for row in leads))
+        cited=next(row for row in self.timeline if row["id"]=="colony-lowell-1925")
+        self.assertEqual(cited["year"],1925)
+        self.assertIn("PDF page 245",cited["extra"])
+
     def test_imprecise_dates_are_not_invented(self):
         self.assertIsNone(historical_year("Nineteenth century"))
         self.assertIsNone(historical_year("1700s–1900s records"))
