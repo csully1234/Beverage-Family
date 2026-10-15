@@ -16,7 +16,7 @@ import streamlit as st
 from routing_ui import route_markdown, route_link, begin_routes
 from graphviz import Digraph
 
-from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS
+from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS, surname_first_label
 from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from archive import ArchiveIndex
@@ -613,7 +613,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             format_func=lambda person_id: (
                 "Choose a person…"
                 if person_id is None
-                else person_name(people_by_id, person_id) + " · " + life_span(people_by_id[person_id])
+                else surname_first_label(people_by_id[person_id]) + " · " + life_span(people_by_id[person_id])
             ),
             key="sidebar_person_lookup",
         )
@@ -688,7 +688,7 @@ def render_home(
             "Search the profile index",
             options=person_ids,
             format_func=lambda person_id: (
-                f"{person_name(people_by_id, person_id)} · "
+                f"{surname_first_label(people_by_id[person_id])} · "
                 f"{life_span(people_by_id[person_id])}"
             ),
             key="home_person_lookup",
@@ -1061,7 +1061,7 @@ def render_people_page(
         "Find a person",
         options=person_ids,
         format_func=lambda person_id: (
-            f"{person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
+            f"{surname_first_label(people_by_id[person_id]) if sort_order == 'Surname A–Z' else person_name(people_by_id, person_id)} · {life_span(people_by_id[person_id])}"
         ),
         key="profile_selector",
         on_change=sync_profile_route,
@@ -1364,7 +1364,7 @@ def render_tree_page(
         focus_id = st.selectbox(
             "Center person",
             options=person_ids,
-            format_func=lambda person_id: person_name(people_by_id, person_id),
+            format_func=lambda person_id: surname_first_label(people_by_id[person_id]),
             key="tree_person",
         )
     with mode:
