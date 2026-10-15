@@ -59,6 +59,21 @@ class VisitorExperienceTests(unittest.TestCase):
         self.assertEqual(books[0]["publication_year"],2016)
         self.assertIn("The Red Cottage",books[0]["sections"])
         self.assertTrue(all("pdf_page" in lead for lead in books[0]["photo_leads"]))
+        self.assertEqual(books[0]["pdf_page_count"],305)
+        self.assertEqual(books[0]["pdf_asset_size_bytes"],21948676)
+        self.assertIn("family website",books[0]["rights"])
+        self.assertGreaterEqual(len(books[0]["image_page_numbers"]),100)
+
+    def test_book_reader_indexes_each_authorized_page_and_prevents_path_escape(self):
+        from family_books import illustrated_pages, book_pdf_path, available_book_pdf, load_books
+        book=load_books()[0]
+        images=illustrated_pages(book)
+        self.assertEqual(len(images),len(set(book["image_page_numbers"])))
+        self.assertEqual(images[0]["pdf_page"],1)
+        self.assertEqual(next(x for x in images if x["pdf_page"]==49)["source_caption_verified"],True)
+        self.assertIn("Amelia",next(x for x in images if x["pdf_page"]==49)["title"])
+        self.assertEqual(book_pdf_path({**book,"pdf_asset":"../../secrets.toml"}),None)
+        self.assertFalse(available_book_pdf({**book,"pdf_asset":"../../secrets.toml"}))
 
     def test_first_name_order(self):
         self.assertEqual([p["id"] for p in order_people(self.people, "First name A–Z")], ["z", "c", "u", "a"])
