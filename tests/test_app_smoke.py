@@ -78,6 +78,18 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.selectbox(key="dossier_section").select(7).run()
         self.assertFalse(app.exception)
 
+    def test_profile_with_unresolved_spouse_and_multiple_parents_renders_cleanly(self) -> None:
+        """Regression for False text and red error on Sandra's family summary."""
+        app = self.logged_in_app(page="people", profile="sandra_beverage_1947")
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        buttons = [button.label for button in app.button]
+        self.assertIn("Eleanor Mae Sargent", buttons)
+        self.assertIn("Samuel Hiram Beverage", buttons)
+        notes = [caption.value for caption in app.caption]
+        self.assertTrue(any("profile not yet entered" in note for note in notes))
+        self.assertFalse(any(str(note).strip() == "False" for note in notes))
+        self.assertFalse(any(str(element.value).strip() == "False" for element in app.markdown))
+
     def test_research_deep_links_and_existing_profile_context(self) -> None:
         cases = (
             ({"page": "collection", "finding": "BF-R033"}, "Registration dates are not deed dates"),
