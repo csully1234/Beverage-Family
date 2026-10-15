@@ -224,3 +224,25 @@ production access before disabling the fallback; removing it first might
 lock out the live website. No visibility, credentials or production settings
 are changed in this draft. Automated CI and a production-browser check should
 both pass before the PR is merged.
+
+### Person selection and book-catalog update (15 October 2026)
+- The full-family explorer now uses a bidirectional Streamlit component, rather
+  than an unconnected iframe. A map click sends the selected person ID to Python
+  and updates the parent page's selected relative; this selection also follows
+  you back to the focused tree. Each click is given a one-time event ID, so
+  stale component values cannot override subsequent dropdown selections.
+- Whole family overview is the default. The smaller "Explore nearby relatives"
+  mode remains available; Fit and Center Selected controls make recentering
+  explicit rather than surprising.
+- The People directory is again one continuous, scrollable list, with a
+  searchable jump dropdown and surname A-Z/Z-A, given-name A-Z/Z-A and
+  birth-year sorting. All entries remain available without pagination.
+- A privately supplied illustrated family history, *The Colony: Stories from a
+  Down East Island* (Lowell P. Beveridge, Jr., 2016), is indexed under Archive
+  and the timeline. Chapter topics and selected photo references are recorded
+  as research leads, with links from pertinent historical profiles.
+- **Do not commit or redistribute the ebook or its scanned photographs**:
+  the supplied edition includes a copyright and a personal-use redistribution
+  restriction. Hosting original scanned pages and images requires documented
+  permission from the rights holder. The site's new bibliographic index
+  contains no book page images or long excerpts.
