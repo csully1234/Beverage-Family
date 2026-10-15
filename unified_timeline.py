@@ -151,6 +151,6 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
             if item["extra"]:
                 with st.expander("Context and interpretation notes"):
                     st.write(item["extra"])
-            route_link("Open full record",item["url"],key="chronology_link_"+str(page)+"_"+str(index))
+            route_link("Open full record",item["url"])
     if not filtered:
         st.info("Nothing matches these filters. The original archive records remain available; broaden the years, content types or person.")
