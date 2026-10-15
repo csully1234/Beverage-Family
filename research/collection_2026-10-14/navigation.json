@@ -1,0 +1,873 @@
+{
+  "BF-R001": {
+    "title": "Thomas’s 1786 testimony about a 1781 fishing pass",
+    "people_ids": [
+      "thomas_beverage_1750"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [
+      "event_testimony_1781"
+    ],
+    "topics": [
+      "Military and maritime"
+    ],
+    "sort_year": 1781,
+    "last_year": 1786
+  },
+  "BF-R002": {
+    "title": "The schooner Ann and the affidavit’s named associates",
+    "people_ids": [
+      "thomas_beverage_1750"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [
+      "event_testimony_1781"
+    ],
+    "topics": [
+      "Military and maritime"
+    ],
+    "sort_year": 1781,
+    "last_year": 1786
+  },
+  "BF-R003": {
+    "title": "Thomas and Mercy’s marriage in the Trinity register",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754"
+    ],
+    "place_ids": [],
+    "event_ids": [
+      "event_marriage_thomas_beverage_mercy_kent_1774"
+    ],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1774,
+    "last_year": 1774
+  },
+  "BF-R004": {
+    "title": "Marblehead marriage and three unmarried daughters",
+    "people_ids": [
+      "james_beveridge_sr_1700",
+      "sarah_holman_1734"
+    ],
+    "place_ids": [
+      "marblehead_ma"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1733,
+    "last_year": 1789
+  },
+  "BF-R005": {
+    "title": "Sarah Holman and Mary White: incompatible dates",
+    "people_ids": [
+      "sarah_holman_1734",
+      "mary_white_1728",
+      "james_beveridge_sr_1700"
+    ],
+    "place_ids": [
+      "marblehead_ma"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1728,
+    "last_year": 1789
+  },
+  "BF-R006": {
+    "title": "James Beverage at Topsham’s first town meeting",
+    "people_ids": [],
+    "place_ids": [
+      "topsham_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1764,
+    "last_year": 1764
+  },
+  "BF-R007": {
+    "title": "James and Samuel Beveridge in Topsham’s lot list",
+    "people_ids": [],
+    "place_ids": [
+      "topsham_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property"
+    ],
+    "sort_year": 1752,
+    "last_year": 1758
+  },
+  "BF-R008": {
+    "title": "Diana Daggett: baptism recorded as birth",
+    "people_ids": [
+      "diana_daggett_1780"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1780,
+    "last_year": 1780
+  },
+  "BF-R009": {
+    "title": "Diana’s parents and the Nathaniel Beverage household",
+    "people_ids": [
+      "diana_daggett_1780",
+      "nathaniel_winslow_beverage_1776"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1766,
+    "last_year": 1800
+  },
+  "BF-R010": {
+    "title": "Woodruff’s visit to Josiah in 1838",
+    "people_ids": [
+      "josiah_winslow_beverage_1793"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1838,
+    "last_year": 1838
+  },
+  "BF-R011": {
+    "title": "A Thomas Beverage deed cited after his death",
+    "people_ids": [
+      "thomas_beverage_1750"
+    ],
+    "place_ids": [],
+    "event_ids": [
+      "event_death_thomas_beverage_1834"
+    ],
+    "topics": [
+      "Land and property"
+    ],
+    "sort_year": 1834,
+    "last_year": 1837
+  },
+  "BF-R012": {
+    "title": "Two Sarahs linked to Benjamin Kent",
+    "people_ids": [
+      "sarah_beveridge_kent_1758",
+      "sarah_beverage_1785",
+      "benjamin_kent_1755"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1758,
+    "last_year": 1821
+  },
+  "BF-R013": {
+    "title": "Benjamin and John Kent: collateral family leads",
+    "people_ids": [
+      "sarah_beveridge_kent_1758",
+      "benjamin_kent_1755"
+    ],
+    "place_ids": [
+      "north_haven_me",
+      "vinalhaven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1786,
+    "last_year": 1882
+  },
+  "BF-R014": {
+    "title": "Benjamin Kent: January or June birth?",
+    "people_ids": [],
+    "place_ids": [
+      "vinalhaven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1798,
+    "last_year": 1798
+  },
+  "BF-R015": {
+    "title": "Frank’s death and May Calderwood marriage lead",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1958,
+    "last_year": 1958
+  },
+  "BF-R016": {
+    "title": "Old Barn Hill: the house and reported inheritance",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property"
+    ],
+    "sort_year": 1819,
+    "last_year": 1880
+  },
+  "BF-R017": {
+    "title": "Frank’s wool trade and ox photograph",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "place_ids": [
+      "north_haven_me",
+      "vinalhaven_me",
+      "camden_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects",
+      "Businesses and occupations"
+    ],
+    "sort_year": 1800,
+    "last_year": 1900
+  },
+  "BF-R018": {
+    "title": "Hiram’s hay-rake photograph and poultry crates",
+    "people_ids": [
+      "hiram_stone_beverage_1886"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects",
+      "Businesses and occupations"
+    ],
+    "sort_year": 1917,
+    "last_year": 1934
+  },
+  "BF-R019": {
+    "title": "Hiram’s egg shipments to Boston",
+    "people_ids": [
+      "hiram_stone_beverage_1886"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Businesses and occupations",
+      "Military and maritime"
+    ],
+    "sort_year": 1900,
+    "last_year": 1900
+  },
+  "BF-R020": {
+    "title": "Hanford W. Beverage’s Pulpit Harbor store",
+    "people_ids": [],
+    "place_ids": [
+      "pulpit_harbor_me",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects",
+      "Businesses and occupations"
+    ],
+    "sort_year": 1872,
+    "last_year": 1901
+  },
+  "BF-R021": {
+    "title": "Elmira and Isa at the Beach Bridge store",
+    "people_ids": [],
+    "place_ids": [
+      "pulpit_harbor_me",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Businesses and occupations"
+    ],
+    "sort_year": 1915,
+    "last_year": 1915
+  },
+  "BF-R022": {
+    "title": "Blue Point and Sky Farm: ownership research",
+    "people_ids": [],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property",
+      "Businesses and occupations"
+    ],
+    "sort_year": 1800,
+    "last_year": 1900
+  },
+  "BF-R023": {
+    "title": "Alvin’s memorial bell for Orinda",
+    "people_ids": [],
+    "place_ids": [
+      "pulpit_harbor_me",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects",
+      "Military and maritime",
+      "Institutions and community"
+    ],
+    "sort_year": 1896,
+    "last_year": 1896
+  },
+  "BF-R024": {
+    "title": "The Sunday-school photograph, circa 1912",
+    "people_ids": [],
+    "place_ids": [
+      "pulpit_harbor_me",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects"
+    ],
+    "sort_year": 1912,
+    "last_year": 1912
+  },
+  "BF-R025": {
+    "title": "Nettie and Malcolm’s wedding in a diary",
+    "people_ids": [
+      "nett_ie_ellen_beverage_1894"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1940,
+    "last_year": 1940
+  },
+  "BF-R026": {
+    "title": "Fremont’s 1901 school superintendent report",
+    "people_ids": [
+      "fremont_beverage_1856"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1901,
+    "last_year": 1901
+  },
+  "BF-R027": {
+    "title": "Early North Haven high-school graduates",
+    "people_ids": [
+      "nett_ie_ellen_beverage_1894"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1907,
+    "last_year": 1912
+  },
+  "BF-R028": {
+    "title": "Eliot and the founding of IsleBuilt",
+    "people_ids": [
+      "elliot_beverage_1908"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Businesses and occupations",
+      "Military and maritime"
+    ],
+    "sort_year": 1955,
+    "last_year": 1957
+  },
+  "BF-R029": {
+    "title": "IsleBuilt’s boat models, production and workshop",
+    "people_ids": [
+      "elliot_beverage_1908"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Businesses and occupations",
+      "Military and maritime"
+    ],
+    "sort_year": 1955,
+    "last_year": 1957
+  },
+  "BF-R030": {
+    "title": "Eliot and Dorothy’s return to North Haven",
+    "people_ids": [
+      "elliot_beverage_1908"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1954,
+    "last_year": 1958
+  },
+  "BF-R031": {
+    "title": "Hauling wood from Beveridge’s Point",
+    "people_ids": [
+      "elliot_beverage_1908"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property"
+    ],
+    "sort_year": 1958,
+    "last_year": 1958
+  },
+  "BF-R032": {
+    "title": "Eliot / Elliot: birthplace and spelling conflict",
+    "people_ids": [
+      "elliot_beverage_1908"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1908,
+    "last_year": 1908
+  },
+  "BF-R033": {
+    "title": "Arnold P. Beveridge’s island registry entries",
+    "people_ids": [
+      "arnold_beveridge_1903"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property"
+    ],
+    "sort_year": 1978,
+    "last_year": 1980
+  },
+  "BF-R034": {
+    "title": "Lowell playing piano at church in 1925",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1925,
+    "last_year": 1925
+  },
+  "BF-R035": {
+    "title": "Lowell’s portrait in Columbia’s archives",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "new_york_ny"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects"
+    ],
+    "sort_year": 1930,
+    "last_year": 1952
+  },
+  "BF-R036": {
+    "title": "Lowell’s chapel music tenure at Columbia",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "new_york_ny"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1937,
+    "last_year": 1952
+  },
+  "BF-R037": {
+    "title": "Universal Harmony: manuscript retrieval lead",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1991,
+    "last_year": 1991
+  },
+  "BF-R038": {
+    "title": "Lyford Beveridge: a possible missing sibling",
+    "people_ids": [
+      "lowell_beveridge_1905",
+      "orris_beverage_1860"
+    ],
+    "place_ids": [
+      "rockland_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1991,
+    "last_year": 1991
+  },
+  "BF-R039": {
+    "title": "Lowell’s memorial: age and birthplace cautions",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1905,
+    "last_year": 1991
+  },
+  "BF-R040": {
+    "title": "Pete Beveridge’s oral history of Maine summers",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "new_york_ny",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 2012,
+    "last_year": 2012
+  },
+  "BF-R041": {
+    "title": "Orris as a Dorchester school principal",
+    "people_ids": [
+      "orris_beverage_1860"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1928,
+    "last_year": 1928
+  },
+  "BF-R042": {
+    "title": "Norwood’s law-school career and publications",
+    "people_ids": [
+      "norwood_pierson_beveridge_jr_1936"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1989,
+    "last_year": 2010
+  },
+  "BF-R043": {
+    "title": "Harold’s Islands of Maine film",
+    "people_ids": [
+      "harold_h_beverage_1893"
+    ],
+    "place_ids": [
+      "north_haven_me",
+      "vinalhaven_me",
+      "rockland_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Images and objects",
+      "Military and maritime"
+    ],
+    "sort_year": 1930,
+    "last_year": 1930
+  },
+  "BF-R044": {
+    "title": "Eliot, Sam and the historical society’s beginnings",
+    "people_ids": [
+      "elliot_beverage_1908",
+      "samuel_hiram_beverage_1917"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community"
+    ],
+    "sort_year": 1975,
+    "last_year": 1976
+  },
+  "BF-R045": {
+    "title": "Alton and Edward: military gravestone leads",
+    "people_ids": [],
+    "place_ids": [
+      "north_haven_me",
+      "fuller_cemetery_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Military and maritime"
+    ],
+    "sort_year": 1915,
+    "last_year": 1965
+  },
+  "BF-R046": {
+    "title": "Charles Howard’s birth year conflict",
+    "people_ids": [
+      "charles_beverage_1863"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1862,
+    "last_year": 1863
+  },
+  "BF-R047": {
+    "title": "Benjamin Crabtree’s death-day conflict",
+    "people_ids": [
+      "benjamin_beverage_1822"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1875,
+    "last_year": 1875
+  },
+  "BF-R048": {
+    "title": "Sarah Sally’s death-day conflict",
+    "people_ids": [
+      "sarah_beverage_1785"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1844,
+    "last_year": 1844
+  },
+  "BF-R049": {
+    "title": "Two Amelia profiles requiring identity review",
+    "people_ids": [
+      "amelia_beverage_1833",
+      "amelia_beverage_1833_child",
+      "benjamin_beverage_1822"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1833,
+    "last_year": 1908
+  },
+  "BF-R050": {
+    "title": "Amelia’s proposed 1908 death date",
+    "people_ids": [
+      "amelia_beverage_1833",
+      "amelia_beverage_1833_child"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1908,
+    "last_year": 1908
+  },
+  "BF-R051": {
+    "title": "Albert and Olive’s children: death-record leads",
+    "people_ids": [
+      "albert_glover_beverage_1827",
+      "olive_carver_1829",
+      "nora_beverage_1858",
+      "julia_waterman_beverage_1866",
+      "nett_ie_m_beverage_1874",
+      "unnamed_son_1872"
+    ],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Family and identity"
+    ],
+    "sort_year": 1872,
+    "last_year": 1876
+  },
+  "BF-R052": {
+    "title": "Locating the Beverage family Bible transcripts",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754",
+      "albert_glover_beverage_1827",
+      "olive_carver_1829"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1700,
+    "last_year": 1900
+  },
+  "BF-R053": {
+    "title": "James and Lucy in the Lime Rock Gazette",
+    "people_ids": [
+      "james_beverage_1789",
+      "rachel_crosby_1778"
+    ],
+    "place_ids": [
+      "rockland_me",
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1850,
+    "last_year": 1850
+  },
+  "BF-R054": {
+    "title": "Olmsted plans and Carr Point research leads",
+    "people_ids": [],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property",
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1918,
+    "last_year": 1938
+  },
+  "BF-R055": {
+    "title": "The 1859 Waldo County map",
+    "people_ids": [],
+    "place_ids": [
+      "north_haven_me"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Land and property",
+      "Images and objects",
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1859,
+    "last_year": 1859
+  },
+  "BF-R056": {
+    "title": "Lowell in the Columbia Daily Spectator",
+    "people_ids": [
+      "lowell_beveridge_1905"
+    ],
+    "place_ids": [
+      "new_york_ny"
+    ],
+    "event_ids": [],
+    "topics": [
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1930,
+    "last_year": 1931
+  },
+  "BF-R057": {
+    "title": "Olive in the Radcliffe News index",
+    "people_ids": [
+      "olive_beveridge_1890"
+    ],
+    "place_ids": [],
+    "event_ids": [],
+    "topics": [
+      "Institutions and community",
+      "Archives and manuscripts"
+    ],
+    "sort_year": 1900,
+    "last_year": 1900
+  }
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 
 from family_data import load_site_data
 from validation import validate_site_data
+from research_collection import CollectionIndex, validate_collection
 
 
 def main() -> int:
@@ -20,6 +21,8 @@ def main() -> int:
 
     data = load_site_data(Path(__file__).parent / "data")
     report = validate_site_data(data)
+    collection = CollectionIndex.load()
+    collection_errors = validate_collection(collection, data)
 
     print(
         f"Validated {len(data['people'])} people, {len(data['events'])} events, "
@@ -30,8 +33,12 @@ def main() -> int:
           f"{len(data.get('place_links', []))} place assertions.")
     for issue in report.issues:
         print(f"{issue.severity.upper():7} {issue.code}: {issue.message}")
+    print(f"Research collection: {len(collection.findings)} findings, "
+          f"{len(collection.sources)} sources, {len(collection.targets)} retrieval targets.")
+    for error in collection_errors:
+        print(f"ERROR   research_collection: {error}")
 
-    if report.errors:
+    if report.errors or collection_errors:
         return 1
     if args.strict and report.warnings:
         return 2

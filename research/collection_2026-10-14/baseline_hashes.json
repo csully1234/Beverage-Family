@@ -1,0 +1,38 @@
+[
+  {
+    "file": "data/archive_sources.json",
+    "sha256": "b7462c99f1f1057c972f01259046c954e28f78e1a962045c97e4650b0ce1a8fb"
+  },
+  {
+    "file": "data/date_precision.json",
+    "sha256": "5c51ea962f7bc21bfd616580a227b693efd42d631e52fcc2b2f2e979906cb996"
+  },
+  {
+    "file": "data/events.json",
+    "sha256": "0eb342fcdef5a449dab36b38c85885de70f40e6948d277d8e6301b76612858e8"
+  },
+  {
+    "file": "data/people.json",
+    "sha256": "88284bd5f254a9a43ab4f6c1d3abbba58cb4d192f567eeb2bacd868411e8acbd"
+  },
+  {
+    "file": "data/place_links.json",
+    "sha256": "b4c3fa4fb23163ccbde7f25c05cb092101b667ea769622e07db0767ad6edbf72"
+  },
+  {
+    "file": "data/places.json",
+    "sha256": "294fa607a54ac4b62805a10ad6c89f5844893a73b62209d9cd16818341a700cf"
+  },
+  {
+    "file": "data/research.json",
+    "sha256": "6134bddd9b49d62edf6701d4e5d43e0b8078e521bb11d4f30477c1eb24813cb6"
+  },
+  {
+    "file": "data/research_events.json",
+    "sha256": "5bab331ceb0429a512a4eefb7b54a41f5c02068f7a1e9a92baf096bb68ba8ff6"
+  },
+  {
+    "file": "data/research_people.json",
+    "sha256": "2ed9f63b7753c6a8c20e71c6e3b7591a254794205db520e0321bc45a04297691"
+  }
+]

@@ -39,6 +39,11 @@ from family_data import (
     year_from_date,
 )
 from validation import validate_site_data
+from research_collection import matches as research_matches_query
+from research_collection_ui import (
+    load_collection, render_collection_page, render_context, render_finding,
+    register_link, render_timeline_research,
+)
 
 
 # This remains the first Streamlit command for compatibility with older
@@ -68,6 +73,7 @@ PAGE_SLUGS = {
     "People": "people",
     "Timeline": "timeline",
     "Research Desk": "research",
+    "Research Collection": "collection",
     "Sources & Method": "sources",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
@@ -469,8 +475,10 @@ def navigate(page: str) -> None:
 
 
 def clear_archive_route(page: str) -> None:
-    for parameter, allowed in (("place", {"Historical Map", "Historical Places"}),
-                               ("person", {"Historical Map"}), ("source", {"Source Archive"})):
+    for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Research Collection"}),
+                               ("person", {"Historical Map", "Research Collection"}), ("source", {"Source Archive"}),
+                               *((key, {"Research Collection"}) for key in
+                                 ("finding", "target", "view", "topic", "status", "q", "inventory", "location"))):
         if page not in allowed and parameter in st.query_params:
             del st.query_params[parameter]
 
@@ -630,6 +638,13 @@ def render_home(
         on_click=navigate,
         args=("Search",),
     )
+
+    with st.container(border=True):
+        st.subheader("New research collection")
+        collection = load_collection()
+        st.write(f"{len(collection.findings)} findings and {len(collection.sources)} registered sources, with evidence ratings, property research, photographs, and a retrieval plan.")
+        st.link_button("Explore the research collection", "?page=collection")
+        st.link_button("Download the five research reports", "?page=collection&view=Reports")
 
     st.divider()
     left, right = st.columns([1.05, 1], gap="large")
@@ -869,6 +884,7 @@ def render_person_profile(
             render_event_card(event, people_by_id, compact=True)
         if len(person_events) > 8:
             st.caption(f"{len(person_events) - 8} additional records are available on the Timeline page.")
+        render_context("person", person_id, people_by_id, strong_only=True)
 
     with family_tab:
         relation_columns = st.columns(2)
@@ -895,6 +911,7 @@ def render_person_profile(
 
     with places_tab:
         render_person_archive(person_id, load_archive())
+        render_context("person", person_id, people_by_id, topic="Land and property")
         residences = person.get("residences", [])
         if residences:
             st.subheader("Known residences")
@@ -907,6 +924,7 @@ def render_person_profile(
             st.info("No residence history has been entered for this profile.")
 
     with sources_tab:
+        render_context("person", person_id, people_by_id, limit=5)
         archive_records = load_archive().sources_for("person", person_id)
         if archive_records:
             st.subheader("Source Archive records")
@@ -1016,6 +1034,13 @@ def render_search_page(
     people_matches = [person for person in data["people"] if query in record_search_blob(person)]
     event_matches = [event for event in data["events"] if query in record_search_blob(event)]
     research_matches = [record for record in data["research"] if query in record_search_blob(record)]
+    collection = load_collection()
+    finding_matches = collection.select(query=query)
+    related_profile_ids = {pid for record in finding_matches for pid in record["Navigation"]["people_ids"]}
+    matched_profile_ids = {str(person["id"]) for person in people_matches}
+    people_matches.extend(person for person in data["people"]
+                          if person["id"] in related_profile_ids - matched_profile_ids)
+    register_matches = [source for source in collection.sources.values() if research_matches_query(query, source)]
 
     source_matches: list[tuple[Any, str, str]] = []
     for collection_name, records in (
@@ -1031,8 +1056,8 @@ def render_search_page(
     metrics = st.columns(4)
     metrics[0].metric("People", len(people_matches))
     metrics[1].metric("Events", len(event_matches))
-    metrics[2].metric("Research notes", len(research_matches))
-    metrics[3].metric("Source links", len(source_matches))
+    metrics[2].metric("Research notes & findings", len(research_matches) + len(finding_matches))
+    metrics[3].metric("Source links & register entries", len(source_matches) + len(register_matches))
 
     people_tab, events_tab, research_tab, sources_tab = st.tabs(
         ["People", "Events", "Research", "Sources"]
@@ -1056,7 +1081,13 @@ def render_search_page(
                 description = str(event.get("description", ""))
                 st.write(description if len(description) < 320 else description[:317] + "…")
     with research_tab:
-        if not research_matches:
+        if finding_matches:
+            st.subheader("Research collection findings")
+            for record in finding_matches[:12]:
+                with st.container(border=True):
+                    render_finding(record, collection, people_by_id)
+            st.link_button("See all matching findings", "?page=collection&q=" + quote(query))
+        if not research_matches and not finding_matches:
             st.caption("No research notes matched.")
         for record in research_matches[:30]:
             with st.container(border=True):
@@ -1067,7 +1098,12 @@ def render_search_page(
                 )
                 st.write(record.get("summary", ""))
     with sources_tab:
-        if not source_matches:
+        if register_matches:
+            st.subheader("Research source register")
+            for source in register_matches[:30]:
+                st.markdown(f"- {register_link(source)} — {markdown_escape(source['Viewed status'])}")
+            st.link_button("Browse the complete research source register", "?page=collection&view=Sources")
+        if not source_matches and not register_matches:
             st.caption("No sources matched.")
         seen_matches: set[tuple[str, str, str]] = set()
         for source, owner_type, owner_id in source_matches[:50]:
@@ -1493,6 +1529,10 @@ def render_timeline_page(
         st.info("No timeline records match these filters.")
     for event in visible:
         render_event_card(event, people_by_id)
+        if str(event.get("id")) == requested_event_id:
+            render_context("event", requested_event_id, people_by_id)
+    render_timeline_research(people_by_id, selected_person, search, year_range,
+                             newest=direction == "Newest first")
 
 
 def research_search_blob(record: Record, people_by_id: Mapping[str, Record]) -> str:
@@ -1532,6 +1572,10 @@ def render_research_page(
 
     st.title("Research Desk")
     st.write("The working evidence library: what is documented, what is provisional, and what still needs an original record.")
+    links = st.columns(3)
+    links[0].link_button("Browse new findings", "?page=collection", width="stretch")
+    links[1].link_button("Review research conflicts", "?page=collection&status=Conflict", width="stretch")
+    links[2].link_button("Open the retrieval plan", "?page=collection&view=Retrieval+plan", width="stretch")
     metrics = st.columns(4)
     metrics[0].metric("Research notes", len(research))
     metrics[1].metric("Primary-record notes", primary_count)
@@ -1631,6 +1675,8 @@ def render_sources_page(
 ) -> None:
     st.title("Sources & Method")
     st.write("How the archive separates a documented fact, a published account, and a lead that still needs verification.")
+    st.link_button("Open the expanded research source register", "?page=collection&view=Sources")
+    st.link_button("Read research coverage and limitations", "?page=collection&view=Inventories&inventory=Source+Coverage")
 
     catalog: list[dict[str, Any]] = []
     for owner_type, records in (
@@ -1792,6 +1838,8 @@ def main() -> None:
         render_timeline_page(data["events"], data["people"], people_by_id)
     elif page == "Research Desk":
         render_research_page(data, people_by_id)
+    elif page == "Research Collection":
+        render_collection_page(people_by_id, load_archive().places)
     elif page == "Sources & Method":
         render_sources_page(data, people_by_id)
 
