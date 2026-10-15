@@ -88,10 +88,9 @@ NAV_GROUPS = {
     "Home": ["Home"],
     "Search": ["Search"],
     "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
-    "Stories": ["Stories & Discoveries"],
     "Places": ["Historical Places", "Historical Map"],
     "Archive": ["Photographs & Documents", "Document Reader", "Source Archive", "Sources & Method"],
-    "Research": ["Research Collection", "Research Desk"],
+    "Research": ["Stories & Discoveries", "Research Collection", "Research Desk"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
 
