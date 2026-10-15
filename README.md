@@ -241,8 +241,25 @@ both pass before the PR is merged.
   Down East Island* (Lowell P. Beveridge, Jr., 2016), is indexed under Archive
   and the timeline. Chapter topics and selected photo references are recorded
   as research leads, with links from pertinent historical profiles.
-- **Do not commit or redistribute the ebook or its scanned photographs**:
-  the supplied edition includes a copyright and a personal-use redistribution
-  restriction. Hosting original scanned pages and images requires documented
-  permission from the rights holder. The site's new bibliographic index
-  contains no book page images or long excerpts.
+- **Book image and page reproduction for this family website is now authorized**,
+  as confirmed by the user. The author and copyright notices remain credited;
+  no broader sublicensing rights are claimed. A complete 305-page PDF reader
+  and 103-page visual index are implemented. The original watermark is retained.
+  Upload the supplied 22-MB optimized PDF under `static/books/` on the feature
+  branch before merging; see `static/books/README.md`.
+
+### Full illustrated-book reader and tree controls (15 October 2026)
+- The user confirms permission to reproduce the entire 2016 book *The Colony*
+  on the family website, including its photographs and original page images.
+- A 305-page web-optimized PDF (22 MB) has been produced separately from the
+  122-MB supplied edition, preserving captions and existing DEMO watermark.
+- The book reader offers page jumps, prior/next navigation, browser-native PDF
+  controls, full-size individual page previews, chapter browsing and 103
+  illustrated source-page entries. The timeline indexes those entries as
+  undated photographic/illustrated records where capture dates are unknown.
+- The PDF binary is **not part of these source-code-only commits**. Upload the
+  supplied optimized file to `static/books/` before merging; otherwise the
+  reader truthfully displays a missing-asset notice.
+- In the full-family tree, the former ambiguous Steps selector is renamed
+  to plain-language relative ranges (Immediate, Close, Extended and Wider).
+  It is hidden in Whole Family mode and shown only in Nearby Relatives mode.
