@@ -174,6 +174,12 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
             f"Book by {book['author']}. Themes include: {', '.join(book['sections'])}.",
             "?page=family-books", (), "Published family recollections",
             "Book publication year", book["source_limit"])
+        for finding in book.get("research_leads", []):
+            add("Book-based research lead", finding["id"], finding["title"],
+                finding.get("date") or "", finding["summary"], "?page=family-books", (),
+                "Published family recollection; corroboration pending",
+                "Book-described event date" if finding.get("date") else "Undated book recollection",
+                finding["evidence"] + f" Source: {book['author']} (2016), PDF page {finding['pdf_page']}.")
         for candidate in book["photo_leads"]:
             add("Book photograph lead",book["id"]+":p"+str(candidate["pdf_page"]),
                 candidate["subject"],"",f"Image cataloged from PDF page {candidate['pdf_page']}.",
