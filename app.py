@@ -915,8 +915,12 @@ def render_person_profile(
             if not ids:
                 st.caption("Not recorded")
             for pid in ids[:3]:
-                route_link(person_name(people_by_id,pid),
-                           person_url(pid)) if pid in people_by_id else st.caption("Unresolved family record")
+                if pid in people_by_id:
+                    route_link(person_name(people_by_id, pid), person_url(pid))
+                else:
+                    # Preserve a referenced relative even without a full profile.
+                    # This is an unresolved profile, not a false relationship.
+                    st.caption(f"{person_name(people_by_id, pid)} · profile not yet entered")
             if len(ids) > 3:
                 st.caption(f"+{len(ids)-3} more in the Family tab")
     route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
