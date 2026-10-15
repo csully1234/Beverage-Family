@@ -222,6 +222,11 @@ def build_full_tree_html(
   #toolbar button {{ cursor:pointer; }}
   #toolbar button:hover {{ background:#dcebed; }}
   #personSelect {{ max-width:320px; flex:1 1 220px; }}
+  #selection {{ padding:10px 14px; background:#fffdf8; border-bottom:1px solid var(--line); font-size:13px; }}
+  #selection strong {{ color:var(--navy); }}
+  #selection a {{ color:#14536e; font-weight:700; }}
+  #distance {{ width:130px; }}
+  .is-hidden {{ display:none; }}
   #status {{ margin-left:auto; font-size:12px; color:#50686f; white-space:nowrap; }}
   #viewport {{ flex:1; min-height:0; position:relative; overflow:hidden; background:
     radial-gradient(circle at 50% 10%, rgba(57,113,125,.08), transparent 30rem), #fffdf8; }}
@@ -255,17 +260,20 @@ def build_full_tree_html(
     <select id="personSelect" aria-label="Find a person">
       <option value="">Find and center a person…</option>
     </select>
-    <button id="fit" type="button">Fit whole tree</button>
+    <select id="mode" aria-label="Tree display mode"><option value="branch">Explore nearby relatives</option><option value="all">Whole family overview</option></select>
+    <label for="distance" title="Steps away from selected relative">Steps</label><select id="distance"><option value="1">1 step</option><option value="2" selected>2 steps</option><option value="3">3 steps</option><option value="4">4 steps</option></select>
+    <button id="fit" type="button">Fit visible tree</button>
     <button id="zoomIn" type="button" aria-label="Zoom in">＋</button>
     <button id="zoomOut" type="button" aria-label="Zoom out">−</button>
     <button id="reset" type="button">100%</button>
     <span id="status"></span>
   </div>
+  <div id="selection" role="status" aria-live="polite">Select a person to explore their relatives.</div>
   <div id="viewport">
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Drag to pan · use the wheel or +/− to zoom · click a profile to center it</div>
+    <div id="help">Click a person to explore relatives · drag to pan · zoom with wheel or +/−</div>
   </div>
 </div>
 <script>
@@ -275,6 +283,14 @@ const svg = document.getElementById("tree");
 const world = document.getElementById("world");
 const select = document.getElementById("personSelect");
 const status = document.getElementById("status");
+const mode = document.getElementById("mode");
+const distance = document.getElementById("distance");
+const selection = document.getElementById("selection");
+const links = new Map();
+for(const n of DATA.nodes) links.set(n.id, new Set());
+for(const [a,b] of [...DATA.parent_edges, ...DATA.spouse_edges]) {{ links.get(a)?.add(b); links.get(b)?.add(a); }}
+let selectedId = "", visibleIds = new Set(DATA.nodes.map(n=>n.id));
+let visibleBounds = {{x:0,y:0,width:DATA.width,height:DATA.height}};
 const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
 let scale = 1, tx = 20, ty = 20, dragging = false, dragged = false;
 let startX = 0, startY = 0, startTx = 0, startTy = 0;
@@ -286,7 +302,7 @@ function make(tag, attrs={{}}) {{
 }}
 function applyTransform() {{
   world.setAttribute("transform", `translate(${{tx}} ${{ty}}) scale(${{scale}})`);
-  status.textContent = `${{DATA.nodes.length}} people/relative nodes · ${{Math.round(scale * 100)}}%`;
+  status.textContent = `${{visibleIds.size}} of ${{DATA.nodes.length}} relatives · ${{Math.round(scale * 100)}}%`;
 }}
 function clampScale(value) {{ return Math.min(4, Math.max(0.06, value)); }}
 function zoomAt(factor, cx=svg.clientWidth/2, cy=svg.clientHeight/2) {{
@@ -296,9 +312,9 @@ function zoomAt(factor, cx=svg.clientWidth/2, cy=svg.clientHeight/2) {{
 }}
 function fitTree() {{
   const vw = Math.max(svg.clientWidth, 320), vh = Math.max(svg.clientHeight, 320);
-  scale = clampScale(Math.min((vw - 36) / DATA.width, (vh - 36) / DATA.height, 1));
-  tx = (vw - DATA.width * scale) / 2;
-  ty = (vh - DATA.height * scale) / 2;
+  scale = clampScale(Math.min((vw - 36) / visibleBounds.width, (vh - 36) / visibleBounds.height, 1));
+  tx = (vw - visibleBounds.width * scale) / 2 - visibleBounds.x * scale;
+  ty = (vh - visibleBounds.height * scale) / 2 - visibleBounds.y * scale;
   applyTransform();
 }}
 function resetTree() {{ scale = 1; tx = 20; ty = 20; applyTransform(); }}
@@ -315,11 +331,11 @@ function spousePath(a, b) {{
 }}
 for (const [parentId, childId] of DATA.parent_edges) {{
   const a=nodeById.get(parentId), b=nodeById.get(childId); if (!a || !b) continue;
-  world.appendChild(make("path", {{d:edgePath(a,b), class:"parent-edge"}}));
+  world.appendChild(make("path", {{d:edgePath(a,b), class:"parent-edge", "data-a":parentId, "data-b":childId}}));
 }}
 for (const [aId, bId] of DATA.spouse_edges) {{
   const a=nodeById.get(aId), b=nodeById.get(bId); if (!a || !b) continue;
-  world.appendChild(make("path", {{d:spousePath(a,b), class:"spouse-edge"}}));
+  world.appendChild(make("path", {{d:spousePath(a,b), class:"spouse-edge", "data-a":aId, "data-b":bId}}));
 }}
 function labelLines(name) {{
   if (name.length <= 28) return [name];
@@ -346,7 +362,6 @@ for (const node of DATA.nodes) {{
   if (!node.unresolved) {{
     g.addEventListener("click", () => {{
       if (dragged) return;
-      select.value=node.id;
       focusNode(node.id);
     }});
   }}
@@ -358,17 +373,85 @@ for (const node of sortedNodes) {{
   option.textContent=`${{node.name}} · ${{node.life_span}}`;
   select.appendChild(option);
 }}
+function neighborhood(id, maxSteps) {{
+  const seen = new Set([id]); let frontier = [id];
+  for(let step=0;step<maxSteps;step++) {{
+    const next=[];
+    for(const current of frontier) for(const relative of links.get(current)||[]) {{
+      if(!seen.has(relative)) {{ seen.add(relative); next.push(relative); }}
+    }}
+    frontier=next; if(!frontier.length) break;
+  }}
+  return seen;
+}}
+function redraw() {{
+  visibleIds = mode.value==="all" ? new Set(DATA.nodes.map(n=>n.id)) : neighborhood(selectedId, Number(distance.value));
+  const groups=new Map();
+  for(const node of DATA.nodes) {{
+    if(!visibleIds.has(node.id)) continue;
+    const row=node.y;
+    if(!groups.has(row)) groups.set(row, []);
+    groups.get(row).push(node);
+  }}
+  const rows=[...groups.keys()].sort((a,b)=>a-b);
+  let largest=1;
+  const positions=new Map();
+  for(let rowIndex=0;rowIndex<rows.length;rowIndex++) {{
+    const nodes=groups.get(rows[rowIndex]).sort((a,b)=>a.x-b.x);
+    largest=Math.max(largest,nodes.length);
+    const gap=26, stepX=DATA.node_width+gap;
+    const span=nodes.length*stepX-gap;
+    nodes.forEach((n,i)=>positions.set(n.id, {{x:i*stepX-span/2,y:rowIndex*(DATA.node_height+78)}}));
+  }}
+  // In overview retain historic whole-family arrangement.
+  for(const node of DATA.nodes) {{
+    if(mode.value==="all") positions.set(node.id, {{x:node.x, y:node.y}});
+    const elem=world.querySelector(`[data-id="${{CSS.escape(node.id)}}"]`);
+    if(!elem) continue;
+    const p=positions.get(node.id);
+    elem.classList.toggle("is-hidden",!p);
+    if(p) elem.setAttribute("transform",`translate(${{p.x}} ${{p.y}})`);
+  }}
+  for(const edge of world.querySelectorAll("path")) {{
+    const a=edge.dataset.a,b=edge.dataset.b;
+    const from=positions.get(a), to=positions.get(b);
+    edge.classList.toggle("is-hidden",!from||!to);
+    if(!from||!to) continue;
+    const f={{...from}},t={{...to}};
+    edge.setAttribute("d",edge.classList.contains("spouse-edge") ? spousePath(f,t) : edgePath(f,t));
+  }}
+  if(mode.value==="all") visibleBounds={{x:0,y:0,width:DATA.width,height:DATA.height}};
+  else visibleBounds={{x:-(largest*(DATA.node_width+26))/2-36,y:-36,
+     width:largest*(DATA.node_width+26)+72,
+     height:Math.max(220,rows.length*(DATA.node_height+78)+36)}};
+  distance.disabled=mode.value==="all";
+  fitTree();
+}}
 function focusNode(id) {{
+  if(!nodeById.has(id)) return;
+  selectedId=id;
+  select.value=id;
   document.querySelectorAll(".node.selected").forEach(el=>el.classList.remove("selected"));
-  const node=nodeById.get(id); if (!node) return;
-  scale=Math.max(scale, 0.95);
-  tx=svg.clientWidth/2-(node.x+DATA.node_width/2)*scale;
-  ty=svg.clientHeight/2-(node.y+DATA.node_height/2)*scale;
   const el=world.querySelector(`[data-id="${{CSS.escape(id)}}"]`);
-  if (el) el.classList.add("selected");
-  applyTransform();
+  if(el) el.classList.add("selected");
+  const node=nodeById.get(id);
+  selection.replaceChildren();
+  const heading=document.createElement("strong");heading.textContent=node.name+" · "+node.life_span;
+  selection.append(heading, document.createTextNode(" · "));
+  if(!node.unresolved) {{
+    const link=document.createElement("a");
+    // A top-level same-origin route uses existing person IDs; if sandbox navigation
+    // is prevented, the named person can still be opened from the site's People page.
+    const base=document.referrer || window.location.href;
+    link.href=new URL("?page=people&profile="+encodeURIComponent(id),base).href;
+    link.target="_top";link.rel="noopener";
+    link.textContent="Open full profile";selection.append(link);
+  }} else selection.append(document.createTextNode("Unresolved relative; no profile yet"));
+  redraw();
 }}
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
+mode.addEventListener("change",redraw);
+distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
 document.getElementById("zoomIn").addEventListener("click", () => zoomAt(1.25));
 document.getElementById("zoomOut").addEventListener("click", () => zoomAt(0.8));
@@ -392,7 +475,7 @@ function endDrag() {{ dragging=false; svg.classList.remove("dragging"); setTimeo
 svg.addEventListener("pointerup", endDrag);
 svg.addEventListener("pointercancel", endDrag);
 window.addEventListener("resize", fitTree);
-requestAnimationFrame(fitTree);
+requestAnimationFrame(() => focusNode(sortedNodes.find(n=>!n.unresolved)?.id || sortedNodes[0]?.id));
 </script>
 </body>
 </html>"""
