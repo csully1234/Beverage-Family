@@ -130,13 +130,13 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.button(key="book_next").click().run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertEqual(app.number_input(key="book_selected_page").value, 50)
-        self.assertEqual(app.query_params.get("book_page"), "50")
+        self.assertEqual(app.query_params.get("book_page"), ["50"])
         app.button(key="book_prev").click().run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertEqual(app.number_input(key="book_selected_page").value, 49)
         app.number_input(key="book_selected_page").set_value(305).run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
-        self.assertEqual(app.query_params.get("book_page"), "305")
+        self.assertEqual(app.query_params.get("book_page"), ["305"])
         self.assertTrue(app.button(key="book_next").disabled)
 
     def test_illustration_page_jump_works_without_pdf(self) -> None:
@@ -144,7 +144,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app.button(key="book_evidence_colony-amelia-hanson").click().run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertEqual(app.number_input(key="book_selected_page").value, 49)
-        self.assertEqual(app.query_params.get("book_page"), "49")
+        self.assertEqual(app.query_params.get("book_page"), ["49"])
 
     def test_research_deep_links_and_existing_profile_context(self) -> None:
         cases = (
