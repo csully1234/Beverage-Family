@@ -164,6 +164,9 @@ def render_places_page(archive: ArchiveIndex) -> None:
     st.caption(place["coordinate_notes"])
     route_markdown("Coordinate reference: " + source_link(archive.sources[place["coordinate_source_id"]]))
     route_link("View on historical map", archive_url("map", place=pid))
+    if st.toggle("Show interactive historical map on this page", value=False, key="place_inline_map"):
+        st.iframe(build_historical_map_html(archive, place_id=pid), height=640)
+        st.caption("Markers represent historically supported references, not an exact private address or surveyed property boundary.")
     linked = archive.related(pid)
     metrics = st.columns(3)
     for col, key in zip(metrics, ("people", "events", "sources")):
