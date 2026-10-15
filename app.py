@@ -19,6 +19,7 @@ from graphviz import Digraph
 from visitor_ui import render_stories_page, render_media_page, render_document_page, render_people_directory, order_people, SORT_OPTIONS, surname_first_label
 from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
+from tree_component import show_full_tree
 from archive import ArchiveIndex
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
@@ -568,6 +569,14 @@ def sync_profile_route() -> None:
     if person_id:
         st.query_params["page"] = "people"
         st.query_params["profile"] = person_id
+
+
+def sync_full_map_person() -> None:
+    """Update cross-page person selection when the parent dropdown changes."""
+    person_id = st.session_state.get("full_map_person")
+    if person_id:
+        st.session_state["tree_person"] = person_id
+        st.session_state["profile_selector"] = person_id
 
 
 def sorted_people(people: list[Record]) -> list[Record]:
@@ -1490,7 +1499,28 @@ def render_full_tree_page(
 
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
-    st.caption("Click a box to select that relative. The full-tree search control, selection and profile link stay synchronized inside the map.")
+    # Process component selections BEFORE creating the selectbox widget: Streamlit
+    # does not permit mutating a widget's value after it has been instantiated.
+    pending = st.session_state.pop("_pending_full_map_person", None)
+    if pending in people_by_id:
+        st.session_state["full_map_person"] = pending
+        st.session_state["tree_person"] = pending
+        st.session_state["profile_selector"] = pending
+    elif st.session_state.get("full_map_person") not in person_ids:
+        previous = st.session_state.get("tree_person")
+        st.session_state["full_map_person"] = previous if previous in person_ids else ""
+
+    st.write("Start with the complete map. Select any relative on the diagram or in the selector, then use Back to focused tree to continue with the same person.")
+    st.selectbox(
+        "Selected relative",
+        options=["", *person_ids],
+        format_func=lambda pid: (
+            surname_first_label(people_by_id[pid]) + " · " + life_span(people_by_id[pid])
+            if pid else "No person selected — show the whole family"
+        ),
+        key="full_map_person",
+        on_change=sync_full_map_person,
+    )
 
     controls, note = st.columns([1, 3])
     with controls:
@@ -1506,11 +1536,17 @@ def render_full_tree_page(
             "Dashed-outline boxes are referenced relatives whose full profiles are still unresolved."
         )
 
-    st.caption("For a phone-friendly list, use People → Family. The graph has its own synchronized selection and profile shortcut.")
-    st.iframe(
-        build_full_tree_html(people_by_id, relationships, st.session_state.get("tree_person", "")),
-        height=820,
+    st.caption("The entire graph is available in Whole family overview; use Explore nearby relatives to zoom in on a branch. Selecting a box keeps the parent controls synchronized.")
+    selection = show_full_tree(
+        build_full_tree_html(people_by_id, relationships),
+        selected_id=st.session_state.get("full_map_person", ""),
+        height=850,
     )
+    if isinstance(selection, dict):
+        clicked_id = selection.get("person_id")
+        if clicked_id in people_by_id and clicked_id != st.session_state.get("full_map_person"):
+            st.session_state["_pending_full_map_person"] = clicked_id
+            st.rerun()
 
 
 def event_search_blob(event: Record, people_by_id: Mapping[str, Record]) -> str:
