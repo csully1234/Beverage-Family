@@ -35,6 +35,35 @@ class UnifiedTimelineTests(unittest.TestCase):
                          "Historical source","Family story","Historical document"}<=kinds)
         self.assertTrue(any(t["id"]=="thomas-1786" for t in self.timeline))
 
+    def test_all_registered_sources_retrieval_leads_and_inventories_remain(self):
+        source_ids = {t["id"] for t in self.timeline if t["type"]=="Research source"}
+        self.assertEqual(source_ids, set(self.collection.sources))
+        retrieval_ids = {t["id"] for t in self.timeline if t["type"]=="Unresolved research question"}
+        self.assertEqual(retrieval_ids, set(self.collection.targets))
+        for inventory_name in self.collection.inventories:
+            if inventory_name == "Images and Maps":
+                continue
+            records = [t for t in self.timeline
+                       if t["type"]=="Research inventory · "+inventory_name]
+            self.assertEqual(len(records),
+                             len(self.collection.inventory_rows(inventory_name)), inventory_name)
+
+    def test_1786_sworn_testimony_is_dated_and_linked(self):
+        testimony = next(t for t in self.timeline if t["id"]=="thomas-1786")
+        self.assertEqual(testimony["year"], 1786)
+        self.assertEqual(testimony["type"], "Historical document")
+        self.assertIn("sworn testimony", testimony["title"])
+        self.assertEqual(testimony["url"], "?page=documents&doc=thomas-1786")
+        self.assertIn("1786", testimony["date"])
+
+    def test_every_record_is_available_without_a_pagination_cap(self):
+        from pathlib import Path
+        code = (ROOT / "unified_timeline.py").read_text()
+        self.assertNotIn('Entries per page', code)
+        self.assertNotIn('Records shown', code)
+        self.assertIn('ordered_items = dated_results + undated_results', code)
+        self.assertIn('st.dataframe(', code)
+
     def test_imprecise_dates_are_not_invented(self):
         self.assertIsNone(historical_year("Nineteenth century"))
         self.assertIsNone(historical_year("1700s–1900s records"))
