@@ -20,7 +20,7 @@ from visitor_ui import render_stories_page, render_media_page, render_document_p
 from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from tree_component import show_full_tree
-from family_books import render_family_books
+from family_books import render_family_books, render_book_profile_context
 from archive import ArchiveIndex
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
@@ -903,6 +903,7 @@ def render_person_profile(
         route_markdown("**Baptized**")
         st.write(format_date(person["baptism_date"]) + " — " + person.get("baptism_place", "Unknown"))
         st.caption("This is a baptism date. The birth date is not established; the recorded birthplace remains unverified.")
+    render_book_profile_context(person)
     render_profile_review(person_id, load_collection(), people_by_id)
     render_evidence_status(person.get("evidence_status"))
     if person.get("needs_research"):
