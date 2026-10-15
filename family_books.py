@@ -47,3 +47,14 @@ def render_family_books() -> None:
                     st.caption(lead["certainty"])
                     st.caption(lead["status"])
             route_link("Browse all family photographs and archive references", "?page=media")
+
+def render_book_profile_context(person: dict) -> None:
+    """Connect named book subjects without asserting uncertain identity matches."""
+    name = str(person.get("full_name") or "").casefold()
+    if not any(token in name for token in ("orris", "amelia beverage", "hanson beverage", "eleazer crabtree")):
+        return
+    with st.container(border=True):
+        st.markdown("**Related published family-history book**")
+        st.write("Lowell P. Beveridge, Jr., *The Colony: Stories from a Down East Island* (2016) includes family recollections and images involving this name or family context.")
+        st.caption("A shared name or recollection is not an independently established genealogical identification.")
+        route_link("Explore the book's chapters and photograph leads", "?page=family-books")
