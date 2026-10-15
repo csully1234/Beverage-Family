@@ -1,0 +1,59 @@
+[
+  {
+    "id": "colony-book-2016",
+    "title": "The Colony: Stories from a Down East Island",
+    "subtitle": "Remembering things I never knew about Grandfather Orris and his times",
+    "author": "Lowell P. Beveridge, Jr.",
+    "publication_year": 2016,
+    "source_type": "Family-history book (privately supplied digital edition)",
+    "digital_copy": "User-supplied 305-page scanned ebook; not publicly hosted",
+    "rights": "Copyright © 2016 Lowell P. Beveridge, Jr. The supplied copy restricts redistribution; direct reproduction of pages or photographs requires permission from the rights holder.",
+    "source_limit": "The book's recollections and genealogical claims are valuable family testimony; corroborate specific dates and identifications with independent records where possible.",
+    "sections": [
+      "Down East History",
+      "Benjamin’s Farm",
+      "Island Life",
+      "Changing Times",
+      "Whitefield",
+      "Marriage and Career",
+      "More Changes",
+      "The Beverage Colony",
+      "The Red Cottage",
+      "Life in The Colony",
+      "Death of a Farm",
+      "Orris’ Legacy",
+      "Second Generation",
+      "Third Generation"
+    ],
+    "photo_leads": [
+      {
+        "pdf_page": 1,
+        "subject": "Cover image: family gathering by boat on rocky shore",
+        "capture_date": null,
+        "certainty": "Image subject/date not yet identified",
+        "status": "Permission and archival provenance required before web display"
+      },
+      {
+        "pdf_page": 21,
+        "subject": "Abandoned house built by Captain Eleazer Crabtree at Southern Harbor",
+        "capture_date": null,
+        "certainty": "Caption directly examined in supplied edition",
+        "status": "Permission and archival provenance required before web display"
+      },
+      {
+        "pdf_page": 49,
+        "subject": "Amelia Beverage and her brother Hanson Beverage, outside farmhouse built by Benjamin",
+        "capture_date": null,
+        "certainty": "Caption directly examined in supplied edition; independently verify identities",
+        "status": "Permission and archival provenance required before web display"
+      },
+      {
+        "pdf_page": 246,
+        "subject": "Portrait associated with Lowell Beveridge",
+        "capture_date": null,
+        "certainty": "Candidate image; caption and identity require more detailed review",
+        "status": "Permission and archival provenance required before web display"
+      }
+    ]
+  }
+]
