@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body {margin:0; padding:0; width:100%; background:#f7f3ea; font-family:system-ui,sans-serif;}
+#graph {border:0; width:100%; height:850px; display:block;}
+</style></head><body>
+<iframe id="graph" title="Interactive Beverage family tree"></iframe>
+<script>
+"use strict";
+// Streamlit custom-component protocol. The iframe is a presentation-only graph;
+// selections travel through the parent component rather than trying to navigate
+// across the browser's sandboxed frame boundary.
+const graph=document.getElementById("graph");
+let lastMarkup=null;
+let renderCount=0;
+let eventSequence=0;
+const componentSession=Math.random().toString(36).slice(2);
+let selectedId="";
+let treeReady=false;
+function applySelected(){
+ if(treeReady && selectedId)graph.contentWindow.postMessage({type:"beverage:set-selected",person_id:selectedId},"*");
+}
+function upstream(type, details={}) {
+  window.parent.postMessage({isStreamlitMessage:true,type,...details},"*");
+}
+function adjustHeight(height) {
+  const size=Number(height);
+  const value=Number.isFinite(size)?Math.max(520,Math.min(size,1200)):850;
+  graph.style.height=value+"px";
+  upstream("streamlit:setFrameHeight",{height:value+2});
+}
+window.addEventListener("message",(event)=>{
+  const message=event.data;
+  if (!message || typeof message!=="object") return;
+  if (event.source===window.parent && message.type==="streamlit:render") {
+    const args=message.args||{};
+    if (typeof args.html==="string" && args.html!==lastMarkup) {
+      lastMarkup=args.html; renderCount+=1;
+      treeReady=false;
+      graph.srcdoc=args.html;
+    }
+    if(typeof args.selected_id==="string" && args.selected_id!==selectedId){
+      selectedId=args.selected_id;
+      applySelected();
+    }
+    adjustHeight(args.height);
+    return;
+  }
+  if (event.source===graph.contentWindow && message.type==="beverage:tree-ready") {
+    treeReady=true;applySelected();return;
+  }
+  if (event.source===graph.contentWindow && (message.type==="beverage:person-selected" || message.type==="beverage:open-profile")) {
+    if (typeof message.person_id!=="string" || !/^[a-zA-Z0-9_-]{1,180}$/.test(message.person_id)) return;
+    selectedId=message.person_id;
+    upstream("streamlit:setComponentValue",{
+      value:{person_id:message.person_id,action:message.type==="beverage:open-profile"?"profile":"select",event_id:componentSession+":"+String(++eventSequence)},
+      dataType:"json"
+    });
+  }
+});
+upstream("streamlit:componentReady",{apiVersion:1});
+adjustHeight(850);
+</script></body></html>

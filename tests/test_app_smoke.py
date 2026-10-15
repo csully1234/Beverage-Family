@@ -202,10 +202,31 @@ class StreamlitSmokeTests(unittest.TestCase):
     def test_full_family_map_person_selection_is_in_map(self) -> None:
         app = self.logged_in_app(page="full-tree")
         self.assertFalse(app.exception, [e.value for e in app.exception])
-        self.assertTrue(any("synchronized selection" in str(c.value).lower() for c in app.caption))
+        self.assertTrue(any(s.label == "Selected relative" for s in app.selectbox))
         # The selected relative is now inside the iframe; a disconnected
         # outer dropdown is intentionally absent.
         self.assertFalse(any(s.label == "Open a profile from the full map" for s in app.selectbox))
+
+    def test_full_map_selection_persists_into_focused_tree(self) -> None:
+        target = "harold_h_beverage_1893"
+        app = self.logged_in_app(page="full-tree")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        app.selectbox(key="full_map_person").select(target).run()
+        self.assertEqual(app.session_state["tree_person"], target)
+        back = next(button for button in app.button if button.label == "Back to focused tree")
+        back.click().run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="tree_person").value, target)
+
+    def test_full_map_bridge_updates_both_person_controls(self) -> None:
+        target = "harold_h_beverage_1893"
+        app = self.logged_in_app(page="full-tree")
+        app.session_state["_pending_full_map_person"] = target
+        app.session_state["_pending_full_map_action"] = "select"
+        app.run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="full_map_person").value, target)
+        self.assertEqual(app.session_state["tree_person"], target)
 
     def test_major_interactions_and_direct_routes(self) -> None:
         app = self.logged_in_app()
