@@ -145,19 +145,24 @@ def render_book_reader(book: dict) -> None:
         key="book_selected_page", step=1, on_change=select_book_page,
     )
     col1, col2, col3 = st.columns([1,1,2])
+    # Streamlit runs button callbacks *before* constructing widgets on the
+    # following rerun. Never assign book_selected_page from an if st.button()
+    # block after its st.number_input has been instantiated.
     with col1:
-        if st.button("← Previous page", disabled=selected <= 1, key="book_prev"):
-            jump_to_book_page(selected - 1)
-            st.rerun()
+        st.button(
+            "← Previous page", disabled=selected <= 1, key="book_prev",
+            on_click=jump_to_book_page, args=(int(selected) - 1,),
+        )
     with col2:
-        if st.button("Next page →", disabled=selected >= page_count, key="book_next"):
-            jump_to_book_page(selected + 1)
-            st.rerun()
+        st.button(
+            "Next page →", disabled=selected >= page_count, key="book_next",
+            on_click=jump_to_book_page, args=(int(selected) + 1,),
+        )
     with col3:
         if path and path.is_file():
             st.link_button("Open full book PDF in a new tab", full_book_url(book, selected), width="stretch")
     if path and path.is_file():
-        st.components.v1.iframe(full_book_url(book, selected), height=720, scrolling=True)
+        st.iframe(full_book_url(book, selected), height=720)
         st.caption("Use browser PDF controls to zoom, search within any browser-indexed text, or navigate all 305 pages. The edition supplied is image-based and may not support full-text search.")
     else:
         st.warning("The full PDF is prepared but not yet committed to this website. Upload the 22 MB optimized PDF to the required static/books path; all 305 pages will then display here.")
