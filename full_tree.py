@@ -472,7 +472,15 @@ window.addEventListener("message", event => {{
   if(id && nodeById.has(id) && id!==selectedId) focusNode(id,false);
 }});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
-mode.addEventListener("change",redraw);
+mode.addEventListener("change", () => {{
+  if(mode.value==="branch" && !selectedId) {{
+    mode.value="all";
+    selection.textContent="First choose a relative from the search box or click their box, then select Explore nearby relatives.";
+    redraw();
+    return;
+  }}
+  redraw();
+}});
 distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
 document.getElementById("centerSelected").addEventListener("click", () => {{
