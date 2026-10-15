@@ -121,8 +121,8 @@ def approved_assets() -> dict[str, dict]:
 SORT_OPTIONS = ("Surname A–Z", "First name A–Z", "Birth year (oldest first)", "Birth year (newest first)")
 
 
-_DISAMBIGUATION = re.compile(r"\\s*\\([^()]*\\)\\s*$")
-_GENERATION_SUFFIX = re.compile(r"^(?:jr\\.?|sr\\.?|ii|iii|iv|v)$",re.I)
+_DISAMBIGUATION = re.compile(r"\s*\([^()]*\)\s*$")
+_GENERATION_SUFFIX = re.compile(r"^(?:jr\.?|sr\.?|ii|iii|iv|v)$", re.I)
 
 
 def _name_parts(person: dict) -> tuple[str, str]:
