@@ -1504,6 +1504,12 @@ def render_full_tree_page(
     # Process component selections BEFORE creating the selectbox widget: Streamlit
     # does not permit mutating a widget's value after it has been instantiated.
     pending = st.session_state.pop("_pending_full_map_person", None)
+    pending_action = st.session_state.pop("_pending_full_map_action", "select")
+    if pending in people_by_id and pending_action == "profile":
+        st.session_state["profile_selector"] = pending
+        st.query_params["page"] = "people"
+        st.query_params["profile"] = pending
+        st.rerun()
     if pending in people_by_id:
         st.session_state["full_map_person"] = pending
         st.session_state["tree_person"] = pending
@@ -1546,8 +1552,12 @@ def render_full_tree_page(
     )
     if isinstance(selection, dict):
         clicked_id = selection.get("person_id")
-        if clicked_id in people_by_id and clicked_id != st.session_state.get("full_map_person"):
+        clicked_action = selection.get("action", "select")
+        if clicked_id in people_by_id and (
+            clicked_id != st.session_state.get("full_map_person") or clicked_action == "profile"
+        ):
             st.session_state["_pending_full_map_person"] = clicked_id
+            st.session_state["_pending_full_map_action"] = clicked_action
             st.rerun()
 
 
