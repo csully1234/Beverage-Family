@@ -6,7 +6,7 @@
     "author": "Lowell P. Beveridge, Jr.",
     "publication_year": 2016,
     "source_type": "Family-history book (privately supplied digital edition)",
-    "digital_copy": "Original 305-page family-supplied PDF. An optimized 305-page version has been prepared for inclusion in the website.",
+    "digital_copy": "Complete 305-page watermark-free scan committed at static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf",
     "rights": "© 2016 Lowell P. Beveridge, Jr. The user confirms full permission to reproduce the book and its photographs on the Beverage family website; attribution and existing printed notices are retained. No claim is made regarding reuse rights beyond the family website.",
     "source_limit": "The book's recollections and genealogical claims are valuable family testimony; corroborate specific dates and identifications with independent records where possible.",
     "sections": [
@@ -52,7 +52,7 @@
       },
       {
         "pdf_page": 246,
-        "subject": "Portrait captioned Lowell Beveridge, Harvard 1925",
+        "subject": "Portrait captioned Lowell Beveridge's Harvard class picture of 1923",
         "capture_date": null,
         "certainty": "Candidate image; caption and identity require more detailed review",
         "status": "Reproduction permission confirmed by user for the family website; preserve printed caption and credit.",
@@ -85,11 +85,11 @@
         "evidence": "Photo identification is attributed to this 2016 book; scan capture date and independently confirmed identities are still required."
       }
     ],
-    "permission_status": "Family website reproduction authorized by user; awaiting publication of optimized PDF asset in repository.",
+    "permission_status": "Family-website reproduction authorized by user; cleaned 305-page PDF committed and deployed.",
     "pdf_asset": "static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf",
     "pdf_page_count": 305,
-    "pdf_asset_size_bytes": 21948676,
-    "pdf_demo_watermark": true,
+    "pdf_asset_size_bytes": 22944649,
+    "pdf_demo_watermark": false,
     "image_page_numbers": [
       1,
       8,
@@ -195,6 +195,6 @@
       278,
       280
     ],
-    "image_page_notes": "Visual index of 100 pages containing photos, portraits, maps, charts, or illustrations. It is not a list of independently verified photographic subjects or capture dates. Source PDF pages counted from 1; image pages retain their original captions and watermark."
+    "image_page_notes": "103 cataloged illustrated and scanned pages, including photographs, portraits, maps, charts, and chapter images. Of these, 82 selected pages with historical photographs are indexed in the family photograph gallery with attributed descriptions. Capture dates are shown only where supported by the book, and those are not necessarily independent verification."
   }
 ]
