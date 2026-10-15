@@ -263,6 +263,9 @@ def render_media_page() -> None:
                     link = record.get("Direct item page")
                     if isinstance(link, str) and link.startswith(("https://", "http://")):
                         route_link("View original at archive", link)
+                        with st.expander("Show original archive page here"):
+                            st.caption("The holding institution controls whether previews are permitted. If blocked, use the original link above.")
+                            st.components.v1.iframe(link, height=520, scrolling=True)
                     with st.expander("Identification, rights & citation"):
                         st.write("Identifier: " + key)
                         st.write("Rights: " + str(record.get("Rights", "Unknown")))
