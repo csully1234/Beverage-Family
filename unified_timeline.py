@@ -168,23 +168,29 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
                 "Inventory-associated period", "Original details and evidence limits remain in the linked inventory.")
     # Bibliographic publication dates are not mistaken for events mentioned
     # inside the work; photo capture dates remain undated until corroborated.
-    from family_books import load_books
+    from family_books import load_books, illustrated_pages
     for book in load_books():
         add("Family-history book", book["id"], book["title"], str(book["publication_year"]),
-            f"Book by {book['author']}. Themes include: {', '.join(book['sections'])}.",
-            "?page=family-books", (), "Published family recollections",
+            f"Complete 305-page illustrated book by {book['author']}. Themes include: {', '.join(book['sections'])}.",
+            "?page=family-books", (), "Published family memoir and source compilation",
             "Book publication year", book["source_limit"])
         for finding in book.get("research_leads", []):
             add("Book-based research lead", finding["id"], finding["title"],
-                finding.get("date") or "", finding["summary"], "?page=family-books", (),
+                finding.get("date") or "", finding["summary"],
+                "?page=family-books&book_page="+str(finding["pdf_page"]), (),
                 "Published family recollection; corroboration pending",
                 "Book-described event date" if finding.get("date") else "Undated book recollection",
                 finding["evidence"] + f" Source: {book['author']} (2016), PDF page {finding['pdf_page']}.")
-        for candidate in book["photo_leads"]:
-            add("Book photograph lead",book["id"]+":p"+str(candidate["pdf_page"]),
-                candidate["subject"],"",f"Image cataloged from PDF page {candidate['pdf_page']}.",
-                "?page=family-books",(),"Identification and rights pending",
-                "Undated photograph",candidate["status"])
+        for entry in illustrated_pages(book):
+            image_page = entry["pdf_page"]
+            add("Book photograph or illustration",
+                book["id"]+":p"+str(image_page), entry["title"],
+                "", f"Original photographed/illustrated book page {image_page}. "
+                    "The book's caption is retained in the page scan; its capture date is unconfirmed.",
+                "?page=family-books&book_page="+str(image_page), (),
+                "Book-published image; capture date unresolved", "Undated historical image",
+                f"Credit: {book['author']}, {book['title']} ({book['publication_year']}), PDF page {image_page}. "
+                "Family-website reproduction authorized by user; do not infer event dates from the 2016 publication year.")
     return items
 
 
