@@ -8,6 +8,7 @@ from pathlib import Path
 from family_data import load_site_data
 from validation import validate_site_data
 from research_collection import CollectionIndex, validate_collection
+from conflict_review import validate_review
 
 
 def main() -> int:
@@ -23,6 +24,7 @@ def main() -> int:
     report = validate_site_data(data)
     collection = CollectionIndex.load()
     collection_errors = validate_collection(collection, data)
+    collection_errors.extend(validate_review(data["conflict_review"], collection, data))
 
     print(
         f"Validated {len(data['people'])} people, {len(data['events'])} events, "

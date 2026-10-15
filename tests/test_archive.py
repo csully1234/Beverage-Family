@@ -37,6 +37,11 @@ class ArchiveTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             for filename in ("people.json", "events.json", "research_people.json", "research_events.json", "research.json", "date_precision.json"):
                 Path(tmp, filename).write_bytes(before[filename])
+            # This fixture omits only the optional normalized archive, not the
+            # independently validated correction ledger.
+            Path(tmp, "reviews").mkdir()
+            ledger = ROOT / "data/reviews/conflicts_2026-10-15.json"
+            Path(tmp, "reviews", ledger.name).write_bytes(ledger.read_bytes())
             legacy = load_site_data(Path(tmp))
         for key in ("people", "events", "research", "base_people", "base_events"):
             self.assertEqual(legacy[key], self.data[key])
