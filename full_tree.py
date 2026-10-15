@@ -262,9 +262,10 @@ def build_full_tree_html(
     <select id="personSelect" aria-label="Find a person">
       <option value="">Find and center a person…</option>
     </select>
-    <select id="mode" aria-label="Tree display mode"><option value="branch">Explore nearby relatives</option><option value="all">Whole family overview</option></select>
+    <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option></select>
     <label for="distance" title="Steps away from selected relative">Steps</label><select id="distance"><option value="1">1 step</option><option value="2" selected>2 steps</option><option value="3">3 steps</option><option value="4">4 steps</option></select>
     <button id="fit" type="button">Fit visible tree</button>
+    <button id="centerSelected" type="button">Center selected relative</button>
     <button id="zoomIn" type="button" aria-label="Zoom in">＋</button>
     <button id="zoomOut" type="button" aria-label="Zoom out">−</button>
     <button id="reset" type="button">100%</button>
@@ -429,7 +430,7 @@ function redraw() {{
   distance.disabled=mode.value==="all";
   fitTree();
 }}
-function focusNode(id) {{
+function focusNode(id, notify=true) {{
   if(!nodeById.has(id)) return;
   selectedId=id;
   select.value=id;
@@ -450,11 +451,31 @@ function focusNode(id) {{
     link.textContent="Open full profile";selection.append(link);
   }} else selection.append(document.createTextNode("Unresolved relative; no profile yet"));
   redraw();
+  if (notify && window.parent!==window) {{
+    window.parent.postMessage({{type:"beverage:person-selected",person_id:id}},"*");
+  }}
 }}
+window.addEventListener("message", event => {{
+  if(event.source!==window.parent || event.data?.type!=="beverage:set-selected") return;
+  const id=event.data.person_id;
+  if(id && nodeById.has(id) && id!==selectedId) focusNode(id,false);
+}});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
 mode.addEventListener("change",redraw);
 distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
+document.getElementById("centerSelected").addEventListener("click", () => {{
+  const node=nodeById.get(selectedId);if(!node) return;
+  scale=Math.max(scale,0.85);
+  const g=world.querySelector(`[data-id="${{CSS.escape(selectedId)}}"]`);
+  if(!g) return;
+  const transform=g.getAttribute("transform")||"";
+  const found=transform.match(/translate\\(([-.\\d]+)\\s+([-.\\d]+)\\)/);
+  const x=found?Number(found[1]):node.x,y=found?Number(found[2]):node.y;
+  tx=svg.clientWidth/2-(x+DATA.node_width/2)*scale;
+  ty=svg.clientHeight/2-(y+DATA.node_height/2)*scale;
+  applyTransform();
+}});
 document.getElementById("zoomIn").addEventListener("click", () => zoomAt(1.25));
 document.getElementById("zoomOut").addEventListener("click", () => zoomAt(0.8));
 document.getElementById("reset").addEventListener("click", resetTree);
@@ -477,7 +498,11 @@ function endDrag() {{ dragging=false; svg.classList.remove("dragging"); setTimeo
 svg.addEventListener("pointerup", endDrag);
 svg.addEventListener("pointercancel", endDrag);
 window.addEventListener("resize", fitTree);
-requestAnimationFrame(() => focusNode(DATA.initial_person || sortedNodes.find(n=>!n.unresolved)?.id || sortedNodes[0]?.id));
+requestAnimationFrame(() => {{
+  if(DATA.initial_person) focusNode(DATA.initial_person,false);
+  else fitTree();
+  if(window.parent!==window) window.parent.postMessage({{type:"beverage:tree-ready"}},"*");
+}});
 </script>
 </body>
 </html>"""
