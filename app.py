@@ -1381,7 +1381,11 @@ def render_tree_page(
     elif st.session_state.get("tree_depth", maximum) > maximum:
         st.session_state["tree_depth"] = maximum
     with depth:
-        generations = st.slider("Generations", 1, maximum, key="tree_depth", disabled=view == "Immediate family")
+        if maximum <= 1 or view == "Immediate family":
+            generations = 1
+            st.caption("One recorded step")
+        else:
+            generations = st.slider("Generations", 1, maximum, key="tree_depth")
     st.caption(f"Showing up to {generations} of {maximum} documented generation steps for this person and view.")
 
     st.caption("Prefer a readable list? Open the profile’s Family tab for linked relatives. Recorded links can include unresolved research questions.")
