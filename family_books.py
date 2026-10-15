@@ -58,17 +58,32 @@ def full_book_url(book: dict, page: int = 1) -> str:
 
 
 @st.cache_data(show_spinner=False, max_entries=42)
-def scanned_page_preview(path: str, page: int, width: int = 760) -> bytes:
-    """Render a single original book page, lazily, without replacing its captions."""
+def scanned_page_preview(path: str, page: int, width: int = 760, crop_content: bool = False) -> bytes:
+    """Render an original scanned book page. Crop only gallery preview whitespace."""
     import fitz
+    from PIL import Image
+    from io import BytesIO
     doc = fitz.open(path)
     try:
         if page < 1 or page > doc.page_count:
-            raise ValueError("Book page outside the supplied 305-page edition")
+            raise ValueError("Book page outside the supplied edition")
         selected = doc[page - 1]
         scale = min(1.7, width / selected.rect.width)
         pix = selected.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
-        return pix.tobytes("png")
+        if not crop_content:
+            return pix.tobytes("png")
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        dark_ink = image.convert("L").point(lambda v: 255 if v < 135 else 0)
+        bounds = dark_ink.getbbox()
+        if bounds:
+            left, top, right, bottom = bounds
+            pad = 22
+            if right-left < image.width * .86 and bottom-top < image.height * .86:
+                image = image.crop((max(0,left-pad),max(0,top-pad),
+                                    min(image.width,right+pad),min(image.height,bottom+pad)))
+        output = BytesIO()
+        image.save(output, format="PNG", optimize=True)
+        return output.getvalue()
     finally:
         doc.close()
 
@@ -83,10 +98,10 @@ def select_book_page() -> None:
     st.query_params["book_page"] = str(st.session_state["book_selected_page"])
 
 
-def render_scanned_page(book: dict, page: int, *, width: int = 970) -> None:
+def render_scanned_page(book: dict, page: int, *, width: int = 970, crop: bool = False) -> None:
     pdf = book_pdf_path(book)
     if pdf and pdf.is_file():
-        st.image(scanned_page_preview(str(pdf), page, width), caption=(
+        st.image(scanned_page_preview(str(pdf), page, width, crop_content=crop), caption=(
             f"Source PDF p. {page} of {book['pdf_page_count']} · "
             f"Lowell P. Beveridge Jr., {book['title']} ({book['publication_year']}). "
             "Original caption and watermark preserved."
@@ -165,7 +180,7 @@ def render_illustrations(book: dict) -> None:
     entry = next(item for item in pages if item["pdf_page"] == page)
     st.markdown("**"+entry["title"]+"**")
     st.caption(f"Source PDF page {page} · Lowell P. Beveridge Jr. (2016)")
-    render_scanned_page(book, page, width=950)
+    render_scanned_page(book, page, width=950, crop=True)
     st.button("Read this page in its original book context", on_click=jump_to_book_page,
               args=(page,), key="illustration_read_context")
     st.caption("The illustrated-page list includes charts, maps and decorative illustrations, not only photographs. A publication date is not a photograph's capture date.")
