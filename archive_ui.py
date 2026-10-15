@@ -80,30 +80,22 @@ def render_source_record(source, archive: ArchiveIndex) -> None:
 
 
 def render_archive_page(archive: ArchiveIndex) -> None:
-    st.title("Source Archive")
+    """Family-readable historical sources, not internal research administration."""
+    st.title("Historical Sources")
+    st.write("Explore the documents and publications behind the family stories, people and places.")
     collection = load_collection()
     requested = st.query_params.get("source", "")
-    if render_review_source(requested, collection, archive.people):
-        route_link("Browse all sources", archive_url("archive"))
-        return
-    if requested in collection.sources:
-        render_register_source(collection.sources[requested], collection)
-        route_link("Browse all sources", archive_url("archive"))
-        return
     if requested:
+        if render_review_source(requested, collection, archive.people):
+            route_link("← See historical sources", archive_url("archive"))
+            return
+        if requested in collection.sources:
+            render_register_source(collection.sources[requested], collection)
+            route_link("← See historical sources", archive_url("archive"))
+            return
         _render_historical_archive(archive)
         return
-    historical, research, review = st.tabs(["Historical archive", "Research source register", "Evidence review sources"])
-    with historical:
-        _render_historical_archive(archive)
-    with research:
-        render_register(collection, prefix="archive_register")
-    with review:
-        st.write("Additional evidence checked while working through the family’s open questions.")
-        for source in review_data()["sources"]:
-            route_markdown(f"### [{source['title']}]({archive_url('archive', source=source['id'])})")
-            st.write(source["supports"])
-            st.caption(source["quality"] + " · " + source["viewed"])
+    _render_historical_archive(archive)
 
 
 def _render_historical_archive(archive: ArchiveIndex) -> None:
@@ -137,8 +129,7 @@ def _render_historical_archive(archive: ArchiveIndex) -> None:
 
 def render_places_page(archive: ArchiveIndex) -> None:
     st.title("Historical Places")
-    route_link("Explore land, property and deed research", archive_url("collection", topic="Land and property"))
-    route_link("Browse the complete property inventory", archive_url("collection", view="Inventories", inventory="Properties and Deeds"))
+    route_link("Explore family land and property discoveries", archive_url("collection", topic="Land and property"))
     if not archive.places:
         st.info("No reviewed historical places have been added yet.")
         return

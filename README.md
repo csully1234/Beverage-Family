@@ -263,3 +263,30 @@ both pass before the PR is merged.
 - In the full-family tree, the former ambiguous Steps selector is renamed
   to plain-language relative ranges (Immediate, Close, Extended and Wider).
   It is hidden in Whole Family mode and shown only in Nearby Relatives mode.
+
+
+### Family-first browsing (15 October 2026)
+
+The visitor site is for relatives, not for reviewing the work done to assemble
+the archive. The six sidebar groups now lead to **Home, Search, Family, History,
+Places and Archive**. These destinations offer profiles, both family trees,
+the complete historical timeline, stories, historical discoveries, locations,
+the illustrated family book, photographs, testimony and original historical
+sources.
+
+**Visitor pages do not show raw Search Log spreadsheets, workflow inventories,
+research work queues, automated data audits, bulk research reports or technical
+source-register dashboards.** Historical records are still shown, including
+probable and disputed genealogical leads. A source's review status and
+genealogical uncertainty remain accessible beside the relevant discovery.
+
+Research work products and the original 436-row search log are retained in the
+repository's existing data collection for provenance and later research. They
+are not deleted or recast as family events, and the family timeline no longer
+counts internal source-register entries, retrieval targets, inventory rows or
+research administration as historical moments.
+
+Old bookmarked routes (`?page=collection&view=Inventories&inventory=Search+Log`
+and `?page=research`) open the curated Historical Discoveries screen rather
+than an internal spreadsheet. Deep links to specific historical findings and
+archival sources remain functional. The original scanned-book work is unchanged.

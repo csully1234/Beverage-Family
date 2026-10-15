@@ -13,10 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 class StreamlitSmokeTests(unittest.TestCase):
     def go(self, app, page):
         groups = {"Home": ("Home",), "Search": ("Search",),
-                  "Family": ("People", "Explore the Tree", "Full Family Map", "Timeline"),
+                  "Family": ("People", "Explore the Tree", "Full Family Map"),
+                  "History": ("Timeline", "Stories & Discoveries", "Historical Discoveries"),
                   "Places": ("Historical Places", "Historical Map"),
-                  "Archive": ("Source Archive", "Sources & Method"),
-                  "Research": ("Research Collection", "Research Desk")}
+                  "Archive": ("Photographs & Documents", "Family Books", "Historical Sources")}
         group = next(k for k, v in groups.items() if page in v)
         if app.radio(key="nav_group").value != group:
             app.radio(key="nav_group").set_value(group).run()
@@ -45,12 +45,13 @@ class StreamlitSmokeTests(unittest.TestCase):
             "Full Family Map",
             "Historical Map",
             "Historical Places",
-            "Source Archive",
+            "Historical Sources",
             "People",
             "Timeline",
-            "Research Desk",
-            "Research Collection",
-            "Sources & Method",
+            "Stories & Discoveries",
+            "Historical Discoveries",
+            "Photographs & Documents",
+            "Family Books",
         ):
             with self.subTest(page=page):
                 self.go(app, page)
@@ -61,22 +62,46 @@ class StreamlitSmokeTests(unittest.TestCase):
                     [exception.value for exception in app.exception],
                 )
 
-    def test_research_collection_views_filters_and_reset(self) -> None:
-        app = self.logged_in_app(page="collection", person="elliot_beverage_1908")
-        self.assertEqual(app.radio(key="nav_page").value, "Research Collection")
-        self.assertEqual(app.selectbox(key="collection_person").value, "elliot_beverage_1908")
-        app.text_input(key="collection_query").input("IsleBuilt").run()
-        self.assertTrue(any("BF-R028" in caption.value for caption in app.caption))
-        next(b for b in app.button if b.label == "Clear research filters").click().run()
-        self.assertEqual(app.text_input(key="collection_query").value, "")
-        self.assertEqual(app.selectbox(key="collection_person").value, "")
-        self.assertTrue(any("57 of 57 findings" in caption.value for caption in app.caption))
-        for view in ("Chronology", "Sources", "Retrieval plan", "Inventories", "Images", "Conflict review", "Reports"):
-            with self.subTest(view=view):
-                app.selectbox(key="collection_view").select(view).run()
-                self.assertFalse(app.exception, [e.value for e in app.exception])
-        app.selectbox(key="dossier_section").select(7).run()
+    def test_family_discoveries_are_browsable_without_technical_inventories(self) -> None:
+        app = self.logged_in_app(page="collection")
+        self.assertEqual(app.radio(key="nav_page").value, "Historical Discoveries")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("57 historical discoveries" in c.value for c in app.caption))
+        self.assertFalse(any(s.label == "Research inventory" for s in app.selectbox))
+        app.text_input(key="family_discoveries_search").input("IsleBuilt").run()
         self.assertFalse(app.exception)
+        app.text_input(key="family_discoveries_search").input("").run()
+        self.assertTrue(any("57 historical discoveries" in c.value for c in app.caption))
+
+    def test_old_search_log_link_is_a_family_discoveries_view(self) -> None:
+        app = self.logged_in_app(page="collection", view="Inventories", inventory="Search Log")
+        self.assertEqual(app.radio(key="nav_page").value, "Historical Discoveries")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertFalse(any(s.label == "Research inventory" for s in app.selectbox))
+        self.assertFalse(any("436 of 436" in c.value for c in app.caption))
+
+    def test_family_focused_navigation_and_historical_deep_links(self) -> None:
+        from app import NAV_GROUPS
+        self.assertEqual(list(NAV_GROUPS), ["Home", "Search", "Family", "History", "Places", "Archive"])
+        sections = {name for pages in NAV_GROUPS.values() for name in pages}
+        self.assertFalse({"Research Desk", "Research Collection", "Sources & Method",
+                          "Source Archive", "Research inventory"} & sections)
+        self.assertTrue({"Timeline", "Stories & Discoveries", "Historical Discoveries",
+                         "Family Books", "Photographs & Documents", "Historical Sources"} <= sections)
+        for params, destination in (
+            ({"page":"research"}, "Historical Discoveries"),
+            ({"page":"sources"}, "Historical Sources"),
+            ({"page":"collection", "view":"Inventories", "inventory":"Search Log"}, "Historical Discoveries"),
+        ):
+            with self.subTest(params=params):
+                app = self.logged_in_app(**params)
+                self.assertEqual(app.radio(key="nav_page").value, destination)
+                self.assertFalse(app.exception, [x.value for x in app.exception])
+                self.assertFalse(any(x.label == "Research inventory" for x in app.selectbox))
+        document = self.logged_in_app(page="documents", doc="thomas-1786")
+        self.assertFalse(document.exception, [x.value for x in document.exception])
+        self.assertTrue(any("Thomas" in str(x.value) for x in document.title))
+        self.assertTrue(any("1786" in str(x.value) for x in document.caption))
 
     def test_profile_with_unresolved_spouse_and_multiple_parents_renders_cleanly(self) -> None:
         """Regression for False text and red error on Sandra's family summary."""
@@ -103,8 +128,8 @@ class StreamlitSmokeTests(unittest.TestCase):
             ({"page": "collection", "finding": "BF-R049"}, "Duplicate suspected"),
             ({"page": "archive", "source": "SRC118"}, "Findings citing this source"),
             ({"page": "people", "profile": "elliot_beverage_1908"}, "IsleBuilt"),
-            ({"page": "collection", "target": "BF-G001"}, "Family Bible pages"),
-            ({"page": "collection", "view": "Inventories", "inventory": "Properties and Deeds"}, "Snapshot of the supplied workbook"),
+            ({"page": "collection", "target": "BF-G001"}, "Historical Discoveries"),
+            ({"page": "collection", "view": "Inventories", "inventory": "Properties and Deeds"}, "Historical Discoveries"),
         )
         for params, expected in cases:
             with self.subTest(params=params):
@@ -190,8 +215,8 @@ class StreamlitSmokeTests(unittest.TestCase):
             ({"page":"map", "person":"harold_h_beverage_1893"}, "Historical Map"),
             ({"page":"map", "event":"event_north_haven_bridge_act_1848"}, "Historical Map"),
             ({"page":"places", "place":"pulpit_harbor_me"}, "Historical Places"),
-            ({"page":"archive", "source":"src_bridge_act_1848"}, "Source Archive"),
-            ({"page":"archive", "source":"nonexistent"}, "Source Archive"),
+            ({"page":"archive", "source":"src_bridge_act_1848"}, "Historical Sources"),
+            ({"page":"archive", "source":"nonexistent"}, "Historical Sources"),
         ):
             with self.subTest(params=params):
                 app = self.logged_in_app(**params)
@@ -319,10 +344,10 @@ class StreamlitSmokeTests(unittest.TestCase):
         cases = (
             ({"page":"people", "profile":"diana_daggett_1780"}, "Baptized"),
             ({"page":"people", "profile":"lowell_beveridge_1905"}, "Dorchester, Massachusetts"),
-            ({"page":"collection", "view":"Conflict review"}, "11 of 11 questions"),
+            ({"page":"collection", "view":"Conflict review"}, "Historical Discoveries"),
             ({"page":"collection", "finding":"BF-R008"}, "CRS001"),
             ({"page":"archive", "source":"CRS003"}, "p. xli"),
-            ({"page":"collection", "view":"Images"}, "Photographs, maps and objects"),
+            ({"page":"media"}, "Photographs & Documents"),
         )
         for params, expected in cases:
             with self.subTest(params=params):
@@ -338,14 +363,12 @@ class StreamlitSmokeTests(unittest.TestCase):
                 self.assertEqual(len(gated.radio), 0)
                 self.assertEqual(len(gated.text_input), 1)
 
-    def test_research_filters_survive_leaving_and_returning(self):
-        app = self.logged_in_app(page="collection", person="elliot_beverage_1908")
+    def test_family_discoveries_remain_after_navigating_away(self):
+        app = self.logged_in_app(page="collection")
         self.go(app, "Home")
-        self.go(app, "Research Collection")
+        self.go(app, "Historical Discoveries")
         self.assertFalse(app.exception)
-        app.selectbox(key="collection_view").select("Images").run()
-        app.selectbox(key="collection_view").select("Findings").run()
-        self.assertFalse(app.exception)
+        self.assertFalse(any(s.label == "Research inventory" for s in app.selectbox))
 
 
 if __name__ == "__main__":

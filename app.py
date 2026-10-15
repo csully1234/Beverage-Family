@@ -22,6 +22,7 @@ from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
+from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
@@ -92,31 +93,33 @@ LEGACY_COMPATIBILITY_PASSWORD = "BEVERAGE"
 PAGE_SLUGS = {
     "Home": "home",
     "Search": "search",
+    "People": "people",
     "Explore the Tree": "tree",
     "Full Family Map": "full-tree",
-    "Historical Map": "map",
-    "Historical Places": "places",
-    "Source Archive": "archive",
-    "People": "people",
     "Timeline": "timeline",
-    "Research Desk": "research",
-    "Research Collection": "collection",
-    "Sources & Method": "sources",
     "Stories & Discoveries": "stories",
+    "Historical Discoveries": "collection",
+    "Historical Places": "places",
+    "Historical Map": "map",
     "Photographs & Documents": "media",
-    "Document Reader": "documents",
     "Family Books": "family-books",
+    "Historical Sources": "archive",
+    "Document Reader": "documents",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
+# Old bookmarked technical routes lead to family-friendly content, not raw logs.
+SLUG_PAGES.update({"research": "Historical Discoveries", "sources": "Historical Sources"})
 NAV_GROUPS = {
     "Home": ["Home"],
     "Search": ["Search"],
-    "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
+    "Family": ["People", "Explore the Tree", "Full Family Map"],
+    "History": ["Timeline", "Stories & Discoveries", "Historical Discoveries"],
     "Places": ["Historical Places", "Historical Map"],
-    "Archive": ["Photographs & Documents", "Family Books", "Document Reader", "Source Archive", "Sources & Method"],
-    "Research": ["Stories & Discoveries", "Research Collection", "Research Desk"],
+    "Archive": ["Photographs & Documents", "Family Books", "Historical Sources"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
+# The individual document reader is reached from its exhibit, not an empty menu.
+PAGE_GROUP["Document Reader"] = "Archive"
 
 
 def apply_theme() -> None:
@@ -543,12 +546,12 @@ def navigate(page: str) -> None:
 
 
 def clear_archive_route(page: str) -> None:
-    for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Research Collection"}),
-                               ("person", {"Historical Map", "Research Collection"}), ("source", {"Source Archive"}),
-                               ("q", {"Search", "Research Collection"}),
+    for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Historical Discoveries"}),
+                               ("person", {"Historical Map", "Historical Discoveries"}), ("source", {"Historical Sources"}),
+                               ("q", {"Search", "Historical Discoveries"}),
                                *((key, {"Search"}) for key in ("results_page", "where")),
                                *((key, {"People"}) for key in ("return_q", "return_page", "return_where")),
-                               *((key, {"Research Collection"}) for key in
+                               *((key, {"Historical Discoveries"}) for key in
                                  ("finding", "target", "view", "topic", "status", "inventory", "location"))):
         if page not in allowed and parameter in st.query_params:
             del st.query_params[parameter]
@@ -620,6 +623,15 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
         st.session_state["nav_page"] = requested_page or "Home"
     elif requested_page and st.session_state.get("_last_query_slug") != query_slug:
         st.session_state["nav_page"] = requested_page
+    # The old research pages no longer exist in visitor navigation. Correct
+    # prior browser sessions before attempting PAGE_GROUP lookup.
+    if st.session_state["nav_page"] not in PAGE_GROUP:
+        st.session_state["nav_page"] = requested_page or "Home"
+    # Individual document pages remain reachable through source links, but
+    # they are not separate sidebar destinations for everyday family browsing.
+    showing_document = requested_page == "Document Reader"
+    if st.session_state["nav_page"] == "Document Reader":
+        st.session_state["nav_page"] = "Photographs & Documents"
     st.session_state["_last_query_slug"] = query_slug
     st.session_state["nav_group"] = PAGE_GROUP[st.session_state["nav_page"]]
 
@@ -664,7 +676,7 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
         runtime_id, directory_variant = runtime_source_identity()
         st.caption("Running source: " + runtime_id)
         st.caption("People directory implementation: " + directory_variant)
-    return page
+    return "Document Reader" if showing_document else page
 
 
 def render_home(
@@ -705,11 +717,10 @@ def render_home(
             with col.container(border=True):
                 route_link(label, url, width="stretch")
                 st.caption(description)
-    with st.expander("About this family archive and its research"):
-        st.write(f"{len(people)} profiles · {len(events)} timeline records · {span}. Historical claims carry their sources; dates and relationships can remain uncertain.")
-        st.write("The original research collection includes 57 findings and five downloadable reports. New evidence reviews retain the previous claims and explain any proposed corrections.")
-        route_link("Sources and research method", "?page=sources")
-        route_link("Download the original reports", "?page=collection&view=Reports")
+    with st.expander("About this family history"):
+        st.write(f"{len(people)} relatives · {len(events)} recorded family events · {span}. Dates, identities and relationships may be incomplete or disputed; original historical sources are linked wherever possible.")
+        route_link("Browse historical discoveries", "?page=collection")
+        route_link("Read original historical sources", "?page=archive")
 
     st.divider()
     left, right = st.columns([1.05, 1], gap="large")
@@ -939,7 +950,7 @@ def render_person_profile(
         st.caption(f"Research status: {person['research_completeness']}")
 
     story_tab, family_tab, places_tab, sources_tab = st.tabs(
-        ["Story", "Family", "Places", "Sources & research"]
+        ["Story", "Family", "Places", "Historical records"]
     )
 
     with story_tab:
@@ -1021,7 +1032,7 @@ def render_person_profile(
         render_context("person", person_id, people_by_id, limit=5)
         archive_records = load_archive().sources_for("person", person_id)
         if archive_records:
-            st.subheader("Source Archive records")
+            st.subheader("Original historical sources")
             for source in archive_records:
                 route_markdown(f"- {source_link(source)}")
         st.subheader("Profile sources")
@@ -1047,23 +1058,7 @@ def render_person_profile(
                     st.write(f"Reviewed source: {conflict.get('reviewed_source', 'Not recorded')}")
                     st.caption(str(conflict.get("status", "Unresolved")))
 
-        linked_research = [
-            record
-            for record in research
-            if person_id in record.get("people_involved", [])
-        ]
-        st.subheader(f"Research notes ({len(linked_research)})")
-        for record in linked_research:
-            with st.expander(record.get("title", "Untitled research note")):
-                st.caption(
-                    f"{record.get('category', 'Uncategorized')} · "
-                    f"{record.get('evidence_level', 'Evidence not rated')}"
-                )
-                st.write(record.get("summary", ""))
-                if record.get("why_it_matters"):
-                    route_markdown("**Why it matters**")
-                    st.write(record["why_it_matters"])
-                render_sources(record.get("sources", []), "Records and repositories")
+        # Research activity reports remain in GitHub, not in family profiles.
 
 
 def render_people_page(
@@ -1179,19 +1174,17 @@ def render_search_page(data, people_by_id) -> None:
     people = sorted((p for p in data["people"] if reasons.get(p["id"])),
                     key=lambda p: (reasons[p["id"]] != "Name, initials or spelling variant", person_sort_key(p)))
     events = sorted((r for r in data["events"] if selected(r)), key=date_sort_key)
-    notes = [r for r in data["research"] if selected(r)]
     sources = [s for s in collection.sources.values() if selected(s)]
     review_sources = [s for s in review_data()["sources"] if selected(s)]
-    reviews = [r for r in review_data()["resolutions"] if selected(r)]
     legacy_sources = {}
-    for kind, records in (("People", data["people"]), ("Timeline", data["events"]), ("Research", data["research"])):
+    for kind, records in (("People", data["people"]), ("Timeline", data["events"])):
         for r in records:
             for source in r.get("sources", []):
                 if selected(source):
                     legacy_sources.setdefault(source_search_text(source), source)
     tabs = st.tabs([f"People ({len(people)})", f"Events ({len(events)})",
-                    f"Research ({len(findings) + len(notes) + len(reviews)})",
-                    f"Sources ({len(sources) + len(review_sources) + len(legacy_sources)})"])
+                    f"Historical discoveries ({len(findings)})",
+                    f"Original sources ({len(sources) + len(review_sources) + len(legacy_sources)})"])
     with tabs[0]:
         st.caption(f"{len(people)} matching profiles · Matching names do not establish a relationship.")
         pages = max(1, (len(people) + 11) // 12)
@@ -1222,25 +1215,16 @@ def render_search_page(data, people_by_id) -> None:
         for event in paginate(events, "global_events_page"):
             render_event_card(event, people_by_id, compact=True)
     with tabs[2]:
-        for r in reviews:
-            route_markdown(f"**[Evidence review: {r['title']}]({review_link(r['research_id'])})**")
-            st.caption(r["resolution_status"])
-        for r in paginate(findings, "global_findings_page"):
+        for record in paginate(findings, "global_findings_page"):
             with st.container(border=True):
-                render_finding(r, collection, people_by_id)
-        for r in paginate(notes, "global_research_page"):
-            with st.expander(r.get("title", "Research note")):
-                st.write(r.get("summary", ""))
-                render_sources(r.get("sources", []))
-        if not findings and not notes and not reviews:
-            st.info("No research matches. Try a surname or a shorter subject.")
+                render_finding(record, collection, people_by_id)
+        if not findings:
+            st.info("No historical discoveries match. Try a surname or another subject.")
     with tabs[3]:
         for source in paginate(sources, "global_sources_page"):
             route_markdown(f"- {register_link(source)}")
-            st.caption(source["Viewed status"])
         for source in review_sources:
             route_markdown(f"- [{source['title']}]({'?page=archive&source=' + source['id']})")
-            st.caption(source["viewed"])
         with st.expander(f"Citations attached to profiles and events ({len(legacy_sources)})"):
             render_sources(list(legacy_sources.values()))
         if not sources and not review_sources and not legacy_sources:
@@ -2025,18 +2009,14 @@ def main() -> None:
         render_map_page(load_archive())
     elif page == "Historical Places":
         render_places_page(load_archive())
-    elif page == "Source Archive":
+    elif page == "Historical Sources":
         render_archive_page(load_archive())
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":
         render_unified_timeline(data, people_by_id)
-    elif page == "Research Desk":
-        render_research_page(data, people_by_id)
-    elif page == "Research Collection":
-        render_collection_page(people_by_id, load_archive().places)
-    elif page == "Sources & Method":
-        render_sources_page(data, people_by_id)
+    elif page == "Historical Discoveries":
+        render_family_discoveries(people_by_id)
     elif page == "Stories & Discoveries":
         render_stories_page()
     elif page == "Photographs & Documents":

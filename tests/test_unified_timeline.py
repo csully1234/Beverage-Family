@@ -32,21 +32,17 @@ class UnifiedTimelineTests(unittest.TestCase):
     def test_photos_places_and_documents_included(self):
         kinds={t["type"] for t in self.timeline}
         self.assertTrue({"Photo / scan / object","Place / property connection",
-                         "Historical source","Family story","Historical document"}<=kinds)
+                         "Research finding","Family story","Historical document"}<=kinds)
         self.assertTrue(any(t["id"]=="thomas-1786" for t in self.timeline))
 
-    def test_all_registered_sources_retrieval_leads_and_inventories_remain(self):
-        source_ids = {t["id"] for t in self.timeline if t["type"]=="Research source"}
-        self.assertEqual(source_ids, set(self.collection.sources))
-        retrieval_ids = {t["id"] for t in self.timeline if t["type"]=="Unresolved research question"}
-        self.assertEqual(retrieval_ids, set(self.collection.targets))
-        for inventory_name in self.collection.inventories:
-            if inventory_name == "Images and Maps":
-                continue
-            records = [t for t in self.timeline
-                       if t["type"]=="Research inventory · "+inventory_name]
-            self.assertEqual(len(records),
-                             len(self.collection.inventory_rows(inventory_name)), inventory_name)
+    def test_internal_research_activity_is_not_a_family_history_event(self):
+        kinds = {entry["type"] for entry in self.timeline}
+        self.assertNotIn("Research source", kinds)
+        self.assertNotIn("Unresolved research question", kinds)
+        self.assertNotIn("Research note", kinds)
+        self.assertFalse(any(name.startswith("Research inventory") for name in kinds))
+        self.assertNotIn("Historical source", kinds)
+        self.assertTrue(any(row["type"]=="Research finding" for row in self.timeline))
 
     def test_1786_sworn_testimony_is_dated_and_linked(self):
         testimony = next(t for t in self.timeline if t["id"]=="thomas-1786")
