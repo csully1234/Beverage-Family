@@ -48,11 +48,11 @@ window.addEventListener("message",(event)=>{
   if (event.source===graph.contentWindow && message.type==="beverage:tree-ready") {
     treeReady=true;applySelected();return;
   }
-  if (event.source===graph.contentWindow && message.type==="beverage:person-selected") {
+  if (event.source===graph.contentWindow && (message.type==="beverage:person-selected" || message.type==="beverage:open-profile")) {
     if (typeof message.person_id!=="string" || !/^[a-zA-Z0-9_-]{1,180}$/.test(message.person_id)) return;
     selectedId=message.person_id;
     upstream("streamlit:setComponentValue",{
-      value:{person_id:message.person_id,action:"select"},
+      value:{person_id:message.person_id,action:message.type==="beverage:open-profile"?"profile":"select"},
       dataType:"json"
     });
   }
