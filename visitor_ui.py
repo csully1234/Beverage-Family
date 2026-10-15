@@ -15,7 +15,7 @@ import streamlit as st
 
 from routing_ui import route_link, route_markdown
 from research_collection_ui import load_collection, render_finding
-from family_data import life_span, person_sort_key
+from family_data import life_span, year_from_date
 
 ROOT = Path(__file__).resolve().parent
 MEDIA_ROOT = (ROOT / "static" / "approved_media").resolve()
@@ -118,14 +118,34 @@ def approved_assets() -> dict[str, dict]:
     return result
 
 
+SORT_OPTIONS = ("Surname A–Z", "First name A–Z", "Birth year (oldest first)", "Birth year (newest first)")
+
+
+def _surname_first_key(person: dict) -> tuple:
+    parts = str(person.get("full_name") or "").split()
+    last = parts[-1].casefold() if parts else ""
+    given = " ".join(parts[:-1]).casefold()
+    return (last, given, str(person.get("id") or ""))
+
+
+def order_people(people, order="Surname A–Z") -> list[dict]:
+    if order == "First name A–Z":
+        return sorted(people, key=lambda person: (str(person.get("full_name") or "").casefold(), str(person.get("id") or "")))
+    if order == "Birth year (oldest first)":
+        return sorted(people, key=lambda person: (year_from_date(person.get("birth_date")) or 9999, _surname_first_key(person)))
+    if order == "Birth year (newest first)":
+        return sorted(people, key=lambda person: (-(year_from_date(person.get("birth_date")) or 0), _surname_first_key(person)))
+    return sorted(people, key=_surname_first_key)
+
+
 def render_people_directory(people: list[dict], people_by_id: dict) -> None:
     """An index by name and birth period; it does not infer new relationships."""
-    st.title("People")
     st.write("Browse a relative, or search a name without needing to know the exact spelling.")
     query = st.text_input("Find a person", placeholder="Name or alternate spelling…", key="directory_query").casefold().strip()
     period = st.selectbox("Birth period", ["Any period", "Before 1800", "1800s", "1900s", "2000s", "Unknown"], key="directory_period")
     from family_search import person_match
-    people = sorted(people, key=person_sort_key)
+    order = st.selectbox("Sort people", SORT_OPTIONS, key="directory_sort")
+    people = order_people(people, order)
     matches = []
     for person in people:
         if query and not person_match(query, person):
@@ -186,7 +206,10 @@ def render_stories_page() -> None:
                     continue
                 seen.add(rid)
                 with st.container(border=True):
-                    render_finding(finding, collection, {}, detail=False)
+                    st.markdown("**" + finding["Navigation"]["title"] + "**")
+                    st.write(finding["Proposed fact or narrative"])
+                    st.caption("Evidence: " + finding["Confidence"] + " · " + finding["Notes about uncertainty"])
+                    route_link("Review evidence and original sources", "?page=collection&finding=" + rid)
                 if len(seen) >= 5:
                     break
             if len(seen) >= 5:
