@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import hmac
 import json
 import os
@@ -64,6 +65,25 @@ st.set_page_config(
         "About": "A source-first archive of the Beverage family and its North Haven roots."
     },
 )
+
+
+def runtime_source_identity() -> tuple[str, str]:
+    """Reveal which Python source files this running Streamlit process loads.
+
+    This is intentionally based on the actual in-process source files, not
+    GitHub's branch name or Render's deployment status. No secrets, paths,
+    environment variables or customer data are exposed in the UI.
+    """
+    app_file = Path(__file__).resolve()
+    directory_source_file = Path(render_people_directory.__code__.co_filename).resolve()
+    app_hash = hashlib.sha256(app_file.read_bytes()).hexdigest()[:10]
+    directory_code = directory_source_file.read_bytes()
+    directory_hash = hashlib.sha256(directory_code).hexdigest()[:10]
+    implementation = (
+        "paginated" if b'Directory page' in directory_code
+        else "continuous"
+    )
+    return (f"app {app_hash} / people {directory_hash}", implementation)
 
 
 DATA_DIR = Path(__file__).parent / "data"
@@ -641,6 +661,9 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             st.session_state.clear()
             st.rerun()
         st.caption(f"{len(people)} profiles indexed")
+        runtime_id, directory_variant = runtime_source_identity()
+        st.caption("Running source: " + runtime_id)
+        st.caption("People directory implementation: " + directory_variant)
     return page
 
 
