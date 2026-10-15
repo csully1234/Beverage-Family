@@ -80,6 +80,28 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertFalse(any(s.label == "Research inventory" for s in app.selectbox))
         self.assertFalse(any("436 of 436" in c.value for c in app.caption))
 
+    def test_family_focused_navigation_and_historical_deep_links(self) -> None:
+        from app import NAV_GROUPS
+        self.assertEqual(list(NAV_GROUPS), ["Home", "Search", "Family", "History", "Places", "Archive"])
+        sections = {name for pages in NAV_GROUPS.values() for name in pages}
+        self.assertFalse({"Research Desk", "Research Collection", "Sources & Method",
+                          "Source Archive", "Research inventory"} & sections)
+        self.assertTrue({"Timeline", "Stories & Discoveries", "Historical Discoveries",
+                         "Family Books", "Photographs & Documents", "Historical Sources"} <= sections)
+        for params, destination in (
+            ({"page":"research"}, "Historical Discoveries"),
+            ({"page":"sources"}, "Historical Sources"),
+            ({"page":"collection", "view":"Inventories", "inventory":"Search Log"}, "Historical Discoveries"),
+        ):
+            with self.subTest(params=params):
+                app = self.logged_in_app(**params)
+                self.assertEqual(app.radio(key="nav_page").value, destination)
+                self.assertFalse(app.exception, [x.value for x in app.exception])
+                self.assertFalse(any(x.label == "Research inventory" for x in app.selectbox))
+        document = self.logged_in_app(page="documents", doc="thomas-1786")
+        self.assertFalse(document.exception, [x.value for x in document.exception])
+        self.assertTrue(any("1786" in str(x.value) for x in document.title))
+
     def test_profile_with_unresolved_spouse_and_multiple_parents_renders_cleanly(self) -> None:
         """Regression for False text and red error on Sandra's family summary."""
         app = self.logged_in_app(page="people", profile="sandra_beverage_1947")
