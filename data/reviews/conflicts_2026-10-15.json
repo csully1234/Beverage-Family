@@ -1,0 +1,998 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-15",
+  "baseline_commit": "7ce454f95ed3aed60dda717d5c2e36237bbf1047",
+  "scope": "Eleven conflicts; research conclusions and reversible draft corrections, not family approval. Originals remain immutable.",
+  "sources": [
+    {
+      "id": "CRS001",
+      "title": "Vital records of Edgartown, Massachusetts, to the year 1850 (Boston: NEHGS, 1906)",
+      "repository": "NEHGS; Internet Archive, Library of Congress scan",
+      "url": "https://archive.org/details/vitalrecordsofed00edgar/page/29/mode/1up",
+      "locator": "p. 29, Diana Daggett; p. 5, C.R.1 abbreviation; PDF pages 35 and 11",
+      "accessed": "2026-10-15",
+      "viewed": "Downloaded published scan; both pages visually examined",
+      "quality": "Authoritative published transcription of church records; not original manuscript",
+      "dependency": "New transcription witness; may share church source with SRC121; independence not assumed",
+      "supports": "Diana, daughter of Benjamin Jr. and Elizabeth, baptized December 31, 1780; C.R.1 means Church of Christ, Congregational.",
+      "rights": "Link and citation only; no scan republished. Reuse permission not assessed."
+    },
+    {
+      "id": "CRS002",
+      "title": "Vital records of Marblehead, Massachusetts, to the end of the year 1849, vol. II (Salem: Essex Institute, 1904)",
+      "repository": "Essex Institute; Internet Archive, Cornell scan",
+      "url": "https://archive.org/details/cu31924092204308/page/n37/mode/1up",
+      "locator": "p. 34, BEVERIDGE marriages; PDF p. 38; abbreviations p. 3",
+      "accessed": "2026-10-15",
+      "viewed": "Downloaded published scan; p. 34 visually examined; title and abbreviations read",
+      "quality": "Authoritative published transcription; original town/church manuscript not examined",
+      "dependency": "May share town records with SRC119; not independent proof of every family connection",
+      "supports": "James Beveridge married Mary White February 24, 1729/30 (C.R.3, St. Michael’s); James and Sarah Holman February 7, 1733/34. Neither is a birth entry.",
+      "rights": "Link and citation only; no scan republished. Reuse permission not assessed."
+    },
+    {
+      "id": "CRS003",
+      "title": "Alumni catalogue 1836–1947 (New York: Union Theological Seminary, 1948)",
+      "repository": "Union Theological Seminary; Columbia University Libraries",
+      "url": "https://www.columbia.edu/cu/lweb/digital/collections/cul/texts/ldpd_5949068_000/pages/ldpd_5949068_000_00000045.html",
+      "locator": "p. xli, Sacred Music, Lowell Pierson Beveridge entry",
+      "accessed": "2026-10-15",
+      "viewed": "Institutional page OCR read directly; scan-image link opened but not independently inspected at readable resolution; direct scan-image download returned HTTP 403 on 2026-10-15",
+      "quality": "Contemporary institutional register",
+      "dependency": "Predates 1991 obituary/memorial; independent institutional publication, informant unspecified",
+      "supports": "Names Dorchester, Massachusetts as birthplace, September 19, 1905; Harvard degrees and Columbia/Union music appointments identify the same Lowell.",
+      "rights": "Link and citation only; no scan republished. Reuse permission not assessed."
+    },
+    {
+      "id": "CRS004",
+      "title": "Name Recipients of 31 Fellowships and Scholarships, May 21, 1934",
+      "repository": "The Harvard Crimson",
+      "url": "https://www.thecrimson.com/article/1934/5/21/name-recipients-of-31-fellowships-and/",
+      "locator": "Phi Delta Kappa Scholarship, final recipient paragraph",
+      "accessed": "2026-10-15",
+      "viewed": "Publisher’s article text read directly; original newspaper image not examined",
+      "quality": "Contemporary newspaper, publisher transcription",
+      "dependency": "Independent of modern NHHS interpretation; identity still requires corroboration",
+      "supports": "Eliot P. Beveridge, of [Dorchester; online text reads Derchester], A.B. Harvard 1930, A.M. 1931, Graduate School of Education. Residence is not birthplace.",
+      "rights": "Link and citation only; no scan republished. Reuse permission not assessed."
+    },
+    {
+      "id": "CRS005",
+      "title": "Theodore E. Beverage (MF45-BHM), family timeline and source list",
+      "repository": "FamilySearch collaborative Family Tree",
+      "url": "https://ancestors.familysearch.org/en/MF45-BHM/theodore-e.-beverage-1855-1874",
+      "locator": "Parents and siblings; Sources (4); linked tree IDs L3F4-5MG, LC2F-GSH, LHFY-NWK",
+      "accessed": "2026-10-15",
+      "viewed": "Public tree page read; linked original record images unavailable",
+      "quality": "User-created tree: lead only",
+      "dependency": "Page explicitly attributes a story to Barbara Beverage Reeves/Find A Grave; may share family-tree origins with baseline",
+      "supports": "Retrieval leads for Benjamin, Amelia, Charles Hanson (not Howard), 1860 census household and Faylene Hutton cemetery collection; proves no disputed vital date.",
+      "rights": "Link and citation only; no scan republished. Reuse permission not assessed."
+    }
+  ],
+  "resolutions": [
+    {
+      "research_id": "BF-R005",
+      "title": "Sarah Holman and Mary White: incompatible dates",
+      "people_ids": [
+        "sarah_holman_1734",
+        "mary_white_1728",
+        "james_beveridge_sr_1700",
+        "james_beveridge_jr_1724",
+        "susannah_beveridge_1735",
+        "jane_beveridge_1737",
+        "mary_beveridge_1739"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "sarah_holman_1734",
+          "fields": {
+            "full_name": "Sarah Holman",
+            "birth_date": "1734-02-07",
+            "death_date": null,
+            "parents": [],
+            "spouses": [
+              "james_beveridge_sr_1700"
+            ],
+            "children": []
+          }
+        },
+        {
+          "person_id": "mary_white_1728",
+          "fields": {
+            "full_name": "Mary White",
+            "birth_date": "1728-01-01",
+            "birth_date_precision": "year",
+            "death_date": "1731-01-01",
+            "death_date_precision": "year",
+            "parents": [],
+            "spouses": [
+              "james_beveridge_sr_1700"
+            ],
+            "children": [
+              "susannah_beveridge_1735",
+              "jane_beveridge_1737",
+              "mary_beveridge_1739"
+            ]
+          }
+        },
+        {
+          "person_id": "james_beveridge_sr_1700",
+          "fields": {
+            "full_name": "James Beveridge Sr.",
+            "birth_date": "1700-01-01",
+            "birth_date_precision": "year",
+            "death_date": "1768-01-01",
+            "death_date_precision": "year",
+            "parents": [],
+            "spouses": [
+              "sarah_bennett_1705",
+              "mary_white_1728",
+              "sarah_holman_1734"
+            ],
+            "children": [
+              "james_beveridge_jr_1724",
+              "sarah_beveridge_1727",
+              "susannah_beveridge_1735",
+              "jane_beveridge_1737",
+              "mary_beveridge_1739"
+            ]
+          }
+        },
+        {
+          "person_id": "james_beveridge_jr_1724",
+          "fields": {
+            "full_name": "James Beveridge Jr.",
+            "birth_date": "1724-08-27",
+            "death_date": "1785-03-01",
+            "parents": [
+              "james_beveridge_sr_1700",
+              "sarah_bennett_1705"
+            ],
+            "spouses": [
+              "jean_mckinney_white_1725"
+            ],
+            "children": [
+              "thomas_beverage_1750",
+              "mercy_beveridge_henry_1753",
+              "sarah_beveridge_kent_1758"
+            ]
+          }
+        },
+        {
+          "person_id": "susannah_beveridge_1735",
+          "fields": {
+            "full_name": "Susannah Beveridge",
+            "birth_date": "1735-01-01",
+            "birth_date_precision": "year",
+            "death_date": null,
+            "parents": [
+              "james_beveridge_sr_1700",
+              "mary_white_1728"
+            ],
+            "spouses": [],
+            "children": []
+          }
+        },
+        {
+          "person_id": "jane_beveridge_1737",
+          "fields": {
+            "full_name": "Jane Beveridge",
+            "birth_date": "1737-01-01",
+            "birth_date_precision": "year",
+            "death_date": null,
+            "parents": [
+              "james_beveridge_sr_1700",
+              "mary_white_1728"
+            ],
+            "spouses": [],
+            "children": []
+          }
+        },
+        {
+          "person_id": "mary_beveridge_1739",
+          "fields": {
+            "full_name": "Mary Beveridge",
+            "birth_date": "1739-01-01",
+            "birth_date_precision": "year",
+            "death_date": null,
+            "parents": [
+              "james_beveridge_sr_1700",
+              "mary_white_1728"
+            ],
+            "spouses": [],
+            "children": []
+          }
+        }
+      ],
+      "baseline_conflict": "Sarah Holman’s stored birth date equals her marriage date. Mary White’s stored 1728 birth would make her about two at the recorded 1730 marriage; daughters born after her stored 1731 death also require review.",
+      "competing_claims": "These are incompatible repository fields, not grounds to invent replacement dates. Essex notes assign Susannah, Mary and Jane to Sarah, unlike portions of the repository.",
+      "conclusion": "February 7, 1733/34 is a documented marriage date, not an established birth date for Sarah Holman. Suppress the unsupported exact birth in the effective profile; retain its original value here. Mary White’s dates and the daughters’ maternity remain unresolved.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Strongly supported",
+      "reasoning": "The 1904 marriage transcription explicitly places both James marriages under marriages. The 1905 Essex note assigns Susannah, Mary and Jane to Sarah. These derivative accounts may use the same records; they do not supply Sarah’s birth or prove Mary’s vital dates. Do not substitute the 1706 Sarah Holman found in user trees without identity proof.",
+      "identity_reasoning": "Groom James, bride Sarah, place and day match the stored marriage. James Jr. has a stored 1724 birth and is a separate profile; no reassignment of the marriages or children is made.",
+      "source_ids": [
+        "SRC001",
+        "SRC119",
+        "CRS002"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [
+        {
+          "person_id": "sarah_holman_1734",
+          "field": "birth_date",
+          "before": "1734-02-07",
+          "after": null,
+          "reason": "Stored date matches the documented marriage; no birth evidence located.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        },
+        {
+          "person_id": "sarah_holman_1734",
+          "field": "birth_date_precision",
+          "before": null,
+          "after": "unknown",
+          "reason": "No defensible birth date.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        }
+      ],
+      "remaining_question": "Obtain original Marblehead marriage entries (1729/30 and 1733/34) and identify the 1789 Essex deed naming the three unmarried sisters; establish Mary’s own birth/death and each child’s mother.",
+      "retrieval_request": "Marblehead town clerk / St. Michael’s church records: please provide James Beveridge–Mary White, February 24, 1729/30, and James Beveridge–Sarah Holman, February 7, 1733/34. Essex Registry: please locate a 1789 deed involving Susannah, Mary and Jane Beveredge/Beverage, singlewomen of Marblehead, referencing their deceased mother Sarah, as abstracted in Essex Antiquarian IX (1905), p. 91. Book/page not yet established; do not assume a number.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed.",
+      "historical_activity": [
+        {
+          "person_id": "sarah_holman_1734",
+          "year": 1734,
+          "date_precision": "year",
+          "event_type": "marriage",
+          "source_id": "CRS002",
+          "confidence": "Strongly supported",
+          "description": "Marriage to James Beveridge, recorded February 7, 1733/34; establishes historical activity without inventing a birth date."
+        }
+      ]
+    },
+    {
+      "research_id": "BF-R008",
+      "title": "Diana Daggett: baptism recorded as birth",
+      "people_ids": [
+        "diana_daggett_1780"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "diana_daggett_1780",
+          "fields": {
+            "full_name": "Diana Daggett",
+            "birth_date": "1780-12-31",
+            "birth_place": "Maine",
+            "death_date": "1856-02-22",
+            "spouses": [
+              "nathaniel_winslow_beverage_1776"
+            ],
+            "children": [
+              "thomas_beverage_1810",
+              "harriet_beverage_1812",
+              "susan_beverage_1814",
+              "mary_beverage_1816"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "The Doggett-Daggett genealogy identifies Diana’s December 31, 1780 event at Edgartown as baptism, while the repository stores it as birth.",
+      "competing_claims": "Baptism and birth are different events. Original church entry is required; preserve the repository value pending review.",
+      "conclusion": "The December 31, 1780 entry is a baptism at Edgartown. Display baptism separately and leave the birth date unknown. The actual birth date and birthplace still need an original record.",
+      "resolution_status": "Resolved with documented evidence",
+      "confidence": "Strongly supported",
+      "reasoning": "The scanned 1906 vital-record transcription says bp. and cites Congregational church records. Doggett (1894), p. 113, entry 1033 also calls it baptism and connects Diana to Nathaniel Beverage. Agreement may reflect a shared church source, so independent corroboration is not claimed. Resolution is limited to event type, not exact birth or new parent relationships.",
+      "identity_reasoning": "Diana’s name, date and the genealogy’s Nathaniel Beverage spouse agree with the repository. The printed vital entry names Benjamin Jr. and Elizabeth, matching the genealogy, but no new parent IDs are created.",
+      "source_ids": [
+        "SRC001",
+        "SRC121",
+        "CRS001"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [
+        {
+          "person_id": "diana_daggett_1780",
+          "field": "birth_date",
+          "before": "1780-12-31",
+          "after": null,
+          "reason": "The cited date documents baptism, not birth.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        },
+        {
+          "person_id": "diana_daggett_1780",
+          "field": "birth_date_precision",
+          "before": null,
+          "after": "unknown",
+          "reason": "Baptism cannot supply an exact birth date.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        },
+        {
+          "person_id": "diana_daggett_1780",
+          "field": "baptism_date",
+          "before": null,
+          "after": "1780-12-31",
+          "reason": "Published church-record transcription.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        },
+        {
+          "person_id": "diana_daggett_1780",
+          "field": "baptism_place",
+          "before": null,
+          "after": "Edgartown, Massachusetts",
+          "reason": "Place of the baptism, not an inferred birthplace.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        }
+      ],
+      "remaining_question": "Retrieve the original Church of Christ (Congregational), Edgartown baptism register for December 31, 1780, with heading and adjacent entries; seek any distinct birth entry. Maine birthplace remains a preserved, unverified baseline claim.",
+      "retrieval_request": "Edgartown church/archive custodian: please supply an image of the December 31, 1780 baptism of Diana, daughter of Benjamin Daggett Jr. and Elizabeth, cited as C.R.1 in Vital Records of Edgartown (1906), p. 29. Please include the register title, page, surrounding entries, and any recorded age. Does a separate birth record survive?",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R011",
+      "title": "A Thomas Beverage deed cited after his death",
+      "people_ids": [
+        "thomas_beverage_1750"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "thomas_beverage_1750",
+          "fields": {
+            "full_name": "Capt. Thomas Beverage",
+            "death_date": "1834-10-04",
+            "spouses": [
+              "mercy_kent_1754"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "A Woodruff biography cites a Thomas Beverage to James Beverage and others deed under June 28, 1837, after Thomas’s repository death in 1834.",
+      "competing_claims": "Could be recording date, estate action or another Thomas. Original execution and acknowledgment clauses must be checked; no death-date correction is justified.",
+      "conclusion": "No death-date or property correction is justified. The 1837 date remains an unresolved deed citation; it has not been shown to be execution, recording or estate action.",
+      "resolution_status": "Awaiting an inaccessible original",
+      "confidence": "Conflict",
+      "reasoning": "The Woodruff note provides an exact DGS/page/image target but only a generic FamilySearch link. Direct film/catalog retrieval was inaccessible. Seaview transcription lists Capt. Thomas’s death October 4, 1834 and spouse Mercy, supporting the need to inspect the deed rather than assume a later death.",
+      "identity_reasoning": "The deed parties alone do not distinguish Capt. Thomas from another Thomas or a posthumous transaction.",
+      "source_ids": [
+        "SRC001",
+        "SRC123",
+        "SRC091"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Read the complete deed at DGS 8296915, p. 387, image 207/601; capture book/volume, all parties, capacities, execution, acknowledgment and recording dates.",
+      "retrieval_request": "FamilySearch center or Hancock County Registry of Deeds: please retrieve Deeds 1791–1861; index 1791–1864, DGS 8296915, image 207 of 601, p. 387, cited as Thomas Beverage to James Beverage & al., June 28, 1837. Please include adjoining pages and volume title. Does the text identify an executor, heirs, an earlier execution date, or a different Thomas? No book number verified.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R012",
+      "title": "Two Sarahs linked to Benjamin Kent",
+      "people_ids": [
+        "sarah_beveridge_kent_1758",
+        "sarah_beverage_1785",
+        "benjamin_kent_1755"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "sarah_beveridge_kent_1758",
+          "fields": {
+            "full_name": "Sarah Beveridge Kent",
+            "birth_date": "1758-01-01",
+            "death_date": "1821-01-01",
+            "parents": [
+              "james_beveridge_jr_1724",
+              "jean_mckinney_white_1725"
+            ],
+            "spouses": [
+              "benjamin_kent_1755"
+            ],
+            "children": [],
+            "notes": "Daughter of James Beveridge Jr.; married Benjamin Kent."
+          }
+        },
+        {
+          "person_id": "sarah_beverage_1785",
+          "fields": {
+            "full_name": "Sarah \"Sally\" Beverage",
+            "birth_date": "1785-03-20",
+            "death_date": "1844-11-28",
+            "parents": [
+              "thomas_beverage_1750",
+              "mercy_kent_1754"
+            ],
+            "spouses": [
+              "benjamin_kent_1755"
+            ],
+            "children": [],
+            "notes": "Daughter of Thomas and Mercy; married Benjamin Kent, creating double in‑law tie."
+          }
+        },
+        {
+          "person_id": "benjamin_kent_1755",
+          "fields": {
+            "full_name": "Benjamin Kent",
+            "birth_date": "1755-01-01",
+            "death_date": null,
+            "parents": [
+              "ezekiel_kent_1720",
+              "susanna_bryant_1725"
+            ],
+            "spouses": [
+              "sarah_beverage_1785"
+            ],
+            "children": [],
+            "notes": "Shipbuilder and brother to Mercy Kent; married Sarah 'Sally' Beverage."
+          }
+        }
+      ],
+      "baseline_conflict": "The Kent cemetery transcription calls Sarah Beverage Kent, deceased November 23, 1821 aged 63 years 5 months, a sister of Capt. Thomas. She must not be merged with his daughter Sarah Sally, born 1785.",
+      "competing_claims": "Repository links both women to Benjamin Kent 1755. A duplicated transcription line says s.o., the fuller line says sis.o.; use original stone and marriages to distinguish them.",
+      "conclusion": "The older Sarah Kent and Thomas’s daughter Sarah Sally must remain separate. The older Sarah is the more plausible wife in the Kent family evidence, but the spouse links cannot yet be conclusively reassigned.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Probable",
+      "reasoning": "Kent cemetery gives Sarah’s age as 63 years 5 months at her 1821 death, consistent with about 1758, and its fuller duplicate line says sister of Capt. Thomas. The Woodruff junior biography cites that same cemetery entry, so it is dependent rather than independent proof. A separate Seaview Sarah died in 1844 at 59 years 8 months.",
+      "identity_reasoning": "The two deaths, ages, and sister-versus-daughter generations distinguish the women; Benjamin junior’s 1798 birth also makes Sarah born 1785 an implausible mother. Neither age arithmetic nor later narrative proves the marriage.",
+      "source_ids": [
+        "SRC001",
+        "SRC092",
+        "SRC091",
+        "SRC125"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Obtain Benjamin senior’s marriage, the original Kent stone and the Vinalhaven Kent family register. Verify senior’s own birth year, too; a user-tree lead gives 1760 rather than stored 1755.",
+      "retrieval_request": "NHHS: please provide photographs or original transcription worksheets for Sarah (Beverage) Kent, died November 23, 1821 aged 63y 5m, and Sarah Beverage, Seaview, died November 1844 aged 59y 8m. Please clarify s.o. versus sis.o. in the Kent PDF. Vinalhaven clerk: please locate Benjamin and Sarah Kent’s marriage/family entries, including Benjamin junior in DGS 7596929 p. 389, image 215/837.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R014",
+      "title": "Benjamin Kent: January or June birth?",
+      "people_ids": [],
+      "existing_claims": [
+        {
+          "research_id": "BF-R014",
+          "fields": {
+            "Person or subject": "Benjamin Kent birth month",
+            "Proposed fact or narrative": "The edited Benjamin Kent biography gives June 17, 1798 in its narrative and January 17 in a note; Fuller transcription gives June 17.",
+            "Exact citation": "Benjamin Kent biographical subject; Benjamin subject notes; Fuller p. 5; https://wilfordwoodruffpapers.org/subjects/benjamin-kent; accessed 2026-10-14\nFuller Cemetery; Benjamin subject notes; Fuller p. 5; https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/fuller_cemetery.pdf; accessed 2026-10-14",
+            "Notes about uncertainty": "Internal editorial inconsistency remains unresolved until the cited original vital-record image is checked."
+          },
+          "profile_status": "No existing profile for Benjamin junior; do not apply his dates to Benjamin senior."
+        }
+      ],
+      "baseline_conflict": "The edited Benjamin Kent biography gives June 17, 1798 in its narrative and January 17 in a note; Fuller transcription gives June 17.",
+      "competing_claims": "Internal editorial inconsistency remains unresolved until the cited original vital-record image is checked.",
+      "conclusion": "June 17 is better represented in the published accounts, but the January/June conflict is not resolved. Do not create a junior profile or attach his dates to the senior Benjamin.",
+      "resolution_status": "Awaiting an inaccessible original",
+      "confidence": "Conflict",
+      "reasoning": "The Woodruff narrative and Fuller inscription transcription say June 17, 1798. The Woodruff footnote says January 17 and identifies the original town page. The narrative could depend on the cemetery entry; a vote of two derivative statements is not decisive.",
+      "identity_reasoning": "Junior’s Deborah Thomas marriage and 1882 death distinguish him from the repository’s senior Benjamin. Original family-register context must identify parents.",
+      "source_ids": [
+        "SRC125",
+        "SRC090"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Retrieve Vinalhaven town and vital records, DGS 7596929, p. 389, image 215/837, and marriage p. 431, image 236/837.",
+      "retrieval_request": "FamilySearch center / Vinalhaven town clerk: please provide the full page for Benjamin Kent Jur.’s 1798 birth, DGS 7596929, p. 389, image 215/837, preserving month handwriting and heading; and Benjamin Kent–Deborah Thomas marriage May 13, 1821, p. 431, image 236/837. Is the birth month Jan. or Jun.?",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R032",
+      "title": "Eliot / Elliot: birthplace and spelling conflict",
+      "people_ids": [
+        "elliot_beverage_1908"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "elliot_beverage_1908",
+          "fields": {
+            "full_name": "Elliot Pierson Beverage",
+            "birth_date": "1908-01-01",
+            "birth_date_precision": "year",
+            "birth_place": "North Haven, Maine",
+            "death_date": "1982-01-01",
+            "parents": [
+              "orris_beverage_1860",
+              "rose_pierson_1866"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "The repository calls him Elliot Pierson Beverage born North Haven; NHHS calls him Eliot Beveridge born Massachusetts in 1908.",
+      "competing_claims": "Years and island career suggest the same person, but original birth and Harvard records are needed. Preserve both spellings and locations.",
+      "conclusion": "A contemporary Harvard newspaper supports the Eliot P. Beveridge spelling and education connection. Massachusetts birthplace remains plausible but unproved; keep the existing profile name and birthplace while exposing the alternative in research and search.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Probable",
+      "reasoning": "The Crimson identifies Eliot P. Beveridge, Harvard A.B. 1930 and A.M. 1931, in 1934; NHHS independently describes Eliot’s Harvard education, island business and 1908–1982 lifespan. Neither the newspaper’s residence nor NHHS narrative substitutes for a birth entry. The online newspaper spells the place Derchester; preserve the transcription caveat.",
+      "identity_reasoning": "Name, middle initial, educational chronology and NHHS life dates support association. Exact birth and parentage still require a certificate or Harvard biographical file. Search expansion is not an identity merge.",
+      "source_ids": [
+        "SRC001",
+        "SRC116",
+        "CRS004"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Seek Massachusetts 1908 birth under Eliot/Elliot P. Beverage/Beveridge, parents Orris Lyford and Rose Emma Pierson; consult Harvard class of 1930 alumni/biographical records. September 15 from a derivative memorial site is a lead, not an adopted date.",
+      "retrieval_request": "Massachusetts Archives / Harvard University Archives: please locate the 1908 birth or student biographical record of Eliot/Elliot Pierson Beverage/Beveridge, likely son of Orris Lyford and Rose Emma (Pierson), Harvard A.B. 1930, A.M. 1931. The family archive says North Haven; NHHS says Massachusetts. Please return the original entry with parents and birthplace; do not infer birth from residence.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R039",
+      "title": "Lowell’s memorial: age and birthplace cautions",
+      "people_ids": [
+        "lowell_beveridge_1905"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "lowell_beveridge_1905",
+          "fields": {
+            "full_name": "Lowell Pierson Beveridge",
+            "birth_date": "1905-09-19",
+            "birth_place": "North Haven, Maine",
+            "death_date": "1991-06-18",
+            "conflicting_evidence": [
+              {
+                "claim": "Birthplace",
+                "existing_record": "North Haven, Maine",
+                "reviewed_source": "Published music references and his obituary report Boston or Dorchester, Massachusetts.",
+                "status": "Existing non-date claim preserved for family review"
+              },
+              {
+                "claim": "Place of death",
+                "existing_record": "Rockville, Maryland, following the contemporary Washington Post obituary",
+                "reviewed_source": "The Musica International authority record lists Alexandria, Virginia.",
+                "status": "Contemporary obituary retained; conflicting specialist index noted for family review"
+              }
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "The diocesan memorial prints 1905-09-19 to 1991-06-18 but calls Lowell 86; those dates yield 85. It calls him a Boston native, while the repository retains North Haven birthplace.",
+      "competing_claims": "Age is internally inconsistent; native need not be a precise birth-place statement. Do not count this likely obituary reuse as independent corroboration.",
+      "conclusion": "The printed life dates imply age 85, not 86. A 1948 institutional register directly names Dorchester, Massachusetts as birthplace; propose that birthplace with a citation while retaining North Haven in the audit. Birth-certificate verification remains open.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Strongly supported",
+      "reasoning": "The age calculation uses September 19, 1905 and June 18, 1991. Union’s 1948 catalogue predates the obituary and explicitly says born Dorchester, unlike the ambiguous Boston native wording. Existing obituary and diocesan memorial may share text and count as one evidentiary stream.",
+      "identity_reasoning": "Full name, exact birth date, Harvard degrees, Wellesley employment and Columbia music appointment match the existing Lowell profile. This identifies the register subject strongly without inferring a new relative.",
+      "source_ids": [
+        "SRC001",
+        "SRC129",
+        "CRS003"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [
+        {
+          "person_id": "lowell_beveridge_1905",
+          "field": "birth_place",
+          "before": "North Haven, Maine",
+          "after": "Dorchester, Massachusetts",
+          "reason": "Direct contemporary institutional statement with matching life/career identifiers.",
+          "implementation": "Proposed correction applied only in this draft branch; prior value retained here"
+        }
+      ],
+      "remaining_question": "Obtain Massachusetts/Boston birth entry for September 19, 1905, Lowell Pierson Beveridge, parents Orris Lyford and Rose Emma Pierson, to close the remaining vital-record question.",
+      "retrieval_request": "Massachusetts Archives / Boston registry: please locate Lowell Pierson Beveridge’s September 19, 1905 birth. Union Theological Seminary Alumni Catalogue 1836–1947 (1948), p. xli, explicitly names Dorchester, Massachusetts; family records say North Haven, Maine. Please provide register image, entry number, parents and birthplace.",
+      "subfindings": [
+        {
+          "claim": "Age from the memorial’s printed life dates",
+          "outcome": "85 years; arithmetic discrepancy resolved without altering either life date",
+          "confidence": "Confirmed"
+        }
+      ],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R046",
+      "title": "Charles Howard’s birth year conflict",
+      "people_ids": [
+        "charles_beverage_1863"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "charles_beverage_1863",
+          "fields": {
+            "full_name": "Charles Howard Beverage",
+            "birth_date": "1863-01-01",
+            "parents": [
+              "benjamin_beverage_1822",
+              "amelia_beverage_1833"
+            ],
+            "spouses": []
+          }
+        }
+      ],
+      "baseline_conflict": "Seaview lists Charles H. as 1862–1938, versus repository birth year 1863.",
+      "competing_claims": "Surname, initials and death year fit; original stone, birth register and spouse record required.",
+      "conclusion": "The birth year remains unresolved, and a newly located tree lead uses Charles Hanson rather than Charles Howard. Verify the middle name as well as 1862/1863.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Possible lead",
+      "reasoning": "Seaview lists Charles H., 1862–1938, husband of Annie A. Leadbetter; another row calls her Annie U. The public family tree calls Benjamin and Amelia’s son Charles Hanson, 1862–1938. Those derivative sources may be related; no original birth or marriage image was accessible.",
+      "identity_reasoning": "Parents, sibling cluster, initial and death year make this a useful candidate, not proof. Do not substitute Hanson or add a spouse merely from these pages.",
+      "source_ids": [
+        "SRC001",
+        "SRC091",
+        "CRS005"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Obtain North Haven birth record 1862–1863, 1938 death record and marriage to Annie/Anne Ursula Leadbetter; compare both middle names and parents.",
+      "retrieval_request": "North Haven clerk / Maine State Archives / NHHS: please locate Charles H. Beverage, son of Benjamin Crabtree and Amelia, born about 1862–1863, died 1938, associated with Annie/Anne Ursula Leadbetter. Please provide birth, marriage and death entries and gravestone image. Is his middle name Howard or Hanson, and what birth year is recorded?",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R047",
+      "title": "Benjamin Crabtree’s death-day conflict",
+      "people_ids": [
+        "benjamin_beverage_1822"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "benjamin_beverage_1822",
+          "fields": {
+            "full_name": "Benjamin Crabtree Beverage",
+            "birth_date": "1822-10-02",
+            "death_date": "1875-12-07",
+            "spouses": [
+              "amelia_beverage_1833",
+              "sarah_w_loveland_1828"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "Seaview gives Benjamin C. death December 17, 1875, versus repository December 7.",
+      "competing_claims": "Transcription also misplaces death year in birth field. Do not silently replace the baseline day; obtain stone and town death register.",
+      "conclusion": "December 7 versus December 17, 1875 remains open. Keep the stored day and display the conflict; the cemetery transcription is not safe for an automatic replacement.",
+      "resolution_status": "Awaiting an inaccessible original",
+      "confidence": "Conflict",
+      "reasoning": "Seaview repeats death year 1875 in the birth column while giving age 53y 2m 15d. This is an internal transcription defect. The public family tree supplies a household/cemetery retrieval route but no viewed original record resolving the day.",
+      "identity_reasoning": "Initial C., spouse Amelia and approximate age fit Benjamin Crabtree, but that does not validate the day.",
+      "source_ids": [
+        "SRC001",
+        "SRC091",
+        "CRS005"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Retrieve North Haven December 1875 death register and Benjamin C. gravestone photograph; compare December 7 and 17 and the original age inscription.",
+      "retrieval_request": "North Haven clerk / NHHS: please supply the December 1875 death entry and Seaview stone photograph for Benjamin C. (Crabtree) Beverage, husband of Amelia, aged about 53. The archive gives December 7; Seaview PDF p. 2 gives December 17 and repeats 1875 in the birth column. Please include the original heading, date and age.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R048",
+      "title": "Sarah Sally’s death-day conflict",
+      "people_ids": [
+        "sarah_beverage_1785"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "sarah_beverage_1785",
+          "fields": {
+            "full_name": "Sarah \"Sally\" Beverage",
+            "birth_date": "1785-03-20",
+            "death_date": "1844-11-28",
+            "parents": [
+              "thomas_beverage_1750",
+              "mercy_kent_1754"
+            ],
+            "spouses": [
+              "benjamin_kent_1755"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "Seaview gives Sarah death November 23, 1844 aged 59 years 8 months, versus repository November 28.",
+      "competing_claims": "Matching age supports candidate identity but stone or vital entry is needed to resolve the day.",
+      "conclusion": "November 23 versus November 28, 1844 remains open. Preserve the stored day and distinguish this woman from the older Sarah Kent.",
+      "resolution_status": "Awaiting an inaccessible original",
+      "confidence": "Conflict",
+      "reasoning": "Seaview’s age 59y 8m fits a March 1785 birth but cannot distinguish the two November days. A user-tree search also repeats November 28; its underlying source was inaccessible and it is not independent proof.",
+      "identity_reasoning": "Death year and age support the younger Sarah candidate; the 1821 Kent burial belongs to another generation. No name-based merging is warranted.",
+      "source_ids": [
+        "SRC001",
+        "SRC091"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Retrieve Vinalhaven death entry (North Haven was not separately incorporated in 1844) and the Seaview stone; retain both day readings until seen.",
+      "retrieval_request": "Vinalhaven clerk / NHHS: please provide the original November 1844 death entry and Seaview gravestone image for Sarah (Sally) Beverage, about 59y 8m, daughter of Thomas and Mercy. The archive gives November 28; the Seaview transcription p. 4 gives November 23. Please include neighboring entries for handwriting comparison.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    },
+    {
+      "research_id": "BF-R049",
+      "title": "Two Amelia profiles requiring identity review",
+      "people_ids": [
+        "amelia_beverage_1833",
+        "amelia_beverage_1833_child",
+        "benjamin_beverage_1822"
+      ],
+      "existing_claims": [
+        {
+          "person_id": "amelia_beverage_1833",
+          "fields": {
+            "full_name": "Amelia Beverage",
+            "birth_date": "1833-01-31",
+            "death_date": "1908-01-01",
+            "parents": [
+              "norwood_beverage_1810",
+              "hannah_grant_1811"
+            ],
+            "siblings": [
+              "robert_beverage_1835",
+              "orris_beverage_1836",
+              "lyford_beverage_1842",
+              "thomas_beverage_1845",
+              "dana_hanson_beverage_1847"
+            ],
+            "spouses": [
+              "benjamin_beverage_1822"
+            ],
+            "children": [
+              "theodore_beverage_1855",
+              "harriet_beverage_1856",
+              "james_beverage_1858",
+              "orris_beverage_1860",
+              "charles_beverage_1863",
+              "james_norwood_beverage_1866",
+              "jemima_beverage_1866",
+              "mary_beverage_1869",
+              "robert_edwin_beverage_1872"
+            ]
+          }
+        },
+        {
+          "person_id": "amelia_beverage_1833_child",
+          "fields": {
+            "full_name": "Amelia Beverage (daughter of Norwood)",
+            "birth_date": "1833-01-01",
+            "birth_date_precision": "year",
+            "death_date": "1908-01-01",
+            "parents": [
+              "norwood_beverage_1810",
+              "hannah_grant_1811"
+            ],
+            "siblings": [
+              "robert_beverage_1835",
+              "orris_beverage_1836",
+              "lyford_beverage_1842",
+              "thomas_beverage_1845",
+              "dana_hanson_beverage_1847"
+            ],
+            "spouses": [
+              "benjamin_beverage_1822"
+            ],
+            "children": [
+              "theodore_beverage_1855",
+              "harriet_beverage_1856",
+              "james_beverage_1858",
+              "orris_beverage_1860",
+              "charles_beverage_1863",
+              "james_norwood_beverage_1866",
+              "jemima_beverage_1866",
+              "mary_beverage_1869",
+              "robert_edwin_beverage_1872"
+            ]
+          }
+        },
+        {
+          "person_id": "benjamin_beverage_1822",
+          "fields": {
+            "full_name": "Benjamin Crabtree Beverage",
+            "birth_date": "1822-10-02",
+            "death_date": "1875-12-07",
+            "parents": [
+              "james_beverage_1789",
+              "jemima_crabtree_1792"
+            ],
+            "siblings": [
+              "harrison_beverage_1825",
+              "albert_glover_beverage_1827",
+              "lucy_c_beverage_1830"
+            ],
+            "spouses": [
+              "amelia_beverage_1833",
+              "sarah_w_loveland_1828"
+            ],
+            "children": [
+              "theodore_beverage_1855",
+              "harriet_beverage_1856",
+              "james_beverage_1858",
+              "orris_beverage_1860",
+              "charles_beverage_1863",
+              "james_norwood_beverage_1866",
+              "jemima_beverage_1866",
+              "mary_beverage_1869",
+              "robert_edwin_beverage_1872"
+            ]
+          }
+        }
+      ],
+      "baseline_conflict": "Two repository IDs appear to describe the same wife of Benjamin Crabtree and daughter of Norwood and Hannah; birth dates differ January 31 versus January 1, 1833.",
+      "competing_claims": "Duplicate suspected from shared relations, not merged. January 1 is already treated as year-only by the repository precision system.",
+      "conclusion": "The duplicate hypothesis is strong, but both IDs remain available pending an original record linking Amelia’s parentage and marriage. January 1 is a year placeholder and is not a second exact birth claim.",
+      "resolution_status": "Narrowed but unresolved",
+      "confidence": "Probable",
+      "reasoning": "Both profiles share two parents, the same spouse, all nine children, six siblings, and 1833–1908 dates; this is much more than a name match. However both cite a generic Find A Grave memorial, so they are not independent evidence. Seaview names Amelia as Benjamin C.’s wife but also contains a birth-column defect; no exact date is adopted from it.",
+      "identity_reasoning": "The full shared family cluster strongly suggests one intended person. Retaining both IDs prevents an unreviewed identity consolidation; related-profile links make the suspected duplicate explicit.",
+      "source_ids": [
+        "SRC001",
+        "SRC091",
+        "CRS005"
+      ],
+      "family_review_status": "Not reviewed by family",
+      "checked_on": "2026-10-15",
+      "changes": [],
+      "remaining_question": "Obtain Amelia’s 1908 death certificate or marriage record naming parents Norwood and Hannah Grant. If confirmed, consolidate with a canonical ID and compatibility alias in a later reviewed change.",
+      "retrieval_request": "North Haven clerk / Maine State Archives: please locate Amelia Beverage, widow of Benjamin Crabtree Beverage, died in 1908 (Seaview transcription suggests February 16), born about 1833, reportedly daughter of Norwood Beverage and Hannah Grant. Please provide original death and marriage records with parents and birth information. The exact January 31 birth remains unverified.",
+      "subfindings": [],
+      "protected_content_action": "No protected record changed."
+    }
+  ],
+  "retrieval_guidance_source_ids": [
+    "SRC089"
+  ],
+  "existing_source_checks": [
+    {
+      "id": "SRC001",
+      "title": "Beverage Family research baseline",
+      "repository": "GitHub csully1234/Beverage-Family",
+      "url": "https://github.com/csully1234/Beverage-Family/tree/4e3d4860d3c8d9ae9cbcb19567dafa17e1a93db1",
+      "locator": "Commit 4e3d4860d3c8d9ae9cbcb19567dafa17e1a93db1; 16 research-relevant files",
+      "accessed": "2026-10-15",
+      "viewed": "Protected baseline files and original collection read at main 7ce454f; historical snapshot remains indexed by its original commit.",
+      "quality": "Family-authored repository",
+      "dependency": "Family-authored starting hypotheses, not independent proof.",
+      "supports": "Starting hypotheses and existing records; never independent historical proof",
+      "rights": "Not determined; citation does not grant republication rights"
+    },
+    {
+      "id": "SRC089",
+      "title": "Cemetery Records",
+      "repository": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/cemetery-records.html",
+      "locator": "Cemetery directory and access guidance",
+      "accessed": "2026-10-15",
+      "viewed": "Guide and public contact page reopened; not stone images.",
+      "quality": "Cemetery collection guide",
+      "dependency": "Institutional access guidance, not evidence of individual dates.",
+      "supports": "Thirteen cemetery transcriptions; 2013 cemetery map; access guidance",
+      "rights": "NHHS requests permission before publication of copies or scans and institutional credit; high-resolution availability not confirmed."
+    },
+    {
+      "id": "SRC090",
+      "title": "Fuller Cemetery",
+      "repository": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/fuller_cemetery.pdf",
+      "locator": "PDF pp. 1–5",
+      "accessed": "2026-10-15",
+      "viewed": "Saved transcription text reexamined, p. 5 Benjamin Kent entry; original stone not viewed in this review.",
+      "quality": "Cemetery transcription",
+      "dependency": "Transcription only; Woodruff narrative may use the same cemetery information.",
+      "supports": "Beverage inscriptions, spouses, military inscriptions and Kent dates",
+      "rights": "NHHS requests permission before publication of copies or scans and institutional credit; high-resolution availability not confirmed."
+    },
+    {
+      "id": "SRC091",
+      "title": "Seaview Cemetery",
+      "repository": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/seaview_cemetery.pdf",
+      "locator": "PDF pp. 2–4",
+      "accessed": "2026-10-15",
+      "viewed": "Saved PDF/text reexamined, pp. 2–4; original stones not viewed in this review.",
+      "quality": "Cemetery transcription",
+      "dependency": "Single transcription with apparent column errors; repeated tree citations are not independent.",
+      "supports": "Beverage inscriptions, dates, relationships and transcription conflicts",
+      "rights": "NHHS requests permission before publication of copies or scans and institutional credit; high-resolution availability not confirmed."
+    },
+    {
+      "id": "SRC092",
+      "title": "Kent Cemetery",
+      "repository": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/kent_cemetery.pdf",
+      "locator": "PDF p. 1",
+      "accessed": "2026-10-15",
+      "viewed": "Saved transcription text reexamined, p. 1; original stone not viewed in this review.",
+      "quality": "Cemetery transcription",
+      "dependency": "Duplicate lines in one transcription are not two independent witnesses.",
+      "supports": "Sarah Beverage Kent; Joseph W. Kent",
+      "rights": "NHHS requests permission before publication of copies or scans and institutional credit; high-resolution availability not confirmed."
+    },
+    {
+      "id": "SRC116",
+      "title": "IsleBuilt Boats",
+      "repository": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/islebuilt-boats.html",
+      "locator": "Eliot Beveridge biography, models and employees",
+      "accessed": "2026-10-15",
+      "viewed": "Institutional webpage reopened and full text read.",
+      "quality": "Historical society interpretation",
+      "dependency": "Modern interpretation; separate from the 1934 Crimson report but primary birth evidence is missing.",
+      "supports": "Boat business founded 1955, production circa 1955–1957, wife Dorothy, permanent return 1954",
+      "rights": "NHHS requests permission before publication of copies or scans and institutional credit; high-resolution availability not confirmed."
+    },
+    {
+      "id": "SRC119",
+      "title": "The Essex Antiquarian volume IX 1905",
+      "repository": "Sidney Perley, editor; Salem Massachusetts; Internet Archive",
+      "url": "https://archive.org/details/essexantiquarian09perluoft",
+      "locator": "p. 91, Notes; PDF p. 105",
+      "accessed": "2026-10-15",
+      "viewed": "Saved published text reexamined, p. 91; original deeds not examined.",
+      "quality": "Published genealogical notes",
+      "dependency": "May share Marblehead town sources with CRS002; only the original 1789 deed can verify the abstract.",
+      "supports": "James Beveredge and Sarah Holman marriage; three daughters in 1789",
+      "rights": "Historical edition; digital reproduction terms not assessed"
+    },
+    {
+      "id": "SRC121",
+      "title": "A History of the Doggett Daggett Family 1894",
+      "repository": "Samuel Bradlee Doggett; Boston Press of Rockwell and Churchill; Internet Archive",
+      "url": "https://archive.org/details/historyofdoggett00indogg",
+      "locator": "p. 113, entries 809 and 1033; PDF p. 145",
+      "accessed": "2026-10-15",
+      "viewed": "Saved published text reexamined, p. 113 entries 809 and 1033; original church register not examined.",
+      "quality": "Published genealogy",
+      "dependency": "May derive from the same church record as CRS001; not independent corroboration of exact birth.",
+      "supports": "Diana baptism, marriage, reported parents and children",
+      "rights": "Historical edition; reproduction terms not assessed"
+    },
+    {
+      "id": "SRC123",
+      "title": "Josiah Beverage biographical subject",
+      "repository": "Wilford Woodruff Papers Project",
+      "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+      "locator": "Biography and footnotes to vital records, deeds and death notice",
+      "accessed": "2026-10-15",
+      "viewed": "Institutional biographical text and footnotes reopened and read; FamilySearch deed image inaccessible.",
+      "quality": "Edited biographical index",
+      "dependency": "Edited research guide, not examination of the cited deed.",
+      "supports": "Original-record retrieval pointers; contextual identity of Josiah",
+      "rights": "Not determined; citation does not grant republication rights"
+    },
+    {
+      "id": "SRC125",
+      "title": "Benjamin Kent biographical subject",
+      "repository": "Wilford Woodruff Papers Project",
+      "url": "https://wilfordwoodruffpapers.org/subjects/benjamin-kent",
+      "locator": "Biography and record citations",
+      "accessed": "2026-10-15",
+      "viewed": "Institutional biographical text and footnotes reopened and read; cited vital image inaccessible.",
+      "quality": "Edited biographical index",
+      "dependency": "Internal narrative/footnote disagreement; narrative and cemetery account may share a source.",
+      "supports": "Benjamin and Sarah parents; marriage to Deborah Thomas; conflicting January/June birth date",
+      "rights": "Not determined; citation does not grant republication rights"
+    },
+    {
+      "id": "SRC129",
+      "title": "1991 Journal of the Diocese of Virginia Lowell Beveridge memorial",
+      "repository": "Episcopal Diocese of Virginia",
+      "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+      "locator": "p. 73; PDF p. 38",
+      "accessed": "2026-10-15",
+      "viewed": "Saved institutional memorial text reexamined, printed p. 73; original birth record not examined.",
+      "quality": "Institutional memorial notice",
+      "dependency": "May derive from the same obituary as repeated accounts. Not treated as independent birthplace proof.",
+      "supports": "Life dates, career, brother Lyford and Universal Harmony manuscript; contains age inconsistency",
+      "rights": "Rights not assessed; text may share obituary origin"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ from collections import defaultdict, deque
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable, Mapping
+from conflict_review import load_review, apply_review
 
 
 Record = dict[str, Any]
@@ -121,6 +122,8 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
 
     effective_people = merge_records(base_people, research_people)
     effective_events = merge_records(base_events, research_events)
+    review = load_review(data_dir)
+    effective_people = apply_review(apply_date_precision(effective_people, date_precision, "person"), review)
 
     # Additive archive files are optional, like the existing research overlays.
     # Keep the names here explicit to avoid an archive <-> family_data import cycle.
@@ -135,7 +138,8 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
         "research_people": research_people,
         "research_events": research_events,
         "date_precision": date_precision,
-        "people": apply_date_precision(effective_people, date_precision, "person"),
+        "people": effective_people,
+        "conflict_review": review,
         "events": apply_date_precision(effective_events, date_precision, "event"),
         "research": research,
     }

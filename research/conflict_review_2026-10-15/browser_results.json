@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-15",
+  "browser": "Chromium 153 headless, Playwright",
+  "environment": "Local actual Streamlit apps; unchanged test-only password environment, no production deployment.",
+  "results": [
+    {
+      "name": "before-home-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "after-home-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "before-home-desktop",
+      "result": "passed",
+      "details": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1140,
+        "mainScrollWidth": 1140
+      }
+    },
+    {
+      "name": "after-home-desktop",
+      "result": "passed",
+      "details": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "mainWidth": 1140,
+        "mainScrollWidth": 1140
+      }
+    },
+    {
+      "name": "after-search-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "variant search opens correct identity without a new login",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=people&profile=elliot_beverage_1908&return_q=Eliot+Beveridge&return_where=&return_page=1",
+        "tabs": 1
+      }
+    },
+    {
+      "name": "return from result preserves query",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=search&q=Eliot+Beveridge&where=&results_page=1"
+      }
+    },
+    {
+      "name": "parent child and spouse navigation",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=people&profile=petronele_jurgeliute_beverage_1898"
+      }
+    },
+    {
+      "name": "after-diana-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "after-conflict-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "baptism conflict and underlying evidence link",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=collection&view=Conflict+review&finding=BF-R008",
+        "source": "https://archive.org/details/vitalrecordsofed00edgar/page/29/mode/1up"
+      }
+    },
+    {
+      "name": "after-place-tablet",
+      "result": "passed",
+      "details": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "mainWidth": 768,
+        "mainScrollWidth": 768
+      }
+    },
+    {
+      "name": "place person and return to place",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=places&place=pulpit_harbor_me"
+      }
+    },
+    {
+      "name": "archival item provenance rights and original link",
+      "result": "passed",
+      "details": {
+        "url": "https://www.northhavenmainehistoricalsociety.org/island-grown.html",
+        "externalContent": "Source fetched separately; no original image republished."
+      }
+    },
+    {
+      "name": "after-family-list-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    },
+    {
+      "name": "phone tree to accessible family list",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=people&profile=john_white_1748"
+      }
+    },
+    {
+      "name": "filtered page2 return without login",
+      "result": "passed",
+      "details": {
+        "url": "http://localhost:8531/?page=search&q=Bevridge&where=North+Haven&results_page=2"
+      }
+    },
+    {
+      "name": "keyboard next control receives focus",
+      "result": "passed",
+      "details": {
+        "tag": "INPUT",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "after-search-text-zoom-phone",
+      "result": "passed",
+      "details": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "mainWidth": 390,
+        "mainScrollWidth": 390
+      }
+    }
+  ],
+  "errors": []
+}

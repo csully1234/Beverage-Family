@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import streamlit as st
+from routing_ui import route_markdown, route_link
 
 from archive import ArchiveIndex, archive_url, safe_url
 from family_data import format_date
+from conflict_review_ui import render_review_source, review_data
 from historical_map import build_historical_map_html
 from research_collection_ui import (
     load_collection, render_context, render_register, render_register_source,
@@ -29,13 +31,13 @@ def render_assertion(link, archive: ArchiveIndex) -> None:
     record = (archive.people if kind == "person" else archive.events)[link["subject_id"]]
     url = archive_url("people", profile=record["id"]) if kind == "person" else archive_url("timeline", event=record["id"])
     label = record.get("full_name", record.get("title"))
-    st.markdown(f"**[{md(label)}]({url})** · {md(link['relation'].replace('_', ' '))}")
+    route_markdown(f"**[{md(label)}]({url})** · {md(link['relation'].replace('_', ' '))}")
     first = format_date(link["date_from"], link["date_precision"])
     last = format_date(link["date_to"], link["date_precision"])
     period = first if link["date_from"] == link["date_to"] else f"{first} – {last}"
     st.caption(f"{period} · {link['evidence_level'].replace('_', ' ').title()}")
     st.write(link["summary"])
-    st.markdown("Evidence: " + " · ".join(source_link(archive.sources[sid]) for sid in link["source_ids"]))
+    route_markdown("Evidence: " + " · ".join(source_link(archive.sources[sid]) for sid in link["source_ids"]))
     for note in link["notes"]:
         st.caption(note)
 
@@ -44,36 +46,36 @@ def render_source_record(source, archive: ArchiveIndex) -> None:
     st.subheader(source["title"])
     st.caption(f"{source['source_type'].replace('_', ' ').title()} · {source['repository']}")
     st.write(source["summary"])
-    st.markdown(f"**Document date:** {format_date(source['date'], source['date_precision'])}")
+    route_markdown(f"**Document date:** {format_date(source['date'], source['date_precision'])}")
     st.caption(f"Evidence: {source['evidence_level'].replace('_', ' ')} · Last accessed: {source['accessed']}")
     if source["collection"]:
         st.write("Collection: " + source["collection"])
-    st.markdown("**Citation**")
+    route_markdown("**Citation**")
     st.write(source["citation"])
     if safe_url(source["url"]):
-        st.link_button("Open original / repository record", source["url"])
+        route_link("Open original / repository record", source["url"])
     if source["excerpt"]:
-        st.markdown("**Excerpt / transcription**")
+        route_markdown("**Excerpt / transcription**")
         st.text(source["excerpt"])
     for note in source["notes"]:
         st.caption(note)
     for conflict in source["conflicts"]:
         st.warning(conflict)
     if source["people_ids"]:
-        st.markdown("**Connected people**")
-        st.markdown(" · ".join(f"[{md(archive.people[pid]['full_name'])}]({archive_url('people', profile=pid)})" for pid in source["people_ids"]))
+        route_markdown("**Connected people**")
+        route_markdown(" · ".join(f"[{md(archive.people[pid]['full_name'])}]({archive_url('people', profile=pid)})" for pid in source["people_ids"]))
     if source["place_ids"]:
-        st.markdown("**Places**")
-        st.markdown(" · ".join(place_link(archive.places[pid]) for pid in source["place_ids"]))
+        route_markdown("**Places**")
+        route_markdown(" · ".join(place_link(archive.places[pid]) for pid in source["place_ids"]))
     if source["event_ids"]:
-        st.markdown("**Timeline records**")
+        route_markdown("**Timeline records**")
         for eid in source["event_ids"]:
-            st.markdown(f"- [{md(archive.events[eid]['title'])}]({archive_url('timeline', event=eid)})")
+            route_markdown(f"- [{md(archive.events[eid]['title'])}]({archive_url('timeline', event=eid)})")
     assertions = [link for link in archive.links if source["id"] in link["source_ids"]]
     if assertions:
         with st.expander(f"What this source supports ({len(assertions)} place assertions)"):
             for link in assertions:
-                st.markdown(place_link(archive.places[link["place_id"]]))
+                route_markdown(place_link(archive.places[link["place_id"]]))
                 render_assertion(link, archive)
 
 
@@ -81,18 +83,27 @@ def render_archive_page(archive: ArchiveIndex) -> None:
     st.title("Source Archive")
     collection = load_collection()
     requested = st.query_params.get("source", "")
+    if render_review_source(requested, collection, archive.people):
+        route_link("Browse all sources", archive_url("archive"))
+        return
     if requested in collection.sources:
         render_register_source(collection.sources[requested], collection)
-        st.link_button("Browse all sources", archive_url("archive"))
+        route_link("Browse all sources", archive_url("archive"))
         return
     if requested:
         _render_historical_archive(archive)
         return
-    historical, research = st.tabs(["Historical archive", "Research source register"])
+    historical, research, review = st.tabs(["Historical archive", "Research source register", "Evidence review sources"])
     with historical:
         _render_historical_archive(archive)
     with research:
         render_register(collection, prefix="archive_register")
+    with review:
+        st.write("Additional evidence checked while working through the family’s open questions.")
+        for source in review_data()["sources"]:
+            route_markdown(f"### [{source['title']}]({archive_url('archive', source=source['id'])})")
+            st.write(source["supports"])
+            st.caption(source["quality"] + " · " + source["viewed"])
 
 
 def _render_historical_archive(archive: ArchiveIndex) -> None:
@@ -103,7 +114,7 @@ def _render_historical_archive(archive: ArchiveIndex) -> None:
             render_source_record(archive.sources[requested], archive)
         else:
             st.warning("That source record was not found.")
-        st.link_button("Browse all sources", archive_url("archive"))
+        route_link("Browse all sources", archive_url("archive"))
         return
     search, kind = st.columns([2, 1])
     with search:
@@ -118,7 +129,7 @@ def _render_historical_archive(archive: ArchiveIndex) -> None:
         st.info("No sources match. Try a broader search or another source type.")
     for source in sorted(matches, key=lambda s: (s["date"] or "9999", s["title"])):
         with st.container(border=True):
-            st.markdown(f"### {source_link(source)}")
+            route_markdown(f"### {source_link(source)}")
             st.caption(f"{source['repository']} · {format_date(source['date'], source['date_precision'])} · {source['evidence_level'].replace('_', ' ')}")
             st.write(source["summary"])
             st.caption(f"{len(source['people_ids'])} people · {len(source['event_ids'])} events · {len(source['place_ids'])} places")
@@ -126,8 +137,8 @@ def _render_historical_archive(archive: ArchiveIndex) -> None:
 
 def render_places_page(archive: ArchiveIndex) -> None:
     st.title("Historical Places")
-    st.link_button("Explore land, property and deed research", archive_url("collection", topic="Land and property"))
-    st.link_button("Browse the complete property inventory", archive_url("collection", view="Inventories", inventory="Properties and Deeds"))
+    route_link("Explore land, property and deed research", archive_url("collection", topic="Land and property"))
+    route_link("Browse the complete property inventory", archive_url("collection", view="Inventories", inventory="Properties and Deeds"))
     if not archive.places:
         st.info("No reviewed historical places have been added yet.")
         return
@@ -149,10 +160,10 @@ def render_places_page(archive: ArchiveIndex) -> None:
     if place["alternate_names"]:
         st.caption("Also recorded as: " + "; ".join(place["alternate_names"]))
     if place["parent_place_id"]:
-        st.markdown("Within " + place_link(archive.places[place["parent_place_id"]]))
+        route_markdown("Within " + place_link(archive.places[place["parent_place_id"]]))
     st.caption(place["coordinate_notes"])
-    st.markdown("Coordinate reference: " + source_link(archive.sources[place["coordinate_source_id"]]))
-    st.link_button("View on historical map", archive_url("map", place=pid))
+    route_markdown("Coordinate reference: " + source_link(archive.sources[place["coordinate_source_id"]]))
+    route_link("View on historical map", archive_url("map", place=pid))
     linked = archive.related(pid)
     metrics = st.columns(3)
     for col, key in zip(metrics, ("people", "events", "sources")):
@@ -168,7 +179,7 @@ def render_places_page(archive: ArchiveIndex) -> None:
                     render_assertion(link, archive)
     with sources_tab:
         for source in linked["sources"]:
-            st.markdown(f"- {source_link(source)} — {md(source['evidence_level'].replace('_', ' '))}")
+            route_markdown(f"- {source_link(source)} — {md(source['evidence_level'].replace('_', ' '))}")
     with research_tab:
         if load_collection().for_subject("place", pid):
             render_context("place", pid, archive.people, limit=5)
@@ -187,26 +198,26 @@ def render_map_page(archive: ArchiveIndex) -> None:
                                      place_id=st.query_params.get("place", ""))
     st.iframe(html, height=1050)
     st.caption("Source and profile links open in a new tab. Modern map: © OpenStreetMap contributors. Cemetery indexes are corroboration; broad markers do not identify a building, private home, or historic boundary.")
-    st.markdown(f"[Browse place records]({archive_url('places')}) · [Browse supporting sources]({archive_url('archive')})")
-    st.link_button("Explore property research and unlocated sites", archive_url("collection", topic="Land and property"))
+    route_markdown(f"[Browse place records]({archive_url('places')}) · [Browse supporting sources]({archive_url('archive')})")
+    route_link("Explore property research and unlocated sites", archive_url("collection", topic="Land and property"))
 
 
 def render_person_archive(person_id: str, archive: ArchiveIndex) -> None:
     links = archive.by_subject["person", person_id]
     if links:
         st.subheader("Documented historical places")
-        st.link_button("Explore this person’s places on the map", archive_url("map", person=person_id))
+        route_link("Explore this person’s places on the map", archive_url("map", person=person_id))
         for link in links:
             with st.container(border=True):
-                st.markdown(place_link(archive.places[link["place_id"]]))
+                route_markdown(place_link(archive.places[link["place_id"]]))
                 st.write(link["summary"])
                 st.caption(link["evidence_level"].replace("_", " ").title())
-                st.markdown("Evidence: " + " · ".join(source_link(archive.sources[sid]) for sid in link["source_ids"]))
+                route_markdown("Evidence: " + " · ".join(source_link(archive.sources[sid]) for sid in link["source_ids"]))
 
 
 def render_event_archive(event_id: str, archive: ArchiveIndex) -> None:
     places = archive.places_for("event", event_id)
     if places:
-        st.markdown("**Historical places:** " + " · ".join(place_link(p) for p in places))
-        st.markdown(f"[Explore this event on the map]({archive_url('map', event=event_id)})")
-        st.markdown("**Archive records:** " + " · ".join(source_link(s) for s in archive.sources_for("event", event_id)))
+        route_markdown("**Historical places:** " + " · ".join(place_link(p) for p in places))
+        route_markdown(f"[Explore this event on the map]({archive_url('map', event=event_id)})")
+        route_markdown("**Archive records:** " + " · ".join(source_link(s) for s in archive.sources_for("event", event_id)))

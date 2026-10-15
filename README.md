@@ -155,3 +155,29 @@ tests/                 Regression and data-integrity tests
 .github/workflows/     Continuous validation on Python 3.12 and 3.13
 .streamlit/            Theme, production client settings, and secrets example
 ```
+
+### Evidence review and easier family navigation — 15 October 2026
+
+The existing destinations are grouped under **Home, Search, Family, Places,
+Archive, and Research**. Their old URL slugs still work. Global search recognizes
+Beverage/Beveridge variants and initials, labels approximate name matches,
+paginates all results, and keeps the query/place/page in a profile's return link.
+Internal controls preserve the same authenticated session instead of opening
+a new login tab; external evidence remains a normal link.
+
+- `?page=collection&view=Conflict%20review` — latest outcomes for all 11 conflicts;
+- `?page=collection&finding=BF-R008` — baptism evidence, former values and original snapshot;
+- `?page=archive&source=CRS003` — Lowell's additional institutional citation;
+- `?page=collection&view=Images` — item descriptions, provenance and rights links;
+- `?page=search&q=Bevridge&where=North+Haven&results_page=2` — shareable search context.
+
+The separate `data/reviews/conflicts_2026-10-15.json` ledger retains the earlier
+claims and proposes changes to three profiles. `conflict_review.py` applies only
+allowlisted fields whose former values match, and `validate_data.py` checks every
+original conflict is covered with citations and review status. Original data,
+reports, integrity hashes, addresses and property claims remain unchanged.
+These are evidence-reviewed proposals, **not family approval**.
+
+Read the [evidence review and source register](research/conflict_review_2026-10-15/README.md),
+[unsent retrieval requests](research/conflict_review_2026-10-15/retrieval_requests.md),
+and [verification report](research/conflict_review_2026-10-15/verification.md).

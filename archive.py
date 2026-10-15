@@ -42,7 +42,12 @@ def historical_person(person: Mapping[str, Any], today: date | None = None) -> b
         return False
     death = year_from_date(person.get("death_date"))
     birth = year_from_date(person.get("birth_date"))
-    return bool((death and death <= today.year) or (birth and birth <= today.year - 120))
+    # An independently documented historical event can establish that an
+    # undated person is historical. Never infer this from relatives or free text.
+    activity = any(isinstance(a.get("year"), int) and 1 <= a["year"] <= today.year - 120
+                   and a.get("source_id") and a.get("confidence") in {"Confirmed", "Strongly supported"}
+                   for a in person.get("documented_activity", []))
+    return bool((death and death <= today.year) or (birth and birth <= today.year - 120) or activity)
 
 
 def archive_url(page: str, **params: str) -> str:
