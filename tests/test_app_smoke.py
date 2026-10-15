@@ -100,7 +100,8 @@ class StreamlitSmokeTests(unittest.TestCase):
                 self.assertFalse(any(x.label == "Research inventory" for x in app.selectbox))
         document = self.logged_in_app(page="documents", doc="thomas-1786")
         self.assertFalse(document.exception, [x.value for x in document.exception])
-        self.assertTrue(any("1786" in str(x.value) for x in document.title))
+        self.assertTrue(any("Thomas" in str(x.value) for x in document.title))
+        self.assertTrue(any("1786" in str(x.value) for x in document.caption))
 
     def test_profile_with_unresolved_spouse_and_multiple_parents_renders_cleanly(self) -> None:
         """Regression for False text and red error on Sandra's family summary."""
