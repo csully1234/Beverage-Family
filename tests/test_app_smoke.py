@@ -202,7 +202,7 @@ class StreamlitSmokeTests(unittest.TestCase):
     def test_full_family_map_person_selection_is_in_map(self) -> None:
         app = self.logged_in_app(page="full-tree")
         self.assertFalse(app.exception, [e.value for e in app.exception])
-        self.assertTrue(any("synchronized selection" in str(c.value).lower() for c in app.caption))
+        self.assertTrue(any(s.label == "Selected relative" for s in app.selectbox))
         # The selected relative is now inside the iframe; a disconnected
         # outer dropdown is intentionally absent.
         self.assertFalse(any(s.label == "Open a profile from the full map" for s in app.selectbox))
