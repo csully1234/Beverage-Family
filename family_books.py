@@ -39,6 +39,11 @@ def render_family_books() -> None:
                 st.write(book["source_limit"])
                 st.caption(book["digital_copy"])
                 st.caption(book["rights"])
+            st.markdown("**Historically interesting passages to cross-check**")
+            for lead in book.get("research_leads", []):
+                with st.expander(f"PDF p. {lead['pdf_page']} · {lead['title']}"):
+                    st.write(lead["summary"])
+                    st.caption(lead["evidence"])
             st.markdown("**Photographs and illustrations to source**")
             st.caption("The pages below identify items in the private edition. Their original image files are not yet licensed for website display.")
             for lead in book["photo_leads"]:
