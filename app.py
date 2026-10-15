@@ -24,6 +24,7 @@ from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
 from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
+from event_source_access import render_event_source_access
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
     render_person_archive, render_event_archive, source_link,
@@ -852,11 +853,7 @@ def render_event_card(
                 route_markdown("**People:** " + ", ".join(involved))
             render_event_archive(str(event["id"]), load_archive())
             if event.get("sources"):
-                if compact:
-                    st.caption(f"{len(event['sources'])} cited source(s)")
-                else:
-                    with st.expander("View sources"):
-                        render_sources(event["sources"])
+                render_event_source_access(event["sources"], compact=compact)
 
 
 def render_relation_group(
