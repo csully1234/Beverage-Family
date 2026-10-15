@@ -546,12 +546,12 @@ def navigate(page: str) -> None:
 
 
 def clear_archive_route(page: str) -> None:
-    for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Research Collection"}),
-                               ("person", {"Historical Map", "Research Collection"}), ("source", {"Source Archive"}),
-                               ("q", {"Search", "Research Collection"}),
+    for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Historical Discoveries"}),
+                               ("person", {"Historical Map", "Historical Discoveries"}), ("source", {"Historical Sources"}),
+                               ("q", {"Search", "Historical Discoveries"}),
                                *((key, {"Search"}) for key in ("results_page", "where")),
                                *((key, {"People"}) for key in ("return_q", "return_page", "return_where")),
-                               *((key, {"Research Collection"}) for key in
+                               *((key, {"Historical Discoveries"}) for key in
                                  ("finding", "target", "view", "topic", "status", "inventory", "location"))):
         if page not in allowed and parameter in st.query_params:
             del st.query_params[parameter]
@@ -717,11 +717,10 @@ def render_home(
             with col.container(border=True):
                 route_link(label, url, width="stretch")
                 st.caption(description)
-    with st.expander("About this family archive and its research"):
-        st.write(f"{len(people)} profiles · {len(events)} timeline records · {span}. Historical claims carry their sources; dates and relationships can remain uncertain.")
-        st.write("The original research collection includes 57 findings and five downloadable reports. New evidence reviews retain the previous claims and explain any proposed corrections.")
-        route_link("Sources and research method", "?page=sources")
-        route_link("Download the original reports", "?page=collection&view=Reports")
+    with st.expander("About this family history"):
+        st.write(f"{len(people)} relatives · {len(events)} recorded family events · {span}. Dates, identities and relationships may be incomplete or disputed; original historical sources are linked wherever possible.")
+        route_link("Browse historical discoveries", "?page=collection")
+        route_link("Read original historical sources", "?page=archive")
 
     st.divider()
     left, right = st.columns([1.05, 1], gap="large")
@@ -951,7 +950,7 @@ def render_person_profile(
         st.caption(f"Research status: {person['research_completeness']}")
 
     story_tab, family_tab, places_tab, sources_tab = st.tabs(
-        ["Story", "Family", "Places", "Sources & research"]
+        ["Story", "Family", "Places", "Historical records"]
     )
 
     with story_tab:
@@ -1033,7 +1032,7 @@ def render_person_profile(
         render_context("person", person_id, people_by_id, limit=5)
         archive_records = load_archive().sources_for("person", person_id)
         if archive_records:
-            st.subheader("Source Archive records")
+            st.subheader("Original historical sources")
             for source in archive_records:
                 route_markdown(f"- {source_link(source)}")
         st.subheader("Profile sources")
@@ -1059,23 +1058,7 @@ def render_person_profile(
                     st.write(f"Reviewed source: {conflict.get('reviewed_source', 'Not recorded')}")
                     st.caption(str(conflict.get("status", "Unresolved")))
 
-        linked_research = [
-            record
-            for record in research
-            if person_id in record.get("people_involved", [])
-        ]
-        st.subheader(f"Research notes ({len(linked_research)})")
-        for record in linked_research:
-            with st.expander(record.get("title", "Untitled research note")):
-                st.caption(
-                    f"{record.get('category', 'Uncategorized')} · "
-                    f"{record.get('evidence_level', 'Evidence not rated')}"
-                )
-                st.write(record.get("summary", ""))
-                if record.get("why_it_matters"):
-                    route_markdown("**Why it matters**")
-                    st.write(record["why_it_matters"])
-                render_sources(record.get("sources", []), "Records and repositories")
+        # Research activity reports remain in GitHub, not in family profiles.
 
 
 def render_people_page(
