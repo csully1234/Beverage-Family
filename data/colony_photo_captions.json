@@ -1,0 +1,664 @@
+{
+  "book_id": "colony-book-2016",
+  "source": "Lowell P. Beveridge, Jr., The Colony: Stories from a Down East Island (2016)",
+  "caption_policy": "Captions are concise summaries of the book's printed captions, not verbatim transcriptions. The original caption remains visible in the preserved scan and can be read on the linked PDF page. Dates are only quoted where the printed caption includes them; they are not inferred from publication year.",
+  "visual_review": "Reviewed image-bearing pages from the supplied clean 305-page PDF. Decorative chapter headings, maps, pure-text pages and tabular documents have been excluded from the PHOTOGRAPHS gallery; these remain available in the complete book. Some source pages may contain additional images not separately cataloged.",
+  "photos": [
+    {
+      "pdf_page": 1,
+      "title": "The Colony — cover photograph",
+      "caption_summary": "Family gathering by boats on the island shore, reproduced on the book cover.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 1"
+    },
+    {
+      "pdf_page": 21,
+      "title": "Captain Eleazer Crabtree’s house",
+      "caption_summary": "Abandoned house built by Captain Eleazer Crabtree, on the hill at the head of Southern Harbor.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 21"
+    },
+    {
+      "pdf_page": 25,
+      "title": "Ash tree near the barn",
+      "caption_summary": "Tree where Orris remembered Indigenous visitors coming ashore to harvest ash limbs.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 25"
+    },
+    {
+      "pdf_page": 45,
+      "title": "Orris and the family woodpile",
+      "caption_summary": "Grandfather Orris showing a harvested woodpile; the printed caption discusses Vernon, Arnold and Lowell.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 45"
+    },
+    {
+      "pdf_page": 47,
+      "title": "Benjamin Crabtree Beverage",
+      "caption_summary": "Portrait of great-grandfather Benjamin Crabtree Beverage (1822–1875).",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 47"
+    },
+    {
+      "pdf_page": 49,
+      "title": "Amelia and Hanson Beverage",
+      "caption_summary": "Amelia Beverage with her brother Hanson outside the farmhouse built by her husband Benjamin.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 49"
+    },
+    {
+      "pdf_page": 51,
+      "title": "Benjamin’s farmhouse",
+      "caption_summary": "Photograph of the house built by Benjamin Beverage, alongside the farmhouse floor plan.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 51"
+    },
+    {
+      "pdf_page": 57,
+      "title": "First bath at the Red Cottage",
+      "caption_summary": "The author as a baby taking a Saturday-night bath on the Red Cottage porch.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 57"
+    },
+    {
+      "pdf_page": 77,
+      "title": "A lamb ready for shearing",
+      "caption_summary": "The author holding a lamb in preparation for one of the island's final sheep shearings.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 77"
+    },
+    {
+      "pdf_page": 78,
+      "title": "Hiram Beverage’s sheep barn",
+      "caption_summary": "Sheep barn associated with Hiram Beverage and a remaining North Haven flock.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 78"
+    },
+    {
+      "pdf_page": 80,
+      "title": "Orris and James preparing to fish",
+      "caption_summary": "Grandfather Orris and his brother James at Marsh Cove preparing to go fishing.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 80"
+    },
+    {
+      "pdf_page": 87,
+      "title": "Digging clams for dinner",
+      "caption_summary": "The author's father digging clams near the shore for dinner.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 87"
+    },
+    {
+      "pdf_page": 90,
+      "title": "Uncle Al’s catboat Amy",
+      "caption_summary": "The catboat *Amy* at its final resting place near the boathouse beach.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 90"
+    },
+    {
+      "pdf_page": 92,
+      "title": "Orris heading to his lobster traps",
+      "caption_summary": "Grandfather Orris on his way to tend lobster traps aboard the *Olive A*.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 92"
+    },
+    {
+      "pdf_page": 95,
+      "title": "Northeast District Schoolhouse",
+      "caption_summary": "Historic schoolhouse used by members of the Beverage family on North Haven.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 95"
+    },
+    {
+      "pdf_page": 101,
+      "title": "Mary “Mae” Beverage Bemis",
+      "caption_summary": "Portrait identified in the book as Orris's sister, Great-Aunt Mary “Mae” Beverage Bemis.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 101"
+    },
+    {
+      "pdf_page": 106,
+      "title": "Coburn Classical Institute",
+      "caption_summary": "The college-preparatory school in Waterville, Maine, attended by Orris.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 106"
+    },
+    {
+      "pdf_page": 110,
+      "title": "Coopers Mills schoolhouse",
+      "caption_summary": "Schoolhouse in Coopers Mills, Whitefield, Maine, associated with Orris's teaching career.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 110"
+    },
+    {
+      "pdf_page": 116,
+      "title": "Colby graduating class of 1887",
+      "caption_summary": "Graduating class of Colby College in 1887; the caption identifies Orris in the rear wearing a derby.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 116"
+    },
+    {
+      "pdf_page": 117,
+      "title": "Orris’s Colby graduation portrait",
+      "caption_summary": "Graduation portrait of Orris Lyford Beverage, Colby College, 1887.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 117"
+    },
+    {
+      "pdf_page": 120,
+      "title": "Rose Emma Pierson as a child",
+      "caption_summary": "Childhood portrait identified as Grandmother Rose Emma Pierson.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 120"
+    },
+    {
+      "pdf_page": 122,
+      "title": "Jesse Hart",
+      "caption_summary": "Portrait identified as Jesse Hart (1817–1878), an ancestor of Rose Emma Pierson Beverage.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 122"
+    },
+    {
+      "pdf_page": 123,
+      "title": "Albion Pierson as a young man",
+      "caption_summary": "Portrait of Albion Pierson, Rose Emma Pierson's father, taken when he was a young man.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 123"
+    },
+    {
+      "pdf_page": 124,
+      "title": "Captain Albion Pierson",
+      "caption_summary": "Portrait of Captain Albion Pierson shortly before his death in 1870.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 124"
+    },
+    {
+      "pdf_page": 132,
+      "title": "School in Hallowell, Maine",
+      "caption_summary": "The school building at Warren and Central Streets in Hallowell, associated with Orris's early principalship.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 132"
+    },
+    {
+      "pdf_page": 134,
+      "title": "Attleboro High School",
+      "caption_summary": "High school at Bank and Peck Streets, Attleboro, Massachusetts, where Orris was principal.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 134"
+    },
+    {
+      "pdf_page": 137,
+      "title": "Brattleboro schoolhouse",
+      "caption_summary": "School at 230 Main Street, Brattleboro, Vermont, where Orris worked as principal.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 137"
+    },
+    {
+      "pdf_page": 146,
+      "title": "Henry L. Pierce School",
+      "caption_summary": "School building in the Boston Primary School system, associated with Orris's teaching career.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 146"
+    },
+    {
+      "pdf_page": 147,
+      "title": "Dorchester schoolchildren, 1901",
+      "caption_summary": "Primary-school pupils in the Henry L. Pierce District, Dorchester, about 1901.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 147"
+    },
+    {
+      "pdf_page": 149,
+      "title": "Tileston School",
+      "caption_summary": "Tileston School on North Street, Mattapan, associated with Orris's work as schoolmaster.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 149"
+    },
+    {
+      "pdf_page": 150,
+      "title": "Tileston School class of 1919",
+      "caption_summary": "Class photograph of Tileston School pupils, 1919; the caption identifies Orris among the group.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 150"
+    },
+    {
+      "pdf_page": 152,
+      "title": "Temple Baptist Church, Dorchester",
+      "caption_summary": "Church at Dorchester associated with Orris's service on the congregation's executive committee.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 152"
+    },
+    {
+      "pdf_page": 156,
+      "title": "Second Congregational Church, Boston",
+      "caption_summary": "Congregational Second Church at Copley Square; the family memoir recounts Orris's involvement.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 156"
+    },
+    {
+      "pdf_page": 158,
+      "title": "Rose at 24 Nixon Street",
+      "caption_summary": "Grandmother Rose on the porch at 24 Nixon Street, Dorchester, with Orris nearby, probably around 1920.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 158"
+    },
+    {
+      "pdf_page": 159,
+      "title": "Rose at the piano",
+      "caption_summary": "Grandmother Rose seated at the piano in the family home at 24 Nixon Street.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 159"
+    },
+    {
+      "pdf_page": 160,
+      "title": "Orris in his headmaster’s clothes",
+      "caption_summary": "Grandfather Orris ready for work in his headmaster's clothing.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 160"
+    },
+    {
+      "pdf_page": 174,
+      "title": "Amelia Beverage and grandchildren",
+      "caption_summary": "Great-grandmother Amelia Beverage with her grandchildren, about 1901; the printed caption lists the children.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 174"
+    },
+    {
+      "pdf_page": 177,
+      "title": "Deacon Ira Carver’s family home",
+      "caption_summary": "Carver family home on the North Shore, where Orris met Vernon Beverage.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 177"
+    },
+    {
+      "pdf_page": 181,
+      "title": "The Middle Road farmhouse",
+      "caption_summary": "Farmhouse at the head of Middle Road associated with Daniel and Hattie Beverage Green.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 181"
+    },
+    {
+      "pdf_page": 183,
+      "title": "Charles H. Beverage",
+      "caption_summary": "Portrait of Great-Uncle Charles H. Beverage.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 183"
+    },
+    {
+      "pdf_page": 184,
+      "title": "Annie Leadbetter Beverage",
+      "caption_summary": "Great-Aunt Annie Leadbetter Beverage during a visit to the Point, about 1936.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 184"
+    },
+    {
+      "pdf_page": 188,
+      "title": "Jemima “Mima” Beverage Carver",
+      "caption_summary": "Portrait of Orris's sister, Great-Aunt Jemima “Mima” Beverage Carver.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 188"
+    },
+    {
+      "pdf_page": 189,
+      "title": "Harriet Beverage Green",
+      "caption_summary": "Portrait of Orris's sister, Great-Aunt Harriet Beverage Green.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 189"
+    },
+    {
+      "pdf_page": 192,
+      "title": "The Red Cottage, about 1900",
+      "caption_summary": "Red Cottage on the Hill, built by Orris in 1895; photograph dated approximately 1900 by the book.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 192"
+    },
+    {
+      "pdf_page": 194,
+      "title": "Early Colony wharf, about 1895",
+      "caption_summary": "Early members of the Beverage Colony gathered on Wharf Rock, about 1895; the caption identifies several relatives.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 194"
+    },
+    {
+      "pdf_page": 196,
+      "title": "Herman and Sarah Bengell’s cottage",
+      "caption_summary": "Cottage built for Herman and Sarah Bengell about 1903 and subsequently used as a summer house.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 196"
+    },
+    {
+      "pdf_page": 198,
+      "title": "Members of the Colony, 1918",
+      "caption_summary": "Group photograph of Colony members in 1918, accompanied by a detailed printed name-by-name caption.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 198"
+    },
+    {
+      "pdf_page": 200,
+      "title": "William W. Howe cottage",
+      "caption_summary": "Cottage built in 1913 for William W. Howe, a headmaster in the Henry L. Pierce School system.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 200"
+    },
+    {
+      "pdf_page": 202,
+      "title": "Leonard and Helen Patton cottage",
+      "caption_summary": "Cottage built for Leonard and Helen Patton about 1916.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 202"
+    },
+    {
+      "pdf_page": 203,
+      "title": "Charles and Mary Gates cottage",
+      "caption_summary": "Cottage built for Charles and Mary Gates around 1916.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 203"
+    },
+    {
+      "pdf_page": 206,
+      "title": "Helen Metcalf cottage",
+      "caption_summary": "Cottage built for Helen Metcalf about 1917, later associated with Olive Beverage and Florence Budlong.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 206"
+    },
+    {
+      "pdf_page": 218,
+      "title": "The Point Cottage",
+      "caption_summary": "Point Cottage, built by Orris and first occupied in 1918.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 218"
+    },
+    {
+      "pdf_page": 223,
+      "title": "Beveridge relatives at Point Cottage, 1916",
+      "caption_summary": "Large family-and-friends group on the steps of the Point Cottage, 4 July 1916; the original caption names people by row.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 223"
+    },
+    {
+      "pdf_page": 229,
+      "title": "Rose Beverage and family, Christmas 1936",
+      "caption_summary": "Rose Beverage with children and their spouses at Christmas in Lexington, Massachusetts, 1936.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 229"
+    },
+    {
+      "pdf_page": 231,
+      "title": "Orris Lyford Beverage",
+      "caption_summary": "Portrait of Grandfather Orris Lyford Beverage.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 231"
+    },
+    {
+      "pdf_page": 233,
+      "title": "Boston Latin School",
+      "caption_summary": "Historic photograph of Boston Latin School, where several of Orris's sons studied.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 233"
+    },
+    {
+      "pdf_page": 234,
+      "title": "Olive Beverage’s Radcliffe graduation",
+      "caption_summary": "Aunt Olive Beverage at Radcliffe graduation, 1911.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 234"
+    },
+    {
+      "pdf_page": 235,
+      "title": "Florence Budlong",
+      "caption_summary": "Portrait of Aunt Florence Budlong, described in the book as Aunt Olive's life partner.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 235"
+    },
+    {
+      "pdf_page": 237,
+      "title": "Helen Beverage’s Radcliffe graduation",
+      "caption_summary": "Helen Beverage at her Radcliffe graduation in 1916.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 237"
+    },
+    {
+      "pdf_page": 239,
+      "title": "Bob Barclay, about 1933",
+      "caption_summary": "Portrait of Uncle Bob Barclay, approximately 1933.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 239"
+    },
+    {
+      "pdf_page": 241,
+      "title": "Ruth, Ann and Lyford, about 1936",
+      "caption_summary": "Aunt Ruth, cousin Ann and Uncle Lyford in a family photograph, about 1936.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 241"
+    },
+    {
+      "pdf_page": 242,
+      "title": "Lyford’s cottage, about 1935",
+      "caption_summary": "Cottage occupied by Lyford on North Haven, about 1935.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 242"
+    },
+    {
+      "pdf_page": 244,
+      "title": "Arnold and Priscilla’s wedding",
+      "caption_summary": "Uncle Arnold and Aunt Priscilla at their wedding in 1926.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 244"
+    },
+    {
+      "pdf_page": 246,
+      "title": "Lowell Beveridge’s Harvard class portrait",
+      "caption_summary": "Portrait captioned as Lowell Beveridge’s Harvard class picture from 1923.",
+      "section": "Portraits",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 246"
+    },
+    {
+      "pdf_page": 248,
+      "title": "Ida, Lowell and Pete on Oak Hill",
+      "caption_summary": "Ida, Lowell and Pete Beverage together on Oak Hill, about 1936.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 248"
+    },
+    {
+      "pdf_page": 250,
+      "title": "Lowell building his cottage",
+      "caption_summary": "Lowell working on the construction of his cottage.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 250"
+    },
+    {
+      "pdf_page": 251,
+      "title": "Lowell’s cottage, 1931",
+      "caption_summary": "Cottage occupied by Lowell, photographed around 1931.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 251"
+    },
+    {
+      "pdf_page": 253,
+      "title": "Albion Beverage family at the Point, about 1940",
+      "caption_summary": "Albion Beverage with Grace, Nancy, Polly and other relatives at the Point, about 1940; details appear in the printed caption.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 253"
+    },
+    {
+      "pdf_page": 257,
+      "title": "Eliot and Dorothy Beverage",
+      "caption_summary": "Uncle Eliot and Aunt Dorothy “Jimmy” Gattrell Beverage in front of Eastern Bay Farm.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 257"
+    },
+    {
+      "pdf_page": 259,
+      "title": "Eliot’s Little Island stone castle",
+      "caption_summary": "Stone castle built by Eliot on Little Island using local stone, photographed before roofing was completed.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 259"
+    },
+    {
+      "pdf_page": 261,
+      "title": "The retired lightboat at Little Island",
+      "caption_summary": "Retired lightboat hauled by Eliot to Little Island and converted into a summer house.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 261"
+    },
+    {
+      "pdf_page": 263,
+      "title": "Eliot in Organic Gardening",
+      "caption_summary": "Reproduced cover of *Organic Gardening*, featuring Eliot's composting work at Eastern Bay Farm, 1980.",
+      "section": "Schools & work",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 263"
+    },
+    {
+      "pdf_page": 265,
+      "title": "Eliot’s waterfront dollhouse",
+      "caption_summary": "Dollhouse built by Eliot and later moved to the waterfront near Wharf Rock.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 265"
+    },
+    {
+      "pdf_page": 266,
+      "title": "Norwood’s cottage, about 1935",
+      "caption_summary": "Cottage built by Norwood and completed about 1935.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 266"
+    },
+    {
+      "pdf_page": 267,
+      "title": "Norwood and Dorothy Beverage",
+      "caption_summary": "Photograph of Uncle Norwood and Aunt Dorothy Beverage.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 267"
+    },
+    {
+      "pdf_page": 270,
+      "title": "Birch Point and Boathouse Beach",
+      "caption_summary": "View from Birch Point toward Boathouse Beach.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 270"
+    },
+    {
+      "pdf_page": 272,
+      "title": "Pete and Grandmother Rose, 1934",
+      "caption_summary": "Pete with Grandmother Rose beneath a grape tree in the Point Cottage front yard, 1934.",
+      "section": "Family & gatherings",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 272"
+    },
+    {
+      "pdf_page": 274,
+      "title": "Old Mullin farm remains",
+      "caption_summary": "Collapsing structure on the old Mullin's farm, photographed about 1940.",
+      "section": "Homes & places",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 274"
+    },
+    {
+      "pdf_page": 275,
+      "title": "Pete tending the family rowboat",
+      "caption_summary": "Pete with the family rowboat, preparing the mooring arrangement for the following morning.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 275"
+    },
+    {
+      "pdf_page": 277,
+      "title": "Pete’s first rowing lesson",
+      "caption_summary": "Pete with Lowell in Aunt Olive's punt during an early lesson in rowing.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 277"
+    },
+    {
+      "pdf_page": 278,
+      "title": "Eliot, Lowell and Lyford in the launch",
+      "caption_summary": "Eliot, Lowell and Lyford working together to haul in the family launch.",
+      "section": "Boats & shoreline",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 278"
+    },
+    {
+      "pdf_page": 280,
+      "title": "Lyford making a mooring stone",
+      "caption_summary": "Uncle Lyford finishing work on a mooring stone.",
+      "section": "Island life",
+      "capture_date": null,
+      "source_attribution": "The Colony (2016), PDF p. 280"
+    }
+  ]
+}
