@@ -42,12 +42,15 @@ test('focused explorer loads on prior selected person and synchronizes selector'
    await wait();
    const d=dom.window.document;
    assert.deepEqual(errors,[]);
-   assert.equal(d.getElementById('mode').value,'branch');
+   assert.equal(d.getElementById('mode').value,'all');
    assert.equal(d.getElementById('personSelect').value,'harold_h_beverage_1893');
    assert.match(d.getElementById('selection').textContent,/Harold/);
    const all=d.querySelectorAll('#world .node').length;
    const visible=d.querySelectorAll('#world .node:not(.is-hidden)').length;
-   assert(visible>1&&visible<all,`expected nearby people instead of all ${all}, got ${visible}`);
+   assert.equal(visible,all,'whole family overview should display every node on arrival');
+   change(dom,'mode','branch');
+   const nearby=d.querySelectorAll('#world .node:not(.is-hidden)').length;
+   assert(nearby>1&&nearby<all,`expected nearby people instead of all ${all}, got ${nearby}`);
  }finally{dom.window.close();}
 });
 
@@ -73,6 +76,7 @@ test('steps and full overview show expected nodes without changing selected iden
    await wait();
    const d=dom.window.document;
    const selected=d.getElementById('personSelect').value;
+   change(dom,'mode','branch');
    change(dom,'distance','1');
    const one=d.querySelectorAll('#world .node:not(.is-hidden)').length;
    change(dom,'distance','4');
