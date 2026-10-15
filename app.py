@@ -869,6 +869,25 @@ def render_person_profile(
         else:
             st.write("No death record entered")
 
+    # Give visitors the important family connections before research terminology.
+    close_relatives = (("Parents", "parents"), ("Spouses", "spouses"), ("Children", "children"))
+    st.markdown("**Family at a glance**")
+    summary_cols = st.columns(3)
+    for column, (heading, relation) in zip(summary_cols, close_relatives):
+        ids = sorted(relationships[relation].get(person_id, set()),
+                     key=lambda pid: person_name(people_by_id, pid).casefold())
+        with column.container(border=True):
+            st.caption(heading)
+            if not ids:
+                st.caption("Not recorded")
+            for pid in ids[:3]:
+                route_link(person_name(people_by_id,pid),
+                           person_url(pid)) if pid in people_by_id else st.caption("Unresolved family record")
+            if len(ids) > 3:
+                st.caption(f"+{len(ids)-3} more in the Family tab")
+    route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
+    route_link("View all records in the timeline", "?page=timeline")
+
     if person.get("baptism_date"):
         route_markdown("**Baptized**")
         st.write(format_date(person["baptism_date"]) + " — " + person.get("baptism_place", "Unknown"))
@@ -920,7 +939,7 @@ def render_person_profile(
             render_event_card(event, people_by_id, compact=True)
         if len(person_events) > 8:
             st.caption(f"{len(person_events) - 8} additional records are available on the Timeline page.")
-        render_context("person", person_id, people_by_id, strong_only=True)
+        render_context("person", person_id, people_by_id, strong_only=False)
 
     with family_tab:
         relation_columns = st.columns(2)
