@@ -119,7 +119,7 @@ def approved_assets() -> dict[str, dict]:
     return result
 
 
-SORT_OPTIONS = ("Surname A–Z", "First name A–Z", "Birth year (oldest first)", "Birth year (newest first)")
+SORT_OPTIONS = ("Surname A–Z", "Surname Z–A", "First name A–Z", "First name Z–A", "Birth year (oldest first)", "Birth year (newest first)")
 
 
 _DISAMBIGUATION = re.compile(r"\s*\([^()]*\)\s*$")
@@ -180,8 +180,10 @@ def _surname_first_key(person: dict) -> tuple:
 
 
 def order_people(people, order="Surname A–Z") -> list[dict]:
-    if order == "First name A–Z":
-        return sorted(people, key=lambda person: (str(person.get("full_name") or "").casefold(), str(person.get("id") or "")))
+    if order == "Surname Z–A":
+        return sorted(people, key=_surname_first_key, reverse=True)
+    if order in {"First name A–Z", "First name Z–A"}:
+        return sorted(people, key=lambda person: (str(person.get("full_name") or "").casefold(), str(person.get("id") or "")), reverse=order == "First name Z–A")
     if order == "Birth year (oldest first)":
         return sorted(people, key=lambda person: (year_from_date(person.get("birth_date")) or 9999, _surname_first_key(person)))
     if order == "Birth year (newest first)":
@@ -217,20 +219,27 @@ def render_people_directory(people: list[dict], people_by_id: dict) -> None:
     if not matches:
         st.info("No matching profiles. Try fewer letters, a different spelling or another period.")
         return
-    page_count = max(1, (len(matches) + 15) // 16)
-    chosen_page = st.selectbox("Directory page", range(1, page_count + 1), format_func=lambda n: f"{n} of {page_count}", key="directory_page")
-    for start in range((chosen_page - 1) * 16, min(chosen_page * 16, len(matches)), 2):
-        cols = st.columns(2)
-        for col, person in zip(cols, matches[start:start + 2]):
-            with col.container(border=True):
-                st.markdown(f"**{person.get('full_name','Unknown')}**")
-                st.caption(life_span(person))
-                if person.get("birth_place"):
-                    st.caption("Birthplace: " + str(person["birth_place"]))
-                parent_ids = person.get("parents", [])
-                if parent_ids:
-                    st.caption("Parents: " + ", ".join(people_by_id.get(pid, {}).get("full_name", "Unresolved") for pid in parent_ids[:2]))
-                route_link("Read profile", "?" + urlencode({"page": "people", "profile": person["id"]}), width="stretch")
+    st.caption("Every matching person is listed below in the selected order. No pages and no hidden results.")
+    st.selectbox(
+        "Jump to a person",
+        options=["", *[person["id"] for person in matches]],
+        format_func=lambda pid: (
+            f"{surname_first_label(people_by_id[pid]) if order.startswith('Surname') else people_by_id[pid]['full_name']} · {life_span(people_by_id[pid])}"
+            if pid else "Choose any person from the complete list…"
+        ),
+        key="directory_jump",
+    )
+    if st.session_state.get("directory_jump") in people_by_id:
+        target = st.session_state["directory_jump"]
+        route_link("Open selected person's profile",
+                   "?" + urlencode({"page": "people", "profile": target}),
+                   type="primary")
+    st.markdown("**All matching relatives**")
+    for person in matches:
+        label = surname_first_label(person) if order.startswith("Surname") else str(person.get("full_name", "Unknown"))
+        route_link(f"{label} · {life_span(person)}",
+                   "?" + urlencode({"page": "people", "profile": person["id"]}),
+                   type="tertiary", width="stretch")
 
 
 def render_stories_page() -> None:
