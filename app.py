@@ -22,6 +22,7 @@ from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
+from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
@@ -92,31 +93,33 @@ LEGACY_COMPATIBILITY_PASSWORD = "BEVERAGE"
 PAGE_SLUGS = {
     "Home": "home",
     "Search": "search",
+    "People": "people",
     "Explore the Tree": "tree",
     "Full Family Map": "full-tree",
-    "Historical Map": "map",
-    "Historical Places": "places",
-    "Source Archive": "archive",
-    "People": "people",
     "Timeline": "timeline",
-    "Research Desk": "research",
-    "Research Collection": "collection",
-    "Sources & Method": "sources",
     "Stories & Discoveries": "stories",
+    "Historical Discoveries": "collection",
+    "Historical Places": "places",
+    "Historical Map": "map",
     "Photographs & Documents": "media",
-    "Document Reader": "documents",
     "Family Books": "family-books",
+    "Historical Sources": "archive",
+    "Document Reader": "documents",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
+# Old bookmarked technical routes lead to family-friendly content, not raw logs.
+SLUG_PAGES.update({"research": "Historical Discoveries", "sources": "Historical Sources"})
 NAV_GROUPS = {
     "Home": ["Home"],
     "Search": ["Search"],
-    "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
+    "Family": ["People", "Explore the Tree", "Full Family Map"],
+    "History": ["Timeline", "Stories & Discoveries", "Historical Discoveries"],
     "Places": ["Historical Places", "Historical Map"],
-    "Archive": ["Photographs & Documents", "Family Books", "Document Reader", "Source Archive", "Sources & Method"],
-    "Research": ["Stories & Discoveries", "Research Collection", "Research Desk"],
+    "Archive": ["Photographs & Documents", "Family Books", "Historical Sources"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
+# The individual document reader is reached from its exhibit, not an empty menu.
+PAGE_GROUP["Document Reader"] = "Archive"
 
 
 def apply_theme() -> None:
@@ -620,6 +623,10 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
         st.session_state["nav_page"] = requested_page or "Home"
     elif requested_page and st.session_state.get("_last_query_slug") != query_slug:
         st.session_state["nav_page"] = requested_page
+    # The old research pages no longer exist in visitor navigation. Correct
+    # prior browser sessions before attempting PAGE_GROUP lookup.
+    if st.session_state["nav_page"] not in PAGE_GROUP:
+        st.session_state["nav_page"] = requested_page or "Home"
     st.session_state["_last_query_slug"] = query_slug
     st.session_state["nav_group"] = PAGE_GROUP[st.session_state["nav_page"]]
 
@@ -2025,18 +2032,14 @@ def main() -> None:
         render_map_page(load_archive())
     elif page == "Historical Places":
         render_places_page(load_archive())
-    elif page == "Source Archive":
+    elif page == "Historical Sources":
         render_archive_page(load_archive())
     elif page == "People":
         render_people_page(data, people_by_id, relationships)
     elif page == "Timeline":
         render_unified_timeline(data, people_by_id)
-    elif page == "Research Desk":
-        render_research_page(data, people_by_id)
-    elif page == "Research Collection":
-        render_collection_page(people_by_id, load_archive().places)
-    elif page == "Sources & Method":
-        render_sources_page(data, people_by_id)
+    elif page == "Historical Discoveries":
+        render_family_discoveries(people_by_id)
     elif page == "Stories & Discoveries":
         render_stories_page()
     elif page == "Photographs & Documents":
