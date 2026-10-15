@@ -220,6 +220,8 @@ def render_people_directory(people: list[dict], people_by_id: dict) -> None:
         st.info("No matching profiles. Try fewer letters, a different spelling or another period.")
         return
     st.caption("Every matching person is listed below in the selected order. No pages and no hidden results.")
+    if st.session_state.get("directory_jump") not in {"", *[p["id"] for p in matches]}:
+        st.session_state["directory_jump"] = ""
     st.selectbox(
         "Jump to a person",
         options=["", *[person["id"] for person in matches]],
