@@ -38,6 +38,28 @@ class VisitorExperienceTests(unittest.TestCase):
         self.assertEqual([p["id"] for p in order_people(records)], ["young", "old"])
         self.assertEqual([p["id"] for p in order_people(records, "Birth year (oldest first)")], ["old", "young"])
 
+    def test_reverse_surname_and_reverse_given_name(self):
+        self.assertEqual([p["id"] for p in order_people(self.people, "Surname Z–A")], ["c", "u", "z", "a"])
+        self.assertEqual([p["id"] for p in order_people(self.people, "First name Z–A")], ["a", "u", "c", "z"])
+
+    def test_directory_is_continuous_without_pagination(self):
+        from pathlib import Path
+        source=(Path(__file__).resolve().parents[1]/"visitor_ui.py").read_text()
+        directory=source.split("def render_people_directory(",1)[1].split("def render_stories_page(",1)[0]
+        self.assertNotIn("Directory page",directory)
+        self.assertNotIn("page_count",directory)
+        self.assertIn("for person in matches:",directory)
+        self.assertIn("Sort people",directory)
+        self.assertIn("Birth period",directory)
+
+    def test_colony_book_metadata_is_not_a_scanned_book_upload(self):
+        from family_books import load_books
+        books=load_books()
+        self.assertEqual(len(books),1)
+        self.assertEqual(books[0]["publication_year"],2016)
+        self.assertIn("The Red Cottage",books[0]["sections"])
+        self.assertTrue(all("pdf_page" in lead for lead in books[0]["photo_leads"]))
+
     def test_first_name_order(self):
         self.assertEqual([p["id"] for p in order_people(self.people, "First name A–Z")], ["z", "c", "u", "a"])
 
