@@ -20,6 +20,7 @@ from visitor_ui import render_stories_page, render_media_page, render_document_p
 from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from tree_component import show_full_tree
+from family_books import render_family_books
 from archive import ArchiveIndex
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
@@ -84,6 +85,7 @@ PAGE_SLUGS = {
     "Stories & Discoveries": "stories",
     "Photographs & Documents": "media",
     "Document Reader": "documents",
+    "Family Books": "family-books",
 }
 SLUG_PAGES = {slug: page for page, slug in PAGE_SLUGS.items()}
 NAV_GROUPS = {
@@ -91,7 +93,7 @@ NAV_GROUPS = {
     "Search": ["Search"],
     "Family": ["People", "Explore the Tree", "Full Family Map", "Timeline"],
     "Places": ["Historical Places", "Historical Map"],
-    "Archive": ["Photographs & Documents", "Document Reader", "Source Archive", "Sources & Method"],
+    "Archive": ["Photographs & Documents", "Family Books", "Document Reader", "Source Archive", "Sources & Method"],
     "Research": ["Stories & Discoveries", "Research Collection", "Research Desk"],
 }
 PAGE_GROUP = {page: group for group, pages in NAV_GROUPS.items() for page in pages}
@@ -1992,6 +1994,8 @@ def main() -> None:
         render_media_page()
     elif page == "Document Reader":
         render_document_page()
+    elif page == "Family Books":
+        render_family_books()
 
     render_footer()
 
