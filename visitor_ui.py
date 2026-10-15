@@ -76,6 +76,7 @@ STORIES = (
 DOCUMENTS = {
     "thomas-1786": {
         "title": "Thomas Beverage's sworn testimony and the Paul Reed petition",
+        "research_ids": ("BF-R001", "BF-R002"),
         "date": "June 1, 1786 (testimony); June 14–15, 1786 (legislative action)",
         "citation": "Documentary History of the State of Maine, vol. XXI (1916), printed pp. 214–222; Thomas Beverage's statement on pp. 221–222.",
         "url": "https://archive.org/details/documentaryhisto21mainuoft/page/220/mode/2up",
