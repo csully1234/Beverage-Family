@@ -1174,19 +1174,17 @@ def render_search_page(data, people_by_id) -> None:
     people = sorted((p for p in data["people"] if reasons.get(p["id"])),
                     key=lambda p: (reasons[p["id"]] != "Name, initials or spelling variant", person_sort_key(p)))
     events = sorted((r for r in data["events"] if selected(r)), key=date_sort_key)
-    notes = [r for r in data["research"] if selected(r)]
     sources = [s for s in collection.sources.values() if selected(s)]
     review_sources = [s for s in review_data()["sources"] if selected(s)]
-    reviews = [r for r in review_data()["resolutions"] if selected(r)]
     legacy_sources = {}
-    for kind, records in (("People", data["people"]), ("Timeline", data["events"]), ("Research", data["research"])):
+    for kind, records in (("People", data["people"]), ("Timeline", data["events"])):
         for r in records:
             for source in r.get("sources", []):
                 if selected(source):
                     legacy_sources.setdefault(source_search_text(source), source)
     tabs = st.tabs([f"People ({len(people)})", f"Events ({len(events)})",
-                    f"Research ({len(findings) + len(notes) + len(reviews)})",
-                    f"Sources ({len(sources) + len(review_sources) + len(legacy_sources)})"])
+                    f"Historical discoveries ({len(findings)})",
+                    f"Original sources ({len(sources) + len(review_sources) + len(legacy_sources)})"])
     with tabs[0]:
         st.caption(f"{len(people)} matching profiles · Matching names do not establish a relationship.")
         pages = max(1, (len(people) + 11) // 12)
@@ -1217,25 +1215,16 @@ def render_search_page(data, people_by_id) -> None:
         for event in paginate(events, "global_events_page"):
             render_event_card(event, people_by_id, compact=True)
     with tabs[2]:
-        for r in reviews:
-            route_markdown(f"**[Evidence review: {r['title']}]({review_link(r['research_id'])})**")
-            st.caption(r["resolution_status"])
-        for r in paginate(findings, "global_findings_page"):
+        for record in paginate(findings, "global_findings_page"):
             with st.container(border=True):
-                render_finding(r, collection, people_by_id)
-        for r in paginate(notes, "global_research_page"):
-            with st.expander(r.get("title", "Research note")):
-                st.write(r.get("summary", ""))
-                render_sources(r.get("sources", []))
-        if not findings and not notes and not reviews:
-            st.info("No research matches. Try a surname or a shorter subject.")
+                render_finding(record, collection, people_by_id)
+        if not findings:
+            st.info("No historical discoveries match. Try a surname or another subject.")
     with tabs[3]:
         for source in paginate(sources, "global_sources_page"):
             route_markdown(f"- {register_link(source)}")
-            st.caption(source["Viewed status"])
         for source in review_sources:
             route_markdown(f"- [{source['title']}]({'?page=archive&source=' + source['id']})")
-            st.caption(source["viewed"])
         with st.expander(f"Citations attached to profiles and events ({len(legacy_sources)})"):
             render_sources(list(legacy_sources.values()))
         if not sources and not review_sources and not legacy_sources:
