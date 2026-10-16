@@ -125,11 +125,12 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     phase4_events = load_optional_json_records(data_dir / "phase4_events.json")
     phase5_events = load_optional_json_records(data_dir / "phase5_events.json")
     phase6_events = load_optional_json_records(data_dir / "phase6_events.json")
+    phase7_events = load_optional_json_records(data_dir / "phase7_events.json")
     research = load_optional_json_records(data_dir / "research.json")
     date_precision = load_optional_json_records(data_dir / "date_precision.json")
 
     effective_people = merge_records(merge_records(merge_records(base_people, research_people), phase4_people), phase7_people)
-    effective_events = merge_records(merge_records(merge_records(merge_records(base_events, research_events), phase4_events), phase5_events), phase6_events)
+    effective_events = merge_records(merge_records(merge_records(merge_records(merge_records(base_events, research_events), phase4_events), phase5_events), phase6_events), phase7_events)
     review = load_review(data_dir)
     effective_people = apply_review(apply_date_precision(effective_people, date_precision, "person"), review)
 
@@ -150,6 +151,7 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
         "phase4_events": phase4_events,
         "phase5_events": phase5_events,
         "phase6_events": phase6_events,
+        "phase7_events": phase7_events,
         "date_precision": date_precision,
         "people": effective_people,
         "conflict_review": review,
