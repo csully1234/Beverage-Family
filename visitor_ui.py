@@ -23,6 +23,21 @@ MEDIA_MANIFEST = ROOT / "data" / "media_manifest.json"
 
 STORIES = (
     {
+        "id": "fox-islands-land-matthew",
+        "title": "The Fox Islands land petition and Matthew Beveridge",
+        "period": "1785–1786, with later family histories",
+        "summary": "An early land petition names James, Thomas and a minor Matthew Beveridge; a potential missing family branch needs verification.",
+        "body": "The Fox Islands settlers sought secure title following wartime displacement. An 1785 petition, preserved in later transcriptions, names James Beveridge, Thomas Beveridge and Matthew Beveridge (a minor) among the claimants; George White and John Calderwood represented the inhabitants as attorneys. The March 1786 resolution conditionally granted the island group to qualifying settlers, not a defined number of acres to the Beveridges. An 1865 local history separately describes a Capt. Matthew Beverage of Hope, his two wives and ten children, but original records are still required to prove he was the same Matthew or Capt. Thomas Beverage's brother. The Maine State Archives retains the 1785 survey and 1786 island plans, so this history can be explored alongside period maps without drawing imaginary property boundaries.",
+        "terms": ("Fox Islands", "Matthew", "land"),
+        "source_links": (
+            ("1785 Maine State Archives survey", "https://digitalmaine.com/planbook_knox_county/8/"),
+            ("1786 Fox Islands plan (Pulpit Harbor)", "https://digitalmaine.com/planbook_8/17/"),
+            ("1889 transcribed petition and grant", "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf"),
+            ("1935 Carver genealogy", "https://archive.org/details/carverfamilyofne00carv_0"),
+            ("1865 Capt. Matthew genealogical account", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+        ),
+    },
+    {
         "id": "thomas-revolution",
         "title": "Thomas Beverage and the American Revolution",
         "period": "1781–1786",
@@ -259,6 +274,11 @@ def render_stories_page() -> None:
         st.write(story["body"])
         if story.get("document"):
             route_link("Read the historical document", "?page=documents&doc=" + story["document"])
+        if story.get("source_links"):
+            st.subheader("Original sources and later transcriptions")
+            for label, url in story["source_links"]:
+                route_link(label, url)
+            route_link("Explore the historical map atlas", "?page=map")
         st.subheader("Follow the evidence")
         seen = set()
         for term in story["terms"]:
@@ -276,7 +296,7 @@ def render_stories_page() -> None:
                     break
             if len(seen) >= 5:
                 break
-        if not seen:
+        if not seen and not story.get("source_links"):
             st.info("This story does not yet have a dedicated imported finding. Search the existing archive for supporting records.")
         route_link("Search this history", "?page=search&q=" + urlencode({"q": story["terms"][0]})[2:])
         return
