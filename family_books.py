@@ -253,6 +253,7 @@ def render_book_profile_context(person: dict) -> None:
     indexed = {
         "amelia_beverage_1833": [("A photograph of Amelia and Hanson Beverage", 49)],
         "amelia_beverage_1833_child": [("A photograph of Amelia and Hanson Beverage (verify identification)", 49)],
+        "dana_hanson_beverage_1847": [("Photograph of Amelia with brother Hanson (identity to corroborate)", 49)],
         "eleazer_crabtree_1760": [("A historic house attributed to Capt. Eleazer Crabtree", 21)],
         "lowell_beveridge_1905": [("Lowell Beveridge's Harvard class picture, 1923", 246)],
         "orris_beverage_1860": [("An illustrated memoir about Orris", 1)],
