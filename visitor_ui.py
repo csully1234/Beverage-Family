@@ -16,7 +16,7 @@ import streamlit as st
 from routing_ui import route_link, route_markdown
 from research_collection_ui import load_collection, render_finding
 from family_data import life_span, year_from_date
-from evidence_explorer import render_exhibit_library
+from evidence_explorer import render_exhibit_library, render_investigations, investigation_catalog
 
 ROOT = Path(__file__).resolve().parent
 MEDIA_ROOT = (ROOT / "static" / "approved_media").resolve()
@@ -403,6 +403,11 @@ def render_media_page() -> None:
         st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
         st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
         route_link("Open the complete book and its visual collection", "?page=family-books")
+    requested_case = str(st.query_params.get("case", "") or "")
+    if requested_case in {case["id"] for case in investigation_catalog()}:
+        # Deep links from a relative profile lead straight to the case file.
+        render_investigations()
+        st.divider()
     from colony_photos import render_colony_photographs
     photos_tab, images_tab, documents_tab, evidence_tab = st.tabs(
         ["Family photographs", "Other historical images", "Historical documents",
@@ -456,7 +461,16 @@ def render_media_page() -> None:
                 st.write(document["summary"])
                 route_link("Read document and original pages", "?page=documents&doc=" + id_)
     with evidence_tab:
-        render_exhibit_library()
+        if not requested_case:
+            cases_tab, sources_tab = st.tabs(
+                ["Family history investigations", "All linked source records"]
+            )
+            with cases_tab:
+                render_investigations()
+            with sources_tab:
+                render_exhibit_library()
+        else:
+            render_exhibit_library()
 
 
 def render_document_page() -> None:
