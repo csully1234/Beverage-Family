@@ -1,0 +1,48 @@
+[
+  {
+    "id": "event_1883_beach_bridge_alvin_contract",
+    "date": "1883",
+    "date_precision": "year",
+    "title": "North Haven contracts with Alvin Beverage for Beach Bridge",
+    "description": "The North Haven Historical Society's illustrated Pulpit Harbor Bridges exhibit reproduces a historical contract between the town and Alvin Beverage concerning Beach Bridge between Blue Point and Beverage Point. The publication describes the town's 1883 bridge approval and preserves historical photographs. It does not independently identify Alvin's parents or provide a chain of title for the land at either end.",
+    "category": "Bridge / original contract / property context",
+    "place": "Beach Bridge, Pulpit Harbor, North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Original document image reproduced on historical society exhibit PDF p. 8; genealogy identity and land title still unverified",
+    "sources": [
+      {
+        "title": "The Pulpit Harbor Bridges — 1883 contract and historic photographs",
+        "repository": "North Haven Historical Society 2017 Pulpit Harbor exhibit",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/bridges.pdf#page=8",
+        "record_type": "Digital publication including a contemporary contract image",
+        "record_date": "1883 (year reported)",
+        "accessed": "2026-10-16",
+        "supports": "Historic bridge construction contract references Alvin Beverage; images appear in exhibition",
+        "evidence_level": "Tier 1 original-document reproduction within later local-history exhibit; transcription/image needs archival inspection"
+      }
+    ]
+  },
+  {
+    "id": "event_1888_harrison_mill_stream_dam_purchase",
+    "date": "1888",
+    "date_precision": "year",
+    "title": "Historical society reports Harrison Beverage acquired the lower Mill Stream dam",
+    "description": "The North Haven Historical Society's Mill Stream exhibit reports that Harrison Beverage purchased the lower dam in 1888 and built a bridge on the site. The property record and individual's exact identity have not been examined; the existing Harrison Beverage (born 1825) is a candidate only.",
+    "category": "Mill Stream / property transfer research",
+    "place": "Mill Stream, Pulpit Harbor, North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Historically reported deed transaction; original 1888 deed and person identity not verified",
+    "sources": [
+      {
+        "title": "The Mill Stream — North Haven Historical Society exhibit",
+        "repository": "North Haven Historical Society",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf#page=1",
+        "record_type": "Illustrated local historical research",
+        "record_date": "2017",
+        "accessed": "2026-10-16",
+        "supports": "Exhibit attributes an 1888 lower-dam purchase and later bridge to Harrison Beverage",
+        "evidence_level": "Tier 3 later historical narrative; original deed still to be found"
+      }
+    ]
+  }
+]
