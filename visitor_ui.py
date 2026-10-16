@@ -355,7 +355,7 @@ def render_stories_page() -> None:
                     ("henry_t_beverage_1841_rockland", "Henry T.'s research profile"),
                     ("ella_allen_beverage_1854", "Ella Allen's research profile"),
                 ):
-                    route_link(label, "?page=person&person=" + person_id)
+                    route_link(label, "?page=people&profile=" + person_id)
         if story.get("document"):
             route_link("Read the historical document", "?page=documents&doc=" + story["document"])
         if story.get("source_links"):
