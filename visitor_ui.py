@@ -24,6 +24,20 @@ MEDIA_MANIFEST = ROOT / "data" / "media_manifest.json"
 
 STORIES = (
     {
+        "id": "lowell-pete-tee-firsthand-1954",
+        "title": "Lowell Sr., Pete and Tee: two generations, one complicated North Haven story",
+        "period": "1930–2016",
+        "summary": "A 1960 Harvard family entry and Pete's own 2012 interview establish the father-son family, 1954 marriage and a complicated response from other relatives.",
+        "body": "Lowell Pierson Beveridge Sr. (1905–1991) and Ida Louisa Gattrell were the parents of Lowell Pierson 'Pete' Beveridge Jr. (born 1930), the 2016 author of The Colony, and his brother Thomas Gattrell Beveridge. The father is the musician pictured in a 1923 Harvard photo, not the memoir's author. In an oral-history interview recorded in 2012, Pete said he spent summers on shared ancestral North Haven property. He described resistance from his father's siblings to his relationship with documentary filmmaker Hortense 'Tee' Sie, including discouraging him from bringing her to the island and letters opposing the marriage. He said his parents and younger brother attended and his parents blessed the January 1954 ceremony in Harlem, despite the broader family's objections. Pete recalled political and civil-rights activism at Harvard. His father's 1960 Harvard report mentions selling a North Haven farm during the preceding five years, without proving any causal link to the marriage. Statements that Pete married in 1953 or was disowned by his parents for exactly twenty years are not established by these firsthand records. The interview is published for research purposes; original transcript, book and museum sources remain with their holders.",
+        "terms": ("Lowell", "Pete", "Tee", "Beveridge", "North Haven"),
+        "source_links": (
+            ("Read Pete's own 2012 recorded-history transcript", "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf"),
+            ("1960 Harvard class report names Pete, his brother and Ida", "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm"),
+            ("1991 Diocese memorial for Lowell Sr.", "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf"),
+            ("Read Pete's authorized 2016 book", "?page=family-books"),
+        ),
+    },
+    {
         "id": "matthew-rockland-descendants-1865",
         "title": "Matthew's reported children and Nathaniel's separate family",
         "period": "Early 1800s to 1865",
