@@ -23,13 +23,28 @@ MEDIA_MANIFEST = ROOT / "data" / "media_manifest.json"
 
 STORIES = (
     {
+        "id": "topsham-beveridge-before-fox-islands",
+        "title": "Before North Haven: Beveridge names in Topsham",
+        "period": "1752–1776, with nineteenth-century records",
+        "summary": "Early Topsham references to James, Samuel and Mercy Beveridge offer a route toward identifying the family's mainland origins.",
+        "body": "In an 1878 history of Brunswick, Topsham and Harpswell, Samuel Beveridge appears in a numbered historical map key for Topsham. A derivative early-settler listing based on the history associates Samuel with lot 3 in 1752 and James Beveridge with lot 7 in 1758. A separate family sketch tentatively reports Mercy Beveridge marrying James Henry on February 15, 1776. These names may provide clues to the mainland kinship network that preceded North Haven, but the source does not prove whether James or Samuel are the men in this website's current early family tree, establish an acreage, or positively identify Mercy. Original deeds, probate records and a contemporary marriage entry are still needed.",
+        "terms": ("Topsham", "Beveridge", "Mercy"),
+        "source_links": (
+            ("Read Wheeler's complete 1878 town history", "https://www.loc.gov/resource/gdcmassbookdig.historyofbrunswi01whee/"),
+            ("Locate the numbered historical map references", "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-5.htm"),
+            ("Compare the early-settlers index", "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html"),
+            ("Read the tentative Henry–Beveridge marriage passage", "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm"),
+        ),
+    },
+    {
         "id": "fox-islands-land-matthew",
         "title": "The Fox Islands land petition and Matthew Beveridge",
         "period": "1785–1786, with later family histories",
         "summary": "An early land petition names James, Thomas and a minor Matthew Beveridge; a potential missing family branch needs verification.",
-        "body": "The Fox Islands settlers sought secure title following wartime displacement. A 1785 petition, preserved in later transcriptions, names James Beveridge, Thomas Beveridge and Matthew Beveridge (a minor) among the claimants; George White and John Calderwood represented the inhabitants as attorneys. The March 1786 resolution conditionally granted the island group to qualifying settlers, not a defined number of acres to the Beveridges. An 1865 local history separately describes a Capt. Matthew Beverage of Hope, his two wives and ten children, but original records are still required to prove he was the same Matthew or Capt. Thomas Beverage's brother. The Maine State Archives retains the 1785 survey and 1786 island plans, so this history can be explored alongside period maps without drawing imaginary property boundaries.",
+        "body": "The Fox Islands settlers sought secure title following wartime displacement. A 1785 petition, preserved in later transcriptions, names James Beveridge, Thomas Beveridge and Matthew Beveridge (a minor) among the claimants; George White and John Calderwood represented the inhabitants as attorneys. The March 1786 resolution conditionally granted the island group to qualifying settlers, not a defined number of acres to the Beveridges. A 2025 genealogical study dates the land petition to June 1, 1785 and cites a separate 1786 original survey report recording settlers’ declared years of residence. An 1865 local history separately describes a Capt. Matthew Beverage of Hope, his two wives and ten children, but original records are still required to prove he was the same Matthew or Capt. Thomas Beverage's brother. The Maine State Archives retains the 1785 survey and 1786 island plans, so this history can be explored alongside period maps without drawing imaginary property boundaries.",
         "terms": ("Fox Islands", "Matthew", "land"),
         "source_links": (
+            ("2025 professional research citing original 1786 settlement declarations", "https://maineroots.org/images/Nov25TMG2.pdf"),
             ("1785 Maine State Archives survey", "https://digitalmaine.com/planbook_knox_county/8/"),
             ("1786 Fox Islands plan (Pulpit Harbor)", "https://digitalmaine.com/planbook_8/17/"),
             ("1889 transcribed petition and grant", "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf"),
