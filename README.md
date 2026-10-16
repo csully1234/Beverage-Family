@@ -94,7 +94,7 @@ genealogy, and the Carver connection. These are curated as **research leads,
 not automatic changes to the family tree**. A story in **Stories & Discoveries**
 provides family-friendly navigation to the cited plans and historical accounts.
 
-- Evidence catalogue: `data/early_fox_islands_evidence.json`
+- Evidence catalogue: `research/early_fox_islands_evidence.json`
 - Full provenance and unresolved questions: `research/fox_islands_land_matthew_carver_2026-10-16.md`
 - Atlas UI: `historical_atlas.py` and `static/historical_atlas.html`
 - Validation: `tests/test_historical_atlas.py` and the existing JavaScript map tests.
