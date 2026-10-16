@@ -250,5 +250,66 @@
     "association": "research_target",
     "preview_pdf": false,
     "collection": "Research access"
+  },
+  {
+    "id": "1883-alvin-bridge-town-contract",
+    "title": "1883 Beach Bridge — town contract naming Alvin Beverage",
+    "date": "1883",
+    "type": "Original document reproduced in historical exhibit",
+    "access": "Illustrated PDF, original contract reproduced on PDF page 8",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/bridges.pdf#page=8",
+    "claim": "The North Haven Historical Society exhibit reproduces a contract with Alvin Beverage concerning construction of Beach Bridge in 1883, and photographs the bridge in its original location.",
+    "limits": "The PDF contains historical documents and captions, but we have not inspected the original physical instrument or established which genealogical Alvin was named. A bridge crossing is not a surveyed title boundary.",
+    "rights": "Reproduced by North Haven Historical Society; permission required to republish scanned contract/photos",
+    "people_ids": [],
+    "event_ids": [
+      "event_1883_beach_bridge_alvin_contract"
+    ],
+    "association": "direct_document_exhibit",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "1906-alvin-bridge-bill",
+    "title": "Historic town payment records — Alvin Beverage and Beach Bridge",
+    "date": "1906",
+    "type": "Original historical bill reproduced in exhibit",
+    "access": "Illustrated PDF, reproduced town bill(s) on PDF page 9",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/bridges.pdf#page=9",
+    "claim": "The bridge exhibit reproduces records of payments in connection with Beach Bridge, including an early 1906 town payment record naming Alvin Beverage, alongside bridge construction photographs.",
+    "limits": "Check the reproduced document's text before assigning an individual payment amount, exact date or signature. Do not assume these are title deeds or that 'Alvin' is a separately identified existing ancestor.",
+    "rights": "Original document photo/reproduction controlled by holding archive; link only",
+    "people_ids": [],
+    "event_ids": [
+      "event_1883_beach_bridge_alvin_contract"
+    ],
+    "association": "direct_document_exhibit",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "millstream-exhibit-family-mills",
+    "title": "Mill Stream exhibit — Thomas, James, Harrison, Hiram and Sam Beverage",
+    "date": "1700s–1932",
+    "type": "Historical society illustrated research",
+    "access": "3-page PDF with photographs and map or sketch references",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf#page=1",
+    "claim": "The local history identifies Thomas Beverage as a grist-mill operator and son James as a tanner at Fresh Pond, reports Harrison Beverage purchasing the lower dam in 1888, and says Hiram Beverage worked at a mill in 1909 and built the 1932 dam.",
+    "limits": "This modern history cites local historical accounts and a rescued sketch, not direct scans of all deed transfers. Harrison's precise identity and each property's chain of title need separate verification.",
+    "rights": "North Haven Historical Society PDF; don't rehost photos or sketches without permission",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "james_beverage_1789",
+      "harrison_beverage_1825",
+      "hiram_stone_beverage_1886",
+      "samuel_hiram_beverage_1917"
+    ],
+    "event_ids": [
+      "event_hiram_mill_stream_dam_1932",
+      "event_1888_harrison_mill_stream_dam_purchase"
+    ],
+    "association": "reported_history",
+    "preview_pdf": true,
+    "collection": "Land and community records"
   }
 ]
