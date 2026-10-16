@@ -90,7 +90,7 @@ kbd{border:1px solid var(--line);border-radius:3px;background:#f2f0e7;padding:0 
     byId("zoom-level").textContent = Math.round(100 * zoom / fitted) + "%";
   }
   function fit() {
-    if (!image.naturalWidth || !image.naturalHeight) return;
+    if (!image.naturalWidth || !image.naturalHeight || stage.clientWidth < 40 || stage.clientHeight < 40) return;
     fitted = Math.min(stage.clientWidth / image.naturalWidth,
       stage.clientHeight / image.naturalHeight) * 0.97;
     zoom = fitted; shiftX = 0; shiftY = 0; paint();
@@ -163,6 +163,13 @@ kbd{border:1px solid var(--line);border-radius:3px;background:#f2f0e7;padding:0 
     }
   });
   window.addEventListener("resize", () => { if (image.naturalWidth) fit(); });
+  // Streamlit may render a hidden tab with zero width; refit as soon as it becomes visible.
+  if (typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(() => {
+      if (stage.clientWidth >= 40 && image.naturalWidth) fit();
+    });
+    observer.observe(stage);
+  }
   if (data.maps.length) choose(data.maps[0].id);
 })();
 </script>
