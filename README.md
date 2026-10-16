@@ -78,6 +78,33 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### Expanded Fox Islands map atlas and founding-era evidence (October 2026)
+
+The **Historical Map** page now has a **Historic maps & early records** tab with ten
+source-hosted map images (1776, three 1859 views, 1867, 1868, 1873–74, 1890, 1901,
+1941) available in a zoom/pan viewer. Files and survey/publication dates are
+verified against the user's `All_NH_Maps.zip` and
+[Holmgren's map descriptions](https://holmgren.org/NorthHavenHistoricalMaps/).
+No unreviewed image binaries have been committed.
+
+The same page features linked original-era 1785/1786 Fox Islands survey plans from
+the Maine State Archives and research notes on the 1785 land petition (James,
+Thomas, Matthew Beveridge), Capt. Matthew Beverage in Cyrus Eaton's 1865 local
+genealogy, and the Carver connection. These are curated as **research leads,
+not automatic changes to the family tree**. A story in **Stories & Discoveries**
+provides family-friendly navigation to the cited plans and historical accounts.
+
+- Evidence catalogue: `data/early_fox_islands_evidence.json`
+- Full provenance and unresolved questions: `research/fox_islands_land_matthew_carver_2026-10-16.md`
+- Atlas UI: `historical_atlas.py` and `static/historical_atlas.html`
+- Validation: `tests/test_historical_atlas.py` and the existing JavaScript map tests.
+
+The 1786 legislative **16,527 acres** is an entire-island-group figure; a
+historic name or mapped wall does **not** determine Beverage acreage. The
+proposed identity of a Matthew born around 1766, his possible father James,
+and his identification with Capt. Matthew of Hope remain unresolved. Existing
+family relationships, private addresses and the Boston Tea Party claim are unchanged.
+
 ### 1859 Fox Islands map gallery
 
 The existing `?page=map` Historical Map page has two tabs. The first retains
