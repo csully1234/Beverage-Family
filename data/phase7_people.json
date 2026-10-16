@@ -79,8 +79,8 @@
       "Author",
       "Historian"
     ],
-    "notes": "The 2016 author of The Colony: Stories from a Down East Island, not the 1905–1991 Columbia music professor of the same name. His father explicitly named Lowell Pierson Jr. and April 7, 1930, in the 1960 Harvard report. His father and mother are independently corroborated by a 1991 institutional memorial. He is also known as 'Pete' from a preserved 2012 oral history. The 1960 Harvard record lists his then-wife Hortense Sie, later known as filmmaker 'Tee' Beveridge. No death has been verified and no current address or living descendants are published.",
-    "evidence_status": "Confirmed father–mother identity and date from father's contemporary Harvard report; author identified by 2016 book and institutional oral-history catalog; no death claim",
+    "notes": "Author of The Colony (2016), son of Lowell Pierson Beveridge Sr. In a 2012 recorded oral history Pete personally identified himself, described summers on shared North Haven family property, and recounted strong opposition from his father's seven siblings to his relationship with filmmaker Hortense (“Tee”) Sie. The couple married in January 1954 at St. Philip's Episcopal Church in Harlem, with his parents' and brother's attendance and the parents' ultimate blessing, despite the wider family's objections. He discussed his progressive organizing at Harvard. Earlier search-summary claims of a 1953 wedding, a complete disowning by his parents, or an exactly 20-year exile are not supported by this original interview. The family property's later sale is mentioned in Lowell Sr.'s 1960 Harvard report but cannot be causally linked to the marriage from that report alone. Do not publish inferred living relatives, current addresses or private contacts.",
+    "evidence_status": "First-person 2012 oral history, 1960 father-authored Harvard family report, and 1991 diocesan memorial establish the distinct author and 1954 marriage; any precise exclusion duration remains unverified",
     "sources": [
       {
         "title": "Harvard College Class of 1925: Thirty-fifth Anniversary Report (1960), printed p.20",
@@ -121,6 +121,16 @@
         "accessed": "2026-10-16",
         "supports": "Establishes Lowell P. Beveridge Jr. as author distinct from father who died 1991; internal book reader available on site",
         "evidence_level": "Tier 1 — bibliographic authorship; family recollections require case-specific corroboration"
+      },
+      {
+        "title": "Pete Beveridge, Crossing Borders Bridging Generations Oral History, interview by Sady Sullivan, 23 May 2012, #2011.019.032, pp.3–16",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded oral-history transcript, 34 pages, research-only rights",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Pete states his full name and April 7 1930 birth; North Haven family summers and communal property; opposition by paternal aunts/uncles to interracial marriage, parents' subsequent blessing; married Tee in January 1954 at St. Philip's in Harlem; Harvard political activism",
+        "evidence_level": "Tier 1 — narrator's firsthand testimony about his own experiences; contested family's motivations documented as his recollection"
       }
     ]
   },
@@ -191,7 +201,7 @@
       "Film editor",
       "Documentary filmmaker"
     ],
-    "notes": "The 1960 Harvard family register names 'Hortense Sie' as the wife of Lowell Pierson Beveridge Jr. Smithsonian museum records identify the public filmmaker Hortense 'Tee' Beveridge (1923–1993), associated with the documentary South Africa Uncensored (1951). The 1960 relationship is historical; no assumption about current marriage or subsequent marriage history. Historical film reproductions remain with rights holders.",
+    "notes": "Filmmaker Hortense 'Tee' Sie Beveridge (1923–1993), who worked as a film editor and documentarian. Pete Beveridge described their relationship, their interracial marriage in January 1954 at St. Philip's Church in Harlem, and historical family opposition in a 2012 public oral-history interview; his parents and brother attended. The surname Sie and earlier marriage status appear in the 1960 Harvard class report. The Smithsonian identifies her role in the documentary South Africa Uncensored (1951). This account does not establish a 1953 wedding or a specifically 20-year banishment from North Haven.",
     "evidence_status": "Public filmmaker identity and life years supported by Smithsonian catalog; spouse relation documented as of 1960 by father-in-law's Harvard record; birth day from published scholarly history",
     "sources": [
       {
@@ -222,6 +232,16 @@
         "accessed": "2026-10-16",
         "supports": "Biographical account of Hortense/Tee Sie Beveridge including October 3, 1923 birth and 1993 death",
         "evidence_level": "Tier 2/3 — academic history based on contemporaneous and oral sources"
+      },
+      {
+        "title": "Pete Beveridge, Crossing Borders Bridging Generations Oral History, interview by Sady Sullivan, 23 May 2012, #2011.019.032, pp.3–16",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded oral-history transcript, 34 pages, research-only rights",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Pete states his full name and April 7 1930 birth; North Haven family summers and communal property; opposition by paternal aunts/uncles to interracial marriage, parents' subsequent blessing; married Tee in January 1954 at St. Philip's in Harlem; Harvard political activism",
+        "evidence_level": "Tier 1 — narrator's firsthand testimony about his own experiences; contested family's motivations documented as his recollection"
       }
     ]
   }
