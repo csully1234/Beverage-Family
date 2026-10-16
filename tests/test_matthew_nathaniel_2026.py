@@ -98,7 +98,7 @@ class MatthewNathanielResearchTests(unittest.TestCase):
         links = indexed["north-haven-preserving-family-history"]["source_links"]
         self.assertTrue(any("northhavenmainehistoricalsociety.org/videos.html" in url
                             for _, url in links))
-        self.assertIn("NOT", indexed["north-haven-preserving-family-history"]["body"])
+        self.assertIn("not proof", indexed["north-haven-preserving-family-history"]["body"])
         self.assertIn("Brunswick marriage-intention", str(indexed[
             "topsham-beveridge-before-fox-islands"]["source_links"]))
 
