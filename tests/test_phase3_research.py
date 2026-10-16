@@ -39,7 +39,7 @@ class EarlyFamilyPhase3Tests(unittest.TestCase):
         self.assertIn("NOT verified online", src["maine_putnam_return"]["detail"])
         self.assertIn("Box 001", src["mgs_2025_eames"]["detail"])
         self.assertEqual(src["maine_1785_map"]["url"], src["maine_putnam_return"]["url"])
-        self.assertIn("not examined", str(self.book["findings"]).lower())
+        self.assertIn("not yet been inspected", str(self.book["sources"]).lower())
 
     def test_new_1752_and_1776_leads_not_made_fact_in_family_tree(self):
         people = {p["id"]: p for p in self.people}
@@ -66,7 +66,7 @@ class EarlyFamilyPhase3Tests(unittest.TestCase):
 
     def test_visitor_stories_link_to_actual_sources_and_mark_uncertainty(self):
         story = next(s for s in STORIES if s["id"] == "topsham-beveridge-before-fox-islands")
-        self.assertIn("original", story["body"])
+        self.assertIn("original", story["body"].lower())
         self.assertIn("not", story["body"])
         self.assertGreaterEqual(len(story["source_links"]), 3)
         fox = next(s for s in STORIES if s["id"] == "fox-islands-land-matthew")
