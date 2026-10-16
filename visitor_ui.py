@@ -32,7 +32,7 @@ STORIES = (
         "terms": ("Matthew", "Nathaniel", "Beverage"),
         "family_group": True,
         "source_links": (
-            ("Read the 1865 family history, vol. II, pp.146–147", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+            ("Read the 1865 family history, vol. II, pp.146–147", "https://archive.org/details/historyofthomast02eato"),
             ("Compare the compiled Nathaniel parentage hypothesis", "https://genealogyofnewengland.com/f_86c9.htm"),
             ("Indexed marriage evidence for Henry T. and Ella Allen", "https://ancestors.familysearch.org/en/GM6N-6CV"),
         ),
@@ -83,7 +83,7 @@ STORIES = (
             ("1786 Fox Islands plan (Pulpit Harbor)", "https://digitalmaine.com/planbook_8/17/"),
             ("1889 transcribed petition and grant", "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf"),
             ("1935 Carver genealogy", "https://archive.org/details/carverfamilyofne00carv_0"),
-            ("1865 Capt. Matthew genealogical account", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+            ("1865 Capt. Matthew genealogical account", "https://archive.org/details/historyofthomast02eato"),
         ),
     },
     {
