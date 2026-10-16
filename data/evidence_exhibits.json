@@ -1,0 +1,315 @@
+[
+  {
+    "id": "1749-intention-bangor-1888",
+    "title": "James Beveridge and Jean White — Brunswick marriage intention",
+    "date": "1749-02-06",
+    "type": "Published town-register transcription",
+    "access": "Transcribed register entry",
+    "url": "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html",
+    "claim": "The 1888 transcription lists James Beveridge and Jean White, both of Georgetown, as having entered an intention to marry on February 6, 1749.",
+    "limits": "Marriage intention only; the marriage ceremony and identity of the couple with existing profiles are not proven. Compare the alternate 1895 transcription drawn from the same register.",
+    "rights": "External archival transcription; open at host",
+    "people_ids": [
+      "james_beveridge_jr_1724",
+      "jean_mckinney_white_1725"
+    ],
+    "event_ids": [
+      "event_1749_james_jean_marriage_intention"
+    ],
+    "association": "candidate",
+    "preview_pdf": false,
+    "collection": "Marriage intentions"
+  },
+  {
+    "id": "1749-intention-putnam-1895",
+    "title": "Alternate reading: James Beviridge and Jean Write",
+    "date": "1748–1749 (Old Style)",
+    "type": "Published town-register transcription",
+    "access": "Transcribed register entry",
+    "url": "https://archives.mainegenealogy.net/2007/01/brunswick-marriage-intentions-1740-1769.html",
+    "claim": "The 1895 transcription reads 'James Beviridge and Jean Write, of Georgetown' and dates the entry February 6, 1748–9.",
+    "limits": "Variant spellings in a second printing of the SAME underlying Brunswick register. These are not independent witnesses to a ceremony; no original manuscript scan linked.",
+    "rights": "External archival transcription; open at host",
+    "people_ids": [
+      "james_beveridge_jr_1724",
+      "jean_mckinney_white_1725"
+    ],
+    "event_ids": [
+      "event_1749_james_jean_marriage_intention"
+    ],
+    "association": "candidate",
+    "preview_pdf": false,
+    "collection": "Marriage intentions"
+  },
+  {
+    "id": "1865-matthew-nathaniel",
+    "title": "Cyrus Eaton's 1865 family account — Matthew and Nathaniel",
+    "date": "1865",
+    "type": "Digitized 1865 printed history",
+    "access": "Digitized publication / catalog reading page",
+    "url": "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South",
+    "claim": "Vol. II, pages 146–147, prints Matthew's family group and calls Nathaniel born c.1804 his nephew.",
+    "limits": "Near-contemporary published genealogy, not underlying birth, estate or marriage return; nephew degree and identity remain disputed.",
+    "rights": "External digitized publication; no image copied",
+    "people_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "sarah_alexander_beverage_1808",
+      "henry_t_beverage_1841_rockland"
+    ],
+    "event_ids": [],
+    "association": "reported_history",
+    "preview_pdf": false,
+    "collection": "Family-history publications"
+  },
+  {
+    "id": "1803-nathaniel-proposed-parents",
+    "title": "Nathaniel's proposed John White Beverage–Rachel Crosby parents",
+    "date": "1803 (proposed)",
+    "type": "Compiled family tree",
+    "access": "Secondary genealogy page",
+    "url": "https://genealogyofnewengland.com/f_86c9.htm",
+    "claim": "A compiled tree assigns Nathaniel (born Oct. 20, 1803) to John White Beverage and Rachel Crosby and reports a Sarah Alexander marriage April 26, 1838.",
+    "limits": "No original parentage document retrieved. If Matthew was Capt. Thomas's brother, this ancestry implies grandnephew rather than nephew. Treat as a hypothesis, not a new genealogy edge.",
+    "rights": "External family-tree webpage; no image copied",
+    "people_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "john_white_beverage_1774",
+      "rachel_crosby_1778"
+    ],
+    "event_ids": [],
+    "association": "candidate",
+    "preview_pdf": false,
+    "collection": "Identity conflicts"
+  },
+  {
+    "id": "1898-henry-ella",
+    "title": "Henry T. Beverage and Ella Allen — Maine marriage-index lead",
+    "date": "1898-12-17",
+    "type": "Index referenced by family profile",
+    "access": "FamilySearch profile containing record links",
+    "url": "https://ancestors.familysearch.org/en/GM6N-6CV",
+    "claim": "FamilySearch indexes lead to a December 17, 1898 marriage in Rockland; the family history records Henry's birth and Nathaniel–Sarah parentage.",
+    "limits": "Linked FamilySearch profile is a compiled landing page, not an original scanned register. The underlying 1898 marriage image is not verified.",
+    "rights": "External records; availability may require a FamilySearch account",
+    "people_ids": [
+      "henry_t_beverage_1841_rockland",
+      "ella_allen_beverage_1854"
+    ],
+    "event_ids": [
+      "event_henry_ella_marriage_1898"
+    ],
+    "association": "indexed_record",
+    "preview_pdf": false,
+    "collection": "Vital records"
+  },
+  {
+    "id": "1937-frank-may-diary",
+    "title": "1937 Calderwood diary — Frank and May's golden wedding",
+    "date": "1937-10-15",
+    "type": "Transcription of contemporary diary",
+    "access": "PDF transcript; references a photo caption",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1937.pdf#page=29",
+    "claim": "Tonny Calderwood's October 15 entry records a golden-wedding celebration for Frank and May Beverage and a caption on a related photograph.",
+    "limits": "Transcribed diary is not a verified original diary scan. The photograph itself was not obtained. The couple's identities and an 1887 wedding remain to be independently verified.",
+    "rights": "Diaries and images are controlled by their owners; link only, no copied text or photo",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "event_ids": [
+      "event_frank_may_golden_wedding_diary_1937"
+    ],
+    "association": "candidate",
+    "preview_pdf": true,
+    "collection": "Diaries and photographs"
+  },
+  {
+    "id": "1967-sam-calderwood-diary",
+    "title": "1967 Calderwood diary — correspondence with Samuel Beverage",
+    "date": "1967-06-23",
+    "type": "Transcription of contemporary diary",
+    "access": "PDF transcript",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1967.pdf#page=54",
+    "claim": "The March and June 1967 diary entries report exchanging genealogical information with a Samuel or 'Sammy' Beverage.",
+    "limits": "The Samuel mentioned has not been independently identified as the existing Samuel Hiram Beverage profile. Original letters are not yet in hand.",
+    "rights": "Diaries and images controlled by owners; link only",
+    "people_ids": [
+      "samuel_hiram_beverage_1917"
+    ],
+    "event_ids": [
+      "event_samuel_calderwood_correspondence_1967"
+    ],
+    "association": "candidate",
+    "preview_pdf": true,
+    "collection": "Diaries and photographs"
+  },
+  {
+    "id": "1975-recovered-deeds",
+    "title": "1975 recovery of Pulpit Harbor bridge bills, road map and deeds",
+    "date": "1975-11-13",
+    "type": "First-person retrospective",
+    "access": "Historical society page",
+    "url": "https://www.northhavenmainehistoricalsociety.org/history.html",
+    "claim": "Lewis Haskell's recollection describes old deeds, road maps, first-bridge bills and other papers found at the dump by Sam Beverage and neighbors before the society's November 1975 founding meeting.",
+    "limits": "The article describes the holdings; individual original documents, parcel boundaries, and current call numbers have not been inspected.",
+    "rights": "External historical society website; obtain permission for images/scans",
+    "people_ids": [
+      "samuel_hiram_beverage_1917"
+    ],
+    "event_ids": [
+      "event_1975_north_haven_rescued_town_archives"
+    ],
+    "association": "documented_history",
+    "preview_pdf": false,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "2017-pulpit-exhibit",
+    "title": "Historic Pulpit Harbor photographs, bridges and mill sites",
+    "date": "2017",
+    "type": "Historical society photo exhibit",
+    "access": "Original exhibit with linked subject galleries",
+    "url": "https://www.northhavenmainehistoricalsociety.org/pulpit-harbor-exhibit.html",
+    "claim": "Historical society exhibits describe Pulpit Harbor's former buildings, schools, mills, bridges and waterfront, alongside historical images.",
+    "limits": "An exhibit/photo is not a land deed. Individual image provenance and reproduction rights must be checked before any family-site hosting.",
+    "rights": "North Haven Historical Society; no photos copied",
+    "people_ids": [],
+    "event_ids": [
+      "event_1975_north_haven_rescued_town_archives"
+    ],
+    "association": "context",
+    "preview_pdf": false,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "pulpit-1848-original-act",
+    "title": "1848 original law — North Haven Bridge Company",
+    "date": "1848",
+    "type": "Official Maine legislative enactment",
+    "access": "Contemporary legislation scanned as PDF",
+    "url": "https://lldc.mainelegislature.org/Open/Laws/1848/1848_PS_c154.pdf",
+    "claim": "Maine legislative act specifies the authorized bridge near land of James and Josiah Beverage at the head of Pulpit Harbor.",
+    "limits": "Identifies landowners within a legislative route description, but does not give their deed chain, acreage or a surveyed parcel boundary.",
+    "rights": "Government legislative PDF; link to original",
+    "people_ids": [
+      "james_beverage_1789",
+      "josiah_winslow_beverage_1793"
+    ],
+    "event_ids": [
+      "event_north_haven_bridge_act_1848"
+    ],
+    "association": "direct_record",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "pulpit-conservation-history",
+    "title": "Pulpit Harbor working waterfront and surviving cellar-hole traces",
+    "date": "Historical context, 1800s–1900s",
+    "type": "Conservation organization local history",
+    "access": "Illustrated history at holding organization",
+    "url": "https://northhavenconservation.org/pulpit-harbor-history/",
+    "claim": "North Haven Conservation Partners describes former roads, house sites, store, cooper shop, boat yards and ownership changes around Pulpit Harbor, with credited historical photos.",
+    "limits": "Interpretive location history; do not infer precise ancestral title/lot dimensions from illustrated description.",
+    "rights": "Photos credited to North Haven Historical Society; no reproduction without permission",
+    "people_ids": [],
+    "event_ids": [],
+    "association": "context",
+    "preview_pdf": false,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "north-haven-1930s-film",
+    "title": "Harold Beverage's 1930s Fox Islands film",
+    "date": "1930s (approximate)",
+    "type": "Historic film at holding institution",
+    "access": "Video page at North Haven Historical Society",
+    "url": "https://www.northhavenmainehistoricalsociety.org/videos.html",
+    "claim": "The society hosts period film made by Harold Beverage showing island life and neighboring communities.",
+    "limits": "Exact frame subjects, dates and individuals have not been verified here. The website links to the publisher rather than copying the film.",
+    "rights": "Rights held by the film source/publisher; no rehosting",
+    "people_ids": [
+      "harold_h_beverage_1893"
+    ],
+    "event_ids": [],
+    "association": "historical_media",
+    "preview_pdf": false,
+    "collection": "Historical film"
+  },
+  {
+    "id": "north-haven-archive-access",
+    "title": "North Haven Historical Society archives and scan-permission policy",
+    "date": "Current archive access",
+    "type": "Institutional archive access policy",
+    "access": "Collection access and reproduction policy",
+    "url": "https://www.northhavenmainehistoricalsociety.org/archives.html",
+    "claim": "The archive offers research assistance and may scan original documents through staff, subject to collection conditions.",
+    "limits": "This is an access policy, not evidence of any particular Beverage record being present or digitized.",
+    "rights": "Check staff approval before scanning/republishing",
+    "people_ids": [],
+    "event_ids": [],
+    "association": "research_target",
+    "preview_pdf": false,
+    "collection": "Research access"
+  },
+  {
+    "id": "1883-alvin-bridge-town-contract",
+    "title": "1883 Beach Bridge — town contract naming Alvin Beverage",
+    "date": "1883",
+    "type": "Original document reproduced in historical exhibit",
+    "access": "Illustrated PDF, original contract reproduced on PDF page 8",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/bridges.pdf#page=8",
+    "claim": "The North Haven Historical Society exhibit reproduces a contract with Alvin Beverage concerning construction of Beach Bridge in 1883, and photographs the bridge in its original location.",
+    "limits": "The PDF contains historical documents and captions, but we have not inspected the original physical instrument or established which genealogical Alvin was named. A bridge crossing is not a surveyed title boundary.",
+    "rights": "Reproduced by North Haven Historical Society; permission required to republish scanned contract/photos",
+    "people_ids": [],
+    "event_ids": [
+      "event_1883_beach_bridge_alvin_contract"
+    ],
+    "association": "direct_document_exhibit",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "1906-alvin-bridge-bill",
+    "title": "Historic town payment records — Alvin Beverage and Beach Bridge",
+    "date": "1906",
+    "type": "Original historical bill reproduced in exhibit",
+    "access": "Illustrated PDF, reproduced town bill(s) on PDF page 9",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/bridges.pdf#page=9",
+    "claim": "The bridge exhibit reproduces records of payments in connection with Beach Bridge, including an early 1906 town payment record naming Alvin Beverage, alongside bridge construction photographs.",
+    "limits": "Check the reproduced document's text before assigning an individual payment amount, exact date or signature. Do not assume these are title deeds or that 'Alvin' is a separately identified existing ancestor.",
+    "rights": "Original document photo/reproduction controlled by holding archive; link only",
+    "people_ids": [],
+    "event_ids": [
+      "event_1883_beach_bridge_alvin_contract"
+    ],
+    "association": "direct_document_exhibit",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "millstream-exhibit-family-mills",
+    "title": "Mill Stream exhibit — Thomas, James, Harrison, Hiram and Sam Beverage",
+    "date": "1700s–1932",
+    "type": "Historical society illustrated research",
+    "access": "3-page PDF with photographs and map or sketch references",
+    "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/the_mill_stream.pdf#page=1",
+    "claim": "The local history identifies Thomas Beverage as a grist-mill operator and son James as a tanner at Fresh Pond, reports Harrison Beverage purchasing the lower dam in 1888, and says Hiram Beverage worked at a mill in 1909 and built the 1932 dam.",
+    "limits": "This modern history cites local historical accounts and a rescued sketch, not direct scans of all deed transfers. Harrison's precise identity and each property's chain of title need separate verification.",
+    "rights": "North Haven Historical Society PDF; don't rehost photos or sketches without permission",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "james_beverage_1789",
+      "harrison_beverage_1825",
+      "hiram_stone_beverage_1886",
+      "samuel_hiram_beverage_1917"
+    ],
+    "event_ids": [
+      "event_hiram_mill_stream_dam_1932",
+      "event_1888_harrison_mill_stream_dam_purchase"
+    ],
+    "association": "reported_history",
+    "preview_pdf": true,
+    "collection": "Land and community records"
+  }
+]

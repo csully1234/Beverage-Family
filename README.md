@@ -78,6 +78,39 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### Original evidence explorer — accessible source files and historical context (October 2026)
+
+Open actual supporting records from **People** profiles and **Family Timeline**
+cards without guessing which original a citation refers to. The
+**Photographs & Documents → Explore original evidence** tab lists a
+searchable set of curated online items and archival leads.
+
+Each item distinguishes the original or transcribed document, exactly
+what it supports, limitations of family identity and the original
+holding institution's reuse rights. A candidate association to a person
+does **not** become an automatic genealogical relationship. PDFs are
+previewed on request from the external archive's URL and are always
+available via a plain original link if the archive blocks embedded viewing.
+
+New original-document access includes a **PDF of an 1883 North Haven
+Beach Bridge contract involving Alvin Beverage** (historical society
+exhibit PDF page 8), an associated town payment record (page 9),
+the **Mill Stream** research with Thomas, James, Harrison and Hiram
+Beverage, and the official **1848 bridge law**. Dated 1883 and 1888
+bridge/dam items are available in the timeline, with uncertainty made
+explicit. The old marriage-intention transcriptions of 1748–49,
+Calderwood diaries and historical images remain accessible as distinct,
+properly labeled sources.
+
+- Viewer: `evidence_explorer.py`
+- Rights-aware linked records: `data/evidence_exhibits.json`
+- Two additive research events: `data/phase5_events.json`
+- Claim-by-claim source review: `research/phase5_evidence_exploration_2026-10-16.md`
+- Evidence/navigation regressions: `tests/test_evidence_explorer.py`
+
+**No rehosted third-party images, speculative parent-child links, outgoing
+emails, paid research, merge or deployment** are part of this update.
+
 ### Matthew's Rockland relatives, documented diaries, and 1749 intention (October 2026)
 
 A follow-up research phase adds **four** distinct public profiles to the existing
