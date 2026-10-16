@@ -78,6 +78,51 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### Matthew's Rockland relatives, documented diaries, and 1749 intention (October 2026)
+
+A follow-up research phase adds **four** distinct public profiles to the existing
+historical overlay: Nathaniel Beverage (born about 1804, **not** Nathaniel
+Winslow born 1776), his wife Sarah Alexander, their son Henry T. Beverage,
+and Henry's later wife Ella Allen. Eaton (1865, vol. II, pp.146–147)
+describes the household; the FamilySearch marriage-index trail supports
+Henry and Ella's **17 December 1898** marriage. These four profiles have
+explicit source provenance; the proposed parentage of 1804 Nathaniel is
+**not attached** to the main genealogical line.
+
+A full, accessible 1865 transcription-derived display preserves Capt.
+Matthew of Hope's **10 reported children and 11 grandchildren**, plus
+Nathaniel's three reported children. Unlike independently verified person
+profiles, these additional names are **labeled as a historical family group**,
+with no unproved Matthew-to-James relationship grafted onto the family tree.
+
+The **Stories & Discoveries** page now includes two new stories linking the
+1865 family group and original material held by the North Haven Historical
+Society: Harold Beverage's circa-1930s island film, dated historical society
+history, 1907 school graduates, a 1927 auction advertisement, and
+**1937/1967 Calderwood diary entries** mentioning Frank/May Beverage and
+family-history correspondence with a Samuel Beverage. The original diary
+contains a reference to a 1937 photograph; the photograph itself is not
+republished. The archive's diary and image permissions are respected.
+
+Seven new historical timeline events include the **1749-02-06 Brunswick
+marriage intention** for James Beveridge and Jean White (an *intention*, not
+proof of the completed wedding), Henry and Ella's indexed marriage, and
+the dated education, auction, archival recovery and diary events. Their
+identities and event status are distinguished carefully.
+
+- Source-provenance narrative and original-document to-do:
+  `research/matthew_nathaniel_new_sources_2026-10-16.md`
+- Capt. Matthew's 1865 family-group transcription and the separate
+  1804 Nathaniel identity conflict:
+  `research/matthew_nathaniel_family_1865.json`
+- New, separately sourced profiles: `data/phase4_people.json`
+- New, separately sourced events: `data/phase4_events.json`
+- Visitor entry point: `?page=stories&story=matthew-rockland-descendants-1865`
+- Tests: `tests/test_matthew_nathaniel_2026.py`
+
+No outbound communications, orders, image rehosting, changes to base
+people, addresses, or Boston Tea Party history are included in this PR.
+
 ### Early-family verification phase 3 — historical records and unanswered identities (October 2026)
 
 The next step is **proving identities and property chains**, not adding inferred
