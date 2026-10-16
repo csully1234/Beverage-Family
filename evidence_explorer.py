@@ -160,6 +160,13 @@ def render_profile_highlights(person_id: str) -> None:
             render_source_card(item, context="highlight-" + person_id, number=i)
         if len(curated) > 4:
             st.caption(f"See all {len(curated)} curated records in the Historical records tab.")
+    related_cases = [
+        case for case in investigation_catalog()
+        if person_id in case.get("person_ids", [])
+    ]
+    for case in related_cases:
+        route_link("Investigate: " + case["title"],
+                   "?page=media&case=" + case["id"])
 
 
 def render_profile_browser(person: dict, archive_sources: list[dict]) -> None:
