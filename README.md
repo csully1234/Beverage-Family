@@ -78,6 +78,37 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### Early-family verification phase 3 — historical records and unanswered identities (October 2026)
+
+The next step is **proving identities and property chains**, not adding inferred
+genealogical links. This phase records six prioritized research cases, including:
+
+- Capt. Matthew Beverage's potential 1830s Hope probate: **Waldo County** was
+  the relevant county in 1827–1860; Knox County estate files beginning 1861
+  do not cover this proposed date.
+- The 1786 Putnam report listing original settlers' **declared years of
+  settlement**, as cited in *The Maine Genealogist* (November 2025), p. 170
+  note 6; its paper archive is not to be confused with the digitized 1785 map.
+- Original 1752 Samuel Beveridge and 1758 James Beveridge Topsham land
+  entries and the separately numbered Brunswick "Beverage" map label in
+  Wheeler's 1878 town history.
+- The historically **tentative** Mercy Beveridge–James Henry marriage of
+  15 February 1776; original marriage/kinship proof is still needed.
+- North Haven's grant/deed chain and the undocumented Scottish origin of
+  James Beveridge Sr. (no Scottish parentage silently attached).
+
+The existing map page's research panel now includes four more source-linked
+findings, and Stories & Discoveries has a new **Before North Haven: Beveridge
+names in Topsham** story. Existing historical profiles remain unchanged.
+
+- Research cases and source register: `research/phase3_research_cases.json`
+- Four **unsent** targeted archival request drafts: `research/phase3_archival_requests_not_sent.md`
+- Tests: `tests/test_phase3_research.py`
+
+Records offices are identified with publicly documented official contact
+information. **No emails have been sent or record orders placed.** Archive
+requests and any costs need explicit approval before proceeding.
+
 ### Expanded Fox Islands map atlas and founding-era evidence (October 2026)
 
 The **Historical Map** page now has a **Historic maps & early records** tab with ten
