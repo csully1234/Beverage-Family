@@ -29,7 +29,7 @@ STORIES = (
         "summary": "Explore Matthew's ten reported children and the Rockland relatives listed in a near-contemporary published history.",
         "body": "Cyrus Eaton's 1865 history names Capt. Matthew Beverage of Hope, two wives, ten children and several grandchildren. It separately describes Nathaniel Beverage (born about 1804), his wife Sarah Alexander and their three children. These are published family groups, not ten independently certified relationships. Nathaniel's father and the exact degree of his connection to Matthew remain unproved. Nathaniel born about 1804 must not be confused with Nathaniel Winslow Beverage born 1776.",
         "terms": ("Matthew", "Nathaniel", "Beverage"),
-        "family_group": true,
+        "family_group": True,
         "source_links": (
             ("Read the 1865 family history, vol. II, pp.146–147", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
             ("Compare the compiled Nathaniel parentage hypothesis", "https://genealogyofnewengland.com/f_86c9.htm"),
