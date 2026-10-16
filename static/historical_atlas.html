@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1859 Fox Islands historic map scans</title>
+<style>
+:root{color-scheme:light;--ink:#19313a;--blue:#17637a;--line:#cad6d5;--paper:#fffdf8;--muted:#53666a}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f3ea;color:var(--ink);font:15px/1.45 system-ui,sans-serif}
+main{padding:10px;max-width:1200px;margin:auto}
+header{display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:10px}
+label{display:grid;gap:5px;font-weight:700;font-size:14px}
+select,button{font:inherit;border:1px solid #78969d;border-radius:7px;color:var(--ink);background:var(--paper);padding:9px 12px;min-height:40px}
+select{min-width:min(100%,320px)}
+button{cursor:pointer;font-weight:650}
+button:hover{background:#dcebed}
+button:focus-visible,select:focus-visible,a:focus-visible,#stage:focus-visible{outline:3px solid #a77937;outline-offset:2px}
+.controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.controls button{min-width:42px}
+#zoom-level{display:inline-block;text-align:center;min-width:58px;font-variant-numeric:tabular-nums;font-weight:700;font-size:13px}
+#stage{height:565px;position:relative;overflow:hidden;border:1px solid #9aacad;border-radius:10px;background:#dfddd1;touch-action:none;cursor:grab;user-select:none}
+#stage.dragging{cursor:grabbing}
+#stage img{display:block;position:absolute;left:50%;top:50%;max-width:none;max-height:none;pointer-events:none;transform-origin:center center;box-shadow:0 6px 28px #172a2b30}
+#stage:before{content:"";position:absolute;inset:0;background:linear-gradient(45deg,#f0ede5 25%,transparent 25%,transparent 75%,#f0ede5 75%),linear-gradient(45deg,#f0ede5 25%,transparent 25%,transparent 75%,#f0ede5 75%);background-size:20px 20px;background-position:0 0,10px 10px}
+#status{position:absolute;bottom:12px;left:12px;right:12px;background:#fffdf8eb;border-radius:7px;padding:6px 10px;max-width:470px;font-size:13px;pointer-events:none}
+.explain{background:var(--paper);border:1px solid var(--line);border-radius:10px;margin-top:10px;padding:12px 14px}
+.explain p{margin:6px 0}
+#map-note{color:var(--muted);font-size:13px}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:14px}
+a{color:var(--blue);text-underline-offset:2px}
+kbd{border:1px solid var(--line);border-radius:3px;background:#f2f0e7;padding:0 4px}
+@media(max-width:630px){
+  main{padding:5px}
+  header{display:block}
+  .controls{margin:10px 0}
+  #stage{height:430px}
+  .explain{padding:10px}
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <label for="map-choice">1859 map sheet
+      <select id="map-choice" aria-label="Choose a historical map"></select>
+    </label>
+    <div class="controls" aria-label="Zoom controls">
+      <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+      <output id="zoom-level" aria-label="Zoom percentage">100%</output>
+      <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+      <button type="button" id="fit">Fit map</button>
+      <button type="button" id="reset">Reset</button>
+    </div>
+  </header>
+  <div id="stage" role="region" tabindex="0" aria-label="Draggable high-resolution historic map. Use plus and minus to zoom, and arrow keys to pan.">
+    <img id="map-image" alt="" draggable="false">
+    <div id="status" role="status" aria-live="polite">Loading historical map…</div>
+  </div>
+  <section class="explain" aria-label="Map description and source links">
+    <strong id="map-title"></strong>
+    <p id="map-description"></p>
+    <p id="map-note"></p>
+    <nav class="links" aria-label="Original map files">
+      <a id="open-original" href="#" target="_blank" rel="noopener noreferrer">Open full-size original image ↗</a>
+      <a id="download-all" href="#" target="_blank" rel="noopener noreferrer">Download all three scans (ZIP) ↗</a>
+      <a id="source-archive" href="#" target="_blank" rel="noopener noreferrer">Map archive &amp; provenance ↗</a>
+    </nav>
+    <p style="font-size:12px;color:#53666a">Tip: scroll over the map or use +/− to zoom; drag to pan. On phones, use the zoom buttons and drag with a finger. An 1859 name or house symbol is not a deed boundary.</p>
+  </section>
+</main>
+<script type="application/json" id="atlas-data">ATLAS_JSON</script>
+<script>
+(() => {
+  "use strict";
+  const data = JSON.parse(document.getElementById("atlas-data").textContent);
+  const byId = id => document.getElementById(id);
+  const stage = byId("stage"), image = byId("map-image"), status = byId("status");
+  const chooser = byId("map-choice");
+  let current = null, zoom = 1, fitted = 1, shiftX = 0, shiftY = 0, drag = null, loadSeq = 0;
+  for (const entry of data.maps) {
+    const item = document.createElement("option");
+    item.value = entry.id; item.textContent = entry.name; chooser.append(item);
+  }
+  byId("download-all").href = data.download;
+  byId("source-archive").href = data.source;
+
+  function paint() {
+    image.style.transform = 'translate(-50%, -50%) translate(' + shiftX + 'px,' + shiftY + 'px) scale(' + zoom + ')';
+    byId("zoom-level").textContent = Math.round(100 * zoom / fitted) + "%";
+  }
+  function fit() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
+    fitted = Math.min(stage.clientWidth / image.naturalWidth,
+      stage.clientHeight / image.naturalHeight) * 0.97;
+    zoom = fitted; shiftX = 0; shiftY = 0; paint();
+  }
+  function increase(factor) {
+    if (!image.naturalWidth) return;
+    zoom = Math.max(fitted * .8, Math.min(fitted * 24, zoom * factor));
+    paint();
+  }
+  function choose(id) {
+    const record = data.maps.find(item => item.id === id);
+    if (!record) return;
+    current = record;
+    chooser.value = record.id;
+    byId("map-title").textContent = record.name;
+    byId("map-description").textContent = record.description;
+    byId("map-note").textContent = record.note;
+    byId("open-original").href = record.url;
+    status.hidden = false; status.textContent = "Loading " + record.name + "…";
+    image.removeAttribute("src");
+    image.alt = record.alt;
+    const seq = ++loadSeq;
+    image.onload = () => {
+      if (seq !== loadSeq) return;
+      image.style.width = image.naturalWidth + "px";
+      image.style.height = image.naturalHeight + "px";
+      fit(); status.hidden = true;
+    };
+    image.onerror = () => {
+      if (seq !== loadSeq) return;
+      status.hidden = false;
+      status.textContent = "The archive image could not load. Use “Open full-size original image” below or try again later.";
+    };
+    image.src = record.url;
+  }
+  chooser.addEventListener("change", () => choose(chooser.value));
+  byId("zoom-in").addEventListener("click", () => increase(1.6));
+  byId("zoom-out").addEventListener("click", () => increase(1/1.6));
+  byId("fit").addEventListener("click", fit);
+  byId("reset").addEventListener("click", () => choose(current.id));
+  stage.addEventListener("wheel", e => {
+    e.preventDefault();
+    increase(e.deltaY < 0 ? 1.19 : 1 / 1.19);
+  }, {passive:false});
+  stage.addEventListener("pointerdown", e => {
+    if (e.button !== 0) return;
+    drag = {id:e.pointerId, x:e.clientX, y:e.clientY};
+    stage.classList.add("dragging");
+    if (stage.setPointerCapture) stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener("pointermove", e => {
+    if (!drag || drag.id !== e.pointerId) return;
+    shiftX += e.clientX - drag.x; shiftY += e.clientY - drag.y;
+    drag.x = e.clientX; drag.y = e.clientY; paint();
+  });
+  function finishDrag(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    drag = null; stage.classList.remove("dragging");
+  }
+  stage.addEventListener("pointerup", finishDrag);
+  stage.addEventListener("pointercancel", finishDrag);
+  stage.addEventListener("keydown", e => {
+    const dirs = {ArrowLeft:[-45,0],ArrowRight:[45,0],ArrowUp:[0,-45],ArrowDown:[0,45]};
+    if (dirs[e.key]) {
+      e.preventDefault(); shiftX += dirs[e.key][0]; shiftY += dirs[e.key][1]; paint();
+    } else if (e.key === "+" || e.key === "=") {
+      e.preventDefault(); increase(1.6);
+    } else if (e.key === "-" || e.key === "_") {
+      e.preventDefault(); increase(1/1.6);
+    }
+  });
+  window.addEventListener("resize", () => { if (image.naturalWidth) fit(); });
+  if (data.maps.length) choose(data.maps[0].id);
+})();
+</script>
+</body>
+</html>
