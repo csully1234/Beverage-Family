@@ -186,9 +186,9 @@ def render_map_page(archive: ArchiveIndex) -> None:
     st.title("Historical Map")
     st.write(
         "Explore documented family places on the modern map, or browse original "
-        "1859 map scans showing North Haven and Vinalhaven residences."
+        "historical surveys from 1776 through 1944, including early land-claim records."
     )
-    places_tab, historic_tab = st.tabs(["Interactive historical places", "Original 1859 maps"])
+    places_tab, historic_tab = st.tabs(["Interactive historical places", "Historic maps & early records"])
     with places_tab:
         if not archive.places:
             st.info("No reviewed historical places have been added yet.")
