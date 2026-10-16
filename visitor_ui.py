@@ -404,7 +404,8 @@ def render_media_page() -> None:
         st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
         route_link("Open the complete book and its visual collection", "?page=family-books")
     requested_case = str(st.query_params.get("case", "") or "")
-    if requested_case in {case["id"] for case in investigation_catalog()}:
+    case_is_known = requested_case in {case["id"] for case in investigation_catalog()}
+    if case_is_known:
         # Deep links from a relative profile lead straight to the case file.
         render_investigations()
         st.divider()
@@ -461,7 +462,7 @@ def render_media_page() -> None:
                 st.write(document["summary"])
                 route_link("Read document and original pages", "?page=documents&doc=" + id_)
     with evidence_tab:
-        if not requested_case:
+        if not case_is_known:
             cases_tab, sources_tab = st.tabs(
                 ["Family history investigations", "All linked source records"]
             )
