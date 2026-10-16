@@ -1,0 +1,210 @@
+{
+  "title": "Capt. Matthew Beverage of Hope and Nathaniel Beverage of Rockland — published 1865 family groups",
+  "as_of": "2026-10-16",
+  "kind": "Source-attributed historical reconstruction; not a modern official civil register",
+  "publication": {
+    "title": "History of Thomaston, Rockland, and South Thomaston, volume II",
+    "author": "Cyrus Eaton",
+    "year": 1865,
+    "pages": "146–147",
+    "url": "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South",
+    "notes": "Eaton records a contemporary genealogy. Names, family groups, occupations and marriages are documented as published, but individual claimed kinships and ages are not independently proved by probate, civil certificates, or census here."
+  },
+  "matthew": {
+    "name": "Capt. Matthew Beverage",
+    "reported_residence": "Hope, Maine",
+    "origin_exact": "b. in Topsham, or c. from there to Fox Islands",
+    "origin_caution": "Wording is ambiguous: do not assert birth specifically in Topsham.",
+    "identity_caution": "No proof that this Matthew is the 1785 minor or a son of James Beveridge and Jean White.",
+    "wives": [
+      {
+        "name": "Abigail Dyer",
+        "description": "First wife, of Fox Islands"
+      },
+      {
+        "name": "Clarissa Cobb",
+        "description": "Second wife; Eaton writes 'of W.' without full expansion."
+      }
+    ],
+    "children": [
+      {
+        "name": "Harrison Beverage",
+        "by_wife": "Abigail Dyer",
+        "information": "Lost at sea"
+      },
+      {
+        "name": "Achsa Beverage Heald",
+        "by_wife": "Abigail Dyer",
+        "information": "Married Charles Heald of Belmont"
+      },
+      {
+        "name": "Louisa Beverage",
+        "by_wife": "Abigail Dyer",
+        "information": "Died young"
+      },
+      {
+        "name": "Mary Miles Beverage Tucker",
+        "by_wife": "Abigail Dyer",
+        "information": "Married Anselm Tucker; resident of Portland"
+      },
+      {
+        "name": "James Madison Beverage",
+        "by_wife": "Abigail Dyer",
+        "birth_approx": 1813,
+        "information": "Married Mary J. Taylor of Hope; town officer in Thomaston",
+        "children": [
+          {
+            "name": "Thomas T. Beverage",
+            "birth_approx": 1838,
+            "information": "Taught high school; nearly completed Bowdoin College; died 12 May 1864"
+          },
+          {
+            "name": "John F. Beverage",
+            "birth_approx": 1840
+          }
+        ]
+      },
+      {
+        "name": "Ezekiel G. D. Beverage",
+        "by_wife": "Clarissa Cobb",
+        "information": "Married Martha Gilmore; lived East Union"
+      },
+      {
+        "name": "Sarah Abby Beverage",
+        "by_wife": "Clarissa Cobb",
+        "information": "Died young"
+      },
+      {
+        "name": "Thomas Jefferson Beverage",
+        "by_wife": "Clarissa Cobb",
+        "birth_approx": 1820,
+        "information": "Married Deborah M. Taylor of Hope 17 Nov 1842; joiner in Thomaston",
+        "children": [
+          {
+            "name": "John Thomas Beverage",
+            "birth_approx": 1847
+          },
+          {
+            "name": "Charles Henry Beverage",
+            "birth": 1849,
+            "death": "1853-10-10"
+          },
+          {
+            "name": "Martha Frances Beverage",
+            "birth_approx": 1852
+          },
+          {
+            "name": "Franklin Beverage",
+            "birth_approx": 1854
+          },
+          {
+            "name": "Mary J. Beverage",
+            "birth_approx": 1857
+          }
+        ]
+      },
+      {
+        "name": "George W. Beverage",
+        "by_wife": "Clarissa Cobb",
+        "birth_approx": 1824,
+        "information": "Married Martha Frances Piper 11 Jan 1846; shoemaker in Thomaston",
+        "children": [
+          {
+            "name": "Edwin Beverage",
+            "birth_approx": 1849
+          },
+          {
+            "name": "Flora Beverage",
+            "birth": 1851
+          },
+          {
+            "name": "Charles Beverage",
+            "birth": "1853-06-22",
+            "death": "1853-12-12"
+          },
+          {
+            "name": "Ida Beverage",
+            "birth_approx": 1855
+          }
+        ]
+      },
+      {
+        "name": "Martha W. Beverage Allen",
+        "by_wife": "Clarissa Cobb",
+        "death": "1849-11-07",
+        "information": "Married Charles L. Allen; Rockland"
+      }
+    ]
+  },
+  "nathaniel": {
+    "name": "Nathaniel Beverage",
+    "approx_birth": 1804,
+    "occupation": "Carpenter",
+    "residence": "North End, Rockland",
+    "origin": "Fox Islands",
+    "reported_relation_to_matthew": "Nephew of Capt. Matthew, according to Eaton; the exact degree has not been established.",
+    "spouse": "Sarah Alexander",
+    "spouse_reported_relation_to_matthew": "Niece of Capt. Matthew, according to Eaton; her parental ancestry is unknown.",
+    "children": [
+      {
+        "name": "Henry T. Beverage",
+        "birth": "1841-11-29",
+        "independent_record": "FamilySearch-indexed 1898 Maine marriage to Ella Allen; 1900 US census indexed in her profile"
+      },
+      {
+        "name": "Mercy Beverage",
+        "birth_approx": 1843
+      },
+      {
+        "name": "Frederic Beverage",
+        "birth_approx": 1847
+      }
+    ],
+    "candidate_parentage": {
+      "possible_parents": [
+        "John White Beverage",
+        "Rachel Lucy Crosby"
+      ],
+      "compiled_source": "https://genealogyofnewengland.com/f_86c9.htm",
+      "reported_birth": "1803-10-20",
+      "reported_death": "1886-09-18",
+      "status": "Unverified derivative genealogy. May be same man Eaton calls born ~1804, but original parentage evidence not yet retrieved.",
+      "generational_issue": "If Capt. Matthew were a brother of Capt. Thomas (1750), John White Beverage (Thomas's son) would be Matthew's nephew and Nathaniel his grandnephew, not simply nephew. This suggests an error or loose kinship term in one or both compiled sources; do not silently reconcile."
+    },
+    "avoid_confusion": {
+      "distinct_existing_profile": "nathaniel_winslow_beverage_1776",
+      "note": "Nathaniel Winslow Beverage born 1776, son of Capt. Thomas and Mercy Kent, is clearly a different, older person from Nathaniel Beverage born c.1804."
+    }
+  },
+  "source_check": [
+    {
+      "title": "Eaton 1865, pp.146–147",
+      "url": "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South",
+      "use": "Near-contemporary recorded names, family group and occupations"
+    },
+    {
+      "title": "Maine genealogy compiled page showing Nathaniel 1803 and parents",
+      "url": "https://genealogyofnewengland.com/f_86c9.htm",
+      "use": "Tentative parentage and exact date leads ONLY"
+    },
+    {
+      "title": "FamilySearch Ella Allen family profile",
+      "url": "https://ancestors.familysearch.org/en/GM6N-6CV",
+      "use": "Indexed Maine marriage 17 Dec 1898 to Henry T. Beverage and 1900 census; underlying source images not yet reviewed"
+    },
+    {
+      "title": "Genius at Riverhead (1988), Appendix VI",
+      "url": "https://www.worldradiohistory.com/BOOKSHELF-ARH/Biography/Genius-at-Riverhead-Wallen-1988.pdf",
+      "use": "Documents an EARLIER Nathaniel among Capt Thomas's children; not evidence of 1804 Nathaniel being Thomas's direct son"
+    }
+  ],
+  "do_not_automatically_merge_to_main_branch": true,
+  "needs_original": [
+    "Hope/Waldo probate for Capt Matthew",
+    "1820–1860 vital or census for Matthew's household",
+    "1838 Nathaniel/Sarah marriage register",
+    "1803 Nathaniel birth/baptism or John White estate linking child",
+    "1898 Henry T/Ella marriage record image",
+    "1860–1880 Rockland census family sheet"
+  ]
+}
