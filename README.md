@@ -115,8 +115,8 @@ identities and event status are distinguished carefully.
 - Capt. Matthew's 1865 family-group transcription and the separate
   1804 Nathaniel identity conflict:
   `research/matthew_nathaniel_family_1865.json`
-- Profiles: `data/research_people.json`
-- Events: `data/research_events.json`
+- New, separately sourced profiles: `data/phase4_people.json`
+- New, separately sourced events: `data/phase4_events.json`
 - Visitor entry point: `?page=stories&story=matthew-rockland-descendants-1865`
 - Tests: `tests/test_matthew_nathaniel_2026.py`
 
