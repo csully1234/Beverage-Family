@@ -92,7 +92,8 @@ in a case links directly into that investigation.
 New original-evidence references include a **completely free, public-domain
 scan of Cyrus Eaton's actual 1865 Volume II**, a 1911 newspaper notice
 naming a separate Frank Beverage household and visitor Orra Roney, a
-**1939 Thomaston cemetery lot-card transcription**, and a 1954 North
+**1939 Thomaston cemetery lot-card transcription**, a corroborating
+1930 North Haven 43rd wedding-anniversary notice, and a 1954 North
 Haven Frank autograph-album entry. The last two cannot describe the same
 Frank if accurately dated; *neither* is converted into a false
 birth, death or genealogy relationship.
@@ -100,7 +101,7 @@ birth, death or genealogy relationship.
 The Pulpit Harbor investigation identifies digitized **Knox County
 1888-era deed indexes** to pursue next; no deed or ancestral parcel
 boundary has yet been verified. The current data remain additive:
-`data/phase6_events.json` records three dated identity-research events
+`data/phase6_events.json` records four dated identity/anniversary events
 without changing old events or persons.
 
 - Four cases: `data/evidence_investigations.json`
