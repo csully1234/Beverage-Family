@@ -85,6 +85,8 @@ class VisitorExperienceTests(unittest.TestCase):
         self.assertEqual(len(items), len({p["pdf_page"] for p in items}))
         self.assertTrue(all(1 <= p["pdf_page"] <= 305 for p in items))
         self.assertTrue(all(p["caption_summary"] and p["title"] and p["section"] for p in items))
+        self.assertTrue(all(len(p["preview_crop"]) == 4 and 0 <= p["preview_crop"][0] < p["preview_crop"][2] <= 1 for p in items))
+        self.assertEqual(next(p for p in items if p["pdf_page"] == 223)["reported_capture_date"], "1936-07-04")
         book = load_books()[0]
         self.assertTrue({p["pdf_page"] for p in items}.issubset(set(book["image_page_numbers"])))
         self.assertIn("Amelia", next(p for p in items if p["pdf_page"] == 49)["caption_summary"])
@@ -93,6 +95,8 @@ class VisitorExperienceTests(unittest.TestCase):
         from event_source_access import source_target
         self.assertEqual(source_target("Find A Grave memorial 157242087"),
                          ("Find A Grave memorial 157242087","https://www.findagrave.com/memorial/157242087"))
+        self.assertEqual(source_target("Grace Beverage obituary"),
+                         ("Grace Beverage obituary", "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664"))
         self.assertEqual(source_target("Riposta Funeral Home obituary"),
                          ("Riposta Funeral Home obituary",None))
         self.assertEqual(source_target({"title":"Original scan","url":"https://archive.org/details/example"}),

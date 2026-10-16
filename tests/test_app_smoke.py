@@ -119,7 +119,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app = self.logged_in_app(page="media")
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertTrue(any("Family photographs" in tab.label for tab in app.tabs))
-        self.assertTrue(any("82 captioned photograph pages" in str(x.value) for x in app.caption))
+        self.assertTrue(any("82 cataloged photo-bearing pages" in str(x.value) for x in app.caption))
         self.assertIn("Load 12 more photographs", app.button(key="colony_photo_load_more").label)
         app.button(key="colony_photo_load_more").click().run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
