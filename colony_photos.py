@@ -11,11 +11,33 @@ from pathlib import Path
 
 import streamlit as st
 
-from family_books import book_pdf_path, load_books, scanned_page_preview
+from family_books import book_pdf_path, load_books
 from routing_ui import route_link
 
 _CAPTIONS = Path(__file__).resolve().parent / "data" / "colony_photo_captions.json"
 _PAGE_BATCH = 12
+
+
+@st.cache_data(show_spinner=False, max_entries=100)
+def source_photo_preview(path: str, page_number: int, crop: tuple[float, float, float, float]) -> bytes:
+    """Render a cataloged photographic region without changing the original scan."""
+    import fitz
+
+    document = fitz.open(path)
+    try:
+        page = document[page_number - 1]
+        bounds = page.rect
+        x0, y0, x1, y1 = crop
+        if not (0 <= x0 < x1 <= 1 and 0 <= y0 < y1 <= 1):
+            raise ValueError("Catalog has invalid book photograph coordinates")
+        clip = fitz.Rect(
+            bounds.x0 + x0 * bounds.width, bounds.y0 + y0 * bounds.height,
+            bounds.x0 + x1 * bounds.width, bounds.y0 + y1 * bounds.height,
+        )
+        zoom = min(2.6, 650 / clip.width)
+        return page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), clip=clip, alpha=False).tobytes("png")
+    finally:
+        document.close()
 
 
 @st.cache_data(show_spinner=False)
@@ -42,8 +64,8 @@ def render_colony_photographs() -> None:
     st.write("Browse family portraits, gatherings, homes, boats, schools and island life photographed in "
              "*The Colony: Stories from a Down East Island* by Lowell P. Beveridge, Jr. (2016).")
     st.caption(
-        f"{len(photos)} captioned photograph pages · The original source caption appears in each "
-        "photograph preview. Summaries here are attributed to the book; unrecorded photo dates remain unknown."
+        f"{len(photos)} cataloged photo-bearing pages · Previews show enlarged portions of original scans. "
+        "Summaries are attributed to the book; select a scan to see its complete printed caption."
     )
     categories = sorted({p["section"] for p in photos})
     search = st.text_input(
@@ -87,14 +109,16 @@ def render_colony_photographs() -> None:
                     # The captured image and original printed caption are in the
                     # page itself. No separately synthesized photograph is used.
                     st.image(
-                        scanned_page_preview(str(page_path), page, 570, crop_content=True),
+                        source_photo_preview(str(page_path), page, tuple(photo["preview_crop"])),
                         width="stretch",
                     )
                 st.write(photo["caption_summary"])
-                st.caption(
-                    f"The Colony (2016), PDF page {page} · {photo['section']} · "
-                    "Photograph date not independently verified"
+                source_date = photo.get("reported_capture_date")
+                date_note = (
+                    f"Book caption dates image {source_date}; independently unverified"
+                    if source_date else "Photograph date not documented in the catalog"
                 )
+                st.caption(f"The Colony (2016), PDF p. {page} · {photo['section']} · {date_note}")
                 route_link("View original scanned page and complete caption",
                            "?page=family-books&book_page="+str(page))
     if len(visible) < len(matches):
