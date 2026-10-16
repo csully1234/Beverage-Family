@@ -1,0 +1,134 @@
+{
+  "title": "Early Fox Islands: Beveridge names, land petitions, and the Carver connection",
+  "overview": "Research-linked documents, not new confirmed family relationships or surveyed holdings.",
+  "sources": [
+    {
+      "id": "putnam_1785",
+      "title": "1785 Fox Islands survey (Maine State Archives)",
+      "date": "1785",
+      "kind": "archival survey",
+      "url": "https://digitalmaine.com/planbook_knox_county/8/",
+      "detail": "Stone and Mathews survey made in October–November 1785, attested by Rufus Putnam; Maine State Archives, Knox County planbook p. 7, identifier 302962."
+    },
+    {
+      "id": "island_list_1785",
+      "title": "1785 list of Fox Islands",
+      "date": "1785",
+      "kind": "archival planbook list",
+      "url": "https://digitalmaine.com/planbook_9/2/",
+      "detail": "Original planbook listing North/South Fox Islands and surrounding named islands; Maine State Archives, Plan Book 9 p. 1.5."
+    },
+    {
+      "id": "fox_outline_1786",
+      "title": "1786 Fox Islands plan including Pulpit Harbor",
+      "date": "1786",
+      "kind": "archival survey copy",
+      "url": "https://digitalmaine.com/planbook_8/17/",
+      "detail": "Maine State Archives, Plan Book 8 p. 16, Jonathan Stone; indexed places include Pulpit Harbor and Crabtree's Point; linked in catalog to conditional grant March 13, 1786."
+    },
+    {
+      "id": "fox_copy_1838",
+      "title": "1838 copy of Fox Islands plan",
+      "date": "1838",
+      "kind": "archival map copy",
+      "url": "https://digitalmaine.com/planbook_9/1/",
+      "detail": "Maine State Archives, Plan Book 9 p. 1, copy prepared by George W. Coffin."
+    },
+    {
+      "id": "town_history_1889",
+      "title": "Brief Historical Sketch of the Town of Vinalhaven",
+      "date": "1889",
+      "kind": "published transcription",
+      "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+      "detail": "Printed pp. 9–11: transcript of islanders' 1785 petition and Massachusetts 1786 resolution. Do not count a later reprint as an independent petition."
+    },
+    {
+      "id": "carver_1935",
+      "title": "The Carver Family of New England — Clifford N. Carver",
+      "date": "1935",
+      "kind": "compiled genealogy / later transcription",
+      "url": "https://archive.org/details/carverfamilyofne00carv_0",
+      "detail": "Printed pp. 94–98 cover early settlers, petition list and 1786 grant; p. 108 discusses 700 acres at Carver's Harbor. Scan: PDF pp. 112–118 and 130."
+    },
+    {
+      "id": "eaton_1865",
+      "title": "History of Thomaston, Rockland, and South Thomaston, vol. II — Cyrus Eaton",
+      "date": "1865",
+      "kind": "compiled local genealogy",
+      "url": "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South",
+      "detail": "Printed pp. 146–147: Capt. Matthew Beverage of Hope, two spouses, ten named children, nephew Nathaniel and descendants."
+    },
+    {
+      "id": "colony_1988",
+      "title": "Genius at Riverhead: A Profile of Harold H. Beverage",
+      "date": "1988",
+      "kind": "biographical family appendix / secondary",
+      "url": "https://www.worldradiohistory.com/BOOKSHELF-ARH/Biography/Genius-at-Riverhead-Wallen-1988.pdf",
+      "detail": "Family-biographical genealogy identifies Matthew in the James Beveridge and Jean White line, to be verified with contemporary parentage records."
+    }
+  ],
+  "findings": [
+    {
+      "id": "settlers",
+      "date": "1785–1786",
+      "title": "Three Beveridge names among the Fox Islands land claimants",
+      "confidence": "Documented names; identities to reconcile",
+      "summary": "The copied 1785 petition names James Beveridge, Thomas Beveridge and Matthew Beveridge (a minor). George White and John Calderwood sign as attorneys for the inhabitants; the list itself must not be described as three surviving autograph signatures. The grant addresses qualifying settlers and their heirs, not a specified allotment to any one Beveridge household.",
+      "source_ids": [
+        "town_history_1889",
+        "carver_1935",
+        "putnam_1785",
+        "fox_outline_1786"
+      ],
+      "status": "Next: find original claimants' allotments and compare the 1785–86 plans with county deeds."
+    },
+    {
+      "id": "matthew",
+      "date": "1766?–1837?",
+      "title": "Matthew Beveridge — potentially an overlooked family branch",
+      "confidence": "Probable link requiring original record",
+      "summary": "The 1785 petition lists Matthew as a minor. A separate 1865 history describes Capt. Matthew Beverage of Hope, with marriages to Abigail Dyer and Clarissa Cobb, and ten named children: Harrison, Achsa, Louisa, Mary Miles, James Madison, Ezekiel G. D., Sarah Abby, Thomas Jefferson, George W. and Martha W. A later family appendix and user-contributed pedigrees suggest Matthew was a son of James Beveridge and Jean White, and a brother of Capt. Thomas Beverage. The source identities have not yet been independently proved to belong to one person; the date of birth about 1766 and death about 1837 remain leads, not verified dates.",
+      "source_ids": [
+        "town_history_1889",
+        "eaton_1865",
+        "colony_1988"
+      ],
+      "status": "Next: locate original baptism, probate, marriage, land or guardianship evidence. Do not merge his family into the main tree yet."
+    },
+    {
+      "id": "petitioner_dates",
+      "date": "March 1785",
+      "title": "Do not misread the petition as a list of personal signatures",
+      "confidence": "Document-supported caution",
+      "summary": "The printed transcription states that George White and John Calderwood signed as attorneys for the inhabitants and then enumerates the claimants. The site's James Beveridge Jr. currently has a death date in early March 1785. That date should not be overturned or silently reconciled simply because a March 1785 petition includes a James Beveridge; investigate the preparation date, original claim, and identity of the named James.",
+      "source_ids": [
+        "carver_1935",
+        "town_history_1889"
+      ],
+      "status": "Next: examine the original petition file and separately verify James's death and probate dates."
+    },
+    {
+      "id": "carver_farm",
+      "date": "18th–19th century",
+      "title": "Carver's Harbor property and shared island history",
+      "confidence": "Published genealogy, deed not located",
+      "summary": "Carver (1935), p. 108, reports Thaddeus Carver purchased 700 acres, a sawmill and buildings from Francis Cogswell for £260 at what later became Carver's Harbor, South Fox Island/Vinalhaven. The same book lists Carver and Beveridge claimants together in the land petition; this is geographic/community evidence, not proof that the Beveridges held the Carver acreage.",
+      "source_ids": [
+        "carver_1935"
+      ],
+      "status": "Next: locate the original Cogswell–Carver deed; never count these 700 acres as Beverage property."
+    },
+    {
+      "id": "carver_marriage",
+      "date": "19th century",
+      "title": "Carver/Beverage marriage needs its own lineage verification",
+      "confidence": "Existing tree entry, not proved in attached book",
+      "summary": "The site's family tree identifies Olive Leadbetter Carver as the wife of Albert Glover Beverage. The uploaded 1935 book includes a number of Israel Carver branches but does not independently establish her parentage or her marriage. Keep the existing relationship unchanged and investigate original 19th-century marriage and birth records before extending the Carver line.",
+      "source_ids": [
+        "carver_1935"
+      ],
+      "status": "Next: check North Haven/Vinalhaven vital records and probate for Olive's father and grandfather."
+    }
+  ],
+  "caveat": "The three 1785 petition names are not proven individual signature images; the 1786 resolution covers the island group (16,527 acres in the later transcriptions), not a family property award. Original map images may show historic locations but never automatically establish deeds, acreage or biological relationships."
+}
