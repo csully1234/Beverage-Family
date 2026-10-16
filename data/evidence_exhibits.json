@@ -425,5 +425,25 @@
     "association": "research_target",
     "preview_pdf": false,
     "collection": "Land and community records"
+  },
+  {
+    "id": "frank-may-north-haven-anniversary-1930",
+    "title": "1930 Courier-Gazette: Frank and May's 43rd wedding anniversary",
+    "date": "1930-10-18 (report of Oct. 15 celebration)",
+    "type": "Contemporary newspaper scan",
+    "access": "Original October 18, 1930 newspaper PDF; North Haven column",
+    "url": "https://fileserver-az.core.ac.uk/download/pdf/270235292.pdf",
+    "claim": "The North Haven column says Mr. and Mrs. Frank Beverage celebrated their 43rd wedding anniversary Wednesday evening, October 15, 1930. The 1937 Calderwood diary independently describes their 50th anniversary on the same date.",
+    "limits": "Two anniversary reports corroborate the commemorated 1887-10-15 marriage date, but neither is the marriage return. Do not assign May's maiden name or merge the couple with one of the separate Frank Beverage identities without other records.",
+    "rights": "Historical digitized newspaper linked at holding archive, not rehosted",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "event_ids": [
+      "event_frank_may_anniversary_1930"
+    ],
+    "association": "candidate",
+    "preview_pdf": true,
+    "collection": "Diaries and photographs"
   }
 ]
