@@ -1,0 +1,168 @@
+[
+  {
+    "id": "event_1749_james_jean_marriage_intention",
+    "date": "1749-02-06",
+    "date_precision": "exact",
+    "title": "James Beveridge and Jean White recorded their intention to marry",
+    "description": "The 1888 printed transcription of Brunswick marriage intentions includes James Beveridge and Jean White of Georgetown under February 6, 1749. This documents an intention, not a marriage ceremony. Whether the pair are the already-profiled James Beveridge Jr. and Jean (McKinney) White is a research hypothesis rather than an authenticated identification; no person IDs are assigned to this event.",
+    "category": "Early Maine family records",
+    "place": "Brunswick, Maine (intention); parties of Georgetown",
+    "people_involved": [],
+    "evidence_status": "Dated 1749 intention appears in an 1888 historical transcription; actual 1749 manuscript and identity comparison pending",
+    "sources": [
+      {
+        "title": "Brunswick Marriage Intentions, 1740–1764",
+        "repository": "The Bangor Historical Magazine, vol. 4 (1888), pp.92–95; transcription by Maine Genealogy Archives",
+        "url": "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html",
+        "record_type": "Transcript of historical town intention list",
+        "record_date": "1888",
+        "accessed": "2026-10-16",
+        "supports": "6 February 1749 marriage intention names James Beveridge and Jean White of Georgetown, not confirmation of ceremony",
+        "evidence_level": "Tier 2/3 — printed transcription of municipal marriage intention; original register not reviewed"
+      }
+    ]
+  },
+  {
+    "id": "event_henry_ella_marriage_1898",
+    "date": "1898-12-17",
+    "date_precision": "exact",
+    "title": "Henry T. Beverage and Ella Allen recorded in marriage index",
+    "description": "A FamilySearch genealogy profile for Ella Allen cites Maine Marriage Index records identifying her marriage to Henry T. Beverage in Rockland on December 17, 1898. The record is an indexed original-reference lead, and the underlying marriage return has not yet been examined.",
+    "category": "Marriage / family history",
+    "place": "Rockland, Maine",
+    "people_involved": [
+      "henry_t_beverage_1841_rockland",
+      "ella_allen_beverage_1854"
+    ],
+    "evidence_status": "Indexed marriage record linked by FamilySearch; original civil register not inspected",
+    "sources": [
+      {
+        "title": "Ella Allen (1854–1919), FamilySearch family and sources",
+        "repository": "FamilySearch / Maine Marriage Index, 1892–1966",
+        "url": "https://ancestors.familysearch.org/en/GM6N-6CV",
+        "record_type": "Genealogy profile with marriage index citation",
+        "record_date": "1898-12-17",
+        "accessed": "2026-10-16",
+        "supports": "Marriage of Ella Allen and Henry T. Beverage in Rockland, 17 Dec 1898; indexed record available from FamilySearch",
+        "evidence_level": "Tier 2/4 — original index referenced in user-contributed profile"
+      }
+    ]
+  },
+  {
+    "id": "event_north_haven_first_high_school_graduates_1907",
+    "date": "1907",
+    "date_precision": "year",
+    "title": "Two Beverage students in North Haven's first high-school graduating class",
+    "description": "The North Haven Historical Society identifies Elsie Beverage and Jennie Beverage among five students graduating in 1907 at Pulpit Harbor Church, in the town's first high-school graduation. These names are not automatically linked to similarly named profiles without additional records.",
+    "category": "Education / North Haven daily life",
+    "place": "Pulpit Harbor Church, North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Documented in North Haven Historical Society retrospective; original graduation list/photo pending",
+    "sources": [
+      {
+        "title": "A Free High School",
+        "repository": "North Haven Historical Society",
+        "url": "https://www.northhavenmainehistoricalsociety.org/a-free-high-school.html",
+        "record_type": "Institutional historical article quoting town reports and reminiscences",
+        "record_date": "2026-accessed",
+        "accessed": "2026-10-16",
+        "supports": "1907 first high-school graduation named Elsie and Jennie Beverage with three other students",
+        "evidence_level": "Tier 3 — local historical society research"
+      }
+    ]
+  },
+  {
+    "id": "event_1927_pulpit_harbor_auction_ad",
+    "date": "1927-07-30",
+    "date_precision": "exact",
+    "title": "1927 newspaper advertises Pulpit Harbor homestead auction by Frank Beverage",
+    "description": "The Courier Gazette dated July 30, 1927 announces an August 24, 1927 public auction of the Sands H. Witherspoon homestead at Pulpit Harbor and names Frank Beverage as auctioneer. This is proof of an advertised event, NOT proof the sale occurred, proof of property ownership by Frank, or proof of which Frank Beverage it was.",
+    "category": "Newspaper / Pulpit Harbor property history",
+    "place": "Pulpit Harbor, North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Contemporary newspaper advertisement; auction outcome and Frank's identity unresolved",
+    "sources": [
+      {
+        "title": "Courier Gazette, July 30, 1927",
+        "repository": "Digitized period newspaper scan, Wikimedia Commons",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Courier_Gazette_July_30_1927.pdf",
+        "record_type": "Contemporary paid auction notice",
+        "record_date": "1927-07-30",
+        "accessed": "2026-10-16",
+        "supports": "Notice lists the Witherspoon homestead auction planned Aug 24 at Pulpit Harbor, Frank Beverage, auctioneer",
+        "evidence_level": "Tier 1 — contemporary newspaper advertisement of planned sale"
+      }
+    ]
+  },
+  {
+    "id": "event_1975_north_haven_rescued_town_archives",
+    "date": "1975-11-13",
+    "date_precision": "exact",
+    "title": "Town-deed discoveries help inspire North Haven Historical Society",
+    "description": "A North Haven Historical Society history reprinting Lewis Haskell's February 1994 recollection says that on November 13, 1975, sixteen residents met to discuss a historical society after Sam Beverage, Lewis Haskell and other community members retrieved old documents and photographs from the town dump. The recovered materials included an original road map from Pulpit Harbor, bills for the first bridge, school lot deeds and other town records. The recovered originals are not reproduced on this website without permission.",
+    "category": "Historical preservation / community",
+    "place": "North Haven, Maine",
+    "people_involved": [
+      "samuel_hiram_beverage_1917"
+    ],
+    "evidence_status": "Dated 1975 meeting in 1994 participant recollection hosted by local historical society; archives' current holdings to verify",
+    "sources": [
+      {
+        "title": "Our History — 1975 organizing meeting and recovered town records",
+        "repository": "North Haven Historical Society; reprints Lewis Haskell, Inter Island News, Feb. 1994",
+        "url": "https://www.northhavenmainehistoricalsociety.org/history.html",
+        "record_type": "Participant recollection republished by heritage institution",
+        "record_date": "1994-02",
+        "accessed": "2026-10-16",
+        "supports": "Meeting date 13 Nov 1975, recovery of old school lot deeds, bridge bills and an early Pulpit Harbor road map by Sam Beverage and neighbors",
+        "evidence_level": "Tier 3 — firsthand historical reminiscence published later"
+      }
+    ]
+  },
+  {
+    "id": "event_frank_may_golden_wedding_diary_1937",
+    "date": "1937-10-15",
+    "date_precision": "exact",
+    "title": "Frank and May Beverage's golden wedding recorded in an island diary",
+    "description": "Tonny Calderwood recorded attending the 50th anniversary celebration of 'Uncle Frank' and 'Aunt May' on October 15, 1937, with approximately 25 guests. The transcribed diary also preserves wording from the back of a photograph identifying Mr. and Mrs. Frank Beverage at their golden wedding. The photo image is not part of this repository, and whether this Frank was the site's Frank Beverage (born 1861) still requires the couple's 1887 marriage record. The copyright holders require permission for excerpts or images.",
+    "category": "Personal history / diary",
+    "place": "North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Contemporaneous 1937 diary and photo-back caption transcribed by NHHS; identity with site's 1861 Frank remains a hypothesis",
+    "sources": [
+      {
+        "title": "Tonny & Annie Calderwood's 1937 Diary, 15 October, p. 29/38",
+        "repository": "North Haven Historical Society (transcript by Elizabeth MacLean; owners Ken and Shaunagh Robbins)",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1937.pdf#page=29",
+        "record_type": "Transcribed contemporary diary and historical photo caption",
+        "record_date": "1937-10-15",
+        "accessed": "2026-10-16",
+        "supports": "Frank and May Beverage golden wedding anniversary, approximately 25 attendees, referenced photograph and caption",
+        "evidence_level": "Tier 1/2 — direct daily diary, hosted transcription; original photo not obtained"
+      }
+    ]
+  },
+  {
+    "id": "event_samuel_calderwood_correspondence_1967",
+    "date": "1967-06-23",
+    "date_precision": "exact",
+    "title": "Calderwood family research passed to a Samuel Beverage",
+    "description": "On June 23, 1967, Tonny Calderwood recorded writing to Samuel Beverage with more family information, following a March 11 diary entry about a letter from Sammy Beverage requesting Calderwood material. These first-person notes document personal genealogy research on North Haven. It is plausible but not yet separately proved that this correspondent was Samuel Hiram Beverage, born in 1917, so no person ID is assigned.",
+    "category": "Family-history research / personal correspondence",
+    "place": "North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Contemporary diary identifies Samuel Beverage by name; identity with existing profile not established",
+    "sources": [
+      {
+        "title": "Tonny & Annie Calderwood's 1967 Diary, 11 March (p.22) and 23 June (p.54)",
+        "repository": "North Haven Historical Society (transcript by Elizabeth MacLean; owners Ken and Shaunagh Robbins)",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1967.pdf#page=54",
+        "record_type": "Contemporary personal diary, online transcription",
+        "record_date": "1967-06-23",
+        "accessed": "2026-10-16",
+        "supports": "March letter from 'Sammy Beverage' requesting family details and June letter to Samuel Beverage supplying more information",
+        "evidence_level": "Tier 1/2 — first-person diary hosted as transcript; original letters have not been located"
+      }
+    ]
+  }
+]
