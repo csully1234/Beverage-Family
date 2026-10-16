@@ -24,7 +24,7 @@ from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
 from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
-from event_source_access import render_event_source_access
+from evidence_explorer import render_event_browser, render_profile_browser, render_profile_highlights
 from archive_ui import (
     render_archive_page, render_places_page, render_map_page,
     render_person_archive, render_event_archive, source_link,
@@ -852,8 +852,7 @@ def render_event_card(
             if involved:
                 route_markdown("**People:** " + ", ".join(involved))
             render_event_archive(str(event["id"]), load_archive())
-            if event.get("sources"):
-                render_event_source_access(event["sources"], compact=compact)
+            render_event_browser(event, compact=compact)
 
 
 def render_relation_group(
@@ -945,6 +944,9 @@ def render_person_profile(
         st.warning("Needs more research — this profile contains one or more provisional leads.")
     if person.get("research_completeness"):
         st.caption(f"Research status: {person['research_completeness']}")
+    # Place real source access at the top of a profile, not hidden behind an
+    # unrelated research archive or an unclickable citation count.
+    render_profile_highlights(person_id)
 
     story_tab, family_tab, places_tab, sources_tab = st.tabs(
         ["Story", "Family", "Places", "Historical records"]
@@ -1028,12 +1030,7 @@ def render_person_profile(
     with sources_tab:
         render_context("person", person_id, people_by_id, limit=5)
         archive_records = load_archive().sources_for("person", person_id)
-        if archive_records:
-            st.subheader("Original historical sources")
-            for source in archive_records:
-                route_markdown(f"- {source_link(source)}")
-        st.subheader("Profile sources")
-        render_sources(person.get("sources", []))
+        render_profile_browser(person, archive_records)
 
         date_provenance = person.get("date_provenance", {})
         if date_provenance:
