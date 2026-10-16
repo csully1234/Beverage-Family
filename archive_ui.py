@@ -9,6 +9,7 @@ from archive import ArchiveIndex, archive_url, safe_url
 from family_data import format_date
 from conflict_review_ui import render_review_source, review_data
 from historical_map import build_historical_map_html
+from historical_atlas import render_historical_atlas
 from research_collection_ui import (
     load_collection, render_context, render_register, render_register_source,
 )
@@ -183,18 +184,36 @@ def render_places_page(archive: ArchiveIndex) -> None:
 
 def render_map_page(archive: ArchiveIndex) -> None:
     st.title("Historical Map")
-    st.write("Explore the family’s places, from Penobscot Bay to the wider world. Select a pin to read the connections and their evidence.")
-    if not archive.places:
-        st.info("No reviewed historical places have been added yet.")
-        return
-    html = build_historical_map_html(archive, person_id=st.query_params.get("person", ""),
-                                     event_id=st.query_params.get("event", ""),
-                                     place_id=st.query_params.get("place", ""))
-    st.iframe(html, height=1050)
-    st.caption("Source and profile links open in a new tab. Modern map: © OpenStreetMap contributors. Cemetery indexes are corroboration; broad markers do not identify a building, private home, or historic boundary.")
-    route_markdown(f"[Browse place records]({archive_url('places')}) · [Browse supporting sources]({archive_url('archive')})")
-    route_link("Explore property research and unlocated sites", archive_url("collection", topic="Land and property"))
-
+    st.write(
+        "Explore documented family places on the modern map, or browse original "
+        "1859 map scans showing North Haven and Vinalhaven residences."
+    )
+    places_tab, historic_tab = st.tabs(["Interactive historical places", "Original 1859 maps"])
+    with places_tab:
+        if not archive.places:
+            st.info("No reviewed historical places have been added yet.")
+        else:
+            html = build_historical_map_html(
+                archive, person_id=st.query_params.get("person", ""),
+                event_id=st.query_params.get("event", ""),
+                place_id=st.query_params.get("place", ""),
+            )
+            st.iframe(html, height=1050)
+            st.caption(
+                "Source and profile links open in a new tab. Modern map: © OpenStreetMap "
+                "contributors. Cemetery indexes are corroboration; broad markers do "
+                "not identify a building, private home, or historic boundary."
+            )
+            route_markdown(
+                f"[Browse place records]({archive_url('places')}) · "
+                f"[Browse supporting sources]({archive_url('archive')})"
+            )
+            route_link(
+                "Explore property research and unlocated sites",
+                archive_url("collection", topic="Land and property"),
+            )
+    with historic_tab:
+        render_historical_atlas()
 
 def render_person_archive(person_id: str, archive: ArchiveIndex) -> None:
     links = archive.by_subject["person", person_id]

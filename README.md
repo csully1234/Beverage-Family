@@ -78,6 +78,28 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### 1859 Fox Islands map gallery
+
+The existing `?page=map` Historical Map page has two tabs. The first retains
+the sourced modern place-pin map with its existing deep links; the second shows
+three original 1859 map extracts, all from J. Chace Jr. & Co.'s *Map of Waldo
+County, Maine*: the North Haven/Vinalhaven island sheet, North Haven village
+inset, and Carver's Harbor/Vinalhaven inset.
+
+`historical_atlas.py` supplies descriptions, provenance and exact externally
+hosted scan URLs; `static/historical_atlas.html` supplies an independent,
+mouse/touch/keyboard-operable zoom and pan viewer. The source imagery remains
+served by the [Historical Maps of North Haven Island and Environs](https://holmgren.org/NorthHavenHistoricalMaps/)
+collection; this repository has not copied or altered the original scans.
+The original image and three-file ZIP are always linked for full-resolution
+access or if external hosting becomes temporarily unavailable.
+
+**Research boundaries:** The map's surname/house labels are location leads,
+not surveyed parcel outlines, title evidence, or acreage figures. The possible
+"B. C. Beverage" identification is provisional, not a confirmed property
+assignment. No people, coordinates, historical relationships, or property
+records were modified to add this viewer.
+
 ### Research collection — 14 October 2026
 
 Open `?page=collection`. Findings link from relevant profiles, places and timeline
