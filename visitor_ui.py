@@ -16,6 +16,7 @@ import streamlit as st
 from routing_ui import route_link, route_markdown
 from research_collection_ui import load_collection, render_finding
 from family_data import life_span, year_from_date
+from evidence_explorer import render_exhibit_library
 
 ROOT = Path(__file__).resolve().parent
 MEDIA_ROOT = (ROOT / "static" / "approved_media").resolve()
@@ -403,8 +404,9 @@ def render_media_page() -> None:
         st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
         route_link("Open the complete book and its visual collection", "?page=family-books")
     from colony_photos import render_colony_photographs
-    photos_tab, images_tab, documents_tab = st.tabs(
-        ["Family photographs", "Other historical images", "Historical documents"]
+    photos_tab, images_tab, documents_tab, evidence_tab = st.tabs(
+        ["Family photographs", "Other historical images", "Historical documents",
+         "Explore original evidence"]
     )
     with photos_tab:
         render_colony_photographs()
@@ -453,6 +455,8 @@ def render_media_page() -> None:
                 st.caption(document["date"])
                 st.write(document["summary"])
                 route_link("Read document and original pages", "?page=documents&doc=" + id_)
+    with evidence_tab:
+        render_exhibit_library()
 
 
 def render_document_page() -> None:
