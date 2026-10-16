@@ -290,3 +290,26 @@ Old bookmarked routes (`?page=collection&view=Inventories&inventory=Search+Log`
 and `?page=research`) open the curated Historical Discoveries screen rather
 than an internal spreadsheet. Deep links to specific historical findings and
 archival sources remain functional. The original scanned-book work is unchanged.
+
+### Book photography and evidence links (15 October 2026)
+- The family's **Photographs & Documents** page now opens on a dedicated
+  **Family photographs** tab featuring 82 individually captioned photographic
+  pages from Lowell P. Beveridge Jr.'s *The Colony* (2016). Search by name,
+  location or subject, filter by photograph subject, and browse in book order.
+  Load more photographs in batches as needed; every caption links to its
+  original full-size book page, where the complete printed caption remains.
+- The original photographs and printed text come directly from the authorized,
+  watermarked-free 305-page PDF in `static/books`. Images are rendered on demand;
+  they are not separately invented/restored or duplicated in GitHub.
+- All 103 image-bearing book pages remain available in the complete book. The
+  82 photograph pages exclude text-only, tables, maps, and decorative headings.
+  Capture dates and person identifications are attributed to the book and are
+  not upgraded into independently confirmed genealogical facts.
+- **Event and birth-date source access**: the complete timeline and smaller
+  event cards now open individual citations under each event. Where the
+  original record URL or a specific Find a Grave memorial ID exists, users
+  can follow it. When the repository only stores a title like "Riposta
+  Funeral Home obituary", the visitor sees "bibliographic reference only"
+  until a verified original link/scan is acquired; the count never implies
+  that digitized clips are hosted.
+- Original internal research notebooks remain outside visitor navigation.
