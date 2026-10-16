@@ -952,5 +952,51 @@
         "evidence_level": "Tier 3 — firsthand historical reminiscence published later"
       }
     ]
+  },
+  {
+    "id": "event_frank_may_golden_wedding_diary_1937",
+    "date": "1937-10-15",
+    "date_precision": "exact",
+    "title": "Frank and May Beverage's golden wedding recorded in an island diary",
+    "description": "Tonny Calderwood recorded attending the 50th anniversary celebration of 'Uncle Frank' and 'Aunt May' on October 15, 1937, with approximately 25 guests. The transcribed diary also preserves wording from the back of a photograph identifying Mr. and Mrs. Frank Beverage at their golden wedding. The photo image is not part of this repository, and whether this Frank was the site's Frank Beverage (born 1861) still requires the couple's 1887 marriage record. The copyright holders require permission for excerpts or images.",
+    "category": "Personal history / diary",
+    "place": "North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Contemporaneous 1937 diary and photo-back caption transcribed by NHHS; identity with site's 1861 Frank remains a hypothesis",
+    "sources": [
+      {
+        "title": "Tonny & Annie Calderwood's 1937 Diary, 15 October, p. 29/38",
+        "repository": "North Haven Historical Society (transcript by Elizabeth MacLean; owners Ken and Shaunagh Robbins)",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1937.pdf#page=29",
+        "record_type": "Transcribed contemporary diary and historical photo caption",
+        "record_date": "1937-10-15",
+        "accessed": "2026-10-16",
+        "supports": "Frank and May Beverage golden wedding anniversary, approximately 25 attendees, referenced photograph and caption",
+        "evidence_level": "Tier 1/2 — direct daily diary, hosted transcription; original photo not obtained"
+      }
+    ]
+  },
+  {
+    "id": "event_samuel_calderwood_correspondence_1967",
+    "date": "1967-06-23",
+    "date_precision": "exact",
+    "title": "Calderwood family research passed to a Samuel Beverage",
+    "description": "On June 23, 1967, Tonny Calderwood recorded writing to Samuel Beverage with more family information, following a March 11 diary entry about a letter from Sammy Beverage requesting Calderwood material. These first-person notes document personal genealogy research on North Haven. It is plausible but not yet separately proved that this correspondent was Samuel Hiram Beverage, born in 1917, so no person ID is assigned.",
+    "category": "Family-history research / personal correspondence",
+    "place": "North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Contemporary diary identifies Samuel Beverage by name; identity with existing profile not established",
+    "sources": [
+      {
+        "title": "Tonny & Annie Calderwood's 1967 Diary, 11 March (p.22) and 23 June (p.54)",
+        "repository": "North Haven Historical Society (transcript by Elizabeth MacLean; owners Ken and Shaunagh Robbins)",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1967.pdf#page=54",
+        "record_type": "Contemporary personal diary, online transcription",
+        "record_date": "1967-06-23",
+        "accessed": "2026-10-16",
+        "supports": "March letter from 'Sammy Beverage' requesting family details and June letter to Samuel Beverage supplying more information",
+        "evidence_level": "Tier 1/2 — first-person diary hosted as transcript; original letters have not been located"
+      }
+    ]
   }
 ]
