@@ -95,6 +95,8 @@ class VisitorExperienceTests(unittest.TestCase):
         from event_source_access import source_target
         self.assertEqual(source_target("Find A Grave memorial 157242087"),
                          ("Find A Grave memorial 157242087","https://www.findagrave.com/memorial/157242087"))
+        self.assertEqual(source_target("Grace Beverage obituary"),
+                         ("Grace Beverage obituary", "https://www.legacy.com/us/obituaries/mainetoday-centralmaine/name/grace-beverage-obituary?id=25022664"))
         self.assertEqual(source_target("Riposta Funeral Home obituary"),
                          ("Riposta Funeral Home obituary",None))
         self.assertEqual(source_target({"title":"Original scan","url":"https://archive.org/details/example"}),
