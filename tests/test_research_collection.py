@@ -60,8 +60,10 @@ class ResearchCollectionTests(unittest.TestCase):
 
     def test_identity_candidates_not_added_to_genealogy(self):
         people = {r["id"] for r in self.site["people"]}
-        self.assertEqual(len(people), 180)
-        self.assertEqual(len(self.site["events"]), 127)
+        # The Oct 14 source snapshot is immutable; later separately-sourced
+        # profiles and historical events are additive overlays.
+        self.assertEqual(len(people), 180 + len(self.site["phase4_people"]))
+        self.assertEqual(len(self.site["events"]), 127 + len(self.site["phase4_events"]))
         self.assertTrue({"amelia_beverage_1833", "amelia_beverage_1833_child"} <= people)
         self.assertFalse(any(pid.startswith("RQ-P") for pid in people))
         self.assertEqual(self.collection.findings["BF-R049"]["Confidence"], "Conflict")
