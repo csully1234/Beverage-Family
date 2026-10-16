@@ -65,6 +65,62 @@
       "kind": "biographical family appendix / secondary",
       "url": "https://www.worldradiohistory.com/BOOKSHELF-ARH/Biography/Genius-at-Riverhead-Wallen-1988.pdf",
       "detail": "Family-biographical genealogy identifies Matthew in the James Beveridge and Jean White line, to be verified with contemporary parentage records."
+    },
+    {
+      "id": "mgs2025_fox",
+      "title": "The Maine Genealogist, vol. 47, no. 4 (Nov 2025), pp. 170–182",
+      "date": "2025",
+      "kind": "documented genealogical article with primary citations",
+      "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+      "detail": "David Flanagan and Barbara Beverage Reeves, 'The Ebenezer Eames Family: Early Settlers of North Fox Island, Maine', printed p. 170 / PDF p.27, footnotes 5–6. It dates the Fox Islands petition June 1, 1785, and cites a 1786 Putnam report with early settlers' years of residence, Box 001 (paper), Maine State Archives. The original report has not yet been inspected."
+    },
+    {
+      "id": "topsham1878",
+      "title": "History of Brunswick, Topsham, and Harpswell (Wheeler, 1878)",
+      "date": "1878",
+      "kind": "full historical town history",
+      "url": "https://www.loc.gov/resource/gdcmassbookdig.historyofbrunswi01whee/",
+      "detail": "Public domain complete 1878 town history, including early Topsham/Brunswick map key and Henry family section."
+    },
+    {
+      "id": "topsham_resident_index",
+      "title": "Early Topsham Settlers, transcription of Wheeler's 1878 list",
+      "date": "1878",
+      "kind": "later copied index",
+      "url": "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html",
+      "detail": "Lists Samuel Beveridge in 1752 on lot 3 and James Beveridge in 1758 on lot 7. Dates, identity and title require original records."
+    },
+    {
+      "id": "topsham_map_key",
+      "title": "1878 map key naming Samuel Beveridge and a Brunswick Beverage location",
+      "date": "1878",
+      "kind": "published map index",
+      "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-5.htm",
+      "detail": "Numbered historical map list calls Topsham location 3 Samuel Beveridge and Brunswick 25 Beverage; the underlying plan/era and original image should be inspected before geolocation."
+    },
+    {
+      "id": "wheeler_mercy_1776",
+      "title": "Wheeler 1878 Henry family sketch, printed page 836",
+      "date": "1878",
+      "kind": "historical local history (tentative wording)",
+      "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+      "detail": "States James, son of earlier Topsham resident James Henry, was probably married Feb. 15, 1776 to Mercy Beveridge. Needs vital/marriage/probate confirmation."
+    },
+    {
+      "id": "hope_counties",
+      "title": "Hope, Maine historical county sequence",
+      "date": "2026",
+      "kind": "reference for archival jurisdiction",
+      "url": "https://www.mainegenealogy.net/place_record.asp?place=hope",
+      "detail": "Hope was in Lincoln County until 1827, Waldo until 1860, and Knox thereafter; do not search only later Knox estate-file collection for a ca.1837 death."
+    },
+    {
+      "id": "waldo_deeds",
+      "title": "Waldo County Registry of Deeds official access",
+      "date": "2026",
+      "kind": "government records portal",
+      "url": "https://www.waldocountyme.gov/178/Registry-of-Deeds",
+      "detail": "Official registry links the state-wide land records portal and describes historic deeds/plans, but a given 18th-century Beveridge record is not yet identified."
     }
   ],
   "findings": [
@@ -97,15 +153,16 @@
     },
     {
       "id": "petitioner_dates",
-      "date": "March 1785",
+      "date": "1785 (1 June reported in 2025 study)",
       "title": "Do not misread the petition as a list of personal signatures",
       "confidence": "Document-supported caution",
-      "summary": "The printed transcription states that George White and John Calderwood signed as attorneys for the inhabitants and then enumerates the claimants. The site's James Beveridge Jr. currently has a death date in early March 1785. That date should not be overturned or silently reconciled simply because a March 1785 petition includes a James Beveridge; investigate the preparation date, original claim, and identity of the named James.",
+      "summary": "A 2025 scholarly genealogical article dates the Fox Islands petition to 1 June 1785, while the 1935 Carver history describes a March 1785 local meeting before the petition. The transcribed list is not individual autograph signatures; George White and John Calderwood signed as attorneys. The website's James Beveridge Jr. currently has a death date of 1 March 1785. These dates, and which James was named, remain unresolved and are NOT evidence to automatically change his death record.",
       "source_ids": [
         "carver_1935",
-        "town_history_1889"
+        "town_history_1889",
+        "mgs2025_fox"
       ],
-      "status": "Next: examine the original petition file and separately verify James's death and probate dates."
+      "status": "Request original June 1785 petition and verify James's probate/death chronology. March meeting and June presentation should not be conflated."
     },
     {
       "id": "carver_farm",
@@ -128,6 +185,55 @@
         "carver_1935"
       ],
       "status": "Next: check North Haven/Vinalhaven vital records and probate for Olive's father and grandfather."
+    },
+    {
+      "id": "first_settler_statement",
+      "date": "1785–1786",
+      "title": "Early settlers declared how long they had lived on Fox Islands",
+      "confidence": "Published archival citation; original report not yet inspected",
+      "summary": "A 2025 article by David Flanagan and Barbara Beverage Reeves cites 'General Putnam's Report and Description', dated 18 March 1786, Box 001 (paper), Maine State Archives; it reports that island settlers declared the number of years since their arrival. The original data may help test James, Thomas and Matthew Beveridge's presence, but no specific Beveridge arrival year has been retrieved.",
+      "source_ids": [
+        "mgs2025_fox",
+        "putnam_1785"
+      ],
+      "status": "Request the March 18, 1786 report (not just the October–November 1785 map); transcribe entries for James, Thomas, Matthew and household neighbors."
+    },
+    {
+      "id": "topsham1750s",
+      "date": "1752–1758",
+      "title": "James and Samuel Beveridge in the Topsham land record trail",
+      "confidence": "Historical map key and compiled index; identities not proven",
+      "summary": "The 1878 Wheeler history includes a map key naming 'Samuel Beveridge' at Topsham location 3 and an unnamed 'Beverage' at Brunswick location 25. A derivative early-settlers index gives Samuel Beveridge, 1752, lot 3 and James Beveridge, 1758, lot 7. This does not establish whether either was James Beveridge Sr., Jr. or Samuel Beveridge (b. ca. 1702 in the current family tree), nor does it provide acreage.",
+      "source_ids": [
+        "topsham1878",
+        "topsham_resident_index",
+        "topsham_map_key"
+      ],
+      "status": "Locate 1750s grant books/deeds and check the original 1878 map. Keep Samuel's relationship to James as an open question."
+    },
+    {
+      "id": "mercy_henry_1776",
+      "date": "1776 (tentative)",
+      "title": "Potential given name of Mercy Beveridge's husband: James Henry",
+      "confidence": "Tentative secondary-family-history identification",
+      "summary": "Wheeler's 1878 Topsham family history says the younger James Henry 'probably' married Mercy Beveridge on 15 February 1776. The existing website names a spouse in Mercy Beveridge Henry's record, but the scanned history does not independently prove this is the same Mercy or name her father. Do not change the person record until an original marriage or probate link is found.",
+      "source_ids": [
+        "wheeler_mercy_1776",
+        "topsham1878"
+      ],
+      "status": "Seek marriage intentions/returns and Topsham records for Feb 1776, then check Henry probate and 1790/1800 households."
+    },
+    {
+      "id": "matthew_courthouse",
+      "date": "c. 1837 (unverified)",
+      "title": "Locate Matthew's potential estate in the correct historic county",
+      "confidence": "County jurisdiction confirmed; estate not located",
+      "summary": "Hope moved from Lincoln County to Waldo County in 1827 and then into Knox County in 1860. If Capt. Matthew Beverage died in Hope around 1837 as later pedigree sources report, his probate should initially be sought in Waldo-era records, not the Knox estate-file collection beginning in 1861. Neither the death date nor an actual probate entry is yet proved.",
+      "source_ids": [
+        "hope_counties",
+        "eaton_1865"
+      ],
+      "status": "Search Waldo probate books/index under Beverage/Beveridge/Bevridge, and Hope town returns; request the estate file if identified."
     }
   ],
   "caveat": "The three 1785 petition names are not proven individual signature images; the 1786 resolution covers the island group (16,527 acres in the later transcriptions), not a family property award. Original map images may show historic locations but never automatically establish deeds, acreage or biological relationships."
