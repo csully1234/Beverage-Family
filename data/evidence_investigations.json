@@ -7,6 +7,7 @@
     "summary": "A 1939-dated Thomaston plot card and a 1954 North Haven self-reported birth inscription cannot describe the same man if their dates are correct. The 1937 photo belongs to a Frank-and-May couple, but their exact identification is not yet proved.",
     "known": [
       "The 1937 Calderwood diary records a 50th wedding anniversary for Frank and May on October 15 and mentions a photograph caption; an October 1887 wedding is a strong inference, not yet confirmed by a marriage register.",
+      "The contemporary October 18, 1930 Courier-Gazette NORTH HAVEN column reports the couple celebrated their 43rd wedding anniversary on Wednesday October 15. This independently corroborates the 1937 diary's fiftieth-anniversary date, strengthening October 15, 1887 as the commemorated marriage date, not yet a certified marriage return.",
       "A historical 1954 autograph-album transcription reports a North Haven Frank Beverage born January 14, 1861.",
       "The Thomaston Village Cemetery lot table records a different Frank with a February 5, 1939 card date and includes an Orra S. Roney burial. A 1911 newspaper reports an Orra Roney visiting a Frank Beverage Green Street household.",
       "The existing North Haven Frank profile already records work as a butcher, hides dealer, treasurer and auctioneer from independent documents."
@@ -25,6 +26,7 @@
     ],
     "source_ids": [
       "1937-frank-may-diary",
+      "frank-may-north-haven-anniversary-1930",
       "frank-north-haven-autograph-1954",
       "frank-thomaston-cemetery-1939",
       "frank-greenstreet-newspaper-1911"
@@ -34,6 +36,7 @@
     ],
     "event_ids": [
       "event_frank_may_golden_wedding_diary_1937",
+      "event_frank_may_anniversary_1930",
       "event_frank_autograph_at_north_haven_1954",
       "event_thomaston_frank_plot_card_1939",
       "event_thomaston_frank_orra_notice_1911"
