@@ -10,7 +10,7 @@ from routing_ui import route_markdown
 
 ROOT = Path(__file__).parent
 ASSET = ROOT / "static" / "historical_atlas.html"
-EVIDENCE = ROOT / "data" / "early_fox_islands_evidence.json"
+EVIDENCE = ROOT / "research" / "early_fox_islands_evidence.json"
 SOURCE = "https://holmgren.org/NorthHavenHistoricalMaps/"
 ZIP_URL = SOURCE + "NorthHaven-Vinalhaven1859.zip"
 
