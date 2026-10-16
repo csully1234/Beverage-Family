@@ -80,7 +80,7 @@ class HistoricalAtlasTests(unittest.TestCase):
         self.assertIn("not a deed boundary", html)
         self.assertNotIn("owned the entire island", html.lower())
         page = (ROOT / "archive_ui.py").read_text(encoding="utf-8")
-        self.assertIn('st.tabs(["Interactive historical places", "Original 1859 maps"])', page)
+        self.assertIn('st.tabs(["Interactive historical places", "Historic maps & early records"])', page)
         self.assertIn("render_historical_atlas()", page)
 
 
