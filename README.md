@@ -78,6 +78,40 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### Four open family-history investigations (October 2026)
+
+**Photographs & Documents → Explore original evidence** now includes a
+source-first **Family history investigations** panel. Family members
+can explore four unresolved historical questions — the multiple Frank
+Beverages, Nathaniel's disputed parentage, original Pulpit Harbor deed
+and bridge records, and the 1749 James/Jean Georgetown intention — and
+see what is documented, what remains tentative and which original
+documents could settle each question. The profile of a person involved
+in a case links directly into that investigation.
+
+New original-evidence references include a **completely free, public-domain
+scan of Cyrus Eaton's actual 1865 Volume II**, a 1911 newspaper notice
+naming a separate Frank Beverage household and visitor Orra Roney, a
+**1939 Thomaston cemetery lot-card transcription**, and a 1954 North
+Haven Frank autograph-album entry. The last two cannot describe the same
+Frank if accurately dated; *neither* is converted into a false
+birth, death or genealogy relationship.
+
+The Pulpit Harbor investigation identifies digitized **Knox County
+1888-era deed indexes** to pursue next; no deed or ancestral parcel
+boundary has yet been verified. The current data remain additive:
+`data/phase6_events.json` records three dated identity-research events
+without changing old events or persons.
+
+- Four cases: `data/evidence_investigations.json`
+- Claims and links: `data/evidence_exhibits.json`
+- Source-level explanations and evidence boundaries:
+  `research/phase6_original_identity_and_land_cases_2026-10-16.md`
+- Regressions: `tests/test_investigation_cases.py`
+
+**No external email, purchase, third-party image copy, genealogical
+parentage guess, merge or deployment is authorized by this change.**
+
 ### Original evidence explorer — accessible source files and historical context (October 2026)
 
 Open actual supporting records from **People** profiles and **Family Timeline**
