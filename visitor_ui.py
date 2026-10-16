@@ -23,13 +23,43 @@ MEDIA_MANIFEST = ROOT / "data" / "media_manifest.json"
 
 STORIES = (
     {
+        "id": "matthew-rockland-descendants-1865",
+        "title": "Matthew's reported children and Nathaniel's separate family",
+        "period": "Early 1800s to 1865",
+        "summary": "Explore Matthew's ten reported children and the Rockland relatives listed in a near-contemporary published history.",
+        "body": "Cyrus Eaton's 1865 history names Capt. Matthew Beverage of Hope, two wives, ten children and several grandchildren. It separately describes Nathaniel Beverage (born about 1804), his wife Sarah Alexander and their three children. These are published family groups, not ten independently certified relationships. Nathaniel's father and the exact degree of his connection to Matthew remain unproved. Nathaniel born about 1804 must not be confused with Nathaniel Winslow Beverage born 1776.",
+        "terms": ("Matthew", "Nathaniel", "Beverage"),
+        "family_group": true,
+        "source_links": (
+            ("Read the 1865 family history, vol. II, pp.146–147", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+            ("Compare the compiled Nathaniel parentage hypothesis", "https://genealogyofnewengland.com/f_86c9.htm"),
+            ("Indexed marriage evidence for Henry T. and Ella Allen", "https://ancestors.familysearch.org/en/GM6N-6CV"),
+        ),
+    },
+    {
+        "id": "north-haven-preserving-family-history",
+        "title": "When North Haven saved its history",
+        "period": "1907–2009",
+        "summary": "Early school graduates, a 1927 auction notice, 1930s film and town documents rescued in 1975.",
+        "body": "The North Haven Historical Society reports that old deeds, maps, bridge-construction bills and historical papers recovered from the town dump inspired its organizing meeting on November 13, 1975. Its account credits Sam Beverage, Lewis Haskell and others with finding these records. The society also hosts 1930s film taken by Harold Beverage and describes the first North Haven high-school class of 1907, including Elsie and Jennie Beverage. A July 30, 1927 Courier Gazette notice announces an August 24 auction of the Sands H. Witherspoon homestead at Pulpit Harbor with 'Frank Beverage, Auctioneer'; this shows a proposed sale, not proof of a completed transaction or of which Frank acted. The film and images remain on their rights holders' websites. The society also offers a corrected 2009 edition of a history of Pulpit Harbor by Seward E. Beacom.",
+        "terms": ("North Haven", "Pulpit Harbor", "Beverage"),
+        "source_links": (
+            ("Historical Society: recovered records in 1975", "https://www.northhavenmainehistoricalsociety.org/history.html"),
+            ("Harold Beverage's historical film", "https://www.northhavenmainehistoricalsociety.org/videos.html"),
+            ("First high-school graduating class, 1907", "https://www.northhavenmainehistoricalsociety.org/a-free-high-school.html"),
+            ("Courier Gazette July 30, 1927 original", "https://upload.wikimedia.org/wikipedia/commons/2/2a/Courier_Gazette_July_30_1927.pdf"),
+            ("Pulpit Harbor Two Hundred Years and 2009 corrected edition", "https://www.northhavenmainehistoricalsociety.org/shop.html"),
+        ),
+    },
+    {
         "id": "topsham-beveridge-before-fox-islands",
         "title": "Before North Haven: Beveridge names in Topsham",
-        "period": "1752–1776, with nineteenth-century records",
-        "summary": "Early Topsham references to James, Samuel and Mercy Beveridge offer a route toward identifying the family's mainland origins.",
-        "body": "In an 1878 history of Brunswick, Topsham and Harpswell, Samuel Beveridge appears in a numbered historical map key for Topsham. A derivative early-settler listing based on the history associates Samuel with lot 3 in 1752 and James Beveridge with lot 7 in 1758. A separate family sketch tentatively reports Mercy Beveridge marrying James Henry on February 15, 1776. These names may provide clues to the mainland kinship network that preceded North Haven, but the source does not prove whether James or Samuel are the men in this website's current early family tree, establish an acreage, or positively identify Mercy. Original deeds, probate records and a contemporary marriage entry are still needed.",
+        "period": "1749–1776, with nineteenth-century records",
+        "summary": "A 1749 recorded intention for James and Jean plus 1750s Topsham lots may help identify the family's mainland origins.",
+        "body": "An 1888 publication of Brunswick marriage intentions records James Beveridge and Jean White, both of Georgetown, on February 6, 1749. This proves a published intention, not that a wedding occurred or that the couple is uniquely identified with the family tree. In an 1878 history of Brunswick, Topsham and Harpswell, Samuel Beveridge appears in a numbered historical map key for Topsham. A derivative early-settler listing based on the history associates Samuel with lot 3 in 1752 and James Beveridge with lot 7 in 1758. A separate family sketch tentatively reports Mercy Beveridge marrying James Henry on February 15, 1776. These names may provide clues to the mainland kinship network that preceded North Haven, but the source does not prove whether James or Samuel are the men in this website's current early family tree, establish an acreage, or positively identify Mercy. Original deeds, probate records and a contemporary marriage entry are still needed.",
         "terms": ("Topsham", "Beveridge", "Mercy"),
         "source_links": (
+            ("1749 Brunswick marriage-intention transcription", "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html"),
             ("Read Wheeler's complete 1878 town history", "https://www.loc.gov/resource/gdcmassbookdig.historyofbrunswi01whee/"),
             ("Locate the numbered historical map references", "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-5.htm"),
             ("Compare the early-settlers index", "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html"),
@@ -287,6 +317,42 @@ def render_stories_page() -> None:
         st.title(story["title"])
         st.caption(story["period"])
         st.write(story["body"])
+        if story.get("family_group"):
+            group_path = ROOT / "research" / "matthew_nathaniel_family_1865.json"
+            if group_path.exists():
+                families = json.loads(group_path.read_text(encoding="utf-8"))
+                st.subheader("Capt. Matthew's children, as listed in 1865")
+                st.caption("Source-attributed family history; original relationships and Matthew's 1785 identity remain unproved.")
+                for wife in families["matthew"]["wives"]:
+                    with st.expander("Children attributed to " + wife["name"]):
+                        for child in families["matthew"]["children"]:
+                            if child["by_wife"] != wife["name"]:
+                                continue
+                            st.markdown("**" + child["name"] + "**")
+                            details = [child.get("information", "")]
+                            if child.get("birth_approx"):
+                                details.append("Born about " + str(child["birth_approx"]))
+                            if child.get("death"):
+                                details.append("Died " + child["death"])
+                            st.write(" · ".join(part for part in details if part))
+                            for grandchild in child.get("children", []):
+                                st.caption("Reported next generation: " + grandchild["name"] +
+                                           (", born about " + str(grandchild["birth_approx"])
+                                            if grandchild.get("birth_approx") else ""))
+                st.subheader("Nathaniel's separate Rockland household")
+                nathaniel = families["nathaniel"]
+                st.write(nathaniel["name"] + ", born about 1804, and " +
+                         nathaniel["spouse"] + " are listed with " +
+                         ", ".join(child["name"] for child in nathaniel["children"]) + ".")
+                st.caption(nathaniel["candidate_parentage"]["status"])
+                st.warning(nathaniel["candidate_parentage"]["generational_issue"])
+                for person_id, label in (
+                    ("nathaniel_beverage_1804_rockland", "Nathaniel's research profile"),
+                    ("sarah_alexander_beverage_1808", "Sarah's research profile"),
+                    ("henry_t_beverage_1841_rockland", "Henry T.'s research profile"),
+                    ("ella_allen_beverage_1854", "Ella Allen's research profile"),
+                ):
+                    route_link(label, "?page=person&person=" + person_id)
         if story.get("document"):
             route_link("Read the historical document", "?page=documents&doc=" + story["document"])
         if story.get("source_links"):
