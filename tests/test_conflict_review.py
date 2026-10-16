@@ -49,14 +49,14 @@ class EvidenceReviewTests(unittest.TestCase):
         archive = ArchiveIndex(self.site)
         self.assertEqual(archive.people[lowell["id"]]["birth_place"], lowell["birth_place"])
         model = build_full_tree_model(self.people, relationship_index(self.site["people"]))
-        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]))
+        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]) + len(self.site["phase7_people"]))
         for node in model["nodes"]:
             if node["id"] in (sarah["id"], diana["id"]):
                 self.assertNotIn("1734", node["life_span"])
                 self.assertNotIn("1780", node["life_span"])
 
     def test_all_other_person_fields_and_relationships_remain_identical(self):
-        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"]})
+        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"] + self.site["phase7_people"]})
         changes = {(c["person_id"], c["field"]) for r in self.review["resolutions"] for c in r["changes"]}
         metadata = {"sources", "date_provenance", "review_corrections", "conflict_review_ids", "documented_activity"}
         for pid, old_person in self.old.items():
@@ -68,7 +68,15 @@ class EvidenceReviewTests(unittest.TestCase):
         old_rel = relationship_index(self.before)
         for field in ("parents", "children", "spouses", "siblings"):
             for pid in self.old:
-                self.assertEqual(new_rel[field].get(pid, set()), old_rel[field].get(pid, set()))
+                if pid == "lowell_beveridge_1905":
+                    expected = set(old_rel[field].get(pid, set()))
+                    if field == "children":
+                        expected |= {"lowell_pierson_beveridge_jr_1930", "thomas_gattrell_beveridge_1938"}
+                    elif field == "spouses":
+                        expected.add("ida_louisa_gattrell_beveridge_1901")
+                    self.assertEqual(new_rel[field].get(pid, set()), expected)
+                else:
+                    self.assertEqual(new_rel[field].get(pid, set()), old_rel[field].get(pid, set()))
         self.assertIn("amelia_beverage_1833_child", self.people)
         self.assertIn("amelia_beverage_1833", self.people)
 
