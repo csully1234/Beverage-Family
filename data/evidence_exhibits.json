@@ -463,7 +463,9 @@
       "thomas_gattrell_beveridge_1938",
       "hortense_tee_sie_beveridge_1923"
     ],
-    "event_ids": [],
+    "event_ids": [
+      "event_lowell_1960_report_north_haven_sale"
+    ],
     "association": "direct_record",
     "preview_pdf": false,
     "collection": "Family history and original genealogy"
@@ -484,7 +486,9 @@
       "lowell_pierson_beveridge_jr_1930",
       "thomas_gattrell_beveridge_1938"
     ],
-    "event_ids": [],
+    "event_ids": [
+      "event_lowell_1960_report_north_haven_sale"
+    ],
     "association": "direct_record",
     "preview_pdf": false,
     "collection": "Family history and original genealogy"
@@ -517,13 +521,16 @@
     "type": "Recorded first-person family history / oral interview",
     "access": "Historical society transcript PDF, 34 pages",
     "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
-    "claim": "Pete Beveridge describes childhood connections to Maine, how family land and relationships changed over generations, and his adulthood as an author and historian.",
-    "limits": "First-person memory is valuable for biography but historical anecdotes require cross-checking with original records. Transcript and audio are subject to collection conditions.",
+    "claim": "Pete personally identifies himself as Lowell Pierson Beveridge Jr. and describes summers on jointly owned North Haven family property, letters from his father's seven siblings objecting to his interracial relationship, and the marriage to Tee in January 1954 at St. Philip's Church in Harlem attended by his parents and brother.",
+    "limits": "A FIRSTHAND narrator account of the family's reaction, not proof all relatives agreed or that every letter survives. Pete explicitly says his parents blessed the ceremony despite earlier reluctance to host Tee. Google snippets asserting 1953 marriage, total parental disowning, or exactly 20 years of exile are inconsistent with or unsupported by this testimony.",
     "rights": "Brooklyn Historical Society/NYU archival oral history; research-only, no audio/transcript republication without rights approval.",
     "people_ids": [
       "lowell_pierson_beveridge_jr_1930"
     ],
-    "event_ids": [],
+    "event_ids": [
+      "event_lowell_jr_hortense_marriage_1954",
+      "event_lowell_jr_oral_history_2012"
+    ],
     "association": "direct_record",
     "preview_pdf": true,
     "collection": "Family voices"
