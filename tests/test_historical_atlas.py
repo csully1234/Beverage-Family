@@ -14,13 +14,13 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class HistoricalAtlasTests(unittest.TestCase):
-    def test_three_authentic_map_scans_from_original_collection(self):
+    def test_ten_authentic_map_scans_and_existing_1859_set(self):
         data = atlas_payload()
-        self.assertEqual(len(data["maps"]), 3)
-        self.assertEqual([m["id"] for m in data["maps"]], [
+        self.assertEqual(len(data["maps"]), 10)
+        self.assertEqual([m["id"] for m in data["maps"][:3]], [
             "fox-islands", "north-haven-village", "carvers-harbor"
         ])
-        self.assertEqual([m["file"] for m in MAPS], [
+        self.assertEqual([m["file"] for m in MAPS[:3]], [
             "NorthHaven-Vinalhaven1859.jpg", "NorthHavenTown1859.jpg",
             "CarversHarbor1859.jpg"
         ])
@@ -31,6 +31,13 @@ class HistoricalAtlasTests(unittest.TestCase):
             self.assertTrue(map_record["note"])
             self.assertTrue(map_record["alt"])
         self.assertEqual(data["download"], SOURCE + "NorthHaven-Vinalhaven1859.zip")
+        self.assertEqual(
+            [m["file"] for m in MAPS[3:]],
+            ["DesBarres1776-Org.jpg", "NorthHaven1867.jpg",
+             "FoxIslandsThoroughfare_1868.jpg", "NorthernIslands1873-74.jpg",
+             "NorthHaven-VinalHaven-HurricaneIsle1890.jpg",
+             "FoxIslands1901.jpg", "FoxIslands1941.jpg"]
+        )
 
     def test_embedded_json_is_valid_and_does_not_inject_markup(self):
         html = build_historical_atlas_html()
@@ -46,6 +53,25 @@ class HistoricalAtlasTests(unittest.TestCase):
         self.assertIn("pointermove", html)
         self.assertIn("image.onerror", html)
         self.assertIn("fit()", html)
+
+    def test_early_record_links_are_cited_without_inventing_family_relationships(self):
+        from historical_atlas import load_early_evidence
+        info = load_early_evidence()
+        sources = {source["id"]: source for source in info["sources"]}
+        self.assertGreaterEqual(len(sources), 8)
+        self.assertTrue(all(src["url"].startswith("https://") for src in sources.values()))
+        self.assertEqual(sources["putnam_1785"]["url"],
+                         "https://digitalmaine.com/planbook_knox_county/8/")
+        self.assertEqual(sources["fox_outline_1786"]["url"],
+                         "https://digitalmaine.com/planbook_8/17/")
+        self.assertIn("Matthew Beveridge", str(info["findings"]))
+        self.assertIn("ten named children", str(info["findings"]))
+        self.assertIn("do not merge", str(info["findings"]).lower())
+        self.assertIn("not a family property award", info["caveat"])
+        self.assertEqual(len({finding["id"] for finding in info["findings"]}), len(info["findings"]))
+        for finding in info["findings"]:
+            self.assertTrue(set(finding["source_ids"]) <= sources.keys())
+            self.assertTrue(finding["confidence"] and finding["status"])
 
     def test_provenance_and_landownership_are_not_misrepresented(self):
         from historical_atlas import render_historical_atlas
