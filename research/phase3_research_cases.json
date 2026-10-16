@@ -1,0 +1,219 @@
+{
+  "phase": "Early Beveridge generations, Matthew identity, lands and Scotland",
+  "as_of": "2026-10-16",
+  "scope": "Citable research only; do not add ancestors, alter established profiles or draw title boundaries without direct corroboration.",
+  "source_register": [
+    {
+      "id": "mgs_2025_eames",
+      "title": "The Maine Genealogist 47(4), 2025, Flanagan and Reeves, pp.170–182",
+      "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+      "type": "peer-reviewed-style genealogy article",
+      "detail": "PDF p.27 article and notes 5–6; footnote identifies specific original 1786 Putnam return held by Maine State Archives, Box 001. Article dates petition to 1 June 1785. Author Barbara Beverage Reeves is documented in author note, p.182."
+    },
+    {
+      "id": "maine_putnam_return",
+      "title": "General Putnam's Report and Description (1786), original paper record",
+      "url": "https://digitalmaine.com/planbook_knox_county/8/",
+      "type": "archival original requested; related survey link only",
+      "detail": "Requested archival item is NOT verified online at this URL. Full citation from Maine Genealogist 2025 p.170 note 6: General Putnam’s Report and Description in the County of Lincoln with an Estimate of Lands Surveyed There in 1785—Townships Between Schoodic and Cobscook Rivers and Between Cobscook and Passamaquoddy Bays, dated 1786-03-18, Box 001 (paper), Maine State Archives, Augusta. Do not conflate with online October-November 1785 island plan."
+    },
+    {
+      "id": "maine_1785_map",
+      "title": "Maine State Archives Fox Islands survey plan, 1785",
+      "url": "https://digitalmaine.com/planbook_knox_county/8/",
+      "type": "original-era archival plan",
+      "detail": "Stone/Mathews survey, attested Putnam; land outlines, not individually named Beveridge allotments."
+    },
+    {
+      "id": "wheeler_1878_loc",
+      "title": "Wheeler & Wheeler, History of Brunswick, Topsham, and Harpswell, 1878",
+      "url": "https://www.loc.gov/resource/gdcmassbookdig.historyofbrunswi01whee/",
+      "type": "historical published town history",
+      "detail": "Original full digitized 1878 volume. Printed page ~41 plan index includes Topsham Samuel Beveridge #3 and Brunswick 'Beverage' #25; printed page ~836 family histories reports James Henry's son James probably married Mercy Beveridge Feb 15, 1776."
+    },
+    {
+      "id": "wheeler_1878_index",
+      "title": "Topsham early settler table based on 1878 Wheeler history",
+      "url": "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html",
+      "type": "secondary transcription / research finding aid",
+      "detail": "Lists James Beveridge, 1758, lot 7 and Samuel Beveridge, 1752, lot 3. No deed image or evidence of how the individuals relate."
+    },
+    {
+      "id": "wheeler_1878_maplist",
+      "title": "Wheeler 1878, 18th-century labeled map key",
+      "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-5.htm",
+      "type": "digitized text of 1878 printed map list",
+      "detail": "Lists numbered place 3 under Topsham as Samuel Beveridge and 25 under Brunswick as Beverage; locations need inspection on original map image and dating of the plan."
+    },
+    {
+      "id": "wheeler_1878_marriage",
+      "title": "Wheeler 1878 family history of James Henry (printed p.836)",
+      "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+      "type": "published family history",
+      "detail": "States son James of the elder James Henry 'probably' married Mercy Beveridge Feb 15, 1776. Not proof by itself for Mercy's parentage or identity."
+    },
+    {
+      "id": "county_hope_history",
+      "title": "Hope county-jurisdiction chronology",
+      "url": "https://www.mainegenealogy.net/place_record.asp?place=hope",
+      "type": "historical geographic reference",
+      "detail": "Hope within Lincoln County before 1827, Waldo County 1827-1860, Knox County beginning 1860. Search for 1830s Matthew estate under Waldo, not Knox."
+    },
+    {
+      "id": "waldo_registry",
+      "title": "Waldo County Registry of Deeds",
+      "url": "https://www.waldocountyme.gov/178/Registry-of-Deeds",
+      "type": "official county records access",
+      "detail": "Official page says indexed land records and plans from 1700s onward are available through statewide search portal; whether a particular early instrument is digitized still needs confirmation."
+    },
+    {
+      "id": "lincoln_probate",
+      "title": "Lincoln County probate abstracts 1760–1800",
+      "url": "https://www.mainegenealogy.net/lincoln_probate.asp",
+      "type": "index of historic probate abstracts",
+      "detail": "Contains early Lincoln County probate abstracts with original records accessible via FamilySearch; search James Beveridge and surname variants. Absence from secondary index does not prove absence of an estate."
+    },
+    {
+      "id": "familysearch_county",
+      "title": "Maine County Probate Records, 1760–1979",
+      "url": "https://www.familysearch.org/en/search/collection/2040534",
+      "type": "county probate book images",
+      "detail": "Browsable by county; earlier Waldo County books are candidate location for 1830s Hope estates. Not evidence a Matthew entry exists."
+    },
+    {
+      "id": "mass_archives_eastern_lands",
+      "title": "Massachusetts Archives Eastern Lands papers finding aid",
+      "url": "https://www.sec.state.ma.us/divisions/archives/collections/FA_EA.pdf",
+      "type": "government records guide",
+      "detail": "Early Maine land grants, committee deeds, reports, petitions and disputes; useful for 1785 petition and land allotment research."
+    },
+    {
+      "id": "mass_archives_family",
+      "title": "Massachusetts Archives family research guide",
+      "url": "https://www.sec.state.ma.us/divisions/archives/research/family-history.htm",
+      "type": "government archive guide",
+      "detail": "Explains where pre-statehood Maine petitions, land committees and legislative records survive."
+    }
+  ],
+  "cases": [
+    {
+      "id": "P3-001",
+      "priority": 1,
+      "person_or_place": "Matthew Beveridge (minor) / Capt. Matthew Beverage of Hope",
+      "current_status": "Not yet resolved",
+      "question": "Prove whether the named 1785 minor and the 1865 Capt. Matthew of Hope are the same individual and whether James Beveridge/Jean White were his parents.",
+      "action": "Search Waldo County probate and index (approx. 1827–1860), earlier Lincoln County if death before 1827; review Hope and Fox Islands vital records and name-variant deeds; do not create children/parents in the family tree until identified.",
+      "expected_evidence": "Estate settlement, baptism, marriage, guardianship, land grant or independently dated family register.",
+      "source_ids": [
+        "familysearch_county",
+        "county_hope_history",
+        "maine_putnam_return",
+        "lincoln_probate"
+      ],
+      "person_ids": [
+        "thomas_beverage_1750",
+        "james_beveridge_jr_1724"
+      ],
+      "certainty": "Identity chain unproved"
+    },
+    {
+      "id": "P3-002",
+      "priority": 1,
+      "person_or_place": "Fox Islands settlers' stated arrival years",
+      "current_status": "Specific archival box identified; source itself not retrieved",
+      "question": "What did James, Thomas and Matthew Beveridge individually report as settlement dates and residency?",
+      "action": "Request scan/transcript of General Putnam report dated March 18, 1786 in Box 001; separately seek June 1785 petition original (incl names, guardianship and handwriting) and correlate 1785 survey plans.",
+      "expected_evidence": "Contemporary arrival/claim statements, lot references, attachments.",
+      "source_ids": [
+        "mgs_2025_eames",
+        "maine_putnam_return",
+        "mass_archives_eastern_lands",
+        "maine_1785_map"
+      ],
+      "person_ids": [
+        "james_beveridge_jr_1724",
+        "thomas_beverage_1750"
+      ],
+      "certainty": "Original referenced in scholarly study, not examined"
+    },
+    {
+      "id": "P3-003",
+      "priority": 1,
+      "person_or_place": "James and Samuel Beveridge at Topsham / Brunswick 1750s",
+      "current_status": "Published map key and settlers' index, no deed confirmation",
+      "question": "Who was Samuel Beveridge on Topsham Lot 3 by 1752? Is he related to James Sr., James Jr. or another lineage, and what is the 1758 James lot 7 deed?",
+      "action": "Examine printed Wheeler map page and original grant books, then trace deeds 1752/1758 (Topsham then Lincoln County) and probate / military and church sources. Cross-check the site's existing Samuel b.1702 candidate rather than attaching the lot automatically.",
+      "expected_evidence": "Original deeds with grantee, grantor, witnesses, lot bounds, spouses and subsequent transfers.",
+      "source_ids": [
+        "wheeler_1878_loc",
+        "wheeler_1878_maplist",
+        "wheeler_1878_index",
+        "lincoln_probate"
+      ],
+      "person_ids": [
+        "james_beveridge_sr_1700",
+        "james_beveridge_jr_1724",
+        "samuel_beveridge_1702"
+      ],
+      "certainty": "Named records, identity not proved"
+    },
+    {
+      "id": "P3-004",
+      "priority": 2,
+      "person_or_place": "Mercy Beveridge and James Henry marriage",
+      "current_status": "A 1878 history calls 15 Feb 1776 marriage probable",
+      "question": "Is the site's Mercy Beveridge Henry (b. 1753) the Mercy reported as marrying James, son of James Henry, in February 1776?",
+      "action": "Search Topsham church and marriage returns, original 1776 vital register, Maine 1800 census and Henry family probate; maintain site's existing spouse field unchanged until resolved.",
+      "expected_evidence": "Marriage register, family Bible, probate or deed describing spousal name and father.",
+      "source_ids": [
+        "wheeler_1878_marriage",
+        "wheeler_1878_loc"
+      ],
+      "person_ids": [
+        "mercy_beveridge_henry_1753"
+      ],
+      "certainty": "Published as probably, not a confirmed marriage"
+    },
+    {
+      "id": "P3-005",
+      "priority": 2,
+      "person_or_place": "Pulpit Harbor Beveridge farm ownership and bridge chains",
+      "current_status": "Historic locations known; parcel chain missing",
+      "question": "Which original allotments became later Pulpit Harbor farms, mill sites and Beach Bridge holdings, and what acreage was transferred?",
+      "action": "Search Waldo/Knoх deed indexes by all Beverage spellings and counterparties, work backward from 1917 farm deed and 1883 Beach Bridge to earliest identified lots; ground all boundaries in deed calls and survey control points.",
+      "expected_evidence": "Book/page, metes-and-bounds, grantor/grantee, acreage if stated, survey tie points.",
+      "source_ids": [
+        "waldo_registry",
+        "maine_1785_map",
+        "mass_archives_eastern_lands"
+      ],
+      "person_ids": [],
+      "certainty": "No family acreage total established"
+    },
+    {
+      "id": "P3-006",
+      "priority": 2,
+      "person_or_place": "James Beveridge Sr. and Scottish ancestry",
+      "current_status": "Claimed Scottish origin, no town/parish or parent established",
+      "question": "What documented Maine record identifies James Sr.'s birthplace, immigration or parentage?",
+      "action": "Seek earliest original military paylists at Fort Richmond, Kennebec deeds, church/marriage/probate records, and only then select Scottish parish candidates; do not link any similarly named Scottish family without transatlantic proof.",
+      "expected_evidence": "Identifying birth parish, relatives, occupation, immigration or settlement context contemporaneously recorded.",
+      "source_ids": [
+        "lincoln_probate",
+        "wheeler_1878_loc",
+        "mass_archives_family"
+      ],
+      "person_ids": [
+        "james_beveridge_sr_1700"
+      ],
+      "certainty": "Open lineage question"
+    }
+  ],
+  "constraints": [
+    "Do not send correspondence without the user's explicit approval.",
+    "Do not change Boston Tea Party claim or relative addresses.",
+    "No speculative new people or edges in family tree.",
+    "No name label on a map is deed title or acreage."
+  ],
+  "archival_next_action": "Draft targeted manuscript and deed requests, then obtain and assess actual images prior to any genealogy merge."
+}
