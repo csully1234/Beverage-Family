@@ -115,6 +115,20 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertFalse(any(str(note).strip() == "False" for note in notes))
         self.assertFalse(any(str(element.value).strip() == "False" for element in app.markdown))
 
+    def test_family_photo_gallery_and_event_citation_access(self):
+        app = self.logged_in_app(page="media")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("Family photographs" in tab.label for tab in app.tabs))
+        self.assertTrue(any("82 captioned photograph pages" in str(x.value) for x in app.caption))
+        self.assertIn("Load 12 more photographs", app.button(key="colony_photo_load_more").label)
+        app.button(key="colony_photo_load_more").click().run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+
+    def test_event_with_two_citations_shows_individual_references(self):
+        app = self.logged_in_app(page="timeline", event="event_birth_hiram_stone_beverage_1886")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("source references and available records" in x.label for x in app.expander))
+
     def test_authorized_book_page_route_renders_before_binary_is_uploaded(self) -> None:
         app = self.logged_in_app(page="family-books", book_page="49")
         self.assertFalse(app.exception, [e.value for e in app.exception])

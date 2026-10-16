@@ -2,7 +2,7 @@
 
 This is the full-book reader and an evidence-aware index. The user confirms
 permission for reproducing the book and its images on their family website.
-Scans retain the published captions, credit and original DEMO watermark.
+Scans retain published captions and credit; the uploaded edition has no demo overlay.
 """
 from __future__ import annotations
 
@@ -104,7 +104,7 @@ def render_scanned_page(book: dict, page: int, *, width: int = 970, crop: bool =
         st.image(scanned_page_preview(str(pdf), page, width, crop_content=crop), caption=(
             f"Source PDF p. {page} of {book['pdf_page_count']} · "
             f"Lowell P. Beveridge Jr., {book['title']} ({book['publication_year']}). "
-            "Original caption and watermark preserved."
+            "Original printed caption preserved in the cleaned scan."
         ), width="stretch")
     else:
         st.info("The page image is ready to display as soon as the optimized PDF is uploaded to the repository.")
@@ -226,7 +226,7 @@ def render_family_books() -> None:
         st.markdown("### " + book["title"])
         st.caption(f"{book['author']} · {book['publication_year']} · {book.get('pdf_page_count', 305)} scanned pages")
         st.write(book.get("subtitle", ""))
-        st.caption("Reproduction for this family website authorized by the user; original © notice and DEMO VERSION watermark remain in the supplied scan.")
+        st.caption("Reproduction for this family website authorized by the user; original © notice remains and the source-page demo overlay was removed from the clean web edition.")
         tab_read, tab_photos, tab_chapters = st.tabs([
             "Read Entire Book", "Photographs & Illustrations", "Chapters & Historical Research"
         ])
