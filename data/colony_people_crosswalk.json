@@ -204,16 +204,6 @@
       "profile_source_not_equivalent_to_vital_record": true
     },
     {
-      "person_id": "samuel_hiram_beverage_1917",
-      "pdf_pages": [
-        78
-      ],
-      "summary": "Hiram sheep barn might refer to Hiram Stone, not automatically Sam; included only as potential record association",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "candidate — Hiram identity unproved",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
       "person_id": "hiram_stone_beverage_1886",
       "pdf_pages": [
         78
