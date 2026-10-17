@@ -13,6 +13,7 @@ from urllib.parse import urlsplit
 import streamlit as st
 
 from routing_ui import route_link
+from family_data import index_people, load_site_data
 
 ROOT = Path(__file__).resolve().parent
 BOOKS_DIR = (ROOT / "static" / "books").resolve()
@@ -286,6 +287,7 @@ def render_book_people_index() -> None:
     catalog = load_book_person_crosswalk()
     linked = catalog.get("linked_people", [])
     pending = catalog.get("unresolved_people", [])
+    people_index = index_people(load_site_data(ROOT / "data")["people"])
     with st.expander("People in The Colony — tree matches and unresolved names"):
         st.caption(
             f"{len(linked)} indexed person references and {len(pending)} pending name "
@@ -293,7 +295,10 @@ def render_book_people_index() -> None:
             "This is NOT a complete scan of all 305 pages."
         )
         for item in linked:
-            label = str(item["person_id"]).replace("_", " ").title()
+            person = people_index.get(str(item["person_id"]), {})
+            label = str(person.get("full_name") or item["person_id"].replace("_", " "))
+            if str(item.get("confidence") or "").startswith("candidate"):
+                label += " · possible match only"
             route_link(label, "?page=people&profile=" + item["person_id"])
             pages = item.get("pdf_pages", [])
             if pages:
