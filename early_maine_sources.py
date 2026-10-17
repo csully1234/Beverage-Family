@@ -40,11 +40,16 @@ def render_early_maine_source_trail() -> None:
     st.caption(f"{len(filtered)} cited historical leads")
     for entry in filtered:
         with st.container(border=True):
-            st.markdown("**" + str(entry["year"]) + " · " + str(entry["title"]) + "**")
+            stamp = str(entry.get("date") or entry["year"])
+            st.markdown("**" + stamp + " · " + str(entry["title"]) + "**")
             st.write(str(entry["summary"]))
             st.caption("Evidence: " + str(entry["status"]))
             route_link("Read the source — " + str(entry["source_title"]),
                        str(entry["source_url"]))
+            linked = entry.get("related_existing_event_id")
+            if linked:
+                route_link("See the following Topsham civic event on the timeline",
+                           "?page=timeline&event=" + str(linked))
             with st.expander("What would prove this family connection?"):
                 st.write(str(entry["next_record"]))
                 st.caption(str(entry["person_status"]))
