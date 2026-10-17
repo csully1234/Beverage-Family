@@ -466,19 +466,21 @@ for (const node of sortedNodes) {{
 }}
 const searchNames = sortedNodes.map(node => ({{
   id:node.id, name:node.name,
+  label:node.name+" · "+node.life_span,
   haystack:(node.name+" "+node.life_span+" "+node.id.replace(/_/g," ")).toLocaleLowerCase()
 }}));
 function matchingPeople(rawQuery) {{
   const term=String(rawQuery||"").trim().toLocaleLowerCase();
   if(!term) return [];
-  return searchNames.filter(entry=>entry.haystack.includes(term));
+  return searchNames.filter(entry=>entry.haystack.includes(term) ||
+                                   entry.label.toLocaleLowerCase()===term);
 }}
 function updateSearchSuggestions() {{
   const matches=matchingPeople(searchInput.value);
   searchSuggestions.replaceChildren();
   for(const entry of matches.slice(0,12)) {{
     const option=document.createElement("option");
-    option.value=entry.name; option.label=entry.name;
+    option.value=entry.label; option.label=entry.label;
     searchSuggestions.appendChild(option);
   }}
   searchMessage.textContent=searchInput.value.trim()
@@ -493,7 +495,9 @@ function searchPerson() {{
     searchMessage.textContent="No matching relatives. Try fewer letters or another spelling.";
     return;
   }}
-  const exact=matches.find(entry=>entry.name.toLocaleLowerCase()===term.toLocaleLowerCase());
+  const exact=matches.find(entry=>
+    entry.label.toLocaleLowerCase()===term.toLocaleLowerCase() ||
+    entry.name.toLocaleLowerCase()===term.toLocaleLowerCase());
   const target=exact || matches[0];
   focusNode(target.id);
   searchMessage.textContent="Showing "+target.name+" · "+matches.length+" matching records.";
