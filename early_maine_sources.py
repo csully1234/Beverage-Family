@@ -53,3 +53,36 @@ def render_early_maine_source_trail() -> None:
             with st.expander("What would prove this family connection?"):
                 st.write(str(entry["next_record"]))
                 st.caption(str(entry["person_status"]))
+
+
+JAMES_CHAIN = RECORDS.with_name("phase11_james_record_chain.json")
+
+
+def load_james_record_chain() -> list[dict]:
+    """Chronological published attestations, NOT pre-joined person identities."""
+    if not JAMES_CHAIN.is_file():
+        return []
+    rows = json.loads(JAMES_CHAIN.read_text(encoding="utf-8"))
+    if not isinstance(rows, list):
+        raise ValueError("Early James identity comparison must be an array")
+    return rows
+
+
+def render_james_identity_comparison() -> None:
+    """Show six distinct sources without assuming all James mentions mean one man."""
+    records = load_james_record_chain()
+    if not records:
+        return
+    st.subheader("Which James Beveridge was which?")
+    st.write("Six published records contain the name James between 1723 and 1764. "
+             "Their chronology is useful, but matching a name is not proof "
+             "that all six describe one individual or even the same household.")
+    st.caption("Each entry below is a SOURCE SIGHTING. It does not create or "
+               "change a family tree person, marriage, parent or land record.")
+    for item in records:
+        with st.container(border=True):
+            st.markdown("**" + item["date"] + " · " + item["record"] + "**")
+            st.caption(item["place"])
+            st.write(item["proof"])
+            route_link("Inspect the published record", item["source_url"])
+            st.caption("Connection still unresolved: " + item["link_status"])
