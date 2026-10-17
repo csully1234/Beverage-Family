@@ -98,7 +98,17 @@ class HistoricalIdentityReviewTests(unittest.TestCase):
         self.assertEqual(original["title"], historical_title)
         self.assertEqual(original["description"], historical_description)
         self.assertNotEqual(original["title"], display["title"])
-        other = self.site["events"][0]
+        by_id = {e["id"]: e for e in self.site["events"]}
+        birth = reviewed_event_presentation(by_id["event_birth_james_beveridge_jr_1724"])
+        marriage = reviewed_event_presentation(by_id["event_marriage_james_sr_sarah_bennett_1723"])
+        self.assertIn("later identity uncertain", birth["title"])
+        self.assertIn("not independently established", marriage["description"])
+        self.assertIn("birth entry", birth["evidence_status"])
+        other = next(e for e in self.site["events"] if e["id"] not in {
+            "event_birth_james_beveridge_jr_1724",
+            "event_marriage_james_sr_sarah_bennett_1723",
+            "event_marriage_james_jr_jean_white_1749",
+        })
         self.assertEqual(reviewed_event_presentation(other), other)
 
     def test_family_memories_remain_distinct_from_primary_document(self):
