@@ -21,7 +21,7 @@ class TopshamArchivalLeadTests(unittest.TestCase):
         cls.people = index_people(cls.site["people"])
 
     def test_every_original_source_link_is_explicit_and_statused(self):
-        self.assertEqual(len(self.records), 8)
+        self.assertEqual(len(self.records), 9)
         self.assertEqual(len({r["id"] for r in self.records}), len(self.records))
         self.assertEqual([r["year"] for r in self.records], sorted(r["year"] for r in self.records))
         for record in self.records:
