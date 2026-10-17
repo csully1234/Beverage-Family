@@ -1,0 +1,263 @@
+[
+  {
+    "id": "ida_louise_gattrell_beveridge",
+    "full_name": "Ida Louise Gattrell Beveridge",
+    "birth_date": "1901",
+    "birth_date_precision": "year",
+    "death_date": "1993",
+    "death_date_precision": "year",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "lowell_beveridge_1905"
+    ],
+    "children": [
+      "lowell_pierson_beveridge_jr_author",
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "residences": [],
+    "notes": "Wife of Lowell Pierson Beveridge (1905–1991) and mother of their sons Lowell P. 'Pete' Beveridge Jr. and Thomas Beveridge. Contemporary obituary confirms wife and both sons; her burial index gives birth/death years. Do not silently choose between conflicting compiled exact day/month dates.",
+    "evidence_status": "Spouse and son relationships supported by 1991 contemporary obituary, reinforced by Pete Beveridge's first-person 2012 recollections.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Contemporary obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-10-16",
+        "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
+        "evidence_level": "Tier 3 — contemporaneous obituary"
+      },
+      {
+        "title": "Ida Louise Gattrell Beveridge memorial entry",
+        "repository": "PeopleLegacy, Virginia Theological Seminary Cemetery",
+        "url": "https://peoplelegacy.net/ida_louise_gattrell_beveridge-4q7x3z",
+        "record_type": "Cemetery listing, derivative of grave records",
+        "accessed": "2026-10-16",
+        "supports": "Ida L. Gattrell Beveridge is recorded as 1901–1993 and wife of Lowell Pierson Beveridge; exact dates conflict among secondary sources and are omitted.",
+        "evidence_level": "Tier 3/4 — compiled cemetery index"
+      },
+      {
+        "title": "Oral history interview with Pete Beveridge, 23 May 2012, 2011.019.032",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History, Crossing Borders Bridging Generations",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person oral history transcript (34 pp.), research-use conditions",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Speaker explicitly identifies himself as Lowell Pierson Beveridge Jr.; describes his parents, brother, January 1954 marriage to Hortense 'Tee' Sie, extended-family opposition, reported ~20 years away from North Haven, and eventual family reconnection.",
+        "evidence_level": "Tier 2 — first-person recollection; contested relative reactions attributed to narrator, not independently adjudicated"
+      }
+    ]
+  },
+  {
+    "id": "lowell_pierson_beveridge_jr_author",
+    "full_name": "Lowell Pierson 'Pete' Beveridge Jr.",
+    "birth_date": "1930",
+    "birth_date_precision": "year",
+    "death_date": null,
+    "parents": [
+      "lowell_beveridge_1905",
+      "ida_louise_gattrell_beveridge"
+    ],
+    "siblings": [
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "spouses": [
+      "hortense_tee_sie_beveridge"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Author",
+      "Designer",
+      "Oral-history narrator"
+    ],
+    "notes": "Author of The Colony: Stories from a Down East Island (2016) and son of Lowell Pierson Beveridge Sr. and Ida Gattrell Beveridge. In a May 23, 2012 Brooklyn Historical Society interview, he remembers opposition from some extended relatives to his January 1954 marriage to Hortense 'Tee' Sie, his resulting feeling of being unwelcome at North Haven for roughly 20 years, and subsequent renewed family visits. He explicitly says his own parents eventually supported the marriage. This is his personal recollection; do not label every family member an objector or claim a formal legal banishment. No independently verified death record located as of this review; protect contemporary personal details and do not expose exact birth date.",
+    "evidence_status": "Identity, parentage and book authorship strongly supported by 1991 obituary, self-identification in 2012 interview and 2016 family memoir. Family responses attributed to narrator; independently uncorroborated.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Contemporary obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-10-16",
+        "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
+        "evidence_level": "Tier 3 — contemporaneous obituary"
+      },
+      {
+        "title": "Oral history interview with Pete Beveridge, 23 May 2012, 2011.019.032",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History, Crossing Borders Bridging Generations",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person oral history transcript (34 pp.), research-use conditions",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Speaker explicitly identifies himself as Lowell Pierson Beveridge Jr.; describes his parents, brother, January 1954 marriage to Hortense 'Tee' Sie, extended-family opposition, reported ~20 years away from North Haven, and eventual family reconnection.",
+        "evidence_level": "Tier 2 — first-person recollection; contested relative reactions attributed to narrator, not independently adjudicated"
+      },
+      {
+        "title": "Crossing Borders, Bridging Generations oral history collection 2011.019",
+        "repository": "Center for Brooklyn History / NYU finding aid",
+        "url": "https://findingaids.library.nyu.edu/cbh/arms_2011_019/all/",
+        "record_type": "Archival finding aid and conditions of use",
+        "accessed": "2026-10-16",
+        "supports": "Oral histories made available for research; further use requires permissions from archive and narrator; transcripts may have privacy redactions.",
+        "evidence_level": "Tier 1 — owning institution access/rights description"
+      },
+      {
+        "title": "The Colony: Stories from a Down East Island",
+        "repository": "Lowell P. Beveridge Jr., privately supplied edition, 2016 (reproduced with user-confirmed website permission)",
+        "url": "https://beverage-family.onrender.com/?page=family-books",
+        "record_type": "Published first-person family memoir; family site edition",
+        "record_date": "2016",
+        "accessed": "2026-10-16",
+        "supports": "Published memoir identifies Lowell P. Beveridge Jr. as the author and Orris Lyford Beverage as his grandfather; supplement with earlier records for relationships.",
+        "evidence_level": "Tier 2/3 — first-person family memoir"
+      }
+    ]
+  },
+  {
+    "id": "thomas_gattrell_beveridge_1938",
+    "full_name": "Thomas Beveridge",
+    "birth_date": "1938",
+    "birth_date_precision": "year",
+    "death_date": null,
+    "parents": [
+      "lowell_beveridge_1905",
+      "ida_louise_gattrell_beveridge"
+    ],
+    "siblings": [
+      "lowell_pierson_beveridge_jr_author"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Composer",
+      "Conductor",
+      "Singer"
+    ],
+    "notes": "Younger son of Lowell Pierson Beveridge and Ida Gattrell Beveridge, named in the father's 1991 obituary and in his brother Pete's 2012 oral history. Milken Archive documents his music education and career. No death information established as of this review; no private current address published.",
+    "evidence_status": "Father-son connection contemporary obituary; biographical work independently documented by Milken Archive.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Contemporary obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-10-16",
+        "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
+        "evidence_level": "Tier 3 — contemporaneous obituary"
+      },
+      {
+        "title": "Oral history interview with Pete Beveridge, 23 May 2012, 2011.019.032",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History, Crossing Borders Bridging Generations",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person oral history transcript (34 pp.), research-use conditions",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Speaker explicitly identifies himself as Lowell Pierson Beveridge Jr.; describes his parents, brother, January 1954 marriage to Hortense 'Tee' Sie, extended-family opposition, reported ~20 years away from North Haven, and eventual family reconnection.",
+        "evidence_level": "Tier 2 — first-person recollection; contested relative reactions attributed to narrator, not independently adjudicated"
+      },
+      {
+        "title": "Thomas Beveridge — Composer biography",
+        "repository": "Milken Archive of Jewish Music",
+        "url": "https://www.milkenarchive.org/artists/view/thomas-beveridge",
+        "record_type": "Cultural institution composer biography",
+        "accessed": "2026-10-16",
+        "supports": "Composer and conductor Thomas Beveridge born in 1938, studied music at Harvard, and has a substantial documented career.",
+        "evidence_level": "Tier 2 — specialist institutional biography"
+      }
+    ]
+  },
+  {
+    "id": "hortense_tee_sie_beveridge",
+    "full_name": "Hortense 'Tee' Sie Beveridge",
+    "birth_date": "1923",
+    "birth_date_precision": "year",
+    "death_date": "1993",
+    "death_date_precision": "year",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "lowell_pierson_beveridge_jr_author"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Film editor",
+      "Documentary filmmaker"
+    ],
+    "notes": "Film editor and documentary filmmaker whose pioneering career is documented in scholarly film-history research. Her husband Pete Beveridge says in a first-person May 2012 interview that they married at St. Philip's Church in Harlem in January 1954 (NOT in 1953). Their relationship and early civil-rights work faced objections from some extended family members; this statement is attributable to his own recollection rather than an inference about the beliefs of every relative.",
+    "evidence_status": "1954 marriage and relationship reported by husband in archived firsthand oral history; film work separately documented in Duke University Press study. Birth/death years reported in secondary film history and require vital-record corroboration.",
+    "sources": [
+      {
+        "title": "Oral history interview with Pete Beveridge, 23 May 2012, 2011.019.032",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History, Crossing Borders Bridging Generations",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person oral history transcript (34 pp.), research-use conditions",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Speaker explicitly identifies himself as Lowell Pierson Beveridge Jr.; describes his parents, brother, January 1954 marriage to Hortense 'Tee' Sie, extended-family opposition, reported ~20 years away from North Haven, and eventual family reconnection.",
+        "evidence_level": "Tier 2 — first-person recollection; contested relative reactions attributed to narrator, not independently adjudicated"
+      },
+      {
+        "title": "Red Star/Black Star: The Early Career of Film Editor Hortense 'Tee' Beveridge, 1948–1968",
+        "repository": "Walter Forsberg, Screening Race in American Nontheatrical Film, Duke University Press 2019",
+        "url": "https://www.jstor.org/stable/jj.33506904.11",
+        "record_type": "Peer-reviewed historical scholarship, open-access chapter",
+        "accessed": "2026-10-16",
+        "supports": "Documents Hortense 'Tee' Beveridge's important work as a film editor and filmmaker in early African American and non-theatrical film.",
+        "evidence_level": "Tier 2 — professional historical research"
+      }
+    ]
+  },
+  {
+    "id": "lyford_beveridge_brother_lowell",
+    "full_name": "Lyford Beveridge (brother of Lowell P. Beveridge)",
+    "birth_date": null,
+    "death_date": null,
+    "parents": [],
+    "siblings": [
+      "lowell_beveridge_1905"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "The 1991 contemporary obituary of Lowell Pierson Beveridge names 'a brother, Lyford Beveridge of Rockland, Maine'. This is a verified sibling relationship, but no separate vital record or identity-specific proof of Lyford's parents has been located. Do not confuse with Lyford Beverage born 1842 or assign Orris and Rose as parents by inference.",
+    "evidence_status": "Siblings established by 1991 obituary; individual parentage, birth/death, and identity unresolved.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Contemporary obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-10-16",
+        "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
+        "evidence_level": "Tier 3 — contemporaneous obituary"
+      }
+    ]
+  },
+  {
+    "id": "lowell_beveridge_1905",
+    "spouses": [
+      "ida_louise_gattrell_beveridge"
+    ],
+    "children": [
+      "lowell_pierson_beveridge_jr_author",
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "siblings": [
+      "olive_beveridge_1890",
+      "helen_barclay_1896",
+      "arnold_beveridge_1903",
+      "rev_albion_beverage_1907",
+      "elliot_beverage_1908",
+      "norwood_beveridge_1911",
+      "lyford_beveridge_brother_lowell"
+    ]
+  }
+]
