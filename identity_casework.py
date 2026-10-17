@@ -71,10 +71,10 @@ def render_case_evidence(record: dict, *, show_book_links: bool = True) -> None:
                            "?page=family-books&book_page=" + str(page))
     original = record.get("next_originals", [])
     if original:
-        with st.expander("Which original records would settle this?", expanded=False):
-            for need in original:
-                st.markdown("**" + str(need.get("record", "Original record")) + "**")
-                st.write(str(need.get("where", "")))
+        st.markdown("**Which original records would settle this?**")
+        for need in original:
+            st.markdown("**" + str(need.get("record", "Original record")) + "**")
+            st.write(str(need.get("where", "")))
 
 
 def render_identity_explorer() -> None:
