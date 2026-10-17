@@ -1,418 +1,420 @@
-{
-  "book_id": "colony-book-2016",
-  "audit_date": "2026-10-16",
-  "status": "structured caption-index crosswalk ONLY; not a complete audit of all 305 pages",
-  "scope": {
-    "book_total_pages": 305,
-    "captioned_photo_pages": 82,
-    "method": "Compared existing indexed caption summaries from 82 book photo pages to current main branch people and six new/additive phase profiles, plus documented 1991 obituary and 2012 oral history",
-    "limitation": "The complete scanned PDF was not retrievable for fresh full-text/visual page-by-page inspection this session. No assertion that every person in every page/chapter is captured or independently verified."
-  },
-  "linked_people": [
-    {
-      "person_id": "benjamin_beverage_1822",
-      "pdf_pages": [
-        47,
-        51
-      ],
-      "summary": "Benjamin Crabtree Beverage (1822–1875) in a portrait and farmhouse caption",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
+[
+  {
+    "book_id": "colony-book-2016",
+    "audit_date": "2026-10-16",
+    "status": "structured caption-index crosswalk ONLY; not a complete audit of all 305 pages",
+    "scope": {
+      "book_total_pages": 305,
+      "captioned_photo_pages": 82,
+      "method": "Compared existing indexed caption summaries from 82 book photo pages to current main branch people and six new/additive phase profiles, plus documented 1991 obituary and 2012 oral history",
+      "limitation": "The complete scanned PDF was not retrievable for fresh full-text/visual page-by-page inspection this session. No assertion that every person in every page/chapter is captured or independently verified."
     },
-    {
-      "person_id": "amelia_beverage_1833",
-      "pdf_pages": [
-        49,
-        174
-      ],
-      "summary": "Amelia Beverage pictured with brother Hanson and later grandchildren; existing identity has conflicting Amelia profiles and must not be merged silently",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "orris_beverage_1860",
-      "pdf_pages": [
-        25,
-        45,
-        80,
-        92,
-        116,
-        117,
-        150,
-        158,
-        160,
-        192,
-        231
-      ],
-      "summary": "Orris at the island, as educator and founder of the Colony",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "rose_pierson_1866",
-      "pdf_pages": [
-        120,
-        158,
-        159,
-        229,
-        272
-      ],
-      "summary": "Rose Pierson in childhood, at home, and later with grandson Pete",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "mary_beverage_1869",
-      "pdf_pages": [
-        101
-      ],
-      "summary": "Mary 'Mae' Beverage Bemis according to author's family-caption identification; married name unverified by civil record",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "jemima_beverage_1866",
-      "pdf_pages": [
-        188
-      ],
-      "summary": "Jemima 'Mima' Beverage Carver in book caption",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "harriet_beverage_1856",
-      "pdf_pages": [
-        189
-      ],
-      "summary": "Harriet Beverage Green in book caption; other genealogy uses Greene",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "charles_beverage_1863",
-      "pdf_pages": [
-        183
-      ],
-      "summary": "Charles H. Beverage in illustrated portrait",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "olive_beveridge_1890",
-      "pdf_pages": [
-        206,
-        234,
-        235
-      ],
-      "summary": "Olive's Radcliffe graduation and her association with Florence Budlong; page 206 cottage reportedly used by Olive",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "helen_barclay_1896",
-      "pdf_pages": [
-        237,
-        239
-      ],
-      "summary": "Helen Beveridge at Radcliffe and photograph of uncle Bob Barclay; Bob's identity/relationship still needs certificate",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "arnold_beveridge_1903",
-      "pdf_pages": [
-        45,
-        244
-      ],
-      "summary": "Arnold mentioned in woodpile caption; 1926 wedding photograph with Priscilla",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "lowell_beveridge_1905",
-      "pdf_pages": [
-        45,
-        87,
-        233,
-        246,
-        248,
-        250,
-        251,
-        277,
-        278
-      ],
-      "summary": "Lowell Sr. as author's father, Harvard portrait, cottages and photographs",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "norwood_beveridge_1911",
-      "pdf_pages": [
-        266,
-        267
-      ],
-      "summary": "Norwood's cottage and family photograph with wife Dorothy",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "elliot_beverage_1908",
-      "pdf_pages": [
-        257,
-        259,
-        261,
-        263,
-        265,
-        278
-      ],
-      "summary": "Eliot's farm, stone house, magazine cover, and family photo with Dorothy",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "rev_albion_beverage_1907",
-      "pdf_pages": [
-        253
-      ],
-      "summary": "Albion's family in a c.1940 photo",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "grace_reed_1909",
-      "pdf_pages": [
-        253
-      ],
-      "summary": "Grace Reed with Albion's family",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "hiram_stone_beverage_1886",
-      "pdf_pages": [
-        78
-      ],
-      "summary": "Historical sheep barn labeled Hiram Beverage, candidate to this person",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "candidate — Hiram identity unproved",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "lowell_pierson_beveridge_jr_author",
-      "pdf_pages": [
-        57,
-        77,
-        248,
-        272,
-        275,
-        277
-      ],
-      "summary": "Pete, the author, in childhood photos including father Lowell and grandmother Rose",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "ida_louise_gattrell_beveridge",
-      "pdf_pages": [
-        248
-      ],
-      "summary": "Ida, husband Lowell Sr. and son Pete",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "lyford_beveridge_brother_lowell",
-      "pdf_pages": [
-        241,
-        242,
-        278,
-        280
-      ],
-      "summary": "Uncle Lyford with Ruth/Ann and in launch and mooring photographs",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "thomas_gattrell_beveridge_1938",
-      "pdf_pages": [],
-      "summary": "Named son of Lowell Sr. in obituaries/interview; photographs may exist in complete book, not among named captions",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "hortense_tee_sie_beveridge",
-      "pdf_pages": [],
-      "summary": "Pete's documented 1954 wife and film editor; not individually named in the cataloged photo captions",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    },
-    {
-      "person_id": "dorothy_jimmy_gattrell_beverage",
-      "pdf_pages": [
-        257
-      ],
-      "summary": "Dorothy 'Jimmy' Gattrell Beverage shown with Eliot on PDF page 257",
-      "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
-      "confidence": "reported_in_family_memoir",
-      "profile_source_not_equivalent_to_vital_record": true
-    }
-  ],
-  "unresolved_people": [
-    {
-      "name": "Hanson Beverage (Amelia's brother)",
-      "pages": [
-        49
-      ],
-      "issue": "May correspond to Dana Hanson Beverage (born 1847) but book caption alone is insufficient to identify him with that existing person or create another.",
-      "disposition": "hold_candidate"
-    },
-    {
-      "name": "Vernon Beverage",
-      "pages": [
-        45,
-        177
-      ],
-      "issue": "Named in the author’s account of Orris; first/middle name and relationship lack an independent identified person record.",
-      "disposition": "hold_candidate"
-    },
-    {
-      "name": "Albion Pierson (Rose's father)",
-      "pages": [
-        123,
-        124
-      ],
-      "issue": "Caption reports father-child relationship and death in 1870, but no original birth/marriage/vital file has been compared to establish a unique stable profile.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Jesse Hart (1817–1878)",
-      "pages": [
-        122
-      ],
-      "issue": "Book labels ancestral portrait; intermediate relationship to Rose Pierson is not uniquely specified in the indexed caption.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Florence Budlong",
-      "pages": [
-        235
-      ],
-      "issue": "Book calls Florence Olive's life partner. This should not be converted into a legal-spouse edge without a recorded marriage; death dates and genealogical profile details unverified.",
-      "disposition": "respect_relationship_type"
-    },
-    {
-      "name": "Priscilla (Arnold's wife)",
-      "pages": [
-        244
-      ],
-      "issue": "1926 wedding-photo caption identifies first name and Arnold; maiden name, dates and original marriage return still unverified.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Ruth and Ann (Lyford family)",
-      "pages": [
-        241
-      ],
-      "issue": "Book caption calls them Aunt Ruth and cousin Ann but fails to provide maiden name and verified parent-child proof in this indexed excerpt.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Robert 'Bob' Barclay",
-      "pages": [
-        239
-      ],
-      "issue": "Book photo caption uses 'Uncle Bob'; formal relationship to Helen Beveridge and full identity need independent marriage/census.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Daniel and Hattie Beverage Green",
-      "pages": [
-        181
-      ],
-      "issue": "Homestead caption does not establish which Hattie or complete children and spouse identity; do not merge with Harriet Beverage Green just from nickname.",
-      "disposition": "research_before_add"
-    },
-    {
-      "name": "Herman and Sarah Bengell",
-      "pages": [
-        196
-      ],
-      "issue": "Book names cottage occupants; family-tree linkage to the Beverage line not established.",
-      "disposition": "context_only"
-    },
-    {
-      "name": "William W. Howe",
-      "pages": [
-        200
-      ],
-      "issue": "School principal and summer colony cottage owner; no demonstrated genealogical connection.",
-      "disposition": "context_only"
-    },
-    {
-      "name": "Leonard and Helen Patton",
-      "pages": [
-        202
-      ],
-      "issue": "Cottage owners, not verified relatives.",
-      "disposition": "context_only"
-    },
-    {
-      "name": "Charles and Mary Gates",
-      "pages": [
-        203
-      ],
-      "issue": "Cottage owners, not verified relatives.",
-      "disposition": "context_only"
-    },
-    {
-      "name": "Helen Metcalf",
-      "pages": [
-        206
-      ],
-      "issue": "Cottage association only, not established family relationship.",
-      "disposition": "context_only"
-    },
-    {
-      "name": "Captain Eleazer Crabtree",
-      "pages": [
-        21
-      ],
-      "issue": "Book describes an early home. Possible identification with existing eleazer_crabtree_1760 should not be inferred from the house caption alone.",
-      "disposition": "hold_candidate"
-    },
-    {
-      "name": "Unnamed people in 1918 and 1936 multi-person photos",
-      "pages": [
-        174,
-        194,
-        198,
-        223,
-        229,
-        253
-      ],
-      "issue": "Published captions reportedly identify persons row by row; the 82 photo-page index summarizes rather than transcribes all printed names. Full page-by-page caption reading still required.",
-      "disposition": "requires_full_book_inspection"
-    }
-  ]
-}
+    "linked_people": [
+      {
+        "person_id": "benjamin_beverage_1822",
+        "pdf_pages": [
+          47,
+          51
+        ],
+        "summary": "Benjamin Crabtree Beverage (1822–1875) in a portrait and farmhouse caption",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "amelia_beverage_1833",
+        "pdf_pages": [
+          49,
+          174
+        ],
+        "summary": "Amelia Beverage pictured with brother Hanson and later grandchildren; existing identity has conflicting Amelia profiles and must not be merged silently",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "orris_beverage_1860",
+        "pdf_pages": [
+          25,
+          45,
+          80,
+          92,
+          116,
+          117,
+          150,
+          158,
+          160,
+          192,
+          231
+        ],
+        "summary": "Orris at the island, as educator and founder of the Colony",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "rose_pierson_1866",
+        "pdf_pages": [
+          120,
+          158,
+          159,
+          229,
+          272
+        ],
+        "summary": "Rose Pierson in childhood, at home, and later with grandson Pete",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "mary_beverage_1869",
+        "pdf_pages": [
+          101
+        ],
+        "summary": "Mary 'Mae' Beverage Bemis according to author's family-caption identification; married name unverified by civil record",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "jemima_beverage_1866",
+        "pdf_pages": [
+          188
+        ],
+        "summary": "Jemima 'Mima' Beverage Carver in book caption",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "harriet_beverage_1856",
+        "pdf_pages": [
+          189
+        ],
+        "summary": "Harriet Beverage Green in book caption; other genealogy uses Greene",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "charles_beverage_1863",
+        "pdf_pages": [
+          183
+        ],
+        "summary": "Charles H. Beverage in illustrated portrait",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "olive_beveridge_1890",
+        "pdf_pages": [
+          206,
+          234,
+          235
+        ],
+        "summary": "Olive's Radcliffe graduation and her association with Florence Budlong; page 206 cottage reportedly used by Olive",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "helen_barclay_1896",
+        "pdf_pages": [
+          237,
+          239
+        ],
+        "summary": "Helen Beveridge at Radcliffe and photograph of uncle Bob Barclay; Bob's identity/relationship still needs certificate",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "arnold_beveridge_1903",
+        "pdf_pages": [
+          45,
+          244
+        ],
+        "summary": "Arnold mentioned in woodpile caption; 1926 wedding photograph with Priscilla",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "lowell_beveridge_1905",
+        "pdf_pages": [
+          45,
+          87,
+          233,
+          246,
+          248,
+          250,
+          251,
+          277,
+          278
+        ],
+        "summary": "Lowell Sr. as author's father, Harvard portrait, cottages and photographs",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "norwood_beveridge_1911",
+        "pdf_pages": [
+          266,
+          267
+        ],
+        "summary": "Norwood's cottage and family photograph with wife Dorothy",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "elliot_beverage_1908",
+        "pdf_pages": [
+          257,
+          259,
+          261,
+          263,
+          265,
+          278
+        ],
+        "summary": "Eliot's farm, stone house, magazine cover, and family photo with Dorothy",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "rev_albion_beverage_1907",
+        "pdf_pages": [
+          253
+        ],
+        "summary": "Albion's family in a c.1940 photo",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "grace_reed_1909",
+        "pdf_pages": [
+          253
+        ],
+        "summary": "Grace Reed with Albion's family",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "hiram_stone_beverage_1886",
+        "pdf_pages": [
+          78
+        ],
+        "summary": "Historical sheep barn labeled Hiram Beverage, candidate to this person",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "candidate — Hiram identity unproved",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "lowell_pierson_beveridge_jr_author",
+        "pdf_pages": [
+          57,
+          77,
+          248,
+          272,
+          275,
+          277
+        ],
+        "summary": "Pete, the author, in childhood photos including father Lowell and grandmother Rose",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "ida_louise_gattrell_beveridge",
+        "pdf_pages": [
+          248
+        ],
+        "summary": "Ida, husband Lowell Sr. and son Pete",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "lyford_beveridge_brother_lowell",
+        "pdf_pages": [
+          241,
+          242,
+          278,
+          280
+        ],
+        "summary": "Uncle Lyford with Ruth/Ann and in launch and mooring photographs",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "thomas_gattrell_beveridge_1938",
+        "pdf_pages": [],
+        "summary": "Named son of Lowell Sr. in obituaries/interview; photographs may exist in complete book, not among named captions",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "hortense_tee_sie_beveridge",
+        "pdf_pages": [],
+        "summary": "Pete's documented 1954 wife and film editor; not individually named in the cataloged photo captions",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      },
+      {
+        "person_id": "dorothy_jimmy_gattrell_beverage",
+        "pdf_pages": [
+          257
+        ],
+        "summary": "Dorothy 'Jimmy' Gattrell Beverage shown with Eliot on PDF page 257",
+        "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",
+        "confidence": "reported_in_family_memoir",
+        "profile_source_not_equivalent_to_vital_record": true
+      }
+    ],
+    "unresolved_people": [
+      {
+        "name": "Hanson Beverage (Amelia's brother)",
+        "pages": [
+          49
+        ],
+        "issue": "May correspond to Dana Hanson Beverage (born 1847) but book caption alone is insufficient to identify him with that existing person or create another.",
+        "disposition": "hold_candidate"
+      },
+      {
+        "name": "Vernon Beverage",
+        "pages": [
+          45,
+          177
+        ],
+        "issue": "Named in the author’s account of Orris; first/middle name and relationship lack an independent identified person record.",
+        "disposition": "hold_candidate"
+      },
+      {
+        "name": "Albion Pierson (Rose's father)",
+        "pages": [
+          123,
+          124
+        ],
+        "issue": "Caption reports father-child relationship and death in 1870, but no original birth/marriage/vital file has been compared to establish a unique stable profile.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Jesse Hart (1817–1878)",
+        "pages": [
+          122
+        ],
+        "issue": "Book labels ancestral portrait; intermediate relationship to Rose Pierson is not uniquely specified in the indexed caption.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Florence Budlong",
+        "pages": [
+          235
+        ],
+        "issue": "Book calls Florence Olive's life partner. This should not be converted into a legal-spouse edge without a recorded marriage; death dates and genealogical profile details unverified.",
+        "disposition": "respect_relationship_type"
+      },
+      {
+        "name": "Priscilla (Arnold's wife)",
+        "pages": [
+          244
+        ],
+        "issue": "1926 wedding-photo caption identifies first name and Arnold; maiden name, dates and original marriage return still unverified.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Ruth and Ann (Lyford family)",
+        "pages": [
+          241
+        ],
+        "issue": "Book caption calls them Aunt Ruth and cousin Ann but fails to provide maiden name and verified parent-child proof in this indexed excerpt.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Robert 'Bob' Barclay",
+        "pages": [
+          239
+        ],
+        "issue": "Book photo caption uses 'Uncle Bob'; formal relationship to Helen Beveridge and full identity need independent marriage/census.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Daniel and Hattie Beverage Green",
+        "pages": [
+          181
+        ],
+        "issue": "Homestead caption does not establish which Hattie or complete children and spouse identity; do not merge with Harriet Beverage Green just from nickname.",
+        "disposition": "research_before_add"
+      },
+      {
+        "name": "Herman and Sarah Bengell",
+        "pages": [
+          196
+        ],
+        "issue": "Book names cottage occupants; family-tree linkage to the Beverage line not established.",
+        "disposition": "context_only"
+      },
+      {
+        "name": "William W. Howe",
+        "pages": [
+          200
+        ],
+        "issue": "School principal and summer colony cottage owner; no demonstrated genealogical connection.",
+        "disposition": "context_only"
+      },
+      {
+        "name": "Leonard and Helen Patton",
+        "pages": [
+          202
+        ],
+        "issue": "Cottage owners, not verified relatives.",
+        "disposition": "context_only"
+      },
+      {
+        "name": "Charles and Mary Gates",
+        "pages": [
+          203
+        ],
+        "issue": "Cottage owners, not verified relatives.",
+        "disposition": "context_only"
+      },
+      {
+        "name": "Helen Metcalf",
+        "pages": [
+          206
+        ],
+        "issue": "Cottage association only, not established family relationship.",
+        "disposition": "context_only"
+      },
+      {
+        "name": "Captain Eleazer Crabtree",
+        "pages": [
+          21
+        ],
+        "issue": "Book describes an early home. Possible identification with existing eleazer_crabtree_1760 should not be inferred from the house caption alone.",
+        "disposition": "hold_candidate"
+      },
+      {
+        "name": "Unnamed people in 1918 and 1936 multi-person photos",
+        "pages": [
+          174,
+          194,
+          198,
+          223,
+          229,
+          253
+        ],
+        "issue": "Published captions reportedly identify persons row by row; the 82 photo-page index summarizes rather than transcribes all printed names. Full page-by-page caption reading still required.",
+        "disposition": "requires_full_book_inspection"
+      }
+    ]
+  }
+]
