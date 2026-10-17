@@ -122,6 +122,7 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     phase4_people = load_optional_json_records(data_dir / "phase4_people.json")
     # Separate verified descendant expansion: never rewrite the original family archive.
     phase7_people = load_optional_json_records(data_dir / "phase7_people.json")
+    phase6_people = load_optional_json_records(data_dir / "phase6_people.json")
     phase4_events = load_optional_json_records(data_dir / "phase4_events.json")
     phase5_events = load_optional_json_records(data_dir / "phase5_events.json")
     phase6_events = load_optional_json_records(data_dir / "phase6_events.json")
@@ -129,7 +130,7 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     research = load_optional_json_records(data_dir / "research.json")
     date_precision = load_optional_json_records(data_dir / "date_precision.json")
 
-    effective_people = merge_records(merge_records(merge_records(base_people, research_people), phase4_people), phase7_people)
+    effective_people = merge_records(merge_records(merge_records(merge_records(base_people, research_people), phase4_people), phase7_people), phase6_people)
     effective_events = merge_records(merge_records(merge_records(merge_records(merge_records(base_events, research_events), phase4_events), phase5_events), phase6_events), phase7_events)
     review = load_review(data_dir)
     effective_people = apply_review(apply_date_precision(effective_people, date_precision, "person"), review)
@@ -148,6 +149,7 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
         "research_events": research_events,
         "phase4_people": phase4_people,
         "phase7_people": phase7_people,
+        "phase6_people": phase6_people,
         "phase4_events": phase4_events,
         "phase5_events": phase5_events,
         "phase6_events": phase6_events,
