@@ -263,7 +263,15 @@ def build_full_tree_html(
   }}
   #toolbar button {{ cursor:pointer; }}
   #toolbar button:hover {{ background:#dcebed; }}
-  #personSelect {{ max-width:320px; flex:1 1 220px; }}
+  #personSelect {{ max-width:280px; flex:1 1 170px; }}
+  #personSearch {{ max-width:280px; flex:1 1 170px; min-width:145px; }}
+  #toolbar input {{ min-height:36px; border:1px solid rgba(18,53,66,.32);
+    border-radius:999px; background:#fffdf8; color:#19313a;
+    font:inherit; padding:7px 13px; }}
+  #searchPerson {{ background:#dcebed !important; }}
+  #searchMessage {{ width:100%; margin:0; font-size:12px; color:#50686f; }}
+  #personSearch:focus-visible, #toolbar button:focus-visible, #toolbar select:focus-visible,
+  .node:focus-visible rect {{ outline:none; stroke:#aa7b3f; stroke-width:4; }}
   #selection {{ padding:10px 14px; background:#fffdf8; border-bottom:1px solid var(--line); font-size:13px; }}
   #selection strong {{ color:var(--navy); }}
   #selection a {{ color:#14536e; font-weight:700; }}
@@ -292,8 +300,11 @@ def build_full_tree_html(
     color:#50686f; font-size:11px; pointer-events:none; }}
   @media (max-width:700px) {{
     #shell {{ height:720px; border-radius:12px; }}
-    #toolbar {{ align-items:stretch; }}
-    #toolbar button {{ flex:1 0 auto; }}
+    #toolbar {{ align-items:stretch; gap:6px; }}
+    #toolbar input {{ flex:1 1 48%; max-width:none; }}
+    #personSelect {{ max-width:none; flex:1 1 48%; }}
+    #toolbar button {{ flex:1 0 auto; min-height:42px; }}
+    #selection {{ line-height:1.5; }}
     #status {{ width:100%; margin-left:0; }}
     #help {{ display:none; }}
   }}
@@ -302,8 +313,13 @@ def build_full_tree_html(
 <body>
 <div id="shell">
   <div id="toolbar">
-    <select id="personSelect" aria-label="Find a person">
-      <option value="">Find and center a person…</option>
+    <input id="personSearch" type="search" list="personSuggestions"
+      placeholder="Search names or years…" aria-label="Search family tree names"
+      autocomplete="off">
+    <datalist id="personSuggestions"></datalist>
+    <button id="searchPerson" type="button">Find person</button>
+    <select id="personSelect" aria-label="Choose a person from the complete list">
+      <option value="">Choose any person…</option>
     </select>
     <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option><option value="ancestors">Trace ancestors</option><option value="descendants">Trace descendants</option></select>
     <span id="branchDepthControl" hidden><label for="distance" title="Choose how far to explore from a selected person (family connections, not generations)">Include</label> <select id="distance" aria-label="How many nearby relatives to show"><option value="1">Immediate family</option><option value="2" selected>Close relatives</option><option value="3">Extended family</option><option value="4">Wider family branch</option><option value="99">All documented generations</option></select></span>
@@ -313,6 +329,7 @@ def build_full_tree_html(
     <button id="zoomOut" type="button" aria-label="Zoom out">−</button>
     <button id="reset" type="button">100%</button>
     <span id="status"></span>
+    <p id="searchMessage" role="status" aria-live="polite">Type a name to jump to that relative, or choose someone from the complete list.</p>
   </div>
   <div id="selection" role="status" aria-live="polite">Select a person to explore their relatives.</div>
   <div id="viewport">
@@ -328,6 +345,9 @@ const NS = "http://www.w3.org/2000/svg";
 const svg = document.getElementById("tree");
 const world = document.getElementById("world");
 const select = document.getElementById("personSelect");
+const searchInput = document.getElementById("personSearch");
+const searchSuggestions = document.getElementById("personSuggestions");
+const searchMessage = document.getElementById("searchMessage");
 const status = document.getElementById("status");
 const mode = document.getElementById("mode");
 const distance = document.getElementById("distance");
