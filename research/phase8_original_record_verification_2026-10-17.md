@@ -66,3 +66,16 @@ Eliot and Dorothy have contemporaneous historical diary context plus the family 
 4. New original certificates or more complete archived item access can justify a later **separate, evidence-reviewed** relationship merge.
 
 No historical Boston Tea Party claims or existing family addresses were touched. No modern residence information was collected or added.
+
+
+## 5. Newly inspected 1723–1749 town-vital cross-check
+
+The long-standing James migration narrative benefits from a **more precise timeline**:
+
+- A published transcription of **Marblehead town marriages** prints Sarah Bennett and James Beveridge (one variant printed “Beseridge”) with date **16 Dec 1723**. [Published Marblehead Vital Records, marriages](https://upload.wikimedia.org/wikipedia/commons/2/23/Vital_records_of_Marblehead%2C_Massachusetts%2C_to_the_end_of_the_year_1849_%28IA_cu31924092204308%29.pdf).
+- The published **Marblehead births** print James, son of James and Sarah (name indexed with `Befreadge/Befridge` variants), born **27 Aug 1724**. [Published Marblehead Vital Records, births](https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm).
+- The **1749 Brunswick intention** names James Beveridge and Jean White of Georgetown, **6 Feb 1749**. This was a declaration of intent; the solemnization and confirmation that he was the Massachusetts-born James still require original records. [Brunswick printed intentions](https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html).
+
+**Pre-existing conflict:** The untouched `data/events.json` has a legacy event named `event_marriage_james_jr_jean_white_1749` that says “Marriage,” while `data/phase4_events.json` correctly presents an intention as a *separate event*. `data/phase8_event_evidence.json` and `historical_claims.py` now place a visible **marriage not established** source disclosure directly on the old event card rather than erase the old statement or hide the contradiction. The 1723 and 1724 event cards now cite the original transcribed town-record volume. This does not assert James Sr.'s Scottish birthplace.
+
+**What would resolve it:** locate the actual town/church marriage entry after the 1749 intention, and examine property/probate/inheritance evidence distinguishing multiple men named James over two jurisdictions. An eighteenth-century given name, even with exact birth and intention dates, is not a unique person bridge.
