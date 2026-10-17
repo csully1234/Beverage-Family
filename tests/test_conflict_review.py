@@ -49,14 +49,14 @@ class EvidenceReviewTests(unittest.TestCase):
         archive = ArchiveIndex(self.site)
         self.assertEqual(archive.people[lowell["id"]]["birth_place"], lowell["birth_place"])
         model = build_full_tree_model(self.people, relationship_index(self.site["people"]))
-        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]))
+        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]) + len([p for p in self.site["phase6_people"] if p["id"] not in self.old]))
         for node in model["nodes"]:
             if node["id"] in (sarah["id"], diana["id"]):
                 self.assertNotIn("1734", node["life_span"])
                 self.assertNotIn("1780", node["life_span"])
 
     def test_all_other_person_fields_and_relationships_remain_identical(self):
-        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"]})
+        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"]} | {p["id"] for p in self.site["phase6_people"] if p["id"] not in self.old})
         changes = {(c["person_id"], c["field"]) for r in self.review["resolutions"] for c in r["changes"]}
         metadata = {"sources", "date_provenance", "review_corrections", "conflict_review_ids", "documented_activity"}
         for pid, old_person in self.old.items():
