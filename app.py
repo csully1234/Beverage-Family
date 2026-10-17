@@ -562,7 +562,7 @@ def navigate(page: str) -> None:
 
 def clear_archive_route(page: str) -> None:
     for parameter, allowed in (("place", {"Historical Map", "Historical Places", "Historical Discoveries"}),
-                               ("person", {"Historical Map", "Historical Discoveries"}), ("source", {"Historical Sources"}),
+                               ("person", {"Historical Map", "Historical Discoveries", "Timeline"}), ("source", {"Historical Sources"}),
                                ("q", {"Search", "Historical Discoveries"}),
                                *((key, {"Search"}) for key in ("results_page", "where")),
                                *((key, {"People"}) for key in ("return_q", "return_page", "return_where")),
@@ -751,8 +751,9 @@ def render_home(
         person_ids = [str(person["id"]) for person in ordered]
         chosen = st.selectbox(
             "Search the profile index",
-            options=person_ids,
+            options=[None, *person_ids],
             format_func=lambda person_id: (
+                "Choose a person…" if person_id is None else
                 f"{surname_first_label(people_by_id[person_id])} · "
                 f"{life_span(people_by_id[person_id])}"
             ),
@@ -763,7 +764,8 @@ def render_home(
             "View this profile",
             type="primary",
             on_click=open_profile,
-            args=(chosen,),
+            args=(chosen,) if chosen else (),
+            disabled=chosen is None,
         )
 
         route_markdown("<div class='bev-eyebrow'>Research standard</div>", unsafe_allow_html=True)
@@ -953,7 +955,7 @@ def render_person_profile(
             if len(ids) > 3:
                 st.caption(f"+{len(ids)-3} more in the Family tab")
     route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
-    route_link("View all records in the timeline", "?page=timeline")
+    route_link("View this person's timeline", "?page=timeline&person="+quote(person_id))
 
     if person.get("baptism_date"):
         route_markdown("**Baptized**")
@@ -1397,8 +1399,12 @@ def render_tree_page(
 
     ordered = sorted_people(data["people"])
     person_ids = [str(person["id"]) for person in ordered]
+    query_focus = get_query_value("profile")
+    if query_focus in person_ids and st.session_state.get("_last_tree_query_profile") != query_focus:
+        st.session_state["tree_person"] = query_focus
+    st.session_state["_last_tree_query_profile"] = query_focus
     if "tree_person" not in st.session_state or st.session_state["tree_person"] not in person_ids:
-        st.session_state["tree_person"] = get_query_value("profile") if get_query_value("profile") in person_ids else person_ids[0]
+        st.session_state["tree_person"] = query_focus if query_focus in person_ids else person_ids[0]
 
     picker, mode, depth = st.columns([2, 1.15, 1])
     with picker:
