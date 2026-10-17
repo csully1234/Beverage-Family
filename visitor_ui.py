@@ -14,6 +14,7 @@ from urllib.parse import urlencode
 import streamlit as st
 
 from routing_ui import route_link, route_markdown
+from early_maine_sources import render_early_maine_source_trail
 from research_collection_ui import load_collection, render_finding
 from family_data import life_span, year_from_date
 from evidence_explorer import render_exhibit_library, render_investigations, investigation_catalog
@@ -74,7 +75,7 @@ STORIES = (
         "title": "Before North Haven: Beveridge names in Topsham",
         "period": "1749–1776, with nineteenth-century records",
         "summary": "A 1749 recorded intention for James and Jean plus 1750s Topsham lots may help identify the family's mainland origins.",
-        "body": "An 1888 publication of Brunswick marriage intentions records James Beveridge and Jean White, both of Georgetown, on February 6, 1749. This proves a published intention, not that a wedding occurred or that the couple is uniquely identified with the family tree. In an 1878 history of Brunswick, Topsham and Harpswell, Samuel Beveridge appears in a numbered historical map key for Topsham. A derivative early-settler listing based on the history associates Samuel with lot 3 in 1752 and James Beveridge with lot 7 in 1758. A separate family sketch tentatively reports Mercy Beveridge marrying James Henry on February 15, 1776. These names may provide clues to the mainland kinship network that preceded North Haven, but the source does not prove whether James or Samuel are the men in this website's current early family tree, establish an acreage, or positively identify Mercy. Original deeds, probate records and a contemporary marriage entry are still needed.",
+        "body": "An 1888 printed transcription of Brunswick marriage intentions lists James Beveridge and Jean White, both of Georgetown, on February 6, 1748/9 (commonly called 1749). This records an intention, not proof a wedding took place. Wheeler's 1878 history uses a numbered Topsham map key to locate Samuel Beveridge and lists Samuel in 1752 and James in 1758 in a table of early settlers or landowners. It is not an original deed or a surveyed modern property location. The same local history records a Robert Beveridge in Revolutionary War company rosters in 1776 and 1777, adding a person whose identity and family connections remain unknown. A separate family sketch tentatively reports Mercy Beveridge marrying James Henry in 1776. None of these references independently proves which people are the existing James and Samuel in the online family tree, their acreage, or any parent-child relationship. Explore the printed references below and follow the original records still needed to establish a defensible connection.",
         "terms": ("Topsham", "Beveridge", "Mercy"),
         "source_links": (
             ("1749 Brunswick marriage-intention transcription", "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html"),
@@ -335,6 +336,8 @@ def render_stories_page() -> None:
         st.title(story["title"])
         st.caption(story["period"])
         st.write(story["body"])
+        if story["id"] == "topsham-beveridge-before-fox-islands":
+            render_early_maine_source_trail()
         if story.get("family_group"):
             group_path = ROOT / "research" / "matthew_nathaniel_family_1865.json"
             if group_path.exists():
