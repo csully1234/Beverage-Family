@@ -603,6 +603,9 @@ function focusNode(id, notify=true) {{
     selection.append(link);
   }} else selection.append(document.createTextNode("Unresolved relative; no profile yet"));
   redraw();
+  // Selecting from the huge overview should not leave readable names
+  // microscopic. Fit remains available for anyone wishing to see all.
+  if(notify && mode.value==="all") centerSelected();
   if (notify && window.parent!==window) {{
     window.parent.postMessage({{type:"beverage:person-selected",person_id:id}},"*");
   }}
@@ -610,7 +613,10 @@ function focusNode(id, notify=true) {{
 window.addEventListener("message", event => {{
   if(event.source!==window.parent || event.data?.type!=="beverage:set-selected") return;
   const id=event.data.person_id;
-  if(id && nodeById.has(id) && id!==selectedId) focusNode(id,false);
+  if(id && nodeById.has(id) && id!==selectedId) {{
+    focusNode(id,false);
+    if(mode.value==="all") centerSelected();
+  }}
 }});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
 mode.addEventListener("change", () => {{
@@ -624,7 +630,7 @@ mode.addEventListener("change", () => {{
 }});
 distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
-document.getElementById("centerSelected").addEventListener("click", () => {{
+function centerSelected() {{
   const node=nodeById.get(selectedId);if(!node) return;
   scale=Math.max(scale,0.85);
   const g=world.querySelector(`[data-id="${{CSS.escape(selectedId)}}"]`);
@@ -635,7 +641,8 @@ document.getElementById("centerSelected").addEventListener("click", () => {{
   tx=svg.clientWidth/2-(x+DATA.node_width/2)*scale;
   ty=svg.clientHeight/2-(y+DATA.node_height/2)*scale;
   applyTransform();
-}});
+}}
+document.getElementById("centerSelected").addEventListener("click", centerSelected);
 document.getElementById("zoomIn").addEventListener("click", () => zoomAt(1.25));
 document.getElementById("zoomOut").addEventListener("click", () => zoomAt(0.8));
 document.getElementById("reset").addEventListener("click", resetTree);
