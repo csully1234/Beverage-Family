@@ -81,6 +81,26 @@ def _generation_map(
                     changed = True
         if not changed:
             break
+
+    # A contemporary record may prove two people are siblings without naming
+    # their parents. Display such unparented siblings in the documented sibling's
+    # generation; never manufacture a parent-child relationship.
+    siblings = relationships.get("siblings", {})
+    for _ in range(2):
+        changed = False
+        for person_id in sorted(all_ids):
+            if parents.get(person_id) or memo.get(person_id, 0) > 0:
+                continue
+            sibling_generations = [
+                memo.get(str(sibling_id), 0)
+                for sibling_id in siblings.get(person_id, set())
+                if str(sibling_id) in all_ids
+            ]
+            if sibling_generations and max(sibling_generations) > 0:
+                memo[person_id] = max(sibling_generations)
+                changed = True
+        if not changed:
+            break
     return memo
 
 
@@ -177,11 +197,31 @@ def build_full_tree_model(
             if spouse_id in all_ids and spouse_id != person_id:
                 spouse_edges.add(tuple(sorted((person_id, spouse_id))))
 
+    # Include explicit sibling relations in immediate-relative navigation.
+    # Draw a distinct sibling-only line when no shared parent is recorded:
+    # this represents the *documented sibling claim*, not an invented parent.
+    sibling_edges: set[tuple[str, str]] = set()
+    sibling_only_edges: set[tuple[str, str]] = set()
+    for person_id, sibling_ids in relationships.get("siblings", {}).items():
+        person_id = str(person_id)
+        if person_id not in all_ids:
+            continue
+        for sibling_id in sibling_ids:
+            sibling_id = str(sibling_id)
+            if sibling_id not in all_ids or sibling_id == person_id:
+                continue
+            pair = tuple(sorted((person_id, sibling_id)))
+            sibling_edges.add(pair)
+            if not (set(parents.get(person_id, set())) & set(parents.get(sibling_id, set()))):
+                sibling_only_edges.add(pair)
+
     return {
         "nodes": nodes,
         "positions": position_by_id,
         "parent_edges": [list(edge) for edge in sorted(parent_edges)],
         "spouse_edges": [list(edge) for edge in sorted(spouse_edges)],
+        "sibling_edges": [list(edge) for edge in sorted(sibling_edges)],
+        "sibling_only_edges": [list(edge) for edge in sorted(sibling_only_edges)],
         "width": canvas_width,
         "height": canvas_height,
         "node_width": NODE_WIDTH,
@@ -238,6 +278,7 @@ def build_full_tree_html(
   #tree.dragging {{ cursor:grabbing; }}
   .parent-edge {{ fill:none; stroke:#789097; stroke-width:1.5; opacity:.58; }}
   .spouse-edge {{ fill:none; stroke:#8b779a; stroke-width:1.7; stroke-dasharray:6 4; opacity:.75; }}
+  .sibling-edge {{ fill:none; stroke:#39717d; stroke-width:1.7; stroke-dasharray:2 5; opacity:.8; }}
   .node rect {{ fill:#fffdf8; stroke:#6f969f; stroke-width:1.5; rx:11; ry:11; }}
   .node text {{ fill:#19313a; pointer-events:none; }}
   .node .name {{ font-size:13px; font-weight:700; }}
@@ -278,7 +319,7 @@ def build_full_tree_html(
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Whole family shows everyone · Explore nearby relatives to limit the view · Connections are not generations · Drag to pan</div>
+    <div id="help">Whole family shows everyone · Dotted teal = sourced sibling, parents unverified · Drag to pan</div>
   </div>
 </div>
 <script>
@@ -294,7 +335,7 @@ const branchDepthControl = document.getElementById("branchDepthControl");
 const selection = document.getElementById("selection");
 const links = new Map();
 for(const n of DATA.nodes) links.set(n.id, new Set());
-for(const [a,b] of [...DATA.parent_edges, ...DATA.spouse_edges]) {{ links.get(a)?.add(b); links.get(b)?.add(a); }}
+for(const [a,b] of [...DATA.parent_edges, ...DATA.spouse_edges, ...DATA.sibling_edges]) {{ links.get(a)?.add(b); links.get(b)?.add(a); }}
 let selectedId = "", visibleIds = new Set(DATA.nodes.map(n=>n.id));
 let visibleBounds = {{x:0,y:0,width:DATA.width,height:DATA.height}};
 const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
@@ -342,6 +383,10 @@ for (const [parentId, childId] of DATA.parent_edges) {{
 for (const [aId, bId] of DATA.spouse_edges) {{
   const a=nodeById.get(aId), b=nodeById.get(bId); if (!a || !b) continue;
   world.appendChild(make("path", {{d:spousePath(a,b), class:"spouse-edge", "data-a":aId, "data-b":bId}}));
+}}
+for (const [aId, bId] of DATA.sibling_only_edges) {{
+  const a=nodeById.get(aId), b=nodeById.get(bId); if (!a || !b) continue;
+  world.appendChild(make("path", {{d:spousePath(a,b), class:"sibling-edge", "data-a":aId, "data-b":bId}}));
 }}
 function labelLines(name) {{
   if (name.length <= 28) return [name];
@@ -424,7 +469,7 @@ function redraw() {{
     edge.classList.toggle("is-hidden",!from||!to);
     if(!from||!to) continue;
     const f={{...from}},t={{...to}};
-    edge.setAttribute("d",edge.classList.contains("spouse-edge") ? spousePath(f,t) : edgePath(f,t));
+    edge.setAttribute("d",(edge.classList.contains("spouse-edge") || edge.classList.contains("sibling-edge")) ? spousePath(f,t) : edgePath(f,t));
   }}
   if(mode.value==="all") visibleBounds={{x:0,y:0,width:DATA.width,height:DATA.height}};
   else visibleBounds={{x:-(largest*(DATA.node_width+26))/2-36,y:-36,
