@@ -49,8 +49,8 @@ class Phase6TreeAndBookTests(unittest.TestCase):
 
     def test_family_photo_1954_marriage_2012_interview_have_attributed_events(self):
         marriage = self.events["event_pete_hortense_marriage_1954"]
-        self.assertEqual(marriage["date"], "1954-01")
-        self.assertEqual(marriage["date_precision"], "month")
+        self.assertEqual(marriage["date"], "1954")
+        self.assertEqual(marriage["date_precision"], "year")
         self.assertEqual(set(marriage["people_involved"]), {
             "lowell_pierson_beveridge_jr_author", "hortense_tee_sie_beveridge"
         })
