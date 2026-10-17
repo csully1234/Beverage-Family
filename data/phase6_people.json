@@ -211,6 +211,16 @@
         "accessed": "2026-10-16",
         "supports": "Documents Hortense 'Tee' Beveridge's important work as a film editor and filmmaker in early African American and non-theatrical film.",
         "evidence_level": "Tier 2 — professional historical research"
+      },
+      {
+        "title": "Ages of Time (1959), film catalogued at the National Museum of African American History and Culture",
+        "repository": "Smithsonian National Museum of African American History and Culture",
+        "url": "https://nmaahc.si.edu/object/nmaahc_2012.79.1.3.1a",
+        "record_type": "Institutional film record",
+        "record_date": "1959",
+        "accessed": "2026-10-16",
+        "supports": "Identifies Hortense 'Tee' Beveridge as 1923–1993 and film editor of 1959 production",
+        "evidence_level": "Tier 1 — institutional audiovisual collection"
       }
     ]
   },
@@ -272,17 +282,17 @@
     ],
     "children": [],
     "residences": [],
-    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The North Haven Historical Society's Eliot profile describes Eliot and his wife Dorothy as returning to North Haven in 1954, and Lowell P. Beveridge Jr.'s 2016 illustrated memoir identifies 'Aunt Dorothy Jimmy Gattrell Beverage' with Eliot in a photograph on PDF page 257. Maiden name spelling and marriage record have not been independently checked; birth and death dates not supplied.",
+    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The 2016 illustrated memoir by Lowell P. Beveridge Jr. identifies an 'Aunt Dorothy Jimmy Gattrell Beverage' beside Eliot in its page-257 caption; 1958 Calderwood diary references Eliot and Dorothy in North Haven. The exact maiden name spelling, marriage return, dates of birth and death remain to be confirmed.",
     "evidence_status": "Wife Dorothy corroborated by North Haven Historical Society biography and family memoir. The surname Gattrell and nickname 'Jimmy' are attributed to book caption, not an independently inspected marriage return.",
     "sources": [
       {
-        "title": "Eliot Beveridge — IsleBuilt and North Haven history",
-        "repository": "North Haven Historical Society / IsleBuilt",
-        "url": "https://www.islebuilt.com/eliot-beveridge",
-        "record_type": "Historic biography",
+        "title": "North Haven historical diaries, 1958 — Eliot and Dorothy",
+        "repository": "North Haven Historical Society, Calderwood diary transcription",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1958.pdf",
+        "record_type": "Contemporaneous diary transcription",
         "accessed": "2026-10-16",
-        "supports": "Historic biography identifies wife Dorothy and family return to North Haven c.1954",
-        "evidence_level": "Tier 3 — community historical biography"
+        "supports": "1958 island diary references Eliot and Dorothy, providing separate context for the couple reported in the Colony portrait",
+        "evidence_level": "Tier 2/3 — first-person diary transcription; exact marriage record not examined"
       },
       {
         "title": "The Colony, 2016, PDF p. 257",
