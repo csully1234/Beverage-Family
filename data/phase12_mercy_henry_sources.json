@@ -1,0 +1,64 @@
+[
+  {
+    "id": "topsham-mercy-henry-1831",
+    "title": "Mercy (Beveridge) Henry — recorded death and husband, 1831",
+    "date": "1831-10-26",
+    "year": 1831,
+    "kind": "Published transcription of First Parish cemetery gravestone",
+    "status": "Gravestone-derived death date and marital identification, not a proof of birth family",
+    "summary": "Mary Pelham Hill's Maine Historical Society-authorized Topsham vital-record compilation (1930), death entries under HENRY, reports Mercy [Beveridge], wife of James, died October 26, 1831, aged 78 years 6 months, citing gravestone record G.R.1 and a private local history P.R.80. A separately published Maine cemetery survey agrees but apparently describes the SAME gravestone; these are not independent death records. Her maiden surname and husband are attested as printed, but her parents are unknown.",
+    "source_title": "Vital Records of Topsham, Maine, vol. II (1930), printed death index under HENRY, p. 334",
+    "source_url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+    "supporting_sources": [
+      {
+        "title": "Maine Historical Society 1930 Topsham town records, Henry/Mercy entry",
+        "url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+        "role": "Published cemetery transcription; G.R.1 gravestone origin"
+      },
+      {
+        "title": "State of Maine geographic cemeteries survey — First Parish Cemetery",
+        "url": "https://www.maine.gov/megis/pdfs/cemeteries/Sagadahoc/Sagadahoc%20County.pdf",
+        "role": "Modern cemetery index, likely based on same grave inscription; not independent proof"
+      },
+      {
+        "title": "Topsham Public Library First Parish historical biographical notes",
+        "url": "https://topshamlibrary.org/wp-content/uploads/2013/12/1st-Parish-Church-Topsham-Cemetery-Life-Stories-Updated.pdf",
+        "role": "Later local synthesis naming Mercy and child Capt. Robert Henry; derivative and requires separate proof"
+      }
+    ],
+    "limits": "The grave-derived age suggests an approximate birth around April 1753, not a certified date. The sources do not identify Mercy's parents, the 1752 Samuel, the 1758 James, or the military Robert Beveridge as relatives.",
+    "next_record": "Review a photograph of the original First Parish Cemetery marker (cemetery index 139.1), identify 1831 burial register and 1831 probate of James Henry, and search any original land, marriage or probate document naming Mercy's family of origin. Do not assign a Beveridge father from chronological coincidence.",
+    "person_status": "Historically attested Mercy (Beveridge) Henry; currently unplaced in online Beverage genealogy.",
+    "timeline_inclusion": true,
+    "research_date_kind": "Gravestone-transcribed death date",
+    "source_group": "Mercy–Henry"
+  },
+  {
+    "id": "topsham-mercy-marriage-candidate-1776",
+    "title": "Mercy Beveridge and James Henry Jr. — marriage reported as probable",
+    "date": "1776-02-15",
+    "year": 1776,
+    "kind": "Later historical family sketch, unverified marriage date",
+    "status": "Wheeler's 1878 book says probably married; original ceremony not located",
+    "summary": "Wheeler's 1878 Topsham history, Henry family sketch, lists James as son of James Henry (the elder, called the cooper), and suggests the younger James likely married Mercy Beveridge February 15, 1776. The 1930 gravestone-based record independently reports a Mercy Beveridge as wife of James Henry at her death in 1831, but does not confirm the exact wedding date or distinguish all namesakes. Do not mistake the elder James Henry (died 1785) for the younger James Henry (died 1831).",
+    "source_title": "Wheeler, History of Brunswick, Topsham and Harpswell (1878), HENRY family sketch, printed p. 837",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+    "supporting_sources": [
+      {
+        "title": "Wheeler 1878 Henry family sketch",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+        "role": "Uncertain marriage hypothesis and the older Henry family's narrative"
+      },
+      {
+        "title": "1930 Topsham vital-records cemetery index",
+        "url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+        "role": "Identifies wife of James, not original solemnization date"
+      }
+    ],
+    "limits": "The 1776 date is expressly tentative in the later narrative, and a gravestone inscription is not a marriage return. No parents, siblings, children or ancestral links for Mercy were established from original civil registers.",
+    "next_record": "Inspect the actual Topsham and Brunswick 1776 marriage registers and ministry returns, Pejepscot marriage-intention files and Henry-family probate papers, starting with the reputed February 15, 1776 ceremony; verify James Henry Jr. separately from his father.",
+    "person_status": "Candidate marriage reported in 1878; marriage relationship at death better attested by gravestone transcription.",
+    "timeline_inclusion": false,
+    "source_group": "Mercy–Henry"
+  }
+]

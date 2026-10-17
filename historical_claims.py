@@ -48,4 +48,8 @@ def reviewed_event_presentation(event: dict) -> dict:
             rendered["description"] = note["display_summary"]
         if note.get("display_evidence_status"):
             rendered["evidence_status"] = note["display_evidence_status"]
+        if note.get("display_date"):
+            rendered["date"] = note["display_date"]
+        if note.get("display_date_precision"):
+            rendered["date_precision"] = note["display_date_precision"]
     return rendered

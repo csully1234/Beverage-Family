@@ -1,0 +1,82 @@
+[
+  {
+    "id": "mercy_beveridge_henry_1753",
+    "parents": [],
+    "siblings": [],
+    "birth_date": "1753",
+    "birth_date_precision": "approximate",
+    "birth_place": null,
+    "death_date": "1831-10-26",
+    "death_date_precision": "exact",
+    "death_place": null,
+    "notes": "This Mercy is historically attested under HENRY in the 1930 Topsham death-register transcription: 'Mercy [Beveridge], wife of James', died 26 Oct 1831 aged 78 years 6 months, derived from cemetery inscription G.R.1. Wheeler's 1878 Henry genealogy says James Henry Jr. probably married Mercy Beveridge in 1776. The previously imported assertion that James Beveridge Jr. and Jean White were her parents was unsupported by original birth, probate or land records, so their parent-child link is currently excluded from the effective tree. Mercy's birthplace, exact birth date, place of death and parents remain unknown. The 1753 birth year is approximate from gravestone age. Original imported record is retained unchanged for audit.",
+    "evidence_status": "Documented gravestone-derived spouse and death date; birth family and 1776 ceremony unverified.",
+    "sources": [
+      {
+        "title": "Vital Records of Topsham, Maine, vol. II, p. 334 (1930), Henry/Mercy",
+        "url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+        "repository": "Maine Historical Society",
+        "record_type": "Published inscription/transcription of First Parish gravestone",
+        "supports": "Mercy [Beveridge], wife of James, died 26 Oct 1831; cemetery transcription G.R.1; maiden name also editorially indexed.",
+        "evidence_level": "Published cemetery transcription; original stone not examined"
+      },
+      {
+        "title": "History of Brunswick, Topsham and Harpswell, Henry family sketch (1878)",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+        "repository": "George and Henry Wheeler",
+        "record_type": "Historical family sketch",
+        "supports": "A James Henry Jr. probably married Mercy Beveridge around 15 Feb 1776; exact ceremony not documented.",
+        "evidence_level": "Tentative nineteenth-century marriage claim"
+      }
+    ]
+  },
+  {
+    "id": "henry_henry_1750",
+    "full_name": "James Henry (Mercy's husband, died 1831)",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": "1831-11-02",
+    "death_date_precision": "exact",
+    "death_place": null,
+    "notes": "Legacy placeholder originally labeled 'Henry Henry'. Research links it to James Henry, husband of Mercy (Beveridge) Henry, documented by the First Parish gravestone inventory. He died 2 Nov 1831 according to the published cemetery entry; he is distinct from the elder James Henry (the cooper, died 1785) in Wheeler's 1878 history. The specific year 1743 and proposed birth family from later biographies are not yet verified from original records. Existing stable record ID is retained for internal links.",
+    "evidence_status": "James Henry name/death from Topsham cemetery transcription; detailed vital identity requires original records.",
+    "sources": [
+      {
+        "title": "Maine state cemetery index: Topsham First Parish Cemetery, Henry entries 137 and 139–139.1",
+        "url": "https://www.maine.gov/megis/pdfs/cemeteries/Sagadahoc/Sagadahoc%20County.pdf",
+        "repository": "Maine GeoLibrary",
+        "record_type": "Government cemetery inventory",
+        "supports": "Dated separate James Henry graves in 1785 and 1831; wife Mercy with younger 1831 James.",
+        "evidence_level": "Cemetery index likely derived from gravestone inscriptions"
+      }
+    ]
+  },
+  {
+    "id": "james_beveridge_jr_1724",
+    "children": [
+      "thomas_beverage_1750",
+      "sarah_beveridge_kent_1758"
+    ]
+  },
+  {
+    "id": "jean_mckinney_white_1725",
+    "children": [
+      "major_george_white_1746",
+      "john_white_1748",
+      "thomas_beverage_1750",
+      "sarah_beveridge_kent_1758"
+    ]
+  },
+  {
+    "id": "thomas_beverage_1750",
+    "siblings": [
+      "sarah_beveridge_kent_1758"
+    ]
+  },
+  {
+    "id": "sarah_beveridge_kent_1758",
+    "siblings": [
+      "thomas_beverage_1750"
+    ]
+  }
+]

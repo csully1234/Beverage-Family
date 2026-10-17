@@ -134,6 +134,12 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     effective_events = merge_records(merge_records(merge_records(merge_records(merge_records(base_events, research_events), phase4_events), phase5_events), phase6_events), phase7_events)
     review = load_review(data_dir)
     effective_people = apply_review(apply_date_precision(effective_people, date_precision, "person"), review)
+    # Versioned source corrections repair inaccurate legacy genealogy in the
+    # effective site only; original imported people.json remains byte-identical.
+    # Applied AFTER old placeholder date precision so reviewed cemetery dates
+    # and explicit unknown parentage cannot be silently overwritten.
+    phase12_profile_corrections = load_optional_json_records(data_dir / "phase12_profile_corrections.json")
+    effective_people = merge_records(effective_people, phase12_profile_corrections)
 
     # Additive archive files are optional, like the existing research overlays.
     # Keep the names here explicit to avoid an archive <-> family_data import cycle.

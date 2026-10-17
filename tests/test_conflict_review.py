@@ -59,10 +59,28 @@ class EvidenceReviewTests(unittest.TestCase):
         self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"] + self.site["phase7_people"] + self.site["phase6_people"]})
         changes = {(c["person_id"], c["field"]) for r in self.review["resolutions"] for c in r["changes"]}
         metadata = {"sources", "date_provenance", "review_corrections", "conflict_review_ids", "documented_activity"}
+        # Separately audited Phase 12 source correction of a historically
+        # misidentified Mercy Henry and original placeholder spouse.
+        mercy_corrections = {
+            "mercy_beveridge_henry_1753": {
+                "parents", "siblings", "birth_date", "birth_date_precision",
+                "birth_place", "death_date", "death_date_precision",
+                "death_place", "notes", "evidence_status",
+            },
+            "henry_henry_1750": {
+                "full_name", "birth_date", "birth_place", "death_date",
+                "death_date_precision", "death_place", "notes", "evidence_status",
+            },
+            "james_beveridge_jr_1724": {"children"},
+            "jean_mckinney_white_1725": {"children"},
+            "thomas_beverage_1750": {"siblings"},
+            "sarah_beveridge_kent_1758": {"siblings"},
+        }
         for pid, old_person in self.old.items():
             p = self.people[pid]
             for key in p.keys() | old_person.keys():
-                if key not in metadata and (pid, key) not in changes:
+                if (key not in metadata and (pid, key) not in changes
+                        and key not in mercy_corrections.get(pid, set())):
                     self.assertEqual(p.get(key), self.old[pid].get(key), (pid, key))
         new_rel = relationship_index(self.site["people"])
         old_rel = relationship_index(self.before)
@@ -79,6 +97,24 @@ class EvidenceReviewTests(unittest.TestCase):
                     self.assertEqual(new_rel[field].get(pid, set()), expected)
                 elif pid == "elliot_beverage_1908" and field == "spouses":
                     self.assertEqual(new_rel[field].get(pid, set()), old_rel[field].get(pid, set()) | {"dorothy_jimmy_gattrell_beverage"})
+                elif (pid, field) in {
+                    ("mercy_beveridge_henry_1753", "parents"),
+                    ("mercy_beveridge_henry_1753", "siblings"),
+                    ("james_beveridge_jr_1724", "children"),
+                    ("jean_mckinney_white_1725", "children"),
+                    ("thomas_beverage_1750", "siblings"),
+                    ("sarah_beveridge_kent_1758", "siblings"),
+                    ("major_george_white_1746", "siblings"),
+                    ("john_white_1748", "siblings"),
+                }:
+                    excluded = ({"james_beveridge_jr_1724", "jean_mckinney_white_1725"}
+                                if pid == "mercy_beveridge_henry_1753" and field == "parents"
+                                else {"thomas_beverage_1750", "sarah_beveridge_kent_1758",
+                                      "major_george_white_1746", "john_white_1748"}
+                                if pid == "mercy_beveridge_henry_1753" and field == "siblings"
+                                else {"mercy_beveridge_henry_1753"})
+                    self.assertEqual(new_rel[field].get(pid, set()),
+                                     old_rel[field].get(pid, set()) - excluded)
                 else:
                     self.assertEqual(new_rel[field].get(pid, set()), old_rel[field].get(pid, set()))
         self.assertIn("amelia_beverage_1833_child", self.people)

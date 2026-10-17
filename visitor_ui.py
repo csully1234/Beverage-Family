@@ -15,6 +15,7 @@ import streamlit as st
 
 from routing_ui import route_link, route_markdown
 from early_maine_sources import render_early_maine_source_trail, render_james_identity_comparison
+from mercy_henry_sources import render_mercy_henry_evidence
 from research_collection_ui import load_collection, render_finding
 from family_data import life_span, year_from_date
 from evidence_explorer import render_exhibit_library, render_investigations, investigation_catalog
@@ -337,6 +338,7 @@ def render_stories_page() -> None:
         st.caption(story["period"])
         st.write(story["body"])
         if story["id"] == "topsham-beveridge-before-fox-islands":
+            render_mercy_henry_evidence()
             render_james_identity_comparison()
             render_early_maine_source_trail()
         if story.get("family_group"):
