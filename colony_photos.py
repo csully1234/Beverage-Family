@@ -12,6 +12,7 @@ from pathlib import Path
 import streamlit as st
 
 from family_books import book_pdf_path, load_books, load_book_person_crosswalk
+from family_data import index_people, load_site_data
 from routing_ui import route_link
 
 _CAPTIONS = Path(__file__).resolve().parent / "data" / "colony_photo_captions.json"
@@ -61,6 +62,7 @@ def render_colony_photographs() -> None:
     book = next((b for b in books if b["id"] == "colony-book-2016"), books[0])
     data = load_colony_photo_catalog()
     photos = data["photos"]
+    people_index = index_people(load_site_data(_CAPTIONS.parent)["people"])
     # Only refer to independently keyed, attributed person matches; never
     # infer that a shared surname or caption implies a verified identity.
     people_by_page = {}
@@ -89,7 +91,9 @@ def render_colony_photographs() -> None:
         p for p in photos
         if (category == "All photographs" or category == p["section"])
         and (not search or search in " ".join((
-            p["title"], p["caption_summary"], p["section"], str(p["pdf_page"])
+            p["title"], p["caption_summary"], p["section"], str(p["pdf_page"]),
+            *(str(people_index.get(person["person_id"], {}).get("full_name") or "")
+              for person in people_by_page.get(int(p["pdf_page"]), [])),
         )).casefold())
     ]
     if order == "Book order (last first)":
@@ -131,7 +135,8 @@ def render_colony_photographs() -> None:
                 if linked:
                     st.caption("Related profiles (author-attributed caption references)")
                     for person in linked:
-                        label = str(person["person_id"]).replace("_", " ").title()
+                        record = people_index.get(person["person_id"], {})
+                        label = str(record.get("full_name") or person["person_id"].replace("_", " "))
                         if str(person.get("confidence") or "").startswith("candidate"):
                             label += " · possible match only"
                         route_link(label, "?page=people&profile=" + person["person_id"])
