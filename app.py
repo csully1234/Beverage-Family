@@ -51,6 +51,7 @@ from family_data import (
 )
 from validation import validate_site_data
 from family_search import matches as archive_matches, person_match
+from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
 from research_collection_ui import (
@@ -358,11 +359,21 @@ def apply_theme() -> None:
         }
 
         @media (max-width: 700px) {
-            .block-container { padding-top: 4.25rem; }
+            .block-container { padding-top: 3.5rem; padding-left: .85rem; padding-right: .85rem; }
             .bev-hero { border-radius: 16px; padding: 2rem 1.35rem 2.5rem; }
-            [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
-            [data-testid="stColumn"] { min-width: min(100%, 18rem); flex: 1 1 18rem; }
-            [data-testid="stTabs"] [role="tablist"] { overflow-x: auto; }
+            .bev-hero h1 { font-size: clamp(2.05rem, 11vw, 3.15rem); }
+            .bev-hero p { font-size: 1rem; line-height: 1.5; }
+            .bev-profile-banner { padding: 1rem; }
+            [data-testid="stHorizontalBlock"] { flex-wrap: wrap; gap: .65rem; }
+            [data-testid="stColumn"] { min-width: min(100%, 14rem); flex: 1 1 14rem; }
+            [data-testid="stTabs"] [role="tablist"] {
+                overflow-x: auto; overscroll-behavior-x: contain;
+                scroll-snap-type: x proximity; scrollbar-width: thin;
+            }
+            [data-testid="stTabs"] [role="tab"] { flex: 0 0 auto; scroll-snap-align: start; }
+            [data-testid="stVerticalBlockBorderWrapper"] { padding: .25rem; }
+            .stButton > button { white-space: normal; height: auto; }
+            [data-testid="stDataFrame"] { max-width: 100%; overflow-x: auto; }
         }
         </style>
         """,
@@ -677,9 +688,10 @@ def render_sidebar(people: list[Record], people_by_id: Mapping[str, Record]) -> 
             st.session_state.clear()
             st.rerun()
         st.caption(f"{len(people)} profiles indexed")
-        runtime_id, directory_variant = runtime_source_identity()
-        st.caption("Running source: " + runtime_id)
-        st.caption("People directory implementation: " + directory_variant)
+        with st.expander("Site information · troubleshooting"):
+            runtime_id, directory_variant = runtime_source_identity()
+            st.caption("Running source: " + runtime_id)
+            st.caption("People directory implementation: " + directory_variant)
     return "Document Reader" if showing_document else page
 
 
@@ -715,12 +727,16 @@ def render_home(
         ("Photographs & documents", "Browse original sources and historical image records.", "?page=media"),
         ("Read the family timeline", "Follow people and events through time.", "?page=timeline"),
         ("Discover family stories", "Explore remarkable people, places and discoveries.", "?page=stories"),
+        ("Read the illustrated family book", "Browse all 305 scanned pages and their people.", "?page=family-books"),
+        ("Trace original evidence", "Open documents, sources and disputed family claims.", "?page=archive"),
+        ("Explore the entire family map", "See the complete family and choose a branch.", "?page=full-tree"),
     ]
-    for row in (actions[:3], actions[3:]):
+    for row in (actions[:3], actions[3:6], actions[6:]):
         for col, (label, description, url) in zip(st.columns(3), row):
             with col.container(border=True):
                 route_link(label, url, width="stretch")
                 st.caption(description)
+    render_recent_profile_links(dict(people_by_id))
     with st.expander("About this family history"):
         st.write(f"{len(people)} relatives · {len(events)} recorded family events · {span}. Dates, identities and relationships may be incomplete or disputed; original historical sources are linked wherever possible.")
         route_link("Browse historical discoveries", "?page=collection")
@@ -884,6 +900,7 @@ def render_person_profile(
     research: list[Record],
 ) -> None:
     person_id = str(person["id"])
+    visit_person(person_id, dict(people_by_id))
     route_markdown(
         f"""
         <section class="bev-profile-banner">
@@ -1997,6 +2014,7 @@ def main() -> None:
     page = render_sidebar(data["people"], people_by_id)
     if page != "Home":
         route_markdown(f"[Home](?page=home) / {PAGE_GROUP[page]} / {page}")
+        render_journey_bar(page, people_by_id)
 
     if page == "Home":
         render_home(data, people_by_id, relationships)
