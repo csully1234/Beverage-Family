@@ -62,8 +62,8 @@ class ResearchCollectionTests(unittest.TestCase):
         people = {r["id"] for r in self.site["people"]}
         # The Oct 14 source snapshot is immutable; later separately-sourced
         # profiles and historical events are additive overlays.
-        self.assertEqual(len(people), 180 + len(self.site["phase4_people"]))
-        self.assertEqual(len(self.site["events"]), 127 + len(self.site["phase4_events"]) + len(self.site["phase5_events"]))
+        self.assertEqual(len(people), 180 + len(self.site["phase4_people"]) + len(self.site["phase7_people"]))
+        self.assertEqual(len(self.site["events"]), 127 + len(self.site["phase4_events"]) + len(self.site["phase5_events"]) + len(self.site["phase6_events"]) + len(self.site["phase7_events"]))
         self.assertTrue({"amelia_beverage_1833", "amelia_beverage_1833_child"} <= people)
         self.assertFalse(any(pid.startswith("RQ-P") for pid in people))
         self.assertEqual(self.collection.findings["BF-R049"]["Confidence"], "Conflict")

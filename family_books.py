@@ -225,6 +225,9 @@ def render_family_books() -> None:
     for book in load_books():
         st.markdown("### " + book["title"])
         st.caption(f"{book['author']} · {book['publication_year']} · {book.get('pdf_page_count', 305)} scanned pages")
+        if book.get("author_person_id"):
+            route_link("Meet the author and explore his family connections",
+                       "?page=people&profile=" + str(book["author_person_id"]))
         st.write(book.get("subtitle", ""))
         st.caption("Reproduction for this family website authorized by the user; original © notice remains and the source-page demo overlay was removed from the clean web edition.")
         tab_read, tab_photos, tab_chapters = st.tabs([
@@ -240,25 +243,35 @@ def render_family_books() -> None:
 
 
 def render_book_profile_context(person: dict) -> None:
-    """Relate a named source reference to a possible family profile cautiously."""
-    name = str(person.get("full_name") or "").casefold()
-    indexed = []
-    if "amelia" in name and "bever" in name:
-        indexed.append(("A photograph of Amelia and Hanson Beverage", 49))
-    if "hanson" in name and "bever" in name:
-        indexed.append(("A photograph of Amelia and Hanson Beverage", 49))
-    if "eleazer" in name and "crabtree" in name:
-        indexed.append(("A historic house attributed to Capt. Eleazer Crabtree", 21))
-    if "lowell" in name and "bever" in name:
-        indexed.append(("A portrait captioned Lowell Beveridge, Harvard 1925", 246))
-    if "orris" in name:
-        indexed.append(("An illustrated family memoir centered on Orris", 1))
-    if not indexed:
+    """Link the book author and identified image subjects by stable person ID.
+
+    Names alone are not sufficient: father and son are both Lowell Pierson
+    Beveridge, but the 1923 Harvard portrait is of Lowell Sr. and the 2016
+    author is Lowell Jr. Never infer an image match from shared name text.
+    """
+    person_id = str(person.get("id") or "")
+    indexed = {
+        "amelia_beverage_1833": [("A photograph of Amelia and Hanson Beverage", 49)],
+        "amelia_beverage_1833_child": [("A photograph of Amelia and Hanson Beverage (verify identification)", 49)],
+        "dana_hanson_beverage_1847": [("Photograph of Amelia with brother Hanson (identity to corroborate)", 49)],
+        "eleazer_crabtree_1760": [("A historic house attributed to Capt. Eleazer Crabtree", 21)],
+        "lowell_beveridge_1905": [("Lowell Beveridge's Harvard class picture, 1923", 246)],
+        "orris_beverage_1860": [("An illustrated memoir about Orris", 1)],
+    }.get(person_id, [])
+    is_author = person_id == "lowell_pierson_beveridge_jr_1930"
+    if not indexed and not is_author:
         return
     with st.container(border=True):
-        st.markdown("**Referenced in an illustrated family history**")
-        st.write("Lowell P. Beveridge, Jr., *The Colony: Stories from a Down East Island* (2016).")
-        for label, page in indexed:
-            route_link(label+" · source page "+str(page),
-                       "?page=family-books&book_page="+str(page))
-        st.caption("Source captions are documented; identifying the person in a scanned image with this exact profile may still require corroboration.")
+        if is_author:
+            st.markdown("**Family-book author — Lowell P. Beveridge Jr.**")
+            st.write("This person wrote *The Colony: Stories from a Down East Island* (2016). "
+                     "He is the son of Lowell Pierson Beveridge (1905–1991), whose "
+                     "Harvard student portrait is a different person's image.")
+            route_link("Read Lowell Jr.'s entire illustrated family book", "?page=family-books")
+        else:
+            st.markdown("**Referenced in an illustrated family history**")
+            st.write("Lowell P. Beveridge, Jr., *The Colony: Stories from a Down East Island* (2016).")
+            for label, page in indexed:
+                route_link(label + " · source page " + str(page),
+                           "?page=family-books&book_page=" + str(page))
+            st.caption("A captioned photograph may still require independent confirmation of its subject.")

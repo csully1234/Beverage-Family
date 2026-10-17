@@ -1,0 +1,248 @@
+[
+  {
+    "id": "ida_louisa_gattrell_beveridge_1901",
+    "full_name": "Ida Louisa Gattrell Beveridge",
+    "alternate_names": [
+      "Ida Louise Gattrell Beveridge"
+    ],
+    "birth_date": "1901",
+    "birth_date_precision": "year",
+    "death_date": "1993-01-23",
+    "death_date_precision": "exact",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "lowell_beveridge_1905"
+    ],
+    "children": [
+      "lowell_pierson_beveridge_jr_1930",
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "residences": [],
+    "notes": "Lowell Pierson Beveridge's wife. His contemporaneous 1960 Harvard class report records their marriage on December 25, 1926, in Newburyport, Massachusetts, and names their two sons. A cemetery index gives her death as January 23, 1993; differing online birth dates are avoided in favor of year precision.",
+    "evidence_status": "Family relationships and marriage date supported by husband's contemporary 1960 class report and 1991 institutional memorial; death date from secondary cemetery listing",
+    "sources": [
+      {
+        "title": "Harvard College Class of 1925: Thirty-fifth Anniversary Report (1960), printed p.20",
+        "repository": "Harvard College (digitized at Internet Archive; page transcription at LDSGenealogy)",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "record_type": "1960 contemporaneous Harvard class questionnaire / self-reported family register",
+        "record_date": "1960",
+        "accessed": "2026-10-16",
+        "supports": "Lowell Pierson Beveridge's marriage to Ida Louisa Gattrell on 25 Dec 1926; names and exact birth dates of sons Lowell Pierson Jr. (7 Apr 1930) and Thomas Gattrell (6 Apr 1938); Lowell Jr.'s 1960 spouse Hortense Sie",
+        "evidence_level": "Tier 1/2 — contemporaneous self-reported family record, typeset by Harvard; original page scan at archive.org/details/harvardclassof1900unse"
+      },
+      {
+        "title": "In Memoriam: The Reverend Lowell P. Beveridge (1991)",
+        "repository": "Episcopal Diocese of Virginia Annual Council Journal, 1991",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "record_type": "Institutional obituary/memorial",
+        "record_date": "1991",
+        "accessed": "2026-10-16",
+        "supports": "1905–1991 Lowell Sr. survived by wife Ida Gattrell Beveridge and two sons, Thomas and Lowell P. Beveridge Jr.; separate father from the 2016 author",
+        "evidence_level": "Tier 2 — contemporaneous diocesan memorial"
+      },
+      {
+        "title": "Ida Louise Gattrell Beveridge cemetery entry (1901–1993)",
+        "repository": "PeopleLegacy cemetery profile",
+        "url": "https://peoplelegacy.net/ida_louise_gattrell_beveridge-4q7x3z",
+        "record_type": "Secondary gravesite listing",
+        "accessed": "2026-10-16",
+        "supports": "Ida's death on 23 Jan 1993, and 1901 birth-year range; other sources differ on exact December birth day so only year retained",
+        "evidence_level": "Tier 3/4 — compiled grave entry, not original civil death return"
+      }
+    ]
+  },
+  {
+    "id": "lowell_pierson_beveridge_jr_1930",
+    "full_name": "Lowell Pierson Beveridge Jr.",
+    "alternate_names": [
+      "Lowell P. Beveridge, Jr.",
+      "Pete Beveridge"
+    ],
+    "birth_date": "1930-04-07",
+    "birth_date_precision": "exact",
+    "death_date": null,
+    "parents": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901"
+    ],
+    "siblings": [
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "spouses": [
+      "hortense_tee_sie_beveridge_1923"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Author",
+      "Historian"
+    ],
+    "notes": "Author of The Colony (2016), son of Lowell Pierson Beveridge Sr. In a 2012 recorded oral history Pete personally identified himself, described summers on shared North Haven family property, and recounted strong opposition from his father's seven siblings to his relationship with filmmaker Hortense (“Tee”) Sie. The couple married in January 1954 at St. Philip's Episcopal Church in Harlem, with his parents' and brother's attendance and the parents' ultimate blessing, despite the wider family's objections. He discussed his progressive organizing at Harvard. Earlier search-summary claims of a 1953 wedding, a complete disowning by his parents, or an exactly 20-year exile are not supported by this original interview. The family property's later sale is mentioned in Lowell Sr.'s 1960 Harvard report but cannot be causally linked to the marriage from that report alone. Do not publish inferred living relatives, current addresses or private contacts.",
+    "evidence_status": "First-person 2012 oral history, 1960 father-authored Harvard family report, and 1991 diocesan memorial establish the distinct author and 1954 marriage; any precise exclusion duration remains unverified",
+    "sources": [
+      {
+        "title": "Harvard College Class of 1925: Thirty-fifth Anniversary Report (1960), printed p.20",
+        "repository": "Harvard College (digitized at Internet Archive; page transcription at LDSGenealogy)",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "record_type": "1960 contemporaneous Harvard class questionnaire / self-reported family register",
+        "record_date": "1960",
+        "accessed": "2026-10-16",
+        "supports": "Lowell Pierson Beveridge's marriage to Ida Louisa Gattrell on 25 Dec 1926; names and exact birth dates of sons Lowell Pierson Jr. (7 Apr 1930) and Thomas Gattrell (6 Apr 1938); Lowell Jr.'s 1960 spouse Hortense Sie",
+        "evidence_level": "Tier 1/2 — contemporaneous self-reported family record, typeset by Harvard; original page scan at archive.org/details/harvardclassof1900unse"
+      },
+      {
+        "title": "In Memoriam: The Reverend Lowell P. Beveridge (1991)",
+        "repository": "Episcopal Diocese of Virginia Annual Council Journal, 1991",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "record_type": "Institutional obituary/memorial",
+        "record_date": "1991",
+        "accessed": "2026-10-16",
+        "supports": "1905–1991 Lowell Sr. survived by wife Ida Gattrell Beveridge and two sons, Thomas and Lowell P. Beveridge Jr.; separate father from the 2016 author",
+        "evidence_level": "Tier 2 — contemporaneous diocesan memorial"
+      },
+      {
+        "title": "Pete Beveridge, interview May 23, 2012, Crossing Borders, Bridging Generations",
+        "repository": "Brooklyn Historical Society; NYU Special Collections finding aid",
+        "url": "https://findingaids.library.nyu.edu/cbh/arms_2011_019/all/",
+        "record_type": "Institutional oral-history description",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Lowell 'Pete' Beveridge's public professional biography and the interview's provenance; digital audio/transcript rights held by archive",
+        "evidence_level": "Tier 2 — institutional collection description"
+      },
+      {
+        "title": "The Colony: Stories from a Down East Island (2016), author's byline",
+        "repository": "2016 authorized family-website edition of Lowell P. Beveridge Jr.'s book",
+        "url": "https://beverage-family.onrender.com/?page=family-books",
+        "record_type": "Authored historical family memoir in the site's authorized book collection",
+        "record_date": "2016",
+        "accessed": "2026-10-16",
+        "supports": "Establishes Lowell P. Beveridge Jr. as author distinct from father who died 1991; internal book reader available on site",
+        "evidence_level": "Tier 1 — bibliographic authorship; family recollections require case-specific corroboration"
+      },
+      {
+        "title": "Pete Beveridge, Crossing Borders Bridging Generations Oral History, interview by Sady Sullivan, 23 May 2012, #2011.019.032, pp.3–16",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded oral-history transcript, 34 pages, research-only rights",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Pete states his full name and April 7 1930 birth; North Haven family summers and communal property; opposition by paternal aunts/uncles to interracial marriage, parents' subsequent blessing; married Tee in January 1954 at St. Philip's in Harlem; Harvard political activism",
+        "evidence_level": "Tier 1 — narrator's firsthand testimony about his own experiences; contested family's motivations documented as his recollection"
+      }
+    ]
+  },
+  {
+    "id": "thomas_gattrell_beveridge_1938",
+    "full_name": "Thomas Gattrell Beveridge",
+    "birth_date": "1938-04-06",
+    "birth_date_precision": "exact",
+    "death_date": null,
+    "parents": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901"
+    ],
+    "siblings": [
+      "lowell_pierson_beveridge_jr_1930"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Composer",
+      "Choral director"
+    ],
+    "notes": "Identified as the younger son of Lowell Pierson Beveridge and Ida Louisa Gattrell. His father's contemporaneous 1960 Harvard class report supplies April 6, 1938, and Harvard class 1959; Lowell Sr.'s 1991 diocesan memorial separately identifies Thomas among his surviving sons. No current address or unverified family information added.",
+    "evidence_status": "Direct, contemporaneously documented child of Lowell Sr. and Ida; no death assumed",
+    "sources": [
+      {
+        "title": "Harvard College Class of 1925: Thirty-fifth Anniversary Report (1960), printed p.20",
+        "repository": "Harvard College (digitized at Internet Archive; page transcription at LDSGenealogy)",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "record_type": "1960 contemporaneous Harvard class questionnaire / self-reported family register",
+        "record_date": "1960",
+        "accessed": "2026-10-16",
+        "supports": "Lowell Pierson Beveridge's marriage to Ida Louisa Gattrell on 25 Dec 1926; names and exact birth dates of sons Lowell Pierson Jr. (7 Apr 1930) and Thomas Gattrell (6 Apr 1938); Lowell Jr.'s 1960 spouse Hortense Sie",
+        "evidence_level": "Tier 1/2 — contemporaneous self-reported family record, typeset by Harvard; original page scan at archive.org/details/harvardclassof1900unse"
+      },
+      {
+        "title": "In Memoriam: The Reverend Lowell P. Beveridge (1991)",
+        "repository": "Episcopal Diocese of Virginia Annual Council Journal, 1991",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "record_type": "Institutional obituary/memorial",
+        "record_date": "1991",
+        "accessed": "2026-10-16",
+        "supports": "1905–1991 Lowell Sr. survived by wife Ida Gattrell Beveridge and two sons, Thomas and Lowell P. Beveridge Jr.; separate father from the 2016 author",
+        "evidence_level": "Tier 2 — contemporaneous diocesan memorial"
+      }
+    ]
+  },
+  {
+    "id": "hortense_tee_sie_beveridge_1923",
+    "full_name": "Hortense “Tee” Sie Beveridge",
+    "alternate_names": [
+      "Hortense Sie",
+      "Hortense 'Tee' Beveridge"
+    ],
+    "birth_date": "1923-10-03",
+    "birth_date_precision": "exact",
+    "death_date": "1993",
+    "death_date_precision": "year",
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "lowell_pierson_beveridge_jr_1930"
+    ],
+    "children": [],
+    "residences": [],
+    "occupations": [
+      "Film editor",
+      "Documentary filmmaker"
+    ],
+    "notes": "Filmmaker Hortense 'Tee' Sie Beveridge (1923–1993), who worked as a film editor and documentarian. Pete Beveridge described their relationship, their interracial marriage in January 1954 at St. Philip's Church in Harlem, and historical family opposition in a 2012 public oral-history interview; his parents and brother attended. The surname Sie and earlier marriage status appear in the 1960 Harvard class report. The Smithsonian identifies her role in the documentary South Africa Uncensored (1951). This account does not establish a 1953 wedding or a specifically 20-year banishment from North Haven.",
+    "evidence_status": "Public filmmaker identity and life years supported by Smithsonian catalog; spouse relation documented as of 1960 by father-in-law's Harvard record; birth day from published scholarly history",
+    "sources": [
+      {
+        "title": "Harvard College Class of 1925: Thirty-fifth Anniversary Report (1960), printed p.20",
+        "repository": "Harvard College (digitized at Internet Archive; page transcription at LDSGenealogy)",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "record_type": "1960 contemporaneous Harvard class questionnaire / self-reported family register",
+        "record_date": "1960",
+        "accessed": "2026-10-16",
+        "supports": "Lowell Pierson Beveridge's marriage to Ida Louisa Gattrell on 25 Dec 1926; names and exact birth dates of sons Lowell Pierson Jr. (7 Apr 1930) and Thomas Gattrell (6 Apr 1938); Lowell Jr.'s 1960 spouse Hortense Sie",
+        "evidence_level": "Tier 1/2 — contemporaneous self-reported family record, typeset by Harvard; original page scan at archive.org/details/harvardclassof1900unse"
+      },
+      {
+        "title": "South Africa Uncensored (1951) — historical film editor Hortense/Tee Beveridge",
+        "repository": "Smithsonian National Museum of African American History and Culture",
+        "url": "https://www.si.edu/object/south-africa-uncensored%3Anmaahc_2012.79.1.5.1a",
+        "record_type": "Museum object/catalog authority record",
+        "record_date": "1951",
+        "accessed": "2026-10-16",
+        "supports": "Identifies film editor Hortense 'Tee' Beveridge and 1923–1993 dates; historical film work, not independent marriage-return proof",
+        "evidence_level": "Tier 2 — museum collection authority record"
+      },
+      {
+        "title": "Walter Forsberg, Screening Race in American Nontheatrical Film (2019)",
+        "repository": "Duke University Press",
+        "url": "https://www.dukeupress.edu/screening-race-in-american-nontheatrical-film",
+        "record_type": "Scholarly study citing oral histories",
+        "accessed": "2026-10-16",
+        "supports": "Biographical account of Hortense/Tee Sie Beveridge including October 3, 1923 birth and 1993 death",
+        "evidence_level": "Tier 2/3 — academic history based on contemporaneous and oral sources"
+      },
+      {
+        "title": "Pete Beveridge, Crossing Borders Bridging Generations Oral History, interview by Sady Sullivan, 23 May 2012, #2011.019.032, pp.3–16",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded oral-history transcript, 34 pages, research-only rights",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Pete states his full name and April 7 1930 birth; North Haven family summers and communal property; opposition by paternal aunts/uncles to interracial marriage, parents' subsequent blessing; married Tee in January 1954 at St. Philip's in Harlem; Harvard political activism",
+        "evidence_level": "Tier 1 — narrator's firsthand testimony about his own experiences; contested family's motivations documented as his recollection"
+      }
+    ]
+  }
+]

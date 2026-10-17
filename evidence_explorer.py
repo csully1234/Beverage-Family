@@ -18,6 +18,7 @@ from routing_ui import route_link
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE_FILE = ROOT / "data" / "evidence_exhibits.json"
+INVESTIGATIONS_FILE = ROOT / "data" / "evidence_investigations.json"
 
 
 def evidence_catalog(path: Path = EVIDENCE_FILE) -> list[dict]:
@@ -159,6 +160,13 @@ def render_profile_highlights(person_id: str) -> None:
             render_source_card(item, context="highlight-" + person_id, number=i)
         if len(curated) > 4:
             st.caption(f"See all {len(curated)} curated records in the Historical records tab.")
+    related_cases = [
+        case for case in investigation_catalog()
+        if person_id in case.get("person_ids", [])
+    ]
+    for case in related_cases:
+        route_link("Investigate: " + case["title"],
+                   "?page=media&case=" + case["id"])
 
 
 def render_profile_browser(person: dict, archive_sources: list[dict]) -> None:
@@ -213,3 +221,65 @@ def render_exhibit_library() -> None:
     st.caption(f"{len(shown)} of {len(items)} curated records and research leads")
     for i, item in enumerate(shown):
         render_source_card(item, context="library", number=i)
+
+
+def investigation_catalog(path: Path = INVESTIGATIONS_FILE) -> list[dict]:
+    """Research questions distinct from proven tree assertions."""
+    if not path.is_file():
+        return []
+    records = json.loads(path.read_text(encoding="utf-8"))
+    return records if isinstance(records, list) else []
+
+
+def render_investigations() -> None:
+    """Let a visitor follow source-by-source historical conflicts.
+
+    This is intentionally not a second family tree. Pending identifications
+    appear as problems to test, and linked people do not assert ancestry.
+    """
+    records = investigation_catalog()
+    if not records:
+        return
+    st.subheader("Follow a historical investigation")
+    st.write("See what original records tell us, where different accounts disagree, "
+             "and which documents could settle a question. An investigation is "
+             "not a confirmed branch of the family tree.")
+    ids = [record["id"] for record in records]
+    indexed = {record["id"]: record for record in records}
+    requested = str(st.query_params.get("case", "") or "")
+    current = requested if requested in indexed else ids[0]
+    chosen_id = st.selectbox(
+        "Explore a family-history question", ids,
+        index=ids.index(current),
+        format_func=lambda item_id: indexed[item_id]["title"],
+        key="family_investigation_selector",
+    )
+    investigation = indexed[chosen_id]
+    st.caption(str(investigation["period"]) + " · " + str(investigation["status"]))
+    st.write(investigation["summary"])
+    st.markdown("**What the historical sources establish**")
+    for finding in investigation.get("known", []):
+        st.markdown("- " + str(finding))
+    with st.expander("What remains unproved"):
+        for question in investigation.get("unresolved", []):
+            st.markdown("- " + str(question))
+    with st.expander("Original records worth retrieving next"):
+        for target in investigation.get("next_records", []):
+            st.markdown("- " + str(target))
+    st.markdown("**Browse the evidence behind this question**")
+    catalog = {item["id"]: item for item in evidence_catalog()}
+    for number, source_id in enumerate(investigation.get("source_ids", [])):
+        item = catalog.get(source_id)
+        if item:
+            render_source_card(item, context="investigation-" + chosen_id,
+                               number=number)
+        else:
+            st.caption("Evidence record missing from catalog: " + str(source_id))
+    with st.expander("Related people and dated events"):
+        st.caption("Links identify people or events under investigation, not newly proven relationships.")
+        for person_id in investigation.get("person_ids", []):
+            route_link("Open person record: " + person_id.replace("_", " "),
+                       "?page=people&profile=" + person_id)
+        for event_id in investigation.get("event_ids", []):
+            route_link("Open timeline event: " + event_id.replace("event_", "").replace("_", " "),
+                       "?page=timeline&event=" + event_id)
