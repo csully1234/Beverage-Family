@@ -31,7 +31,7 @@ class EvidenceExplorerTests(unittest.TestCase):
             self.assertIn(item.get("association"), {
                 "candidate", "documented_history", "context", "reported_history",
                 "direct_record", "indexed_record", "historical_media", "research_target",
-                "direct_document_exhibit",
+                "direct_document_exhibit", "identity_conflict",
             }, item["id"])
             self.assertIsInstance(item.get("people_ids"), list)
             self.assertIsInstance(item.get("event_ids"), list)

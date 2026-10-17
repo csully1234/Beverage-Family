@@ -45,12 +45,12 @@
     "id": "1865-matthew-nathaniel",
     "title": "Cyrus Eaton's 1865 family account — Matthew and Nathaniel",
     "date": "1865",
-    "type": "Digitized 1865 printed history",
-    "access": "Digitized publication / catalog reading page",
-    "url": "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South",
+    "type": "Original digitized 1865 printed history",
+    "access": "Free complete public-domain scanned Volume II, printed pp. 146–147",
+    "url": "https://archive.org/details/historyofthomast02eato",
     "claim": "Vol. II, pages 146–147, prints Matthew's family group and calls Nathaniel born c.1804 his nephew.",
-    "limits": "Near-contemporary published genealogy, not underlying birth, estate or marriage return; nephew degree and identity remain disputed.",
-    "rights": "External digitized publication; no image copied",
+    "limits": "Near-contemporary compiled local-family narrative, not birth, marriage or probate originals. The original printed book can be inspected freely; 'nephew' degree and identities still require primary records.",
+    "rights": "1865 edition is public domain (confirmed by Wikimedia Commons catalog); scan remains at holding archive",
     "people_ids": [
       "nathaniel_beverage_1804_rockland",
       "sarah_alexander_beverage_1808",
@@ -311,5 +311,247 @@
     "association": "reported_history",
     "preview_pdf": true,
     "collection": "Land and community records"
+  },
+  {
+    "id": "frank-north-haven-autograph-1954",
+    "title": "North Haven Frank Beverage's 1954 signed birth statement",
+    "date": "1954-07-19",
+    "type": "Transcribed first-person artifact",
+    "access": "Digitized album account, with historical images",
+    "url": "https://www.heirloomsreunited.com/2014/01/1880s1890s-autograph-album-of-north.html",
+    "claim": "Elizabeth Bean Calderwood Carter album transcription attributes a July 19, 1954 North Haven inscription to Frank Beverage; it records his self-reported birth date January 14, 1861 and age 93.",
+    "limits": "Original signed leaf has not been physically examined. A Frank in a Thomaston cemetery listing with a 1939 date cannot be the same 1954 signer if both records are accurate.",
+    "rights": "Third-party album images remain with source owner; link only",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "event_ids": [
+      "event_frank_autograph_at_north_haven_1954"
+    ],
+    "association": "direct_document_exhibit",
+    "preview_pdf": false,
+    "collection": "Identity conflicts"
+  },
+  {
+    "id": "frank-thomaston-cemetery-1939",
+    "title": "Thomaston cemetery: Frank Beverage plot card, Section 8 Lot 76",
+    "date": "1939-02-05 (card date)",
+    "type": "Transcribed cemetery plot card",
+    "access": "Searchable historic burial-card table",
+    "url": "https://genealogytrails.com/maine/knox/cem_village_cards.html",
+    "claim": "Thomaston Village Cemetery Section 8 Lot 76 lists Frank Beverage with February 5, 1939, and lists several other individuals including Orra S. Roney.",
+    "limits": "The table's Date field is not a verified death certificate. It does NOT prove this Frank is the North Haven man born January 14, 1861; the 1954 autograph conflicts strongly with that interpretation.",
+    "rights": "Genealogy Trails cemetery transcription; no card photograph rehosted",
+    "people_ids": [],
+    "event_ids": [
+      "event_thomaston_frank_plot_card_1939"
+    ],
+    "association": "identity_conflict",
+    "preview_pdf": false,
+    "collection": "Identity conflicts"
+  },
+  {
+    "id": "frank-greenstreet-newspaper-1911",
+    "title": "1911 Gazette: Orra Roney visits a Frank Beverage household on Green Street",
+    "date": "1911-08-01",
+    "type": "Original newspaper issue scan",
+    "access": "Digitized contemporary newspaper PDF",
+    "url": "https://fileserver-az.core.ac.uk/download/pdf/230340841.pdf",
+    "claim": "An August 1, 1911 notice says Mrs. Orra Roney and daughter Jeanette visited Mr. and Mrs. Frank Beverage on Green Street. Thomaston's Frank Beverage cemetery lot also records Orra S. Roney.",
+    "limits": "A shared name and visitation support a research connection, not a proved kinship or identical householder. The newspaper excerpt does not by itself establish the municipality of Green Street.",
+    "rights": "Digitized historical newspaper externally linked; no scan rehosted",
+    "people_ids": [],
+    "event_ids": [
+      "event_thomaston_frank_orra_notice_1911"
+    ],
+    "association": "identity_conflict",
+    "preview_pdf": true,
+    "collection": "Identity conflicts"
+  },
+  {
+    "id": "eaton-original-scanned-volume-ii-pdf",
+    "title": "Cyrus Eaton's original 1865 Volume II — complete scanned PDF",
+    "date": "1865",
+    "type": "Complete public-domain historical book",
+    "access": "Downloadable original scan of the printed 1865 volume",
+    "url": "https://archive.org/download/historyofthomast02eato/historyofthomast02eato.pdf",
+    "claim": "The original volume's printed pages 146–147 name Capt. Matthew's two wives and ten children and identify Nathaniel and Sarah Alexander as niece/nephew of Matthew.",
+    "limits": "Published genealogy, not the original civil certificates. The printed pagination differs from PDF image index; open or search printed pp. 146–147.",
+    "rights": "Public-domain book scan from Internet Archive, catalogued by Wikimedia Commons",
+    "people_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "sarah_alexander_beverage_1808",
+      "henry_t_beverage_1841_rockland"
+    ],
+    "event_ids": [],
+    "association": "reported_history",
+    "preview_pdf": true,
+    "collection": "Family-history publications"
+  },
+  {
+    "id": "knox-deeds-index-source",
+    "title": "Knox County historic deed books and 1860–1920 grantee/grantor indexes",
+    "date": "Historical deeds (1888 focus)",
+    "type": "Original deed-index collection lead",
+    "access": "FamilySearch catalog/index description, some images may require login",
+    "url": "https://www.ongenealogy.com/listings/knox-county-me-genealogy-records-online-at-familysearch/",
+    "claim": "The catalog describes Knox County deed records dated 1873–1917, indexes dated 1860–1920, and broader deeds dated 1791–1926; the reported 1888 Harrison purchase is within indexed coverage.",
+    "limits": "A record collection exists, but NO Harrison 1888 deed or its book/page has yet been found and checked. Catalog lists are not proof a specific transaction occurred.",
+    "rights": "Catalog metadata; original deed images are controlled by the registry or FamilySearch",
+    "people_ids": [
+      "harrison_beverage_1825"
+    ],
+    "event_ids": [
+      "event_1888_harrison_mill_stream_dam_purchase"
+    ],
+    "association": "research_target",
+    "preview_pdf": false,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "maine-registry-official-portal",
+    "title": "Maine Registry of Deeds Association — official county-record portal",
+    "date": "Current access",
+    "type": "Official land-register portal",
+    "access": "Original county records and document requests",
+    "url": "https://www.maineregistryofdeeds.com/",
+    "claim": "Maine's statewide official portal provides access to participating county deed registries, including Knox County, which is relevant to the reported 1888 Mill Stream parcel transfer.",
+    "limits": "The online portal does not itself identify Harrison's deed or a historic lot. Original registry index and legal description must be searched and read before mapping property.",
+    "rights": "External government registry portal; access terms apply",
+    "people_ids": [],
+    "event_ids": [
+      "event_1888_harrison_mill_stream_dam_purchase"
+    ],
+    "association": "research_target",
+    "preview_pdf": false,
+    "collection": "Land and community records"
+  },
+  {
+    "id": "frank-may-north-haven-anniversary-1930",
+    "title": "1930 Courier-Gazette: Frank and May's 43rd wedding anniversary",
+    "date": "1930-10-18 (report of Oct. 15 celebration)",
+    "type": "Contemporary newspaper scan",
+    "access": "Original October 18, 1930 newspaper PDF; North Haven column",
+    "url": "https://fileserver-az.core.ac.uk/download/pdf/270235292.pdf",
+    "claim": "The North Haven column says Mr. and Mrs. Frank Beverage celebrated their 43rd wedding anniversary Wednesday evening, October 15, 1930. The 1937 Calderwood diary independently describes their 50th anniversary on the same date.",
+    "limits": "Two anniversary reports corroborate the commemorated 1887-10-15 marriage date, but neither is the marriage return. Do not assign May's maiden name or merge the couple with one of the separate Frank Beverage identities without other records.",
+    "rights": "Historical digitized newspaper linked at holding archive, not rehosted",
+    "people_ids": [
+      "frank_beverage_1861"
+    ],
+    "event_ids": [
+      "event_frank_may_anniversary_1930"
+    ],
+    "association": "candidate",
+    "preview_pdf": true,
+    "collection": "Diaries and photographs"
+  },
+  {
+    "id": "1960-lowell-harvard-firsthand-family",
+    "title": "1960 Harvard class report — Lowell Sr.'s wife and sons",
+    "date": "1960",
+    "type": "Contemporary firsthand family-history entry",
+    "access": "Searchable reproduction of Harvard Class of 1925 report, printed p.20",
+    "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+    "claim": "Lowell Pierson Beveridge identifies his 1926 marriage to Ida Louisa Gattrell, elder son Lowell Pierson Jr. born 7 April 1930, younger son Thomas Gattrell born 6 April 1938, and Lowell Jr.'s wife Hortense Sie as of 1960.",
+    "limits": "Published alumni biographical report containing father Lowell Sr.'s firsthand account, not a civil birth/marriage register. The transcript is derivative of the 1960 printed page; inspect the original print image for exact typography. Subsequent marital status of any person is not inferred.",
+    "rights": "Copyright Harvard College 1960; link to original publication, do not copy PDF pages without clearance.",
+    "people_ids": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901",
+      "lowell_pierson_beveridge_jr_1930",
+      "thomas_gattrell_beveridge_1938",
+      "hortense_tee_sie_beveridge_1923"
+    ],
+    "event_ids": [
+      "event_lowell_1960_report_north_haven_sale"
+    ],
+    "association": "direct_record",
+    "preview_pdf": false,
+    "collection": "Family history and original genealogy"
+  },
+  {
+    "id": "1960-lowell-harvard-original-print",
+    "title": "1960 original scanned Harvard Class of 1925 report",
+    "date": "1960",
+    "type": "Scanned university class biographical register",
+    "access": "Original printed source at Internet Archive (printed p.20)",
+    "url": "https://archive.org/details/harvardclassof1900unse",
+    "claim": "Digitized original 1960 printed class register contains Lowell Pierson Beveridge Sr.'s dated personal entry identifying spouse Ida and sons Lowell Jr. and Thomas.",
+    "limits": "Same original report as the separately linked transcript, not a second independent corroboration. Inspect printed p.20 for precise names and historical context.",
+    "rights": "© Harvard College 1960. Link to archive; no locally copied pages.",
+    "people_ids": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901",
+      "lowell_pierson_beveridge_jr_1930",
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "event_ids": [
+      "event_lowell_1960_report_north_haven_sale"
+    ],
+    "association": "direct_record",
+    "preview_pdf": false,
+    "collection": "Family history and original genealogy"
+  },
+  {
+    "id": "1991-lowell-diocesan-memorial",
+    "title": "1991 memorial for Reverend Lowell P. Beveridge",
+    "date": "1991",
+    "type": "Episcopal Diocese of Virginia institutional memorial",
+    "access": "Full original period journal, searchable PDF",
+    "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+    "claim": "Memorial names Lowell Sr. (1905–1991), his surviving wife Ida Gattrell Beveridge, and two sons Thomas and Lowell P. Jr., clearly distinguishing the father who died 1991 from the 2016 author.",
+    "limits": "This is an institutional memorial, not a civil vital return; it corroborates the family relationships in the 1960 Harvard report.",
+    "rights": "External diocesan journal PDF; link to original rather than rehost.",
+    "people_ids": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901",
+      "lowell_pierson_beveridge_jr_1930",
+      "thomas_gattrell_beveridge_1938"
+    ],
+    "event_ids": [],
+    "association": "direct_record",
+    "preview_pdf": true,
+    "collection": "Family history and original genealogy"
+  },
+  {
+    "id": "2012-pete-beveridge-oral-history",
+    "title": "Pete Beveridge's 2012 oral-history interview",
+    "date": "2012-05-23",
+    "type": "Recorded first-person family history / oral interview",
+    "access": "Historical society transcript PDF, 34 pages",
+    "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+    "claim": "Pete personally identifies himself as Lowell Pierson Beveridge Jr. and describes summers on jointly owned North Haven family property, letters from his father's seven siblings objecting to his interracial relationship, and the marriage to Tee in January 1954 at St. Philip's Church in Harlem attended by his parents and brother.",
+    "limits": "A FIRSTHAND narrator account of the family's reaction, not proof all relatives agreed or that every letter survives. Pete explicitly says his parents blessed the ceremony despite earlier reluctance to host Tee. Google snippets asserting 1953 marriage, total parental disowning, or exactly 20 years of exile are inconsistent with or unsupported by this testimony.",
+    "rights": "Brooklyn Historical Society/NYU archival oral history; research-only, no audio/transcript republication without rights approval.",
+    "people_ids": [
+      "lowell_pierson_beveridge_jr_1930"
+    ],
+    "event_ids": [
+      "event_lowell_jr_hortense_marriage_1954",
+      "event_lowell_jr_oral_history_2012"
+    ],
+    "association": "direct_record",
+    "preview_pdf": true,
+    "collection": "Family voices"
+  },
+  {
+    "id": "1951-tee-beveridge-smithsonian-film",
+    "title": "Hortense “Tee” Beveridge's documentary film work, 1951",
+    "date": "1951",
+    "type": "Smithsonian museum film-object catalog",
+    "access": "Museum collection record of original film",
+    "url": "https://www.si.edu/object/south-africa-uncensored%3Anmaahc_2012.79.1.5.1a",
+    "claim": "Smithsonian identifies Hortense 'Tee' Beveridge (1923–1993) as editor of the documentary South Africa Uncensored; the 1960 Harvard family report names the filmmaker's earlier name Hortense Sie as the then-wife of Lowell Jr.",
+    "limits": "Museum authority confirms public biographical identity and film activity, not the marriage itself; 1960 Harvard report is the contemporaneous marital reference.",
+    "rights": "Consult Smithsonian object rights; museum holdings are not copied onto the family site.",
+    "people_ids": [
+      "hortense_tee_sie_beveridge_1923",
+      "lowell_pierson_beveridge_jr_1930"
+    ],
+    "event_ids": [],
+    "association": "reported_history",
+    "preview_pdf": false,
+    "collection": "Family voices"
   }
 ]

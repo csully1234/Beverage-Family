@@ -1,0 +1,78 @@
+[
+  {
+    "id": "event_lowell_jr_hortense_marriage_1954",
+    "date": "1954",
+    "date_precision": "year",
+    "title": "Lowell P. 'Pete' Beveridge Jr. marries Hortense 'Tee' Sie",
+    "description": "In a firsthand oral history recorded in 2012, Pete recalls marrying Hortense ('Tee') Sie in JANUARY 1954 at St. Philip's Episcopal Church in Harlem while he was on Army leave. He says his parents and younger brother attended and his parents blessed the wedding, while his paternal aunts and uncles objected and had discouraged Tee visiting shared North Haven family property. The more sensational secondary claim of a 1953 wedding, complete parental banishment or exactly 20-year exile is not established by this source.",
+    "category": "Family / marriage / firsthand testimony",
+    "place": "St. Philip's Episcopal Church, Harlem, New York",
+    "people_involved": [
+      "lowell_pierson_beveridge_jr_1930",
+      "hortense_tee_sie_beveridge_1923"
+    ],
+    "evidence_status": "Confirmed as January 1954 by groom's 2012 oral history; exact day, original marriage certificate and 20-year exile unverified",
+    "sources": [
+      {
+        "title": "Pete Beveridge — 23 May 2012 oral-history interview (research-use transcript)",
+        "repository": "Brooklyn Historical Society, Crossing Borders Bridging Generations Oral History Collection, 2011.019.032",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf#page=15",
+        "record_type": "Public first-person oral-history interview transcript, narrated by Pete himself",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "First-person date and venue of marriage, parents' attendance and blessing, broader family resistance, and shared North Haven property",
+        "evidence_level": "Tier 1 — first-person account recorded 2012; event narrated retrospectively"
+      }
+    ]
+  },
+  {
+    "id": "event_lowell_1960_report_north_haven_sale",
+    "date": "1960",
+    "date_precision": "year",
+    "title": "Lowell Sr. reports sale of North Haven family farm in a Harvard class history",
+    "description": "Lowell Pierson Beveridge Sr.'s entry in Harvard's 1960 class report says the family sold their North Haven Island farm during the preceding five years. The 1960 publication is not a deed; neither the exact sale date, parcel, buyer, nor an alleged connection to his son Pete's 1954 marriage is established by it.",
+    "category": "Historical property / firsthand recollection",
+    "place": "North Haven, Maine",
+    "people_involved": [
+      "lowell_beveridge_1905"
+    ],
+    "evidence_status": "Contemporary father-authored 1960 statement of earlier sale; exact property records and cause pending",
+    "sources": [
+      {
+        "title": "Harvard Class of 1925 Thirty-fifth Anniversary Report (1960), printed p.20",
+        "repository": "Harvard College Class of 1925 report",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "record_type": "Self-reported alumni history published contemporaneously",
+        "record_date": "1960",
+        "accessed": "2026-10-16",
+        "supports": "Father names marriage of elder son and mentions sale of family farm on North Haven within the previous five years, without asserting cause",
+        "evidence_level": "Tier 1/2 — father's contemporary account published by Harvard"
+      }
+    ]
+  },
+  {
+    "id": "event_lowell_jr_oral_history_2012",
+    "date": "2012-05-23",
+    "date_precision": "exact",
+    "title": "Pete Beveridge gives a first-person oral history of the North Haven family and marriage",
+    "description": "On May 23, 2012, Sady Sullivan recorded Lowell Pierson 'Pete' Beveridge Jr. discussing his childhood summers among extended relatives in North Haven, his studies and political activities, his marriage to filmmaker Hortense Sie, family opposition from several older relatives, and his parents' eventual support. The 34-page transcript is available at Brooklyn Historical Society with research-use restrictions; any biographical interpretation should accurately attribute disputed motives as Pete's own recollection.",
+    "category": "Family voices / oral history",
+    "place": "Brooklyn, New York",
+    "people_involved": [
+      "lowell_pierson_beveridge_jr_1930"
+    ],
+    "evidence_status": "First-person recording transcribed by the holding institution; notes distinguish narrator's memory from independently verified fact",
+    "sources": [
+      {
+        "title": "Pete Beveridge — 23 May 2012 oral-history interview (research-use transcript)",
+        "repository": "Brooklyn Historical Society, Crossing Borders Bridging Generations Oral History Collection, 2011.019.032",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "Public first-person oral-history interview transcript, narrated by Pete himself",
+        "record_date": "2012-05-23",
+        "accessed": "2026-10-16",
+        "supports": "Pete names his own identity and birthday, describes ancestral North Haven family property, extended-family correspondence, 1954 marriage and parents' attendance",
+        "evidence_level": "Tier 1 — first-person account recorded 2012; event narrated retrospectively"
+      }
+    ]
+  }
+]

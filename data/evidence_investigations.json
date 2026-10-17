@@ -1,0 +1,163 @@
+[
+  {
+    "id": "frank-beverage-two-men",
+    "title": "Which Frank Beverage appears in the 1937 wedding photograph?",
+    "period": "1887–1954",
+    "status": "Two conflicting identity trails; exact relationships unresolved",
+    "summary": "A 1939-dated Thomaston plot card and a 1954 North Haven self-reported birth inscription cannot describe the same man if their dates are correct. The 1937 photo belongs to a Frank-and-May couple, but their exact identification is not yet proved.",
+    "known": [
+      "The 1937 Calderwood diary records a 50th wedding anniversary for Frank and May on October 15 and mentions a photograph caption; an October 1887 wedding is a strong inference, not yet confirmed by a marriage register.",
+      "The contemporary October 18, 1930 Courier-Gazette NORTH HAVEN column reports the couple celebrated their 43rd wedding anniversary on Wednesday October 15. This independently corroborates the 1937 diary's fiftieth-anniversary date, strengthening October 15, 1887 as the commemorated marriage date, not yet a certified marriage return.",
+      "A historical 1954 autograph-album transcription reports a North Haven Frank Beverage born January 14, 1861.",
+      "The Thomaston Village Cemetery lot table records a different Frank with a February 5, 1939 card date and includes an Orra S. Roney burial. A 1911 newspaper reports an Orra Roney visiting a Frank Beverage Green Street household.",
+      "The existing North Haven Frank profile already records work as a butcher, hides dealer, treasurer and auctioneer from independent documents."
+    ],
+    "unresolved": [
+      "The 1939 cemetery-card date may be an interment date, not a certified date of death.",
+      "Whether the 1911 Green Street household is the cemetery Frank and how Orra Roney was related are not yet documented.",
+      "No original October 1887 marriage return or May's maiden name is established.",
+      "The 1937 original photo is mentioned in the diary transcript but has not been located or licensed."
+    ],
+    "next_records": [
+      "Find an original October 1887 marriage return for Frank and May in North Haven/Vinalhaven area registers; establish both full names.",
+      "Obtain original Thomaston cemetery plot card or a 1939 death certificate to identify the 1939 Frank and distinguish his relatives.",
+      "Obtain a digital photograph of the autograph-album signature (with access permission if applicable) and search for the original 1937 anniversary photo.",
+      "Identify 1911 Green Street municipality via the newspaper's page heading and historical household census."
+    ],
+    "source_ids": [
+      "1937-frank-may-diary",
+      "frank-may-north-haven-anniversary-1930",
+      "frank-north-haven-autograph-1954",
+      "frank-thomaston-cemetery-1939",
+      "frank-greenstreet-newspaper-1911"
+    ],
+    "person_ids": [
+      "frank_beverage_1861"
+    ],
+    "event_ids": [
+      "event_frank_may_golden_wedding_diary_1937",
+      "event_frank_may_anniversary_1930",
+      "event_frank_autograph_at_north_haven_1954",
+      "event_thomaston_frank_plot_card_1939",
+      "event_thomaston_frank_orra_notice_1911"
+    ]
+  },
+  {
+    "id": "nathaniel-rockland-line",
+    "title": "Who were Nathaniel Beverage's parents?",
+    "period": "1803–1865",
+    "status": "1865 family established as a published account; parents and uncle relationship unverified",
+    "summary": "Eaton's 1865 history supplies Nathaniel's Rockland household and says Nathaniel and Sarah Alexander were Matthew's nephew and niece. A derivative genealogy proposes John White Beverage and Rachel Crosby, introducing a generational contradiction if Capt. Matthew was Capt. Thomas's brother.",
+    "known": [
+      "Eaton printed Nathaniel's Rockland residence, occupation as carpenter, spouse Sarah Alexander and their three children Henry T., Mercy and Frederic.",
+      "The published genealogy gives Henry T.'s birth as November 29, 1841.",
+      "An 1898 marriage index cited in FamilySearch links a Henry T. Beverage to Ella Allen; the original marriage document has not been inspected.",
+      "Nathaniel born around 1804 is not Nathaniel Winslow Beverage born in 1776."
+    ],
+    "unresolved": [
+      "John White Beverage and Rachel Crosby are only proposed parents in a derivative family tree.",
+      "The claim that Capt. Matthew was a direct son of James Beveridge has not been established.",
+      "If the candidate genealogy is correct, Nathaniel may be Matthew's grandnephew rather than nephew; both source interpretations need testing.",
+      "The marriage between Nathaniel and Sarah, their reported birth information, and Capt. Matthew's probate remain to be checked against civil or probate records."
+    ],
+    "next_records": [
+      "Locate the 1838 Nathaniel Beverage/Sarah Alexander marriage entry in Maine registers, or explain why it cannot be found.",
+      "Search John White Beverage and Rachel Crosby probate inventories and guardianships for a Nathaniel child.",
+      "Check Rockland/Thomaston 1850–1880 original federal census pages for Nathaniel and his household.",
+      "Await the previously requested Waldo County probate search for Capt. Matthew; verify the actual estate record if identified."
+    ],
+    "source_ids": [
+      "1865-matthew-nathaniel",
+      "eaton-original-scanned-volume-ii-pdf",
+      "1803-nathaniel-proposed-parents",
+      "1898-henry-ella"
+    ],
+    "person_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "sarah_alexander_beverage_1808",
+      "henry_t_beverage_1841_rockland",
+      "john_white_beverage_1774"
+    ],
+    "event_ids": [
+      "event_henry_ella_marriage_1898"
+    ]
+  },
+  {
+    "id": "pulpit-harbor-land",
+    "title": "Where were the original Beverage bridges, dams and properties?",
+    "period": "1848–1909",
+    "status": "Historic bridges and landowners documented; family acreage and deed chains not resolved",
+    "summary": "The 1848 Maine bridge law gives a contemporaneous landowner reference. A society exhibit reproduces an 1883 bridge contract naming Alvin Beverage and reports an 1888 Harrison dam purchase. None of these alone defines an ancestor's full parcel boundary.",
+    "known": [
+      "Maine's official 1848 bridge law locates an authorized bridge route near land of James and Josiah Beverage at the head of Pulpit Harbor.",
+      "The Historical Society's bridge exhibit reproduces a town contract involving Alvin Beverage, connected to the 1883 Beach Bridge account.",
+      "A separate Mill Stream history reports Harrison Beverage's 1888 dam purchase; its original deed has not been retrieved.",
+      "Knox County deed indexes cover the 1888 period; Maine provides an official county registry portal."
+    ],
+    "unresolved": [
+      "The index entry and book/page for the 1888 dam conveyance have not been identified.",
+      "Alvin's complete name, parentage and genealogical connection are not established.",
+      "The rescued Pulpit Harbor map, deed papers and bridge bills discussed in the 1975 historical society account have not been individually cataloged here.",
+      "No surveyed boundary or acreage for these specific ancestral parcels is verified."
+    ],
+    "next_records": [
+      "Search Knox County grantor and grantee indexes around 1888 for Harrison Beverage/Beveridge and identify the corresponding deed book/page and original legal description.",
+      "Use the bridge exhibit to extract original Alvin contract parties and names; request the original from the society only after separate approval.",
+      "Identify the institution's 1975 salvaged-map inventory, box or call numbers and compare with digitized early plats.",
+      "Map parcels only after original deed boundaries, identifiable landmarks and a georeferenced historical survey can be reconciled."
+    ],
+    "source_ids": [
+      "pulpit-1848-original-act",
+      "1883-alvin-bridge-town-contract",
+      "1906-alvin-bridge-bill",
+      "millstream-exhibit-family-mills",
+      "knox-deeds-index-source",
+      "maine-registry-official-portal",
+      "1975-recovered-deeds"
+    ],
+    "person_ids": [
+      "james_beverage_1789",
+      "josiah_winslow_beverage_1793",
+      "harrison_beverage_1825",
+      "hiram_stone_beverage_1886"
+    ],
+    "event_ids": [
+      "event_north_haven_bridge_act_1848",
+      "event_1883_beach_bridge_alvin_contract",
+      "event_1888_harrison_mill_stream_dam_purchase"
+    ]
+  },
+  {
+    "id": "james-jean-1749",
+    "title": "Who were the James Beveridge and Jean White in the 1749 intention?",
+    "period": "1748–1758",
+    "status": "Marriage intention reported by two transcriptions; individual identity and marriage not independently verified",
+    "summary": "The same Brunswick register appears in 1888 and 1895 publications with different spellings and Old Style dates. These are a path to an original record, not separate proof of two couples or a marriage ceremony.",
+    "known": [
+      "An 1888 transcript lists James Beveridge and Jean White of Georgetown, intention dated February 6, 1749.",
+      "An 1895 transcript renders them James Beviridge and Jean Write and dates the entry February 6, 1748–9.",
+      "The transcriptions almost certainly derive from the same town record; neither is an original solemnization record."
+    ],
+    "unresolved": [
+      "No original manuscript image of the marriage intention has been inspected.",
+      "No church or town marriage return has independently established that the couple married.",
+      "Identifying this James and Jean with existing historical ancestors and early Topsham lot holders remains a hypothesis."
+    ],
+    "next_records": [
+      "Locate the Brunswick marriage-intentions manuscript and confirm the original spellings and Old Style date convention.",
+      "Search contemporary Georgetown/Topsham church register marriage returns, estate records and land transfers for the same pair.",
+      "Document the linkage to James Jr., Jean McKinney White and the family tree only if the independent records support it."
+    ],
+    "source_ids": [
+      "1749-intention-bangor-1888",
+      "1749-intention-putnam-1895"
+    ],
+    "person_ids": [
+      "james_beveridge_jr_1724",
+      "jean_mckinney_white_1725"
+    ],
+    "event_ids": [
+      "event_1749_james_jean_marriage_intention"
+    ]
+  }
+]

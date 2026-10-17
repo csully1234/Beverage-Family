@@ -1,3 +1,5 @@
+> **October 17 integration notice:** PR #25 was merged before PR #26. Its four phase7 Lowell-family IDs are authoritative; this PR retains only two unique new collateral profiles (Lyford and Dorothy) and remaps book-photo profile links to the existing phase7 IDs. Earlier six-profile descriptions below document the pre-reconciliation draft, not final installed identities.
+
 # Phase 6 — Lowell family, Pete's testimony and book-name audit
 
 Prepared October 16, 2026. This is a **draft PR**. No email, purchase, merge, deployment, or republication of restricted interview pages.

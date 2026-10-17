@@ -78,46 +78,78 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
-### The Colony family-tree completeness audit and Lowell oral history (October 2026)
+### Four open family-history investigations (October 2026)
 
-**New tree profiles:** Lowell Pierson Beveridge Jr. ("Pete," author of *The
-Colony*, 2016) has been connected to his father Lowell Pierson Beveridge
-Sr. (1905–1991) and mother Ida Louise Gattrell. His brother Thomas,
-wife Hortense "Tee" Sie Beveridge, and the father's brother Lyford
-have source-attributed entries; Lyford's parents are **not guessed**.
-Eliot's pictured wife Dorothy "Jimmy" Gattrell Beverage is linked to
-his historic family profile without invented dates. Original base
-people, addresses and collection snapshots remain unchanged.
+**Photographs & Documents → Explore original evidence** now includes a
+source-first **Family history investigations** panel. Family members
+can explore four unresolved historical questions — the multiple Frank
+Beverages, Nathaniel's disputed parentage, original Pulpit Harbor deed
+and bridge records, and the 1749 James/Jean Georgetown intention — and
+see what is documented, what remains tentative and which original
+documents could settle each question. The profile of a person involved
+in a case links directly into that investigation.
 
-Pete's firsthand **23 May 2012 Brooklyn Historical Society interview**
-supports **January 1954**, not 1953, for his marriage to Hortense.
-His account of family opposition, approximately twenty years away from
-North Haven, and eventual reconciliation is **specifically attributed to
-his recollection**; no blanket claim that every relative rejected the
-couple or that the family formally banished him is made. The interview
-is linked, not reproduced, because of archive rights restrictions.
-Hortense's dates and film-editing career have independent Smithsonian
-collection support.
+New original-evidence references include a **completely free, public-domain
+scan of Cyrus Eaton's actual 1865 Volume II**, a 1911 newspaper notice
+naming a separate Frank Beverage household and visitor Orra Roney, a
+**1939 Thomaston cemetery lot-card transcription**, a corroborating
+1930 North Haven 43rd wedding-anniversary notice, and a 1954 North
+Haven Frank autograph-album entry. The last two cannot describe the same
+Frank if accurately dated; *neither* is converted into a false
+birth, death or genealogy relationship.
 
-A new **book-photo / family-tree cross-reference** connects 23 person
-profiles to their cited pages among the **82 cataloged photo-bearing
-pages** in the 305-page family book. Person profiles link to the
-original printed page, the family photograph gallery links back to
-people, and the book section lists **16 unresolved identity questions**,
-including Hanson, Florence Budlong, Priscilla and multi-person group
-captions. The full 305-page book has **not yet undergone an exhaustive
-person-by-person full-text audit**; no assertion of completion is made.
+The Pulpit Harbor investigation identifies digitized **Knox County
+1888-era deed indexes** to pursue next; no deed or ancestral parcel
+boundary has yet been verified. The current data remain additive:
+`data/phase6_events.json` records four dated identity/anniversary events
+without changing old events or persons.
 
-- Audited person and source overlays: `data/phase6_people.json`
-- First-person and marriage events: `data/phase6_events.json`
-- Indexed 82-page catalog and 16 pending name questions:
-  `data/colony_people_crosswalk.json`
-- Source evidence and outstanding full-book audit:
-  `research/phase6_lowell_and_colony_people_audit_2026-10-16.md`
-- Regression checks: `tests/test_phase6_book_tree_audit.py`
+- Four cases: `data/evidence_investigations.json`
+- Claims and links: `data/evidence_exhibits.json`
+- Source-level explanations and evidence boundaries:
+  `research/phase6_original_identity_and_land_cases_2026-10-16.md`
+- Regressions: `tests/test_investigation_cases.py`
 
-No automated sending, merging, deploying or copyright-restricted
-media copying is part of this update.
+**No external email, purchase, third-party image copy, genealogical
+parentage guess, merge or deployment is authorized by this change.**
+
+### The two Lowells are distinct relatives — author and father (October 2026)
+
+A documented family expansion adds **Ida Louisa Gattrell Beveridge** and sons
+**Lowell Pierson “Pete” Beveridge Jr. (born 1930)** and **Thomas Gattrell
+Beveridge (born 1938)**, plus Pete's historically documented wife, filmmaker
+**Hortense “Tee” Sie Beveridge (1923–1993)**. They now appear as linked,
+independently sourced people in the full family tree, connected through
+**Lowell Pierson Beveridge Sr. (1905–1991)** to Orris Lyford Beverage.
+The unchanged original people file remains checksum-protected.
+
+The **1960 Harvard Class of 1925 alumni report** and **1991 Episcopal
+diocesan memorial** corroborate father, wife and sons; Pete's own **May
+23, 2012, Brooklyn Historical Society oral history** supplies his
+birthday, 1954 marriage account and memories of North Haven family land.
+His testimony reports substantial objections from older relatives but
+also that his parents and brother **attended the January 1954 wedding**
+and his parents ultimately blessed it. An internet excerpt claiming a
+1953 ceremony, total parental disowning or an exact 20-year exile is **not
+supported** by that primary oral history. Family tensions are attributed
+to Pete's own testimony, not projected onto individual relatives without
+their letters.
+
+The **2016 _The Colony_ author link now goes to Pete's profile**.
+The 1923 Harvard student portrait links to **Lowell Sr.**, preventing the
+two names from being conflated. The oral history is accessible via the
+existing profile/event evidence viewer, with archival reuse restrictions.
+
+- Family expansion: `data/phase7_people.json`
+- Dated marriage, North Haven farm-sale report and oral-history events:
+  `data/phase7_events.json`
+- Thorough provenance and remaining questions:
+  `research/lowell_sr_jr_verified_family_2026-10-16.md`
+- Family-tree and source safety tests:
+  `tests/test_lowell_family_connections.py`
+
+No protected record edits, unverified property deeds, copied oral-history
+transcripts, external messages, merge or deployment have been performed.
 
 ### Original evidence explorer — accessible source files and historical context (October 2026)
 

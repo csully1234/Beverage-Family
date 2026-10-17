@@ -1,59 +1,105 @@
 [
   {
-    "id": "event_pete_hortense_marriage_1954",
-    "date": "1954",
-    "date_precision": "year",
-    "title": "Pete Beveridge and Hortense 'Tee' Sie marry in Harlem",
-    "description": "In his May 2012 first-person oral-history interview, Lowell P. 'Pete' Beveridge Jr. said he and Hortense 'Tee' Sie were married in January 1954 at St. Philip's Episcopal Church in Harlem, not in 1953. He recalled that his parents ultimately supported the marriage, while some extended relatives strongly objected. These are the narrator's recollections; the original parish marriage register is still needed for an exact wedding date.",
-    "category": "Family marriage / oral history",
-    "place": "St. Philip's Church, Harlem, New York City",
-    "people_involved": [
-      "lowell_pierson_beveridge_jr_author",
-      "hortense_tee_sie_beveridge"
-    ],
-    "evidence_status": "Near-firsthand 2012 self-report of 1954 marriage; original church marriage entry not reviewed",
+    "id": "event_thomaston_frank_orra_notice_1911",
+    "date": "1911-08-01",
+    "date_precision": "exact",
+    "title": "Newspaper names a Frank Beverage household on Green Street and visitor Orra Roney",
+    "description": "The August 1, 1911 Courier-Gazette reports that Mrs. Orra Roney and daughter Jeanette of Stonington were visiting Mr. and Mrs. Frank Beverage on Green Street. This provides a named household association, but the exact town, the couple's identities and any relationship to a North Haven Frank remain to be checked. A later Thomaston cemetery plot listing includes an Orra S. Roney, which makes the household a useful identification lead, not a proved family relationship.",
+    "category": "Newspaper / identity research",
+    "place": "Green Street (town not established in this excerpt)",
+    "people_involved": [],
+    "evidence_status": "Contemporary 1911 newspaper record, unidentified Frank household; do not merge with North Haven Frank",
     "sources": [
       {
-        "title": "Lowell 'Pete' Beveridge 2012 oral history",
-        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
-        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
-        "record_type": "First-person recorded interview transcript, interview May 23, 2012",
+        "title": "Courier-Gazette, August 1, 1911, Green Street household news",
+        "repository": "Digitized historical newspaper via CORE",
+        "url": "https://fileserver-az.core.ac.uk/download/pdf/230340841.pdf",
+        "record_type": "Contemporary newspaper scan",
+        "record_date": "1911-08-01",
         "accessed": "2026-10-16",
-        "supports": "Pete's account of 1954 marriage, family tensions, period away from North Haven and reconciliation; see pp. 12–15 and 34. Source is for research use; no transcript rehosting.",
-        "evidence_level": "Tier 2 — first-person participant testimony; do not imply other family members independently agreed"
+        "supports": "Mrs. Orra Roney and daughter Jeanette visited the Frank Beverage household on Green Street",
+        "evidence_level": "Tier 1 for published newspaper statement; relationships unverified"
       }
     ]
   },
   {
-    "id": "event_pete_brooklyn_oral_history_2012",
-    "date": "2012-05-23",
+    "id": "event_thomaston_frank_plot_card_1939",
+    "date": "1939-02-05",
     "date_precision": "exact",
-    "title": "Pete Beveridge records his North Haven family memories",
-    "description": "Lowell Pierson 'Pete' Beveridge Jr. gave an oral-history interview to Sady Sullivan for Brooklyn Historical Society's Crossing Borders, Bridging Generations project. He described summer life at the North Haven family compound, the controversy surrounding his 1954 marriage, approximately twenty years when he did not return to North Haven because he felt unwelcome, and later reconciliation and visits with his wife. This is his perspective, not proof that the entire family imposed a formal banishment. The archive provides the interview for research and has separate reuse restrictions.",
-    "category": "Oral history / family memory",
-    "place": "Brooklyn, New York",
-    "people_involved": [
-      "lowell_pierson_beveridge_jr_author"
-    ],
-    "evidence_status": "2012 documented firsthand oral-history interview, self-report of childhood and family relationships",
+    "title": "Thomaston cemetery's Frank Beverage plot card includes a 1939 date",
+    "description": "A transcribed Thomaston Village Cemetery plot-card table lists a Frank Beverage, Section 8 Lot 76, with a date of February 5, 1939, and multiple named persons in the plot including Orra S. Roney. The table is an index of burial plot information, not independently reviewed death certification: the date must not be silently treated as a verified death date. This 1939-dated cemetery Frank cannot be the same as a Frank who physically signed a North Haven album in 1954 if both sources are accurate.",
+    "category": "Cemetery / conflicting historical identities",
+    "place": "Thomaston Village Cemetery, Thomaston, Maine",
+    "people_involved": [],
+    "evidence_status": "Derivative transcription of cemetery plot-card; date purpose and identity require original card/certificate",
     "sources": [
       {
-        "title": "Lowell 'Pete' Beveridge 2012 oral history",
-        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
-        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
-        "record_type": "First-person recorded interview transcript, interview May 23, 2012",
+        "title": "Thomaston Village Cemetery burial plot cards, Section 8 Lot 76",
+        "repository": "Genealogy Trails (transcript of cemetery lot cards)",
+        "url": "https://genealogytrails.com/maine/knox/cem_village_cards.html",
+        "record_type": "Historical cemetery plot-card transcription",
+        "record_date": "1939-02-05 (listed date, meaning not verified)",
         "accessed": "2026-10-16",
-        "supports": "Pete's account of 1954 marriage, family tensions, period away from North Haven and reconciliation; see pp. 12–15 and 34. Source is for research use; no transcript rehosting.",
-        "evidence_level": "Tier 2 — first-person participant testimony; do not imply other family members independently agreed"
+        "supports": "Frank Beverage row in Section 8 Lot 76 contains Feb. 5, 1939, and names including Orra S. Roney",
+        "evidence_level": "Tier 3 — transcription of local cemetery card, not original death record"
+      }
+    ]
+  },
+  {
+    "id": "event_frank_autograph_at_north_haven_1954",
+    "date": "1954-07-19",
+    "date_precision": "exact",
+    "title": "Frank Beverage records his age and birth date in North Haven autograph album",
+    "description": "A transcription of Elizabeth Bean Calderwood Carter's autograph album reports a July 19, 1954 inscription signed Frank Beverage at North Haven, giving birth as January 14, 1861 and age 93. This matches the North Haven Frank profile's existing birth-date source. The physical album entry has not been reexamined, and the name Frank in the 1939 Thomaston plot listing should not be merged with him.",
+    "category": "First-person family artifact / identity evidence",
+    "place": "North Haven, Maine",
+    "people_involved": [
+      "frank_beverage_1861"
+    ],
+    "evidence_status": "Transcription of dated, purportedly first-person autograph artifact; original page not examined",
+    "sources": [
+      {
+        "title": "Elizabeth Bean Calderwood Carter autograph album: Frank Beverage, July 19, 1954",
+        "repository": "Heirlooms Reunited (transcription and artifact photographs)",
+        "url": "https://www.heirloomsreunited.com/2014/01/1880s1890s-autograph-album-of-north.html",
+        "record_type": "Transcription of first-person signed inscription",
+        "record_date": "1954-07-19",
+        "accessed": "2026-10-16",
+        "supports": "Frank Beverage self-identifies age 93, birth Jan. 14, 1861, signing at North Haven in 1954",
+        "evidence_level": "Tier 2/3 — transcribed historical family artifact"
+      }
+    ]
+  },
+  {
+    "id": "event_frank_may_anniversary_1930",
+    "date": "1930-10-15",
+    "date_precision": "exact",
+    "title": "North Haven newspaper reports Frank and May Beverage's 43rd wedding anniversary",
+    "description": "The October 18, 1930 Courier-Gazette's NORTH HAVEN news section reports that Mr. and Mrs. Frank Beverage celebrated their forty-third wedding anniversary on Wednesday evening, October 15. An independent diary transcription records Frank and May's fiftieth wedding anniversary on October 15, 1937. Taken together, the commemorations strongly support October 15, 1887 as the couple's reported wedding date. Neither is the original marriage return, and it is not yet proved which tree profile represents this Frank or what May's maiden name was.",
+    "category": "Marriage anniversary / corroborating newspapers",
+    "place": "North Haven, Maine",
+    "people_involved": [],
+    "evidence_status": "Independent 1930 contemporary newspaper and 1937 diary support an 1887-10-15 anniversary; original marriage register and exact identities pending",
+    "sources": [
+      {
+        "title": "Courier-Gazette, October 18, 1930, North Haven column",
+        "repository": "Digitized contemporary newspaper via CORE",
+        "url": "https://fileserver-az.core.ac.uk/download/pdf/270235292.pdf",
+        "record_type": "Contemporary newspaper edition reporting 43rd wedding anniversary",
+        "record_date": "1930-10-18",
+        "accessed": "2026-10-16",
+        "supports": "North Haven notice reporting Frank Beverage couple's 43rd wedding anniversary on Wednesday October 15, 1930",
+        "evidence_level": "Tier 1 for contemporary announcement of celebration; not original 1887 register"
       },
       {
-        "title": "Crossing Borders, Bridging Generations Collection — permissions and privacy",
-        "repository": "Center for Brooklyn History, NYU finding aid",
-        "url": "https://findingaids.library.nyu.edu/cbh/arms_2011_019/all/",
-        "record_type": "Owning archive finding aid",
+        "title": "Tonny Calderwood's 1937 Diary, October 15 (PDF page 29)",
+        "repository": "North Haven Historical Society, transcribed by Elizabeth MacLean",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1937.pdf#page=29",
+        "record_type": "First-person diary transcription",
+        "record_date": "1937-10-15",
         "accessed": "2026-10-16",
-        "supports": "Research access and permission required for republication",
-        "evidence_level": "Tier 1 — archive terms"
+        "supports": "50th anniversary celebration for Frank and May Beverage and photograph caption",
+        "evidence_level": "Tier 2 — first-person dated diary in institutional transcription"
       }
     ]
   }

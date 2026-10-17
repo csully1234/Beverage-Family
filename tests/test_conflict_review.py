@@ -49,34 +49,33 @@ class EvidenceReviewTests(unittest.TestCase):
         archive = ArchiveIndex(self.site)
         self.assertEqual(archive.people[lowell["id"]]["birth_place"], lowell["birth_place"])
         model = build_full_tree_model(self.people, relationship_index(self.site["people"]))
-        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]) + len([p for p in self.site["phase6_people"] if p["id"] not in self.old]))
+        self.assertEqual(len(model["nodes"]), len(build_full_tree_model(self.old, relationship_index(self.before))["nodes"]) + len(self.site["phase4_people"]) + len(self.site["phase7_people"]))
         for node in model["nodes"]:
             if node["id"] in (sarah["id"], diana["id"]):
                 self.assertNotIn("1734", node["life_span"])
                 self.assertNotIn("1780", node["life_span"])
 
     def test_all_other_person_fields_and_relationships_remain_identical(self):
-        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"]} | {p["id"] for p in self.site["phase6_people"] if p["id"] not in self.old})
+        self.assertEqual(set(self.people) - set(self.old), {p["id"] for p in self.site["phase4_people"] + self.site["phase7_people"]})
         changes = {(c["person_id"], c["field"]) for r in self.review["resolutions"] for c in r["changes"]}
-        # Explicit Phase 6 patches are audited separately; the imported
-        # October snapshot and every untouched existing profile remain fixed.
-        phase6_patches = {
-            (record["id"], field)
-            for record in self.site["phase6_people"] if record["id"] in self.old
-            for field in record if field != "id"
-        }
-        modified_existing_ids = {pid for pid, _ in phase6_patches}
         metadata = {"sources", "date_provenance", "review_corrections", "conflict_review_ids", "documented_activity"}
         for pid, old_person in self.old.items():
             p = self.people[pid]
             for key in p.keys() | old_person.keys():
-                if key not in metadata and (pid, key) not in changes and (pid, key) not in phase6_patches:
+                if key not in metadata and (pid, key) not in changes:
                     self.assertEqual(p.get(key), self.old[pid].get(key), (pid, key))
         new_rel = relationship_index(self.site["people"])
         old_rel = relationship_index(self.before)
         for field in ("parents", "children", "spouses", "siblings"):
             for pid in self.old:
-                if pid not in modified_existing_ids:
+                if pid == "lowell_beveridge_1905":
+                    expected = set(old_rel[field].get(pid, set()))
+                    if field == "children":
+                        expected |= {"lowell_pierson_beveridge_jr_1930", "thomas_gattrell_beveridge_1938"}
+                    elif field == "spouses":
+                        expected.add("ida_louisa_gattrell_beveridge_1901")
+                    self.assertEqual(new_rel[field].get(pid, set()), expected)
+                else:
                     self.assertEqual(new_rel[field].get(pid, set()), old_rel[field].get(pid, set()))
         self.assertIn("amelia_beverage_1833_child", self.people)
         self.assertIn("amelia_beverage_1833", self.people)

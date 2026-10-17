@@ -6,8 +6,8 @@
     "scope": {
       "book_total_pages": 305,
       "captioned_photo_pages": 82,
-      "method": "Compared existing indexed caption summaries from 82 book photo pages to current main branch people and six new/additive phase profiles, plus documented 1991 obituary and 2012 oral history",
-      "limitation": "The complete scanned PDF was not retrievable for fresh full-text/visual page-by-page inspection this session. No assertion that every person in every page/chapter is captured or independently verified."
+      "method": "Crossmatched the 82 indexed photographic pages to existing phase7 canonical profiles and two separately supported additional profiles",
+      "limitation": "These 82 cataloged photo-bearing pages do not exhaust the 305-page book, and memoir captions alone are not independent proof of identity."
     },
     "linked_people": [
       {
@@ -215,7 +215,7 @@
         "profile_source_not_equivalent_to_vital_record": true
       },
       {
-        "person_id": "lowell_pierson_beveridge_jr_author",
+        "person_id": "lowell_pierson_beveridge_jr_1930",
         "pdf_pages": [
           57,
           77,
@@ -230,7 +230,7 @@
         "profile_source_not_equivalent_to_vital_record": true
       },
       {
-        "person_id": "ida_louise_gattrell_beveridge",
+        "person_id": "ida_louisa_gattrell_beveridge_1901",
         "pdf_pages": [
           248
         ],
@@ -261,7 +261,7 @@
         "profile_source_not_equivalent_to_vital_record": true
       },
       {
-        "person_id": "hortense_tee_sie_beveridge",
+        "person_id": "hortense_tee_sie_beveridge_1923",
         "pdf_pages": [],
         "summary": "Pete's documented 1954 wife and film editor; not individually named in the cataloged photo captions",
         "source": "The Colony (2016), caption summaries in data/colony_photo_captions.json; open actual printed page for full identification",

@@ -16,13 +16,27 @@ import streamlit as st
 from routing_ui import route_link, route_markdown
 from research_collection_ui import load_collection, render_finding
 from family_data import life_span, year_from_date
-from evidence_explorer import render_exhibit_library
+from evidence_explorer import render_exhibit_library, render_investigations, investigation_catalog
 
 ROOT = Path(__file__).resolve().parent
 MEDIA_ROOT = (ROOT / "static" / "approved_media").resolve()
 MEDIA_MANIFEST = ROOT / "data" / "media_manifest.json"
 
 STORIES = (
+    {
+        "id": "lowell-pete-tee-firsthand-1954",
+        "title": "Lowell Sr., Pete and Tee: two generations, one complicated North Haven story",
+        "period": "1930–2016",
+        "summary": "A 1960 Harvard family entry and Pete's own 2012 interview establish the father-son family, 1954 marriage and a complicated response from other relatives.",
+        "body": "Lowell Pierson Beveridge Sr. (1905–1991) and Ida Louisa Gattrell were the parents of Lowell Pierson 'Pete' Beveridge Jr. (born 1930), the 2016 author of The Colony, and his brother Thomas Gattrell Beveridge. The father is the musician pictured in a 1923 Harvard photo, not the memoir's author. In an oral-history interview recorded in 2012, Pete said he spent summers on shared ancestral North Haven property. He described resistance from his father's siblings to his relationship with documentary filmmaker Hortense 'Tee' Sie, including discouraging him from bringing her to the island and letters opposing the marriage. He said his parents and younger brother attended and his parents blessed the January 1954 ceremony in Harlem, despite the broader family's objections. Pete recalled political and civil-rights activism at Harvard. His father's 1960 Harvard report mentions selling a North Haven farm during the preceding five years, without proving any causal link to the marriage. Statements that Pete married in 1953 or was disowned by his parents for exactly twenty years are not established by these firsthand records. The interview is published for research purposes; original transcript, book and museum sources remain with their holders.",
+        "terms": ("Lowell", "Pete", "Tee", "Beveridge", "North Haven"),
+        "source_links": (
+            ("Read Pete's own 2012 recorded-history transcript", "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf"),
+            ("1960 Harvard class report names Pete, his brother and Ida", "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm"),
+            ("1991 Diocese memorial for Lowell Sr.", "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf"),
+            ("Read Pete's authorized 2016 book", "?page=family-books"),
+        ),
+    },
     {
         "id": "matthew-rockland-descendants-1865",
         "title": "Matthew's reported children and Nathaniel's separate family",
@@ -32,7 +46,7 @@ STORIES = (
         "terms": ("Matthew", "Nathaniel", "Beverage"),
         "family_group": True,
         "source_links": (
-            ("Read the 1865 family history, vol. II, pp.146–147", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+            ("Read the 1865 family history, vol. II, pp.146–147", "https://archive.org/details/historyofthomast02eato"),
             ("Compare the compiled Nathaniel parentage hypothesis", "https://genealogyofnewengland.com/f_86c9.htm"),
             ("Indexed marriage evidence for Henry T. and Ella Allen", "https://ancestors.familysearch.org/en/GM6N-6CV"),
         ),
@@ -83,7 +97,7 @@ STORIES = (
             ("1786 Fox Islands plan (Pulpit Harbor)", "https://digitalmaine.com/planbook_8/17/"),
             ("1889 transcribed petition and grant", "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf"),
             ("1935 Carver genealogy", "https://archive.org/details/carverfamilyofne00carv_0"),
-            ("1865 Capt. Matthew genealogical account", "https://www.scribd.com/document/845728319/History-of-Thomaston-Rockland-and-South"),
+            ("1865 Capt. Matthew genealogical account", "https://archive.org/details/historyofthomast02eato"),
         ),
     },
     {
@@ -403,6 +417,12 @@ def render_media_page() -> None:
         st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
         st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
         route_link("Open the complete book and its visual collection", "?page=family-books")
+    requested_case = str(st.query_params.get("case", "") or "")
+    case_is_known = requested_case in {case["id"] for case in investigation_catalog()}
+    if case_is_known:
+        # Deep links from a relative profile lead straight to the case file.
+        render_investigations()
+        st.divider()
     from colony_photos import render_colony_photographs
     photos_tab, images_tab, documents_tab, evidence_tab = st.tabs(
         ["Family photographs", "Other historical images", "Historical documents",
@@ -456,7 +476,16 @@ def render_media_page() -> None:
                 st.write(document["summary"])
                 route_link("Read document and original pages", "?page=documents&doc=" + id_)
     with evidence_tab:
-        render_exhibit_library()
+        if not case_is_known:
+            cases_tab, sources_tab = st.tabs(
+                ["Family history investigations", "All linked source records"]
+            )
+            with cases_tab:
+                render_investigations()
+            with sources_tab:
+                render_exhibit_library()
+        else:
+            render_exhibit_library()
 
 
 def render_document_page() -> None:
