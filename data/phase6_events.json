@@ -1,0 +1,60 @@
+[
+  {
+    "id": "event_pete_hortense_marriage_1954",
+    "date": "1954-01",
+    "date_precision": "month",
+    "title": "Pete Beveridge and Hortense 'Tee' Sie marry in Harlem",
+    "description": "In his May 2012 first-person oral-history interview, Lowell P. 'Pete' Beveridge Jr. said he and Hortense 'Tee' Sie were married in January 1954 at St. Philip's Episcopal Church in Harlem, not in 1953. He recalled that his parents ultimately supported the marriage, while some extended relatives strongly objected. These are the narrator's recollections; the original parish marriage register is still needed for an exact wedding date.",
+    "category": "Family marriage / oral history",
+    "place": "St. Philip's Church, Harlem, New York City",
+    "people_involved": [
+      "lowell_pierson_beveridge_jr_author",
+      "hortense_tee_sie_beveridge"
+    ],
+    "evidence_status": "Near-firsthand 2012 self-report of 1954 marriage; original church marriage entry not reviewed",
+    "sources": [
+      {
+        "title": "Lowell 'Pete' Beveridge 2012 oral history",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded interview transcript, interview May 23, 2012",
+        "accessed": "2026-10-16",
+        "supports": "Pete's account of 1954 marriage, family tensions, period away from North Haven and reconciliation; see pp. 12–15 and 34. Source is for research use; no transcript rehosting.",
+        "evidence_level": "Tier 2 — first-person participant testimony; do not imply other family members independently agreed"
+      }
+    ]
+  },
+  {
+    "id": "event_pete_brooklyn_oral_history_2012",
+    "date": "2012-05-23",
+    "date_precision": "exact",
+    "title": "Pete Beveridge records his North Haven family memories",
+    "description": "Lowell Pierson 'Pete' Beveridge Jr. gave an oral-history interview to Sady Sullivan for Brooklyn Historical Society's Crossing Borders, Bridging Generations project. He described summer life at the North Haven family compound, the controversy surrounding his 1954 marriage, approximately twenty years when he did not return to North Haven because he felt unwelcome, and later reconciliation and visits with his wife. This is his perspective, not proof that the entire family imposed a formal banishment. The archive provides the interview for research and has separate reuse restrictions.",
+    "category": "Oral history / family memory",
+    "place": "Brooklyn, New York",
+    "people_involved": [
+      "lowell_pierson_beveridge_jr_author"
+    ],
+    "evidence_status": "2012 documented firsthand oral-history interview, self-report of childhood and family relationships",
+    "sources": [
+      {
+        "title": "Lowell 'Pete' Beveridge 2012 oral history",
+        "repository": "Brooklyn Historical Society / Center for Brooklyn History",
+        "url": "https://s3.amazonaws.com/bhs.assets/bhs_2011.019.032_beveridge-pete_20120523_a.pdf",
+        "record_type": "First-person recorded interview transcript, interview May 23, 2012",
+        "accessed": "2026-10-16",
+        "supports": "Pete's account of 1954 marriage, family tensions, period away from North Haven and reconciliation; see pp. 12–15 and 34. Source is for research use; no transcript rehosting.",
+        "evidence_level": "Tier 2 — first-person participant testimony; do not imply other family members independently agreed"
+      },
+      {
+        "title": "Crossing Borders, Bridging Generations Collection — permissions and privacy",
+        "repository": "Center for Brooklyn History, NYU finding aid",
+        "url": "https://findingaids.library.nyu.edu/cbh/arms_2011_019/all/",
+        "record_type": "Owning archive finding aid",
+        "accessed": "2026-10-16",
+        "supports": "Research access and permission required for republication",
+        "evidence_level": "Tier 1 — archive terms"
+      }
+    ]
+  }
+]
