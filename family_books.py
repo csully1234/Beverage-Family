@@ -364,7 +364,8 @@ def render_book_people_index(*, expanded: bool = False) -> None:
         if pending:
             st.markdown("**Not yet safe to attach to the family tree**")
             for item in pending:
-                with st.expander(str(item.get("name") or "Unresolved person")):
+                with st.container(border=True):
+                    st.markdown("**" + str(item.get("name") or "Unresolved person") + "**")
                     st.write(str(item.get("issue") or ""))
                     for page in item.get("pages", []):
                         route_link(f"Open original book page {page}",
