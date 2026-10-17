@@ -11,6 +11,7 @@ from family_data import format_date, life_span, year_from_date
 from research_collection_ui import load_collection
 from routing_ui import route_link
 from event_source_access import render_event_source_access
+from historical_claims import reviewed_event_presentation, render_event_source_review
 from visitor_ui import STORIES, DOCUMENTS, approved_assets
 
 
@@ -41,7 +42,10 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
                       "year":year,"description":str(description or ""),"url":link,
                       "person_ids":tuple(person_ids or ()),"certainty":str(certainty or "Not rated"),
                       "date_kind":date_kind, "extra":str(extra or "")})
-    for event in data.get("events", []):
+    for original in data.get("events", []):
+        # Keep legacy source records intact. A reviewed public description can
+        # narrow disputed events to what the actual surviving source establishes.
+        event = reviewed_event_presentation(original)
         date = format_date(event.get("date"), event.get("date_precision"))
         add("Timeline event",event["id"],event.get("title","Event"),date,event.get("description",""),
             "?page=timeline&event="+quote(event["id"]),event.get("people_involved",[]),
@@ -230,6 +234,7 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
                     if original:
                         st.markdown("**Original records and citations**")
                         render_event_source_access(original.get("sources", []))
+                        render_event_source_review(str(original["id"]))
                 elif item["type"] == "Life event":
                     person_id, _, event_kind = item["id"].rpartition(":")
                     subject = people_by_id.get(person_id)
