@@ -94,3 +94,27 @@ test('steps and full overview show expected nodes without changing selected iden
    assert.deepEqual(errors,[]);
  }finally{dom.window.close();}
 });
+
+test('documented Lowell/Lyford sibling link is drawn without a fictitious parent',async()=>{
+ const {dom,errors}=setup();
+ try{
+   await wait();
+   const d=dom.window.document;
+   const brotherLine=[...d.querySelectorAll('#world path.sibling-edge')].find(el =>
+      new Set([el.dataset.a,el.dataset.b]).size===2 &&
+      [el.dataset.a,el.dataset.b].includes('lowell_beveridge_1905') &&
+      [el.dataset.a,el.dataset.b].includes('lyford_beveridge_brother_lowell'));
+   assert(brotherLine,'explicit brotherhood must be visibly linked');
+   change(dom,'personSelect','lowell_beveridge_1905');
+   change(dom,'mode','branch');
+   change(dom,'distance','1');
+   assert.equal(d.querySelector('[data-id="lyford_beveridge_brother_lowell"]').classList.contains('is-hidden'),false,
+     'a documented sibling should count as immediate family');
+   assert.equal(brotherLine.classList.contains('is-hidden'),false);
+   assert.equal([...d.querySelectorAll('path.parent-edge')].some(el =>
+      [el.dataset.a,el.dataset.b].includes('lyford_beveridge_brother_lowell') &&
+      [el.dataset.a,el.dataset.b].includes('lowell_beveridge_1905')),false,
+      'sibling documentation must never be represented as parenthood');
+   assert.deepEqual(errors,[]);
+ } finally {dom.window.close();}
+});

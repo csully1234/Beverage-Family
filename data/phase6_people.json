@@ -1,0 +1,65 @@
+[
+  {
+    "id": "lyford_beveridge_brother_lowell",
+    "full_name": "Lyford Beveridge (brother of Lowell P. Beveridge)",
+    "birth_date": null,
+    "death_date": null,
+    "parents": [],
+    "siblings": [
+      "lowell_beveridge_1905"
+    ],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "The 1991 contemporary obituary of Lowell Pierson Beveridge names 'a brother, Lyford Beveridge of Rockland, Maine'. This is a verified sibling relationship, but no separate vital record or identity-specific proof of Lyford's parents has been located. Do not confuse with Lyford Beverage born 1842 or assign Orris and Rose as parents by inference.",
+    "evidence_status": "Siblings established by 1991 obituary; individual parentage, birth/death, and identity unresolved.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies",
+        "repository": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "record_type": "Contemporary obituary",
+        "record_date": "1991-06-20",
+        "accessed": "2026-10-16",
+        "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
+        "evidence_level": "Tier 3 — contemporaneous obituary"
+      }
+    ]
+  },
+  {
+    "id": "dorothy_jimmy_gattrell_beverage",
+    "full_name": "Dorothy 'Jimmy' Gattrell Beverage",
+    "birth_date": null,
+    "death_date": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "elliot_beverage_1908"
+    ],
+    "children": [],
+    "residences": [],
+    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The 2016 illustrated memoir by Lowell P. Beveridge Jr. identifies an 'Aunt Dorothy Jimmy Gattrell Beverage' beside Eliot in its page-257 caption; 1958 Calderwood diary references Eliot and Dorothy in North Haven. The exact maiden name spelling, marriage return, dates of birth and death remain to be confirmed.",
+    "evidence_status": "Wife Dorothy corroborated by North Haven Historical Society biography and family memoir. The surname Gattrell and nickname 'Jimmy' are attributed to book caption, not an independently inspected marriage return.",
+    "sources": [
+      {
+        "title": "North Haven historical diaries, 1958 — Eliot and Dorothy",
+        "repository": "North Haven Historical Society, Calderwood diary transcription",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1958.pdf",
+        "record_type": "Contemporaneous diary transcription",
+        "accessed": "2026-10-16",
+        "supports": "1958 island diary references Eliot and Dorothy, providing separate context for the couple reported in the Colony portrait",
+        "evidence_level": "Tier 2/3 — first-person diary transcription; exact marriage record not examined"
+      },
+      {
+        "title": "The Colony, 2016, PDF p. 257",
+        "repository": "Lowell P. Beveridge Jr. family-site authorized illustrated edition",
+        "url": "https://beverage-family.onrender.com/?page=family-books&book_page=257",
+        "record_type": "Family memoir photograph caption",
+        "record_date": "2016",
+        "accessed": "2026-10-16",
+        "supports": "Caption attributes portrait to Uncle Eliot and Aunt Dorothy 'Jimmy' Gattrell Beverage",
+        "evidence_level": "Tier 2/3 — first-person-family history photo caption, identity requires vital record"
+      }
+    ]
+  }
+]
