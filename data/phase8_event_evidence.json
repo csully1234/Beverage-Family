@@ -2,7 +2,7 @@
   {
     "event_id": "event_marriage_james_jr_jean_white_1749",
     "headline": "Marriage not independently established",
-    "assessment": "The 6 February 1749 record is a marriage *intention* for James Beveridge and Jean White, both described as of Georgetown. An intention does not by itself establish that the marriage ceremony took place or that this James is the separately recorded Marblehead-born James. The original legacy event label below is preserved for audit, but must not be treated as a verified wedding.",
+    "assessment": "The original archive retains an older account describing a completed marriage. The strongest currently identified dated record is a *marriage intention* for James Beveridge and Jean White of Georgetown, not a marriage certificate. The original ceremony and a unique identity link to the 1724 Marblehead-born James have not been established.",
     "sources": [
       {
         "title": "Brunswick marriage intentions 1740–1764, printed town transcription",
@@ -10,7 +10,10 @@
         "supports": "Printed 1749 intention naming James Beveridge and Jean White of Georgetown; not a marriage certificate."
       }
     ],
-    "original_record_needed": "Locate the dated Georgetown/Brunswick solemnization or church marriage register and establish both parties' independent identities."
+    "original_record_needed": "Locate the dated Georgetown/Brunswick solemnization or church marriage register and establish both parties' independent identities.",
+    "display_title": "James Beveridge and Jean White announce their intention to marry (ceremony unverified)",
+    "display_summary": "A surviving printed transcription records a marriage intention for James Beveridge and Jean White of Georgetown on February 6, 1749. This is not proof that a wedding occurred or that the named James is the Marblehead-born James Beveridge (1724).",
+    "display_evidence_status": "Documented marriage intention; ceremony and identities not established"
   },
   {
     "event_id": "event_marriage_james_sr_sarah_bennett_1723",
