@@ -47,3 +47,38 @@ Two printed transcriptions of the **same** Brunswick town intention spell James'
 - Adds regression coverage protecting the existing verified family tree, legacy research and provenance.
 
 **No new ancestors, genealogical edges, land ownership pins, modern addresses, outbound messages, original-family historical claims or existing source records have been changed.** No original 1752/1758 title instrument or 1776/1777 muster roll was claimed examined.
+
+
+## Major independent corroboration — Massachusetts archival service compilation
+
+After the Wheeler 1878 roster discovery, a substantially stronger source was located: *Massachusetts Soldiers and Sailors of the Revolutionary War: A Compilation from the Archives*, issued by the Secretary of the Commonwealth (1896 onward), B-surname entries. The public scanned edition is at:
+
+https://upload.wikimedia.org/wikipedia/commons/8/8e/Massachusetts_soldiers_and_sailors_of_the_revoluntionary_war._A_compilation_from_the_archives_%28IA_cu31924092739980%29.pdf
+
+Unlike Wheeler's two separate 1776/1777 roster tables, the Massachusetts state-archive compilation **joins the 1776 Lithgow and 1777 George White assignments into a single published Robert Beveridge of Topsham service entry**. Details recorded:
+
+- **11 March 1776** — enlisted private, Capt. William Lithgow's company, of **Topsham**. Reported service at Falmouth.
+- **22 March 1776** — promoted corporal.
+- **9 August 1776** — promoted sergeant.
+- **3 December 1776** — date referenced as start of subsistence in Capt. George White's company, Col. Ebenezer Francis's regiment.
+- **3 February 1777** — reported commissioned ensign.
+
+**Evidence classification:** Strong independent *archival compilation* documenting a coherent military service career for Robert of Topsham, more trustworthy than independently guessing two same-name rosters describe one man. It is **still not an inspection of each contemporaneous original roll** and does **not** prove his father, age, spouse, or kinship with James and Samuel.
+
+### Same-name military entries must remain separate
+
+Nearby B-surname entries in the **same** Massachusetts compilation also report:
+
+- **Robert Beveredge/Bevekedge** — fifer, Capt. James Lemont's sea-coast company, enlisted **22 July 1775**, service at Georgetown to December 1775. The spelling is inconsistent in the OCR source. Could this be the same future Topsham Robert? No unique identifier yet.
+- **Robert Beverage** — seaman in the brigantine **Tyrannicide**, Capt. Jonathan Haraden, **13 March–31 August 1777**. Possible overlap with the Topsham ensign's term makes automatic conflation especially unwarranted.
+- A separately worded **Robert Beverage**, second sergeant in Lithgow's company, with a later 1776 pay period; **could be another rendition of the named Topsham Robert**, but match requires pay-roll crosscheck. Its presence must not be counted as an independent second person without proof.
+
+The public story displays these as source leads, but none is added as a genealogy node. No Revolutionary War pension, postwar residence, family heirloom or probate record has yet been identified to connect Robert with James or Samuel.
+
+### Additional underlying material, not itself proof of Robert's presence
+
+A 1901–1904 handwritten descendant's transcript of **Capt. George White's January 1778 company roster**, copied from Massachusetts State Archives, survives in a digitized manuscript discussion: https://www.heirloomsreunited.com/2020/06/1778-muster-roll-of-capt-george-white.html . Its surviving list and company context may help locate original MA Revolutionary Rolls (the copied manuscript cites Vol. 43, p. 75 for **certain other soldiers**). This is **not** a located 1777 Ensign Robert entry; never cite that reference as his individual roster without locating him.
+
+**Original retrieval priority:** Massachusetts Archives Lithgow March–November 1776 payroll sheets and Feb 1777 officer appointment; militia/bounty rolls with residence and age; the distinct Georgetown Lemont and Tyrannicide entries; then probate, town vital, land and tax material to establish Robert's parentage and the possible Topsham family network.
+
+**Editorial update:** The initial assertion above that the 1776/1777 listings were only a plausibly similar pair has been superseded by this verified published Massachusetts archival compilation. Original individual records are still needed.
