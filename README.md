@@ -78,6 +78,47 @@ Place confidence describes the geographic reference, not certainty about every h
 
 For the seeded inventory, linking rules, provenance, testing limits, and Phase 2 work, see [the implementation report](research/source_archive_historical_map_2026-09-02.md).
 
+### The Colony family-tree completeness audit and Lowell oral history (October 2026)
+
+**New tree profiles:** Lowell Pierson Beveridge Jr. ("Pete," author of *The
+Colony*, 2016) has been connected to his father Lowell Pierson Beveridge
+Sr. (1905–1991) and mother Ida Louise Gattrell. His brother Thomas,
+wife Hortense "Tee" Sie Beveridge, and the father's brother Lyford
+have source-attributed entries; Lyford's parents are **not guessed**.
+Eliot's pictured wife Dorothy "Jimmy" Gattrell Beverage is linked to
+his historic family profile without invented dates. Original base
+people, addresses and collection snapshots remain unchanged.
+
+Pete's firsthand **23 May 2012 Brooklyn Historical Society interview**
+supports **January 1954**, not 1953, for his marriage to Hortense.
+His account of family opposition, approximately twenty years away from
+North Haven, and eventual reconciliation is **specifically attributed to
+his recollection**; no blanket claim that every relative rejected the
+couple or that the family formally banished him is made. The interview
+is linked, not reproduced, because of archive rights restrictions.
+Hortense's dates and film-editing career have independent Smithsonian
+collection support.
+
+A new **book-photo / family-tree cross-reference** connects 23 person
+profiles to their cited pages among the **82 cataloged photo-bearing
+pages** in the 305-page family book. Person profiles link to the
+original printed page, the family photograph gallery links back to
+people, and the book section lists **16 unresolved identity questions**,
+including Hanson, Florence Budlong, Priscilla and multi-person group
+captions. The full 305-page book has **not yet undergone an exhaustive
+person-by-person full-text audit**; no assertion of completion is made.
+
+- Audited person and source overlays: `data/phase6_people.json`
+- First-person and marriage events: `data/phase6_events.json`
+- Indexed 82-page catalog and 16 pending name questions:
+  `data/colony_people_crosswalk.json`
+- Source evidence and outstanding full-book audit:
+  `research/phase6_lowell_and_colony_people_audit_2026-10-16.md`
+- Regression checks: `tests/test_phase6_book_tree_audit.py`
+
+No automated sending, merging, deploying or copyright-restricted
+media copying is part of this update.
+
 ### Original evidence explorer — accessible source files and historical context (October 2026)
 
 Open actual supporting records from **People** profiles and **Family Timeline**
