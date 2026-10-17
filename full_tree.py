@@ -429,6 +429,17 @@ function labelLines(name) {{
 for (const node of DATA.nodes) {{
   const g=make("g", {{class:`node${{node.unresolved ? " unresolved" : ""}}`, "data-id":node.id}});
   g.setAttribute("transform", `translate(${{node.x}} ${{node.y}})`);
+  if(!node.unresolved) {{
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("role", "button");
+    g.setAttribute("aria-label", "Select "+node.name+" ("+node.life_span+")");
+    g.addEventListener("keydown", event => {{
+      if(event.key==="Enter" || event.key===" ") {{
+        event.preventDefault();
+        focusNode(node.id);
+      }}
+    }});
+  }}
   g.appendChild(make("rect", {{width:DATA.node_width, height:DATA.node_height}}));
   const lines=labelLines(node.name);
   const text=make("text", {{x:DATA.node_width/2, y:lines.length > 1 ? 19 : 24, "text-anchor":"middle", class:"name"}});
@@ -453,6 +464,45 @@ for (const node of sortedNodes) {{
   option.textContent=`${{node.name}} · ${{node.life_span}}`;
   select.appendChild(option);
 }}
+const searchNames = sortedNodes.map(node => ({{
+  id:node.id, name:node.name,
+  haystack:(node.name+" "+node.life_span+" "+node.id.replace(/_/g," ")).toLocaleLowerCase()
+}}));
+function matchingPeople(rawQuery) {{
+  const term=String(rawQuery||"").trim().toLocaleLowerCase();
+  if(!term) return [];
+  return searchNames.filter(entry=>entry.haystack.includes(term));
+}}
+function updateSearchSuggestions() {{
+  const matches=matchingPeople(searchInput.value);
+  searchSuggestions.replaceChildren();
+  for(const entry of matches.slice(0,12)) {{
+    const option=document.createElement("option");
+    option.value=entry.name; option.label=entry.name;
+    searchSuggestions.appendChild(option);
+  }}
+  searchMessage.textContent=searchInput.value.trim()
+    ? matches.length+" name matches. Press Enter to select the closest match."
+    : "Type a name to jump to that relative, or choose someone from the complete list.";
+}}
+function searchPerson() {{
+  const term=searchInput.value.trim();
+  if(!term) {{ searchInput.focus(); return; }}
+  const matches=matchingPeople(term);
+  if(!matches.length) {{
+    searchMessage.textContent="No matching relatives. Try fewer letters or another spelling.";
+    return;
+  }}
+  const exact=matches.find(entry=>entry.name.toLocaleLowerCase()===term.toLocaleLowerCase());
+  const target=exact || matches[0];
+  focusNode(target.id);
+  searchMessage.textContent="Showing "+target.name+" · "+matches.length+" matching records.";
+}}
+searchInput.addEventListener("input", updateSearchSuggestions);
+searchInput.addEventListener("keydown", event => {{
+  if(event.key==="Enter") {{ event.preventDefault(); searchPerson(); }}
+}});
+document.getElementById("searchPerson").addEventListener("click", searchPerson);
 function neighborhood(id, maxSteps) {{
   const seen = new Set([id]); let frontier = [id];
   for(let step=0;step<maxSteps;step++) {{
