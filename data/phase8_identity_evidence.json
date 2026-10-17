@@ -1,0 +1,298 @@
+[
+  {
+    "id": "lyford-ruth-ann",
+    "name": "Lyford Pierson Beveridge, Ruth Bingham Reynolds and Ann Morrison Beveridge",
+    "priority": 1,
+    "case_names": [
+      "Ruth and Ann (Lyford family)"
+    ],
+    "tree_profile_id": "lyford_beveridge_brother_lowell",
+    "book_pages": [
+      241,
+      297,
+      300
+    ],
+    "known": "The 1991 contemporary obituary independently identifies Lyford as Lowell Sr.'s brother. The family memoir gives the fuller name Lyford Pierson Beveridge and names Ruth Bingham Reynolds and Ann Morrison Beveridge as wife and daughter.",
+    "limits": "A separate compiled family-tree website repeats a reported 1925 marriage, 1900–1999 and 1898–1989 life spans, but that may derive from the same family history. It is NOT independent proof of Lyford's parents or a verified original marriage record. Ann may be living; avoid publishing personal details beyond previously printed memoir content.",
+    "status": "Sibling connection documented; marriage, parents, vital dates and child relationships require original records",
+    "sources": [
+      {
+        "title": "Contemporary obituary naming Lyford as Lowell's brother (1991)",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "kind": "contemporary_obituary",
+        "proves": "Lowell Sr. had a brother named Lyford, not their parents."
+      },
+      {
+        "title": "Compiled Lyford–Ruth 1925 marriage listing (secondary only)",
+        "url": "https://www.mytrees.com/names/Married/1925/1/BINGHAM%2BREYNOLDS",
+        "kind": "derivative_compilation",
+        "proves": "A published compiled assertion, not an independently examined marriage record."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Massachusetts 1925 marriage register: Lyford Beveridge / Ruth Reynolds",
+        "where": "Massachusetts Registry of Vital Records & Statistics or Massachusetts State Archives, depending on record custody; request exact certificate/place and parents."
+      },
+      {
+        "record": "Lyford 1900 birth / 1999 Maine death and original obituary",
+        "where": "Vital registry or Rockland-area library newspaper/microfilm; distinguish the 1991-obituary brother from any older Lyford."
+      }
+    ]
+  },
+  {
+    "id": "arnold-marion",
+    "name": "Arnold Pierson Beveridge and Marion Priscilla Delano",
+    "priority": 1,
+    "case_names": [
+      "Priscilla (Arnold's wife)"
+    ],
+    "tree_profile_id": "arnold_beveridge_1903",
+    "book_pages": [
+      244,
+      298,
+      301
+    ],
+    "known": "The family memoir reports a 1926 wedding and the name Marion Priscilla Delano. A separate institutional Tri Delta digital index contains the form 'Beveridge, Marion Priscilla Delano'; FamilySearch's compiled profile points to indexed death and obituary sources.",
+    "limits": "An archival *name index* and a compiled FamilySearch profile corroborate that the full married name appears elsewhere, but do not independently establish the husband, wedding or birth/death dates.",
+    "status": "Full name has independent catalog corroboration; marriage remains a research lead",
+    "sources": [
+      {
+        "title": "Tri Delta Digital Museum catalog name index",
+        "url": "https://tridelta-test.historyit.com/tag.php?id=4070&q=Mencken%2C+Sara+Haardt",
+        "kind": "institutional_index",
+        "proves": "Catalog lists a named Marion Priscilla Delano Beveridge; indexed underlying item not examined."
+      },
+      {
+        "title": "FamilySearch ancestor summary with source leads",
+        "url": "https://ancestors.familysearch.org/en/K83Y-C4N/marion-priscilla-delano-1900-1996",
+        "kind": "derivative_compilation",
+        "proves": "Potential obituary/cemetery index retrieval routes only."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Marriage entry Arnold Pierson Beveridge / Marion Priscilla Delano, alleged 1926",
+        "where": "State vital register where marriage took place; city location must be established before targeted request."
+      },
+      {
+        "record": "Tri Delta indexed original item and catalog description",
+        "where": "Digital Museum collection record and archival staff; no material copied or outreach sent."
+      }
+    ]
+  },
+  {
+    "id": "eliot-dorothy",
+    "name": "Eliot Pierson Beveridge and Elizabeth Dorothy Gattrell",
+    "priority": 1,
+    "case_names": [],
+    "tree_profile_id": "dorothy_jimmy_gattrell_beverage",
+    "book_pages": [
+      257,
+      298,
+      302
+    ],
+    "known": "A historical North Haven diary and the family memoir independently identify Eliot and Dorothy as a couple; the memoir appendix gives the fuller 'Elizabeth Dorothy Gattrell'.",
+    "limits": "Original civil marriage certificate has not been examined. The surname spelling and reported marriage year 1934 remain attributed to the book rather than certified.",
+    "status": "Couple documented; fuller legal name, exact date and original marriage unverified",
+    "sources": [
+      {
+        "title": "North Haven Historical Society Calderwood diary, 1958",
+        "url": "https://www.northhavenmainehistoricalsociety.org/uploads/5/2/8/7/5287313/1958.pdf",
+        "kind": "contemporary_diary_transcription",
+        "proves": "Eliot/Dorothy couple contextual mention; not a marriage return."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Original 1934 marriage entry for Eliot / Elizabeth Dorothy Gattrell",
+        "where": "Maine DRVS if married in Maine; otherwise determine exact jurisdiction before requesting."
+      }
+    ]
+  },
+  {
+    "id": "vernon-household",
+    "name": "Vernon Linwood Beverage and Nellie Marion Ames",
+    "priority": 2,
+    "case_names": [
+      "Vernon Beverage"
+    ],
+    "tree_profile_id": null,
+    "book_pages": [
+      45,
+      177,
+      298,
+      302
+    ],
+    "known": "The family memoir identifies Vernon and his wife Nellie under Charles H. Beverage's branch. FamilySearch's compiled profile of Milton Ames Beverage names Vernon Linwood Beverage and Nellie Marion Ames as Milton's parents.",
+    "limits": "This corroboration is an online compiled tree; original Milton's birth return, Vernon/Nellie marriage and Charles/Annie parentage not inspected. Do not claim it is an independent primary record.",
+    "status": "Multiple compiled attestations, no inspected civil identity bridge",
+    "sources": [
+      {
+        "title": "FamilySearch Milton Ames Beverage family summary",
+        "url": "https://ancestors.familysearch.org/en/9C27-C6S/milton-ames-beverage-1918-1993",
+        "kind": "derivative_compilation",
+        "proves": "Records candidate parents and a lead to birth evidence; inspect linked primary source."
+      },
+      {
+        "title": "FamilySearch Maine original vital-record images catalog",
+        "url": "https://www.familysearch.org/en/search/collection/1803978",
+        "kind": "archive_finding_aid",
+        "proves": "An original-record collection covering Maine through 1921, not a located Vernon certificate."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "1918 birth return Milton Ames Beverage; 1915 reported marriage Vernon / Nellie",
+        "where": "Maine original vital returns (image scans or DRVS) to verify exact parents and couple."
+      },
+      {
+        "record": "Vernon birth and Charles/Annie marriage",
+        "where": "1890 North Haven town register and dated marriage intention, not Find a Grave-only parentage."
+      }
+    ]
+  },
+  {
+    "id": "hanson-amelia",
+    "name": "Hanson Beverage and Amelia Beverage",
+    "priority": 2,
+    "case_names": [
+      "Hanson Beverage (Amelia's brother)"
+    ],
+    "tree_profile_id": "amelia_beverage_1833",
+    "book_pages": [
+      49,
+      175,
+      290,
+      296
+    ],
+    "known": "The family memoir p.49 labels Hanson as Amelia's brother. An 1887 printed Concord/Barrett genealogy names Hanson Beverage and Mary Barrett.",
+    "limits": "Two historical individuals sharing a name do not guarantee the scanned photograph identifies the person in the 1887 book. Multiple Amelia IDs remain under review.",
+    "status": "Independent named Hanson existence, not established photo or sibling match",
+    "sources": [
+      {
+        "title": "1887 Concord family genealogy (Barrett branch)",
+        "url": "https://ldsgenealogy.com/MA/books/Genealogies-of-some-old-families-of-Concord-Mass-and-their-descendants-in-part-to-the-present-generation-1887-part-5.htm",
+        "kind": "published_genealogy",
+        "proves": "A genealogical source names Hanson and a wife but not the photographed person's unique identity."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "1850–1880 original household census, plus marriage/cemetery records for Hanson",
+        "where": "FamilySearch/NARA enumerations and Massachusetts/Maine municipal returns; correlate Amelia siblings and historical photograph."
+      }
+    ]
+  },
+  {
+    "id": "rose-pierson",
+    "name": "Rose Emma Pierson: Albion Pierson and Olive F. Hart",
+    "priority": 2,
+    "case_names": [
+      "Albion Pierson (Rose's father)",
+      "Jesse Hart (1817–1878)"
+    ],
+    "tree_profile_id": "rose_pierson_1866",
+    "book_pages": [
+      122,
+      123,
+      124,
+      296
+    ],
+    "known": "The memoir appendix lists Albion Pierson and Olive F. Hart as parents of Rose; a later memorial repeats that parentage.",
+    "limits": "The memorial could derive from the same family materials; no original baptism, birth or marriage return inspected. The Hart line must not be extended from names alone.",
+    "status": "Compiled parentage candidate only",
+    "sources": [
+      {
+        "title": "FamilySearch Maine historic original images collection",
+        "url": "https://www.familysearch.org/en/search/collection/1803978",
+        "kind": "archive_finding_aid",
+        "proves": "Potential original Maine birth/marriage records, not a person-specific match."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Rose Pierson 1866 birth/baptism, Albion/Olive marriage",
+        "where": "Tenants Harbor / St. George town registers and Maine archival delayed vital scans; certify relationship before tree edge."
+      }
+    ]
+  },
+  {
+    "id": "matthew-nathaniel",
+    "name": "Capt. Matthew Beverage, Clarissa Cobb and Nathaniel Beverage",
+    "priority": 1,
+    "case_names": [],
+    "tree_profile_id": null,
+    "book_pages": [
+      16,
+      17,
+      27,
+      291,
+      293
+    ],
+    "known": "The 1851 published Annals of Warren independently identifies Clarissa Cobb as spouse of Capt. Matthew Beverage of Hope; a later 1865 history describes Matthew's family and a separate Nathaniel household.",
+    "limits": "Clarissa/Capt. Matthew's marriage in local histories does not prove Nathaniel's ancestry or a link from Matthew to North Haven/Scotland. Avoid conflating multiple Matthews and Nathaniels.",
+    "status": "Matthew–Clarissa printed history corroborated; Nathaniel parentage open",
+    "sources": [
+      {
+        "title": "Annals of Warren, 1851, Cobb family list",
+        "url": "https://ldsgenealogy.com/ME/books/Annals-of-the-town-of-Warren-with-the-Early-History-of-St-Georges-Broad-Bay-and-the-Neighboring-Settlements-on-the-Waldo-patent-part-39.htm",
+        "kind": "historical_genealogy_1851",
+        "proves": "Clarissa, child of Capt. Barnabas Cobb, reported married to Capt. Matthew Beverage of Hope. Does not assert Nathaniel was their child."
+      },
+      {
+        "title": "Maine State Archives Open Access original records",
+        "url": "https://www3.maine.gov/sos/archives/digital-archives",
+        "kind": "archive_finding_aid",
+        "proves": "Digital primary record availability including land deeds, maps and pre-1892 vital; no individual identity match here."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Hope/Lincoln County Capt. Matthew probate, deeds and Clarissa marriage",
+        "where": "County probate and registry deed books plus town church/municipal record scans."
+      },
+      {
+        "record": "Nathaniel's 1838 marriage to Sarah Alexander: original register with parents",
+        "where": "North Haven / Rockland marriage return or church record, inspect actual image; compiled parents conflict."
+      }
+    ]
+  },
+  {
+    "id": "james-georgetown",
+    "name": "1749 James Beveridge and Jean White; early mainland migration",
+    "priority": 2,
+    "case_names": [],
+    "tree_profile_id": null,
+    "book_pages": [
+      16
+    ],
+    "known": "An 1888 town publication reports a February 1749 marriage *intention* for Georgetown residents James Beveridge and Jean White.",
+    "limits": "Intent to marry does not prove a marriage or establish them as parents of any historical island ancestor, still less a confirmed migration route from Scotland.",
+    "status": "Published marriage intention, identity open",
+    "sources": [
+      {
+        "title": "Maine State Archives digitized historic records",
+        "url": "https://www3.maine.gov/sos/archives/digital-archives",
+        "kind": "archive_finding_aid",
+        "proves": "Historic records search route, not a validated match."
+      },
+      {
+        "title": "Maine State Archives genealogy instructions",
+        "url": "https://www3.maine.gov/sos/archives/archives-services/genealogy-research",
+        "kind": "official_record_guide",
+        "proves": "Pre-1892 vital record custody and gaps in town record survival."
+      }
+    ],
+    "next_originals": [
+      {
+        "record": "Georgetown 1749 intention original and marriage solemnization register",
+        "where": "Sagadahoc or historic Lincoln County town vital books and church registers; do not assume intention was consummated."
+      },
+      {
+        "record": "Samuel 1752 and James 1758 Topsham land lots original deed/survey",
+        "where": "Maine Land Office/Pejepscot proprietor papers, original indexed survey; build date-by-date chain."
+      }
+    ]
+  }
+]
