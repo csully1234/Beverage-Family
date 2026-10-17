@@ -57,3 +57,34 @@ A memorial compilation for Rose attributes her parentage to Albion Pierson and O
 
 ## Permission and publication boundary
 No external correspondence sent; no paid scans or new copyright grant assumed. The user has permitted reproduction of *The Colony* on this family website, but external historical society photographs and archival oral histories remain linked rather than rehosted. Names from imperfect image OCR will not be treated as independently verified identities. Preserve existing archive source data and original research snapshots byte-for-byte. Merge/deployment requires the user's explicit approval.
+
+## Full-volume scan indexing completed, with appendix-specific findings
+
+**Actual processing:** All **305 image-only PDF pages** of the authorized copy were processed in a **single OCR research pass**. The public navigation JSON `data/colony_ocr_navigation_index.json` contains 35 selected names/topics with candidate source-page numbers, including appendix pages 287–305. This is **not** a fully checked transcription or exhaustive identification of all individuals named in the book. False positives, false negatives and erroneous OCR dates are possible. Visitors must check original page images. The OCR text itself is not rehosted as independent history.
+
+A targeted **visual review of the original scans** at PDF pp. 289, 296–302 has verified that the *printed book* contains these claims, without thereby independently verifying their underlying vital records:
+
+| Printed book passage | Reported name or relationship | Current editorial disposition |
+|---|---|---|
+| PDF p. 297 | Florence **Merrill** Budlong described as Olive Amelia Beveridge's **lifetime partner**; Newton institutional rolls also associate the two | Published memoir attribution + 1941/1947 address corroboration; typed non-marital association shown on Olive's profile; **no legal spouse edge** |
+| PDF pp. 297, 300 | Lyford **Pierson** Beveridge; wife Ruth **Bingham Reynolds**; child Ann **Morrison Beveridge** | Book's compiled Orris/Rose descendants; independently confirm the 1991 obituary's Lyford identity before adding parentage or dates |
+| PDF pp. 298, 301 | Arnold Pierson Beveridge's wife **Marion Priscilla Delano** | Sourced name lead; original 1926 marriage record needed |
+| PDF pp. 298, 302 | Eliot Pierson Beveridge's wife **Elizabeth Dorothy Gattrell** | Alternate full name noted as book-attributed lead on Dorothy's existing profile; avoid a duplicate person |
+| PDF pp. 298, 302 | **Vernon Linwood Beverage**, wife Nellie **Marion Ames**, under Charles H. Beverage/Annie Ursula Leadbetter grouping | Published genealogical family grouping, not independently verified unique vital identity |
+| PDF pp. 297, 300 | **Robert William Thomas Barclay** in Helen's branch | Published family-book expansion; compare original marriage and census before attaching |
+| PDF pp. 289, 296–297 | **Harriet N. Beverage** / Daniel A. Green, plus Mary E. Beverage / Lamont E. Bemis | Family book names are not original marriage certificates; preserve unverified identity boundary |
+| PDF p. 296 | Rose Emma Pierson attributed to Albion Pierson and Olive F. Hart | Original Rose vital/baptism and parents' marriage remain needed |
+| PDF p. 301 | Pete and Hortense marriage appears with a specific January 1954 date | Treat as family-book assertion only; no exact-date upgrade without parish marriage register |
+
+**Why the appendix matters:** the existing 82-photo catalog missed systematically printed descendant lists. We have now linked the relevant appendix pages to seven of the 16 unresolved identity inquiries and left all 16 visible until original corroboration. Search-index page hits remain detached from person IDs to prevent accidental conflations.
+
+## Research next-record acquisition (no contact or purchases made)
+
+1. **Massachusetts/New York 1926 marriage original:** Arnold Pierson Beveridge and Marion Priscilla Delano; compare actual registers/filing jurisdiction against family's compiled 1926 wedding assertion.
+2. **1934 Eliot–Dorothy original marriage:** claimed Elizabeth Dorothy Gattrell from the book; check exact legal name, place, parents.
+3. **Lyford original birth and death records:** identity-specific evidence for Lyford Pierson Beveridge vs 1991 obituary's Lyford brother, and Ruth Bingham Reynolds / Ann Morrison Beveridge original records before father/mother links.
+4. **Vernon and Nellie household:** original 1890 birth, 1915 marriage, censuses and Charles/Annie parental proof.
+5. **Albion Pierson and Rose:** original baptism/vital or parent's marriage, not repeat memorial/appendix wording.
+6. **Nathaniel–Matthew and earlier 1749/Topsham leads:** continue probate, parish and land chain verification; no Scottish migration connection asserted yet.
+
+No emails sent. New archived source-image scans from other institutions were not copied. User's historical residence assertions and Boston Tea Party statement remain untouched.
