@@ -259,5 +259,68 @@
       "norwood_beveridge_1911",
       "lyford_beveridge_brother_lowell"
     ]
+  },
+  {
+    "id": "dorothy_jimmy_gattrell_beverage",
+    "full_name": "Dorothy 'Jimmy' Gattrell Beverage",
+    "birth_date": null,
+    "death_date": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "elliot_beverage_1908"
+    ],
+    "children": [],
+    "residences": [],
+    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The North Haven Historical Society's Eliot profile describes Eliot and his wife Dorothy as returning to North Haven in 1954, and Lowell P. Beveridge Jr.'s 2016 illustrated memoir identifies 'Aunt Dorothy Jimmy Gattrell Beverage' with Eliot in a photograph on PDF page 257. Maiden name spelling and marriage record have not been independently checked; birth and death dates not supplied.",
+    "evidence_status": "Wife Dorothy corroborated by North Haven Historical Society biography and family memoir. The surname Gattrell and nickname 'Jimmy' are attributed to book caption, not an independently inspected marriage return.",
+    "sources": [
+      {
+        "title": "Eliot Beveridge — IsleBuilt and North Haven history",
+        "repository": "North Haven Historical Society / IsleBuilt",
+        "url": "https://www.islebuilt.com/eliot-beveridge",
+        "record_type": "Historic biography",
+        "accessed": "2026-10-16",
+        "supports": "Historic biography identifies wife Dorothy and family return to North Haven c.1954",
+        "evidence_level": "Tier 3 — community historical biography"
+      },
+      {
+        "title": "The Colony, 2016, PDF p. 257",
+        "repository": "Lowell P. Beveridge Jr. family-site authorized illustrated edition",
+        "url": "https://beverage-family.onrender.com/?page=family-books&book_page=257",
+        "record_type": "Family memoir photograph caption",
+        "record_date": "2016",
+        "accessed": "2026-10-16",
+        "supports": "Caption attributes portrait to Uncle Eliot and Aunt Dorothy 'Jimmy' Gattrell Beverage",
+        "evidence_level": "Tier 2/3 — first-person-family history photo caption, identity requires vital record"
+      }
+    ]
+  },
+  {
+    "id": "elliot_beverage_1908",
+    "spouses": [
+      "dorothy_jimmy_gattrell_beverage"
+    ]
+  },
+  {
+    "id": "mary_beverage_1869",
+    "alternate_names": [
+      "Mary 'Mae' Beverage Bemis"
+    ],
+    "notes": "Youngest daughter of Benjamin Crabtree Beverage; Lowell P. Beveridge Jr.'s 2016 family memoir identifies a portrait of Orris's sister Mary 'Mae' Beverage Bemis on PDF page 101. Bemis is a reported married surname; the husband and original marriage record have not been established."
+  },
+  {
+    "id": "jemima_beverage_1866",
+    "alternate_names": [
+      "Jemima 'Mima' Beverage Carver"
+    ],
+    "notes": "Twin daughter of Benjamin Crabtree Beverage; married into the Carver family. Lowell P. Beveridge Jr.'s 2016 memoir labels her Great-Aunt Jemima ('Mima') Beverage Carver on PDF page 188. Her spouse's exact identity is not yet documented."
+  },
+  {
+    "id": "harriet_beverage_1856",
+    "alternate_names": [
+      "Harriet Beverage Green"
+    ],
+    "notes": "Daughter of Benjamin Crabtree Beverage. Lowell P. Beveridge Jr.'s 2016 book identifies her as Great-Aunt Harriet Beverage Green on PDF page 189; older genealogy spells the married surname Greene. The exact name form and marriage certificate remain to be checked."
   }
 ]
