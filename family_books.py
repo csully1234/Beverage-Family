@@ -236,29 +236,72 @@ def render_family_books() -> None:
             render_illustrations(book)
         with tab_chapters:
             render_chapter_and_research_index(book)
+        render_book_people_index()
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
+def load_book_person_crosswalk() -> dict:
+    """Read explicit family-photo-caption matches with their evidence limits."""
+    path = ROOT / "data" / "colony_people_crosswalk.json"
+    if not path.is_file():
+        return {"linked_people": [], "unresolved_people": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def book_pages_for_person(person_id: str, catalog: dict | None = None) -> list[int]:
+    """Return only stable-ID matches, never a fuzzy name collision."""
+    catalog = catalog if catalog is not None else load_book_person_crosswalk()
+    pages = []
+    for item in catalog.get("linked_people", []):
+        if item.get("person_id") == person_id:
+            pages.extend(int(page) for page in item.get("pdf_pages", []))
+    return sorted(set(pages))
+
+
 def render_book_profile_context(person: dict) -> None:
-    """Relate a named source reference to a possible family profile cautiously."""
-    name = str(person.get("full_name") or "").casefold()
-    indexed = []
-    if "amelia" in name and "bever" in name:
-        indexed.append(("A photograph of Amelia and Hanson Beverage", 49))
-    if "hanson" in name and "bever" in name:
-        indexed.append(("A photograph of Amelia and Hanson Beverage", 49))
-    if "eleazer" in name and "crabtree" in name:
-        indexed.append(("A historic house attributed to Capt. Eleazer Crabtree", 21))
-    if "lowell" in name and "bever" in name:
-        indexed.append(("A portrait captioned Lowell Beveridge, Harvard 1925", 246))
-    if "orris" in name:
-        indexed.append(("An illustrated family memoir centered on Orris", 1))
-    if not indexed:
+    """Original book-image citations for this profile, not inferred relatives."""
+    person_id = str(person.get("id") or "")
+    catalog = load_book_person_crosswalk()
+    entries = [row for row in catalog.get("linked_people", [])
+               if row.get("person_id") == person_id]
+    if not entries:
         return
-    with st.container(border=True):
-        st.markdown("**Referenced in an illustrated family history**")
-        st.write("Lowell P. Beveridge, Jr., *The Colony: Stories from a Down East Island* (2016).")
-        for label, page in indexed:
-            route_link(label+" · source page "+str(page),
-                       "?page=family-books&book_page="+str(page))
-        st.caption("Source captions are documented; identifying the person in a scanned image with this exact profile may still require corroboration.")
+    pages = book_pages_for_person(person_id, catalog)
+    with st.expander(f"See this relative in The Colony (2016) — {len(pages)} illustrated pages"):
+        st.caption("Author-attributed image captions are family testimony, not independently "
+                   "verified birth or marriage certificates. Not every name in the "
+                   "305-page book has yet been individually reviewed.")
+        for entry in entries:
+            st.write(str(entry.get("summary") or ""))
+            if str(entry.get("confidence") or "").startswith("candidate"):
+                st.warning("The book photo may refer to a different person with this name.")
+        for page in pages:
+            route_link(f"Open original book page {page}",
+                       "?page=family-books&book_page=" + str(page))
+
+
+def render_book_people_index() -> None:
+    """Index confirmed/candidate identity links and unresolved book names."""
+    catalog = load_book_person_crosswalk()
+    linked = catalog.get("linked_people", [])
+    pending = catalog.get("unresolved_people", [])
+    with st.expander("People in The Colony — tree matches and unresolved names"):
+        st.caption(
+            f"{len(linked)} indexed person references and {len(pending)} pending name "
+            "or relationship questions from 82 photograph-bearing pages. "
+            "This is NOT a complete scan of all 305 pages."
+        )
+        for item in linked:
+            label = str(item["person_id"]).replace("_", " ").title()
+            route_link(label, "?page=people&profile=" + item["person_id"])
+            pages = item.get("pdf_pages", [])
+            if pages:
+                st.caption("Source PDF pages: " + ", ".join(map(str, pages)))
+        if pending:
+            st.markdown("**Not yet safe to attach to the family tree**")
+            for item in pending:
+                with st.expander(str(item.get("name") or "Unresolved person")):
+                    st.write(str(item.get("issue") or ""))
+                    for page in item.get("pages", []):
+                        route_link(f"Open original book page {page}",
+                                   "?page=family-books&book_page=" + str(page))
