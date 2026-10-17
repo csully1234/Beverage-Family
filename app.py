@@ -22,6 +22,8 @@ from unified_timeline import render_unified_timeline
 from full_tree import build_full_tree_html
 from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
+from identity_casework import render_profile_identity_evidence
+from historical_claims import render_event_source_review
 from family_associations import render_documented_associations
 from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
@@ -852,6 +854,7 @@ def render_event_card(
             ]
             if involved:
                 route_markdown("**People:** " + ", ".join(involved))
+            render_event_source_review(str(event["id"]))
             render_event_archive(str(event["id"]), load_archive())
             render_event_browser(event, compact=compact)
 
@@ -940,6 +943,7 @@ def render_person_profile(
         st.caption("This is a baptism date. The birth date is not established; the recorded birthplace remains unverified.")
     render_book_profile_context(person)
     render_documented_associations(person_id)
+    render_profile_identity_evidence(person_id)
     render_profile_review(person_id, load_collection(), people_by_id)
     render_evidence_status(person.get("evidence_status"))
     if person.get("needs_research"):

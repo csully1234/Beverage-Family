@@ -1,0 +1,41 @@
+[
+  {
+    "event_id": "event_marriage_james_jr_jean_white_1749",
+    "headline": "Marriage not independently established",
+    "assessment": "The 6 February 1749 record is a marriage *intention* for James Beveridge and Jean White, both described as of Georgetown. An intention does not by itself establish that the marriage ceremony took place or that this James is the separately recorded Marblehead-born James. The original legacy event label below is preserved for audit, but must not be treated as a verified wedding.",
+    "sources": [
+      {
+        "title": "Brunswick marriage intentions 1740–1764, printed town transcription",
+        "url": "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html",
+        "supports": "Printed 1749 intention naming James Beveridge and Jean White of Georgetown; not a marriage certificate."
+      }
+    ],
+    "original_record_needed": "Locate the dated Georgetown/Brunswick solemnization or church marriage register and establish both parties' independent identities."
+  },
+  {
+    "event_id": "event_marriage_james_sr_sarah_bennett_1723",
+    "headline": "Town vital-record transcription corroborates the date",
+    "assessment": "A published transcription of Marblehead town vital records includes Sarah Bennett and James Beveridge (variant recorded as 'Beseridge') married 16 December 1723. This supports a historical marriage entry but not the asserted Scottish birthplace of James Sr. or a complete ancestral migration chain.",
+    "sources": [
+      {
+        "title": "Vital Records of Marblehead to 1849, marriage list (published town records)",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Vital_records_of_Marblehead%2C_Massachusetts%2C_to_the_end_of_the_year_1849_%28IA_cu31924092204308%29.pdf",
+        "supports": "Town marriage list under Bennett Sarah, 16 Dec 1723, surname spelling variants."
+      }
+    ],
+    "original_record_needed": "Compare the original Marblehead civil/church register folio; do not infer James's Scottish parents from the surname or date."
+  },
+  {
+    "event_id": "event_birth_james_beveridge_jr_1724",
+    "headline": "Marblehead town birth entry corroborates James's date",
+    "assessment": "Marblehead's published vital records list James, son of James and Sarah (spelled Befreadge/Befridge), born 27 August 1724. This supports a parent-child entry in the Massachusetts household but does not identify him uniquely with the James in the 1749 Georgetown marriage-intention list.",
+    "sources": [
+      {
+        "title": "Marblehead Vital Records, births, published transcription",
+        "url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+        "supports": "Birth of James to James and Sarah, 27 Aug 1724, town record published under variant spelling."
+      }
+    ],
+    "original_record_needed": "Verify original town register entry and any later migration deed/probate tying the 1724 child to the 1749 Maine James."
+  }
+]
