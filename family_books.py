@@ -245,7 +245,8 @@ def load_book_person_crosswalk() -> dict:
     path = ROOT / "data" / "colony_people_crosswalk.json"
     if not path.is_file():
         return {"linked_people": [], "unresolved_people": []}
-    return json.loads(path.read_text(encoding="utf-8"))
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return raw[0] if isinstance(raw, list) and raw else {"linked_people": [], "unresolved_people": []}
 
 
 def book_pages_for_person(person_id: str, catalog: dict | None = None) -> list[int]:
