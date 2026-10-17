@@ -14,6 +14,7 @@ import streamlit as st
 
 from routing_ui import route_link
 from family_data import index_people, load_site_data
+from identity_casework import cases_for_page, render_case_evidence, render_identity_explorer
 
 ROOT = Path(__file__).resolve().parent
 BOOKS_DIR = (ROOT / "static" / "books").resolve()
@@ -244,7 +245,9 @@ def render_family_books() -> None:
         with tab_chapters:
             render_chapter_and_research_index(book)
         with tab_people:
-            render_book_people_index(expanded=True)
+            render_identity_explorer()
+            st.divider()
+            render_book_people_index(expanded=False)
             render_book_identity_questions()
         with tab_search:
             render_book_ocr_navigation()
@@ -392,7 +395,8 @@ def book_page_connections(page: int, catalog: dict | None = None) -> dict:
 def render_book_page_connections(page: int) -> None:
     """Bring supporting and unresolved name evidence beside the original page."""
     matches = book_page_connections(page)
-    if not matches["linked"] and not matches["unresolved"]:
+    research = cases_for_page(page)
+    if not matches["linked"] and not matches["unresolved"] and not research:
         return
     st.subheader("Explore the people mentioned on this source page")
     st.caption("Page associations come from the book-photo index. A caption is "
@@ -416,6 +420,9 @@ def render_book_page_connections(page: int) -> None:
             if evidence.get("url"):
                 route_link(str(evidence.get("title", "Inspect other original record")),
                            str(evidence["url"]))
+    for case in research:
+        with st.expander("More original evidence: " + str(case.get("name", ""))):
+            render_case_evidence(case, show_book_links=False)
 
 
 def render_book_identity_questions() -> None:
