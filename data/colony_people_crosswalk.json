@@ -286,7 +286,14 @@
           49
         ],
         "issue": "May correspond to Dana Hanson Beverage (born 1847) but book caption alone is insufficient to identify him with that existing person or create another.",
-        "disposition": "hold_candidate"
+        "disposition": "hold_candidate",
+        "independent_sources": [
+          {
+            "title": "Potter, Genealogies of some old families of Concord (1887), Barrett line",
+            "url": "https://ldsgenealogy.com/MA/books/Genealogies-of-some-old-families-of-Concord-Mass-and-their-descendants-in-part-to-the-present-generation-1887-part-5.htm",
+            "finding": "The published 1887 Barrett-family genealogy names Hanson Beverage (born 1847) and wife Mary Barrett, independently supporting a contemporary Hanson name in the records. It does NOT identify the person in the memoir's photo or prove the claimed sibling relation to Amelia."
+          }
+        ]
       },
       {
         "name": "Vernon Beverage",
@@ -319,8 +326,20 @@
         "pages": [
           235
         ],
-        "issue": "Book calls Florence Olive's life partner. This should not be converted into a legal-spouse edge without a recorded marriage; death dates and genealogical profile details unverified.",
-        "disposition": "respect_relationship_type"
+        "issue": "The 2016 memoir characterizes Florence as Olive's life partner. Independent Newton records locate them at the same Elm Street address in 1947, supporting an enduring association, but that listing does not establish marriage or a particular legal relationship. Do not create a spouse edge from this evidence; an accurately typed partner/companion relationship and original vital records require further review.",
+        "disposition": "respect_relationship_type",
+        "independent_sources": [
+          {
+            "title": "Newton City Directory (1941), Florence N. Budlong",
+            "url": "https://ldsgenealogy.com/MA/books/Newton-Middlesex-County-Mass-city-directory-1941-part-15.htm",
+            "finding": "A published Newton directory lists Florence N. Budlong as a teacher living at 21 Elm Street. This alone does not prove the nature of her relationship with Olive."
+          },
+          {
+            "title": "Newton 1947 assessed polls, Elm Street no. 21",
+            "url": "https://ldsgenealogy.com/MA/books/Assessed-polls-City-of-Newton-1947-part-34.htm",
+            "finding": "A published 1947 municipal list names Olive A. Beveridge (teacher, birth year 1890) and Florence N. Budlong (teacher, birth year 1900) at 21 Elm Street. This independently corroborates association/co-residence, not legal marriage or exact vital dates."
+          }
+        ]
       },
       {
         "name": "Priscilla (Arnold's wife)",
