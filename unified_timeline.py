@@ -169,6 +169,15 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
     return items
 
 
+def sync_timeline_relative() -> None:
+    """Keep relative-specific timeline bookmarks shareable across visits."""
+    person = st.session_state.get("whole_timeline_person", "")
+    if person:
+        st.query_params["person"] = person
+    elif "person" in st.query_params:
+        del st.query_params["person"]
+
+
 def render_unified_timeline(data: dict, people_by_id: dict) -> None:
     st.title("Complete Family Timeline")
     st.write("Explore family lives, historical discoveries, photographs, documents, places and stories together in chronological order. Probable and disputed historical findings are included; internal research search logs and work queues are not family-history events.")
@@ -187,11 +196,30 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
         direction=st.selectbox("Order",["Oldest first","Newest first"],key="whole_timeline_direction")
     with third:
         person_options=["",*sorted(people_by_id,key=lambda p:people_by_id[p].get("full_name","").casefold())]
-        person=st.selectbox("Relative",person_options,format_func=lambda id_: people_by_id[id_]["full_name"] if id_ else "Everyone",key="whole_timeline_person")
+        requested_person=str(st.query_params.get("person", "") or "")
+        if (requested_person in people_by_id
+                and requested_person != st.session_state.get("_last_timeline_query_person")):
+            st.session_state["whole_timeline_person"]=requested_person
+        st.session_state["_last_timeline_query_person"]=requested_person
+        person=st.selectbox("Relative",person_options,
+                            format_func=lambda id_: people_by_id[id_]["full_name"] if id_ else "Everyone",
+                            key="whole_timeline_person",on_change=sync_timeline_relative)
     min_year=min((i["year"] for i in dated),default=1700)
     max_year=max((i["year"] for i in dated),default=2026)
     years=st.slider("Year range",min_year,max_year,(min_year,max_year),key="whole_timeline_years")
     show_undated=st.checkbox("Include undated and broad-period material",value=True,key="whole_timeline_undated")
+    era = st.selectbox("Browse a period",
+                       ["All recorded years", "Before 1800", "1800–1899",
+                        "1900–1949", "1950–1999", "2000 onward"],
+                       key="whole_timeline_era")
+    era_limits = {
+        "Before 1800": (None, 1799),
+        "1800–1899": (1800, 1899),
+        "1900–1949": (1900, 1949),
+        "1950–1999": (1950, 1999),
+        "2000 onward": (2000, None),
+    }
+    era_start, era_end = era_limits.get(era, (None, None))
     # Direct event URL should be visible even when outside the chosen range.
     requested=st.query_params.get("event","")
     filtered=[]
@@ -204,6 +232,11 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
                 continue
             if i["year"] is not None and not years[0] <= i["year"] <= years[1]:
                 continue
+            if i["year"] is not None and (
+                (era_start is not None and i["year"] < era_start) or
+                (era_end is not None and i["year"] > era_end)
+            ):
+                continue
             if q and q not in json.dumps(i, ensure_ascii=False).casefold():
                 continue
         filtered.append(i)
@@ -214,6 +247,9 @@ def render_unified_timeline(data: dict, people_by_id: dict) -> None:
     if requested:
         dated_results.sort(key=lambda i:i["id"]!=requested)
     st.caption(f"{len(filtered)} matching entries. All evidence levels are included by default.")
+    if person:
+        route_link("View this relative's profile", "?page=people&profile="+quote(person))
+    st.caption("Select any row below for its original source and related people. Direct links bypass the filters so bookmarked records remain accessible.")
     # No records-per-page setting, cap or pagination. A single interactive
     # virtualized table renders ALL matching records without creating hundreds
     # of heavyweight Streamlit buttons on initial page load.
