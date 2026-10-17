@@ -34,6 +34,15 @@ class UnifiedTimelineTests(unittest.TestCase):
         self.assertIn("Documented marriage intention", reviewed["certainty"])
         self.assertTrue(historic["title"].startswith("Marriage of "))
         self.assertEqual(reviewed["url"], "?page=timeline&event=" + historic["id"])
+        birth = next(row for row in self.timeline
+                     if row["type"] == "Timeline event"
+                     and row["id"] == "event_birth_james_beveridge_jr_1724")
+        self.assertIn("later identity uncertain", birth["title"])
+        self.assertIn("town birth entry", birth["certainty"])
+        marriage = next(row for row in self.timeline
+                        if row["type"] == "Timeline event"
+                        and row["id"] == "event_marriage_james_sr_sarah_bennett_1723")
+        self.assertIn("town marriage entry", marriage["certainty"])
 
     def test_no_research_evidence_level_disappears(self):
         findings=[t for t in self.timeline if t["type"]=="Research finding"]
