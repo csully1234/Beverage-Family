@@ -1937,8 +1937,24 @@ def render_sources_page(
             continue
         filtered_catalog.append(item)
 
-    st.caption(f"Showing {min(len(filtered_catalog), 50)} of {len(filtered_catalog)} matching citations · {len(catalog)} linked citations total")
-    for item in filtered_catalog[:50]:
+    # Every citation remains reachable; render a lightweight page at a time
+    # instead of silently truncating the archive after fifty entries.
+    source_page_size = 15
+    source_page_count = max(1, (len(filtered_catalog) + source_page_size - 1) // source_page_size)
+    if st.session_state.get("source_catalog_page", 1) not in range(1, source_page_count + 1):
+        st.session_state["source_catalog_page"] = 1
+    source_page = st.selectbox(
+        "Source results page", range(1, source_page_count + 1),
+        key="source_catalog_page",
+        format_func=lambda value: f"{value} of {source_page_count}",
+    )
+    beginning = (source_page - 1) * source_page_size
+    ending = min(len(filtered_catalog), beginning + source_page_size)
+    st.caption(
+        f"Showing {beginning + 1 if filtered_catalog else 0}–{ending} of "
+        f"{len(filtered_catalog)} matching citations · {len(catalog)} linked citations total"
+    )
+    for item in filtered_catalog[beginning:ending]:
         if item["owner_type"] == "Person":
             owner = person_link(people_by_id, item["owner_id"])
         elif item["owner_type"] == "Event":
