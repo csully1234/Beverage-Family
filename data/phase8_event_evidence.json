@@ -26,7 +26,10 @@
         "supports": "Town marriage list under Bennett Sarah, 16 Dec 1723, surname spelling variants."
       }
     ],
-    "original_record_needed": "Compare the original Marblehead civil/church register folio; do not infer James's Scottish parents from the surname or date."
+    "original_record_needed": "Compare the original Marblehead civil/church register folio; do not infer James's Scottish parents from the surname or date.",
+    "display_title": "Recorded marriage of James Beveridge and Sarah Bennett, Marblehead",
+    "display_summary": "The published transcription of Marblehead town vital records records James Beveridge and Sarah Bennett marrying on December 16, 1723. The specific church location and James's place of birth are not independently established by this marriage entry.",
+    "display_evidence_status": "Published transcription of a town marriage entry"
   },
   {
     "event_id": "event_birth_james_beveridge_jr_1724",
@@ -39,6 +42,9 @@
         "supports": "Birth of James to James and Sarah, 27 Aug 1724, town record published under variant spelling."
       }
     ],
-    "original_record_needed": "Verify original town register entry and any later migration deed/probate tying the 1724 child to the 1749 Maine James."
+    "original_record_needed": "Verify original town register entry and any later migration deed/probate tying the 1724 child to the 1749 Maine James.",
+    "display_title": "Birth of James, son of James and Sarah, in Marblehead (later identity uncertain)",
+    "display_summary": "The published Marblehead town birth transcription names James, son of James and Sarah (Befreadge/Befridge variants), born August 27, 1724. Further evidence is needed to identify this child as the James Beveridge named in the 1749 Georgetown marriage intention.",
+    "display_evidence_status": "Published transcription of a town birth entry; later identity uncertain"
   }
 ]
