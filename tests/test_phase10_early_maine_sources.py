@@ -36,7 +36,8 @@ class TopshamArchivalLeadTests(unittest.TestCase):
         self.assertEqual([r["year"] for r in service], [1776, 1777])
         self.assertIn("Lithgow", service[0]["summary"])
         self.assertIn("George White", service[1]["summary"])
-        self.assertIn("Unverified", service[0]["person_status"] if "Unverified" in service[0]["person_status"] else "Unverified")
+        self.assertIn("DO NOT create", service[0]["person_status"])
+        self.assertIn("unverified", service[1]["person_status"].lower())
         self.assertFalse(any(row["id"] in self.people for row in service))
         self.assertFalse(any("robert_beveridge_1776" == x for x in self.people))
 
