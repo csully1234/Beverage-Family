@@ -35,7 +35,7 @@ class ArchiveTests(unittest.TestCase):
     def test_normalized_files_are_optional_without_changing_legacy_data(self):
         before = {p.name: p.read_bytes() for p in (ROOT / "data").glob("*.json")}
         with tempfile.TemporaryDirectory() as tmp:
-            for filename in ("people.json", "events.json", "research_people.json", "research_events.json", "phase4_people.json", "phase7_people.json", "phase6_people.json", "phase4_events.json", "phase5_events.json", "phase6_events.json", "phase7_events.json", "research.json", "date_precision.json"):
+            for filename in ("people.json", "events.json", "research_people.json", "research_events.json", "phase4_people.json", "phase7_people.json", "phase6_people.json", "phase12_profile_corrections.json", "phase4_events.json", "phase5_events.json", "phase6_events.json", "phase7_events.json", "research.json", "date_precision.json"):
                 Path(tmp, filename).write_bytes(before[filename])
             # This fixture omits only the optional normalized archive, not the
             # independently validated correction ledger.
