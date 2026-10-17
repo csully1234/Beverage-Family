@@ -22,6 +22,19 @@ class UnifiedTimelineTests(unittest.TestCase):
         ids={t["id"] for t in self.timeline if t["type"]=="Timeline event"}
         self.assertEqual(ids,{e["id"] for e in self.data["events"]})
 
+    def test_1749_complete_timeline_tells_intention_not_certified_marriage(self):
+        historic = next(entry for entry in self.data["events"]
+                      if entry["id"] == "event_marriage_james_jr_jean_white_1749")
+        reviewed = next(entry for entry in self.timeline
+                        if entry["type"] == "Timeline event"
+                        and entry["id"] == historic["id"])
+        self.assertIn("intention to marry", reviewed["title"])
+        self.assertIn("ceremony unverified", reviewed["title"])
+        self.assertIn("not proof", reviewed["description"])
+        self.assertIn("Documented marriage intention", reviewed["certainty"])
+        self.assertTrue(historic["title"].startswith("Marriage of "))
+        self.assertEqual(reviewed["url"], "?page=timeline&event=" + historic["id"])
+
     def test_no_research_evidence_level_disappears(self):
         findings=[t for t in self.timeline if t["type"]=="Research finding"]
         self.assertEqual({t["id"] for t in findings},set(self.collection.findings))
