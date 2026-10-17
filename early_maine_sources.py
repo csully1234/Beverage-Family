@@ -1,0 +1,50 @@
+"""Curated eighteenth-century Maine record trails. These do not create people or tree edges."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+import streamlit as st
+from routing_ui import route_link
+
+RECORDS = Path(__file__).resolve().parent / "data" / "phase10_early_maine_records.json"
+
+
+def load_early_maine_record_leads() -> list[dict]:
+    """Read editorial records with stable IDs and exact cited-source limitations."""
+    if not RECORDS.is_file():
+        return []
+    data = json.loads(RECORDS.read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise ValueError("Early Maine record index must contain an array")
+    return sorted(data, key=lambda item: (int(item.get("year", 9999)), item.get("id", "")))
+
+
+def render_early_maine_source_trail() -> None:
+    """Keep the history engaging while showing what each surviving record can prove."""
+    records = load_early_maine_record_leads()
+    st.subheader("Follow the earliest mainland clues")
+    st.write("A marriage intention, an early town map, settler names and a Revolutionary "
+             "War roster provide possible connections between Topsham and North Haven. "
+             "Explore the printed sources before drawing family relationships.")
+    st.caption("No original deed or muster image has yet been authenticated for these "
+               "named people; locations are historical context, not home addresses or "
+               "surveyed modern property lines.")
+    query = st.text_input("Find a name or topic in these early records",
+                          placeholder="James, Samuel, Robert, map, 1776…",
+                          key="early_maine_sources_search").strip().casefold()
+    filtered = [item for item in records
+                if not query or query in " ".join((
+                    str(item.get("title", "")), str(item.get("summary", "")),
+                    str(item.get("year", "")), str(item.get("kind", ""))
+                )).casefold()]
+    st.caption(f"{len(filtered)} cited historical leads")
+    for entry in filtered:
+        with st.container(border=True):
+            st.markdown("**" + str(entry["year"]) + " · " + str(entry["title"]) + "**")
+            st.write(str(entry["summary"]))
+            st.caption("Evidence: " + str(entry["status"]))
+            route_link("Read the source — " + str(entry["source_title"]),
+                       str(entry["source_url"]))
+            with st.expander("What would prove this family connection?"):
+                st.write(str(entry["next_record"]))
+                st.caption(str(entry["person_status"]))
