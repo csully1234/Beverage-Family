@@ -460,7 +460,8 @@ def load_book_ocr_navigation() -> dict:
     path = ROOT / "data" / "colony_ocr_navigation_index.json"
     if not path.exists():
         return {"scanned_pages": 0, "hits": {}}
-    data = json.loads(path.read_text(encoding="utf-8"))
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    data = raw[0] if isinstance(raw, list) and raw else raw
     return data if isinstance(data, dict) else {"scanned_pages": 0, "hits": {}}
 
 
