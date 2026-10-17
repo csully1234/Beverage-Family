@@ -2,12 +2,12 @@
   {
     "book_id": "colony-book-2016",
     "audit_date": "2026-10-16",
-    "status": "structured caption-index crosswalk ONLY; not a complete audit of all 305 pages",
+    "status": "Full scanned-book OCR navigation (305 pages), original 82-photo canonical ID crosswalk, and 16 unresolved cases with appendix leads; NOT a verified exhaustive prosopography",
     "scope": {
       "book_total_pages": 305,
       "captioned_photo_pages": 82,
-      "method": "Crossmatched the 82 indexed photographic pages to existing phase7 canonical profiles and two separately supported additional profiles",
-      "limitation": "These 82 cataloged photo-bearing pages do not exhaust the 305-page book, and memoir captions alone are not independent proof of identity."
+      "method": "One-pass OCR navigation of all 305 scanned images plus manually checked source pages in appendix; original 82 caption-page profile crosswalk retained and case-specific appendix claims source-attributed.",
+      "limitation": "All 305 scanned pages were machine-indexed; OCR is noisy. The complete set of names was NOT manually verified page-by-page, and published appendix claims alone do not establish independently proven family-tree edges."
     },
     "linked_people": [
       {
@@ -286,25 +286,44 @@
           49
         ],
         "issue": "May correspond to Dana Hanson Beverage (born 1847) but book caption alone is insufficient to identify him with that existing person or create another.",
-        "disposition": "hold_candidate"
+        "disposition": "hold_candidate",
+        "independent_sources": [
+          {
+            "title": "Potter, Genealogies of some old families of Concord (1887), Barrett line",
+            "url": "https://ldsgenealogy.com/MA/books/Genealogies-of-some-old-families-of-Concord-Mass-and-their-descendants-in-part-to-the-present-generation-1887-part-5.htm",
+            "finding": "The published 1887 Barrett-family genealogy names Hanson Beverage (born 1847) and wife Mary Barrett, independently supporting a contemporary Hanson name in the records. It does NOT identify the person in the memoir's photo or prove the claimed sibling relation to Amelia."
+          }
+        ]
       },
       {
         "name": "Vernon Beverage",
         "pages": [
           45,
-          177
+          177,
+          298,
+          302
         ],
-        "issue": "Named in the author’s account of Orris; first/middle name and relationship lack an independent identified person record.",
-        "disposition": "hold_candidate"
+        "issue": "The book's compiled family appendix (PDF pp. 298 and 302) names Vernon Linwood Beverage and describes a Charles H. Beverage household and spouse Nellie Marion Ames. These are further book-attributed leads; original birth, marriage and census evidence is required before placing him uniquely in the tree.",
+        "disposition": "hold_candidate",
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Albion Pierson (Rose's father)",
         "pages": [
           123,
-          124
+          124,
+          296
         ],
-        "issue": "Caption reports father-child relationship and death in 1870, but no original birth/marriage/vital file has been compared to establish a unique stable profile.",
-        "disposition": "research_before_add"
+        "issue": "The book's family appendix (PDF p. 296) calls him Captain Albion Pierson and names Olive F. Hart with Rose Emma Pierson; the memorial compilation repeats this but is not independent proof. Verify an original vital, baptism or parental marriage record before assigning parent edges.",
+        "disposition": "research_before_add",
+        "independent_sources": [
+          {
+            "title": "Rose Emma Pierson Beverage memorial — compiled parental attribution",
+            "url": "https://www.findagrave.com/memorial/157486335/rose-emma-beverage",
+            "finding": "The memorial's compiled biography names Albion Pierson and Olive F. Hart as Rose's parents. This is a derivative claim, not the contemporaneous birth or baptism register; do not use it alone to create new parent edges."
+          }
+        ],
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Jesse Hart (1817–1878)",
@@ -317,42 +336,69 @@
       {
         "name": "Florence Budlong",
         "pages": [
-          235
+          235,
+          297,
+          300
         ],
-        "issue": "Book calls Florence Olive's life partner. This should not be converted into a legal-spouse edge without a recorded marriage; death dates and genealogical profile details unverified.",
-        "disposition": "respect_relationship_type"
+        "issue": "The book's appendix (PDF pp. 297 and 300) spells her Florence Merrill Budlong and describes the companionship with Olive. Newton records from 1941 and 1947 corroborate a shared address but not a legal marriage or exact dates. Retain as documented historical partner association, not a spouse edge.",
+        "disposition": "respect_relationship_type",
+        "independent_sources": [
+          {
+            "title": "Newton City Directory (1941), Florence N. Budlong",
+            "url": "https://ldsgenealogy.com/MA/books/Newton-Middlesex-County-Mass-city-directory-1941-part-15.htm",
+            "finding": "A published Newton directory lists Florence N. Budlong as a teacher living at 21 Elm Street. This alone does not prove the nature of her relationship with Olive."
+          },
+          {
+            "title": "Newton 1947 assessed polls, Elm Street no. 21",
+            "url": "https://ldsgenealogy.com/MA/books/Assessed-polls-City-of-Newton-1947-part-34.htm",
+            "finding": "A published 1947 municipal list names Olive A. Beveridge (teacher, birth year 1890) and Florence N. Budlong (teacher, birth year 1900) at 21 Elm Street. This independently corroborates association/co-residence, not legal marriage or exact vital dates."
+          }
+        ],
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Priscilla (Arnold's wife)",
         "pages": [
-          244
+          244,
+          298,
+          301
         ],
-        "issue": "1926 wedding-photo caption identifies first name and Arnold; maiden name, dates and original marriage return still unverified.",
-        "disposition": "research_before_add"
+        "issue": "Book appendix (PDF pp. 298, 301) supplies the name Marion Priscilla Delano and associates her with Arnold Pierson Beveridge and a 1926 wedding. This remains a published compiled family claim; obtain original marriage return before adding a person or inferred link.",
+        "disposition": "research_before_add",
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Ruth and Ann (Lyford family)",
         "pages": [
-          241
+          241,
+          297,
+          300
         ],
-        "issue": "Book caption calls them Aunt Ruth and cousin Ann but fails to provide maiden name and verified parent-child proof in this indexed excerpt.",
-        "disposition": "research_before_add"
+        "issue": "The book appendix (PDF pp. 297 and 300) names Ruth Bingham Reynolds as Lyford Pierson Beveridge's wife and Ann Morrison Beveridge as their child. The family-book list is not independent vital evidence establishing that its Lyford is the person mentioned in the 1991 obituary. Verify individual identity, vital and marriage records first.",
+        "disposition": "research_before_add",
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Robert 'Bob' Barclay",
         "pages": [
-          239
+          239,
+          297,
+          300
         ],
-        "issue": "Book photo caption uses 'Uncle Bob'; formal relationship to Helen Beveridge and full identity need independent marriage/census.",
-        "disposition": "research_before_add"
+        "issue": "The book appendix identifies Robert William Thomas Barclay in Helen's branch on PDF pp. 297 and 300. His identification as 'Uncle Bob' in the photo still requires original caption comparison and civil marriage/census proof.",
+        "disposition": "research_before_add",
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Daniel and Hattie Beverage Green",
         "pages": [
-          181
+          181,
+          289,
+          296
         ],
-        "issue": "Homestead caption does not establish which Hattie or complete children and spouse identity; do not merge with Harriet Beverage Green just from nickname.",
-        "disposition": "research_before_add"
+        "issue": "The book appendix on PDF pp. 289 and 296 names Harriet N. Beverage and Daniel A. Green, supporting a family memoir name hypothesis, but not independently proving which existing Harriet/Hattie record should be used. Do not construct an unknown spouse ID without source-level confirmation.",
+        "disposition": "research_before_add",
+        "book_appendix_status": "Named in memoir's compiled appendix; not independently corroborated vital identity"
       },
       {
         "name": "Herman and Sarah Bengell",

@@ -11,7 +11,7 @@
     "spouses": [],
     "children": [],
     "residences": [],
-    "notes": "The 1991 contemporary obituary of Lowell Pierson Beveridge names 'a brother, Lyford Beveridge of Rockland, Maine'. This is a verified sibling relationship, but no separate vital record or identity-specific proof of Lyford's parents has been located. Do not confuse with Lyford Beverage born 1842 or assign Orris and Rose as parents by inference.",
+    "notes": "The 1991 contemporary obituary of Lowell Pierson Beveridge names 'a brother, Lyford Beveridge of Rockland, Maine'. This is a verified sibling relationship, but no separate vital record or identity-specific proof of Lyford's parents has been located. Do not confuse with Lyford Beverage born 1842 or assign Orris and Rose as parents by inference. The Colony (2016) family appendix pp. 297 and 300 reports a Lyford Pierson Beveridge (1900–1999), wife Ruth Bingham Reynolds and child Ann Morrison Beveridge under the Orris/Rose line. This is a same-book genealogy lead, NOT independent proof of parentage or guaranteed same person as the Lyford in the 1991 obituary; do not assign parents or exact dates until an original register and identity chain are reviewed.",
     "evidence_status": "Siblings established by 1991 obituary; individual parentage, birth/death, and identity unresolved.",
     "sources": [
       {
@@ -24,6 +24,9 @@
         "supports": "Names Ida Gattrell Beveridge as wife; Lowell P. Beveridge Jr. and Thomas Beveridge as sons; Lyford Beveridge as surviving brother of Lowell Sr.",
         "evidence_level": "Tier 3 — contemporaneous obituary"
       }
+    ],
+    "alternate_names": [
+      "Lyford Pierson Beveridge — name in The Colony (2016), PDF pp. 297 and 300; requires identity-specific corroboration"
     ]
   },
   {
@@ -38,7 +41,7 @@
     ],
     "children": [],
     "residences": [],
-    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The 2016 illustrated memoir by Lowell P. Beveridge Jr. identifies an 'Aunt Dorothy Jimmy Gattrell Beverage' beside Eliot in its page-257 caption; 1958 Calderwood diary references Eliot and Dorothy in North Haven. The exact maiden name spelling, marriage return, dates of birth and death remain to be confirmed.",
+    "notes": "Wife of Eliot/Elliot Beveridge of North Haven. The 2016 illustrated memoir by Lowell P. Beveridge Jr. identifies an 'Aunt Dorothy Jimmy Gattrell Beverage' beside Eliot in its page-257 caption; 1958 Calderwood diary references Eliot and Dorothy in North Haven. The exact maiden name spelling, marriage return, dates of birth and death remain to be confirmed. The Colony (2016) genealogy appendix p. 298 calls Eliot's wife Elizabeth Dorothy Gattrell and reports a 1934 marriage; this is a compiled memoir attribution, not yet checked against the original marriage return. Preserve the already established Dorothy and Eliot profile connection without treating the more specific name or date as certified.",
     "evidence_status": "Wife Dorothy corroborated by North Haven Historical Society biography and family memoir. The surname Gattrell and nickname 'Jimmy' are attributed to book caption, not an independently inspected marriage return.",
     "sources": [
       {
@@ -60,6 +63,9 @@
         "supports": "Caption attributes portrait to Uncle Eliot and Aunt Dorothy 'Jimmy' Gattrell Beverage",
         "evidence_level": "Tier 2/3 — first-person-family history photo caption, identity requires vital record"
       }
+    ],
+    "alternate_names": [
+      "Elizabeth Dorothy Gattrell — form reported in The Colony (2016), PDF p. 298; independent name verification outstanding"
     ]
   }
 ]

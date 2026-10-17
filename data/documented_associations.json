@@ -1,0 +1,28 @@
+[
+  {
+    "id": "olive_florence_companionship",
+    "person_id": "olive_beveridge_1890",
+    "associated_name": "Florence N. Budlong",
+    "association_type": "Life partner — attributed to family memoir",
+    "status": "Historical association independently corroborated; legal relationship not established",
+    "description": "The 2016 family memoir characterizes Florence as Olive's life partner. 1941 and 1947 Newton records place Florence at the same Elm Street address listed for Olive in 1947. These are evidence of an association and shared address, not a marriage certificate or a reason to make a spouses tree edge.",
+    "original_book_pages": [235],
+    "sources": [
+      {
+        "title": "The Colony (2016), photograph and caption, PDF p. 235",
+        "url": "?page=family-books&book_page=235",
+        "evidence": "Author-attributed description of their relationship."
+      },
+      {
+        "title": "Newton City Directory 1941",
+        "url": "https://ldsgenealogy.com/MA/books/Newton-Middlesex-County-Mass-city-directory-1941-part-15.htm",
+        "evidence": "Florence listed as teacher at 21 Elm Street; original printed page should be consulted for transcription."
+      },
+      {
+        "title": "Newton Assessed Polls 1947, Elm Street",
+        "url": "https://ldsgenealogy.com/MA/books/Assessed-polls-City-of-Newton-1947-part-34.htm",
+        "evidence": "Olive A. Beveridge and Florence N. Budlong listed at 21 Elm Street, each a teacher."
+      }
+    ]
+  }
+]

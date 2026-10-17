@@ -305,8 +305,8 @@ def build_full_tree_html(
     <select id="personSelect" aria-label="Find a person">
       <option value="">Find and center a person…</option>
     </select>
-    <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option></select>
-    <span id="branchDepthControl" hidden><label for="distance" title="Choose how far to explore from a selected person (family connections, not generations)">Include</label> <select id="distance" aria-label="How many nearby relatives to show"><option value="1">Immediate family</option><option value="2" selected>Close relatives</option><option value="3">Extended family</option><option value="4">Wider family branch</option></select></span>
+    <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option><option value="ancestors">Trace ancestors</option><option value="descendants">Trace descendants</option></select>
+    <span id="branchDepthControl" hidden><label for="distance" title="Choose how far to explore from a selected person (family connections, not generations)">Include</label> <select id="distance" aria-label="How many nearby relatives to show"><option value="1">Immediate family</option><option value="2" selected>Close relatives</option><option value="3">Extended family</option><option value="4">Wider family branch</option><option value="99">All documented generations</option></select></span>
     <button id="fit" type="button">Fit visible tree</button>
     <button id="centerSelected" type="button">Center selected relative</button>
     <button id="zoomIn" type="button" aria-label="Zoom in">＋</button>
@@ -319,7 +319,7 @@ def build_full_tree_html(
     <svg id="tree" role="img" aria-label="Interactive full Beverage family tree">
       <g id="world"></g>
     </svg>
-    <div id="help">Whole family shows everyone · Dotted teal = sourced sibling, parents unverified · Drag to pan</div>
+    <div id="help">Whole family overview · Trace recorded ancestors or descendants · Dotted teal = sibling with unknown parents · Drag to pan</div>
   </div>
 </div>
 <script>
@@ -334,8 +334,17 @@ const distance = document.getElementById("distance");
 const branchDepthControl = document.getElementById("branchDepthControl");
 const selection = document.getElementById("selection");
 const links = new Map();
-for(const n of DATA.nodes) links.set(n.id, new Set());
+const parentsByChild = new Map(), childrenByParent = new Map();
+for(const n of DATA.nodes) {{
+  links.set(n.id, new Set());
+  parentsByChild.set(n.id, new Set());
+  childrenByParent.set(n.id, new Set());
+}}
 for(const [a,b] of [...DATA.parent_edges, ...DATA.spouse_edges, ...DATA.sibling_edges]) {{ links.get(a)?.add(b); links.get(b)?.add(a); }}
+for(const [parent,child] of DATA.parent_edges) {{
+  parentsByChild.get(child)?.add(parent);
+  childrenByParent.get(parent)?.add(child);
+}}
 let selectedId = "", visibleIds = new Set(DATA.nodes.map(n=>n.id));
 let visibleBounds = {{x:0,y:0,width:DATA.width,height:DATA.height}};
 const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
@@ -435,8 +444,25 @@ function neighborhood(id, maxSteps) {{
   }}
   return seen;
 }}
+function lineage(id, maxSteps, direction) {{
+  const seen = new Set([id]);
+  const adjacency = direction==="ancestors" ? parentsByChild : childrenByParent;
+  let frontier=[id];
+  for(let step=0; step<maxSteps; step++) {{
+    const next=[];
+    for(const current of frontier) for(const relative of adjacency.get(current)||[]) {{
+      if(!seen.has(relative)) {{ seen.add(relative); next.push(relative); }}
+    }}
+    frontier=next;
+    if(!frontier.length) break;
+  }}
+  return seen;
+}}
 function redraw() {{
-  visibleIds = mode.value==="all" ? new Set(DATA.nodes.map(n=>n.id)) : neighborhood(selectedId, Number(distance.value));
+  const depth = Number(distance.value);
+  visibleIds = mode.value==="all" ? new Set(DATA.nodes.map(n=>n.id)) :
+               mode.value==="ancestors" || mode.value==="descendants" ?
+               lineage(selectedId, depth, mode.value) : neighborhood(selectedId, depth);
   const groups=new Map();
   for(const node of DATA.nodes) {{
     if(!visibleIds.has(node.id)) continue;
@@ -518,7 +544,7 @@ window.addEventListener("message", event => {{
 }});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
 mode.addEventListener("change", () => {{
-  if(mode.value==="branch" && !selectedId) {{
+  if(mode.value!=="all" && !selectedId) {{
     mode.value="all";
     selection.textContent="First choose a relative from the search box or click their box, then select Explore nearby relatives.";
     redraw();
