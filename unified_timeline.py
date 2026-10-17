@@ -65,6 +65,18 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
             " Original cited source: " + str(record["source_url"]) +
             " Identity limitation: " + str(record["person_status"]))
 
+    # Death-date evidence from a published tombstone transcription is a
+    # historical document, not an automatic new family-tree death event.
+    from mercy_henry_sources import load_mercy_henry_sources
+    for lead in load_mercy_henry_sources():
+        if not lead.get("timeline_inclusion"):
+            continue
+        add("Historical document", "mercy-henry:"+lead["id"],
+            lead["title"], lead["date"], lead["summary"],
+            "?page=stories&story=topsham-beveridge-before-fox-islands",
+            (), lead["status"], "Gravestone-transcribed death date",
+            "Original source: "+lead["source_url"]+". "+lead["limits"])
+
     for person in data.get("people", []):
         if person.get("birth_date"):
             add("Life event",person["id"]+":birth",str(person.get("full_name","Person"))+" — birth",
