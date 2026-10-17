@@ -322,6 +322,16 @@ def render_book_profile_crosswalk_context(person: dict) -> None:
         for page in pages:
             route_link(f"Open original book page {page}",
                        "?page=family-books&book_page=" + str(page))
+        if pages and st.toggle("View a scanned page here", value=False,
+                               key="profile_scan_toggle_" + person_id):
+            chosen = st.selectbox("Select original page", pages,
+                                  key="profile_scan_page_" + person_id)
+            books = load_books()
+            if books:
+                render_scanned_page(books[0], int(chosen), width=830)
+                st.caption(f"The Colony (2016), PDF page {chosen}. The original "
+                           "caption is shown in the scan; identifiers remain "
+                           "subject to source review.")
 
 
 def render_book_people_index(*, expanded: bool = False) -> None:
