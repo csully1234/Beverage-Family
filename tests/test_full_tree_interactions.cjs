@@ -118,3 +118,26 @@ test('documented Lowell/Lyford sibling link is drawn without a fictitious parent
    assert.deepEqual(errors,[]);
  } finally {dom.window.close();}
 });
+
+test('ancestors and descendants are navigable distinct direction-only selections',async()=>{
+ const {dom,errors}=setup();
+ try{
+   await wait();
+   const d=dom.window.document;
+   change(dom,'personSelect','orris_beverage_1860');
+   change(dom,'mode','ancestors');
+   change(dom,'distance','99');
+   const ancestors=[...d.querySelectorAll('#world .node:not(.is-hidden)')].map(n=>n.dataset.id);
+   assert(ancestors.includes('orris_beverage_1860'));
+   assert(ancestors.length>1);
+   assert(!ancestors.includes('lowell_beveridge_1905'), 'son is not an ancestor');
+   change(dom,'mode','descendants');
+   const descendants=[...d.querySelectorAll('#world .node:not(.is-hidden)')].map(n=>n.dataset.id);
+   assert(descendants.includes('lowell_beveridge_1905'));
+   assert(!descendants.includes('benjamin_beverage_1822'), 'father is not a descendant');
+   change(dom,'mode','all');
+   assert.equal(d.querySelectorAll('#world .node.is-hidden').length,0);
+   assert.equal(d.getElementById('personSelect').value,'orris_beverage_1860');
+   assert.deepEqual(errors,[]);
+ } finally {dom.window.close();}
+});
