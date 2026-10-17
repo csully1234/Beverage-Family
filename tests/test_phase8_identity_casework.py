@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 from family_data import index_people, load_site_data, relationship_index
 from family_books import book_page_connections
 from identity_casework import cases_for_page, cases_for_profile, load_identity_cases
+from historical_claims import event_source_annotations
 from validation import validate_site_data
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,6 +71,19 @@ class HistoricalIdentityReviewTests(unittest.TestCase):
         self.assertIn("elliot_beverage_1908",
                       self.rel["spouses"]["dorothy_jimmy_gattrell_beverage"])
         self.assertNotIn("ruth_bingham_reynolds", self.people)
+
+    def test_1749_intention_and_1723_1724_marblehead_are_evidence_qualified(self):
+        annotations = event_source_annotations("event_marriage_james_jr_jean_white_1749")
+        self.assertEqual(len(annotations), 1)
+        self.assertIn("intention", annotations[0]["assessment"].lower())
+        self.assertIn("not", annotations[0]["headline"].lower())
+        self.assertIn("solemnization", annotations[0]["original_record_needed"])
+        for eid in ("event_marriage_james_sr_sarah_bennett_1723",
+                    "event_birth_james_beveridge_jr_1724"):
+            record = event_source_annotations(eid)
+            self.assertEqual(len(record), 1)
+            self.assertTrue(record[0]["sources"][0]["url"].startswith("https://"))
+        self.assertEqual(event_source_annotations("event_fake"), [])
 
     def test_family_memories_remain_distinct_from_primary_document(self):
         by_id = {item["id"]: item for item in self.catalog}
