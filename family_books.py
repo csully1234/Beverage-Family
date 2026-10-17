@@ -170,6 +170,7 @@ def render_book_reader(book: dict) -> None:
         st.code(book.get("pdf_asset", ""), language=None)
     with st.expander("Large, readable scan of the selected page"):
         render_scanned_page(book, int(selected), width=1150)
+    render_book_page_connections(int(selected))
 
 
 def render_illustrations(book: dict) -> None:
@@ -231,8 +232,9 @@ def render_family_books() -> None:
                        "?page=people&profile=" + str(book["author_person_id"]))
         st.write(book.get("subtitle", ""))
         st.caption("Reproduction for this family website authorized by the user; original © notice remains and the source-page demo overlay was removed from the clean web edition.")
-        tab_read, tab_photos, tab_chapters = st.tabs([
-            "Read Entire Book", "Photographs & Illustrations", "Chapters & Historical Research"
+        tab_read, tab_photos, tab_chapters, tab_people = st.tabs([
+            "Read Entire Book", "Photographs & Illustrations",
+            "Chapters & Historical Research", "People & identity questions"
         ])
         with tab_read:
             render_book_reader(book)
@@ -240,7 +242,9 @@ def render_family_books() -> None:
             render_illustrations(book)
         with tab_chapters:
             render_chapter_and_research_index(book)
-        render_book_people_index()
+        with tab_people:
+            render_book_people_index(expanded=True)
+            render_book_identity_questions()
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
@@ -320,13 +324,13 @@ def render_book_profile_crosswalk_context(person: dict) -> None:
                        "?page=family-books&book_page=" + str(page))
 
 
-def render_book_people_index() -> None:
+def render_book_people_index(*, expanded: bool = False) -> None:
     """Index confirmed/candidate identity links and unresolved book names."""
     catalog = load_book_person_crosswalk()
     linked = catalog.get("linked_people", [])
     pending = catalog.get("unresolved_people", [])
     people_index = index_people(load_site_data(ROOT / "data")["people"])
-    with st.expander("People in The Colony — tree matches and unresolved names"):
+    with st.expander("People in The Colony — tree matches and unresolved names", expanded=expanded):
         st.caption(
             f"{len(linked)} indexed person references and {len(pending)} pending name "
             "or relationship questions from 82 photograph-bearing pages. "
@@ -358,3 +362,81 @@ _original_book_profile_context = render_book_profile_context
 def render_book_profile_context(person: dict) -> None:
     _original_book_profile_context(person)
     render_book_profile_crosswalk_context(person)
+
+
+
+def book_page_connections(page: int, catalog: dict | None = None) -> dict:
+    """Exact catalog page crosswalk; candidates never masquerade as confirmed."""
+    catalog = catalog if catalog is not None else load_book_person_crosswalk()
+    return {
+        "linked": [row for row in catalog.get("linked_people", [])
+                   if int(page) in [int(p) for p in row.get("pdf_pages", [])]],
+        "unresolved": [row for row in catalog.get("unresolved_people", [])
+                       if int(page) in [int(p) for p in row.get("pages", [])]],
+    }
+
+
+def render_book_page_connections(page: int) -> None:
+    """Bring supporting and unresolved name evidence beside the original page."""
+    matches = book_page_connections(page)
+    if not matches["linked"] and not matches["unresolved"]:
+        return
+    st.subheader("Explore the people mentioned on this source page")
+    st.caption("Page associations come from the book-photo index. A caption is "
+               "a published attribution, not an independent identity record.")
+    people = index_people(load_site_data(ROOT / "data")["people"])
+    for entry in matches["linked"]:
+        person_id = str(entry["person_id"])
+        person = people.get(person_id)
+        if not person:
+            continue
+        label = str(person.get("full_name") or person_id.replace("_", " "))
+        if str(entry.get("confidence", "")).startswith("candidate"):
+            label += " · candidate"
+        route_link("Open family tree profile: " + label,
+                   "?page=people&profile=" + person_id)
+    for item in matches["unresolved"]:
+        st.info(f"**Identity still under review: {item['name']}** — "
+                f"{item.get('issue', 'Source identification requires corroboration.')}")
+        for evidence in item.get("independent_sources", []):
+            st.caption(str(evidence.get("finding", "")))
+            if evidence.get("url"):
+                route_link(str(evidence.get("title", "Inspect other original record")),
+                           str(evidence["url"]))
+
+
+def render_book_identity_questions() -> None:
+    """Searchable editorial workbench, without adding unproved genealogy edges."""
+    cases = load_book_person_crosswalk().get("unresolved_people", [])
+    st.subheader("Historical names requiring verification")
+    st.caption(f"{len(cases)} remaining caption-index questions. Published names "
+               "are research leads, not proof of kinship; non-family cottage "
+               "occupants stay in the historical context rather than the tree.")
+    search = st.text_input("Search unresolved names and places",
+                           placeholder="Florence, Hanson, Priscilla, 1936…",
+                           key="colony_case_search").strip().casefold()
+    dispositions = sorted({str(item.get("disposition", "research_before_add"))
+                           for item in cases})
+    choice = st.selectbox("Research category", ["All questions", *dispositions],
+                          key="colony_case_category")
+    filtered = [item for item in cases if
+                (choice == "All questions" or item.get("disposition") == choice)
+                and (not search or search in (
+                    str(item.get("name", "")) + " " +
+                    str(item.get("issue", "")) + " " +
+                    " ".join(str(page) for page in item.get("pages", []))
+                ).casefold())]
+    st.caption(f"{len(filtered)} matching questions")
+    for item in filtered:
+        with st.expander(str(item.get("name") or "Unresolved person")):
+            st.write(str(item.get("issue") or "Identity not yet established."))
+            st.caption("Research disposition: " +
+                       str(item.get("disposition", "research_before_add")).replace("_", " "))
+            for evidence in item.get("independent_sources", []):
+                st.write(str(evidence.get("finding", "")))
+                if evidence.get("url"):
+                    route_link(str(evidence.get("title", "Inspect published record")),
+                               str(evidence["url"]))
+            for page in sorted(set(item.get("pages", []))):
+                route_link(f"Review the original book page {page}",
+                           "?page=family-books&book_page=" + str(page))
