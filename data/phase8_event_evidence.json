@@ -46,5 +46,28 @@
     "display_title": "Birth of James, son of James and Sarah, in Marblehead (later identity uncertain)",
     "display_summary": "The published Marblehead town birth transcription names James, son of James and Sarah (Befreadge/Befridge variants), born August 27, 1724. Further evidence is needed to identify this child as the James Beveridge named in the 1749 Georgetown marriage intention.",
     "display_evidence_status": "Published transcription of a town birth entry; later identity uncertain"
+  },
+  {
+    "event_id": "event_birth_mercy_beveridge_henry_1753",
+    "headline": "Mercy's maiden surname and approximate age attested, but parents not verified",
+    "assessment": "An inherited archive event claimed Mercy Beveridge Henry was the daughter of James Beveridge Jr. and Jean McKinney White and spouse of 'Henry Henry'. Later inspection of the 1930 Topsham cemetery transcription establishes a Mercy [Beveridge], wife of James, who died in 1831 aged 78 years 6 months. It supports approximate 1753 birth year, not a January 1 birthdate, Topsham birthplace, original parentage, or a Vinalhaven death. The site displays source-corrected data; it retains the imported claim in the unaltered original archive for provenance.",
+    "sources": [
+      {
+        "title": "Maine Historical Society Topsham vital records, vol. II, Henry death list (1930)",
+        "url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+        "supports": "Gravestone-derived death 26 Oct 1831 aged 78 years 6 months; indexed married surname Henry and maiden name Beveridge."
+      },
+      {
+        "title": "Maine official cemetery survey, First Parish Cemetery (entry 139.1)",
+        "url": "https://www.maine.gov/megis/pdfs/cemeteries/Sagadahoc/Sagadahoc%20County.pdf",
+        "supports": "Documents reported Mercy Beveridge Henry burial and spouse James; derivative of same grave, not a second independent original certificate."
+      }
+    ],
+    "original_record_needed": "Locate actual Mercy birth/baptism register or parent-naming probate and photograph original gravestone; do not assign her to James/Jean's children without direct evidence.",
+    "display_title": "Approximate birth period of Mercy (Beveridge) Henry — parents unknown",
+    "display_date": "1753",
+    "display_date_precision": "approximate",
+    "display_summary": "Mercy Beveridge Henry died in 1831 aged about 78 years and six months according to a gravestone transcription, suggesting a birth around 1753. Her birth parents and birthplace have not been proved. Later sources identify James Henry as her husband.",
+    "display_evidence_status": "Birth year inferred from gravestone age; parentage unverified"
   }
 ]
