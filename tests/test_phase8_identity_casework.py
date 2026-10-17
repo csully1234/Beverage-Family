@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 from family_data import index_people, load_site_data, relationship_index
 from family_books import book_page_connections
 from identity_casework import cases_for_page, cases_for_profile, load_identity_cases
-from historical_claims import event_source_annotations
+from historical_claims import event_source_annotations, reviewed_event_presentation
 from validation import validate_site_data
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,6 +84,22 @@ class HistoricalIdentityReviewTests(unittest.TestCase):
             self.assertEqual(len(record), 1)
             self.assertTrue(record[0]["sources"][0]["url"].startswith("https://"))
         self.assertEqual(event_source_annotations("event_fake"), [])
+
+    def test_revised_event_copy_does_not_mutate_archived_marriage_claim(self):
+        original = next(event for event in self.site["events"]
+                        if event["id"] == "event_marriage_james_jr_jean_white_1749")
+        historical_title = original["title"]
+        historical_description = original["description"]
+        display = reviewed_event_presentation(original)
+        self.assertIn("intention", display["title"].lower())
+        self.assertIn("unverified", display["title"].lower())
+        self.assertNotIn("married Jean", display["description"])
+        self.assertIn("Documented marriage intention", display["evidence_status"])
+        self.assertEqual(original["title"], historical_title)
+        self.assertEqual(original["description"], historical_description)
+        self.assertNotEqual(original["title"], display["title"])
+        other = self.site["events"][0]
+        self.assertEqual(reviewed_event_presentation(other), other)
 
     def test_family_memories_remain_distinct_from_primary_document(self):
         by_id = {item["id"]: item for item in self.catalog}
