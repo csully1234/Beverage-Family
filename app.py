@@ -23,6 +23,7 @@ from full_tree import build_full_tree_html
 from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
 from identity_casework import render_profile_identity_evidence
+from historical_claims import render_event_source_review
 from family_associations import render_documented_associations
 from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
@@ -853,6 +854,7 @@ def render_event_card(
             ]
             if involved:
                 route_markdown("**People:** " + ", ".join(involved))
+            render_event_source_review(str(event["id"]))
             render_event_archive(str(event["id"]), load_archive())
             render_event_browser(event, compact=compact)
 
