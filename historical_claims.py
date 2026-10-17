@@ -31,3 +31,21 @@ def render_event_source_review(event_id: str) -> None:
                            str(source.get("url", "")))
                 st.caption(str(source.get("supports", "")))
             st.caption("Still needed: " + str(entry.get("original_record_needed", "An original record")))
+
+
+def reviewed_event_presentation(event: dict) -> dict:
+    """Return safer *display copy*, never rewriting the archived event record.
+
+    The original event and source list remain immutable. A claim can be
+    downgraded from a recorded marriage to its actual surviving evidence
+    without silently changing historical source data or person relations.
+    """
+    rendered = dict(event)
+    for note in event_source_annotations(str(event.get("id", ""))):
+        if note.get("display_title"):
+            rendered["title"] = note["display_title"]
+        if note.get("display_summary"):
+            rendered["description"] = note["display_summary"]
+        if note.get("display_evidence_status"):
+            rendered["evidence_status"] = note["display_evidence_status"]
+    return rendered

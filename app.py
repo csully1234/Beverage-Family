@@ -23,7 +23,7 @@ from full_tree import build_full_tree_html
 from tree_component import show_full_tree
 from family_books import render_family_books, render_book_profile_context
 from identity_casework import render_profile_identity_evidence
-from historical_claims import render_event_source_review
+from historical_claims import render_event_source_review, reviewed_event_presentation
 from family_associations import render_documented_associations
 from family_discoveries import render_family_discoveries
 from archive import ArchiveIndex
@@ -833,6 +833,7 @@ def render_event_card(
     people_by_id: Mapping[str, Record],
     compact: bool = False,
 ) -> None:
+    event = reviewed_event_presentation(event)
     with st.container(border=True):
         date_column, story_column = st.columns([1, 3.4])
         with date_column:
@@ -1623,7 +1624,7 @@ def render_timeline_page(
     known_event_ids = {str(event.get("id")) for event in events}
     if requested_event_id in known_event_ids:
         selected_title = next(
-            str(event.get("title", "Timeline event"))
+            str(reviewed_event_presentation(event).get("title", "Timeline event"))
             for event in events
             if str(event.get("id")) == requested_event_id
         )

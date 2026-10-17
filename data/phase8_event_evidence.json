@@ -2,7 +2,7 @@
   {
     "event_id": "event_marriage_james_jr_jean_white_1749",
     "headline": "Marriage not independently established",
-    "assessment": "The 6 February 1749 record is a marriage *intention* for James Beveridge and Jean White, both described as of Georgetown. An intention does not by itself establish that the marriage ceremony took place or that this James is the separately recorded Marblehead-born James. The original legacy event label below is preserved for audit, but must not be treated as a verified wedding.",
+    "assessment": "The original archive retains an older account describing a completed marriage. The strongest currently identified dated record is a *marriage intention* for James Beveridge and Jean White of Georgetown, not a marriage certificate. The original ceremony and a unique identity link to the 1724 Marblehead-born James have not been established.",
     "sources": [
       {
         "title": "Brunswick marriage intentions 1740–1764, printed town transcription",
@@ -10,7 +10,10 @@
         "supports": "Printed 1749 intention naming James Beveridge and Jean White of Georgetown; not a marriage certificate."
       }
     ],
-    "original_record_needed": "Locate the dated Georgetown/Brunswick solemnization or church marriage register and establish both parties' independent identities."
+    "original_record_needed": "Locate the dated Georgetown/Brunswick solemnization or church marriage register and establish both parties' independent identities.",
+    "display_title": "James Beveridge and Jean White announce their intention to marry (ceremony unverified)",
+    "display_summary": "A surviving printed transcription records a marriage intention for James Beveridge and Jean White of Georgetown on February 6, 1749. This is not proof that a wedding occurred or that the named James is the Marblehead-born James Beveridge (1724).",
+    "display_evidence_status": "Documented marriage intention; ceremony and identities not established"
   },
   {
     "event_id": "event_marriage_james_sr_sarah_bennett_1723",
@@ -23,7 +26,10 @@
         "supports": "Town marriage list under Bennett Sarah, 16 Dec 1723, surname spelling variants."
       }
     ],
-    "original_record_needed": "Compare the original Marblehead civil/church register folio; do not infer James's Scottish parents from the surname or date."
+    "original_record_needed": "Compare the original Marblehead civil/church register folio; do not infer James's Scottish parents from the surname or date.",
+    "display_title": "Recorded marriage of James Beveridge and Sarah Bennett, Marblehead",
+    "display_summary": "The published transcription of Marblehead town vital records records James Beveridge and Sarah Bennett marrying on December 16, 1723. The specific church location and James's place of birth are not independently established by this marriage entry.",
+    "display_evidence_status": "Published transcription of a town marriage entry"
   },
   {
     "event_id": "event_birth_james_beveridge_jr_1724",
@@ -36,6 +42,9 @@
         "supports": "Birth of James to James and Sarah, 27 Aug 1724, town record published under variant spelling."
       }
     ],
-    "original_record_needed": "Verify original town register entry and any later migration deed/probate tying the 1724 child to the 1749 Maine James."
+    "original_record_needed": "Verify original town register entry and any later migration deed/probate tying the 1724 child to the 1749 Maine James.",
+    "display_title": "Birth of James, son of James and Sarah, in Marblehead (later identity uncertain)",
+    "display_summary": "The published Marblehead town birth transcription names James, son of James and Sarah (Befreadge/Befridge variants), born August 27, 1724. Further evidence is needed to identify this child as the James Beveridge named in the 1749 Georgetown marriage intention.",
+    "display_evidence_status": "Published transcription of a town birth entry; later identity uncertain"
   }
 ]

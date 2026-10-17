@@ -277,8 +277,8 @@
     "book_pages": [
       16
     ],
-    "known": "An 1888 town publication reports a February 1749 marriage *intention* for Georgetown residents James Beveridge and Jean White.",
-    "limits": "Intent to marry does not prove a marriage or establish them as parents of any historical island ancestor, still less a confirmed migration route from Scotland.",
+    "known": "An 1888 town publication reports a February 1749 marriage *intention* for Georgetown residents James Beveridge and Jean White. Two printed transcriptions of the same Brunswick intention show spelling variants: 'James Beviridge and Jean Write' in one and 'James Beveridge and Jean White' in another. They are transcriptions of the same underlying record, not independent witnesses to the ceremony.",
+    "limits": "Intent to marry does not prove a marriage or establish them as parents of any historical island ancestor, still less a confirmed migration route from Scotland. An online compiled tree also attributes the 1724 James's mother to Sarah Holman, while the 1723 Marblehead marriage transcription names Sarah Bennett; this conflict cannot be resolved by copying tree entries. Church or probate records must establish which James and which Sarah are involved.",
     "status": "Published marriage intention, identity open",
     "sources": [
       {
@@ -292,6 +292,36 @@
         "url": "https://www3.maine.gov/sos/archives/archives-services/genealogy-research",
         "kind": "official_record_guide",
         "proves": "Pre-1892 vital record custody and gaps in town record survival."
+      },
+      {
+        "title": "Brunswick 1740–1769 intentions transcription: Beviridge / Write variant",
+        "url": "https://archives.mainegenealogy.net/2007/01/brunswick-marriage-intentions-1740-1769.html",
+        "kind": "published_genealogy",
+        "proves": "A second published transcription of the SAME 1749 intention; differing spelling is valuable for searches, but not separate corroboration of a marriage."
+      },
+      {
+        "title": "Maine Historical Society Pejepscot Proprietors collection 61 — digitized originals",
+        "url": "https://mainehistoricalsociety.libraryhost.com/repositories/2/resources/2",
+        "kind": "institutional_index",
+        "proves": "Identifies the digitized ten-volume records containing original deeds, proprietor business, town meeting and tax papers; specific James/Samuel documents still require inspection."
+      },
+      {
+        "title": "Maine Memory Network Pejepscot Company volume 4 — image record",
+        "url": "https://www.mainememory.net/record/112087",
+        "kind": "archive_finding_aid",
+        "proves": "Provides a browsable digitized Pejepscot records volume including maps, deeds, accounts and settler names; no family identity proven without locating exact named record."
+      },
+      {
+        "title": "Marblehead Museum digitized Congregational registers",
+        "url": "https://marbleheadmuseum.org/church-records/",
+        "kind": "archive_finding_aid",
+        "proves": "A route to digitized historical congregational church registers; the Beveridge family has not yet been positively located in them."
+      },
+      {
+        "title": "1760 manuscript map of Topsham — Maine Historical Society, Coll. 61 Map 33",
+        "url": "https://mainehistoricalsociety.libraryhost.com/repositories/2/archival_objects/181",
+        "kind": "institutional_index",
+        "proves": "A digitized and cataloged 1760 Topsham map from original Proprietors records. It may help locate 1750s lot claims; no specific Beverage lot has yet been independently identified on the image."
       }
     ],
     "next_originals": [
@@ -302,6 +332,14 @@
       {
         "record": "Samuel 1752 and James 1758 Topsham land lots original deed/survey",
         "where": "Maine Land Office/Pejepscot proprietor papers, original indexed survey; build date-by-date chain."
+      },
+      {
+        "record": "Original Pejepscot Proprietors Coll. 61: locate 1752 Samuel and 1758 James lots and determine relationship",
+        "where": "Search the digitized Maine Historical Society ten-volume collection and original 1750s Pejepscot map/lot ledgers for both names, then compare chain of title and witness signatures."
+      },
+      {
+        "record": "Marblehead church records 1723–1734: distinguish Sarah Bennett and Sarah Holman",
+        "where": "Consult the digitized Old North/Second Congregational original church registers and original town book. The 1724 child's mother was Sarah, but later compiled trees conflict on her full identity."
       }
     ]
   }
