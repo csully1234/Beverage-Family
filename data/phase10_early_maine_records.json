@@ -20,7 +20,7 @@
     "summary": "The 1878 Wheeler town-history appendix, reproduced by Genealogy Trails, includes James Beveridge, year 1758, locality 'Lot 7'. The list encompasses settlers OR landowners and does not by itself prove a fee-simple deed or identify James with the 1724 Marblehead child or 1749 Georgetown intention.",
     "source_title": "Wheeler, History ... (1878), Appendix I, Topsham settlers / landowners list",
     "source_url": "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html",
-    "next_record": "Find original proprietor account or conveyance for lot 7, 1758, and verify witnesses, residency, grantor, grantee, neighboring boundaries and chain of title.",
+    "next_record": "Find original proprietor account or conveyance for lot 7, 1758, and verify witnesses, residency, grantor, grantee, neighboring boundaries and chain of title. Cross-check the James named in the 21 December 1763 Topsham incorporation petition against lot 7, but do not assert same-person identity absent an original deed, signature or householder list.",
     "person_status": "Unverified; do not assign to James Jr. family-tree ID"
   },
   {
@@ -94,5 +94,22 @@
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Massachusetts_soldiers_and_sailors_of_the_revoluntionary_war._A_compilation_from_the_archives_%28IA_cu31924092739980%29.pdf",
     "next_record": "Locate original brigantine Tyrannicide crew/pay roll and compare Robert's town, age, signature and service overlap with the 1777 Topsham Ensign; keep distinct unless a contemporaneous identity bridge appears.",
     "person_status": "Namesake candidate; no family-tree linkage or proven equivalence."
+  },
+  {
+    "id": "topsham-1763-incorporation-petition",
+    "title": "James Beveridge listed in Topsham incorporation petition",
+    "date": "1763-12-21",
+    "year": 1763,
+    "kind": "Published transcription of an 18th-century civil petition",
+    "status": "Documented name in 1878 reproduction of dated petition; original signed petition not examined",
+    "summary": "Wheeler's 1878 town history prints a petition dated December 21, 1763, addressed to Governor Francis Bernard and the Massachusetts General Court. The transcribed list of Topsham inhabitants includes JAMES BEVERIDGE among petitioners seeking incorporation. This strengthens the independent presence of a man named James in Topsham by 1763; it does NOT independently identify him as the 1724 Marblehead James, the 1749 Georgetown intention's James, or the 1758 lot-7 listing.",
+    "source_title": "Wheeler, History of Brunswick, Topsham and Harpswell (1878), pp. 180–182; transcription of Topsham petition dated 21 December 1763",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+    "next_record": "Inspect the actual 21 December 1763 petition cited by Wheeler as 'Pejepscot Papers' and any Massachusetts legislative original. Determine whether the printed names faithfully reproduce autograph signatures or a clerk's copied name list; examine accompanying memorials, town lists, tax records, and the 1758 James entry to establish the unique person.",
+    "person_status": "Historical petition signer named James; same-person match and family relationship unverified.",
+    "timeline_inclusion": true,
+    "display_date_precision": "exact",
+    "archival_record_status": "Near-contemporary civil document reproduced in 1878 history; manuscript/signature not independently inspected.",
+    "related_existing_event_id": "event_james_topsham_first_town_meeting_1764"
   }
 ]

@@ -50,6 +50,21 @@ def build_chronology(data: dict, people_by_id: dict, collection=None) -> list[di
         add("Timeline event",event["id"],event.get("title","Event"),date,event.get("description",""),
             "?page=timeline&event="+quote(event["id"]),event.get("people_involved",[]),
             event.get("evidence_status",""), "Event date")
+    # Add dated, explicitly source-limited historic documents without inventing
+    # a new genealogical event or silently promoting a same-name man to a person.
+    from early_maine_sources import load_early_maine_record_leads
+    for record in load_early_maine_record_leads():
+        if not record.get("timeline_inclusion"):
+            continue
+        raw_date = str(record.get("date") or record.get("year") or "")
+        add("Historical document", "early-maine:"+str(record["id"]),
+            str(record["title"]), raw_date, str(record["summary"]),
+            "?page=stories&story=topsham-beveridge-before-fox-islands",
+            (), str(record["status"]), "Date of document; source transcription",
+            str(record.get("archival_record_status") or "") +
+            " Original cited source: " + str(record["source_url"]) +
+            " Identity limitation: " + str(record["person_status"]))
+
     for person in data.get("people", []):
         if person.get("birth_date"):
             add("Life event",person["id"]+":birth",str(person.get("full_name","Person"))+" — birth",
