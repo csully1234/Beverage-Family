@@ -53,8 +53,8 @@
       298,
       301
     ],
-    "known": "The family memoir reports a 1926 wedding and the name Marion Priscilla Delano. A separate institutional Tri Delta digital index contains the form 'Beveridge, Marion Priscilla Delano'; FamilySearch's compiled profile points to indexed death and obituary sources.",
-    "limits": "An archival *name index* and a compiled FamilySearch profile corroborate that the full married name appears elsewhere, but do not independently establish the husband, wedding or birth/death dates.",
+    "known": "The family memoir reports a 1926 wedding and the name Marion Priscilla Delano. A separate institutional Tri Delta digital index contains the form 'Beveridge, Marion Priscilla Delano'; FamilySearch's compiled profile points to indexed death and obituary sources. A separately published 1940 federal census index for Sharon, Massachusetts lists Arnold P. Beveridge (born about 1904) and Priscilla D. Beveridge (born about 1901), along with other Beveridge names, as residents of the same town.",
+    "limits": "An archival *name index* and a compiled FamilySearch profile corroborate that the full married name appears elsewhere, but do not independently establish the husband, wedding or birth/death dates. The published citywide alphabetical 1940 index does not itself show that Arnold and Priscilla shared one household or state their relationship; inspect the underlying census household image before using it as marriage proof.",
     "status": "Full name has independent catalog corroboration; marriage remains a research lead",
     "sources": [
       {
@@ -68,9 +68,19 @@
         "url": "https://ancestors.familysearch.org/en/K83Y-C4N/marion-priscilla-delano-1900-1996",
         "kind": "derivative_compilation",
         "proves": "Potential obituary/cemetery index retrieval routes only."
+      },
+      {
+        "title": "1940 US census surname index for Sharon, Massachusetts (Beveridge entries)",
+        "url": "https://ldsgenealogy.com/MA/1940-Census-Sharon-MA.htm",
+        "kind": "census_name_index",
+        "proves": "Independent census-index evidence that both names occur in Sharon in 1940; household relationship and image have not been checked."
       }
     ],
     "next_originals": [
+      {
+        "record": "Original 1940 US Census enumeration image for Arnold P. and Priscilla D. Beveridge",
+        "where": "FamilySearch/NARA original 1940 Sharon, Norfolk County household image: confirm page, family number, marital relationship and children rather than assuming household from the citywide index."
+      },
       {
         "record": "Marriage entry Arnold Pierson Beveridge / Marion Priscilla Delano, alleged 1926",
         "where": "State vital register where marriage took place; city location must be established before targeted request."
