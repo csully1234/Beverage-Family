@@ -11,7 +11,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from family_books import book_pdf_path, load_books
+from family_books import book_pdf_path, load_books, load_book_person_crosswalk
 from routing_ui import route_link
 
 _CAPTIONS = Path(__file__).resolve().parent / "data" / "colony_photo_captions.json"
@@ -61,6 +61,12 @@ def render_colony_photographs() -> None:
     book = next((b for b in books if b["id"] == "colony-book-2016"), books[0])
     data = load_colony_photo_catalog()
     photos = data["photos"]
+    # Only refer to independently keyed, attributed person matches; never
+    # infer that a shared surname or caption implies a verified identity.
+    people_by_page = {}
+    for person in load_book_person_crosswalk().get("linked_people", []):
+        for page_num in person.get("pdf_pages", []):
+            people_by_page.setdefault(int(page_num), []).append(person)
     st.write("Browse family portraits, gatherings, homes, boats, schools and island life photographed in "
              "*The Colony: Stories from a Down East Island* by Lowell P. Beveridge, Jr. (2016).")
     st.caption(
@@ -121,6 +127,15 @@ def render_colony_photographs() -> None:
                 st.caption(f"The Colony (2016), PDF p. {page} · {photo['section']} · {date_note}")
                 route_link("View original scanned page and complete caption",
                            "?page=family-books&book_page="+str(page))
+                linked = people_by_page.get(page, [])
+                if linked:
+                    st.caption("Related profiles (author-attributed caption references)")
+                    for person in linked:
+                        label = str(person["person_id"]).replace("_", " ").title()
+                        if str(person.get("confidence") or "").startswith("candidate"):
+                            label += " · possible match only"
+                        route_link(label, "?page=people&profile=" + person["person_id"])
+
     if len(visible) < len(matches):
         st.button(
             f"Load 12 more photographs ({len(visible)} of {len(matches)} shown)",
