@@ -9,6 +9,7 @@ from research_collection import CollectionIndex
 from mercy_henry_sources import load_mercy_henry_sources
 from unified_timeline import build_chronology
 from validation import validate_site_data
+from historical_claims import reviewed_event_presentation
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -50,12 +51,45 @@ class MercyHenrySourceTests(unittest.TestCase):
         self.assertIn("source",entry["extra"].lower())
         self.assertFalse(any(x["id"]=="mercy-henry:topsham-mercy-marriage-candidate-1776" for x in rows))
 
-    def test_no_unverified_mercy_parentage_or_duplicates_added_to_people(self):
-        self.assertNotIn("mercy_beveridge_henry_1753",self.people)
-        self.assertNotIn("james_henry_jr_1743",self.people)
+    def test_unverified_mercy_parentage_and_placeholder_spouse_are_corrected(self):
+        mercy=self.people["mercy_beveridge_henry_1753"]
+        husband=self.people["henry_henry_1750"]
+        self.assertEqual(mercy["parents"],[])
+        self.assertEqual(mercy["siblings"],[])
+        self.assertEqual(mercy["death_date"],"1831-10-26")
+        self.assertEqual(mercy["death_date_precision"],"exact")
+        self.assertIsNone(mercy["death_place"])
+        self.assertIsNone(mercy["birth_place"])
+        self.assertEqual(mercy["birth_date_precision"],"approximate")
+        self.assertEqual(husband["full_name"],"James Henry (Mercy's husband, died 1831)")
+        self.assertEqual(husband["death_date"],"1831-11-02")
+        self.assertIsNone(husband["birth_date"])
+        self.assertIn("henry_henry_1750",mercy["spouses"])
+        self.assertIn("mercy_beveridge_henry_1753",husband["spouses"])
+        for pid in ("james_beveridge_jr_1724", "jean_mckinney_white_1725"):
+            self.assertNotIn(mercy["id"],self.people[pid]["children"])
+        self.assertNotIn(mercy["id"],self.people["thomas_beverage_1750"]["siblings"])
         self.assertEqual(validate_site_data(self.site).errors,[])
-        # The cemetery-index origin is explicit, not called two independent witnesses.
-        self.assertIn("same", next(c for c in self.cases if c["year"]==1831)["summary"].lower())
+
+    def test_original_archive_is_preserved_for_reopening_the_claim(self):
+        raw={p["id"]:p for p in self.site["base_people"]}
+        self.assertEqual(raw["mercy_beveridge_henry_1753"]["parents"],
+                         ["james_beveridge_jr_1724","jean_mckinney_white_1725"])
+        self.assertEqual(raw["henry_henry_1750"]["full_name"],"Henry Henry")
+        self.assertNotEqual(raw["mercy_beveridge_henry_1753"]["death_date"],
+                            self.people["mercy_beveridge_henry_1753"]["death_date"])
+        self.assertIn("same gravestone",
+                      next(c for c in self.cases if c["year"]==1831)["summary"].lower())
+
+    def test_original_birth_event_displays_source_limited_copy(self):
+        original=next(e for e in self.site["events"]
+                      if e["id"]=="event_birth_mercy_beveridge_henry_1753")
+        public=reviewed_event_presentation(original)
+        self.assertIn("parents unknown",public["title"])
+        self.assertEqual(public["date"],"1753")
+        self.assertEqual(public["date_precision"],"approximate")
+        self.assertNotIn("daughter of James",public["description"])
+        self.assertIn("daughter of James",original["description"])
 
 if __name__=="__main__":
     unittest.main()
