@@ -232,9 +232,10 @@ def render_family_books() -> None:
                        "?page=people&profile=" + str(book["author_person_id"]))
         st.write(book.get("subtitle", ""))
         st.caption("Reproduction for this family website authorized by the user; original © notice remains and the source-page demo overlay was removed from the clean web edition.")
-        tab_read, tab_photos, tab_chapters, tab_people = st.tabs([
+        tab_read, tab_photos, tab_chapters, tab_people, tab_search = st.tabs([
             "Read Entire Book", "Photographs & Illustrations",
-            "Chapters & Historical Research", "People & identity questions"
+            "Chapters & Historical Research", "People & identity questions",
+            "Search scanned pages"
         ])
         with tab_read:
             render_book_reader(book)
@@ -245,6 +246,8 @@ def render_family_books() -> None:
         with tab_people:
             render_book_people_index(expanded=True)
             render_book_identity_questions()
+        with tab_search:
+            render_book_ocr_navigation()
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
@@ -450,3 +453,48 @@ def render_book_identity_questions() -> None:
             for page in sorted(set(item.get("pages", []))):
                 route_link(f"Review the original book page {page}",
                            "?page=family-books&book_page=" + str(page))
+
+
+def load_book_ocr_navigation() -> dict:
+    """Curated word/page presence only, not an OCR transcript or genealogy."""
+    path = ROOT / "data" / "colony_ocr_navigation_index.json"
+    if not path.exists():
+        return {"scanned_pages": 0, "hits": {}}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return data if isinstance(data, dict) else {"scanned_pages": 0, "hits": {}}
+
+
+def render_book_ocr_navigation() -> None:
+    """Find likely scanned pages; visitors confirm all hits in original images."""
+    nav = load_book_ocr_navigation()
+    st.subheader("Find a name or topic across the scanned book")
+    st.caption("These are *automatically detected word occurrences* in scanned pages, "
+               "**not** verified genealogical identities, dates or transcriptions. "
+               "OCR can misread names and miss printed words. Select any result "
+               "to verify the original page and caption yourself.")
+    if not nav.get("hits"):
+        st.info("The research text index is not published yet; the original "
+                "305-page scan remains fully available in Read Entire Book.")
+        return
+    st.caption(f"Coverage: {nav.get('scanned_pages', 0)} PDF page images. "
+               "Original book scan is the authoritative evidence.")
+    hits = nav["hits"]
+    search = st.text_input("Find a name or historical topic",
+                           placeholder="Orris, Priscilla, Rose, schooner, Point…",
+                           key="colony_ocr_term_query").strip().casefold()
+    matching = [term for term in sorted(hits, key=str.casefold)
+                if not search or search in term.casefold()]
+    st.caption(f"{len(matching)} matching indexed terms")
+    if not matching:
+        st.info("That name is not in the curated OCR navigation vocabulary. "
+                "Absence does not prove it is absent from the book.")
+        return
+    term = st.selectbox("Indexed search term", matching, key="colony_ocr_term")
+    pages = [int(page) for page in hits.get(term, [])]
+    st.write(f"Possible printed occurrences for **{term}**: {len(pages)} pages")
+    if pages:
+        chosen = st.selectbox("Original PDF page", pages, key="colony_ocr_result_page")
+        route_link(f"Open scanned page {chosen} and related identities",
+                   "?page=family-books&book_page=" + str(chosen))
+        st.caption("Search hits are tentative until visually checked on the "
+                   "relevant scanned page. They do not create tree connections.")
