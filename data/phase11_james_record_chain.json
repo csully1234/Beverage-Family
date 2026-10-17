@@ -1,0 +1,56 @@
+[
+  {
+    "id": "marblehead-1723-james-sarah",
+    "date": "1723-12-16",
+    "place": "Marblehead, Massachusetts",
+    "record": "James Beveridge and Sarah Bennett marriage",
+    "source_url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+    "proof": "Published transcription of an original town marriage entry. Identifies a couple, not a Scottish birthplace.",
+    "link_status": "The adults' later Maine identities are not independently established."
+  },
+  {
+    "id": "marblehead-1724-child",
+    "date": "1724-08-27",
+    "place": "Marblehead, Massachusetts",
+    "record": "James, child of James and Sarah, born",
+    "source_url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+    "proof": "Published transcription of a town birth entry establishing a James child in this household.",
+    "link_status": "No original record here connects the baby to the 1749 Georgetown James."
+  },
+  {
+    "id": "georgetown-1749-intention",
+    "date": "1749-02-06",
+    "place": "Brunswick register; parties reportedly of Georgetown",
+    "record": "James Beveridge and Jean White intention to marry",
+    "source_url": "https://archives.mainegenealogy.net/2008/06/brunswick-marriage-intentions-1740-1764.html",
+    "proof": "A dated intention. Ceremony, parentage and birthplace are not recorded here.",
+    "link_status": "No proved link to the Marblehead child or the Topsham settler."
+  },
+  {
+    "id": "topsham-1758-james",
+    "date": "1758",
+    "place": "Topsham",
+    "record": "James Beveridge among early settlers or landowners, 'Lot 7'",
+    "source_url": "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html",
+    "proof": "Derivative transcription of Wheeler's 1878 list; it is not an original deed.",
+    "link_status": "Does not independently identify the 1749 James or specify genealogical relatives."
+  },
+  {
+    "id": "topsham-1763-petition",
+    "date": "1763-12-21",
+    "place": "Topsham",
+    "record": "James Beveridge named in town-incorporation petition",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+    "proof": "Wheeler reproduces the dated petition's names and cites 'Pejepscot Papers'; the original signed manuscript has not yet been inspected.",
+    "link_status": "Strengthens documented Topsham presence, not an established identity bridge to 1758 or 1724."
+  },
+  {
+    "id": "topsham-1764-office",
+    "date": "1764-05-09",
+    "place": "Topsham",
+    "record": "James Beverage elected hog constable at first town meeting",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+    "proof": "Wheeler reproduces a dated municipal office roster. Town meeting minutes remain to be checked.",
+    "link_status": "Likely related to the nearby 1763 civic appearance; individual identity still requires documentary linkage."
+  }
+]
