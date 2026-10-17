@@ -104,10 +104,13 @@ class EvidenceReviewTests(unittest.TestCase):
                     ("jean_mckinney_white_1725", "children"),
                     ("thomas_beverage_1750", "siblings"),
                     ("sarah_beveridge_kent_1758", "siblings"),
+                    ("major_george_white_1746", "siblings"),
+                    ("john_white_1748", "siblings"),
                 }:
                     excluded = ({"james_beveridge_jr_1724", "jean_mckinney_white_1725"}
                                 if pid == "mercy_beveridge_henry_1753" and field == "parents"
-                                else {"thomas_beverage_1750", "sarah_beveridge_kent_1758"}
+                                else {"thomas_beverage_1750", "sarah_beveridge_kent_1758",
+                                      "major_george_white_1746", "john_white_1748"}
                                 if pid == "mercy_beveridge_henry_1753" and field == "siblings"
                                 else {"mercy_beveridge_henry_1753"})
                     self.assertEqual(new_rel[field].get(pid, set()),
