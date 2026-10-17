@@ -311,7 +311,14 @@
           124
         ],
         "issue": "Caption reports father-child relationship and death in 1870, but no original birth/marriage/vital file has been compared to establish a unique stable profile.",
-        "disposition": "research_before_add"
+        "disposition": "research_before_add",
+        "independent_sources": [
+          {
+            "title": "Rose Emma Pierson Beverage memorial — compiled parental attribution",
+            "url": "https://www.findagrave.com/memorial/157486335/rose-emma-beverage",
+            "finding": "The memorial's compiled biography names Albion Pierson and Olive F. Hart as Rose's parents. This is a derivative claim, not the contemporaneous birth or baptism register; do not use it alone to create new parent edges."
+          }
+        ]
       },
       {
         "name": "Jesse Hart (1817–1878)",
