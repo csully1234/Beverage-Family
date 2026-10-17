@@ -148,7 +148,7 @@ test('type-a-name search jumps to a relative without removing whole-tree nodes',
    await wait();
    const d=dom.window.document;
    const input=d.getElementById('personSearch');
-   input.value='Orris Beverage';
+   input.value='Orris Lyford Beverage';
    input.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
    assert(d.getElementById('personSuggestions').children.length>0);
    input.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
