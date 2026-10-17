@@ -1,0 +1,74 @@
+[
+  {
+    "id": "topsham-1752-samuel",
+    "title": "Samuel Beveridge in Topsham, 1752",
+    "year": 1752,
+    "kind": "Published town history / map key",
+    "status": "Historical name-and-location lead, NOT a deed",
+    "summary": "Wheeler's 1878 history reproduces an early Topsham map key with marker 3 labeled Samuel Beveridge; its Appendix I also lists Samuel in 1752 with locality/lot 3. These references are useful settlement clues but no original lot conveyance or family relationship has been verified.",
+    "source_title": "Wheeler, History of Brunswick, Topsham and Harpswell (1878), printed pp. 40–41 and Appendix I pp. 870–872",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-5.htm",
+    "next_record": "Locate the underlying 1752 map and property entry in Pejepscot Proprietors Coll. 61; identify exact original manuscript leaf, image, term of possession and any deed; then distinguish marker number from deeded acreage.",
+    "person_status": "Not linked to any existing family profile"
+  },
+  {
+    "id": "topsham-1758-james",
+    "title": "James Beveridge listed at Topsham, 1758",
+    "year": 1758,
+    "kind": "Published early-settlers index",
+    "status": "Named settler or land-owner candidate; original deed not inspected",
+    "summary": "The 1878 Wheeler town-history appendix, reproduced by Genealogy Trails, includes James Beveridge, year 1758, locality 'Lot 7'. The list encompasses settlers OR landowners and does not by itself prove a fee-simple deed or identify James with the 1724 Marblehead child or 1749 Georgetown intention.",
+    "source_title": "Wheeler, History ... (1878), Appendix I, Topsham settlers / landowners list",
+    "source_url": "https://genealogytrails.com/maine/sagadahoc/history_earlysettlerstopsham.html",
+    "next_record": "Find original proprietor account or conveyance for lot 7, 1758, and verify witnesses, residency, grantor, grantee, neighboring boundaries and chain of title.",
+    "person_status": "Unverified; do not assign to James Jr. family-tree ID"
+  },
+  {
+    "id": "topsham-1776-robert",
+    "title": "Robert Beveridge named in 1776 local military roster",
+    "year": 1776,
+    "kind": "Published Revolutionary War service compilation",
+    "status": "Named in published roster; original muster roll not inspected",
+    "summary": "Wheeler's 1878 Appendix III, printed p. 882, lists a Robert Beveridge in Capt. William Lithgow's company among Topsham Revolutionary War servicemen. The OCR presentation appears to give a private-to-corporal/sergeant progression; rank, enlistment and identity need inspection against original Massachusetts military pay or muster roll.",
+    "source_title": "Wheeler, History ... (1878), Appendix III, Topsham Men, printed p. 882",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-83.htm",
+    "next_record": "Find Capt. William Lithgow 1776 company muster/pay records and verify dated original entries, regiment, residence and age to disambiguate Robert; compare separately with 1777 George White roster.",
+    "person_status": "New research candidate; DO NOT create a tree identity"
+  },
+  {
+    "id": "topsham-1777-robert",
+    "title": "Robert Beveridge listed as ensign, George White's 1777 company",
+    "year": 1777,
+    "kind": "Published Revolutionary War roster",
+    "status": "Published rank attribution; not independently checked on original",
+    "summary": "The same 1878 Appendix III, printed p. 883, lists Robert Beveridge as 'ensign' in Capt. George White's company among Topsham men. It is plausible, but not proven, this is the same Robert recorded in the Lithgow list in 1776.",
+    "source_title": "Wheeler, History ... (1878), Appendix III, Topsham Men, printed p. 883",
+    "source_url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-83.htm",
+    "next_record": "Locate original 1777 muster/pay rolls or commissions for Capt. George White's company; compare Robert's rank and identity with 1776 Lithgow regiment rather than assuming a promotion.",
+    "person_status": "Possibly the 1776 Robert; connection unverified"
+  },
+  {
+    "id": "topsham-1749-intention",
+    "title": "James Beveridge and Jean White intention, 1748/9",
+    "year": 1749,
+    "kind": "Printed transcription of contemporaneous town intention",
+    "status": "Intention documented; marriage not established",
+    "summary": "Brunswick intentions record James Beviridge/Beveridge and Jean Write/White of Georgetown under February 1748/9 (normalized 1749). Two published variants transcribe one underlying clerk's record, not two independently documented marriages.",
+    "source_title": "Brunswick marriage intentions 1740–1769, town transcript",
+    "source_url": "https://archives.mainegenealogy.net/2007/01/brunswick-marriage-intentions-1740-1769.html",
+    "next_record": "Locate original intention ledger and a separate dated wedding/solemnization entry; prove identity and lineage independently of later descendants' compilation.",
+    "person_status": "May or may not be the 1724 Marblehead James; not proven"
+  },
+  {
+    "id": "topsham-1760-map",
+    "title": "1760 Topsham manuscript map (geographic context)",
+    "year": 1760,
+    "kind": "Cataloged contemporary manuscript map",
+    "status": "Original map exists, family-specific parcel not identified",
+    "summary": "Maine Historical Society catalogs a manuscript Topsham map dated 1760 within Pejepscot Proprietors Coll. 61, Map 33. This establishes an original geographic record exists, NOT that it depicts a specific Beveridge lot or usable modern coordinates.",
+    "source_title": "Maine Historical Society, Pejepscot Proprietors papers Coll. 61, Map 33 (1760)",
+    "source_url": "https://mainehistoricalsociety.libraryhost.com/repositories/2/archival_objects/181",
+    "next_record": "Inspect original map image/key at high resolution, compare 1752 marker 3 and 1758 lot 7 labels, cite original coordinates only if historically surveyed and independently georeferenced.",
+    "person_status": "Map only; no genealogical claim"
+  }
+]
