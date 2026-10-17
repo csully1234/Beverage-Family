@@ -54,7 +54,7 @@ class BookConnectionsTests(unittest.TestCase):
         self.assertIn(297, index["hits"]["Florence"])
         self.assertIn(298, index["hits"]["Priscilla"])
         self.assertIn(302, index["hits"]["Gattrell"])
-        self.assertIn("OCR", index["verification"])
+        self.assertIn("OCR", index["extraction"])
         for term, pages in index["hits"].items():
             self.assertTrue(term.strip())
             self.assertTrue(all(isinstance(p, int) and 1 <= p <= 305 for p in pages))
