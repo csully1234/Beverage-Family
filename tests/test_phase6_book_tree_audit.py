@@ -102,6 +102,19 @@ class Phase6TreeAndBookTests(unittest.TestCase):
         self.assertEqual(self.people["jemima_beverage_1866"]["spouses"], [])
         self.assertEqual(self.people["harriet_beverage_1856"]["spouses"], [])
 
+    def test_sibling_only_relation_is_visible_without_inferred_parents(self):
+        relationships = relationship_index(self.data["people"])
+        model = build_full_tree_model(self.people, relationships)
+        lowell = "lowell_beveridge_1905"
+        lyford = "lyford_beveridge_brother_lowell"
+        pair = sorted([lowell, lyford])
+        self.assertIn(pair, model["sibling_edges"])
+        self.assertIn(pair, model["sibling_only_edges"])
+        self.assertFalse(self.people[lyford]["parents"])
+        self.assertNotIn([lowell, lyford], model["parent_edges"])
+        self.assertNotIn([lyford, lowell], model["parent_edges"])
+        self.assertEqual(model["positions"][lowell][1], model["positions"][lyford][1])
+
     def test_full_tree_includes_added_sourced_profiles_without_base_mutation(self):
         rel = relationship_index(self.data["people"])
         model = build_full_tree_model(self.people, rel)
