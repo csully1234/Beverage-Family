@@ -4,6 +4,7 @@ import unittest
 from family_books import book_page_connections, load_book_person_crosswalk
 from family_data import load_site_data, index_people
 from full_tree import build_full_tree_html
+from family_associations import associations_for_person
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -35,6 +36,16 @@ class BookConnectionsTests(unittest.TestCase):
         self.assertNotIn("florence_budlong", self.people)
         self.assertIn("Hanson Beverage (Amelia's brother)", cases)
         self.assertEqual(len(cases), 16)
+
+    def test_companion_not_labeled_legal_spouse_or_added_to_tree(self):
+        associations = associations_for_person("olive_beveridge_1890")
+        self.assertEqual(len(associations), 1)
+        first = associations[0]
+        self.assertEqual(first["associated_name"], "Florence N. Budlong")
+        self.assertIn("Life partner", first["association_type"])
+        self.assertEqual(len(first["sources"]), 3)
+        self.assertNotIn("florence_budlong", self.people)
+        self.assertFalse("florence_budlong" in self.people["olive_beveridge_1890"].get("spouses", []))
 
     def test_tree_has_directional_modes_without_changing_relationship_data(self):
         from family_data import relationship_index
