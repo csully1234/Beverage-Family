@@ -52,6 +52,7 @@ from family_data import (
 from validation import validate_site_data
 from family_search import matches as archive_matches, person_match
 from profile_life_stories import render_profile_life_record, render_profile_photo_story
+from relationship_evidence import render_profile_relationship_review, render_relationship_coverage
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
@@ -1030,6 +1031,7 @@ def render_person_profile(
             with relation_columns[position % 2]:
                 render_relation_group(label, related_ids, people_by_id)
 
+        render_profile_relationship_review(person_id, people_by_id, relationships)
         st.button(
             "Center this person in the family tree",
             type="primary",
@@ -1875,6 +1877,7 @@ def render_sources_page(
     st.write("How the archive separates a documented fact, a published account, and a lead that still needs verification.")
     route_link("Open the expanded research source register", "?page=collection&view=Sources")
     route_link("Read research coverage and limitations", "?page=collection&view=Inventories&inventory=Source+Coverage")
+    render_relationship_coverage(people_by_id, relationship_index(data["people"]))
 
     catalog: list[dict[str, Any]] = []
     for owner_type, records in (
