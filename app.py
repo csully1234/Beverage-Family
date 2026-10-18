@@ -967,6 +967,8 @@ def render_person_profile(
     render_book_profile_context(person)
     render_documented_associations(person_id)
     render_profile_identity_evidence(person_id)
+    route_link("Research this relative across the complete historical archive",
+               "?page=collection&view=workbench&person=" + quote(person_id))
     render_person_bridge_casework(person_id, people_by_id)
     render_profile_review(person_id, load_collection(), people_by_id)
     render_evidence_status(person.get("evidence_status"))
