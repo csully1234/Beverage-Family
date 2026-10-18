@@ -263,7 +263,15 @@ def build_full_tree_html(
   }}
   #toolbar button {{ cursor:pointer; }}
   #toolbar button:hover {{ background:#dcebed; }}
-  #personSelect {{ max-width:320px; flex:1 1 220px; }}
+  #personSelect {{ max-width:280px; flex:1 1 170px; }}
+  #personSearch {{ max-width:280px; flex:1 1 170px; min-width:145px; }}
+  #toolbar input {{ min-height:36px; border:1px solid rgba(18,53,66,.32);
+    border-radius:999px; background:#fffdf8; color:#19313a;
+    font:inherit; padding:7px 13px; }}
+  #searchPerson {{ background:#dcebed !important; }}
+  #searchMessage {{ width:100%; margin:0; font-size:12px; color:#50686f; }}
+  #personSearch:focus-visible, #toolbar button:focus-visible, #toolbar select:focus-visible,
+  .node:focus-visible rect {{ outline:none; stroke:#aa7b3f; stroke-width:4; }}
   #selection {{ padding:10px 14px; background:#fffdf8; border-bottom:1px solid var(--line); font-size:13px; }}
   #selection strong {{ color:var(--navy); }}
   #selection a {{ color:#14536e; font-weight:700; }}
@@ -292,8 +300,11 @@ def build_full_tree_html(
     color:#50686f; font-size:11px; pointer-events:none; }}
   @media (max-width:700px) {{
     #shell {{ height:720px; border-radius:12px; }}
-    #toolbar {{ align-items:stretch; }}
-    #toolbar button {{ flex:1 0 auto; }}
+    #toolbar {{ align-items:stretch; gap:6px; }}
+    #toolbar input {{ flex:1 1 48%; max-width:none; }}
+    #personSelect {{ max-width:none; flex:1 1 48%; }}
+    #toolbar button {{ flex:1 0 auto; min-height:42px; }}
+    #selection {{ line-height:1.5; }}
     #status {{ width:100%; margin-left:0; }}
     #help {{ display:none; }}
   }}
@@ -302,8 +313,13 @@ def build_full_tree_html(
 <body>
 <div id="shell">
   <div id="toolbar">
-    <select id="personSelect" aria-label="Find a person">
-      <option value="">Find and center a person…</option>
+    <input id="personSearch" type="search" list="personSuggestions"
+      placeholder="Search names or years…" aria-label="Search family tree names"
+      autocomplete="off">
+    <datalist id="personSuggestions"></datalist>
+    <button id="searchPerson" type="button">Find person</button>
+    <select id="personSelect" aria-label="Choose a person from the complete list">
+      <option value="">Choose any person…</option>
     </select>
     <select id="mode" aria-label="Tree display mode"><option value="all">Whole family overview</option><option value="branch">Explore nearby relatives</option><option value="ancestors">Trace ancestors</option><option value="descendants">Trace descendants</option></select>
     <span id="branchDepthControl" hidden><label for="distance" title="Choose how far to explore from a selected person (family connections, not generations)">Include</label> <select id="distance" aria-label="How many nearby relatives to show"><option value="1">Immediate family</option><option value="2" selected>Close relatives</option><option value="3">Extended family</option><option value="4">Wider family branch</option><option value="99">All documented generations</option></select></span>
@@ -313,6 +329,7 @@ def build_full_tree_html(
     <button id="zoomOut" type="button" aria-label="Zoom out">−</button>
     <button id="reset" type="button">100%</button>
     <span id="status"></span>
+    <p id="searchMessage" role="status" aria-live="polite">Type a name to jump to that relative, or choose someone from the complete list.</p>
   </div>
   <div id="selection" role="status" aria-live="polite">Select a person to explore their relatives.</div>
   <div id="viewport">
@@ -328,6 +345,9 @@ const NS = "http://www.w3.org/2000/svg";
 const svg = document.getElementById("tree");
 const world = document.getElementById("world");
 const select = document.getElementById("personSelect");
+const searchInput = document.getElementById("personSearch");
+const searchSuggestions = document.getElementById("personSuggestions");
+const searchMessage = document.getElementById("searchMessage");
 const status = document.getElementById("status");
 const mode = document.getElementById("mode");
 const distance = document.getElementById("distance");
@@ -409,6 +429,17 @@ function labelLines(name) {{
 for (const node of DATA.nodes) {{
   const g=make("g", {{class:`node${{node.unresolved ? " unresolved" : ""}}`, "data-id":node.id}});
   g.setAttribute("transform", `translate(${{node.x}} ${{node.y}})`);
+  if(!node.unresolved) {{
+    g.setAttribute("tabindex", "0");
+    g.setAttribute("role", "button");
+    g.setAttribute("aria-label", "Select "+node.name+" ("+node.life_span+")");
+    g.addEventListener("keydown", event => {{
+      if(event.key==="Enter" || event.key===" ") {{
+        event.preventDefault();
+        focusNode(node.id);
+      }}
+    }});
+  }}
   g.appendChild(make("rect", {{width:DATA.node_width, height:DATA.node_height}}));
   const lines=labelLines(node.name);
   const text=make("text", {{x:DATA.node_width/2, y:lines.length > 1 ? 19 : 24, "text-anchor":"middle", class:"name"}});
@@ -433,6 +464,49 @@ for (const node of sortedNodes) {{
   option.textContent=`${{node.name}} · ${{node.life_span}}`;
   select.appendChild(option);
 }}
+const searchNames = sortedNodes.map(node => ({{
+  id:node.id, name:node.name,
+  label:node.name+" · "+node.life_span,
+  haystack:(node.name+" "+node.life_span+" "+node.id.replace(/_/g," ")).toLocaleLowerCase()
+}}));
+function matchingPeople(rawQuery) {{
+  const term=String(rawQuery||"").trim().toLocaleLowerCase();
+  if(!term) return [];
+  return searchNames.filter(entry=>entry.haystack.includes(term) ||
+                                   entry.label.toLocaleLowerCase()===term);
+}}
+function updateSearchSuggestions() {{
+  const matches=matchingPeople(searchInput.value);
+  searchSuggestions.replaceChildren();
+  for(const entry of matches.slice(0,12)) {{
+    const option=document.createElement("option");
+    option.value=entry.label; option.label=entry.label;
+    searchSuggestions.appendChild(option);
+  }}
+  searchMessage.textContent=searchInput.value.trim()
+    ? matches.length+" name matches. Press Enter to select the closest match."
+    : "Type a name to jump to that relative, or choose someone from the complete list.";
+}}
+function searchPerson() {{
+  const term=searchInput.value.trim();
+  if(!term) {{ searchInput.focus(); return; }}
+  const matches=matchingPeople(term);
+  if(!matches.length) {{
+    searchMessage.textContent="No matching relatives. Try fewer letters or another spelling.";
+    return;
+  }}
+  const exact=matches.find(entry=>
+    entry.label.toLocaleLowerCase()===term.toLocaleLowerCase() ||
+    entry.name.toLocaleLowerCase()===term.toLocaleLowerCase());
+  const target=exact || matches[0];
+  focusNode(target.id);
+  searchMessage.textContent="Showing "+target.name+" · "+matches.length+" matching records.";
+}}
+searchInput.addEventListener("input", updateSearchSuggestions);
+searchInput.addEventListener("keydown", event => {{
+  if(event.key==="Enter") {{ event.preventDefault(); searchPerson(); }}
+}});
+document.getElementById("searchPerson").addEventListener("click", searchPerson);
 function neighborhood(id, maxSteps) {{
   const seen = new Set([id]); let frontier = [id];
   for(let step=0;step<maxSteps;step++) {{
@@ -533,6 +607,9 @@ function focusNode(id, notify=true) {{
     selection.append(link);
   }} else selection.append(document.createTextNode("Unresolved relative; no profile yet"));
   redraw();
+  // Selecting from the huge overview should not leave readable names
+  // microscopic. Fit remains available for anyone wishing to see all.
+  if(notify && mode.value==="all") centerSelected();
   if (notify && window.parent!==window) {{
     window.parent.postMessage({{type:"beverage:person-selected",person_id:id}},"*");
   }}
@@ -540,7 +617,10 @@ function focusNode(id, notify=true) {{
 window.addEventListener("message", event => {{
   if(event.source!==window.parent || event.data?.type!=="beverage:set-selected") return;
   const id=event.data.person_id;
-  if(id && nodeById.has(id) && id!==selectedId) focusNode(id,false);
+  if(id && nodeById.has(id) && id!==selectedId) {{
+    focusNode(id,false);
+    if(mode.value==="all") centerSelected();
+  }}
 }});
 select.addEventListener("change", () => {{ if (select.value) focusNode(select.value); }});
 mode.addEventListener("change", () => {{
@@ -554,7 +634,7 @@ mode.addEventListener("change", () => {{
 }});
 distance.addEventListener("change",redraw);
 document.getElementById("fit").addEventListener("click", fitTree);
-document.getElementById("centerSelected").addEventListener("click", () => {{
+function centerSelected() {{
   const node=nodeById.get(selectedId);if(!node) return;
   scale=Math.max(scale,0.85);
   const g=world.querySelector(`[data-id="${{CSS.escape(selectedId)}}"]`);
@@ -565,7 +645,8 @@ document.getElementById("centerSelected").addEventListener("click", () => {{
   tx=svg.clientWidth/2-(x+DATA.node_width/2)*scale;
   ty=svg.clientHeight/2-(y+DATA.node_height/2)*scale;
   applyTransform();
-}});
+}}
+document.getElementById("centerSelected").addEventListener("click", centerSelected);
 document.getElementById("zoomIn").addEventListener("click", () => zoomAt(1.25));
 document.getElementById("zoomOut").addEventListener("click", () => zoomAt(0.8));
 document.getElementById("reset").addEventListener("click", resetTree);

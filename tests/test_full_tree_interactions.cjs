@@ -141,3 +141,41 @@ test('ancestors and descendants are navigable distinct direction-only selections
    assert.deepEqual(errors,[]);
  } finally {dom.window.close();}
 });
+
+test('type-a-name search jumps to a relative without removing whole-tree nodes',async()=>{
+ const {dom,errors}=setup();
+ try{
+   await wait();
+   const d=dom.window.document;
+   const input=d.getElementById('personSearch');
+   input.value='Orris Lyford Beverage';
+   input.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
+   assert(d.getElementById('personSuggestions').children.length>0);
+   input.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true}));
+   assert.equal(d.getElementById('personSelect').value,'orris_beverage_1860');
+   assert.match(d.getElementById('searchMessage').textContent,/Showing Orris/);
+   assert.equal(d.getElementById('mode').value,'all');
+   assert.equal(d.querySelectorAll('#world .node.is-hidden').length,0);
+   input.value='a nonexistent surname zzxx';
+   d.getElementById('searchPerson').click();
+   assert.equal(d.getElementById('personSelect').value,'orris_beverage_1860');
+   assert.match(d.getElementById('searchMessage').textContent,/No matching relatives/);
+   assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
+
+test('SVG people can be selected by keyboard without opening unresolved profiles',async()=>{
+ const {dom,errors}=setup();
+ try{
+   await wait();
+   const d=dom.window.document;
+   const target=d.querySelector('#world .node[data-id="orris_beverage_1860"]');
+   assert.equal(target.getAttribute('tabindex'),'0');
+   assert.equal(target.getAttribute('role'),'button');
+   target.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}));
+   assert.equal(d.getElementById('personSelect').value,'orris_beverage_1860');
+   const unresolved=d.querySelector('#world .node.unresolved');
+   if(unresolved)assert.equal(unresolved.hasAttribute('tabindex'),false);
+   assert.deepEqual(errors,[]);
+ }finally{dom.window.close();}
+});
