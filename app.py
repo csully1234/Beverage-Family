@@ -51,6 +51,7 @@ from family_data import (
 )
 from validation import validate_site_data
 from family_search import matches as archive_matches, person_match
+from profile_life_stories import render_profile_life_record, render_profile_photo_story
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
@@ -979,6 +980,8 @@ def render_person_profile(
     )
 
     with story_tab:
+        render_profile_life_record(person, events)
+        render_profile_photo_story(person_id)
         if person.get("biography"):
             st.subheader("Biography")
             st.write(person["biography"])
@@ -1006,14 +1009,9 @@ def render_person_profile(
                         for value in values:
                             route_markdown(f"- {markdown_escape(value)}")
 
-        person_events = related_events(events, person_id)
-        st.subheader(f"Timeline records involving this person ({len(person_events)})")
-        if not person_events:
-            st.caption("No linked timeline records yet.")
-        for event in person_events[:8]:
-            render_event_card(event, people_by_id, compact=True)
-        if len(person_events) > 8:
-            st.caption(f"{len(person_events) - 8} additional records are available on the Timeline page.")
+        # The chronological record browser at the top of Story already
+        # includes all events and a deep link to their original citations.
+        # Avoid duplicating eight heavy event cards beneath the biography.
         render_context("person", person_id, people_by_id, strong_only=False)
 
     with family_tab:
