@@ -1,5 +1,8 @@
 # Phase 16 — ancestry bridges: Matthew, Clarissa Cobb, Nathaniel and the original Topsham surveys
 
+> **Later evidence review (18 October 2026):** The original 1865 Eaton family register (vol. II, p. 146) explicitly calls Abigail Dyer Capt. Matthew's **first wife** and Clarissa Cobb his **second wife**, assigning five named children to each. Previous wording suggesting these wives could represent contradictory Matthew records was too broad. See `research/phase19_eaton_two_marriages_waldo_probate_2026-10-18.md`. This does **not** prove original marriages or Matthew's parents, sibling relationship, or identity with the 1785 minor.
+
+
 *Research and implementation: 18 October 2026. Draft investigation only; no correspondence, merges, purchases or source-image republication.*
 
 ## Research result 1: Clarissa Cobb and Captain Matthew Beverage of Hope
