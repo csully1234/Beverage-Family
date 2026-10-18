@@ -74,7 +74,7 @@ class RelationshipEvidenceTests(unittest.TestCase):
         james = edge_key("spouses", "james_beveridge_jr_1724", "jean_mckinney_white_1725")
         self.assertEqual(self.lookup[james]["status"], "identity_needs_verification")
         self.assertIn("intention", self.lookup[james]["finding"].lower())
-        self.assertIn("not a marriage certificate", self.lookup[james]["finding"].lower())
+        self.assertIn("does not document solemnization", self.lookup[james]["finding"].lower())
         for parent in ("james_beveridge_sr_1700", "sarah_bennett_1705"):
             key = edge_key("parent_child", parent, "james_beveridge_jr_1724")
             self.assertEqual(self.lookup[key]["status"], "identity_needs_verification")
@@ -91,9 +91,7 @@ class RelationshipEvidenceTests(unittest.TestCase):
         self.assertFalse(self.relations["parents"].get("lyford_beveridge_brother_lowell"))
         mercy_spouse = edge_key("spouses", "mercy_beveridge_henry_1753", "henry_henry_1750")
         self.assertIn("not exact 1776 ceremony",
-                      self.lookup[mercy_spouse]["limitations"].lower()
-                      if "not exact 1776 ceremony" in self.lookup[mercy_spouse]["limitations"].lower()
-                      else "not exact 1776 ceremony")
+                      self.lookup[mercy_spouse]["limitations"].lower())
 
     def test_default_claims_are_not_mislabeled_verified(self):
         unknown = next(row for row in self.edges if row["status"] == "not_reviewed")
