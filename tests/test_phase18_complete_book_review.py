@@ -40,13 +40,13 @@ class CompleteBookEvidenceReviewTests(unittest.TestCase):
 
     def test_opposing_matthew_reports_remain_an_identity_problem(self):
         matthews=[r for r in reviews_for_book_page(17)
-                  if "Two possible Matthews" in r["title"]]
+                  if "Matthew's first and second wives" in r["title"]]
         self.assertEqual(len(matthews),1)
         r=matthews[0]
         self.assertIn("Abigail Dyer",r["observation"])
         self.assertIn("Clarissa Cobb",r["observation"])
-        self.assertIn("whether they refer to one person is unresolved",r["observation"])
-        self.assertIn("Original 1801", " ".join(r["next_originals"]))
+        self.assertIn("Abigail Dyer first and Clarissa Cobb second",r["observation"])
+        self.assertIn("around 1801", " ".join(r["next_originals"]))
         self.assertIn("original book page",r["verification"].lower())
         # A case entry must not silently create either identity in our tree.
         self.assertNotIn("capt_matthew_beverage",self.people)
