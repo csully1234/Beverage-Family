@@ -251,6 +251,8 @@ def render_family_books() -> None:
             render_book_identity_questions()
         with tab_search:
             render_book_ocr_navigation()
+            route_link("Compare names and original sources throughout the entire family archive",
+                       "?page=collection&view=workbench")
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
