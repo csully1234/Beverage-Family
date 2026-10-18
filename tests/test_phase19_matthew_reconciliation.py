@@ -30,7 +30,7 @@ class MatthewFirstSecondWivesTests(unittest.TestCase):
         self.assertEqual([len(g["children"]) for g in groups],[5,5])
         self.assertEqual(len(self.family["matthew"]["children"]),10)
         self.assertEqual(len({p["name"] for g in groups for p in g["children"]}),10)
-        self.assertIn("five named children",self.by_id["eaton-1865-two-marriages"]["claim"].lower())
+        self.assertIn("two groups of five",self.by_id["eaton-1865-two-marriages"]["claim"].lower())
         self.assertTrue(all("original" in g["limitation"] for g in groups))
 
     def test_publications_support_marriage_order_but_not_original_proof(self):
@@ -67,7 +67,8 @@ class MatthewFirstSecondWivesTests(unittest.TestCase):
         finding=self.by_id["probate-pre1860-waldo-index"]
         self.assertIn("Waldo County",finding["claim"])
         self.assertIn("not evidence that a probate packet",finding["proof"])
-        self.assertIn("1826",finding["locator"])
+        self.assertIn("Waldo County",finding["locator"])
+        self.assertIn("1826",finding["reference"])
         self.assertGreaterEqual(len(finding["supporting_links"]),3)
         for link in finding["supporting_links"]:
             self.assertEqual(urlsplit(link["url"]).scheme,"https")
