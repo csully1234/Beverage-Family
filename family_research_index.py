@@ -1,0 +1,366 @@
+"""Unified, provenance-first discovery index across the family research archive.
+
+Search hits are pointers to existing records, NOT transcriptions, proven identities,
+a new family tree, or new genealogical assertions. This module is pure Python:
+no UI, network, web requests, OCR, generated facts or mutations to source data.
+"""
+from __future__ import annotations
+
+import json
+import re
+from collections import Counter, defaultdict
+from pathlib import Path
+from urllib.parse import quote, urlsplit
+
+ROOT = Path(__file__).resolve().parent / "data"
+
+CATEGORIES = (
+    "Open identity questions",
+    "Relationship evidence",
+    "Historical investigations",
+    "Historical research findings",
+    "Original source register",
+    "Historical source exhibits",
+    "Scanned book photographs",
+    "Scanned book OCR leads",
+    "Historical record trails",
+    "Existing family profiles",
+)
+STATUS = {
+    "Open identity questions": "Unresolved identity · review original evidence",
+    "Relationship evidence": "Reviewed relationship claim · check the stated source limitation",
+    "Historical investigations": "Research hypothesis or attributed historical account",
+    "Historical research findings": "Preserved archival research finding · interpret its confidence and sources",
+    "Original source register": "Registered citation · access and rights vary by record",
+    "Historical source exhibits": "Source-backed exhibit · check what the item establishes",
+    "Scanned book photographs": "Author-attributed photograph · not independently certified identity",
+    "Scanned book OCR leads": "Machine-detected word/page only · NOT identity proof",
+    "Historical record trails": "Published report or document lead · may lack originals",
+    "Existing family profiles": "Existing genealogy record · individual relationships may be unreviewed",
+}
+PRIORITY = {category: index for index, category in enumerate(CATEGORIES)}
+WORD = re.compile(r"[\w]+", re.UNICODE)
+
+
+def _read_records(name: str, root: Path) -> list[dict]:
+    data = json.loads((root / name).read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise ValueError(name + " must be a JSON array")
+    return data
+
+
+def _safe_url(value: str) -> str:
+    """Don't turn untrusted source fields into javascript: or local-file links."""
+    value = str(value or "").strip()
+    parsed = urlsplit(value)
+    return value if parsed.scheme == "https" and parsed.netloc else ""
+
+
+def _links(sources) -> list[dict]:
+    links = []
+    for source in sources or []:
+        if not isinstance(source, dict):
+            continue
+        uri = _safe_url(source.get("url"))
+        if uri and all(item["url"] != uri for item in links):
+            links.append({
+                "title": str(source.get("title") or "View historical source"),
+                "url": uri,
+                "note": str(source.get("finding") or source.get("claim") or
+                            source.get("supports") or source.get("type") or "")[:500],
+            })
+    return links
+
+
+def _item(*, id, category, title, summary="", limits="", people_ids=(), pages=(),
+          route="", sources=(), keywords="", status=None, source_date="") -> dict:
+    if category not in CATEGORIES:
+        raise ValueError("Unknown archive category: " + category)
+    return {
+        "id": str(id),
+        "category": category,
+        "title": str(title),
+        "summary": str(summary or ""),
+        "limits": str(limits or ""),
+        "person_ids": sorted(set(str(p) for p in people_ids if p)),
+        "pages": sorted(set(int(p) for p in pages if 1 <= int(p) <= 305)),
+        "route": str(route or ""),
+        "sources": list(sources),
+        "keywords": str(keywords or ""),
+        "status": str(status or STATUS[category]),
+        "source_date": str(source_date or ""),
+    }
+
+
+def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
+    """All category cards cite a page, original record, or explicit archive claim.
+
+    An OCR hit is intentionally NEVER connected to a canonical person ID.
+    Author-captions attach only via the existing *exact-ID* editorial crosswalk.
+    """
+    records: list[dict] = []
+    crosswalk = _read_records("colony_people_crosswalk.json", root)[0]
+    book_pages = defaultdict(set)
+    for entry in crosswalk["linked_people"]:
+        for page in entry["pdf_pages"]:
+            book_pages[int(page)].add(str(entry["person_id"]))
+
+    photos = _read_records("colony_photo_captions.json", root)[0]["photos"]
+    for photo in photos:
+        page = int(photo["pdf_page"])
+        records.append(_item(
+            id="photo:" + str(page), category="Scanned book photographs",
+            title=photo["title"], summary=photo["caption_summary"],
+            limits="This is the book author's caption or a summary of it, not a separately verified identity. "
+                   "Use the full original page to check the printed caption.",
+            people_ids=book_pages.get(page, ()), pages=[page],
+            route="?page=family-books&book_page=" + str(page),
+            keywords=photo.get("section", ""), source_date=photo.get("capture_date") or "",
+        ))
+
+    nav = _read_records("colony_ocr_navigation_index.json", root)[0]
+    page_terms: dict[int, list[str]] = defaultdict(list)
+    for term, pages in nav["hits"].items():
+        for page in pages:
+            if 1 <= int(page) <= int(nav["scanned_pages"]):
+                page_terms[int(page)].append(str(term))
+    for page in sorted(page_terms):
+        terms = sorted(set(page_terms[page]), key=str.casefold)
+        records.append(_item(
+            id="ocr:" + str(page), category="Scanned book OCR leads",
+            title="The Colony — original PDF page " + str(page),
+            summary="Machine-detected words: " + ", ".join(terms),
+            limits="One-pass OCR word presence only. A matching word does not establish the identity of a person, "
+                   "a relationship, a historical event, or the absence of any other name.",
+            pages=[page], route="?page=family-books&book_page=" + str(page),
+            keywords=" ".join(terms), status=STATUS["Scanned book OCR leads"],
+        ))
+
+    for idx, person in enumerate(crosswalk["unresolved_people"]):
+        pages = [int(v) for v in person.get("pages", [])]
+        records.append(_item(
+            id="unresolved:" + str(idx),
+            category="Open identity questions",
+            title=str(person["name"]), summary=str(person["issue"]),
+            limits="Book-caption candidate; identity and any genealogy connection remain unresolved.",
+            pages=pages,
+            route=("?page=family-books&book_page=" + str(pages[0])) if pages
+                  else "?page=family-books",
+            sources=_links(person.get("independent_sources")),
+            keywords=person.get("disposition", ""),
+        ))
+
+    for row in _read_records("evidence_investigations.json", root):
+        records.append(_item(
+            id="investigation:" + row["id"], category="Historical investigations",
+            title=row["title"], summary=row["summary"],
+            limits="; ".join(row.get("unresolved", [])),
+            people_ids=row.get("person_ids", ()),
+            route="?page=collection&view=workbench&case=" + quote("investigation:" + row["id"]),
+            keywords=" ".join(row.get("known", []) + row.get("next_records", [])),
+            status=str(row.get("status") or STATUS["Historical investigations"]),
+            source_date=row.get("period", ""),
+        ))
+
+    for row in _read_records("phase16_ancestry_bridge_dossiers.json", root):
+        records.append(_item(
+            id="ancestry:" + row["id"], category="Historical investigations",
+            title=row["title"], summary=row["finding"], limits=row["limitations"],
+            people_ids=row.get("person_ids", ()),
+            route="?page=collection&view=workbench&case=" + quote("ancestry:" + row["id"]),
+            sources=_links(row.get("sources")),
+            keywords=" ".join(row.get("named_people", []) + row.get("next_originals", [])),
+            status=row["status"], source_date=row.get("period", ""),
+        ))
+
+    for row in _read_records("phase8_identity_evidence.json", root):
+        pages = [int(p) for p in row.get("book_pages", [])]
+        records.append(_item(
+            id="identity:" + row["id"], category="Open identity questions",
+            title=row["name"], summary=row["known"], limits=row["limits"],
+            people_ids=[row["tree_profile_id"]] if row.get("tree_profile_id") else [],
+            pages=pages,
+            sources=_links(row.get("sources")),
+            route="?page=collection&view=workbench&case=" + quote("identity:" + row["id"]),
+            keywords=" ".join(str(v.get("record", ""))+" "+str(v.get("where", ""))
+                              for v in row.get("next_originals", [])),
+            status=row.get("status"),
+        ))
+
+    for row in _read_records("phase15_relationship_reviews.json", root):
+        category = "Relationship evidence"
+        a, b = row["from_id"], row["to_id"]
+        title_a = people_by_id.get(a, {}).get("full_name", a)
+        title_b = people_by_id.get(b, {}).get("full_name", b)
+        relation = "parent of" if row["kind"] == "parent_child" else row["kind"].replace("_", " ")
+        records.append(_item(
+            id="relationship:" + row["kind"] + ":" + a + ":" + b,
+            category=category, title=str(title_a) + " — " + relation + " — " + str(title_b),
+            summary=row["finding"], limits=row["limitations"],
+            people_ids=[a, b], sources=_links(row["sources"]),
+            route="?page=people&profile=" + quote(a),
+            status=row["status"],
+        ))
+
+    # The large, preserved historical collection is the core documentary archive.
+    # Its confidence statuses must be copied, not recast as confirmed facts.
+    source_register = json.loads(
+        (root / "collections" / "2026-10-14.json").read_text(encoding="utf-8")
+    )
+    source_by_id = {record["Source ID"]: record for record in source_register["sources"]}
+    for row in source_register["findings"]:
+        nav = row["Navigation"]
+        rids = sorted(set(re.findall(r"\\bSRC\\d{3}\\b",
+                                  str(row.get("Supporting sources") or ""))))
+        cited = [source_by_id[sid] for sid in rids if sid in source_by_id]
+        links = _links([{"title": str(record.get("Title") or record["Source ID"]),
+                         "url": record.get("URL", ""),
+                         "claim": record.get("What it supports", "")}
+                        for record in cited])
+        records.append(_item(
+            id="finding:" + row["Research ID"],
+            category="Historical research findings",
+            title=nav.get("title") or row["Research ID"],
+            summary=row.get("Proposed fact or narrative", ""),
+            limits=row.get("Notes about uncertainty", ""),
+            people_ids=nav.get("people_ids", ()),
+            route="?page=collection&finding=" + quote(row["Research ID"]),
+            sources=links,
+            keywords=" ".join(str(t) for t in nav.get("topics", [])) + " " +
+                     str(row.get("Location") or "") + " " +
+                     str(row.get("Exact citation") or ""),
+            status=str(row.get("Confidence") or "Unrated") +
+                   " · " + str(row.get("Human-review status") or "Review status unknown"),
+            source_date=row.get("Date or date range", ""),
+        ))
+    for row in source_register["sources"]:
+        sid = row["Source ID"]
+        records.append(_item(
+            id="register:" + sid, category="Original source register",
+            title=row.get("Title") or sid,
+            summary=row.get("What it supports") or "Registered historical citation",
+            limits="Viewed status: " + str(row.get("Viewed status") or "Unknown") +
+                   ". Source access: " + str(row.get("URL status") or "Unverified") +
+                   ". Rights: " + str(row.get("Rights") or "Check source host before reusing."),
+            route="?page=archive&source=" + quote(sid),
+            sources=_links([{"title": row.get("Title"), "url": row.get("URL"),
+                             "supports": row.get("What it supports", "")}]),
+            keywords=str(row.get("Repository", "")) + " " +
+                     str(row.get("Source type", "")) + " " +
+                     str(row.get("Locator", "")),
+            status=str(row.get("Viewed status") or "Not directly inspected"),
+            source_date=row.get("Access date", ""),
+        ))
+
+    for row in _read_records("evidence_exhibits.json", root):
+        records.append(_item(
+            id="exhibit:" + row["id"], category="Historical source exhibits",
+            title=row["title"], summary=row["claim"], limits=row["limits"],
+            people_ids=row.get("people_ids", ()),
+            sources=_links([row]),
+            route="?page=collection&view=workbench&case=" + quote("exhibit:" + row["id"]),
+            keywords=str(row.get("collection", "")) + " " + str(row.get("type", "")),
+            source_date=row.get("date", ""),
+        ))
+
+    for filename, category in (
+        ("phase10_early_maine_records.json", "Historical record trails"),
+        ("phase12_mercy_henry_sources.json", "Historical record trails"),
+        ("phase11_james_record_chain.json", "Historical record trails"),
+    ):
+        for row in _read_records(filename, root):
+            ident = filename.replace(".json", "").replace("phase", "p")
+            summary = row.get("summary") or row.get("proof") or ""
+            limits = row.get("limits") or row.get("link_status") or row.get("person_status") or ""
+            route = row.get("route") or "?page=stories&story=topsham-beveridge-before-fox-islands"
+            records.append(_item(
+                id=ident + ":" + str(row["id"]), category=category,
+                title=row.get("title") or row.get("record") or row["id"],
+                summary=summary, limits=limits,
+                sources=_links([{"title": row.get("source_title") or "Published historical record",
+                                 "url": row.get("source_url")}]),
+                route=route, source_date=row.get("date") or row.get("year") or "",
+            ))
+
+    for pid, person in people_by_id.items():
+        from family_data import life_span
+        records.append(_item(
+            id="person:" + pid, category="Existing family profiles",
+            title=person.get("full_name") or pid,
+            summary="Recorded lifetime: " + life_span(person) + ". Open this person to examine specific citations and relationships.",
+            limits="An existing tree profile is not itself proof of every listed parent, spouse or child.",
+            people_ids=[pid], route="?page=people&profile=" + quote(pid),
+            keywords=" ".join(map(str, person.get("alternate_names", []) or [])),
+        ))
+
+    ids = [r["id"] for r in records]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate discovery result IDs")
+    return records
+
+
+def search_index(records: list[dict], *, query: str = "", category: str = "",
+                 person_id: str = "", show_ocr: bool = True, book_page: int = 0) -> list[dict]:
+    """Token-AND matching; exact-ID person filter never uses fuzzy name inference."""
+    tokens = [v.casefold() for v in WORD.findall(query or "")]
+    results = []
+    for row in records:
+        if category and row["category"] != category:
+            continue
+        if person_id and person_id not in row["person_ids"]:
+            continue
+        if book_page and book_page not in row["pages"]:
+            continue
+        if not show_ocr and row["category"] == "Scanned book OCR leads":
+            continue
+        haystack = " ".join(str(row.get(k, "")) for k in
+                            ("title", "summary", "limits", "keywords", "source_date")).casefold()
+        if tokens and not all(token in haystack for token in tokens):
+            continue
+        results.append(row)
+    return sorted(results, key=lambda row: (PRIORITY[row["category"]],
+                                         str(row["title"]).casefold(), row["id"]))
+
+
+def overview(records: list[dict]) -> dict:
+    counts = Counter(row["category"] for row in records)
+    return {"total": len(records), "by_category": dict(counts),
+            "unique_book_pages": len({page for row in records
+                if row["category"] == "Scanned book OCR leads" for page in row["pages"]}),
+            "profile_ids_with_photo": len({pid for row in records
+                if row["category"] == "Scanned book photographs" for pid in row["person_ids"]}),
+            "unresolved_book_names": len([r for r in records if r["id"].startswith("unresolved:")])}
+
+
+def case_packet(row: dict) -> str:
+    """Safe, reproducible plain Markdown case notes with links, not copied media."""
+    content = [
+        "# Family history evidence packet: " + row["title"],
+        "",
+        "**Research status:** " + row["status"],
+        "**Catalog category:** " + row["category"],
+        "",
+        "## What the source or research currently says",
+        row["summary"] or "No summary transcribed.",
+        "",
+        "## What is not established",
+        row["limits"] or "Individual original-source verification is still required.",
+        "",
+        "## Original records and links",
+    ]
+    if row["route"]:
+        content.append("- Family archive: " + row["route"])
+    for source in row["sources"]:
+        content.append("- " + source["title"] + ": " + source["url"])
+        if source.get("note"):
+            content.append("  - " + source["note"])
+    for page in row["pages"]:
+        content.append("- *The Colony* PDF page " + str(page) +
+                       ": ?page=family-books&book_page=" + str(page))
+    content.extend([
+        "", "## Research standard",
+        "This is a navigation packet, not an independent verification of parentage, "
+        "marriage, ownership or identity. Inspect original scans before updating "
+        "the family tree. External copyrighted material is linked, not reproduced.",
+    ])
+    return "\n".join(content) + "\n"

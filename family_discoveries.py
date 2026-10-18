@@ -13,9 +13,14 @@ from routing_ui import route_link
 from family_data import relationship_index
 from relationship_evidence import render_relationship_coverage
 from ancestry_bridge_casework import render_ancestry_dossiers
+from family_research_workbench import render_research_workbench
 
 
 def render_family_discoveries(people_by_id: dict) -> None:
+    if str(st.query_params.get("view", "") or "") == "workbench":
+        render_research_workbench(people_by_id)
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
     collection = load_collection()
     st.title("Historical Discoveries")
     st.write(
@@ -26,6 +31,9 @@ def render_family_discoveries(people_by_id: dict) -> None:
         "All historical findings are shown, including possible and disputed connections. "
         "Original sources and evidence explanations remain available with each discovery."
     )
+    route_link("Open the complete Family Research Workbench — search every source, "
+               "original book page and relationship",
+               "?page=collection&view=workbench")
     requested = str(st.query_params.get("finding", "") or "")
     if not requested:
         render_ancestry_dossiers(people_by_id)

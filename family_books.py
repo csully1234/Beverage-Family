@@ -172,6 +172,8 @@ def render_book_reader(book: dict) -> None:
     with st.expander("Large, readable scan of the selected page"):
         render_scanned_page(book, int(selected), width=1150)
     render_book_page_connections(int(selected))
+    route_link("Investigate every indexed source associated with this scanned page",
+               "?page=collection&view=workbench&book_page=" + str(int(selected)))
 
 
 def render_illustrations(book: dict) -> None:
@@ -251,6 +253,8 @@ def render_family_books() -> None:
             render_book_identity_questions()
         with tab_search:
             render_book_ocr_navigation()
+            route_link("Compare names and original sources throughout the entire family archive",
+                       "?page=collection&view=workbench")
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
