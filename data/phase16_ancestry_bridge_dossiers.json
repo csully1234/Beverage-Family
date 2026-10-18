@@ -1,0 +1,156 @@
+[
+  {
+    "id": "matthew-clarissa-cobb-1851-1865",
+    "title": "Captain Matthew Beverage and Clarissa Cobb: a named marriage and family",
+    "period": "1786–1865",
+    "place": "Warren / Hope, Maine",
+    "type": "Kinship explicitly reported in near-contemporary local histories",
+    "status": "published_family_claim_not_original_register",
+    "person_ids": [],
+    "named_people": [
+      "Captain Matthew Beverage of Hope",
+      "Clarissa Cobb",
+      "Captain Barnabas Cobb",
+      "Jerusha Cobb"
+    ],
+    "finding": "Cyrus Eaton's 1851 Annals of Warren lists Clarissa as a daughter of Captain Barnabas in its Cobb family section and says she married Captain Matthew Beverage of Hope. His 1865 Thomaston–Rockland history identifies Captain Barnabas Cobb (born 1760), wife Jerusha Cobb, and daughter Clarissa, with a reported birth of 27 March 1786 and a Matthew Beverage marriage. This is a concrete Cobb family lead that could identify Matthew's in-laws.",
+    "limitations": "Both books were written by Cyrus Eaton and may be based on the same informant or notes; they are NOT two independently attested marriages. No original marriage entry, birth baptism or parent-naming probate examined. Do not automatically create Matthew or Clarissa as verified tree nodes without matching evidence or assign Matthew's parents.",
+    "sources": [
+      {
+        "title": "Cyrus Eaton, Annals of the town of Warren (1851), Cobb family, p. 383",
+        "url": "https://ldsgenealogy.com/ME/books/Annals-of-the-town-of-Warren-with-the-Early-History-of-St-Georges-Broad-Bay-and-the-Neighboring-Settlements-on-the-Waldo-patent-part-39.htm",
+        "locator": "Printed page 383; paragraph of Capt. Barnabas Cobb's children",
+        "claim": "Clarissa identified as Capt. Matthew Beverage's wife"
+      },
+      {
+        "title": "Cyrus Eaton, History of Thomaston, Rockland and South Thomaston, vol. II (1865)",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "locator": "Vol. II, printed Cobb family section around pp. 178–179",
+        "claim": "Capt. Barnabas Cobb's daughter Clarissa with date and Capt. Matthew Beverage marriage"
+      }
+    ],
+    "next_originals": [
+      "Search Hope, Warren and Fox Islands civil/church marriage registers for Clarissa Cobb and Matthew Beverage; record date, officiant, original volume and folio.",
+      "Locate Barnabas Cobb 1807 probate/heir papers and daughter Clarissa's subsequent deeds to confirm identity in original records.",
+      "Trace Matthew's Hope estate and births of any children to establish a defensible connection to Nathaniel, without adding imaginary parent-child lines."
+    ]
+  },
+  {
+    "id": "nathaniel-and-sarah-nephew-niece-1865",
+    "title": "Nathaniel Beverage and Sarah Alexander: two recorded links to Capt. Matthew",
+    "period": "circa 1804–1865",
+    "place": "Fox Islands to Rockland, Maine",
+    "type": "Near-contemporary printed kinship description",
+    "status": "published_kinship_needs_original_bridge",
+    "person_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "sarah_alexander_beverage_1808"
+    ],
+    "named_people": [
+      "Nathaniel Beverage",
+      "Sarah Alexander",
+      "Captain Matthew Beverage"
+    ],
+    "finding": "Eaton's 1865 Thomaston/Rockland account describes Nathaniel Beverage, born about 1804, as a nephew of Capt. Matthew and describes Nathaniel's wife Sarah Alexander as a niece of the same captain. The paragraph names children Henry T., Mercy and Frederic and Nathaniel as a carpenter living in Rockland after Fox Islands.",
+    "limitations": "The 1865 narrator gives no names for either nephew's parent or Sarah's parent. 'Niece of ditto' refers to Captain Matthew, not to Nathaniel. The word nephew does not identify which parental sibling of Matthew was Nathaniel's parent, and relationship could reflect affinal usage. The secondary entry is not two proofs because it names two relatives in one account.",
+    "sources": [
+      {
+        "title": "Cyrus Eaton, History of Thomaston, Rockland, and South Thomaston (1865), vol. II pp.146–147",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "locator": "Vol. II pp. 146–147; BEVERAGE Nathaniel paragraph",
+        "claim": "Reports the uncle-nephew relationship, spouse Sarah Alexander and named children"
+      }
+    ],
+    "next_originals": [
+      "Obtain original Fox Islands or North Haven baptism/birth or 1838 marriage record for Nathaniel Beverage and Sarah Alexander, identifying their parents.",
+      "Locate probate/wills for Captain Matthew Beverage and his documented siblings and Alexander in-laws; trace named nephew/niece as heirs, witnesses or dependents.",
+      "Check contemporary Rockland household censuses, tax rolls and deeds against published 1865 household account; keep Nathaniel Winslow Beverage (born 1776) distinct."
+    ]
+  },
+  {
+    "id": "topsham-maps-1760-1764",
+    "title": "Original Topsham surveys: 1760, June 1763, and April 1764",
+    "period": "circa 1760–1764",
+    "place": "Topsham, Maine",
+    "type": "Cataloged contemporary manuscript maps",
+    "status": "original_maps_cataloged_family_plot_unverified",
+    "person_ids": [
+      "james_beveridge_jr_1724"
+    ],
+    "named_people": [
+      "James Beveridge of the 1763 petition",
+      "Samuel Beveridge in the published settlers' map key"
+    ],
+    "finding": "Maine Historical Society catalogs three genuine Pejepscot manuscript maps: circa 1760 Coll.61 Map 33, a large June 28 1763 survey Coll.61 Map 77 (121 × 146 cm) listing numbered lots and multiple early Topsham settlers, and an April 7 1764 map Coll.61 Map 40. The 1763 survey precedes the December 21 1763 petition printed with James Beveridge's name and supplies dated land-geography context for the 1758 lot-7 research lead.",
+    "limitations": "The 1763 map's PUBLIC CATALOG description lists selected landowners but does not name Beveridge. We have NOT identified a Beveridge label, verified lot 7, inspected a land conveyance, or established that the 1724 Marblehead James was the 1763 petitioner. Map 77's full size may require permissions for a usable high-resolution copy; do not copy restricted archival images to our site.",
+    "sources": [
+      {
+        "title": "Maine Historical Society, manuscript Topsham Lots map, 28 June 1763, Map 77 (MMN 109025)",
+        "url": "https://www.mainememory.net/record/109025",
+        "locator": "Pejepscot Proprietors Coll. 61, Map 77, dated 28 June 1763",
+        "claim": "Confirms the dated and digitized primary Topsham lot-map manuscript exists, not the specific family property"
+      },
+      {
+        "title": "Maine Historical Society, Topsham Map 33, circa 1760 (MMN 11732)",
+        "url": "https://www.mainememory.net/record/11732",
+        "locator": "Pejepscot Coll. 61, Map 33, circa 1760",
+        "claim": "Earlier manuscript geography, named Beveridge land not confirmed"
+      },
+      {
+        "title": "Maine Historical Society, Topsham lots 7 April 1764, Map 40 (MMN 11737)",
+        "url": "https://www.mainememory.net/record/11737",
+        "locator": "Pejepscot Coll. 61, Map 40, 7 April 1764",
+        "claim": "Additional contemporary lots image; no confirmed family holding"
+      },
+      {
+        "title": "Wheeler, History of Brunswick/Topsham (1878), incorporation petition copied from Pejepscot Papers",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-18.htm",
+        "locator": "Printed pp. 180–184; petition 21 Dec 1763; first meeting 9 May 1764",
+        "claim": "The published petition lists James Beveridge, not necessarily the 1724 Marblehead child"
+      }
+    ],
+    "next_originals": [
+      "Inspect the original high-resolution Map 77 labels, numbered lots and map index; record every possible Beveridge/Beviridge/Beverage variant or explicitly record a negative inspection.",
+      "Cross-reference 1758 James 'lot 7' and the 1752 Samuel map-key #3 against original Pejepscot deed/settler ledgers before treating numbers as equivalent parcels.",
+      "Locate the original 21 December 1763 provincial petition (cited as Pejepscot Papers) and Topsham 9 May 1764 town minute book. Check whether names in Wheeler are copied by clerk or actual hand-written signatures."
+    ]
+  },
+  {
+    "id": "nathaniel-parentage-competing-tree",
+    "title": "Who were Nathaniel's parents? Do not confuse an online tree with an original birth",
+    "period": "1803–1865",
+    "place": "Fox Islands / North Haven / Rockland",
+    "type": "Conflicting parentage hypothesis",
+    "status": "uncorroborated_compiled_tree_hypothesis",
+    "person_ids": [
+      "nathaniel_beverage_1804_rockland"
+    ],
+    "named_people": [
+      "Nathaniel Beverage",
+      "John White Beverage",
+      "Rachel Crosby",
+      "Captain Matthew Beverage"
+    ],
+    "finding": "A collaborative compiled New England genealogy assigns the Nathaniel who married Sarah Alexander to parents John White Beverage and Rachel Crosby. The 1865 Eaton history identifies Nathaniel as Captain Matthew's nephew but does not state his parents. These are compatible only if a relevant relationship bridge is documented; treating the web tree as a birth certificate would be circular.",
+    "limitations": "No original baptism, probate or family register naming Nathaniel's birth parents has been inspected. The existence of another Nathaniel Winslow Beverage (1776) increases risk of accidental merging; the exact date 20 Oct 1803 is a derivative lead only.",
+    "sources": [
+      {
+        "title": "Cyrus Eaton, Thomaston/Rockland vol. II (1865), Nathaniel and Capt. Matthew",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "locator": "Vol. II pp.146–147",
+        "claim": "Names Nathaniel as nephew without reporting parents"
+      },
+      {
+        "title": "Contributed New England genealogy, Nathaniel/John White/Rachel Crosby",
+        "url": "https://genealogyofnewengland.com/f_86c9.htm",
+        "locator": "Compiled Nathaniel Beverage family block",
+        "claim": "User-contributed parental hypothesis, not independent evidence"
+      }
+    ],
+    "next_originals": [
+      "Request or locate digitized original North Haven 1803 birth/baptism records and identify Nathaniel's parents from the entry.",
+      "Check John White Beverage and Rachel Crosby land and probate documents for son Nathaniel and connections to Captain Matthew.",
+      "Do not set a parent-child edge without one original contemporary record naming the relevant parent and child, plus identity agreement with Eaton's 1865 man."
+    ]
+  }
+]

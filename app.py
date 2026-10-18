@@ -53,6 +53,7 @@ from validation import validate_site_data
 from family_search import matches as archive_matches, person_match
 from profile_life_stories import render_profile_life_record, render_profile_photo_story
 from relationship_evidence import render_profile_relationship_review, render_relationship_coverage
+from ancestry_bridge_casework import render_person_bridge_casework
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
@@ -966,6 +967,7 @@ def render_person_profile(
     render_book_profile_context(person)
     render_documented_associations(person_id)
     render_profile_identity_evidence(person_id)
+    render_person_bridge_casework(person_id, people_by_id)
     render_profile_review(person_id, load_collection(), people_by_id)
     render_evidence_status(person.get("evidence_status"))
     if person.get("needs_research"):

@@ -44,7 +44,7 @@ class RelationshipEvidenceTests(unittest.TestCase):
         self.assertGreater(self.summary["awaiting_review"], self.summary["reviewed"])
 
     def test_reviewed_claims_exist_in_effective_family_tree(self):
-        self.assertEqual(len(self.lookup), 11)
+        self.assertEqual(len(self.lookup), 12)
         actual_keys = {row["key"] for row in self.edges}
         self.assertTrue(set(self.lookup).issubset(actual_keys),
                         sorted(set(self.lookup) - actual_keys))

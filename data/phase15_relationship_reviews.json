@@ -193,5 +193,20 @@
         "type": "Historical register transcription"
       }
     ]
+  },
+  {
+    "kind": "spouses",
+    "from_id": "nathaniel_beverage_1804_rockland",
+    "to_id": "sarah_alexander_beverage_1808",
+    "status": "published_record",
+    "finding": "Cyrus Eaton's 1865 near-contemporary Thomaston and Rockland history names Nathaniel Beverage (born circa 1804) as a nephew of Capt. Matthew, identifies Sarah Alexander as his wife and as a niece of the same captain, and identifies children Henry T., Mercy and Frederic.",
+    "limitations": "Eaton is a published historical narrative, not the original marriage return; exact wedding date and both spouses' birth parents remain unverified. No parent-child link to Capt. Matthew follows from their nephew/niece labels.",
+    "sources": [
+      {
+        "title": "Cyrus Eaton, History of Thomaston, Rockland and South Thomaston, vol. II pp.146–147 (1865)",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "type": "Near-contemporary printed household and kinship report"
+      }
+    ]
   }
 ]
