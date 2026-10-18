@@ -1,0 +1,245 @@
+[
+  {
+    "pdf_page": 13,
+    "title": "James Beveridge, Marblehead and the Fort Richmond migration",
+    "category": "Early ancestry",
+    "observation": "The family book describes an earlier James coming from Scotland, a son James born in 1724, and a move to Fort Richmond in the 1730s. The author explicitly presents the indentured-servant idea as a probability rather than a documented fact.",
+    "people_ids": [
+      "james_beveridge_sr_1700",
+      "james_beveridge_jr_1724"
+    ],
+    "status": "Published family narrative; immigrant identity and service unverified",
+    "verification": "OCR navigation lead; inspect displayed original scanned page",
+    "why_it_matters": "The immigrant-generation bridge is still missing and this account cannot establish an emigrant's Scottish parents.",
+    "next_originals": [
+      "Original Marblehead birth register for 1724 James and parent names",
+      "Fort Richmond muster/pay rolls naming the elder James, with service dates and identifying features",
+      "Scotland-to-Marblehead migration documents with matching identity"
+    ]
+  },
+  {
+    "pdf_page": 15,
+    "title": "Jean McKinney White, James Jr., and the Fox Islands migration",
+    "category": "Early ancestry",
+    "observation": "The narrative identifies Jean as Nicholas White's widow, names George and John as her children, and describes Thomas as born while James and Jean lived near the Minot stockade. It reports Thomas's move to the Fox Islands about 1771.",
+    "people_ids": [
+      "james_beveridge_jr_1724",
+      "jean_mckinney_white_1725",
+      "thomas_beverage_1750",
+      "major_george_white_1746"
+    ],
+    "status": "Published retrospective account; identities and marriage solemnization not independently proved",
+    "verification": "OCR navigation lead; inspect displayed original scanned page",
+    "why_it_matters": "The 1748/9 Brunswick register has a marriage intention, not independently checked solemnization; George and John's parentage requires original records.",
+    "next_originals": [
+      "Brunswick/Georgetown original marriage return and intention pages",
+      "Probate or military record naming Nicholas White and his surviving family",
+      "Original Fort Richmond/Topsham land or baptism records naming Thomas and his parents"
+    ]
+  },
+  {
+    "pdf_page": 16,
+    "title": "Thomas and Mercy Kent, 1774 Boston, and the Tea Party family story",
+    "category": "Family tradition",
+    "observation": "The original printed page names the reported Boston marriage date of 13 April 1774 and distinguishes the family's Boston Tea Party story from a documented participant listing. The author observes the family story lacks a surviving proof of Thomas's participation.",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754",
+      "john_white_beverage_1774"
+    ],
+    "status": "Page visually inspected: memoir reports family tradition and an unverified ceremony date",
+    "verification": "Visually compared directly with original book page",
+    "why_it_matters": "Preserve the existing Boston Tea Party claim as family tradition without silently upgrading it to an established event or deleting it.",
+    "next_originals": [
+      "Contemporary Boston marriage return for Thomas and Mercy on or around 13 April 1774",
+      "Independent 1773/1774 participant or residence evidence, if surviving",
+      "Earliest dated family account documenting when the Tea Party tradition arose"
+    ]
+  },
+  {
+    "pdf_page": 17,
+    "title": "Two possible Matthews: Abigail Dyer versus Clarissa Cobb",
+    "category": "Identity conflict",
+    "observation": "The book explicitly calls Matthew a younger brother of Thomas, and says Matthew returned to the Fox Islands and married Abigail Dyer in 1801. Separate nineteenth-century published histories name a Capt. Matthew Beverage of Hope as Clarissa Cobb's husband; whether they refer to one person is unresolved.",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754"
+    ],
+    "status": "Page visually inspected; historical identity conflict remains unresolved",
+    "verification": "Visually compared directly with original book page",
+    "why_it_matters": "Avoid merging distinct Matthew Beverage identities or attaching their spouses/parents based only on repeated name.",
+    "next_originals": [
+      "Original 1801 Matthew Beverage–Abigail Dyer marriage return",
+      "Original Capt. Matthew Beverage–Clarissa Cobb marriage record",
+      "Probate, deeds and death records indicating whether the two reported spouses belong to one man or two namesakes"
+    ]
+  },
+  {
+    "pdf_page": 17,
+    "title": "1787 James death and the Fox Islands return",
+    "category": "Early ancestry",
+    "observation": "The narrative reports that Thomas, Mercy, their three eldest children, Thomas's father James and younger brother Matthew returned after the Revolutionary War; the elder James reportedly died on the islands in 1787.",
+    "people_ids": [
+      "james_beveridge_jr_1724",
+      "thomas_beverage_1750",
+      "mercy_kent_1754"
+    ],
+    "status": "Page visually inspected; father-son identification not independently proved by this passage",
+    "verification": "Visually compared directly with original book page",
+    "why_it_matters": "A reported 1787 death is not yet a parent-naming probate or proof that the Fort Richmond and Fox Islands men are the same James.",
+    "next_originals": [
+      "North Haven/Vinalhaven early death record and burial documentation for James in 1787",
+      "Original 1786 sworn testimony and 1781 travel-pass evidence to identify the relevant James",
+      "Probate or land succession naming the decedent's children"
+    ]
+  },
+  {
+    "pdf_page": 18,
+    "title": "1785 town clerk and land-petition narrative",
+    "category": "Original records needed",
+    "observation": "The book reports that Thomas was elected town clerk in March 1785 and that George White acted for the settlers in a petition for clear land title; the page describes related settlement and return to the islands.",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "major_george_white_1746"
+    ],
+    "status": "Published account; original town minutes and signed petition not inspected for this note",
+    "verification": "OCR navigation lead; compare against original book page",
+    "why_it_matters": "This points to a separate post-war petition and local original minute book; do not conflate it with the December 1763 Topsham incorporation petition.",
+    "next_originals": [
+      "March 1785 original Fox Islands meeting minutes and clerk appointment",
+      "Exact dated General Court petition manuscript or filed copy",
+      "Contemporary land grants, including acreage and grantee names"
+    ]
+  },
+  {
+    "pdf_page": 19,
+    "title": "Reproduced settlers' petition facsimile",
+    "category": "Source-image provenance",
+    "observation": "The book contains a photographed or reproduced printed image of a Fox Islands settlers' petition. Its typography is difficult for OCR; any transcription must be checked visually and traced to its originating archive.",
+    "people_ids": [
+      "major_george_white_1746",
+      "thomas_beverage_1750"
+    ],
+    "status": "Facsimile in family book; archival original and date not authenticated",
+    "verification": "OCR unreliable for facsimile; original-page visual inspection required",
+    "why_it_matters": "A picture of a petition in a modern book is not automatically an authenticated original signature or complete historical transcription.",
+    "next_originals": [
+      "Identify repository, collection, folio and date of reproduced petition",
+      "Inspect an archival image at high resolution and compare legible names",
+      "Determine whether labels are original signatures or a copied list"
+    ]
+  },
+  {
+    "pdf_page": 22,
+    "title": "The Grant family's separate Scottish ancestry story",
+    "category": "Collateral ancestry",
+    "observation": "The book recounts a collateral Grant family tradition tracing back to a Peter Grant associated with prisoners after the Battle of Dunbar in 1650 and later work at Lynn Iron Works; this is distinct from verifying a Beveridge immigrant's Scottish origin.",
+    "people_ids": [
+      "amelia_beverage_1833"
+    ],
+    "status": "Published collateral-family narrative; eighteenth- and seventeenth-century identities need original chain",
+    "verification": "OCR navigation lead; compare against original book page",
+    "why_it_matters": "Scottish surname parallels must not be used as proof that the unrelated Beveridge ancestor came from the same military context.",
+    "next_originals": [
+      "Contemporary Lynn Iron Works indenture/ownership and transport records",
+      "Original Grant birth/marriage/probate chain to Amelia Beverage",
+      "Distinguish Peter Grant prison-tradition documentation from later compiled ancestry"
+    ]
+  },
+  {
+    "pdf_page": 288,
+    "title": "Appendix: Orris, Benjamin and Amelia family groups",
+    "category": "Published genealogy appendix",
+    "observation": "The printed appendix lists Orris Lyford Beverage, his parents Benjamin Crabtree Beverage and Amelia Beverage, and marriages to Ella May Thompson and Rose Emma Pierson.",
+    "people_ids": [
+      "orris_beverage_1860",
+      "benjamin_beverage_1822",
+      "amelia_beverage_1833",
+      "rose_pierson_1866"
+    ],
+    "status": "Published 2016 genealogical compilation; specific family links should be compared with original vital registers",
+    "verification": "OCR navigation lead; verify each entry against original scan",
+    "why_it_matters": "Genealogical tables are valuable name and date finding aids, but they are not original certificates.",
+    "next_originals": [
+      "Original 1860 Orris birth/baptism record",
+      "Original 1854 Benjamin–Amelia marriage entry",
+      "Original 1887 Orris–Rose marriage return"
+    ]
+  },
+  {
+    "pdf_page": 291,
+    "title": "Appendix: Thomas, Mercy and their early Fox Islands children",
+    "category": "Published genealogy appendix",
+    "observation": "The appendix identifies Thomas Beverage and Mercy Kent and lists early children including John White Beverage, Nathaniel Winslow Beverage and Benjamin Kent Beverage, with published family-group dates.",
+    "people_ids": [
+      "thomas_beverage_1750",
+      "mercy_kent_1754",
+      "john_white_beverage_1774"
+    ],
+    "status": "Published compiled family group; date and child identity still require record-by-record scrutiny",
+    "verification": "OCR navigation lead; verify each entry against original scan",
+    "why_it_matters": "Especially distinguish Nathaniel Winslow Beverage born in the 1770s from Nathaniel of Rockland born around 1804.",
+    "next_originals": [
+      "Original 1774 Thomas–Mercy Boston marriage return",
+      "Fox Islands early birth or baptism register for each listed child",
+      "Contemporary probate naming Thomas/Mercy's adult descendants"
+    ]
+  },
+  {
+    "pdf_page": 296,
+    "title": "Appendix: Benjamin and Amelia's children; Rose and Orris",
+    "category": "Published genealogy appendix",
+    "observation": "The appendix lists two marriages for Benjamin (including first spouse Sarah Loveland), his children with Amelia, and Orris's marriages including Rose Emma Pierson.",
+    "people_ids": [
+      "benjamin_beverage_1822",
+      "amelia_beverage_1833",
+      "orris_beverage_1860",
+      "rose_pierson_1866"
+    ],
+    "status": "Appendix scan previously examined; independent civil marriage returns still needed for disputed specifics",
+    "verification": "Published appendix visually examined as a name/relationship lead",
+    "why_it_matters": "Prevents overlooking an earlier marriage or treating an appendix date as an automatically certified vital record.",
+    "next_originals": [
+      "Benjamin–Sarah W. Loveland 1848 original marriage record",
+      "Benjamin–Amelia 1854 original marriage return",
+      "Family probate and 1860/1870 original households for spouses and children"
+    ]
+  },
+  {
+    "pdf_page": 297,
+    "title": "Appendix: Olive's partnership and Lyford's household",
+    "category": "Published genealogy appendix",
+    "observation": "The appendix explicitly describes Florence Merrill Budlong as Olive Amelia Beveridge's lifetime partner and records Lyford Pierson Beveridge with Ruth Bingham Reynolds. That is a published family report, not evidence of a legal marriage for Olive.",
+    "people_ids": [
+      "olive_beveridge_1890",
+      "lyford_beveridge_brother_lowell",
+      "orris_beverage_1860"
+    ],
+    "status": "Published family-attributed details; partnership does not create an automatic legal spouse edge",
+    "verification": "Published appendix visually examined as a contextual lead",
+    "why_it_matters": "Preserves the documented Olive–Florence life association without falsifying a legal spouse record and isolates Lyford's proposed marriage.",
+    "next_originals": [
+      "Original 1925 Lyford–Ruth civil marriage certificate",
+      "Original records or correspondence for the Olive–Florence household",
+      "Original parent-naming evidence for Lyford separately from sibling obituary"
+    ]
+  },
+  {
+    "pdf_page": 298,
+    "title": "Appendix: Arnold, Lowell Sr. and Eliot spouses",
+    "category": "Published genealogy appendix",
+    "observation": "The appendix prints family groups for Arnold Pierson Beveridge and Marion Priscilla Delano, Lowell Pierson Beveridge and Ida Louise Gattrell, and Eliot Pierson Beveridge and Elizabeth Dorothy Gattrell.",
+    "people_ids": [
+      "lowell_beveridge_1905",
+      "ida_louisa_gattrell_beveridge_1901"
+    ],
+    "status": "Author-compiled family-group claims; do not conflate Lowell Sr. with author Lowell Jr.",
+    "verification": "Published appendix visually examined as a contextual lead",
+    "why_it_matters": "Original marriage and birth evidence should establish these spouses independently; a shared surname Gattrell does not itself prove parents or relationship.",
+    "next_originals": [
+      "Original 1926 Lowell–Ida, 1926 Arnold–Marion and 1934 Eliot–Dorothy civil marriage returns",
+      "Lowell Sr. 1905 original birth record and parents",
+      "Harvard contemporary records and the 1991 diocesan obituary to triangulate the family group"
+    ]
+  }
+]
