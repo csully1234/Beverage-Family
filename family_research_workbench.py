@@ -236,7 +236,7 @@ def render_research_workbench(people: dict) -> None:
         else:
             st.warning("The case link is not in the currently indexed case register.")
     tabs = st.tabs(["Explore the archive", "Case files", "Cross-search book pages",
-                    "Unresolved research priorities"])
+                    "Unresolved research priorities", "Original book research notebook"])
     with tabs[0]:
         if requested:
             st.info("A specific case was requested. Open the Case files tab to inspect "
@@ -248,3 +248,8 @@ def render_research_workbench(people: dict) -> None:
         _book_cross_search()
     with tabs[3]:
         _priorities(records)
+    with tabs[4]:
+        from colony_source_review import render_expanded_ocr_finder, render_source_review_notebook
+        render_expanded_ocr_finder()
+        st.divider()
+        render_source_review_notebook(people)

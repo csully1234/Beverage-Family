@@ -172,6 +172,8 @@ def render_book_reader(book: dict) -> None:
     with st.expander("Large, readable scan of the selected page"):
         render_scanned_page(book, int(selected), width=1150)
     render_book_page_connections(int(selected))
+    from colony_source_review import render_page_review_notes
+    render_page_review_notes(int(selected))
     route_link("Investigate every indexed source associated with this scanned page",
                "?page=collection&view=workbench&book_page=" + str(int(selected)))
 
@@ -235,10 +237,10 @@ def render_family_books() -> None:
                        "?page=people&profile=" + str(book["author_person_id"]))
         st.write(book.get("subtitle", ""))
         st.caption("Reproduction for this family website authorized by the user; original © notice remains and the source-page demo overlay was removed from the clean web edition.")
-        tab_read, tab_photos, tab_chapters, tab_people, tab_search = st.tabs([
+        tab_read, tab_photos, tab_chapters, tab_people, tab_search, tab_review = st.tabs([
             "Read Entire Book", "Photographs & Illustrations",
             "Chapters & Historical Research", "People & identity questions",
-            "Search scanned pages"
+            "Search scanned pages", "Source review & expanded OCR"
         ])
         with tab_read:
             render_book_reader(book)
@@ -255,6 +257,11 @@ def render_family_books() -> None:
             render_book_ocr_navigation()
             route_link("Compare names and original sources throughout the entire family archive",
                        "?page=collection&view=workbench")
+        with tab_review:
+            from colony_source_review import render_source_review_notebook, render_expanded_ocr_finder
+            render_expanded_ocr_finder()
+            st.divider()
+            render_source_review_notebook()
         route_link("Explore all family history in the timeline", "?page=timeline")
 
 
