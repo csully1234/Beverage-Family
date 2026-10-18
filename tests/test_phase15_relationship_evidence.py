@@ -97,7 +97,7 @@ class RelationshipEvidenceTests(unittest.TestCase):
         unknown = next(row for row in self.edges if row["status"] == "not_reviewed")
         self.assertFalse(unknown["sources"])
         self.assertIn("not yet audited", STATUS_NAMES[unknown["status"]])
-        self.assertIn("not", unknown["limitations"].lower())
+        self.assertIn("without any source specifically proving", unknown["limitations"].lower())
         self.assertEqual(len(for_person("lyford_beveridge_brother_lowell", self.edges)),
                          sum("lyford_beveridge_brother_lowell" in
                              (row["from_id"], row["to_id"]) for row in self.edges))
