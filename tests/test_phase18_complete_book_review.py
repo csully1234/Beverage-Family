@@ -45,7 +45,7 @@ class CompleteBookEvidenceReviewTests(unittest.TestCase):
         r=matthews[0]
         self.assertIn("Abigail Dyer",r["observation"])
         self.assertIn("Clarissa Cobb",r["observation"])
-        self.assertIn("two men",r["observation"])
+        self.assertIn("whether they refer to one person is unresolved",r["observation"])
         self.assertIn("Original 1801", " ".join(r["next_originals"]))
         self.assertIn("original book page",r["verification"].lower())
         # A case entry must not silently create either identity in our tree.
