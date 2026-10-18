@@ -300,7 +300,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
 
 
 def search_index(records: list[dict], *, query: str = "", category: str = "",
-                 person_id: str = "", show_ocr: bool = True) -> list[dict]:
+                 person_id: str = "", show_ocr: bool = True, book_page: int = 0) -> list[dict]:
     """Token-AND matching; exact-ID person filter never uses fuzzy name inference."""
     tokens = [v.casefold() for v in WORD.findall(query or "")]
     results = []
@@ -308,6 +308,8 @@ def search_index(records: list[dict], *, query: str = "", category: str = "",
         if category and row["category"] != category:
             continue
         if person_id and person_id not in row["person_ids"]:
+            continue
+        if book_page and book_page not in row["pages"]:
             continue
         if not show_ocr and row["category"] == "Scanned book OCR leads":
             continue
