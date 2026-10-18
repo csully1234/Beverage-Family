@@ -93,9 +93,19 @@ def _browse(records: list[dict], people: dict) -> None:
                               key="workbench_person")
     ocr = st.checkbox("Include tentative OCR page matches", value=True,
                       key="workbench_include_ocr")
+    try:
+        source_page = int(st.query_params.get("book_page", "") or 0)
+    except (ValueError, TypeError):
+        source_page = 0
+    if not 1 <= source_page <= 305:
+        source_page = 0
     found = search_index(records, query=q,
                          category=category if category != "All collections" else "",
-                         person_id=person, show_ocr=ocr)
+                         person_id=person, show_ocr=ocr, book_page=source_page)
+    if source_page:
+        st.caption("Original scanned source page " + str(source_page) +
+                   " · these are documentary associations, not verified identities")
+        route_link("Return to the full archive search", "?page=collection&view=workbench")
     st.caption(f"{len(found)} matching indexed items · all results reachable")
     if person:
         route_link("Open " + people[person].get("full_name", person) + "'s profile",
@@ -217,6 +227,14 @@ def render_research_workbench(people: dict) -> None:
     b.metric("Book pages with OCR clues", info["unique_book_pages"])
     c.metric("Unresolved book identities", info["unresolved_book_names"])
     requested = str(st.query_params.get("case", "") or "")
+    if requested:
+        selected_case = next((r for r in records
+                              if r["id"] == requested and r["category"] in CASES), None)
+        if selected_case:
+            st.subheader("Requested historical case file")
+            _card(selected_case, expanded_sources=True)
+        else:
+            st.warning("The case link is not in the currently indexed case register.")
     tabs = st.tabs(["Explore the archive", "Case files", "Cross-search book pages",
                     "Unresolved research priorities"])
     with tabs[0]:
