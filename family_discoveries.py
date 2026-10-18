@@ -12,6 +12,7 @@ from research_collection_ui import load_collection, render_finding
 from routing_ui import route_link
 from family_data import relationship_index
 from relationship_evidence import render_relationship_coverage
+from ancestry_bridge_casework import render_ancestry_dossiers
 
 
 def render_family_discoveries(people_by_id: dict) -> None:
@@ -27,6 +28,7 @@ def render_family_discoveries(people_by_id: dict) -> None:
     )
     requested = str(st.query_params.get("finding", "") or "")
     if not requested:
+        render_ancestry_dossiers(people_by_id)
         with st.expander("How are family relationships documented? · Complete connection audit"):
             render_relationship_coverage(people_by_id,
                                          relationship_index(people_by_id.values()))
