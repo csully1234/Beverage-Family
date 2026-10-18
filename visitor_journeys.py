@@ -30,7 +30,7 @@ JOURNEYS = {
     "Stories & Discoveries": [("Complete timeline", "?page=timeline"),
                               ("Family books", "?page=family-books"),
                               ("Original photographs", "?page=media")],
-    "Historical Discoveries": [("Original sources", "?page=archive"),
+    "Historical Discoveries": [("Research every historical source", "?page=collection&view=workbench"),
                                ("Family timeline", "?page=timeline"),
                                ("Family stories", "?page=stories")],
     "Historical Places": [("Historical map", "?page=map"),
