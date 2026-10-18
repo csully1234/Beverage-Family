@@ -11,6 +11,7 @@ from family_research_index import (CATEGORIES, build_index, case_packet, overvie
                                    search_index)
 from family_research_workbench import pages_for_terms
 from relationship_evidence import audited_edges
+from research_collection import CollectionIndex
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -41,7 +42,7 @@ class UnifiedArchiveWorkbenchTests(unittest.TestCase):
                 self.assertTrue(entry["route"].startswith("?page="))
                 route = parse_qs(urlsplit(entry["route"]).query)
                 self.assertIn(route["page"][0], {
-                    "people", "timeline", "collection", "family-books", "stories"
+                    "people", "timeline", "collection", "family-books", "stories", "archive"
                 })
                 self.assertTrue(all(pid in self.people for pid in entry["person_ids"]))
                 self.assertTrue(all(1 <= page <= 305 for page in entry["pages"]))
@@ -130,6 +131,25 @@ class UnifiedArchiveWorkbenchTests(unittest.TestCase):
         self.assertIn("unverified", case["limits"].lower()) if "unverified" in case["limits"].lower() else self.assertIn("not", case["limits"].lower())
         self.assertTrue(case["sources"])
         self.assertEqual(len(self.lookup), len(self.index))
+
+    def test_full_research_collection_findings_and_sources_retain_original_grades(self):
+        collection = CollectionIndex.load()
+        findings = [x for x in self.index if x["category"] == "Historical research findings"]
+        sources = [x for x in self.index if x["category"] == "Original source register"]
+        self.assertEqual(len(findings), len(collection.findings))
+        self.assertEqual(len(sources), len(collection.sources))
+        for rid, raw in collection.findings.items():
+            item = self.lookup["finding:" + rid]
+            self.assertIn(raw["Confidence"], item["status"])
+            self.assertEqual(item["limits"], raw["Notes about uncertainty"])
+            self.assertEqual(item["person_ids"], sorted(set(raw["Navigation"]["people_ids"])))
+            self.assertEqual(item["route"], "?page=collection&finding=" + rid)
+        for sid, raw in collection.sources.items():
+            entry = self.lookup["register:" + sid]
+            self.assertEqual(entry["route"], "?page=archive&source=" + sid)
+            self.assertIn(raw.get("Viewed status") or "Unknown", entry["limits"])
+        self.assertTrue(any("Possible lead" in x["status"] for x in findings))
+        self.assertTrue(any("Conflict" in x["status"] for x in findings))
 
     def test_workbench_does_not_mutate_genealogy_or_reviewed_edges(self):
         originals = relationship_index(self.data["people"])
