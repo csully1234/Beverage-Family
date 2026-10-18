@@ -86,6 +86,9 @@ def render_page_review_notes(page: int) -> None:
                "genealogy and corroboration still needed. They do not update the family tree.")
     for record in records:
         _show_case(record)
+    if page == 17:
+        from matthew_reconciliation import render_matthew_case_from_book
+        render_matthew_case_from_book(page)
 
 def render_source_review_notebook(people_by_id: Mapping | None = None) -> None:
     st.subheader("Source review notebook")
