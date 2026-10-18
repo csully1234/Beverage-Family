@@ -1,7 +1,7 @@
 [
   {
     "id": "matthew-clarissa-cobb-1851-1865",
-    "title": "Captain Matthew Beverage and Clarissa Cobb: a named marriage and family",
+    "title": "Captain Matthew's two recorded marriages: Abigail Dyer first, Clarissa Cobb second",
     "period": "1786–1865",
     "place": "Warren / Hope, Maine",
     "type": "Kinship explicitly reported in near-contemporary local histories",
@@ -13,8 +13,8 @@
       "Captain Barnabas Cobb",
       "Jerusha Cobb"
     ],
-    "finding": "Cyrus Eaton's 1851 Annals of Warren lists Clarissa as a daughter of Captain Barnabas in its Cobb family section and says she married Captain Matthew Beverage of Hope. His 1865 Thomaston–Rockland history identifies Captain Barnabas Cobb (born 1760), wife Jerusha Cobb, and daughter Clarissa, with a reported birth of 27 March 1786 and a Matthew Beverage marriage. This is a concrete Cobb family lead that could identify Matthew's in-laws.",
-    "limitations": "Both books were written by Cyrus Eaton and may be based on the same informant or notes; they are NOT two independently attested marriages. No original marriage entry, birth baptism or parent-naming probate examined. Do not automatically create Matthew or Clarissa as verified tree nodes without matching evidence or assign Matthew's parents.",
+    "finding": "The 1865 Eaton Thomaston/Rockland family register explicitly lists Capt. Matthew Beverage of Hope as husband of Abigail Dyer FIRST and Clarissa Cobb SECOND, with five named children by each wife. Eaton's earlier 1851 Annals of Warren independently within his own writings identifies Clarissa as Capt. Barnabas Cobb's daughter and Capt. Matthew's wife. The Colony (2016) reports a Matthew/Abigail wedding in 1801. These written accounts are consistent on the first-wife name; the published second-wife entry is not a contradictory Matthew identity by itself.",
+    "limitations": "Eaton's 1851 and 1865 writings are two accounts by the SAME AUTHOR, not independent original marriage returns. The 2016 family book does not independently identify the earlier 1785 minor or prove that Capt. Matthew of Hope was Thomas Beverage's brother. Eaton's list gives wives in order but no original marriage dates, complete parentage or authenticated estate. Do not create a new parental edge from this printed household alone.",
     "sources": [
       {
         "title": "Cyrus Eaton, Annals of the town of Warren (1851), Cobb family, p. 383",
@@ -27,12 +27,18 @@
         "url": "https://archive.org/details/historyofthomast02eato",
         "locator": "Vol. II, printed Cobb family section around pp. 178–179",
         "claim": "Capt. Barnabas Cobb's daughter Clarissa with date and Capt. Matthew Beverage marriage"
+      },
+      {
+        "title": "Eaton, Thomaston/Rockland 1865, vol. II, p.146, Capt. Matthew 1st and 2d wife explicitly",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "locator": "Vol II printed p.146 family group",
+        "claim": "Capt. Matthew married Abigail Dyer first and Clarissa Cobb second; five named children by each"
       }
     ],
     "next_originals": [
-      "Search Hope, Warren and Fox Islands civil/church marriage registers for Clarissa Cobb and Matthew Beverage; record date, officiant, original volume and folio.",
-      "Locate Barnabas Cobb 1807 probate/heir papers and daughter Clarissa's subsequent deeds to confirm identity in original records.",
-      "Trace Matthew's Hope estate and births of any children to establish a defensible connection to Nathaniel, without adding imaginary parent-child lines."
+      "Original Matthew–Abigail Dyer marriage return around 1801 and Matthew–Clarissa Cobb subsequent return.",
+      "Search Waldo County probate index and estate volumes 1826–1892 for Capt. Matthew of Hope, including original heirs and widows.",
+      "Prove or disprove whether the 1785 minor and Thomas's 'younger brother Matthew' are the same Capt. Matthew in Eaton."
     ]
   },
   {
