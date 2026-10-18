@@ -1,0 +1,62 @@
+name: Build searchable Colony page index (research branch only)
+
+on:
+  push:
+    branches:
+      - research/phase18-colony-complete-book-transcription-audit-2026-10-18
+    paths:
+      - .github/workflows/build-colony-ocr-index.yml
+      - scripts/build_colony_ocr_index.py
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.repository == 'csully1234/Beverage-Family'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out only the named research branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/phase18-colony-complete-book-transcription-audit-2026-10-18
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install controlled OCR dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng
+          python -m pip install --disable-pip-version-check PyMuPDF==1.26.4
+      - name: Generate only term-to-original-page navigation metadata
+        run: python scripts/build_colony_ocr_index.py
+      - name: Check generated index contains no full source transcripts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/colony_expanded_ocr_index.json")
+          obj=json.loads(p.read_text())[0]
+          assert obj['scanned_pages']==305
+          assert not obj['contains_full_original_text']
+          assert obj['no_identifying_person_ids']
+          assert obj['vocabulary_size']>=100
+          assert obj['pdf_sha256']=="2eaefbb79aaa7039aab1fb7d493ec5c44792f7a88d32f005b1e67cff2db576ac"
+          assert len(obj['page_word_counts'])==305
+          assert 'terms' in obj
+          print("Checked: navigation-only index, no raw OCR or tree changes")
+          PY
+      - name: Commit navigation index to the same research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/colony_expanded_ocr_index.json
+          if git diff --cached --quiet; then
+            echo "Existing index already matches source, nothing to commit"
+          else
+            git commit -m "Generate 305-page machine-only Colony navigation vocabulary"
+            git push origin HEAD:refs/heads/research/phase18-colony-complete-book-transcription-audit-2026-10-18
+          fi
