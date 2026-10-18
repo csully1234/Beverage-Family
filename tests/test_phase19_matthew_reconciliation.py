@@ -50,7 +50,7 @@ class MatthewFirstSecondWivesTests(unittest.TestCase):
         self.assertEqual(book["book_page"],17)
         self.assertIn("compatible",book["claim"])
         self.assertIn("not uniquely identify",book["proof"])
-        self.assertIn("original marriage",self.by_id["eaton-1865-two-marriages"]["next_originals"][0].lower())
+        self.assertIn("marriage entry",self.by_id["eaton-1865-two-marriages"]["next_originals"][0].lower())
 
     def test_previous_book_and_casework_now_agree_without_proving_same_person(self):
         page=[x for x in reviews_for_book_page(17) if "first and second wives" in x["title"]]
