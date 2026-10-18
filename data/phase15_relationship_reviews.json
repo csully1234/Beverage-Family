@@ -1,0 +1,197 @@
+[
+  {
+    "kind": "parent_child",
+    "from_id": "lowell_beveridge_1905",
+    "to_id": "lowell_pierson_beveridge_jr_1930",
+    "status": "corroborated_publication",
+    "finding": "The 1960 Harvard alumnus questionnaire identifies Lowell Pierson Jr. as son of Lowell P. Beveridge and Ida Louisa Gattrell; the 1991 Episcopal memorial independently identifies two sons.",
+    "limitations": "Printed self-report and memorial; original birth certificate has not been inspected.",
+    "sources": [
+      {
+        "title": "Harvard College Class of 1925, Thirty-fifth Anniversary Report (1960), p. 20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Contemporary alumnus family report"
+      },
+      {
+        "title": "Episcopal Diocese of Virginia 1991 memorial of Lowell Sr.",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "type": "Contemporary institutional obituary"
+      }
+    ]
+  },
+  {
+    "kind": "parent_child",
+    "from_id": "ida_louisa_gattrell_beveridge_1901",
+    "to_id": "lowell_pierson_beveridge_jr_1930",
+    "status": "corroborated_publication",
+    "finding": "The Harvard 1960 alumni family register identifies Ida Louisa Gattrell as mother of Lowell Pierson Beveridge Jr.; later diocesan memorial confirms she was wife of Lowell Sr. and mother of his two sons.",
+    "limitations": "No original 1930 birth return reviewed; father's self-report is contemporary but not a civil certificate.",
+    "sources": [
+      {
+        "title": "Harvard class of 1925, 1960 family report, p.20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Contemporary alumni record"
+      },
+      {
+        "title": "Episcopal 1991 diocesan memorial",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "type": "Institutional obituary"
+      }
+    ]
+  },
+  {
+    "kind": "parent_child",
+    "from_id": "lowell_beveridge_1905",
+    "to_id": "thomas_gattrell_beveridge_1938",
+    "status": "corroborated_publication",
+    "finding": "Harvard's 1960 family register names Thomas Gattrell as son of Lowell Sr.; diocesan 1991 memorial independently identifies Thomas as a surviving son.",
+    "limitations": "Original 1938 birth certificate not examined.",
+    "sources": [
+      {
+        "title": "Harvard class of 1925, 1960 family register, p.20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Contemporary alumni record"
+      },
+      {
+        "title": "Episcopal diocesan memorial, 1991",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "type": "Institutional obituary"
+      }
+    ]
+  },
+  {
+    "kind": "parent_child",
+    "from_id": "ida_louisa_gattrell_beveridge_1901",
+    "to_id": "thomas_gattrell_beveridge_1938",
+    "status": "corroborated_publication",
+    "finding": "A 1960 self-reported Harvard family register names Ida Louisa Gattrell as Thomas's mother in Lowell P. Beveridge Sr.'s household.",
+    "limitations": "Original 1938 birth certificate not inspected; this is one contemporary household source plus later obituary context.",
+    "sources": [
+      {
+        "title": "Harvard class of 1925, Thirty-fifth Anniversary Report, p.20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Contemporary self-reported family register"
+      }
+    ]
+  },
+  {
+    "kind": "spouses",
+    "from_id": "lowell_beveridge_1905",
+    "to_id": "ida_louisa_gattrell_beveridge_1901",
+    "status": "corroborated_publication",
+    "finding": "Lowell's Harvard 1960 family questionnaire reports marriage to Ida Louisa Gattrell on December 25, 1926; a 1991 diocesan memorial separately names her as his surviving wife.",
+    "limitations": "No original marriage register inspected; the 1960 date is self-reported.",
+    "sources": [
+      {
+        "title": "Harvard 1960 alumnus family report, p.20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Contemporary family self-report"
+      },
+      {
+        "title": "Episcopal diocesan memorial, 1991",
+        "url": "https://episcopalvirginia.org/wp-content/uploads/2024/04/1991-Diocese_Journal_searchable.pdf",
+        "type": "Institutional obituary"
+      }
+    ]
+  },
+  {
+    "kind": "spouses",
+    "from_id": "lowell_pierson_beveridge_jr_1930",
+    "to_id": "hortense_tee_sie_beveridge_1923",
+    "status": "contemporary_report",
+    "finding": "Harvard's 1960 family report lists Lowell Jr. and Hortense Sie as spouses; the later family book and recorded oral history describe their marriage.",
+    "limitations": "Original marriage certificate not checked, and the family account's narrative about land or household conflict is not evidence of a legal claim.",
+    "sources": [
+      {
+        "title": "Harvard 1960 family report, p.20",
+        "url": "https://ldsgenealogy.com/MA/books/Harvard-class-of-1925-thirty-fifth-anniversary-report-part-2.htm",
+        "type": "Published contemporary family record"
+      }
+    ]
+  },
+  {
+    "kind": "siblings",
+    "from_id": "lyford_beveridge_brother_lowell",
+    "to_id": "lowell_beveridge_1905",
+    "status": "contemporary_report",
+    "finding": "The 1991 contemporary Washington Post obituary calls Lyford Beveridge the brother of Lowell Beveridge Sr.",
+    "limitations": "Neither parent's identity is established by this obituary. Do not attach Lyford to Orris/Rose without original birth or probate evidence.",
+    "sources": [
+      {
+        "title": "The Rev. Lowell Beveridge, Professor of Music, Dies (Washington Post, 1991)",
+        "url": "https://www.washingtonpost.com/archive/local/1991/06/20/the-rev-lowell-beveridge-professor-of-music-dies/b9e898f1-334c-44d7-bbdd-66354b1bbe83/",
+        "type": "Contemporary newspaper obituary"
+      }
+    ]
+  },
+  {
+    "kind": "spouses",
+    "from_id": "mercy_beveridge_henry_1753",
+    "to_id": "henry_henry_1750",
+    "status": "published_record",
+    "finding": "A 1930 transcription of a Topsham gravestone identifies Mercy [Beveridge] as wife of James Henry; Wheeler's 1878 history suggests their 1776 marriage, but calls the wedding probable.",
+    "limitations": "Grave transcription establishes reported spouse identity, not exact 1776 ceremony; original marriage return and Mercy's parents remain unknown. The identifier henry_henry_1750 is a retained legacy software ID, not a historical name.",
+    "sources": [
+      {
+        "title": "Vital Records of Topsham, vol. II, Henry entries (1930)",
+        "url": "https://archive.org/stream/vitalrecordsofto00unse/vitalrecordsofto00unse_djvu.txt",
+        "type": "Published gravestone transcription"
+      },
+      {
+        "title": "Wheeler 1878 Topsham history, Henry family sketch",
+        "url": "https://ldsgenealogy.com/ME/books/History-of-Brunswick-Topsham-and-Harpswell-Maine-including-the-ancient-territory-known-as-Pejepscot-part-79.htm",
+        "type": "Historical family sketch"
+      }
+    ]
+  },
+  {
+    "kind": "parent_child",
+    "from_id": "james_beveridge_sr_1700",
+    "to_id": "james_beveridge_jr_1724",
+    "status": "identity_needs_verification",
+    "finding": "The published Marblehead town birth entry names a child James born 27 August 1724 to parents James and Sarah. The family's James Sr./Jr. profile pairing is plausible but separate original register/identity cross-check is needed.",
+    "limitations": "The child's later identity with the James in Georgetown/Topsham is not established; neither the father's Scotland origin nor all namesakes are proven from this entry.",
+    "sources": [
+      {
+        "title": "Marblehead vital records, births (published town transcription)",
+        "url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+        "type": "Published town birth transcription"
+      }
+    ]
+  },
+  {
+    "kind": "parent_child",
+    "from_id": "sarah_bennett_1705",
+    "to_id": "james_beveridge_jr_1724",
+    "status": "identity_needs_verification",
+    "finding": "A published 1723 Marblehead town marriage entry names James Beveridge and Sarah Bennett. A 1724 birth names the mother Sarah but not her maiden surname; the exact mother identification must be traced in the original registers.",
+    "limitations": "Sarah Bennett as mother of this recorded child is a contextual inference, not a uniquely named mother on the birth entry; Sarah Holman appears in a later James marriage report.",
+    "sources": [
+      {
+        "title": "Marblehead published marriage volume (1723 James and Sarah Bennett)",
+        "url": "https://archive.org/details/cu31924092204308/page/n37/mode/1up",
+        "type": "Published town marriage transcription"
+      },
+      {
+        "title": "Marblehead published birth volume (1724 child James)",
+        "url": "https://ldsgenealogy.com/MA/books/Vital-records-of-Marblehead-Massachusetts-to-the-end-of-the-year-1849-part-4.htm",
+        "type": "Published town birth transcription"
+      }
+    ]
+  },
+  {
+    "kind": "spouses",
+    "from_id": "james_beveridge_jr_1724",
+    "to_id": "jean_mckinney_white_1725",
+    "status": "identity_needs_verification",
+    "finding": "Brunswick's February 1748/9 entry names James Beveridge and Jean White of Georgetown as parties declaring marriage intention. It does not document solemnization or unique identities of the parties.",
+    "limitations": "The online profile attaches a spouse relationship on legacy evidence, but an intention is not a marriage certificate; also unknown whether either participant corresponds to the named 1724 Marblehead-born person or her named McKinney family.",
+    "sources": [
+      {
+        "title": "Brunswick 1740–1769 marriage intentions, published transcription",
+        "url": "https://archives.mainegenealogy.net/2007/01/brunswick-marriage-intentions-1740-1769.html",
+        "type": "Historical register transcription"
+      }
+    ]
+  }
+]
