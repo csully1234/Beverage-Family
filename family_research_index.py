@@ -18,6 +18,8 @@ CATEGORIES = (
     "Open identity questions",
     "Relationship evidence",
     "Historical investigations",
+    "Historical research findings",
+    "Original source register",
     "Historical source exhibits",
     "Scanned book photographs",
     "Scanned book OCR leads",
@@ -28,6 +30,8 @@ STATUS = {
     "Open identity questions": "Unresolved identity · review original evidence",
     "Relationship evidence": "Reviewed relationship claim · check the stated source limitation",
     "Historical investigations": "Research hypothesis or attributed historical account",
+    "Historical research findings": "Preserved archival research finding · interpret its confidence and sources",
+    "Original source register": "Registered citation · access and rights vary by record",
     "Historical source exhibits": "Source-backed exhibit · check what the item establishes",
     "Scanned book photographs": "Author-attributed photograph · not independently certified identity",
     "Scanned book OCR leads": "Machine-detected word/page only · NOT identity proof",
@@ -196,6 +200,56 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             people_ids=[a, b], sources=_links(row["sources"]),
             route="?page=people&profile=" + quote(a),
             status=row["status"],
+        ))
+
+    # The large, preserved historical collection is the core documentary archive.
+    # Its confidence statuses must be copied, not recast as confirmed facts.
+    source_register = json.loads(
+        (root / "collections" / "2026-10-14.json").read_text(encoding="utf-8")
+    )
+    source_by_id = {record["Source ID"]: record for record in source_register["sources"]}
+    for row in source_register["findings"]:
+        nav = row["Navigation"]
+        rids = sorted(set(re.findall(r"\\bSRC\\d{3}\\b",
+                                  str(row.get("Supporting sources") or ""))))
+        cited = [source_by_id[sid] for sid in rids if sid in source_by_id]
+        links = _links([{"title": str(record.get("Title") or record["Source ID"]),
+                         "url": record.get("URL", ""),
+                         "claim": record.get("What it supports", "")}
+                        for record in cited])
+        records.append(_item(
+            id="finding:" + row["Research ID"],
+            category="Historical research findings",
+            title=nav.get("title") or row["Research ID"],
+            summary=row.get("Proposed fact or narrative", ""),
+            limits=row.get("Notes about uncertainty", ""),
+            people_ids=nav.get("people_ids", ()),
+            route="?page=collection&finding=" + quote(row["Research ID"]),
+            sources=links,
+            keywords=" ".join(str(t) for t in nav.get("topics", [])) + " " +
+                     str(row.get("Location") or "") + " " +
+                     str(row.get("Exact citation") or ""),
+            status=str(row.get("Confidence") or "Unrated") +
+                   " · " + str(row.get("Human-review status") or "Review status unknown"),
+            source_date=row.get("Date or date range", ""),
+        ))
+    for row in source_register["sources"]:
+        sid = row["Source ID"]
+        records.append(_item(
+            id="register:" + sid, category="Original source register",
+            title=row.get("Title") or sid,
+            summary=row.get("What it supports") or "Registered historical citation",
+            limits="Viewed status: " + str(row.get("Viewed status") or "Unknown") +
+                   ". Source access: " + str(row.get("URL status") or "Unverified") +
+                   ". Rights: " + str(row.get("Rights") or "Check source host before reusing."),
+            route="?page=archive&source=" + quote(sid),
+            sources=_links([{"title": row.get("Title"), "url": row.get("URL"),
+                             "supports": row.get("What it supports", "")}]),
+            keywords=str(row.get("Repository", "")) + " " +
+                     str(row.get("Source type", "")) + " " +
+                     str(row.get("Locator", "")),
+            status=str(row.get("Viewed status") or "Not directly inspected"),
+            source_date=row.get("Access date", ""),
         ))
 
     for row in _read_records("evidence_exhibits.json", root):
