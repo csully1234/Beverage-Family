@@ -151,6 +151,20 @@ class UnifiedArchiveWorkbenchTests(unittest.TestCase):
         self.assertTrue(any("Possible lead" in x["status"] for x in findings))
         self.assertTrue(any("Conflict" in x["status"] for x in findings))
 
+    def test_book_page_deep_links_show_only_that_pages_documentary_associations(self):
+        page = 49
+        linked = search_index(self.index, book_page=page)
+        self.assertTrue(linked)
+        self.assertTrue(all(page in row["pages"] for row in linked))
+        ids = {row["id"] for row in linked}
+        self.assertIn("photo:49", ids)
+        self.assertIn("ocr:49", ids)
+        self.assertTrue(any(item.startswith("unresolved:") for item in ids))
+        self.assertEqual(search_index(self.index, book_page=306), [])
+        # An actual author-attributed photo can have exact-ID links; OCR must not.
+        self.assertTrue(self.lookup["photo:49"]["person_ids"])
+        self.assertEqual(self.lookup["ocr:49"]["person_ids"], [])
+
     def test_workbench_does_not_mutate_genealogy_or_reviewed_edges(self):
         originals = relationship_index(self.data["people"])
         before = audited_edges(self.people, originals)
