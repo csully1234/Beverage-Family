@@ -172,6 +172,8 @@ def render_book_reader(book: dict) -> None:
     with st.expander("Large, readable scan of the selected page"):
         render_scanned_page(book, int(selected), width=1150)
     render_book_page_connections(int(selected))
+    route_link("Investigate every indexed source associated with this scanned page",
+               "?page=collection&view=workbench&book_page=" + str(int(selected)))
 
 
 def render_illustrations(book: dict) -> None:
