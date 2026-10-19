@@ -1,0 +1,480 @@
+[
+  {
+    "id": "waldo-probate-matthew-1837",
+    "title": "Estate of Matthew Beverage/Beveridge of Hope — Waldo County probate packet",
+    "as_of": "2026-10-19",
+    "place": "Hope, Waldo County, Maine",
+    "record_group": "ONE probate case / court source family with multiple documents; individual scans are not independent witnesses",
+    "source_received": "Images supplied by the user from a probate office; filing number and archival scan order not supplied",
+    "record_authentication": "Scanned historical court papers, preliminarily reviewed; not represented as certified copies",
+    "licensing": "Redistribution of office-supplied scans has not been confirmed. Image files intentionally withheld from public GitHub repository until clearance.",
+    "scan_count": 31,
+    "unique_scan_count": 30,
+    "docket_number": null,
+    "original_record_volume_page": null,
+    "crosswalk_note": "Review page numbers and filenames assigned by the researcher; not probate docket sequence or original pagination. SHA-256 hashes identify scan content. Review page 26 is bit-identical to review page 9.",
+    "claims": [
+      {
+        "id": "death-1837",
+        "label": "Clarissa reports Matthew's death",
+        "date": "1837-02-14",
+        "status": "direct statement in an original-era probate petition",
+        "review_pages": [
+          10
+        ],
+        "finding": "Clarissa Beveridge of Hope identifies Matthew Beveridge as deceased and reports his death as 14 February 1837.",
+        "limits": "A petitioner's reported death date is evidence of the date stated, not a separately inspected civil death certificate."
+      },
+      {
+        "id": "letters-1837",
+        "label": "Administration petition and letters",
+        "date": "1837-03-06",
+        "status": "court proceeding in reviewed scan",
+        "review_pages": [
+          10,
+          28
+        ],
+        "finding": "Clarissa petitions in Waldo County to administer Matthew's estate; the papers record the administration process.",
+        "limits": "The copy's original docket number, volume and complete procedural order remain unknown."
+      },
+      {
+        "id": "widow-clarissa",
+        "label": "Clarissa named as widow",
+        "date": "1837",
+        "status": "explicit court widow description",
+        "review_pages": [
+          7,
+          18,
+          24
+        ],
+        "finding": "The probate dower documents identify Clarissa Beverage/Beveridge as Matthew's widow.",
+        "limits": "The probate documents do not supply her maiden surname Cobb, a date of marriage, or biological maternity for specific heirs."
+      },
+      {
+        "id": "heirs-1837",
+        "label": "Eight named heirs of Matthew",
+        "date": "1837-09",
+        "status": "named estate heirs in contemporary petition",
+        "review_pages": [
+          31,
+          9
+        ],
+        "finding": "Ezekiel G. Beverage identifies Achsa Heald, James M. Beverage, Polly Tucker, Thomas J. Beverage, Sarah A. Beverage, George W. Beverage and Martha Beverage as fellow heirs of Matthew.",
+        "limits": "Heir status alone does not certify an individual's birth date or mother. Several middle initials/letters require confirmation from a clearer official transcript. This is not a verified genealogical graph update."
+      },
+      {
+        "id": "polly-agent",
+        "label": "Polly Tucker's heir interest",
+        "date": "1837",
+        "status": "court agency document",
+        "review_pages": [
+          14
+        ],
+        "finding": "An instrument identifies Polly Tucker of Lowell, Massachusetts, as an heir of Matthew and names Nathan Allen of Hope as her agent.",
+        "limits": "The record does not independently give Polly's birth surname, maiden-name history, or prove the identity match with Eaton's Mary Miles Beverage Tucker."
+      },
+      {
+        "id": "land-and-dower",
+        "label": "Land partition and widow's dower",
+        "date": "1837",
+        "status": "estate land proceedings",
+        "review_pages": [
+          2,
+          9,
+          18,
+          24,
+          31
+        ],
+        "finding": "The court papers concern appraisal, land division and the widow's dower share associated with Hope.",
+        "limits": "No modern parcel location, map boundary, precise acreage or deed chain has been independently verified."
+      }
+    ],
+    "heirs": [
+      {
+        "name": "Ezekiel G. Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "petitioner and heir",
+        "published_alignment": "Eaton reports Ezekiel G. D. Beverage; exact middle initials need checking"
+      },
+      {
+        "name": "Achsa Heald",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports Achsa Beverage Heald"
+      },
+      {
+        "name": "James M. Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports James Madison Beverage"
+      },
+      {
+        "name": "Polly Tucker",
+        "review_pages": [
+          31,
+          14
+        ],
+        "evidence": "heir and subject of agency instrument",
+        "published_alignment": "Eaton reports Mary Miles Beverage Tucker; matching identity plausible, not independently certified"
+      },
+      {
+        "name": "Thomas J. Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports Thomas Jefferson Beverage"
+      },
+      {
+        "name": "Sarah A. Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports Sarah Abby Beverage"
+      },
+      {
+        "name": "George W. Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports George W. Beverage"
+      },
+      {
+        "name": "Martha Beverage",
+        "review_pages": [
+          31
+        ],
+        "evidence": "heir named in petition",
+        "published_alignment": "Eaton reports Martha W. Beverage Allen; verify name and marriage chronology"
+      }
+    ],
+    "unresolved": [
+      "Obtain original Waldo probate docket number, bound record volume and pages, and file-order explanation.",
+      "Confirm redistribution permissions for office-supplied image copies before adding them to the public repository.",
+      "Check uncertain names against highest-resolution official record, including Ezekiel's middle initials and Martha's surname.",
+      "Find original marriage returns to identify Abigail Dyer and Clarissa Cobb independently of Eaton.",
+      "Identify Matthew's own parents and test, without assuming, a connection to the 1785 Fox Islands minor or Capt. Thomas Beverage.",
+      "Do not infer births, biological parents, or land boundaries from legal heir status alone."
+    ],
+    "scans": [
+      {
+        "review_page": 1,
+        "label": "Court warrant to examine or inventory estate property",
+        "provisional_type": "inventory_warrant",
+        "original_zip_filename": "hg khgvcghjvljh",
+        "normalized_filename": "images/01_inventory_warrant.png",
+        "sha256": "949893a9a99b7de3ef80cb08b0cb751284d84a42611b9249662db64105ae1260",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 2,
+        "label": "Appraisers' report about real property",
+        "provisional_type": "land_appraisers_report",
+        "original_zip_filename": "kjsadkjhaskjdjha",
+        "normalized_filename": "images/02_land_appraisers_report.png",
+        "sha256": "3f38ef57d9f8520ea5c4850eb83a0c3b7dea5f2297b4c40b6889e1c67b8b1473",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 3,
+        "label": "handwritten ledger slips",
+        "provisional_type": "handwritten_ledger_slips",
+        "original_zip_filename": "jaskfjdbaskjfba",
+        "normalized_filename": "images/03_handwritten_ledger_slips.png",
+        "sha256": "f6f9412923de5294c78b9868642a4a1b072a10029e856fa0c7208764d12cba3e",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 4,
+        "label": "Administrator's first account",
+        "provisional_type": "administrators_first_account",
+        "original_zip_filename": "ksabfkajbfkjadbfkj",
+        "normalized_filename": "images/04_administrators_first_account.png",
+        "sha256": "79b362f5d3af62862a8212f60adbbbeb5034887de4b5df233b9e23ab6d7410fe",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 5,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "ckhckhgcgcg",
+        "normalized_filename": "images/05_document_verso.png",
+        "sha256": "31580a5cf0bb8e740b42716c26e04bbc91c780ee472e05c05edef120d00f82e7",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 6,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "hgckhgcvkhgc",
+        "normalized_filename": "images/06_document_verso.png",
+        "sha256": "f0be3f261c2aedc7cb5b343d91aa25dd4d2baf9bd9ddc17a4ae1dd5339011934",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 7,
+        "label": "Petition concerning widow's dower",
+        "provisional_type": "widow_dower_petition",
+        "original_zip_filename": "jahsbdkahbfka",
+        "normalized_filename": "images/07_widow_dower_petition.png",
+        "sha256": "c8b3301b3fcd7ac7553128d979e70cf003486827acc795908f49c21d4024f3c2",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 8,
+        "label": "Administrator-related public notice",
+        "provisional_type": "administrator_notice",
+        "original_zip_filename": "kdsbcksdbvk",
+        "normalized_filename": "images/08_administrator_notice.png",
+        "sha256": "c6b1ac598dd2e5fbd066f6934feedb38f9d211e26f486f10abc917f72094cdee",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 9,
+        "label": "Court land-division material naming heirs",
+        "provisional_type": "heirs_and_land_partition_order",
+        "original_zip_filename": "jkdsbjkdsbvkjsbdkvjbsd",
+        "normalized_filename": "images/09_heirs_and_land_partition_order.png",
+        "sha256": "35338f82d26d43dfe44b943ee69efcc213f6161aeb26d4c7dd6d95ad1916d373",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 10,
+        "label": "Clarissa's request to administer Matthew's estate",
+        "provisional_type": "clarissa_administration_petition",
+        "original_zip_filename": "JGVLJGV",
+        "normalized_filename": "images/10_clarissa_administration_petition.png",
+        "sha256": "8f6c9e947924d321392ca38d6db0d4e43f3a141a2362f5cfc278ccaeb40d385c",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 11,
+        "label": "Continuation of inventory or court accounting",
+        "provisional_type": "inventory_continuation",
+        "original_zip_filename": "ghvkhgvckhgvkghv",
+        "normalized_filename": "images/11_inventory_continuation.png",
+        "sha256": "3bf52f655ef01b0a417e0e89cbf6d81ed63cc3e4d358b21c8d6a5a2329f89943",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 12,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "ghckhgckhgckhgvc",
+        "normalized_filename": "images/12_document_verso.png",
+        "sha256": "7a004c8535fca5649b6f5203d8156ec46a0344b3ce29e9d8c8b69f0e848ef429",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 13,
+        "label": "probate document cover",
+        "provisional_type": "probate_document_cover",
+        "original_zip_filename": "habsckhbakjsbckajs",
+        "normalized_filename": "images/13_probate_document_cover.png",
+        "sha256": "1f1393c5a2529737d336c0160509fe9038f5308015e5e01d4e24df6b6409b148",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 14,
+        "label": "Agency instrument relating to Polly Tucker of Lowell",
+        "provisional_type": "polly_tucker_agent",
+        "original_zip_filename": "hgvkjhvkjhv",
+        "normalized_filename": "images/14_polly_tucker_agent.png",
+        "sha256": "6ad9f77888a3d71ae45952f09352059b104234b5f288379ef73fc94e0a2d7218",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 15,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "bkfabfkjabkjfa",
+        "normalized_filename": "images/15_document_verso.png",
+        "sha256": "6aae1942635f335c46094dcfef1c6e2a454110ee4006cd046b3fe2b5a8a37ebd",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 16,
+        "label": "handwritten ledger slips",
+        "provisional_type": "handwritten_ledger_slips",
+        "original_zip_filename": "asbfkajbfkjasbf",
+        "normalized_filename": "images/16_handwritten_ledger_slips.png",
+        "sha256": "c5764d9cc4b74062148f5b870fc7c62327a4723582e4f4f085b20ad82ec00451",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 17,
+        "label": "Estate inventory",
+        "provisional_type": "estate_inventory",
+        "original_zip_filename": "hckhgvckhgvkhgvhk",
+        "normalized_filename": "images/17_estate_inventory.png",
+        "sha256": "25edb183b077eff576283654f2188502fa4b45da9db878dc9954e1866e845253",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 18,
+        "label": "Warrant to appraisers concerning widow's dower",
+        "provisional_type": "appraisers_dower_warrant",
+        "original_zip_filename": "habksfbkajbfksjaskbf",
+        "normalized_filename": "images/18_appraisers_dower_warrant.png",
+        "sha256": "b8dabc77f861114220a4a25381dd4d24d3794aa37100cd121ac72c5a3b51dcd8",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 19,
+        "label": "handwritten ledger slips",
+        "provisional_type": "handwritten_ledger_slips",
+        "original_zip_filename": "baksbkajbskjasbcka",
+        "normalized_filename": "images/19_handwritten_ledger_slips.png",
+        "sha256": "aae97fddb67e0f83d2a1df5a63d230c7b8b9e9f418cc7aed4d11cc67664063dc",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 20,
+        "label": "Petition concerning sale of estate personal property",
+        "provisional_type": "personal_property_sale_petition",
+        "original_zip_filename": "hasbfhkdabzvkhbdask",
+        "normalized_filename": "images/20_personal_property_sale_petition.png",
+        "sha256": "d1cba95aed9050e482ca8fe95058fcc38e9bd5c5ece48c4dcdd15141707d119e",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 21,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "habdkhabkdjaj",
+        "normalized_filename": "images/21_document_verso.png",
+        "sha256": "68c69656b70828a8bd8d697855c2a4b47f422c23b1e8b8741a227854060e53eb",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 22,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "blob_https___www.maineprobate",
+        "normalized_filename": "images/22_document_verso.png",
+        "sha256": "6b0d9ab694ef3578e28696288dc84f4ac1ee85bc8eabc3c894417fe510873df3",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 23,
+        "label": "Widow's allowance",
+        "provisional_type": "widow_allowance",
+        "original_zip_filename": "ghghccghgh",
+        "normalized_filename": "images/23_widow_allowance.png",
+        "sha256": "2c9b86c59d452e7586081fac824a7516e1478ecf35ad0e18df50a09a3024daa1",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 24,
+        "label": "Court action on widow's dower",
+        "provisional_type": "widow_dower_decree",
+        "original_zip_filename": "ahbsckhbakscjba",
+        "normalized_filename": "images/24_widow_dower_decree.png",
+        "sha256": "9f79f62a5286f757fbc1cb63f361042bd5588c82edd9ca54a2cf0023e5bd29a9",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 25,
+        "label": "probate document cover",
+        "provisional_type": "probate_document_cover",
+        "original_zip_filename": "habdfkhbdskfhbsd",
+        "normalized_filename": "images/25_probate_document_cover.png",
+        "sha256": "3618fcff38441f9672df6a998df0a3f277593583fc8692abc2fcf2b6031921b8",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 26,
+        "label": "duplicate of 09",
+        "provisional_type": "duplicate_of_09",
+        "original_zip_filename": "hbsahcbdahjsbhsd",
+        "normalized_filename": "images/26_duplicate_of_09.png",
+        "sha256": "35338f82d26d43dfe44b943ee69efcc213f6161aeb26d4c7dd6d95ad1916d373",
+        "duplicate_of": 9,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 27,
+        "label": "handwritten ledger slip",
+        "provisional_type": "handwritten_ledger_slip",
+        "original_zip_filename": "sbdkasbfkjbaskjf",
+        "normalized_filename": "images/27_handwritten_ledger_slip.png",
+        "sha256": "b0901f61077882031b5d05dc57ee344bbc82d9946d7c45f8b8b644a85ead0ee6",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 28,
+        "label": "Administration bond",
+        "provisional_type": "administration_bond",
+        "original_zip_filename": "ghvlhgvlgvl",
+        "normalized_filename": "images/28_administration_bond.png",
+        "sha256": "1a161bbadfdae431217265ea874ca123c6361faddd0bd244b6e66521324f0cf1",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 29,
+        "label": "handwritten ledger slips",
+        "provisional_type": "handwritten_ledger_slips",
+        "original_zip_filename": "kjsabfkjbakjsfbka",
+        "normalized_filename": "images/29_handwritten_ledger_slips.png",
+        "sha256": "6b50c98341fe28df9274d01aa197e704681d62fd07929c682429bda71979644d",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 30,
+        "label": "document verso",
+        "provisional_type": "document_verso",
+        "original_zip_filename": "jckbaskdjfbsdkj",
+        "normalized_filename": "images/30_document_verso.png",
+        "sha256": "206b38eed9140eb4695e65dee7d549c57900fc6775d267c4523945898fb98187",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      },
+      {
+        "review_page": 31,
+        "label": "Petition by Ezekiel identifying other heirs",
+        "provisional_type": "ezekiel_heir_petition",
+        "original_zip_filename": "sahbfkjabkjdfbajkd",
+        "normalized_filename": "images/31_ezekiel_heir_petition.png",
+        "sha256": "652de70d46d32ac80aefd2c884d331bc4a01d72b299c5b432035f6652060bc9f",
+        "duplicate_of": null,
+        "reproduction_status": "not_published_pending_permission"
+      }
+    ]
+  }
+]
