@@ -71,6 +71,12 @@ def render_matthew_reconciliation(*, compact: bool=False) -> None:
                "?page=family-books&book_page=17")
     route_link("New: dated Hope Town Clerk evidence, 1811–1827, and the 1820 census lead",
                "?page=collection&view=hope-matthew")
+    st.info("New original-era evidence: a Waldo County probate packet for Matthew "
+            "has now been obtained. It names Clarissa as widow and eight heirs. "
+            "The earlier 2026 research notes below describe what was missing "
+            "BEFORE this packet arrived; read the updated court evidence first.")
+    route_link("Inspect the 1837 Waldo probate heirs, documentary claims and 31-scan index",
+               "?page=collection&view=waldo-probate")
     groups=marriage_groups(family)
     columns=st.columns(2)
     for col,group in zip(columns,groups):
@@ -86,7 +92,7 @@ def render_matthew_reconciliation(*, compact: bool=False) -> None:
                 st.write("• "+name+(f" (born around {life})" if life else ""))
                 if child.get("information"):
                     st.caption(str(child["information"]))
-    with st.expander("Source comparison and missing probate or marriage originals",
+    with st.expander("Source history and remaining original marriage/identity evidence",
                      expanded=not compact):
         for case in cases:
             _source_note(case,compact=compact)
