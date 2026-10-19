@@ -111,6 +111,8 @@ def render_hope_civic_timeline(*, compact:bool=False) -> None:
             st.write(target["instructions"])
             route_link("Open the documented archive or finding aid",target["url"])
 
+    route_link("Compare 1790–1820 Barrettstown and Hope census records",
+               "?page=collection&view=hope-census")
     route_link("Compare Capt. Matthew's two published marriages and ten children",
                "?page=collection&view=matthew")
     st.caption("No Matthew person profile, legal spouse relationship, "

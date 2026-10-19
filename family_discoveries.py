@@ -16,6 +16,7 @@ from ancestry_bridge_casework import render_ancestry_dossiers
 from family_research_workbench import render_research_workbench
 from matthew_reconciliation import render_matthew_reconciliation
 from hope_matthew_civic import render_hope_civic_timeline
+from hope_census_records import render_hope_census_trail
 from waldo_probate import render_waldo_probate
 from family_origins_casework import render_family_origins
 from family_exhibits import render_person_exhibit
@@ -46,6 +47,10 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
     if str(st.query_params.get("view", "") or "") == "waldo-probate":
         st.title("Waldo County probate — Matthew Beverage estate papers")
         render_waldo_probate()
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
+    if str(st.query_params.get("view", "") or "") == "hope-census":
+        render_hope_census_trail()
         route_link("← Return to Historical Discoveries", "?page=collection")
         return
     if str(st.query_params.get("view", "") or "") == "hope-matthew":
@@ -81,13 +86,15 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
     if not requested:
         route_link("EXPLORE A LIFE: Matthew's family, court records and historical timeline",
                    "?page=collection&view=person-exhibit&person=matthew_beveridge_hope_1837")
+        route_link("HOPE CENSUS TRAIL: 1790–1820 Barrettstown and Hope original schedules",
+                   "?page=collection&view=hope-census")
         route_link("FOX ISLANDS ORIGINALS: 1785 survey plans and exact 1786 petition/report archival locators",
                    "?page=collection&view=fox-originals")
         route_link("NEW RESEARCH: Clarissa Cobb's 1786 Carver birth family and Matthew's unresolved origins",
                    "?page=collection&view=family-origins")
         route_link("NEW: Matthew's 1837 Waldo probate — Clarissa, eight heirs and court papers",
                    "?page=collection&view=waldo-probate")
-        route_link("New original-era town record trail: Matthew Beveridge, Hope Town Clerk (1811–1827)",
+        route_link("Early Hope town clerk records: Matthew Beveridge, 1806–1827",
                    "?page=collection&view=hope-matthew")
         route_link("Research breakthrough: Matthew's FIRST wife Abigail Dyer and SECOND wife Clarissa Cobb in the 1865 source",
                    "?page=collection&view=matthew")

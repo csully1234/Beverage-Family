@@ -1,0 +1,89 @@
+[
+  {
+    "id": "phase32-census-1790-to-1820-hope",
+    "reviewed": "2026-10-19",
+    "research_question": "When does an individually identifiable Matthew Beveridge first appear as a census household head in the plantation that became Hope, and do 1790/1800 name absences constrain continuity from Fox Islands?",
+    "summary": "Published Barrettstown 1790 and 1800 household-head lists lack the surname, but cannot show whether Matthew was a resident within another household. The 1810 original census Hope roll and p. 136 locator are verified without a person-level reading. The independent 1820 transcription explicitly names Mathew Beveridge as a household head on Hope sheet 276; original tally has not been inspected. The 1806 clerk evidence remains a distinct, more immediate civic source.",
+    "headcount_caution": "Four catalog records are four census years, not four independent proofs that the same person lived at Hope. Enumerators named household heads, not all family members. No identity equivalence between the 1785 Fox Islands minor, the 1806 clerk, the 1820 household head, and the 1837 decedent has been established by these sources alone.",
+    "cases": [
+      {
+        "id": "hope-census-1790-barrettstown",
+        "year": 1790,
+        "place": "Barrettstown Plantation, Hancock County, Massachusetts (District of Maine)",
+        "archive_locator": "1790 first federal census, Barrettstown Plantation, Hancock County, printed Heads of Families: Maine p. 26; NARA M637 source family",
+        "status": "surname_absent_from_published_head_transcription",
+        "source_kind": "published_transcription_of_original_census",
+        "named_matthew_head": false,
+        "head_claim": "The complete published list of named household heads for 1790 Barrettstown does not show a Beverage or Beveridge household head.",
+        "limitations": "Only heads are named; an unnamed child, young adult, worker or other household member could be present. The 1790 plantation also covered land later separated as Appleton. The original census schedule has not been newly read from a manuscript image in this review.",
+        "source_title": "Maine Genealogy Archives: 1790 Census, Barrettstown Plantation, Hancock County, citing 1908 federal print",
+        "source_url": "https://archives.mainegenealogy.net/2006/10/1790-census-barrettstown-plantation.html",
+        "original_image_checked": false,
+        "named_head_source_checked": true,
+        "priority": 3,
+        "original_request": "Compare the full original 1790 Barrettstown population schedule and nearby towns, including spelling variants. Do not treat a missing household head as a recorded absence of Matthew himself."
+      },
+      {
+        "id": "hope-census-1800-barrettstown",
+        "year": 1800,
+        "place": "Barrettstown Plantation, Lincoln County, Massachusetts (District of Maine)",
+        "archive_locator": "Second U.S. Census, 1800; NARA M32, roll 6; manuscript pp. 544–548 (published full named-head transcription)",
+        "status": "surname_absent_from_published_head_transcription",
+        "source_kind": "published_transcription_of_original_census",
+        "named_matthew_head": false,
+        "head_claim": "The published named-head list for every Barrettstown page 544–548 contains no Beverage/Beveridge head under either spelling. Charles Whitney is named on p. 544 and Levi Whitney on p. 547; neither is established as the probate's tentatively read Lucy Whitney.",
+        "limitations": "This is a negative name search in a third-party transcript, NOT proof that Matthew was not living in town. It does not name most household members, may contain transcription/spelling errors, and may not cover persons in neighboring Appleton Plantation or surrounding towns. The original image was not independently read.",
+        "source_title": "Maine Genealogy Archives: 1800 Census, Barrettstown Plantation, Lincoln County, NARA M32 roll 6, pp. 544–548",
+        "source_url": "https://archives.mainegenealogy.net/2008/05/1800-census-barrettstown-plantation.html",
+        "original_image_checked": false,
+        "named_head_source_checked": true,
+        "priority": 1,
+        "original_request": "Open original NARA M32 roll 6 pp. 544–548 and inspect every listed B-surname household and adjacent enumerations. Search Appleton Plantation and nearby Camden/Union separately before drawing a residence conclusion."
+      },
+      {
+        "id": "hope-census-1810-hope",
+        "year": 1810,
+        "place": "Hope, Lincoln County, Massachusetts (District of Maine)",
+        "archive_locator": "Third U.S. Census, 1810; NARA M252, roll 12; Hope pages begin at manuscript p. 136; full roll Internet Archive item populationschedu0012unix",
+        "status": "original_reel_located_not_person_verified",
+        "source_kind": "digitized_original_microfilm_roll_not_person_read",
+        "named_matthew_head": null,
+        "head_claim": "The original 1810 Hope census reel and starting page are positively identified, but no Matthew/Beveridge household entry or demographic tally was verified through a readable original census image.",
+        "limitations": "The man's 1806–1807 and 1810 civic records show a same-named Hope clerk; they do not establish an 1810 census household head or a match with the 1837 probate decedent. Census images are available in a 1,090-page scanned microfilm roll, but this investigation has not read the relevant handwritten Hope entries.",
+        "source_title": "NARA M252 roll 12, digitized at Internet Archive: 1810 U.S. census, Hope begins p. 136",
+        "source_url": "https://archive.org/details/populationschedu0012unix",
+        "finding_aid_url": "https://www.mainegenealogy.net/census_guide.asp?censusyear=1810&county=lincoln",
+        "original_image_checked": false,
+        "named_head_source_checked": false,
+        "priority": 1,
+        "original_request": "Open the public Internet Archive M252-12 roll and inspect manuscript p. 136 forward through all Hope households. Capture Matthew/Mathew Beverage/Beveridge head-of-household line, exact manuscript page and all ten sex/age columns only if legible. Do not assign unnamed household members to named children."
+      },
+      {
+        "id": "hope-census-1820-hope",
+        "year": 1820,
+        "place": "Hope, Lincoln County, Maine",
+        "archive_locator": "Fourth U.S. Census, 1820; NARA M33, roll 36; Hope pp. 275–278; Mathew Beveridge reported on manuscript sheet 276; enumerator Thurston Whiting",
+        "status": "name_in_published_head_index_original_not_checked",
+        "source_kind": "independent_published_household_head_transcription",
+        "named_matthew_head": true,
+        "head_claim": "An independent published 2019 transcription identifies 'Mathew Beveridge' as a head of household in Hope, on schedule sheet 276.",
+        "limitations": "The transcriber reports a name and sheet only. The original schedule and male/female age tallies have not been visually checked; the row does not identify any wife, child, parent, birth location or identity with Matthew of Hope's 1837 probate without corroborating evidence.",
+        "source_title": "Heirlooms Reunited: Hope, Maine in the 1820 Census, 1 Sep 2019, head-of-household index, sheet 276",
+        "source_url": "https://www.heirloomsreunited.com/2019/09/hope-maine-in-1820-census-then-in.html",
+        "finding_aid_url": "https://www.mainegenealogy.net/census_guide.asp?censusyear=1820&county=lincoln",
+        "original_image_checked": false,
+        "named_head_source_checked": true,
+        "priority": 1,
+        "original_request": "Read original NARA M33 roll 36 sheet 276; record every census age/sex/agriculture/manufacture column, exact manuscript spelling and adjacent household heads. Contrast with Hope clerk source and 1837 estate dates. Never backfill specific child or wife names from anonymous tick marks."
+      }
+    ],
+    "research_boundaries": [
+      "Do not create a Matthew person profile or an earlier life event from a negative name search.",
+      "Do not infer that the 1800 Barrettstown census proves Matthew lived somewhere else.",
+      "Do not count Charles/Levi Whitney as evidence for tentative probate seller Lucy Whitney.",
+      "The 1790 plantation included future Appleton, while 1800 Barrettstown excludes separately enumerated Appleton; geography and jurisdiction differ.",
+      "Do not invent an 1810 Matthew census household or 1820 age tallies.",
+      "Do not add parents, spouses, children, marriages, property ownership or verified home address."
+    ]
+  }
+]
