@@ -86,7 +86,13 @@ def render_hope_civic_timeline(*, compact:bool=False) -> None:
             st.caption(jurisdiction["limit"])
             route_link("Read Maine's legislative county history (PDF, p. 57)",
                        jurisdiction["url"])
-    with st.expander("How to check the original manuscript, census and probate",expanded=not compact):
+    st.info("Update: a probate-office-supplied packet for Matthew of Hope "
+             "has since been received (October 2026). Earlier retrieval statuses "
+             "below are preserved as the original Phase 20 research snapshot; "
+             "the court evidence now has its own review.")
+    route_link("Review Matthew's Waldo County probate and eight named heirs",
+               "?page=collection&view=waldo-probate")
+    with st.expander("How to check the town manuscript and census (historical research snapshot)",expanded=not compact):
         for target in data["original_retrieval"]:
             st.markdown("**"+target["target"]+"**")
             st.caption("Status: "+target["status"].replace("_"," "))
