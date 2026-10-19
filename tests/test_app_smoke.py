@@ -432,6 +432,47 @@ class StreamlitSmokeTests(unittest.TestCase):
                                 for x in getattr(profile, kind))
         self.assertIn("Clarissa", profile_text)
 
+    def test_family_museum_exhibit_person_deep_link_and_sections(self):
+        pid = "matthew_beveridge_hope_1837"
+        app = self.logged_in_app(page="collection", view="person-exhibit", person=pid)
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertEqual(app.radio(key="exhibit_section_" + pid).value, "Life & timeline")
+        self.assertTrue(any("Matthew" in str(e.value) for e in app.title))
+        self.assertTrue(any("Dated entries" in e.label for e in app.metric))
+        app.radio(key="exhibit_section_" + pid).set_value("Original records").run()
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertEqual(app.query_params.get("section"), ["Original records"])
+        self.assertTrue(any("Find the actual evidence" in str(e.value)
+                            for e in app.subheader))
+        app.radio(key="exhibit_section_" + pid).set_value("Family connections").run()
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertIn("Clarissa", " ".join(b.label for b in app.button))
+
+    def test_family_museum_book_images_and_missing_profile_are_truthful(self):
+        pid = "lowell_pierson_beveridge_jr_1930"
+        app = self.logged_in_app(page="collection", view="person-exhibit",
+                                 person=pid, section="Photographs & book")
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertEqual(app.radio(key="exhibit_section_" + pid).value, "Photographs & book")
+        self.assertTrue(any("original PDF page" in str(e.value) for e in app.caption))
+        missing = self.logged_in_app(page="collection", view="person-exhibit",
+                                     person="nonexistent_hist_person")
+        self.assertFalse(missing.exception, [e.value for e in missing.exception])
+        self.assertTrue(any("isn't in the reviewed family index" in str(w.message)
+                            for w in missing.warning))
+
+    def test_family_home_exhibits_and_profile_entry_point(self):
+        home = self.logged_in_app(page="home")
+        self.assertFalse(home.exception, [e.value for e in home.exception])
+        self.assertTrue(any("Step into a family life" in str(e.value)
+                            for e in home.subheader))
+        self.assertTrue(any(b.label == "Explore this person's life"
+                            for b in home.button))
+        profile = self.logged_in_app(page="people", profile="matthew_beveridge_hope_1837")
+        self.assertFalse(profile.exception, [e.value for e in profile.exception])
+        self.assertTrue(any("life, documents and family photographs" in b.label
+                            for b in profile.button))
+
     def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
         app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
         self.assertFalse(app.exception, [error.value for error in app.exception])
