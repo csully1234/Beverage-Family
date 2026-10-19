@@ -401,6 +401,21 @@ class StreamlitSmokeTests(unittest.TestCase):
                 self.assertEqual(len(gated.radio), 0)
                 self.assertEqual(len(gated.text_input), 1)
 
+    def test_matthew_probate_branch_is_navigable_with_no_invented_mother(self):
+        person_id = "matthew_beveridge_hope_1837"
+        app = self.logged_in_app(page="people", profile=person_id)
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        text = " ".join(str(element.value)
+                        for kind in ("markdown", "caption", "subheader", "info")
+                        for element in getattr(app, kind))
+        self.assertIn("Matthew", text)
+        self.assertIn("Beveridge", text)
+        app = self.logged_in_app(page="collection", view="waldo-probate", scan="9")
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        labels = " ".join(element.label for element in app.selectbox)
+        self.assertIn("31", labels) if "31" in labels else self.assertIn(
+            "Choose a source image", labels)
+
     def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
         app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
         self.assertFalse(app.exception, [error.value for error in app.exception])

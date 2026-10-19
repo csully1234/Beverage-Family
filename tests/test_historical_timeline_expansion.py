@@ -19,7 +19,7 @@ class HistoricalLifeTimelineExpansionTests(unittest.TestCase):
         cls.events = {event["id"]: event for event in cls.data["events"]}
 
     def test_original_people_and_additive_new_family_count(self):
-        self.assertEqual(len(self.people), 180 + len(self.data["phase4_people"]) + len(self.data["phase7_people"]) + len(self.data["phase6_people"]))
+        self.assertEqual(len(self.people), 180 + len(self.data["phase4_people"]) + len(self.data["phase7_people"]) + len(self.data["phase6_people"]) + len(self.data["phase23_probate_people"]))
 
     def test_timeline_is_substantially_expanded(self):
         self.assertGreaterEqual(len(self.events), 126)

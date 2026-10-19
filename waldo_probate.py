@@ -14,6 +14,8 @@ from pathlib import Path
 import streamlit as st
 
 from routing_ui import route_link
+from matthew_deed_research import (render_court_children, render_deed_targets,
+                                   render_probate_excerpts)
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "data" / "phase22_matthew_waldo_probate.json"
@@ -108,6 +110,9 @@ def render_waldo_probate(*, compact: bool = False) -> None:
     second.metric("Unique scans", stats["unique_scans"])
     third.metric("Named heirs", stats["heirs_named"])
     st.caption(data["record_group"] + " · " + data["source_received"])
+    st.info("**New evidence review:** The October 1837 court order (scan 09) "
+            "explicitly calls eight heirs Matthew's 'children'. They now have "
+            "source-attributed profiles, with their mothers deliberately unassigned.")
     st.warning("Scans are not publicly redistributed until image rights are confirmed. "
                "The source descriptions, dates and provisional findings below are "
                "available now. These are not certified transcriptions.")
@@ -125,8 +130,10 @@ def render_waldo_probate(*, compact: bool = False) -> None:
         else:
             st.warning("The requested scan number is not in the supplied packet.")
 
-    claims_tab, heirs_tab, scans_tab, limits_tab = st.tabs(
-        ["Court findings", "Eight named heirs", "All 31 scans", "Provenance and next steps"])
+    (claims_tab, children_tab, deeds_tab, excerpts_tab,
+     scans_tab, limits_tab) = st.tabs(
+        ["Court findings", "Eight court-named children", "Trace the Hope land",
+         "Transcription notebook", "All 31 scans", "Provenance and next steps"])
     with claims_tab:
         for claim in data["claims"]:
             with st.container(border=True):
@@ -135,10 +142,11 @@ def render_waldo_probate(*, compact: bool = False) -> None:
                 st.write(claim["finding"])
                 st.caption("Evidence limit: " + claim["limits"])
                 _render_reference(data, claim["review_pages"])
-    with heirs_tab:
-        st.caption("The court petition describes legal heirs. Probate heirship "
-                   "does not alone prove each person's birth parent, date, or "
-                   "assignment to Matthew's first or second marriage.")
+    with children_tab:
+        render_court_children()
+        st.caption("The warrant goes beyond heirship and expressly calls "
+                   "these eight people the deceased's children. It does not "
+                   "establish individual maternity or every published middle name.")
         for heir in data["heirs"]:
             with st.container(border=True):
                 st.markdown("**" + heir["name"] + "**")
@@ -146,6 +154,10 @@ def render_waldo_probate(*, compact: bool = False) -> None:
                 st.caption("Comparison with Eaton's 1865 published family: " +
                            heir["published_alignment"])
                 _render_reference(data, heir["review_pages"])
+    with deeds_tab:
+        render_deed_targets()
+    with excerpts_tab:
+        render_probate_excerpts()
     with scans_tab:
         number = st.selectbox("Choose a source image by review number",
                               list(range(1, stats["received_scans"] + 1)),
