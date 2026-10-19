@@ -150,9 +150,12 @@ def _records_section(overview: dict) -> None:
     # All records are reachable. Page size limits rendering work, not archive coverage.
     size = 8
     pages = max(1, (len(filtered) + size - 1) // size)
+    page_key = "museum_sources_page_" + overview["id"]
+    if st.session_state.get(page_key) not in range(1, pages + 1):
+        st.session_state[page_key] = 1
     page = st.selectbox("Evidence page", list(range(1, pages + 1)),
                         format_func=lambda n: str(n) + " of " + str(pages),
-                        key="museum_sources_page_" + overview["id"])
+                        key=page_key)
     for row in filtered[(page - 1) * size:page * size]:
         with st.container(border=True):
             st.markdown("**" + row["title"] + "**")
@@ -188,7 +191,14 @@ def _photographs_section(overview: dict) -> None:
     pdf = book_pdf_path(books[0]) if books else None
     st.caption(str(len(photos)) + " attributed image-bearing page(s) · oldest-to-newest "
                "by source PDF page, not by assumed photograph date.")
-    for photo in photos:
+    # Lazy page access avoids rendering dozens of high-resolution book scans
+    # on phones, while retaining every approved illustration in the catalog.
+    page_size = 6
+    max_pages = max(1, (len(photos) + page_size - 1) // page_size)
+    photo_page = st.selectbox("Illustration page", range(1, max_pages + 1),
+                              key="museum_photos_page_" + overview["id"],
+                              format_func=lambda n: str(n) + " of " + str(max_pages))
+    for photo in photos[(photo_page - 1) * page_size:photo_page * page_size]:
         with st.container(border=True):
             if pdf and pdf.is_file():
                 st.image(source_photo_preview(str(pdf), photo["page"], photo["crop"]),
