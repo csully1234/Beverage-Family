@@ -14,6 +14,7 @@ import streamlit as st
 from routing_ui import route_link
 
 SOURCE = Path(__file__).resolve().parent / "data" / "phase20_hope_matthew_civic_records.json"
+EARLIER = Path(__file__).resolve().parent / "data" / "phase31_hope_earliest_clerk_research.json"
 
 def load_hope_civic_records() -> dict:
     payload = json.loads(SOURCE.read_text(encoding="utf-8"))
@@ -22,6 +23,14 @@ def load_hope_civic_records() -> dict:
     data = payload[0]
     if not isinstance(data, dict) or not isinstance(data.get("records"), list):
         raise ValueError("Hope record evidence must be an indexed research document")
+    earlier = json.loads(EARLIER.read_text(encoding="utf-8"))[0]
+    data["records"] = sorted([*data["records"], *earlier["records"]],
+                             key=lambda row: (row["date"], row["id"]))
+    data["source_family_warning"] = (
+        "All town-clerk passages, including the newly indexed 1806–1807 "
+        "entries, derive from ONE historic Hope municipal ledger as rendered "
+        "in a modern transcription, not independent original witnesses. "
+        "The separate 1820 census is a distinct but uninspected original.")
     return data
 
 def evidence_counts(data: dict) -> dict:
@@ -51,9 +60,10 @@ def _card(row: dict) -> None:
 
 def render_hope_civic_timeline(*, compact:bool=False) -> None:
     data=load_hope_civic_records()
-    st.subheader("Matthew Beveridge in Hope's own town records, 1811–1827")
-    st.write("The 1804–1848 Hope municipal ledger repeatedly names **Matthew Beveridge "
-             "as town clerk** in 1811, 1813, 1821 and 1827. A separate 1820 "
+    st.subheader("Matthew Beveridge in Hope's town records, 1806–1827")
+    st.write("The 1804–1848 Hope municipal ledger names **Matthew Beveridge as "
+             "town clerk at least by June 23, 1806**, with dated transcribed "
+             "entries in 1807, 1811, 1813, 1821 and 1827. A separate 1820 "
              "household-head transcription lists Mathew Beveridge in Hope. "
              "This places a man of that name in contemporaneous civic records; "
              "the family's exact identity and his parents remain unproved.")
@@ -67,11 +77,13 @@ def render_hope_civic_timeline(*, compact:bool=False) -> None:
                "sheet have not been directly inspected. The visible links lead "
                "to a modern literal transcript or household-index summary.")
 
-    options=["Every date","1811–1813","1820–1821","1827"]
+    options=["Every date","1806–1807","1811–1813","1820–1821","1827"]
     choice=st.selectbox("Browse the town records by period",options,
                          key="hope_matthew_period")
     records=sorted(data["records"],key=lambda row:row["date"])
-    if choice=="1811–1813":
+    if choice=="1806–1807":
+        records=[r for r in records if r["date"][:4] in {"1806","1807"}]
+    elif choice=="1811–1813":
         records=[r for r in records if r["date"][:4] in {"1811","1813"}]
     elif choice=="1820–1821":
         records=[r for r in records if r["date"][:4] in {"1820","1821"}]
