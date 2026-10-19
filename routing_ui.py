@@ -24,8 +24,29 @@ def open_route(url):
     st.session_state.pop("_last_query_slug", None)
 
 
+def safe_external_url(value: str) -> bool:
+    """Prevent untrusted catalog entries from becoming script/data links."""
+    if not isinstance(value, str) or not value or any(char.isspace() for char in value):
+        return False
+    if any(char in value for char in "<>\\\\"):
+        return False
+    try:
+        parsed = urlsplit(value)
+        return (parsed.scheme in {"http", "https"} and bool(parsed.hostname)
+                and not parsed.username and not parsed.password
+                and parsed.port in (None, 80, 443))
+    except ValueError:
+        return False
+
+
 def route_link(label, url, **kwargs):
+    if not isinstance(url, str):
+        st.caption("Source link unavailable: no verified web address.")
+        return None
     if not url.startswith("?"):
+        if not safe_external_url(url):
+            st.caption("Source link unavailable: the address is not a verified HTTP(S) URL.")
+            return None
         return st.link_button(label, url, **kwargs)
     digest = sha256((str(label) + url).encode()).hexdigest()[:16]
     counts = st.session_state.setdefault("_route_button_counts", {})

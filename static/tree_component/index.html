@@ -2,8 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-html, body {margin:0; padding:0; width:100%; background:#f7f3ea; font-family:system-ui,sans-serif;}
+html, body {margin:0; padding:0; width:100%; min-width:0; overflow-x:hidden; background:#f7f3ea; font-family:system-ui,sans-serif;}
 #graph {border:0; width:100%; height:850px; display:block;}
+@media (max-width:680px) { #graph {height:min(68dvh,620px);} }
 </style></head><body>
 <iframe id="graph" title="Interactive Beverage family tree"></iframe>
 <script>
@@ -18,6 +19,7 @@ let eventSequence=0;
 const componentSession=Math.random().toString(36).slice(2);
 let selectedId="";
 let treeReady=false;
+let requestedHeight=850;
 function applySelected(){
  if(treeReady && selectedId)graph.contentWindow.postMessage({type:"beverage:set-selected",person_id:selectedId},"*");
 }
@@ -26,10 +28,16 @@ function upstream(type, details={}) {
 }
 function adjustHeight(height) {
   const size=Number(height);
-  const value=Number.isFinite(size)?Math.max(520,Math.min(size,1200)):850;
+  requestedHeight=Number.isFinite(size)?Math.max(520,Math.min(size,1200)):850;
+  // The map must remain usable on phones without occupying several vertical
+  // screens. Its inner SVG already supports pan/zoom and touch interactions.
+  const small=window.innerWidth<=680;
+  const available=Math.max(430,Math.min(620,Math.round(window.innerHeight*0.68)));
+  const value=small?Math.min(requestedHeight,available):requestedHeight;
   graph.style.height=value+"px";
   upstream("streamlit:setFrameHeight",{height:value+2});
 }
+window.addEventListener("resize",()=>adjustHeight(requestedHeight));
 window.addEventListener("message",(event)=>{
   const message=event.data;
   if (!message || typeof message!=="object") return;

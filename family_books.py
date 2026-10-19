@@ -109,7 +109,8 @@ def render_scanned_page(book: dict, page: int, *, width: int = 970, crop: bool =
             "Original printed caption preserved in the cleaned scan."
         ), width="stretch")
     else:
-        st.info("The page image is ready to display as soon as the optimized PDF is uploaded to the repository.")
+        st.info("The original PDF page is not present on this deployment. "
+                "Please consult the archival source or notify the site maintainer.")
         st.caption(f"Source page {page} — the book image has not yet been published to this site's static directory.")
 
 
@@ -167,7 +168,8 @@ def render_book_reader(book: dict) -> None:
         st.iframe(full_book_url(book, selected), height=720)
         st.caption("Use browser PDF controls to zoom, search within any browser-indexed text, or navigate all 305 pages. The edition supplied is image-based and may not support full-text search.")
     else:
-        st.warning("The full PDF is prepared but not yet committed to this website. Upload the 22 MB optimized PDF to the required static/books path; all 305 pages will then display here.")
+        st.warning("The authorized book PDF is not available to this running deployment. "
+                   "The source-file audit should verify the published asset before release.")
         st.code(book.get("pdf_asset", ""), language=None)
     with st.expander("Large, readable scan of the selected page"):
         render_scanned_page(book, int(selected), width=1150)

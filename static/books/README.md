@@ -16,21 +16,18 @@ The source is the supplied 305-page PDF. The prepared web edition preserves
 all 305 pages and embedded photos, illustrations, text and watermark in a
 smaller (~22 MB) scan. The raw source is ~122 MB.
 
-**One-time publication step:** the repository automation available during
-preparation could write text files but could not transfer the binary PDF.
-The prepared file must therefore be uploaded to this folder in GitHub:
+**Publication status verified 19 October 2026:** the 22.9 MB web PDF now exists
+in this repository under the exact filename above. Render lists the commit
+containing this file as live in the Beverage-Family service.
 
-1. Open the feature branch and navigate to `static/books/`.
-2. Choose **Add file → Upload files**.
-3. Upload `The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf`
-   (22 MB, within GitHub browser upload limits).
-4. Commit it to the *same branch* before merging the PR.
-5. Verify GitHub shows this exact file and that the live
-   `/app/static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf`
-   URL opens and displays all 305 pages after deployment.
+The Phase 26 release audit checks the actual PDF in each checkout and requires
+that its page count match the 305 pages in `data/book_sources.json`. A deployed
+site's external PDF URL may still need an authenticated-browser/manual check;
+successful compilation does not establish that every embedded page loaded.
 
-Do not upload the 122-MB original via GitHub's ordinary website upload:
-it exceeds the standard browser per-file upload limit.
+The 122 MB raw master is not needed in the site's web folder. This publication
+permission is specific to the family website and does not imply unrestricted
+third-party redistribution.
 
 The website includes a complete PDF viewer, numbered page navigation, on-demand
 high-resolution page previews, 103 cataloged illustrated pages, source captions,
