@@ -25,7 +25,7 @@ class ArchiveTests(unittest.TestCase):
 
     def test_archive_and_legacy_records_validate_together(self):
         self.assertEqual(self.errors(self.data), set())
-        self.assertEqual(len(self.data["people"]), 180 + len(self.data["phase4_people"]) + len(self.data["phase7_people"]) + len(self.data["phase6_people"]))
+        self.assertEqual(len(self.data["people"]), 180 + len(self.data["phase4_people"]) + len(self.data["phase7_people"]) + len(self.data["phase6_people"]) + len(self.data["phase23_probate_people"]))
         self.assertEqual(len(self.data["events"]), 127 + len(self.data["phase4_events"]) + len(self.data["phase5_events"]) + len(self.data["phase6_events"]) + len(self.data["phase7_events"]))
         self.assertEqual(len(self.archive.places), 21)
         self.assertEqual(len(self.archive.sources), 28)
@@ -35,7 +35,7 @@ class ArchiveTests(unittest.TestCase):
     def test_normalized_files_are_optional_without_changing_legacy_data(self):
         before = {p.name: p.read_bytes() for p in (ROOT / "data").glob("*.json")}
         with tempfile.TemporaryDirectory() as tmp:
-            for filename in ("people.json", "events.json", "research_people.json", "research_events.json", "phase4_people.json", "phase7_people.json", "phase6_people.json", "phase12_profile_corrections.json", "phase4_events.json", "phase5_events.json", "phase6_events.json", "phase7_events.json", "research.json", "date_precision.json"):
+            for filename in ("people.json", "events.json", "research_people.json", "research_events.json", "phase4_people.json", "phase7_people.json", "phase6_people.json", "phase12_profile_corrections.json", "phase23_probate_people.json", "phase4_events.json", "phase5_events.json", "phase6_events.json", "phase7_events.json", "research.json", "date_precision.json"):
                 Path(tmp, filename).write_bytes(before[filename])
             # This fixture omits only the optional normalized archive, not the
             # independently validated correction ledger.
