@@ -14,7 +14,7 @@ def valid_deployment_password(password: str | None) -> bool:
     """Avoid accepting empty, obsolete, or clearly unusable deployment secrets."""
     if not isinstance(password, str):
         return False
-    return len(password) >= 12 and password != password.strip()[:0] and password.casefold() != "beverage"
+    return len(password) >= 12 and password == password.strip() and password.casefold() != "beverage"
 
 
 def matches_family_password(candidate: str, configured: str | None) -> bool:
