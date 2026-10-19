@@ -63,6 +63,16 @@ class OriginalEraHopeClerkResearchTests(unittest.TestCase):
         final=record_for_id("hope-1827-dec-clerk",self.hope)
         self.assertIn("does not mean Matthew was elected",final["limit"])
 
+    def test_original_state_county_history_distinguishes_boundary_change_from_migration(self):
+        meta=self.hope["jurisdiction_context"]
+        self.assertEqual(meta["dates"],["1827-07-03","1860-04-01"])
+        self.assertIn("Lincoln County",meta["finding"])
+        self.assertIn("Waldo County",meta["finding"])
+        self.assertIn("Knox County",meta["finding"])
+        self.assertIn("not a Matthew personal migration",meta["limit"])
+        self.assertEqual(urlsplit(meta["url"]).scheme,"https")
+        self.assertIn("legislative",meta["source"].lower())
+
     def test_originals_are_still_targets_not_fake_verified_proof(self):
         targets=self.hope["original_retrieval"]
         self.assertGreaterEqual(len(targets),4)
