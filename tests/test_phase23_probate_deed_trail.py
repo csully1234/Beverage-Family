@@ -43,7 +43,9 @@ class Phase23ProbateCourtChildTests(unittest.TestCase):
         self.assertEqual(father["death_date"], "1837-02-14")
         self.assertEqual(father["spouses"], [WIDOW])
         self.assertEqual(widow["spouses"], [FATHER])
-        self.assertEqual(widow["parents"], [])
+        # Phase 24 publishes a separate Carver register-derived parentage overlay.
+        self.assertEqual(set(widow["parents"]), {"barnabas_cobb_clarissa_father",
+                                                 "jerusha_cobb_clarissa_mother"})
         self.assertEqual(widow["children"], [])
         expected = {p["person_id"] for p in self.children}
         self.assertEqual(set(father["children"]), expected)
