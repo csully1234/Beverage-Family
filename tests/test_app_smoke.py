@@ -553,7 +553,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertTrue(any("Digitized archival map" in e.label for e in page.metric))
         self.assertTrue(any("Specific original paper" in e.label for e in page.metric))
         self.assertTrue(any("Verified Matthew parentage" in e.label for e in page.metric))
-        self.assertTrue(any("original" in str(e.value).lower() for e in page.warning))
+        self.assertTrue(any("parents" in str(e.value).lower() for e in page.warning))
         origins = self.logged_in_app(page="collection", view="family-origins")
         self.assertFalse(origins.exception, [error.value for error in origins.exception])
         self.assertTrue(any("Open exact Fox Islands survey" in b.label for b in origins.button))
