@@ -1,0 +1,65 @@
+[
+  {
+    "id": "phase34-original-census-and-hope-civic",
+    "review_date": "2026-10-19",
+    "title": "Matthew of Hope: original census reel and civic office evidence, 1813–1821",
+    "summary": "The complete 1820 Lincoln County M33 roll 36 is now directly linked as a digitized original, although the relevant row has not been read. A literal transcription of the Hope town ledger adds a bondsman vote in an 1813 section and a voted 1821 clerk selection. Those are further passages of one municipal ledger, not independent identity witnesses.",
+    "identity_limit": "Neither the 1813/1821 clerk passages nor the 1820 head transcription establishes the birth parents of Matthew of Hope, his household members, or identity with the Fox Islands petition minor and the 1837 estate decedent.",
+    "source_family_count_note": "Two source families: (1) the original 1820 federal census reel, located but person line uninspected; (2) one town record ledger available through its later literal transcription. Three cards do not equal three independent primary witnesses.",
+    "cases": [
+      {
+        "id": "hope-1820-original-roll-36",
+        "year": 1820,
+        "kind": "digitized_original_roll_not_person_line",
+        "status": "Original census reel accessible; Matthew row and tallies still uninspected",
+        "date_label": "1820",
+        "title": "Open the complete original 1820 Lincoln County census reel",
+        "source_title": "National Archives M33 roll 36, Fourth Census 1820, Lincoln County Maine; Allen County Public Library Genealogy Center microfilm digitization, Internet Archive populationsc18200036unit",
+        "source_url": "https://archive.org/details/populationsc18200036unit",
+        "companion_title": "Independent 2019 Hope household-head transcription",
+        "companion_url": "https://www.heirloomsreunited.com/2019/09/hope-maine-in-1820-census-then-in.html",
+        "locator": "M33 roll 36; Hope manuscript pp. 275–278, reported Mathew Beveridge on sheet 276; IA item contains 209 scanned pages (not 209 manuscript leaves or a confirmed scan-to-folio offset).",
+        "finding": "The actual microfilm reel containing Hope is digitally available at the Internet Archive. The separate 2019 name transcription reports 'Mathew Beveridge' on Hope sheet 276. The manuscript row, spelling, household age/sex counts, and immediate neighbors have not been verified by reading the image.",
+        "limits": "Do not treat the transcription as an inspected original manuscript. 1820 enumerations ordinarily identify household heads only; demographic tallies cannot identify a specific spouse, parent or child. A same-named Hope person in a later probate requires a separate identity bridge.",
+        "original_line_inspected": false,
+        "manuscript_verified": false,
+        "original_image_reproduced": false,
+        "needs": "Open the full roll in the IA BookReader; navigate to Hope folio 276 by checking manuscript page numbers (not PDF/page indices); inspect the entire Mathew row including columns and adjacent households, documenting the exact scan sequence/URL."
+      },
+      {
+        "id": "hope-1813-collector-bond-vote",
+        "year": 1813,
+        "kind": "municipal_ledger_transcription",
+        "status": "Modern literal town-record transcription examined via indexed passage; original handwriting not checked",
+        "date_label": "1813 context; exact vote date not independently established",
+        "title": "Matthew listed among town collector's bondsmen",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, modern literal transcription, p. 54; 1813 town-meeting votes",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "locator": "Modern transcript p. 54, numbered vote 17, before April 5, 1813 clerk notation on p. 55",
+        "finding": "A recorded vote accepts Matthew Beveridge, Almond Gushe and Micah Hobbs as bondsmen for the town collector for the current year. This is distinct from, but in the same ledger as, the separately indexed April 5, 1813 clerk entry.",
+        "limits": "The excerpt places the vote within an 1813 town-record section but does not independently fix its exact meeting date. Acceptance as a bondsman does not prove land title, wealth, parentage, spouse or the identity of Matthew named in other records.",
+        "original_line_inspected": false,
+        "manuscript_verified": false,
+        "original_image_reproduced": false,
+        "needs": "Check transcript pp. 53–55 together, resolve the meeting date using the start of the minutes, and locate the historical manuscript rather than treating the transcription as a photographed signature."
+      },
+      {
+        "id": "hope-1821-town-clerk-vote",
+        "year": 1821,
+        "kind": "municipal_ledger_transcription",
+        "status": "Modern literal town-record transcription examined via indexed passage; original handwriting not checked",
+        "date_label": "April 1821 (transcription's calendar inconsistency unresolved)",
+        "title": "Town meeting votes Matthew Beveridge to be clerk for the year",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, modern literal transcription, p. 116",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "locator": "Modern transcript p. 116; heading 'Hope April 2nd 1821', meeting body 'third day of April it being the first monday', vote 2 for Matthew Beveridge clerk",
+        "finding": "The April 1821 town-meeting transcription states that the voters chose Matthew Beveridge as town clerk for the current year; this is an explicit office-selection vote rather than only an officer's signature.",
+        "limits": "Internal dating conflict in the published transcription: heading April 2 vs body April 3, described as the first Monday. In the Gregorian calendar, April 2, 1821 was Monday and April 3 Tuesday. The original manuscript and correct date are NOT established. This same town ledger does not independently prove genealogy or identity with the 1837 decedent.",
+        "original_line_inspected": false,
+        "manuscript_verified": false,
+        "original_image_reproduced": false,
+        "needs": "Inspect the original Hope town clerk manuscript folio and surrounding transcription pages, transcribe date text exactly, and explain discrepancy; do not force either Apr 2 or Apr 3 as a confirmed event date."
+      }
+    ]
+  }
+]

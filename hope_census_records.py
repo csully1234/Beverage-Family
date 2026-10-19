@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 import streamlit as st
 
 from routing_ui import route_link
+from hope_primary_access import render_hope_primary_access
 
 DATA = Path(__file__).resolve().parent / "data" / "phase32_hope_census_originals.json"
 VALID_STATUS = {
@@ -97,6 +98,7 @@ def render_hope_census_trail() -> None:
                "original census line.")
     for row in case["cases"]:
         _census_record(row)
+    render_hope_primary_access()
     st.subheader("Compare against the separate town-clerk evidence")
     st.write("Hope's municipal record transcription names **Matthew "
              "Beveridge by June 23, 1806**. This is positive civic evidence "
