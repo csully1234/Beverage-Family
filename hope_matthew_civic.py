@@ -16,7 +16,10 @@ from routing_ui import route_link
 SOURCE = Path(__file__).resolve().parent / "data" / "phase20_hope_matthew_civic_records.json"
 
 def load_hope_civic_records() -> dict:
-    data = json.loads(SOURCE.read_text(encoding="utf-8"))
+    payload = json.loads(SOURCE.read_text(encoding="utf-8"))
+    if not isinstance(payload, list) or len(payload) != 1:
+        raise ValueError("Hope civic research file must be a one-document JSON array")
+    data = payload[0]
     if not isinstance(data, dict) or not isinstance(data.get("records"), list):
         raise ValueError("Hope record evidence must be an indexed research document")
     return data
