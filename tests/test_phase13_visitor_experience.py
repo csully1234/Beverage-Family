@@ -40,7 +40,8 @@ class VisitorJourneyTests(unittest.TestCase):
     def test_exact_selected_identity_drives_shareable_profile_and_tree_links(self):
         pid="mercy_beveridge_henry_1753"
         person=suggested_paths("Explore the Tree",pid)
-        self.assertEqual(person[0][1],"?page=people&profile="+pid)
+        self.assertEqual(person[0][1],"?page=full-tree&profile="+pid)
+        self.assertEqual(person[1][1],"?page=people&profile="+pid)
         target=suggested_paths("People",pid)
         self.assertEqual(target[0][1],"?page=tree&profile="+pid)
         route=suggested_paths("Full Family Map",pid)[0][1]
