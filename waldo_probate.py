@@ -10,7 +10,6 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote
 
 import streamlit as st
 
@@ -19,7 +18,7 @@ from routing_ui import route_link
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "data" / "phase22_matthew_waldo_probate.json"
 MEDIA_ROOT = (ROOT / "static" / "approved_media" / "waldo_probate_1837").resolve()
-SCAN = re.compile(r"^images/[0-9]{2}_[a-z0-9_]+\\.png$")
+SCAN = re.compile(r"^images/[0-9]{2}_[a-z0-9_]+\.png$")
 
 
 def load_waldo_probate() -> dict:
