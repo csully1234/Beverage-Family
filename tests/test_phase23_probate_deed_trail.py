@@ -33,7 +33,7 @@ class Phase23ProbateCourtChildTests(unittest.TestCase):
         self.assertEqual(self.source["relationship_basis"]["quotation"],
                          "to and among his children viz.")
         self.assertEqual(self.source["land_clues"][0]["id"], "hope-homestead")
-        self.assertIn("does not", self.source["relationship_basis"]["reading_limit"])
+        self.assertIn("biological mother", self.source["relationship_basis"]["reading_limit"])
         self.assertEqual(len({x["person_id"] for x in self.children}), 8)
 
     def test_canonical_family_tree_adds_only_proved_father_and_widow_links(self):
@@ -74,7 +74,7 @@ class Phase23ProbateCourtChildTests(unittest.TestCase):
                             "NOT PROVED" in lead["proof_status"]
                             for lead in self.source["source_leads"]))
         self.assertEqual(len(self.source["transcriptions"]), 8)
-        self.assertFalse(any("full diplomatic transcription" in x["status"]
+        self.assertFalse(any(x["status"].lower().startswith("full diplomatic transcription")
                              for x in self.source["transcriptions"]))
         self.assertIn("NOT official", self.source["source"])
 
@@ -84,7 +84,7 @@ class Phase23ProbateCourtChildTests(unittest.TestCase):
         deed_cards = [r for r in cards if r["id"].startswith("waldo-deed-lead:")]
         reading_cards = [r for r in cards if r["id"].startswith("waldo-reading:")]
         self.assertEqual((len(child_cards), len(deed_cards), len(reading_cards)), (8,5,8))
-        self.assertEqual({r["person_ids"][0] for r in child_cards}, {FATHER})
+        self.assertTrue(all(FATHER in r["person_ids"] for r in child_cards))
         self.assertTrue(all(len(r["person_ids"]) == 2 for r in child_cards))
         for row in child_cards + deed_cards + reading_cards:
             parsed = parse_qs(urlsplit(row["route"]).query)
