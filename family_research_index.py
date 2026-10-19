@@ -162,7 +162,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=row.get("period", ""),
         ))
 
-    hope = json.loads((root / "phase20_hope_matthew_civic_records.json").read_text(encoding="utf-8"))
+    hope = _read_records("phase20_hope_matthew_civic_records.json", root)[0]
     for row in hope["records"]:
         records.append(_item(
             id="hope-clerk:" + row["id"],
