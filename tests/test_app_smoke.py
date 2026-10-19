@@ -401,6 +401,19 @@ class StreamlitSmokeTests(unittest.TestCase):
                 self.assertEqual(len(gated.radio), 0)
                 self.assertEqual(len(gated.text_input), 1)
 
+    def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
+        app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        displayed = " ".join(
+            str(element.value)
+            for name in ("title", "markdown", "caption", "info", "subheader", "warning")
+            for element in getattr(app, name)
+        )
+        self.assertIn("Waldo County probate", displayed)
+        self.assertIn("Ezekiel", displayed)
+        self.assertIn("31", displayed)
+        self.assertIn("not publicly", displayed.lower())
+
     def test_family_discoveries_remain_after_navigating_away(self):
         app = self.logged_in_app(page="collection")
         self.go(app, "Home")
