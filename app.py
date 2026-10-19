@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import hashlib
 import hmac
+from family_access import (matches_family_password, session_authorized,
+                           session_password_fingerprint, valid_deployment_password)
 import json
 import os
 from datetime import datetime
@@ -97,7 +99,6 @@ def runtime_source_identity() -> tuple[str, str]:
 
 
 DATA_DIR = Path(__file__).parent / "data"
-LEGACY_COMPATIBILITY_PASSWORD = "BEVERAGE"
 
 PAGE_SLUGS = {
     "Home": "home",
@@ -412,38 +413,46 @@ def get_query_value(key: str) -> str | None:
     return str(value) if value is not None else None
 
 
-def configured_password() -> str:
-    """Use a deployment secret when present, with legacy access preserved."""
-
-    environment_password = os.environ.get("APP_PASSWORD")
-    if environment_password:
-        return environment_password
-    try:
-        secret_password = st.secrets["APP_PASSWORD"]
-        if secret_password:
-            return str(secret_password)
-    except (FileNotFoundError, KeyError):
-        pass
-    return LEGACY_COMPATIBILITY_PASSWORD
+def configured_password() -> str | None:
+    """Find an administrator-managed deployment secret; never use public defaults."""
+    candidate = os.environ.get("APP_PASSWORD")
+    if candidate is None:
+        try:
+            candidate = st.secrets.get("APP_PASSWORD")
+        except (FileNotFoundError, KeyError):
+            candidate = None
+    value = str(candidate) if candidate is not None else None
+    return value if valid_deployment_password(value) else None
 
 
 def check_password() -> None:
-    """Gate the archive and provide a deliberate login experience."""
-
-    if st.session_state.get("password_correct"):
+    """One successful login opens the entire site, not individual documents."""
+    configured = configured_password()
+    if session_authorized(st.session_state, configured):
         return
+
+    # A rotated password invalidates old Streamlit sessions on their next run.
+    st.session_state.pop("password_correct", None)
+    st.session_state.pop("_family_access_revision", None)
 
     left, center, right = st.columns([1, 1.35, 1])
     with center:
         route_markdown("<div class='bev-eyebrow'>Private family archive</div>", unsafe_allow_html=True)
         st.title("Beverage Family")
-        st.write("Enter the family password to explore the tree, timeline, and research records.")
+        if configured is None:
+            st.error("The family archive is temporarily unavailable. "
+                     "The administrator must configure APP_PASSWORD securely in Render.")
+            st.caption("No default or historical password can unlock the archive.")
+            st.stop()
+        st.write("One family password unlocks all profiles, family trees, photographs, "
+                 "research and historical records.")
         with st.form("login_form", clear_on_submit=True):
             entered = st.text_input("Password", type="password", autocomplete="current-password")
             submitted = st.form_submit_button("Enter archive", type="primary", width="stretch")
         if submitted:
-            if hmac.compare_digest(entered, configured_password()):
+            if matches_family_password(entered, configured):
                 st.session_state["password_correct"] = True
+                st.session_state["_family_access_revision"] = session_password_fingerprint(configured)
                 st.session_state.pop("login_failed", None)
                 st.rerun()
             st.session_state["login_failed"] = True
