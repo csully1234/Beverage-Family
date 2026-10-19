@@ -341,7 +341,10 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             status=row.get("status"),
         ))
 
-    for row in _read_records("phase15_relationship_reviews.json", root):
+    # Phase 29 source reviews augment rather than overwrite the original
+    # relationship evidence register. Both must appear in the workbench.
+    for row in (_read_records("phase15_relationship_reviews.json", root) +
+                _read_records("phase29_relationship_reviews.json", root)):
         category = "Relationship evidence"
         a, b = row["from_id"], row["to_id"]
         title_a = people_by_id.get(a, {}).get("full_name", a)
@@ -434,6 +437,25 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
                 sources=_links([{"title": row.get("source_title") or "Published historical record",
                                  "url": row.get("source_url")}]),
                 route=route, source_date=row.get("date") or row.get("year") or "",
+            ))
+
+    # Source-access casework has no safe Matthew-specific person attribution.
+    # Even the 1889 name Matthew Beveridge (minor) is not linked by identity
+    # to the Hope 1837 decedent, so none of these cards have a person_id.
+    fox_cases = _read_records("phase30_fox_islands_original_source_access.json", root)
+    for case in fox_cases:
+        for record in case["sources"]:
+            records.append(_item(
+                id="fox-original:" + record["id"], category="Historical record trails",
+                title=record["title"], summary=record["establishes"],
+                limits=record["does_not_establish"],
+                people_ids=[],
+                sources=_links([record]),
+                route="?page=collection&view=fox-originals",
+                keywords=record["identifier"] + " " + record["repository"] + " " +
+                         record["request"] + " " + record["category"],
+                source_date=record["date"],
+                status=record["access"].replace("_", " "),
             ))
 
     for pid, person in people_by_id.items():
