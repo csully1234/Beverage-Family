@@ -219,6 +219,62 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date="1837",
         ))
 
+    # Reviewed Phase 23 layer: Court expressly describes these people as
+    # "children", unlike a generic inheritance-only designation. Specific
+    # legal child links are now anchored to exact stable genealogy IDs.
+    phase23 = _read_records("phase23_probate_deed_trail.json", root)[0]
+    father = "matthew_beveridge_hope_1837"
+    court_children = [p for p in phase23["principal_people"]
+                      if p["role"] == "named child"]
+    for child in court_children:
+        records.append(_item(
+            id="waldo-court-child:" + child["person_id"],
+            category="Relationship evidence",
+            title="1837 court child — " + child["label"] + " · Matthew of Hope",
+            summary="Probate partition warrant explicitly calls this person a child of Matthew.",
+            limits="Court parent-child designation only: this does not establish "
+                   "the child's mother, birth date or identity with all later accounts. "
+                   + str(child.get("limitation", "")),
+            people_ids=[father, child["person_id"]],
+            route="?page=collection&view=waldo-probate&scan=9",
+            keywords="probate Oct 1837 Matthew Beveridge Beverage children heirs "
+                     + child["label"],
+            status="Original-era probate warrant · explicit child designation",
+            source_date="1837-10-06",
+        ))
+    for clue in phase23["land_clues"]:
+        records.append(_item(
+            id="waldo-deed-lead:" + clue["id"],
+            category="Historical investigations",
+            title="Matthew's Hope property · " + clue["label"],
+            summary=clue["reading"],
+            limits=clue["certainty"] + ". " + clue["search_strategy"],
+            people_ids=[father],
+            route="?page=collection&view=waldo-probate&scan=2",
+            keywords="1837 Hope Waldo Lincoln grantee grantor deed " + clue["label"],
+            status="Unverified deed lead — actual recorded instrument not obtained",
+            source_date="1837",
+        ))
+    for excerpt in phase23["transcriptions"]:
+        associated = [father]
+        if excerpt["scan"] in {9, 31}:
+            associated.extend(p["person_id"] for p in court_children)
+        if excerpt["scan"] in {10, 18, 24}:
+            associated.append("clarissa_beveridge_widow_1837")
+        if excerpt["scan"] == 14:
+            associated.append("polly_tucker_matthew_child")
+        records.append(_item(
+            id="waldo-reading:" + str(excerpt["scan"]).zfill(2),
+            category="Historical investigations",
+            title="Probate reading · scan " + str(excerpt["scan"]).zfill(2),
+            summary=excerpt["text"], limits=excerpt["status"] + ". " + excerpt["note"],
+            people_ids=associated,
+            route="?page=collection&view=waldo-probate&scan=" + str(excerpt["scan"]),
+            keywords="1837 Waldo Hope probate original reading transcription excerpt",
+            status=excerpt["type"].replace("_", " "),
+            source_date=excerpt["date"],
+        ))
+
     for row in _read_records("phase19_matthew_reconciliation_cases.json", root):
         records.append(_item(
             id="matthew:" + row["id"], category="Historical investigations",
