@@ -1,0 +1,279 @@
+[
+  {
+    "id": "phase24-matthew-identity-clarissa-cobb-2026-10-19",
+    "title": "Matthew of Hope — independent Clarissa Cobb birth-family reconstruction and Fox Islands identity audit",
+    "research_date": "2026-10-19",
+    "conclusion": "A Carver vital-record-derived 1911 publication explicitly identifies Clarissa Cobb, born 27 March 1786, as a child of Barnabas and Jerusha. Philip L. Cobb's 1907 genealogy identifies that Clarissa with Capt. Matthew Beverage's wife of Hope. These support a maternal Cobb extension from Matthew's 1837 widow, but NOT Matthew's father, the alleged 1785 minor's identity or the mother of any of Matthew's eight court-named children.",
+    "sources": [
+      {
+        "id": "p24-src-carver-births",
+        "title": "Vital Records of Carver, Massachusetts, to the Year 1850",
+        "author": "New England Historic Genealogical Society, ed.",
+        "year": 1911,
+        "page": "printed p. 21, COBB births",
+        "url": "https://genealogytrails.com/mass/plymouth/births-carver-to1850.html",
+        "original_scan_locator": "https://commons.wikimedia.org/wiki/File:Vital_records_of_Carver,_Massachusetts,_to_the_year_1850_(IA_vitalrecordsofca01carv).pdf",
+        "class": "published_transcription_of_town_vital_records",
+        "directly_inspected": "text transcription at identified book page; original handwritten Carver town record not inspected",
+        "claim": "Clarissa, child of Barnabas and Jerusha, 27 March 1786; additional children Hannah Crocker, Sophia, Ebenezer and Eleazer Crocker under the same parents; text describes birth not marriage.",
+        "limitations": "The 1911 source is derived from Carver town records but the town manuscript has not yet been inspected. This source alone does not establish the child's future marriage or exact death date."
+      },
+      {
+        "id": "p24-src-cobb-history",
+        "title": "A History of the Cobb Family, Part I: Barnstable Family",
+        "author": "Philip Lothrop Cobb",
+        "year": 1907,
+        "page": "printed pp. 164–165, section 206, Barnabas Cobb",
+        "url": "https://archive.org/stream/historyofcobbfam13cobb/historyofcobbfam13cobb_djvu.txt",
+        "original_scan_locator": "https://archive.org/details/historyofcobbfam13cobb",
+        "class": "compiled_family_genealogy",
+        "directly_inspected": "digitized published text, print-page references; not original marriage register",
+        "claim": "Barnabas Cobb married Jerusha Cobb, daughter of Ebenezer Cobb III and Jerusha Cushman; their daughter Clarissa born 27 March 1786 in Carver married Capt. Matthew Beverage and lived in Hope; parents reportedly moved to Warren 1802.",
+        "limitations": "Secondary family history; cites Eaton for Warren context, so should not be counted as fully independent corroboration of an earlier source solely because republished. A marriage return is still required."
+      },
+      {
+        "id": "p24-src-carver-civic",
+        "title": "History of the Town of Carver, Massachusetts: Historical Review, 1637–1910",
+        "author": "Henry S. Griffith",
+        "year": 1913,
+        "page": "printed pp. 328–335, lists of town clerks/assessors",
+        "url": "https://ldsgenealogy.com/MA/books/History-of-the-town-of-Carver-Massachusetts-historical-review-1637-1910-part-17.htm",
+        "class": "retrospective_civic_directory",
+        "directly_inspected": "website machine-extracted published text, not underlying official minutes",
+        "claim": "Lists a Barnabas Cobb as Carver town clerk 1799–1801; the adjacent assessors list also has Barnabas Cobb in the 1790s.",
+        "limitations": "The 1913 roster does not itself state the officeholder is Clarissa's father. The same-name identification is plausible and still unproved. Online text may contain OCR errors."
+      },
+      {
+        "id": "p24-src-fox-2025",
+        "title": "The Ebenezer Eames Family: Early Settlers of North Fox Island, Maine",
+        "author": "David Flanagan and Barbara Beverage Reeves",
+        "year": 2025,
+        "page": "The Maine Genealogist 47(4), printed pp. 170–182, especially 170–171, notes 4–6",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "class": "peer_reviewed_or_edited_genealogical_research",
+        "directly_inspected": "article and references inspected; not original 1785 petition or Putnam survey manuscript",
+        "claim": "1785 Fox Islands petition, 1786 Putnam survey declarations, and the 1800 census 'from whence emigrated' column are separate research series potentially relevant to Matthew's origin.",
+        "limitations": "Article traces Eames and related Dyer households, not proof of Matthew Beverage's parents. Its author citation to Rufus Putnam's original archival survey is a retrieval target; no Matthew-specific survey entry verified."
+      },
+      {
+        "id": "p24-src-1785-minor-secondary",
+        "title": "1785 Fox Islands petition list naming Matthew Beveridge as a minor",
+        "author": "Research lead in North Island historical publications and copied excerpt",
+        "year": 1785,
+        "page": "exact manuscript folio unknown",
+        "url": "https://www.vinalhavenhistoricalsociety.org/summerexhibit/2013exhibitearlydays.html",
+        "class": "historical_petition_secondary_report_only",
+        "directly_inspected": "only later compiled/transcribed accounts; not original petition sheet or complete household identifiers",
+        "claim": "One transcript lists Matthew Beveridge as a minor among Fox Islands original inhabitants, with James and Thomas Beverage/Beveridge separately named.",
+        "limitations": "Not enough to establish that the minor became the Hope town clerk who died in 1837, or that James/Thomas were his brothers. Source does not confirm a birth date, parental name or family edge."
+      },
+      {
+        "id": "p24-src-lincoln-registry",
+        "title": "Lincoln County, Maine Registry of Deeds index and image collection coverage",
+        "author": "SearchIQS registry coverage note",
+        "year": 2026,
+        "page": "coverage index books 1761–1847",
+        "url": "https://help.searchiqs.com/article/93-melin",
+        "class": "archive_finding_aid",
+        "directly_inspected": "collection coverage, NOT a Matthew-specific deed entry",
+        "claim": "Historical Lincoln County grantor/grantee book images and early deed volumes are the likely retrieval route for Hope transactions before creation of Waldo County.",
+        "limitations": "No confirmed Matthew deed number, date, witness, surname spelling or land parcel."
+      },
+      {
+        "id": "p24-src-waldo-registry",
+        "title": "Waldo County, Maine Registry of Deeds index and image collection coverage",
+        "author": "SearchIQS registry coverage note",
+        "year": 2026,
+        "page": "index books from 1827, record books from January 1828",
+        "url": "https://help.searchiqs.com/article/95-mewal",
+        "class": "archive_finding_aid",
+        "directly_inspected": "collection coverage, NOT a Matthew-specific deed entry",
+        "claim": "Court-era property transfer and later heir deeds may appear in Waldo County's 1827+ deed indexes.",
+        "limitations": "No specific deed has been inspected and no inherited parcel has been identified."
+      }
+    ],
+    "findings": [
+      {
+        "id": "clarissa-carver-born",
+        "date": "1786-03-27",
+        "title": "Carver town birth transcription identifies Clarissa Cobb's parents",
+        "status": "direct_statement_in_published_town_record_transcription",
+        "person_ids": [
+          "clarissa_beveridge_widow_1837",
+          "barnabas_cobb_clarissa_father",
+          "jerusha_cobb_clarissa_mother"
+        ],
+        "source_ids": [
+          "p24-src-carver-births"
+        ],
+        "claim": "Clarissa Cobb, born March 27, 1786 in Carver, recorded as a child of Barnabas and Jerusha Cobb.",
+        "limits": "The date and parents appear in a 1911 published town-record compilation. Original 1786 register page not yet inspected; no marriage identification in that one record."
+      },
+      {
+        "id": "clarissa-hope-identity",
+        "date": "1907",
+        "title": "Cobb genealogy connects Carver-born Clarissa to Capt. Matthew of Hope",
+        "status": "supported_identity_bridge_in_later_compilation",
+        "person_ids": [
+          "clarissa_beveridge_widow_1837",
+          "matthew_beveridge_hope_1837"
+        ],
+        "source_ids": [
+          "p24-src-cobb-history",
+          "p24-src-carver-births"
+        ],
+        "claim": "Philip L. Cobb's history calls the Carver-born Clarissa the wife of Capt. Matthew Beverage and locates her in Hope.",
+        "limits": "Published genealogy may reuse Eaton and is not a contemporary 1800s marriage return. The 1837 probate independently names widow Clarissa but not her maiden name."
+      },
+      {
+        "id": "maternal-grandparent-leads",
+        "date": "1750–1843",
+        "title": "Proposed next maternal generation: Ebenezer Cobb III and Jerusha Cushman",
+        "status": "published_genealogy_only_original_marriage_and_birth_pending",
+        "person_ids": [
+          "jerusha_cobb_clarissa_mother",
+          "clarissa_beveridge_widow_1837"
+        ],
+        "source_ids": [
+          "p24-src-cobb-history"
+        ],
+        "claim": "1907 Cobb book describes Jerusha Cobb as daughter of the third Ebenezer Cobb and Jerusha Cushman.",
+        "limits": "Do not add maternal grandparents as verified graph edges until matching original records are reviewed; common repeated Cobb given names create identity risk."
+      },
+      {
+        "id": "barnabas-carver-clerk",
+        "date": "1799–1801",
+        "title": "Possible civic-office clue for Clarissa's father",
+        "status": "same_name_civic_lead_unconfirmed_person_match",
+        "person_ids": [
+          "barnabas_cobb_clarissa_father"
+        ],
+        "source_ids": [
+          "p24-src-carver-civic"
+        ],
+        "claim": "1913 town history lists a Barnabas Cobb as Carver town clerk from 1799 to 1801.",
+        "limits": "The retrospective office roster does not identify him as Clarissa's Barnabas; do not turn name agreement into verified office assignment."
+      },
+      {
+        "id": "matthew-fox-minor",
+        "date": "1785",
+        "title": "Fox Islands 'Matthew Beveridge, a minor' remains an unresolved identity",
+        "status": "unresolved_historical_identity",
+        "person_ids": [
+          "matthew_beveridge_hope_1837"
+        ],
+        "source_ids": [
+          "p24-src-1785-minor-secondary",
+          "p24-src-fox-2025"
+        ],
+        "claim": "A secondary transcript of the 1785 petition names a minor Matthew Beveridge, but no original identity bridge to the later Hope household has been found.",
+        "limits": "No parent, sibling, or proof of residence continuity; original petition and 1786 Putnam manuscript not examined."
+      },
+      {
+        "id": "matthew-deeds",
+        "date": "1761–1837",
+        "title": "Deed search: archival coverage verified but no Matthew instrument found",
+        "status": "record_not_retrieved",
+        "person_ids": [
+          "matthew_beveridge_hope_1837"
+        ],
+        "source_ids": [
+          "p24-src-lincoln-registry",
+          "p24-src-waldo-registry"
+        ],
+        "claim": "Lincoln and Waldo deed collections have relevant periods; probate scan 02 gives tentative old grantor leads.",
+        "limits": "No recorded deed grantor, folio, witnessed family relationship or parcel identified. Do not call this a negative proof that deeds never existed."
+      },
+      {
+        "id": "fox-putnam-original-target",
+        "date": "1786-03-18",
+        "title": "Archival lead: Rufus Putnam's 1786 Fox Islands survey",
+        "status": "original_manuscript_locator_identified_not_inspected",
+        "person_ids": [
+          "matthew_beveridge_hope_1837"
+        ],
+        "source_ids": [
+          "p24-src-fox-2025"
+        ],
+        "claim": "A 2025 scholarly article identifies a Rufus Putnam manuscript survey dated 18 March 1786 in Maine State Archives Box 001 and notes its settlers' declarations of prior residence.",
+        "limits": "The article supplies a document-level archive locator; no Matthew-specific entry has been inspected or verified in the original survey."
+      }
+    ],
+    "identity_matrix": [
+      {
+        "id": "fox-1785",
+        "date": "1785",
+        "name": "Matthew Beveridge, a minor",
+        "location": "Fox Islands",
+        "evidence": "a later cited/transcribed list of petitioners",
+        "link_to_probate_matthew": "NOT ESTABLISHED",
+        "limitation": "Same name plus compatible historical era does not establish same man or his parents."
+      },
+      {
+        "id": "hope-1811-1827",
+        "date": "1811–1827",
+        "name": "Matthew Beveridge, town clerk",
+        "location": "Hope, Lincoln/Waldo County",
+        "evidence": "1804–1848 town ledger modern transcription (one underlying ledger); separate 1820 index lead",
+        "link_to_probate_matthew": "PLAUSIBLE, NOT DOCUMENTED AS UNIQUE IDENTITY",
+        "limitation": "Civic records do not directly name the widow, children or parents."
+      },
+      {
+        "id": "hope-probate-1837",
+        "date": "1837",
+        "name": "Matthew Beverage/Beveridge, deceased",
+        "location": "Hope, Waldo County",
+        "evidence": "contemporary probate; Clarissa widow and eight children named",
+        "link_to_probate_matthew": "DIRECT",
+        "limitation": "Court record does not identify his birthplace, parents or earlier Fox Islands petition status."
+      }
+    ],
+    "original_retrieval": [
+      {
+        "id": "carver-original-1786",
+        "priority": 1,
+        "target": "1786 original Carver town birth ledger entry for Clarissa Cobb, and any adjacent grouped children",
+        "repository": "Carver Town Clerk / FamilySearch original municipal books",
+        "url": "https://www.plymouthcolony.net/magenweb/plymouthcounty/carver/index.html",
+        "status": "not_inspected",
+        "expected": "Verify the child, parents, birthdate and whether entry is contemporaneous or copied later."
+      },
+      {
+        "id": "matthew-clarissa-marriage",
+        "priority": 2,
+        "target": "Original marriage intentions/return linking Clarissa Cobb and Matthew Beverage",
+        "repository": "Hope and Warren town records; Lincoln County Marriage Returns",
+        "url": "https://www.familysearch.org/en/search/catalog",
+        "status": "not_identified",
+        "expected": "Connect the Carver-born woman to widow Clarissa without relying only on 1907 genealogy."
+      },
+      {
+        "id": "fox-putnam-archive",
+        "priority": 3,
+        "target": "1786 Putnam survey manuscript, 18 March 1786, Box 001",
+        "repository": "Maine State Archives",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "status": "archival_citation_known_original_not_inspected",
+        "expected": "Check whether Matthew appears and whether source labels his origin, settlement years, or household."
+      },
+      {
+        "id": "fox-petition",
+        "priority": 4,
+        "target": "1785 Fox Islands petition with the minor Matthew's exact manuscript entry",
+        "repository": "Massachusetts State Archives / Maine local historical collections",
+        "url": "https://www.vinalhavenhistoricalsociety.org/summerexhibit/2013exhibitearlydays.html",
+        "status": "not_inspected",
+        "expected": "Recover original wording, placement, and whether names are explicit kin grouping."
+      },
+      {
+        "id": "early-hope-deeds",
+        "priority": 5,
+        "target": "Earliest deed to or from Matthew Beveridge/Beverage in Hope; later Clarissa and heirs partition deeds",
+        "repository": "Lincoln and Waldo County Registries of Deeds",
+        "url": "https://help.searchiqs.com/article/93-melin",
+        "status": "no_book_page_identified",
+        "expected": "Capture instrument book, page, grantor, grantee, date, witnesses, previous residence, bounds; do not presume kinship from surnames."
+      }
+    ]
+  }
+]

@@ -188,6 +188,8 @@ def render_waldo_probate(*, compact: bool = False) -> None:
             key="waldo_probate_index_download",
         )
     if not compact:
+        route_link("New: independent Carver birth-family evidence for Clarissa Cobb",
+                   "?page=collection&view=family-origins")
         route_link("Compare Eaton's published first and second marriages",
                    "?page=collection&view=matthew")
         route_link("Read Matthew's Hope town clerk trail",
