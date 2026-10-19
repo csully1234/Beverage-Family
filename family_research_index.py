@@ -162,6 +162,20 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=row.get("period", ""),
         ))
 
+    for row in _read_records("phase19_matthew_reconciliation_cases.json", root):
+        records.append(_item(
+            id="matthew:" + row["id"], category="Historical investigations",
+            title=row["title"], summary=row["claim"], limits=row["proof"],
+            people_ids=row.get("person_ids", ()),
+            pages=[row["book_page"]] if row.get("book_page") else [],
+            route="?page=collection&view=matthew",
+            sources=_links([{
+                "title":row["reference"], "url":row.get("url", ""),
+                "supports":row["claim"]}]),
+            keywords=" ".join(row.get("next_originals", [])),
+            status=row["status"],
+        ))
+
     for row in _read_records("phase16_ancestry_bridge_dossiers.json", root):
         records.append(_item(
             id="ancestry:" + row["id"], category="Historical investigations",

@@ -1,5 +1,8 @@
 # Phase 18 — full 305-page source extraction and evidence review
 
+> **Later evidence review (18 October 2026):** The original 1865 Eaton family register (vol. II, p. 146) explicitly calls Abigail Dyer Capt. Matthew's **first wife** and Clarissa Cobb his **second wife**, assigning five named children to each. Previous wording suggesting these wives could represent contradictory Matthew records was too broad. See `research/phase19_eaton_two_marriages_waldo_probate_2026-10-18.md`. This does **not** prove original marriages or Matthew's parents, sibling relationship, or identity with the 1785 minor.
+
+
 *18 October 2026. This phase is a page-by-page OCR sweep and an initial **selective** original-page research review. It is NOT a manually verified transcription of every page.*
 
 ## Real source inspected

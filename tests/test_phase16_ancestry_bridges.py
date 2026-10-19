@@ -36,8 +36,8 @@ class AncestryBridgeCases(unittest.TestCase):
         x=self.by_id["matthew-clarissa-cobb-1851-1865"]
         self.assertIn("Clarissa Cobb",x["named_people"])
         self.assertIn("Captain Barnabas Cobb",x["named_people"])
-        self.assertIn("same informant",x["limitations"])
-        self.assertIn("NOT two independently",x["limitations"])
+        self.assertIn("SAME AUTHOR",x["limitations"])
+        self.assertIn("not independent original marriage returns",x["limitations"])
         self.assertIn("1851",x["sources"][0]["title"])
         self.assertIn("1865",x["sources"][1]["title"])
         self.assertFalse(x["person_ids"])

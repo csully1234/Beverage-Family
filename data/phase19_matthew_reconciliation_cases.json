@@ -1,0 +1,128 @@
+[
+  {
+    "id": "eaton-1865-two-marriages",
+    "title": "Eaton's 1865 record explicitly describes a single Matthew with two wives",
+    "status": "published_multi_marriage_account",
+    "person_ids": [],
+    "claim": "Eaton's alphabetical BEVERAGE family-group entry states that Capt. Matthew Beverage of Hope married Abigail Dyer first and Clarissa Cobb second. He divides ten named children into two groups of five by wife.",
+    "proof": "This is direct evidence of what one 1865 near-contemporary author recorded, not independent proof that either marriage was solemnized, the dates of either ceremony, or that all ten children had the recorded parentage.",
+    "reference": "Cyrus Eaton, History of Thomaston, Rockland and South Thomaston, Maine, vol. II (1865), printed p. 146",
+    "url": "https://archive.org/details/historyofthomast02eato",
+    "locator": "Printed p. 146, heading BEVERAGE, Capt. Matthew",
+    "evidence_kind": "Published historical family register",
+    "next_originals": [
+      "An actual circa-1801 Matthew–Abigail marriage entry (North Haven/Fox Islands or relevant church/justice)",
+      "An original Matthew–Clarissa marriage return, or a dated marriage-intention/registration identifying the same Matthew",
+      "Probate/inheritance papers naming widow and/or children to corroborate family groups"
+    ]
+  },
+  {
+    "id": "colony-2016-abigail-1801",
+    "title": "The Colony's 1801 Matthew–Abigail story is compatible with Eaton's first wife",
+    "status": "consistent_later_family_account",
+    "person_ids": [
+      "thomas_beverage_1750"
+    ],
+    "claim": "The Colony (2016), PDF p. 17, says Thomas Beverage had a younger brother Matthew who married Abigail Dyer in 1801. Eaton (1865) independently names Abigail as the first wife of Capt. Matthew of Hope. The pair of reports are compatible; the book's further sibling link to Thomas remains a separate identity hypothesis.",
+    "proof": "Consistency of a spouse's name across two publications does not uniquely identify Matthew, prove that the 1785 minor was the same man, or certify his parents or 1801 wedding date.",
+    "reference": "The Colony: Stories from a Down East Island, Lowell P. Beveridge Jr. (2016)",
+    "url": "",
+    "book_page": 17,
+    "locator": "Original family book PDF page 17, text adjacent to early Fox Islands settlement",
+    "evidence_kind": "Retrospective published family narrative",
+    "next_originals": [
+      "The original marriage record dated around 1801",
+      "Any record naming the 1785 minor's parents and linking his identity to the later captain",
+      "Records distinguishing Thomas's brother Matthew from other contemporary Matthews, if any"
+    ]
+  },
+  {
+    "id": "warren-1851-clarissa",
+    "title": "Warren's 1851 Cobb history identifies Clarissa as Capt. Matthew's wife",
+    "status": "same_author_correlated_published_evidence",
+    "person_ids": [],
+    "claim": "Cyrus Eaton's Annals of Warren (1851) identifies Clarissa Cobb, daughter of Capt. Barnabas Cobb, as wife of Capt. Matthew Beverage of Hope. The author's 1865 register names her as his second wife.",
+    "proof": "The 1851 and 1865 Eaton reports are correlated writings from the same author, not independent original registers. Neither alone confirms Clarissa's marriage date or demonstrates the captain's specific birth parents.",
+    "reference": "Cyrus Eaton, Annals of Warren, 1851, Cobb family discussion, p. 383",
+    "url": "https://ldsgenealogy.com/ME/books/Annals-of-the-town-of-Warren-with-the-Early-History-of-St-Georges-Broad-Bay-and-the-Neighboring-Settlements-on-the-Waldo-patent-part-39.htm",
+    "locator": "Printed p. 383",
+    "evidence_kind": "Retrospective local-history family report",
+    "next_originals": [
+      "Original vital, church or justice-of-peace return for Matthew and Clarissa",
+      "Capt. Barnabas Cobb probate/heir deeds naming daughter Clarissa or her husband",
+      "Independent contemporaneous land record with full names and Hope location"
+    ]
+  },
+  {
+    "id": "fox-islands-1785-minor",
+    "title": "A Matthew called 'minor' in the 1785 Fox Islands claimant list",
+    "status": "identity_not_established",
+    "person_ids": [],
+    "claim": "A Matthew Beveridge is listed as a minor among the settlers in the 1785 petition and 1786 resolve as later printed. This is consistent with a man who later reached adulthood, but no unique identity is supplied.",
+    "proof": "The printed petition transcription is not a photographed signature and does not prove this minor became Capt. Matthew Beverage or was Thomas's brother. It also does not assign a personal land parcel.",
+    "reference": "Brief Historical Sketch of Vinalhaven (1889), Fox Islands petition and grant transcription",
+    "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+    "locator": "Printed pp. 9–11, 1785 petition/1786 resolve",
+    "evidence_kind": "Later transcription of historical legislative list",
+    "next_originals": [
+      "Original 1785 Fox Islands petition or 1786 Massachusetts legislative bundle, manuscript context",
+      "Land/allotment guardian records naming the minor Matthew's parent or custodian",
+      "Same-person identity bridge from 1785 petition to Capt. Matthew's subsequent marriage/children"
+    ]
+  },
+  {
+    "id": "nathaniel-1865-nephew",
+    "title": "Eaton reports Nathaniel (born circa 1804) as Capt. Matthew's nephew",
+    "status": "kinship_degree_unverified",
+    "person_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "sarah_alexander_beverage_1808"
+    ],
+    "claim": "Immediately after Matthew's family group, Eaton records Nathaniel Beverage born around 1804 as 'a nephew of Capt. Matthew' and says Nathaniel's wife Sarah Alexander was a 'niece of ditto.'",
+    "proof": "The relative labels are exactly what Eaton reports, but do not name either person's parents or necessarily use modern degrees of consanguinity. An unsourced compiled tree assigning Nathaniel to John White Beverage/Rachel Crosby may produce a grandnephew if Matthew were Thomas's brother. Do not automatically repair the tree based on those assumptions.",
+    "reference": "Cyrus Eaton, History of Thomaston, Rockland and South Thomaston, II (1865), printed p. 147",
+    "url": "https://archive.org/details/historyofthomast02eato",
+    "locator": "Printed p. 147, heading BEVERAGE, Nathaniel",
+    "evidence_kind": "Published near-contemporary kinship entry",
+    "next_originals": [
+      "Early Fox Islands birth/baptism or original marriage return for Nathaniel and Sarah",
+      "Probate of Nathaniel's proposed father naming son and spouse",
+      "Any Matthew estate document naming nephews, nieces or their parents"
+    ]
+  },
+  {
+    "id": "probate-pre1860-waldo-index",
+    "title": "Find Capt. Matthew's estate through predecessor-county probate indexes",
+    "status": "original_collection_access_path_not_record_found",
+    "person_ids": [],
+    "claim": "FamilySearch hosts county probate book images covering early Maine, and a specifically described Waldo County probate index/record series covers 1826–1892. Knox County's separately named estate-file image collection begins in 1861; an earlier Hope estate should therefore be sought under contemporary county court jurisdiction rather than assuming a Knox 1830s case file.",
+    "proof": "This is a verified repository and index pathway, not evidence that a probate packet for Capt. Matthew has been found. His year of death (often estimated about 1837) is not yet independently established.",
+    "reference": "Waldo County Probate Court, indexes and records 1826–1892; FamilySearch Maine County Probate Records",
+    "url": "https://www.familysearch.org/en/search/collection/2040534",
+    "locator": "Waldo County original probate index of dockets → index of probate records → bound probate volume/page",
+    "evidence_kind": "Original court record collection finding aid",
+    "supporting_links": [
+      {
+        "title": "Waldo County probate indexes 1826–1892 catalog",
+        "url": "https://search.worldcat.org/title/866329316"
+      },
+      {
+        "title": "FamilySearch county probate collection 1760–1979",
+        "url": "https://www.familysearch.org/en/search/collection/2040534"
+      },
+      {
+        "title": "Knox Probate collection starts 1861",
+        "url": "https://www.familysearch.org/en/search/collection/1931808"
+      },
+      {
+        "title": "Waldo Registry deeds official index",
+        "url": "https://www.waldocountyme.gov/178/Registry-of-Deeds"
+      }
+    ],
+    "next_originals": [
+      "Search Waldo's surname index under Beverage, Beveridge, Beviridge and spouse variants, using the index to dockets and book/page instructions",
+      "Inspect every matching estate or guardianship image and transcribe heirs/spouse from the original—not an index heading alone",
+      "Compare recorded Hope deeds and later probate jurisdiction if the estate was transferred after county boundaries changed"
+    ]
+  }
+]

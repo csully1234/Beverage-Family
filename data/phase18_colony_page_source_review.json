@@ -58,21 +58,26 @@
   },
   {
     "pdf_page": 17,
-    "title": "Two possible Matthews: Abigail Dyer versus Clarissa Cobb",
-    "category": "Identity conflict",
-    "observation": "The book explicitly calls Matthew a younger brother of Thomas, and says Matthew returned to the Fox Islands and married Abigail Dyer in 1801. Separate nineteenth-century published histories name a Capt. Matthew Beverage of Hope as Clarissa Cobb's husband; whether they refer to one person is unresolved.",
+    "title": "Matthew's first and second wives: the 1865 family register clarifies the apparent conflict",
+    "category": "Published family-history reconciliation",
+    "observation": "The 2016 book calls Matthew a younger brother of Thomas and reports Matthew's Abigail Dyer marriage in 1801. An earlier near-contemporary source, Cyrus Eaton's 1865 Thomaston/Rockland family register (vol. II, p.146), explicitly describes one Capt. Matthew Beverage of Hope marrying Abigail Dyer first and Clarissa Cobb second; it allocates five named children to each wife. These published accounts are compatible on the Abigail marriage, not evidence of two different Matthews by themselves.",
     "people_ids": [
       "thomas_beverage_1750",
       "mercy_kent_1754"
     ],
-    "status": "Page visually inspected; historical identity conflict remains unresolved",
+    "status": "The earlier apparent first-wife/second-wife contradiction is resolved WITHIN Eaton's published account; original marriage certificates and identity with Thomas's brother remain unverified",
     "verification": "Visually compared directly with original book page",
-    "why_it_matters": "Avoid merging distinct Matthew Beverage identities or attaching their spouses/parents based only on repeated name.",
+    "why_it_matters": "Corrects the earlier misleading two-Matthews conflict without inventing a civil marriage certificate. Eaton's marriage order is explicit; his parents, the 1785 minor's identity, and Matthew's exact connection to Thomas and Nathaniel still need independent original records.",
     "next_originals": [
-      "Original 1801 Matthew Beverage–Abigail Dyer marriage return",
-      "Original Capt. Matthew Beverage–Clarissa Cobb marriage record",
-      "Probate, deeds and death records indicating whether the two reported spouses belong to one man or two namesakes"
-    ]
+      "Original Matthew–Abigail Dyer marriage entry around 1801 to check the book's stated date",
+      "Original Matthew–Clarissa Cobb marriage entry and 1830s Hope estate/probate naming widow and children",
+      "Original identity bridge from 1785 Fox Islands minor Matthew to Capt. Matthew and the claimed Thomas brotherhood"
+    ],
+    "supporting_source": {
+      "title": "Cyrus Eaton, History of Thomaston/Rockland (1865), vol. II p.146",
+      "url": "https://archive.org/details/historyofthomast02eato",
+      "locator": "BEVERAGE, Capt. Matthew, wife order and two five-child groups"
+    }
   },
   {
     "pdf_page": 17,

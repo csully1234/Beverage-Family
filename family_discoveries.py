@@ -14,9 +14,15 @@ from family_data import relationship_index
 from relationship_evidence import render_relationship_coverage
 from ancestry_bridge_casework import render_ancestry_dossiers
 from family_research_workbench import render_research_workbench
+from matthew_reconciliation import render_matthew_reconciliation
 
 
 def render_family_discoveries(people_by_id: dict) -> None:
+    if str(st.query_params.get("view", "") or "") == "matthew":
+        st.title("Matthew Beverage — historical family-group evidence")
+        render_matthew_reconciliation()
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
     if str(st.query_params.get("view", "") or "") == "workbench":
         render_research_workbench(people_by_id)
         route_link("← Return to Historical Discoveries", "?page=collection")
@@ -36,6 +42,8 @@ def render_family_discoveries(people_by_id: dict) -> None:
                "?page=collection&view=workbench")
     requested = str(st.query_params.get("finding", "") or "")
     if not requested:
+        route_link("Research breakthrough: Matthew's FIRST wife Abigail Dyer and SECOND wife Clarissa Cobb in the 1865 source",
+                   "?page=collection&view=matthew")
         render_ancestry_dossiers(people_by_id)
         with st.expander("How are family relationships documented? · Complete connection audit"):
             render_relationship_coverage(people_by_id,
