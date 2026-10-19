@@ -1,0 +1,285 @@
+[
+  {
+    "id": "waldo-matthew-estate-1837-phase23",
+    "review_date": "2026-10-19",
+    "title": "Matthew Beveridge of Hope: court-identified children and early land acquisition clues",
+    "source": "Original-era Waldo County probate copies supplied by user; scan numbers are research identifiers, NOT official folios or docket order.",
+    "source_rights": "The supplied scans have not been licensed for public redistribution. Textual research extracts, editorial citations and record-navigation metadata only.",
+    "correction_to_prior_review": "Phase 22 described eight individuals as legal heirs. Review scan 09 contains stronger explicit language: the judge's October 1837 warrant calls them Matthew's 'children'. This warrants recording father-child relationships, but does not identify their mothers or Matthew's own parents.",
+    "relationship_basis": {
+      "status": "direct_probate_child_designation",
+      "record_scan": 9,
+      "supporting_scan": 31,
+      "court_date": "1837-10-06",
+      "quotation": "to and among his children viz.",
+      "reading_limit": "The named children are listed on the handwritten line following this printed warrant. Exact letter forms and middle initials should be checked against the official volume. None is assigned a biological mother based on probate."
+    },
+    "principal_people": [
+      {
+        "person_id": "matthew_beveridge_hope_1837",
+        "role": "decedent",
+        "label": "Matthew Beveridge/Beverage of Hope",
+        "evidence_scans": [
+          9,
+          10,
+          18,
+          31
+        ]
+      },
+      {
+        "person_id": "clarissa_beveridge_widow_1837",
+        "role": "widow, petitioner",
+        "label": "Clarissa Beveridge/Beverage",
+        "evidence_scans": [
+          7,
+          10,
+          18,
+          24
+        ],
+        "limitation": "Probate does not independently give maiden name Cobb."
+      },
+      {
+        "person_id": "achsa_heald_matthew_child",
+        "role": "named child",
+        "label": "Achsa Heald",
+        "evidence_scans": [
+          9,
+          31
+        ]
+      },
+      {
+        "person_id": "james_m_beverage_matthew_child",
+        "role": "named child",
+        "label": "James M. Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ]
+      },
+      {
+        "person_id": "polly_tucker_matthew_child",
+        "role": "named child",
+        "label": "Polly Tucker",
+        "evidence_scans": [
+          9,
+          14,
+          31
+        ],
+        "limitation": "May be Mary Miles Beverage Tucker in Eaton; identity still needs independent match."
+      },
+      {
+        "person_id": "thomas_j_beverage_matthew_child",
+        "role": "named child",
+        "label": "Thomas J. Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ]
+      },
+      {
+        "person_id": "sarah_a_beverage_matthew_child",
+        "role": "named child",
+        "label": "Sarah A. Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ]
+      },
+      {
+        "person_id": "george_w_beverage_matthew_child",
+        "role": "named child",
+        "label": "George W. Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ]
+      },
+      {
+        "person_id": "martha_beverage_matthew_child",
+        "role": "named child",
+        "label": "Martha Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ],
+        "limitation": "A later married surname Allen is only a separate published family-history claim."
+      },
+      {
+        "person_id": "ezekiel_g_beverage_matthew_child",
+        "role": "named child and petitioner",
+        "label": "Ezekiel G. Beverage",
+        "evidence_scans": [
+          9,
+          31
+        ],
+        "limitation": "Additional middle initials uncertain; full form in Eaton is not established by the probate script alone."
+      }
+    ],
+    "transcriptions": [
+      {
+        "scan": 9,
+        "type": "verified_short_excerpt",
+        "date": "1837-10-06",
+        "text": "You are hereby directed and empowered to make a just and equal division or partition of the Real Estate whereof Matthew Beverage late of Hope in the county of Waldo, yeoman, died seized and possessed, to and among his children viz.",
+        "status": "high-confidence reading of printed form plus filled blanks; spelling normalized only for search in some linked records",
+        "note": "Read with the eight handwritten child names listed in the same warrant. Court date transcribed as sixth day of October 1837."
+      },
+      {
+        "scan": 31,
+        "type": "verified_short_excerpt",
+        "date": "1837-09-04",
+        "text": "respectfully represent that he is seized as an heir with others, ... in the real estate whereof Matthew Beverage late of Hope ... died seized and possessed",
+        "status": "partial reading; bracketed omission of long handwritten heir list",
+        "note": "Signed by Ezekiel G. [?] Beverage. The seven additional heirs are explicitly enumerated in the petition."
+      },
+      {
+        "scan": 10,
+        "type": "verified_short_excerpt",
+        "date": "1837-03-06",
+        "text": "Matthew Beveridge late of Hope died on the 14 day of February A.D. 1837",
+        "status": "high-confidence reading of filled form; middle digits in the year are on a printed form",
+        "note": "Clarissa petitions for administration; the form does not state her maiden surname."
+      },
+      {
+        "scan": 18,
+        "type": "verified_short_excerpt",
+        "date": "1837-09-04",
+        "text": "to Clarissa Beverage the said deceased's widow, one full third part of the said estate (so as may be convenient for her) for her dower or thirds, during her natural life",
+        "status": "high-confidence printed form with filled names",
+        "note": "A life dower interest is not proof of title to an independently located modern parcel."
+      },
+      {
+        "scan": 2,
+        "type": "careful_working_abstract",
+        "date": "1837",
+        "text": "Appraisers describe a homestead farm and further lots, including a lot said to have been purchased from Nathaniel Alford [surname reading fairly clear], a lot from [Henry? surname unresolved], and two wooded lots, one read tentatively as purchased from Lucy Whitney and the other from George [surname unresolved].",
+        "status": "interpretive abstract ONLY, not verbatim transcription; deed names and numerical acreages need confirmation from clearer manuscript or deed books",
+        "note": "Do not promote any seller's name, purchase date, valuation or parcel geometry to a proven deed transaction without finding the recorded instrument."
+      },
+      {
+        "scan": 14,
+        "type": "careful_working_abstract",
+        "date": "1837",
+        "text": "Agency paper concerns Polly Tucker of Lowell, Massachusetts, and Nathan Allen of Hope acting concerning her interest in Matthew Beverage's estate.",
+        "status": "interpretive abstract; not full diplomatic transcription",
+        "note": "Do not assert her maiden name or every marriage detail from this instrument."
+      },
+      {
+        "scan": 17,
+        "type": "careful_working_abstract",
+        "date": "1837-09",
+        "text": "Estate inventory and appraisers' signatures include household effects and other goods with assessed amounts; administrator Clarissa acknowledges the inventory.",
+        "status": "interpretive abstract only; individual item values and handwritten inventory total not fully verified",
+        "note": "No numerical estate valuation has been adopted from this working scan."
+      },
+      {
+        "scan": 24,
+        "type": "verified_short_excerpt",
+        "date": "1837",
+        "text": "The dower land allotted to Clarissa was accepted by the probate court.",
+        "status": "careful paraphrase, not a verbatim quotation",
+        "note": "Read with scan 18's one-third life-interest instruction and scan 02's land descriptions."
+      }
+    ],
+    "land_clues": [
+      {
+        "id": "hope-homestead",
+        "label": "Homestead farm",
+        "scan": 2,
+        "reading": "Appraisers identify a homestead farm separately from several additional parcels.",
+        "certainty": "high for distinct homestead; size, survey bounds, dollar amount unresolved",
+        "search_strategy": "Search grantor AND grantee entries for Matthew's surname variants and spouses in Lincoln deeds before 1827 and Waldo volumes from 1828."
+      },
+      {
+        "id": "hope-alford",
+        "label": "Lot associated with Nathaniel Alford",
+        "scan": 2,
+        "reading": "A smaller separate lot is described as purchased from a person whose name reads Nathaniel Alford.",
+        "certainty": "tentative name reading; purchase is retrospective and deed date not present",
+        "search_strategy": "Search grantee Matthew Bev(er)idge / Beverage and grantor Nathaniel Alford, Alvord, Alford and variants; do not equate with a later Nathaniel Alford without an original deed."
+      },
+      {
+        "id": "hope-third-parcel",
+        "label": "Further lot from a name beginning Henry",
+        "scan": 2,
+        "reading": "Separate lot said to have been purchased from a person whose given name appears to be Henry; surname is not reliably deciphered.",
+        "certainty": "tentative",
+        "search_strategy": "Extract grantor from deed index before assigning surname, acreage or value."
+      },
+      {
+        "id": "hope-whitney",
+        "label": "Wooded lot tentatively associated with Lucy Whitney",
+        "scan": 2,
+        "reading": "One of two wooded tracts appears to have been purchased from Lucy Whitney.",
+        "certainty": "tentative name reading",
+        "search_strategy": "Review historic grantor index for Whitney/Whittney and compare the deed's property description."
+      },
+      {
+        "id": "hope-george",
+        "label": "Other wooded lot with seller George [surname uncertain]",
+        "scan": 2,
+        "reading": "A second wooded lot was reportedly acquired from George [surname unresolved].",
+        "certainty": "surname unresolved",
+        "search_strategy": "Do not assign a surname or identify a living descendant until the recorded deed is located."
+      }
+    ],
+    "source_leads": [
+      {
+        "id": "lincoln-early-index",
+        "repository": "Lincoln County Registry of Deeds",
+        "date_scope": "1761–1827 for Hope prior to Waldo jurisdiction",
+        "url": "https://help.searchiqs.com/article/93-melin",
+        "proof_status": "INDEX COLLECTION VERIFIED, MATTHEW-SPECIFIC DEED NOT IDENTIFIED",
+        "detail": "1761–1847 A–Z index books; scanned deeds 1761–1953. The early ledger volumes are not an electronically searchable full-name index."
+      },
+      {
+        "id": "lincoln-master-index",
+        "repository": "Maine Genealogical Society",
+        "date_scope": "Lincoln deed books 1–100 (1760–1818); 101–189 (1818–1848)",
+        "url": "https://maineroots.org/images/MGS_Publication_List_07_2025.pdf",
+        "proof_status": "PUBLICATION REFERENCE, INDIVIDUAL VOLUME/PAGE NOT CHECKED",
+        "detail": "Two independently compiled master index publications exist; book purchases not authorized."
+      },
+      {
+        "id": "waldo-early-index",
+        "repository": "Waldo County Registry of Deeds",
+        "date_scope": "1827 onward",
+        "url": "https://help.searchiqs.com/article/95-mewal",
+        "proof_status": "INDEX COLLECTION VERIFIED, MATTHEW-SPECIFIC DEED NOT IDENTIFIED",
+        "detail": "Grantor/grantee index books 1827–1980 and image books from January 1828; online automatic name indexing begins far later."
+      },
+      {
+        "id": "hope-town-maps",
+        "repository": "Hope Historical Society",
+        "date_scope": "1799 original lots; 1821 taxpayers",
+        "url": "https://hopehist.com/Himages/XMay22.html",
+        "proof_status": "MAP AND RESEARCH PROJECT VERIFIED, MATTHEW PARCEL NOT LOCATED",
+        "detail": "Original lot-owner study uses Harkness's 1799 map, lot deeds and a transcription of early records."
+      },
+      {
+        "id": "hope-map-archive",
+        "repository": "Walsh History Center",
+        "date_scope": "1799 maps and later composite overlays",
+        "url": "https://hub.catalogit.app/walshhistorycenter/folder/entry/materials-and-maps-related-to-camden-settlement",
+        "proof_status": "CATALOG ITEM VERIFIED, NOT A PARCEL IDENTIFICATION",
+        "detail": "Catalog descriptions include Hope 1799 maps and a parcel overlay; source images require further archival inspection."
+      },
+      {
+        "id": "hope-town-ledger",
+        "repository": "Hope Historical Society / Cynthia S. DellaPenna",
+        "date_scope": "1804–1848 clerk ledger and 1821 taxpayer appendix",
+        "url": "https://hopehist.com/HHS2.html",
+        "proof_status": "MANUSCRIPT COLLECTION VERIFIED, EARLY PROPERTY TITLE NOT PROVED",
+        "detail": "The transcribed ledger is useful for corroborating residence and clerk activity, not proof of property grant."
+      }
+    ],
+    "open_questions": [
+      "Retrieve official grantee and grantor index book entries with a specific volume and page for each transaction associated with Matthew.",
+      "Inspect the recorded deeds themselves, including stated consideration, metes and bounds, witnesses, registration dates and any kinship words.",
+      "Compare the earliest documented Hope parcel with the 1799 original lots; do not geocode from a weak surname similarity.",
+      "Obtain the probate case/docket number from Waldo Court and confirm the child-name handwritten letters and source folios.",
+      "Determine if the eight legally designated children correspond exactly to Eaton's 1865 family entries, and investigate Harrison and Louisa's deaths without treating silence in the probate as proof.",
+      "Locate marriage returns for Abigail Dyer and Clarissa, and original proof of the captain's parents and possible relationship to Capt. Thomas."
+    ]
+  }
+]
