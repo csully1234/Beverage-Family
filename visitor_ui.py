@@ -419,6 +419,8 @@ def render_media_page() -> None:
     collection = load_collection()
     st.title("Photographs & Documents")
     st.write("Explore archival items and read historical records. We display original image files only when reuse rights and source identification are established.")
+    route_link("Explore the newly received Matthew Beverage 1837 probate document catalog",
+               "?page=collection&view=waldo-probate")
     with st.container(border=True):
         st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
         st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
