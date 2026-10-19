@@ -1,0 +1,67 @@
+[
+  {
+    "id": "barnabas_cobb_clarissa_father",
+    "full_name": "Barnabas Cobb (father of Clarissa)",
+    "birth_date": "1760",
+    "birth_date_precision": "approximate",
+    "birth_place": null,
+    "death_date": "1807",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "jerusha_cobb_clarissa_mother"
+    ],
+    "children": [
+      "clarissa_beveridge_widow_1837"
+    ],
+    "residences": [],
+    "notes": "Carver town-record compilation identifies Barnabas and Jerusha as Clarissa Cobb's parents in 1786. Philip L. Cobb's 1907 genealogy describes Barnabas Cobb born about 1760, died 9 July 1807, married Jerusha Cobb, and emigrated to Warren, Maine about 1802. The day of birth/death and move are not verified from the original records. A Barnabas Cobb served as Carver clerk 1799–1801 according to 1913 retrospective list, but this is only a same-name identity lead.",
+    "sources": [
+      "New England Historic Genealogical Society, Vital Records of Carver, Massachusetts to the Year 1850 (1911), p. 21, 'Cobb, Clarissa, ch. Barnabas and Jerusha, Mar. 27, 1786' (printed transcription of town vital records).",
+      "Philip L. Cobb, A History of the Cobb Family, Part I (1907), pp. 164–165, no. 206: Clarissa Cobb of Carver identified as wife of Capt. Matthew Beverage of Hope, Maine (compiled genealogy; original marriage register unexamined)."
+    ]
+  },
+  {
+    "id": "jerusha_cobb_clarissa_mother",
+    "full_name": "Jerusha Cobb (mother of Clarissa)",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": "1843",
+    "death_date_precision": "year",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "barnabas_cobb_clarissa_father"
+    ],
+    "children": [
+      "clarissa_beveridge_widow_1837"
+    ],
+    "residences": [],
+    "notes": "Carver's published vital-record transcription calls Jerusha, with Barnabas, parent of Clarissa Cobb (born 27 March 1786). Philip L. Cobb (1907) describes Jerusha Cobb, wife of Barnabas, as daughter of Ebenezer Cobb III and Jerusha Cushman, and reports her death in Union, Maine on 29 September 1843. Maternal grandparents are NOT linked in this research pass because original supporting records were not checked.",
+    "sources": [
+      "New England Historic Genealogical Society, Vital Records of Carver, Massachusetts to the Year 1850 (1911), p. 21, 'Cobb, Clarissa, ch. Barnabas and Jerusha, Mar. 27, 1786' (printed transcription of town vital records).",
+      "Philip L. Cobb, A History of the Cobb Family, Part I (1907), pp. 164–165, no. 206: Clarissa Cobb of Carver identified as wife of Capt. Matthew Beverage of Hope, Maine (compiled genealogy; original marriage register unexamined)."
+    ]
+  },
+  {
+    "id": "clarissa_beveridge_widow_1837",
+    "full_name": "Clarissa Cobb Beveridge (Matthew's widow)",
+    "birth_date": "1786-03-27",
+    "birth_date_precision": "exact",
+    "birth_place": "Carver, Massachusetts",
+    "parents": [
+      "barnabas_cobb_clarissa_father",
+      "jerusha_cobb_clarissa_mother"
+    ],
+    "notes": "Waldo County probate papers of 1837 directly identify Clarissa as widow of Matthew Beverage/Beveridge of Hope, but do not name her birth family. Carver town vital records, published in 1911 (p. 21), record Clarissa Cobb born 27 March 1786, a child of Barnabas and Jerusha. Philip L. Cobb's 1907 genealogy, pp. 164–165, identifies that Clarissa Cobb as Capt. Matthew Beverage's wife at Hope. This is strong combined identity evidence from a town-record-derived birth entry and a later family compilation; an original Matthew–Clarissa marriage record is still needed. Clarissa is NOT automatically assigned as the biological mother of any of Matthew's eight court-named children.",
+    "sources": [
+      "Waldo County Probate Court, Clarissa's March 1837 administration petition (received scan 10)",
+      "Waldo County Probate Court, widow's dower warrant and decree (received scans 07, 18, 24)",
+      "New England Historic Genealogical Society, Vital Records of Carver, Massachusetts to the Year 1850 (1911), p. 21, 'Cobb, Clarissa, ch. Barnabas and Jerusha, Mar. 27, 1786' (printed transcription of town vital records).",
+      "Philip L. Cobb, A History of the Cobb Family, Part I (1907), pp. 164–165, no. 206: Clarissa Cobb of Carver identified as wife of Capt. Matthew Beverage of Hope, Maine (compiled genealogy; original marriage register unexamined)."
+    ]
+  }
+]
