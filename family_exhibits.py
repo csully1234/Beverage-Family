@@ -27,6 +27,21 @@ RELATIONSHIP_LABELS = (
     ("parents", "Parents"), ("spouses", "Spouses"),
     ("children", "Children"), ("siblings", "Siblings")
 )
+CITATION_PAGE_SIZE = 6
+
+
+def visible_citations(citations: list[dict], *, linked_only: bool = False) -> list[dict]:
+    """Retain original cited order and identity; hide no references permanently."""
+    return [source for source in citations if not linked_only or bool(source.get("url"))]
+
+
+def citation_page(citations: list[dict], page: int, size: int = CITATION_PAGE_SIZE) -> list[dict]:
+    """Paginate the *display* only, preserving every historical citation."""
+    if size <= 0 or page < 1:
+        return []
+    return citations[(page - 1) * size:page * size]
+
+
 GROUP_ORDER = (
     "Relationship evidence", "Historical investigations",
     "Historical research findings", "Historical source exhibits",
@@ -134,8 +149,35 @@ def _records_section(overview: dict) -> None:
     else:
         st.caption(f"{len(cited)} distinct cited destinations or labels; "
                    f"{overview['linked_citations']} lead to a web page or document.")
-        for number, source in enumerate(cited):
-            render_source_card(source, context="museum-" + overview["id"], number=number)
+        linked_only = st.checkbox(
+            "Show only citations with a record link",
+            value=False, key="museum_linked_citations_" + overview["id"],
+            help="Unchecked shows every reference, including bibliographic-only citations.",
+        )
+        candidates = visible_citations(cited, linked_only=linked_only)
+        st.caption(f"{len(candidates)} of {len(cited)} citation(s) shown. "
+                   "Unlinked bibliographies remain available when the filter is off.")
+        if not candidates:
+            st.info("No linked original record is currently available. "
+                    "Turn off the filter to inspect all cited sources.")
+        else:
+            count = max(1, (len(candidates) + CITATION_PAGE_SIZE - 1) // CITATION_PAGE_SIZE)
+            citation_key = "museum_citation_page_" + overview["id"]
+            if st.session_state.get(citation_key) not in range(1, count + 1):
+                st.session_state[citation_key] = 1
+            if count > 1:
+                chosen = st.selectbox(
+                    "Citation page", range(1, count + 1),
+                    format_func=lambda n: f"{n} of {count}",
+                    key=citation_key,
+                )
+            else:
+                chosen = 1
+            for offset, source in enumerate(citation_page(candidates, chosen)):
+                render_source_card(
+                    source, context="museum-" + overview["id"],
+                    number=(chosen - 1) * CITATION_PAGE_SIZE + offset,
+                )
     st.markdown("**Research findings linked to this exact relative**")
     if not records:
         st.caption("No additional finding has been linked by a reviewed person ID. "

@@ -288,6 +288,48 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertIn("people ", identity)
         self.assertEqual(variant, "continuous")
 
+    def test_direct_relative_jump_in_focused_tree_preserves_selection(self):
+        matthew = "matthew_beveridge_hope_1837"
+        child = "polly_tucker_matthew_child"
+        app = self.logged_in_app(page="tree", profile=matthew)
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="tree_person").value, matthew)
+        self.assertTrue(any("Polly Tucker" in label for label in
+                            app.selectbox(key="tree_connected_person").options))
+        app.selectbox(key="tree_connected_person").select(child).run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="tree_person").value, child)
+        self.assertEqual(app.session_state["full_map_person"], child)
+        self.assertEqual(app.query_params["profile"], [child])
+
+    def test_full_family_map_relative_jump_and_evidence_link(self):
+        matthew = "matthew_beveridge_hope_1837"
+        child = "james_m_beverage_matthew_child"
+        app = self.logged_in_app(page="full-tree", profile=matthew)
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="full_map_person").value, matthew)
+        app.selectbox(key="map_connected_person").select(child).run()
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertEqual(app.selectbox(key="full_map_person").value, child)
+        self.assertEqual(app.session_state["tree_person"], child)
+        self.assertTrue(any(b.label == "Explore this person's life and supporting records"
+                            for b in app.button))
+
+    def test_profile_complete_family_and_source_citation_controls(self):
+        person = "matthew_beveridge_hope_1837"
+        app = self.logged_in_app(page="people", profile=person)
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("Show all 8 children" in x.label for x in app.expander))
+        self.assertTrue(any(b.label == "Read all historical sources for this person"
+                            for b in app.button))
+        exhibit = self.logged_in_app(page="collection", view="person-exhibit",
+                                     person=person, section="Original records")
+        self.assertFalse(exhibit.exception, [e.value for e in exhibit.exception])
+        self.assertTrue(any(c.label == "Show only citations with a record link"
+                            for c in exhibit.checkbox))
+        exhibit.checkbox(key="museum_linked_citations_" + person).check().run()
+        self.assertFalse(exhibit.exception, [e.value for e in exhibit.exception])
+
     def test_full_family_map_person_selection_is_in_map(self) -> None:
         app = self.logged_in_app(page="full-tree")
         self.assertFalse(app.exception, [e.value for e in app.exception])

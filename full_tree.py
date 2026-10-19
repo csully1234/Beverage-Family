@@ -299,8 +299,13 @@ def build_full_tree_html(
     background:rgba(255,253,248,.94); border:1px solid rgba(25,49,58,.14);
     color:#50686f; font-size:11px; pointer-events:none; }}
   @media (max-width:700px) {{
-    #shell {{ height:720px; border-radius:12px; }}
-    #toolbar {{ align-items:stretch; gap:6px; }}
+    /* The outer Streamlit component has a viewport-sized frame on phones.
+       Using a fixed 720px inner shell cuts off the SVG and bottom controls. */
+    #shell {{ height:100%; min-height:0; border-radius:12px; }}
+    #toolbar {{ align-items:stretch; gap:6px; max-height:48%; overflow-y:auto;
+      overscroll-behavior:contain; }}
+    #viewport {{ min-height:120px; }}
+    #toolbar select, #toolbar input, #toolbar button {{ min-height:44px; }}
     #toolbar input {{ flex:1 1 48%; max-width:none; }}
     #personSelect {{ max-width:none; flex:1 1 48%; }}
     #toolbar button {{ flex:1 0 auto; min-height:42px; }}
