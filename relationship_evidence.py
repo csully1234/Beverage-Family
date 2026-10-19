@@ -18,7 +18,9 @@ from family_data import relationship_index
 from routing_ui import route_link
 
 FILE = Path(__file__).resolve().parent / "data" / "phase15_relationship_reviews.json"
+PHASE29_FILE = Path(__file__).resolve().parent / "data" / "phase29_relationship_reviews.json"
 STATUS_NAMES = {
+    "original_probate_record": "Specifically named in a contemporary probate court record",
     "corroborated_publication": "Supported by corroborating published records",
     "contemporary_report": "Recorded in a contemporary or near-contemporary account",
     "published_record": "Reported in a published historical record",
@@ -43,9 +45,18 @@ def edge_key(kind: str, a: str, b: str) -> tuple[str, str, str]:
 
 
 def load_relationship_reviews() -> list[dict]:
+    """Preserve old reviewed claims; append original-specific reviewed additions.
+
+    Never modify a historic family link merely to change its source annotation.
+    """
     records = json.loads(FILE.read_text(encoding="utf-8"))
     if not isinstance(records, list):
         raise ValueError("Relationship review register must contain a list")
+    if PHASE29_FILE.exists():
+        added = json.loads(PHASE29_FILE.read_text(encoding="utf-8"))
+        if not isinstance(added, list):
+            raise ValueError("Phase 29 relationship review register must contain a list")
+        records.extend(added)
     return records
 
 
@@ -143,9 +154,15 @@ def _render_review(row: dict, people: Mapping) -> None:
         st.write(row["finding"])
     st.caption("What this does not prove: " + row["limitations"])
     for source in row["sources"]:
-        route_link("Inspect record: " + source["title"], source["url"])
+        destination = source.get("route") or source.get("url")
+        if destination:
+            route_link("Inspect record: " + source["title"], destination)
+        else:
+            st.caption("Citation only: " + str(source.get("title") or "Unlinked source"))
         if source.get("type"):
             st.caption(str(source["type"]))
+        if source.get("route") and not source.get("url"):
+            st.caption("The evidence notebook is available; the court's original scan is not published.")
 
 
 def render_profile_relationship_review(person_id: str, people: Mapping, relationships: Mapping) -> None:
