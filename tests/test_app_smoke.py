@@ -458,7 +458,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         missing = self.logged_in_app(page="collection", view="person-exhibit",
                                      person="nonexistent_hist_person")
         self.assertFalse(missing.exception, [e.value for e in missing.exception])
-        self.assertTrue(any("isn't in the reviewed family index" in str(w.message)
+        self.assertTrue(any("isn't in the reviewed family index" in str(w.value)
                             for w in missing.warning))
 
     def test_family_home_exhibits_and_profile_entry_point(self):
