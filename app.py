@@ -56,6 +56,7 @@ from relationship_evidence import render_profile_relationship_review, render_rel
 from ancestry_bridge_casework import render_person_bridge_casework
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from family_exhibits import exhibit_route
+from family_navigation import connected_relatives, connected_profile_ids, unresolved_relative_ids
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
 from research_collection_ui import (
@@ -656,6 +657,22 @@ def sync_tree_person() -> None:
         st.query_params["profile"] = str(person_id)
 
 
+def sync_connected_tree_person() -> None:
+    """Move between exact-ID linked relatives without resetting the site route."""
+    candidate = st.session_state.get("tree_connected_person")
+    if candidate:
+        st.session_state["tree_person"] = candidate
+        sync_tree_person()
+
+
+def sync_connected_map_person() -> None:
+    """Change the map focus before Streamlit instantiates the main selector."""
+    candidate = st.session_state.get("map_connected_person")
+    if candidate:
+        st.session_state["full_map_person"] = candidate
+        sync_full_map_person()
+
+
 def sync_full_map_person() -> None:
     """Keep map selections in both tree views and the browser's URL."""
     person_id = st.session_state.get("full_map_person")
@@ -1032,9 +1049,16 @@ def render_person_profile(
                     # This is an unresolved profile, not a false relationship.
                     st.caption(f"{person_name(people_by_id, pid)} · profile not yet entered")
             if len(ids) > 3:
-                st.caption(f"+{len(ids)-3} more in the Family tab")
+                with st.expander(f"Show all {len(ids)} {heading.lower()}"):
+                    for pid in ids[3:]:
+                        if pid in people_by_id:
+                            route_link(person_name(people_by_id, pid), person_url(pid))
+                        else:
+                            st.caption(f"{person_name(people_by_id, pid)} · profile not yet entered")
     route_link("Explore this relative's life, documents and family photographs",
                exhibit_route(person_id), type="primary")
+    route_link("Read all historical sources for this person",
+               exhibit_route(person_id, "Original records"))
     route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
     route_link("View this person's timeline", "?page=timeline&person="+quote(person_id))
 
@@ -1523,8 +1547,29 @@ def render_tree_page(
             generations = st.slider("Generations", 1, maximum, key="tree_depth")
     st.caption(f"Showing up to {generations} of {maximum} documented generation steps for this person and view.")
 
-    st.caption("Prefer a readable list? Open the profile’s Family tab for linked relatives. Recorded links can include unresolved research questions.")
-    render_profile_review(focus_id, load_collection(), people_by_id)
+    st.subheader("Jump directly to family")
+    relatives = connected_relatives(focus_id, people_by_id, relationships)
+    related_ids = connected_profile_ids(focus_id, people_by_id, relationships)
+    if st.session_state.get("_tree_connected_focus") != focus_id or st.session_state.get("tree_connected_person") not in related_ids:
+        st.session_state["tree_connected_person"] = focus_id
+        st.session_state["_tree_connected_focus"] = focus_id
+    labels = {row["person_id"]: row["relationship"] + " · " + row["name"] for row in relatives}
+    st.selectbox(
+        "Selected person or connected relative",
+        options=related_ids,
+        format_func=lambda pid: "Current person · " + person_name(people_by_id, pid)
+        if pid == focus_id else labels.get(pid, person_name(people_by_id, pid)),
+        key="tree_connected_person",
+        on_change=sync_connected_tree_person,
+    )
+    unresolved = unresolved_relative_ids(focus_id, people_by_id, relationships)
+    st.caption(str(len(relatives)) + " relatives with individual profiles; "
+               + str(len(unresolved)) + " unresolved reference(s). "
+               "Only documented profile IDs appear in the selector.")
+    route_link("Read this person's complete original-evidence exhibit",
+               exhibit_route(focus_id, "Original records"))
+    with st.expander("Dates, identities and relationship evidence"):
+        render_profile_review(focus_id, load_collection(), people_by_id)
     graph = build_family_graph(people_by_id, relationships, focus_id, view, generations)
     st.graphviz_chart(graph, width="stretch")
     st.caption("Nodes include profile links where supported. The family navigator below always opens the selected profile.")
@@ -1661,6 +1706,28 @@ def render_full_tree_page(
         key="full_map_person",
         on_change=sync_full_map_person,
     )
+    active_id = st.session_state.get("full_map_person")
+    if active_id in people_by_id:
+        nearby = connected_relatives(active_id, people_by_id, relationships)
+        near_ids = connected_profile_ids(active_id, people_by_id, relationships)
+        if (st.session_state.get("_map_related_focus") != active_id
+                or st.session_state.get("map_connected_person") not in near_ids):
+            st.session_state["map_connected_person"] = active_id
+            st.session_state["_map_related_focus"] = active_id
+        nearby_labels = {row["person_id"]: row["relationship"] + " · " + row["name"]
+                         for row in nearby}
+        st.selectbox(
+            "Go to a parent, spouse, child or sibling",
+            near_ids,
+            format_func=lambda pid: "Current person · " + person_name(people_by_id, pid)
+            if pid == active_id else nearby_labels.get(pid, person_name(people_by_id, pid)),
+            key="map_connected_person",
+            on_change=sync_connected_map_person,
+        )
+        route_link("Explore this person's life and supporting records",
+                   exhibit_route(active_id))
+    else:
+        st.caption("Choose a person above or on the tree to reveal their connected relatives.")
 
     controls, note = st.columns([1, 3])
     with controls:
