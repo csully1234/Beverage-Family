@@ -225,7 +225,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
     phase23 = _read_records("phase23_probate_deed_trail.json", root)[0]
     father = "matthew_beveridge_hope_1837"
     court_children = [p for p in phase23["principal_people"]
-                      if p["role"] == "named child"]
+                      if p["role"].startswith("named child")
     for child in court_children:
         records.append(_item(
             id="waldo-court-child:" + child["person_id"],
