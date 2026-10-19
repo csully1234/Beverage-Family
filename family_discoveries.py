@@ -17,6 +17,7 @@ from family_research_workbench import render_research_workbench
 from matthew_reconciliation import render_matthew_reconciliation
 from hope_matthew_civic import render_hope_civic_timeline
 from waldo_probate import render_waldo_probate
+from waldo_probate import render_waldo_probate
 
 
 def render_family_discoveries(people_by_id: dict) -> None:
@@ -24,6 +25,11 @@ def render_family_discoveries(people_by_id: dict) -> None:
         st.title("Waldo County probate — Matthew Beverage estate papers")
         render_waldo_probate()
         route_link("← Return to Historical Discoveries", "?page=collection")
+        return
+    if str(st.query_params.get("view", "") or "") == "waldo-probate":
+        st.title("Waldo County probate records")
+        render_waldo_probate()
+        route_link("← Back to discoveries", "?page=collection")
         return
     if str(st.query_params.get("view", "") or "") == "hope-matthew":
         st.title("Matthew Beveridge — original-era Hope civic records")
@@ -55,6 +61,8 @@ def render_family_discoveries(people_by_id: dict) -> None:
     requested = str(st.query_params.get("finding", "") or "")
     if not requested:
         route_link("NEW: Matthew's 1837 Waldo probate — Clarissa, eight heirs and court papers",
+                   "?page=collection&view=waldo-probate")
+        route_link("NEW: Matthew Beverage estate probate, 1837 — widow and named heirs",
                    "?page=collection&view=waldo-probate")
         route_link("New original-era town record trail: Matthew Beveridge, Hope Town Clerk (1811–1827)",
                    "?page=collection&view=hope-matthew")
