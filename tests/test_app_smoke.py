@@ -294,7 +294,8 @@ class StreamlitSmokeTests(unittest.TestCase):
         app = self.logged_in_app(page="tree", profile=matthew)
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertEqual(app.selectbox(key="tree_person").value, matthew)
-        self.assertIn(child, app.selectbox(key="tree_connected_person").options)
+        self.assertTrue(any("Polly Tucker" in label for label in
+                            app.selectbox(key="tree_connected_person").options))
         app.selectbox(key="tree_connected_person").select(child).run()
         self.assertFalse(app.exception, [e.value for e in app.exception])
         self.assertEqual(app.selectbox(key="tree_person").value, child)
