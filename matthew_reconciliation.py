@@ -80,6 +80,8 @@ def render_matthew_reconciliation(*, compact: bool=False) -> None:
             "has now been obtained. It names Clarissa as widow and eight heirs. "
             "The earlier 2026 research notes below describe what was missing "
             "BEFORE this packet arrived; read the updated court evidence first.")
+    route_link("Review Clarissa Cobb's sourced parents and the Matthew identity investigation",
+               "?page=collection&view=family-origins")
     route_link("Inspect the 1837 Waldo probate heirs, documentary claims and 31-scan index",
                "?page=collection&view=waldo-probate")
     groups=marriage_groups(family)
