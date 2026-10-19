@@ -546,6 +546,18 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertTrue(any("court record" in str(e.value).lower()
                             for e in page.caption))
 
+    def test_phase32_barrettstown_hope_census_original_source_reader(self):
+        app = self.logged_in_app(page="collection", view="hope-census")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("Barrettstown" in str(t.value) for t in app.title))
+        self.assertTrue(any("Census years checked" in m.label for m in app.metric))
+        self.assertTrue(any("Verified original Matthew census lines" in m.label
+                            for m in app.metric))
+        self.assertTrue(any("Negative household-head" in str(w.value)
+                            for w in app.warning))
+        self.assertTrue(any("Read the dated Hope clerk entries" in b.label
+                            for b in app.button))
+
     def test_phase30_fox_islands_original_map_and_manuscript_trail(self):
         page = self.logged_in_app(page="collection", view="fox-originals")
         self.assertFalse(page.exception, [error.value for error in page.exception])
