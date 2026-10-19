@@ -275,6 +275,33 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=excerpt["date"],
         ))
 
+    # Phase 24 retains source-by-source distinction: the Carver birth
+    # compilation directly names parents; the 1907 genealogy bridges the
+    # Clarissa identity to Matthew. 1785 and early deed links remain research
+    # leads, not proven Matthew ancestor or land-deed records.
+    phase24 = _read_records("phase24_cobb_vital_identity_research.json", root)[0]
+    cobb_sources = {row["id"]: row for row in phase24["sources"]}
+    for finding in phase24["findings"]:
+        cited = [cobb_sources[sid] for sid in finding["source_ids"]]
+        records.append(_item(
+            id="cobb-origin:" + finding["id"],
+            category=("Relationship evidence" if finding["id"] == "clarissa-carver-born"
+                      else "Historical investigations"),
+            title=finding["title"], summary=finding["claim"],
+            limits=finding["limits"],
+            people_ids=finding["person_ids"],
+            route="?page=collection&view=family-origins",
+            sources=_links([{
+                "title": source["title"] + " (" + str(source["year"]) + ")",
+                "url": source["url"], "claim": source["claim"],
+            } for source in cited]),
+            keywords="Matthew Beverage Beveridge Hope 1785 1837 "
+                     "Clarissa Cobb Barnabas Jerusha Carver Plymouth Fox Islands "
+                     + finding["status"].replace("_", " "),
+            status=finding["status"].replace("_", " "),
+            source_date=finding["date"],
+        ))
+
     for row in _read_records("phase19_matthew_reconciliation_cases.json", root):
         records.append(_item(
             id="matthew:" + row["id"], category="Historical investigations",
