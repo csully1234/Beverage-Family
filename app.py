@@ -55,6 +55,7 @@ from profile_life_stories import render_profile_life_record, render_profile_phot
 from relationship_evidence import render_profile_relationship_review, render_relationship_coverage
 from ancestry_bridge_casework import render_person_bridge_casework
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
+from family_exhibits import exhibit_route
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
 from research_collection_ui import (
@@ -980,6 +981,8 @@ def render_person_profile(
                     st.caption(f"{person_name(people_by_id, pid)} · profile not yet entered")
             if len(ids) > 3:
                 st.caption(f"+{len(ids)-3} more in the Family tab")
+    route_link("Explore this relative's life, documents and family photographs",
+               exhibit_route(person_id), type="primary")
     route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
     route_link("View this person's timeline", "?page=timeline&person="+quote(person_id))
 
@@ -2099,7 +2102,7 @@ def main() -> None:
     elif page == "Timeline":
         render_unified_timeline(data, people_by_id)
     elif page == "Historical Discoveries":
-        render_family_discoveries(people_by_id)
+        render_family_discoveries(people_by_id, data["events"], relationships)
     elif page == "Stories & Discoveries":
         render_stories_page()
     elif page == "Photographs & Documents":
