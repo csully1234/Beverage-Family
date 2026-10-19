@@ -59,6 +59,8 @@ def _id_route(page: str, person_id: str) -> str:
         return "?page=people&profile=" + quote(person_id, safe="")
     if page == "Explore the Tree":
         return "?page=tree&profile=" + quote(person_id, safe="")
+    if page == "Full Family Map":
+        return "?page=full-tree&profile=" + quote(person_id, safe="")
     return "?page=full-tree"
 
 
@@ -70,15 +72,17 @@ def suggested_paths(page: str, person_id: str | None = None) -> list[tuple[str, 
         ("Original evidence", "?page=media"),
     ]))
     if person_id and page not in {"Home", "Search"}:
-        replacement = {
-            "People": ("Explore this person's tree", _id_route("Explore the Tree", person_id)),
-            "Explore the Tree": ("Open selected person's profile", _id_route("People", person_id)),
-            "Full Family Map": ("Open selected person's profile", _id_route("People", person_id)),
-            "Timeline": ("Selected relative's profile", _id_route("People", person_id)),
-            "Family Books": ("Selected relative's profile", _id_route("People", person_id)),
-        }.get(page)
-        if replacement:
-            choices[0] = replacement
+        if page == "People":
+            choices[0] = ("Explore this person's tree", _id_route("Explore the Tree", person_id))
+            choices[1] = ("Find this person on the full map", _id_route("Full Family Map", person_id))
+        elif page == "Explore the Tree":
+            choices[0] = ("Find this person on the full map", _id_route("Full Family Map", person_id))
+            choices[1] = ("Open selected person's profile", _id_route("People", person_id))
+        elif page == "Full Family Map":
+            choices[0] = ("Explore this person's tree", _id_route("Explore the Tree", person_id))
+            choices[1] = ("Open selected person's profile", _id_route("People", person_id))
+        elif page in {"Timeline", "Family Books"}:
+            choices[0] = ("Selected relative's profile", _id_route("People", person_id))
     return choices
 
 
@@ -95,8 +99,15 @@ def visit_person(person_id: str, people_by_id: dict | None = None) -> None:
 def current_person(people_by_id: dict, page: str = "") -> str:
     """Query profile on People wins; otherwise retain a valid last selection."""
     direct = str(st.query_params.get("profile", "") or "")
-    if page == "People" and direct in people_by_id:
+    if page in {"People", "Explore the Tree", "Full Family Map"} and direct in people_by_id:
         return direct
+    page_selector = {
+        "People": "profile_selector",
+        "Explore the Tree": "tree_person",
+        "Full Family Map": "full_map_person",
+    }.get(page)
+    if page_selector and st.session_state.get(page_selector) in people_by_id:
+        return str(st.session_state[page_selector])
     for key in ("full_map_person", "tree_person", "profile_selector", "_active_person"):
         person_id = st.session_state.get(key)
         if person_id in people_by_id:
@@ -115,6 +126,8 @@ def render_journey_bar(page: str, people_by_id: dict) -> None:
     selected = current_person(people_by_id, page)
     with st.container(border=True):
         st.caption("KEEP EXPLORING · " + page)
+        if selected:
+            st.caption("Selected relative: " + str(people_by_id[selected].get("full_name") or selected))
         columns = st.columns(3)
         for col, (label, url) in zip(columns, suggested_paths(page, selected)):
             with col:

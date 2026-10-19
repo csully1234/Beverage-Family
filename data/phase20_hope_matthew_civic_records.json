@@ -1,0 +1,151 @@
+[
+  {
+    "title": "Matthew Beveridge — Hope town-clerk original-era record trail, 1811–1827",
+    "review_date": "2026-10-19",
+    "scope": "Historical municipal ledger transcription and separately transcribed federal census, with unproven family identity",
+    "source_family_warning": "All municipal entries derive from ONE Hope town clerk ledger as transcribed in 2021, NOT seven independent original sources. The separate 1820 census is a separate underlying source but its image was not inspected.",
+    "records": [
+      {
+        "id": "hope-1811-clerk-surveyors",
+        "date": "1811-04-02",
+        "label": "Matthew Beveridge records municipal appointments",
+        "town": "Hope, Lincoln County, Massachusetts (District of Maine)",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription pp. 39–40",
+        "claim": "The Hope town clerk ledger's printed transcription includes Matthew Beveridge among appointed highway surveyors, and credits Matthew Beveridge as town clerk for official records dated or recorded April 2, 1811.",
+        "limit": "Contemporaneous municipal ledger text is accessed through a later literal transcription; the original handwritten page and signature have not been visually verified. The individual is not automatically identified as the 1785 Fox Islands minor or the Matthew in Eaton's family group.",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, literal transcription (2021), pp. 39–40",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Exact dated reference checked in publicly indexed PDF text; original ledger image not examined."
+      },
+      {
+        "id": "hope-1813-clerk",
+        "date": "1813-04-05",
+        "label": "Matthew Beveridge acts as Hope town clerk",
+        "town": "Hope, District of Maine, Massachusetts",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription pp. 54–55",
+        "claim": "An April 5, 1813 municipal record includes Matthew Beveridge, identified as town clerk, attesting or administering an oath associated with selectmen and town officers.",
+        "limit": "The PDF is a modern transcription of town records, not a photographed original signature. No spouse, parentage or place of birth appears in this entry.",
+        "source_title": "Hope Town Clerk Records 1804–1848, pp. 54–55",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Exact dated reference checked in publicly indexed PDF text; manuscript not examined."
+      },
+      {
+        "id": "hope-1820-head-household",
+        "date": "1820",
+        "label": "Mathew Beveridge listed as a Hope census household head",
+        "town": "Hope, Lincoln County, Maine",
+        "category": "census_index_secondary",
+        "source_page": "1820 US census, Hope, enumeration sheet 276 (reported by indexer)",
+        "claim": "A genealogist's published enumeration of the Hope 1820 federal census lists Mathew Beveridge as a household head on original schedule sheet 276. The linked summary says the enumerator was Thurston Whiting.",
+        "limit": "This is an independent modern transcription of a different historical source; the actual federal census sheet, household age tallies and spelling have NOT been visually checked. A shared name and town make identity plausible, not established.",
+        "source_title": "Hope, Maine in the 1820 Census — household-head transcription (2019), sheet 276",
+        "source_url": "https://www.heirloomsreunited.com/2019/09/hope-maine-in-1820-census-then-in.html",
+        "verification": "Secondary household-head index checked; original federal census sheet not examined."
+      },
+      {
+        "id": "hope-1821-april-clerk",
+        "date": "1821-04-17",
+        "label": "Matthew Beveridge attests Hope jury selection",
+        "town": "Hope, Lincoln County, Maine",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription p. 119",
+        "claim": "The Hope clerk ledger records a meeting on April 17, 1821 to select a juror for the next Court of Common Pleas; the record is credited to Matthew Beveridge as town clerk.",
+        "limit": "An officer's attribution in a later literal transcription is not an inspected manuscript autograph or a documented relation to the 1865 captain.",
+        "source_title": "Hope Town Clerk Records 1804–1848, p. 119",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific 1821 entry reviewed in publicly indexed transcription text."
+      },
+      {
+        "id": "hope-1821-may-clerk",
+        "date": "1821-05-07",
+        "label": "Matthew Beveridge records Hope town meetings",
+        "town": "Hope, Lincoln County, Maine",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription p. 119",
+        "claim": "On May 7, 1821, the town clerk's transcription attributes entries for selecting grand/traverse jurors and recording a federal congressional vote to Matthew Beveridge.",
+        "limit": "The two May 7 administrative entries in the same ledger are NOT separate genealogical witnesses. No birth, marriage or death dates are established.",
+        "source_title": "Hope Town Clerk Records 1804–1848, p. 119",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific May 1821 entries reviewed in publicly indexed transcription text."
+      },
+      {
+        "id": "hope-1827-aug-clerk",
+        "date": "1827-08-25",
+        "label": "Matthew Beveridge attests Hope meeting warrant",
+        "town": "Hope, Waldo County, Maine",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription p. 196",
+        "claim": "A Hope town meeting warrant dated August 25, 1827 is attested in the transcript by Matthew Beveridge as town clerk.",
+        "limit": "This is a transcribed municipal record, not an original signature image. The shift from earlier Lincoln County to Waldo County should not be treated as evidence the family moved.",
+        "source_title": "Hope Town Clerk Records 1804–1848, p. 196",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific August 1827 transcription text checked."
+      },
+      {
+        "id": "hope-1827-sept-clerk",
+        "date": "1827-09-10",
+        "label": "Matthew Beveridge listed as clerk on a constable's return",
+        "town": "Hope, Waldo County, Maine",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription p. 196",
+        "claim": "The clerk ledger's September 10, 1827 constable's notice text is followed by an attribution to Matthew Beveridge, town clerk.",
+        "limit": "Two transcribed entries on the same page are related local record evidence, not independent confirmation of Matthew's exact parents or home address.",
+        "source_title": "Hope Town Clerk Records 1804–1848, p. 196",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific September 1827 transcription text checked."
+      },
+      {
+        "id": "hope-1827-dec-clerk",
+        "date": "1827-12-17",
+        "label": "Matthew Beveridge records a Waldo deed-registrar vote",
+        "town": "Hope, Waldo County, Maine",
+        "category": "town_clerk_transcription",
+        "source_page": "Transcription p. 198",
+        "claim": "The ledger's December 17, 1827 voting record for Register of Deeds of Waldo County identifies Matthew Beveridge as town clerk.",
+        "limit": "The register-election vote does not mean Matthew was elected Register of Deeds. This is only an official municipal transcription indicating his clerk role; original signature not checked.",
+        "source_title": "Hope Town Clerk Records 1804–1848, p. 198",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific December 1827 text checked in publicly indexed transcription."
+      }
+    ],
+    "original_retrieval": [
+      {
+        "target": "View the original Hope town clerk manuscript pages for 1811, 1813, 1821 and 1827",
+        "status": "not_obtained",
+        "url": "https://hopehist.com/HHS2.html",
+        "instructions": "The historical society advertises the 1804–1848 town ledger in its Documents archive. Compare the original page images directly with transcription pp. 39–40, 54–55, 119, 196 and 198; record volume/folio and whether the signed name is original or clerk-copied."
+      },
+      {
+        "target": "Inspect 1820 federal census original sheet 276 for Hope, Maine",
+        "status": "not_obtained",
+        "url": "https://www.archives.gov/research/census/1820",
+        "instructions": "Compare Mathew Beveridge's name and age-column household counts on the original sheet. Note Lincoln County jurisdiction in 1820; beware name collisions."
+      },
+      {
+        "target": "Search original Hope town vital registers and 1821 taxpayer list",
+        "status": "not_obtained",
+        "url": "https://hopehist.com/Himages/XMay22.html",
+        "instructions": "Consult the historical society's 2021 published ledger appendices listing town officers, roads and 1821 taxpayers; locate original Hope vital records before 1892 and any Matthew/Abigail or Matthew/Clarissa record."
+      },
+      {
+        "target": "Locate Matthew's actual probate through Waldo court index-to-docket",
+        "status": "not_obtained",
+        "url": "https://www.familysearch.org/en/search/collection/2040534",
+        "instructions": "Search surname variations in Waldo Probate Court indexes 1826–1892; obtain any case number and book/page. No estate identified yet. Compare Hope municipal term with an authenticated death/probate record."
+      }
+    ],
+    "jurisdiction_context": {
+      "title": "Historic court jurisdiction for Hope's records",
+      "finding": "An official Maine legislative history identifies Hope among Lincoln County towns set off into Waldo County in 1827, and Hope subsequently among towns forming Knox County in 1860. Thus the county wording changes while the municipality is the same; original-era court and probate records must be sought in the jurisdiction used at filing time.",
+      "source": "Maine legislative historical report, WALDO COUNTY, p. 57",
+      "url": "https://lldc.mainelegislature.org/Open/Rpts/js451_m25c68_1982.pdf",
+      "dates": [
+        "1827-07-03",
+        "1860-04-01"
+      ],
+      "limit": "This government history supplies jurisdictional context, not a Matthew personal migration record, family residence address or probate case."
+    }
+  }
+]

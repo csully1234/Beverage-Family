@@ -409,5 +409,18 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertFalse(any(s.label == "Research inventory" for s in app.selectbox))
 
 
+    def test_shared_full_family_map_link_selects_relative_and_keeps_focus(self):
+        person = "mercy_beveridge_henry_1753"
+        app = self.logged_in_app(page="full-tree", profile=person)
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertEqual(app.selectbox(key="full_map_person").value, person)
+        next(button for button in app.button
+             if button.label == "Back to focused tree").click().run()
+        self.assertFalse(app.exception, [error.value for error in app.exception])
+        self.assertEqual(app.selectbox(key="tree_person").value, person)
+        self.assertEqual(app.query_params["profile"], [person])
+
+
+
 if __name__ == "__main__":
     unittest.main()

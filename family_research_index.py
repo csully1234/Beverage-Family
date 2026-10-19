@@ -162,6 +162,23 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=row.get("period", ""),
         ))
 
+    hope = _read_records("phase20_hope_matthew_civic_records.json", root)[0]
+    for row in hope["records"]:
+        records.append(_item(
+            id="hope-clerk:" + row["id"],
+            category="Historical investigations",
+            title=row["date"] + " · " + row["label"],
+            summary=row["claim"], limits=row["limit"],
+            people_ids=(), pages=(),
+            route="?page=collection&view=hope-matthew",
+            sources=_links([{"title":row["source_title"],"url":row["source_url"],
+                             "claim":row["source_page"]}]),
+            keywords="Matthew Beveridge Hope civic record clerk census " + row["town"],
+            status="Clerk-ledger transcription" if row["category"]=="town_clerk_transcription"
+                   else "Separate census index, original image not inspected",
+            source_date=row["date"],
+        ))
+
     for row in _read_records("phase19_matthew_reconciliation_cases.json", root):
         records.append(_item(
             id="matthew:" + row["id"], category="Historical investigations",

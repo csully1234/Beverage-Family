@@ -556,7 +556,14 @@ def navigate(page: str) -> None:
     st.session_state["nav_page"] = page
     st.session_state["nav_group"] = PAGE_GROUP[page]
     st.query_params["page"] = PAGE_SLUGS[page]
-    if page != "People" and "profile" in st.query_params:
+    if page in {"Explore the Tree", "Full Family Map"}:
+        if not get_query_value("profile"):
+            selected = (st.session_state.get("full_map_person")
+                        if page == "Explore the Tree"
+                        else st.session_state.get("tree_person"))
+            if selected:
+                st.query_params["profile"] = str(selected)
+    elif page != "People" and "profile" in st.query_params:
         del st.query_params["profile"]
     if page not in {"Timeline", "Historical Map"} and "event" in st.query_params:
         del st.query_params["event"]
@@ -579,7 +586,9 @@ def center_tree_on(person_id: str) -> None:
     """Safely move from a profile to the focused tree during a callback."""
 
     st.session_state["tree_person"] = person_id
+    st.session_state["full_map_person"] = person_id
     navigate("Explore the Tree")
+    st.query_params["profile"] = person_id
 
 
 def open_profile(person_id: str) -> None:
@@ -596,7 +605,7 @@ def open_profile(person_id: str) -> None:
 def sync_sidebar_route() -> None:
     page = st.session_state["nav_page"]
     st.query_params["page"] = PAGE_SLUGS[page]
-    if page != "People" and "profile" in st.query_params:
+    if page not in {"People", "Explore the Tree", "Full Family Map"} and "profile" in st.query_params:
         del st.query_params["profile"]
     if page not in {"Timeline", "Historical Map"} and "event" in st.query_params:
         del st.query_params["event"]
@@ -614,12 +623,26 @@ def sync_profile_route() -> None:
         st.query_params["profile"] = person_id
 
 
+def sync_tree_person() -> None:
+    """Keep focused-tree selections shareable and aligned with the full map."""
+    person_id = st.session_state.get("tree_person")
+    if person_id:
+        st.session_state["full_map_person"] = person_id
+        st.session_state["profile_selector"] = person_id
+        st.query_params["page"] = "tree"
+        st.query_params["profile"] = str(person_id)
+
+
 def sync_full_map_person() -> None:
-    """Update cross-page person selection when the parent dropdown changes."""
+    """Keep map selections in both tree views and the browser's URL."""
     person_id = st.session_state.get("full_map_person")
     if person_id:
         st.session_state["tree_person"] = person_id
         st.session_state["profile_selector"] = person_id
+        st.query_params["page"] = "full-tree"
+        st.query_params["profile"] = str(person_id)
+    elif "profile" in st.query_params:
+        del st.query_params["profile"]
 
 
 def sorted_people(people: list[Record]) -> list[Record]:
@@ -1042,6 +1065,10 @@ def render_person_profile(
             on_click=center_tree_on,
             args=(person_id,),
         )
+        route_link(
+            "Find this person on the full family map",
+            "?page=full-tree&profile=" + quote(person_id, safe=""),
+        )
 
     with places_tab:
         render_person_archive(person_id, load_archive())
@@ -1406,6 +1433,7 @@ def render_tree_page(
     query_focus = get_query_value("profile")
     if query_focus in person_ids and st.session_state.get("_last_tree_query_profile") != query_focus:
         st.session_state["tree_person"] = query_focus
+        st.session_state["full_map_person"] = query_focus
     st.session_state["_last_tree_query_profile"] = query_focus
     if "tree_person" not in st.session_state or st.session_state["tree_person"] not in person_ids:
         st.session_state["tree_person"] = query_focus if query_focus in person_ids else person_ids[0]
@@ -1417,6 +1445,7 @@ def render_tree_page(
             options=person_ids,
             format_func=lambda person_id: surname_first_label(people_by_id[person_id]),
             key="tree_person",
+            on_change=sync_tree_person,
         )
     with mode:
         view = st.selectbox(
@@ -1550,13 +1579,21 @@ def render_full_tree_page(
         st.query_params["page"] = "people"
         st.query_params["profile"] = pending
         st.rerun()
+    requested_person = get_query_value("profile")
     if pending in people_by_id:
         st.session_state["full_map_person"] = pending
         st.session_state["tree_person"] = pending
         st.session_state["profile_selector"] = pending
+        st.query_params["profile"] = pending
+    elif (requested_person in people_by_id and
+          st.session_state.get("_last_full_query_profile") != requested_person):
+        st.session_state["full_map_person"] = requested_person
+        st.session_state["tree_person"] = requested_person
+        st.session_state["profile_selector"] = requested_person
     elif st.session_state.get("full_map_person") not in person_ids:
         previous = st.session_state.get("tree_person")
         st.session_state["full_map_person"] = previous if previous in person_ids else ""
+    st.session_state["_last_full_query_profile"] = get_query_value("profile")
 
     st.write("Start with the complete map. Select any relative on the diagram or in the selector, then use Back to focused tree to continue with the same person.")
     st.selectbox(
