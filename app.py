@@ -1067,20 +1067,22 @@ def render_person_profile(
         st.write(format_date(person["baptism_date"]) + " — " + person.get("baptism_place", "Unknown"))
         st.caption("This is a baptism date. The birth date is not established; the recorded birthplace remains unverified.")
     render_book_profile_context(person)
-    render_documented_associations(person_id)
-    render_profile_identity_evidence(person_id)
-    route_link("Research this relative across the complete historical archive",
-               "?page=collection&view=workbench&person=" + quote(person_id))
-    render_person_bridge_casework(person_id, people_by_id)
-    render_profile_review(person_id, load_collection(), people_by_id)
-    render_evidence_status(person.get("evidence_status"))
     if person.get("needs_research"):
         st.warning("Needs more research — this profile contains one or more provisional leads.")
     if person.get("research_completeness"):
         st.caption(f"Research status: {person['research_completeness']}")
-    # Place real source access at the top of a profile, not hidden behind an
-    # unrelated research archive or an unclickable citation count.
+    # Keep direct historical-record links above the life story.
     render_profile_highlights(person_id)
+    # Specialist casework remains complete, but no longer interrupts the
+    # visitor between the family overview and the four primary profile tabs.
+    with st.expander("Detailed research, identity questions and evidence reviews"):
+        render_documented_associations(person_id)
+        render_profile_identity_evidence(person_id)
+        route_link("Research this relative across the complete historical archive",
+                   "?page=collection&view=workbench&person=" + quote(person_id))
+        render_person_bridge_casework(person_id, people_by_id)
+        render_profile_review(person_id, load_collection(), people_by_id)
+        render_evidence_status(person.get("evidence_status"))
 
     story_tab, family_tab, places_tab, sources_tab = st.tabs(
         ["Story", "Family", "Places", "Historical records"]
