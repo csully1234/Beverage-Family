@@ -28,7 +28,7 @@ def load_hope_civic_records() -> dict:
                              key=lambda row: (row["date"], row["id"]))
     data["source_family_warning"] = (
         "All town-clerk passages, including the newly indexed 1806–1807 "
-        "entries, derive from ONE historic Hope municipal ledger as rendered "
+        "entries, derive from ONE Hope town clerk ledger as rendered "
         "in a modern transcription, not independent original witnesses. "
         "The separate 1820 census is a distinct but uninspected original.")
     return data
