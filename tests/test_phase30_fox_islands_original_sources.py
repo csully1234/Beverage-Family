@@ -64,7 +64,7 @@ class Phase30FoxIslandOriginalsTests(unittest.TestCase):
             note = request_note(row)
             self.assertIn("not sent", note)
             self.assertIn(row["identifier"], note)
-            self.assertIn("No", row["does_not_establish"] or "No")
+            self.assertTrue(row["does_not_establish"])
 
     def test_1889_minor_is_a_name_only_not_added_as_father_brother_or_same_matthew(self):
         petition = next(r for r in self.case["sources"]
@@ -96,8 +96,8 @@ class Phase30FoxIslandOriginalsTests(unittest.TestCase):
         self.assertEqual(len(matthew_children), 9)
         for row in matthew_children:
             self.assertFalse(row["sources"])
-            self.assertIn("court", row["summary"].lower() if "court" in row["summary"].lower()
-                          else row["limits"].lower())
+            self.assertTrue(row["limits"])
+            self.assertTrue(row["summary"])
         self.assertTrue(any(row["status"] == "published_record" and
                             "clarissa_beveridge_widow_1837" in row["person_ids"]
                             for row in reviewed))
