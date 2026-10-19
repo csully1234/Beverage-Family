@@ -81,6 +81,9 @@ def suggested_paths(page: str, person_id: str | None = None) -> list[tuple[str, 
         elif page == "Full Family Map":
             choices[0] = ("Explore this person's tree", _id_route("Explore the Tree", person_id))
             choices[1] = ("Open selected person's profile", _id_route("People", person_id))
+        elif page == "Historical Discoveries":
+            choices[0] = ("View selected relative's profile", _id_route("People", person_id))
+            choices[1] = ("Explore their family branch", _id_route("Explore the Tree", person_id))
         elif page in {"Timeline", "Family Books"}:
             choices[0] = ("Selected relative's profile", _id_route("People", person_id))
     return choices
@@ -99,6 +102,11 @@ def visit_person(person_id: str, people_by_id: dict | None = None) -> None:
 def current_person(people_by_id: dict, page: str = "") -> str:
     """Query profile on People wins; otherwise retain a valid last selection."""
     direct = str(st.query_params.get("profile", "") or "")
+    exhibit_person = str(st.query_params.get("person", "") or "")
+    if (page == "Historical Discoveries"
+            and str(st.query_params.get("view", "") or "") == "person-exhibit"
+            and exhibit_person in people_by_id):
+        return exhibit_person
     if page in {"People", "Explore the Tree", "Full Family Map"} and direct in people_by_id:
         return direct
     page_selector = {
