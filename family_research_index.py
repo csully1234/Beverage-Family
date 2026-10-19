@@ -181,6 +181,23 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=row["date"],
         ))
 
+    census_trail = _read_records("phase32_hope_census_originals.json", root)[0]
+    for row in census_trail["cases"]:
+        records.append(_item(
+            id="hope-census:" + row["id"],
+            category="Historical record trails",
+            title=str(row["year"]) + " · " + row["place"] + " · Census evidence",
+            summary=row["head_claim"], limits=row["limitations"],
+            people_ids=(), pages=(),
+            route="?page=collection&view=hope-census",
+            sources=_links([{"title":row["source_title"],"url":row["source_url"],
+                             "claim":row["archive_locator"]}]),
+            keywords="Barrettstown Hope census Mathew Matthew Beverage Beveridge "
+                     + row["archive_locator"] + " " + row["status"],
+            status=row["status"].replace("_", " "),
+            source_date=str(row["year"]),
+        ))
+
     # One probate source family, not 31 independent proofs. The source-file
     # index contains text and provenance only; scans await permission to publish.
     probate = _read_records("phase22_matthew_waldo_probate.json", root)[0]
