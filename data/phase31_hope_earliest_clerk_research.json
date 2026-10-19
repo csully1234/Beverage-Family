@@ -1,0 +1,51 @@
+[
+  {
+    "id": "phase31-hope-earliest-clerk-trail",
+    "research_date": "2026-10-19",
+    "finding": "The 2021 literal transcript of the 1804–1848 Hope town ledger identifies Matthew Beveridge as clerk at least by June 23, 1806, roughly five years earlier than previously individually indexed on the website. The same book provides corroborating dated clerk entries in 1807, not separate underlying witness sources.",
+    "rights": "Link to source's external repository. No unlicensed manuscript images republished.",
+    "land_search_result": "No Matthew-specific deed volume/page was verified from the publicly accessible text-based registry and FamilySearch interfaces. This is an ACCESS LIMIT, not evidence that deeds do not exist.",
+    "research_not_done": "Waldo and Lincoln historical SearchIQS guest viewers require interactive navigation of scanned index books; no authenticated viewer frames or handwritten surname entries were inspected. No deed instrument, seller identity or parcel bounds has been adopted.",
+    "records": [
+      {
+        "id": "hope-1806-june-clerk",
+        "date": "1806-06-23",
+        "label": "Matthew Beveridge identified as Hope clerk in town-meeting record",
+        "town": "Hope, Lincoln County, Massachusetts (District of Maine)",
+        "category": "town_clerk_transcription",
+        "source_page": "Modern literal transcription p. 12 (manuscript folio identifier unverified)",
+        "claim": "The June 23, 1806 Hope town-meeting record names Matthew Beveridge as 'Clerk of said Town' following votes on local roads, school-district administration and the meeting-house road.",
+        "limit": "This is text in a modern transcription of one historical municipal ledger, NOT a directly inspected original signature. It proves neither title to land nor that this man was the 1785 petition's minor or the Matthew who died in 1837.",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, transcribed manuscript text, p. 12",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Relevant indexed excerpt of the historical transcription inspected October 2026; full handwritten original not examined."
+      },
+      {
+        "id": "hope-1807-april-clerk",
+        "date": "1807-04-09",
+        "label": "Matthew Beveridge records a Hope town meeting",
+        "town": "Hope, Lincoln County, Massachusetts (District of Maine)",
+        "category": "town_clerk_transcription",
+        "source_page": "Modern literal transcription p. 15",
+        "claim": "The transcription states the April 6, 1807 town meeting was 'Recorded April 9th 1807 by me' and credits Matthew Beveridge as town clerk.",
+        "limit": "Same underlying Hope clerk ledger as 1806 and later clerk entries, NOT an independent attestation of parentage, land purchase or the 1785 petition identity; original autograph not examined.",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, literal transcription, p. 15",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Specific dated transcription passage surfaced and inspected in a publicly indexed search excerpt; original manuscript image not examined."
+      },
+      {
+        "id": "hope-1807-june-clerk",
+        "date": "1807-06-19",
+        "label": "Matthew Beveridge records road-related Hope votes",
+        "town": "Hope, Lincoln County, Massachusetts (District of Maine)",
+        "category": "town_clerk_transcription",
+        "source_page": "Modern literal transcription p. 18",
+        "claim": "A June 19, 1807 recording statement following Hope road/land-boundary votes is credited to Matthew Beveridge, town clerk.",
+        "limit": "The transcript mentions a road and a deed between other named parties; it does NOT establish Matthew held or received property, or prove identity with the 1785 Fox Islands minor.",
+        "source_title": "Hope, Maine Town Clerk Records 1804–1848, modern literal transcription, p. 18",
+        "source_url": "https://openyls.law.yale.edu/bitstreams/b01906b3-669f-49a3-8023-099a2cd3ae82/download",
+        "verification": "Modern transcription's publicly searchable text excerpt inspected; source manuscript and original signature have not been visually checked."
+      }
+    ]
+  }
+]

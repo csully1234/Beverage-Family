@@ -20,16 +20,16 @@ class OriginalEraHopeClerkResearchTests(unittest.TestCase):
         cls.stats=evidence_counts(cls.hope)
 
     def test_eight_separate_occurrences_two_underlying_source_families(self):
-        self.assertEqual(self.stats["observations"],8)
-        self.assertEqual(self.stats["ledger_entries"],7)
+        self.assertEqual(self.stats["observations"],11)
+        self.assertEqual(self.stats["ledger_entries"],10)
         self.assertEqual(self.stats["census_leads"],1)
         self.assertEqual(self.stats["distinct_source_families"],2)
         self.assertIn("ONE Hope town clerk ledger",self.hope["source_family_warning"])
         ids=[r["id"] for r in self.records]
         self.assertEqual(len(ids),len(set(ids)))
-        self.assertEqual(len({r["date"] for r in self.records}),8)
+        self.assertEqual(len({r["date"] for r in self.records}),11)
         self.assertEqual(sorted(r["date"] for r in self.records),[r["date"] for r in self.records])
-        self.assertIn("1811",self.records[0]["date"])
+        self.assertIn("1806",self.records[0]["date"])
         self.assertIn("1827",self.records[-1]["date"])
 
     def test_original_ledger_transcription_not_overstated_as_original_autograph(self):
@@ -44,7 +44,7 @@ class OriginalEraHopeClerkResearchTests(unittest.TestCase):
                 self.assertIn(row["category"],{"town_clerk_transcription","census_index_secondary"})
         self.assertIsNone(record_for_id("missing",self.hope))
         self.assertIn("original",self.records[0]["limit"].lower())
-        self.assertIn("NOT",self.records[2]["limit"])
+        self.assertIn("NOT",self.records[5]["limit"])
 
     def test_census_index_does_not_pretend_original_sheet_was_seen(self):
         census=next(r for r in self.records if r["category"]=="census_index_secondary")
@@ -86,8 +86,8 @@ class OriginalEraHopeClerkResearchTests(unittest.TestCase):
     def test_site_index_exposes_every_event_with_no_fabricated_person_links(self):
         all_records=build_index(self.people)
         cards=[r for r in all_records if r["id"].startswith("hope-clerk:")]
-        self.assertEqual(len(cards),8)
-        self.assertEqual(len({r["id"] for r in cards}),8)
+        self.assertEqual(len(cards),11)
+        self.assertEqual(len({r["id"] for r in cards}),11)
         self.assertTrue(all(not r["person_ids"] for r in cards))
         self.assertTrue(all(r["route"]=="?page=collection&view=hope-matthew" for r in cards))
         self.assertTrue(all(r["sources"] for r in cards))
