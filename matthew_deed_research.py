@@ -30,7 +30,7 @@ def load_probate_deed_trail() -> dict:
 
 def recorded_children(data: dict | None = None) -> list[dict]:
     data = data if data is not None else load_probate_deed_trail()
-    return [person for person in data["principal_people"] if person["role"] == "named child"]
+    return [person for person in data["principal_people"] if person["role"].startswith("named child")]
 
 
 def priority_deed_targets(data: dict | None = None) -> list[dict]:
