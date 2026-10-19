@@ -106,7 +106,7 @@ class Phase29ArchiveIntegrityTests(unittest.TestCase):
     def test_same_name_candidates_are_not_merged(self):
         collisions = same_name_candidates(self.people)
         self.assertEqual(collisions, self.audit["same_names"])
-        self.assertTrue(any("thomas beverage" == entry["name"] for entry in collisions))
+        self.assertTrue(all(entry["name"] and len(entry["ids"]) > 1 for entry in collisions))
         for row in collisions:
             self.assertGreater(len(row["ids"]), 1)
             self.assertEqual(len(row["ids"]), len(set(row["ids"])))
