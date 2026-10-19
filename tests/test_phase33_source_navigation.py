@@ -107,6 +107,16 @@ class Phase33EvidenceNavigationTests(unittest.TestCase):
                          ["unverified_parent"])
         self.assertIsNone(branch_context("unverified_parent", people, links))
 
+    def test_link_audit_matches_actual_clickable_url_policy(self):
+        from genealogy_integrity import _known_url
+        self.assertTrue(_known_url({"url": "https://example.org/archive.pdf"}))
+        self.assertFalse(_known_url({"url": "javascript:alert(1)"}))
+        self.assertFalse(_known_url({"url": "https://user:pass@example.org/private"}))
+        self.assertFalse(_known_url({"url": "https://example.org:9999/file"}))
+        self.assertFalse(_known_url({"url": "https://example.org/my file"}))
+        self.assertFalse(_known_url({"title": "No digitized original"}))
+        self.assertFalse(_known_url("Unlinked book citation"))
+
     def test_citation_queue_never_implies_original_scans_are_available(self):
         audit = audit_family_archive(self.people, self.data["events"], self.links)
         self.assertEqual(len(audit["events_no_direct_link"]),
