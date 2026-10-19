@@ -416,6 +416,22 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertIn("31", labels) if "31" in labels else self.assertIn(
             "Choose a source image", labels)
 
+    def test_phase24_clarissa_origins_and_sourced_profile_are_browsable(self):
+        page = self.logged_in_app(page="collection", view="family-origins")
+        self.assertFalse(page.exception, [error.value for error in page.exception])
+        words = " ".join(str(element.value)
+                         for name in ("title", "markdown", "caption", "info", "subheader")
+                         for element in getattr(page, name))
+        self.assertIn("Clarissa", words)
+        self.assertIn("1786", words)
+        self.assertIn("Cobb", words)
+        profile = self.logged_in_app(page="people",
+                                     profile="clarissa_beveridge_widow_1837")
+        self.assertFalse(profile.exception, [error.value for error in profile.exception])
+        profile_text = " ".join(str(x.value) for kind in ("markdown", "caption", "subheader")
+                                for x in getattr(profile, kind))
+        self.assertIn("Clarissa", profile_text)
+
     def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
         app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
         self.assertFalse(app.exception, [error.value for error in app.exception])
