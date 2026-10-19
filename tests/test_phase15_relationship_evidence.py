@@ -44,7 +44,7 @@ class RelationshipEvidenceTests(unittest.TestCase):
         self.assertGreater(self.summary["awaiting_review"], self.summary["reviewed"])
 
     def test_reviewed_claims_exist_in_effective_family_tree(self):
-        self.assertEqual(len(self.lookup), 12)
+        self.assertEqual(len(self.lookup), 23)  # 12 prior + 8 court children + 2 Cobb parents + widow
         actual_keys = {row["key"] for row in self.edges}
         self.assertTrue(set(self.lookup).issubset(actual_keys),
                         sorted(set(self.lookup) - actual_keys))
@@ -56,9 +56,14 @@ class RelationshipEvidenceTests(unittest.TestCase):
             self.assertTrue(review["sources"])
             for source in review["sources"]:
                 self.assertTrue(source["title"] and source["type"])
-                url = urlsplit(source["url"])
-                self.assertEqual(url.scheme, "https")
-                self.assertTrue(url.hostname)
+                destination = source.get("route") or source.get("url")
+                self.assertTrue(destination)
+                if source.get("url"):
+                    url = urlsplit(source["url"])
+                    self.assertEqual(url.scheme, "https")
+                    self.assertTrue(url.hostname)
+                else:
+                    self.assertTrue(destination.startswith("?page=collection&view=waldo-probate"))
 
     def test_original_records_are_preserved_and_review_does_not_add_people(self):
         self.assertEqual(validate_site_data(self.data).errors, [])

@@ -64,7 +64,7 @@ class AncestryBridgeCases(unittest.TestCase):
         key=edge_key("spouses","nathaniel_beverage_1804_rockland",
                      "sarah_alexander_beverage_1808")
         reviews=review_lookup()
-        self.assertEqual(len(reviews),12)
+        self.assertEqual(len(reviews),23)
         self.assertEqual(reviews[key]["status"],"published_record")
         self.assertIn("not the original marriage",reviews[key]["limitations"])
         self.assertFalse(self.relationships["parents"].get("nathaniel_beverage_1804_rockland"))

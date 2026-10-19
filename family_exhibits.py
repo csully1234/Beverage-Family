@@ -279,6 +279,9 @@ def _family_section(overview: dict, people: Mapping[str, dict],
                "?page=tree&profile=" + quote(pid, safe=""))
     route_link("Find this person in the complete family map",
                "?page=full-tree&profile=" + quote(pid, safe=""))
+    route_link("Inspect the evidence status of every listed family relationship",
+               "?page=collection&view=integrity&section=relationships&person="
+               + quote(pid, safe=""))
 
 
 def render_person_exhibit(person_id: str, people: Mapping[str, dict],
