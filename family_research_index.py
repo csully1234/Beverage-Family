@@ -163,7 +163,9 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
         ))
 
     hope = _read_records("phase20_hope_matthew_civic_records.json", root)[0]
-    for row in hope["records"]:
+    early = _read_records("phase31_hope_earliest_clerk_research.json", root)[0]
+    for row in sorted([*hope["records"], *early["records"]],
+                      key=lambda item: (item["date"], item["id"])):
         records.append(_item(
             id="hope-clerk:" + row["id"],
             category="Historical investigations",
