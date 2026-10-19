@@ -746,23 +746,53 @@ def render_home(
         unsafe_allow_html=True,
     )
 
-    st.subheader("Where would you like to start?")
-    actions = [
-        ("Find a relative", "Search names, nicknames and spelling variants.", "?page=search"),
-        ("Explore the family", "Follow parents, spouses and children.", "?page=tree"),
-        ("Explore a place", "Visit the places behind family stories.", "?page=places"),
-        ("Photographs & documents", "Browse original sources and historical image records.", "?page=media"),
-        ("Read the family timeline", "Follow people and events through time.", "?page=timeline"),
-        ("Discover family stories", "Explore remarkable people, places and discoveries.", "?page=stories"),
-        ("Read the illustrated family book", "Browse all 305 scanned pages and their people.", "?page=family-books"),
-        ("Trace original evidence", "Open documents, sources and disputed family claims.", "?page=archive"),
-        ("Explore the entire family map", "See the complete family and choose a branch.", "?page=full-tree"),
+    st.subheader("Start exploring")
+    st.caption("Six ways into the archive. Each brings you back to relatives, "
+               "historical places or the evidence behind a story.")
+    primary_actions = [
+        ("Find a relative", "Search names and open a complete life profile.", "?page=search"),
+        ("Explore the family tree", "Follow documented relationships and open relatives.", "?page=tree"),
+        ("Read family stories", "Experience lives and historical discoveries.", "?page=stories"),
+        ("Browse photos & documents", "Examine original books and historical source records.", "?page=media"),
+        ("Explore historical places", "Visit the towns and islands in the family record.", "?page=places"),
+        ("Open the family timeline", "Discover events in chronological order.", "?page=timeline"),
     ]
-    for row in (actions[:3], actions[3:6], actions[6:]):
+    for row in (primary_actions[:3], primary_actions[3:]):
         for col, (label, description, url) in zip(st.columns(3), row):
             with col.container(border=True):
                 route_link(label, url, width="stretch")
                 st.caption(description)
+    with st.expander("More ways to explore"):
+        secondary_actions = [
+            ("Complete family map", "?page=full-tree"),
+            ("Historical sources", "?page=archive"),
+            ("Full illustrated family book", "?page=family-books"),
+            ("Research and unresolved questions", "?page=collection&view=workbench"),
+        ]
+        for label, url in secondary_actions:
+            route_link(label, url, type="tertiary")
+    st.subheader("Step into a family life")
+    st.write("Open a relative's exhibit to see their events, historical records, "
+             "photographs and connected family in one place.")
+    featured = [
+        ("Matthew Beveridge of Hope",
+         "1837 probate records, eight court-named children and open identity questions.",
+         "matthew_beveridge_hope_1837"),
+        ("Clarissa Cobb Beveridge",
+         "Carver birth records, parents Barnabas and Jerusha, and family connections.",
+         "clarissa_beveridge_widow_1837"),
+        ("Lowell P. Beveridge Jr.",
+         "The illustrated family book and source-attributed family photographs.",
+         "lowell_pierson_beveridge_jr_1930"),
+    ]
+    for col, (name, description, pid) in zip(st.columns(3), featured):
+        with col.container(border=True):
+            st.markdown("**" + name + "**")
+            st.caption(description)
+            if pid in people_by_id:
+                route_link("Explore this person's life", exhibit_route(pid), width="stretch")
+            else:
+                st.caption("Full profile not yet available")
     render_recent_profile_links(dict(people_by_id))
     with st.expander("About this family history"):
         st.write(f"{len(people)} relatives · {len(events)} recorded family events · {span}. Dates, identities and relationships may be incomplete or disputed; original historical sources are linked wherever possible.")
