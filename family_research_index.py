@@ -198,6 +198,27 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=str(row["year"]),
         ))
 
+    original_access = _read_records("phase34_hope_original_reel_and_civic_votes.json", root)[0]
+    for record in original_access["cases"]:
+        urls = [{"title": record["source_title"], "url": record["source_url"],
+                 "finding": record["locator"]}]
+        if record.get("companion_url"):
+            urls.append({"title": record.get("companion_title") or "Original census transcription",
+                         "url": record["companion_url"],
+                         "finding": "Separate household-head transcription, not manuscript verification"})
+        records.append(_item(
+            id="hope-original-access:" + record["id"],
+            category="Historical record trails",
+            title=record["date_label"] + " · " + record["title"],
+            summary=record["finding"], limits=record["limits"],
+            people_ids=(), pages=(),
+            route="?page=collection&view=hope-census",
+            sources=_links(urls),
+            keywords="Hope Matthew Mathew Beveridge archival original ledger census clerk "
+                     + record["locator"] + " " + record["needs"],
+            status=record["status"], source_date=str(record["year"]),
+        ))
+
     # One probate source family, not 31 independent proofs. The source-file
     # index contains text and provenance only; scans await permission to publish.
     probate = _read_records("phase22_matthew_waldo_probate.json", root)[0]
