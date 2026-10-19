@@ -69,6 +69,8 @@ def render_matthew_reconciliation(*, compact: bool=False) -> None:
                family["publication"]["url"])
     route_link("Compare the Matthew–Abigail story on original book page 17",
                "?page=family-books&book_page=17")
+    route_link("New: dated Hope Town Clerk evidence, 1811–1827, and the 1820 census lead",
+               "?page=collection&view=hope-matthew")
     groups=marriage_groups(family)
     columns=st.columns(2)
     for col,group in zip(columns,groups):
