@@ -146,6 +146,12 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
     phase23_probate_people = load_optional_json_records(data_dir / "phase23_probate_people.json")
     effective_people = merge_records(effective_people, phase23_probate_people)
 
+    # 1911 Carver vital-record-derived birth family, tied to the probate widow
+    # through a separate 1907 published identity bridge. Never alter the 2026
+    # imported or Phase 23 source record; store updates in a later overlay.
+    phase24_cobb_people = load_optional_json_records(data_dir / "phase24_cobb_people.json")
+    effective_people = merge_records(effective_people, phase24_cobb_people)
+
     # Additive archive files are optional, like the existing research overlays.
     # Keep the names here explicit to avoid an archive <-> family_data import cycle.
     archive = {key: load_optional_json_records(data_dir / filename) for key, filename in (
@@ -162,6 +168,7 @@ def load_site_data(data_dir: Path) -> dict[str, list[Record]]:
         "phase7_people": phase7_people,
         "phase6_people": phase6_people,
         "phase23_probate_people": phase23_probate_people,
+        "phase24_cobb_people": phase24_cobb_people,
         "phase4_events": phase4_events,
         "phase5_events": phase5_events,
         "phase6_events": phase6_events,
