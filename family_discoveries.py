@@ -19,10 +19,16 @@ from hope_matthew_civic import render_hope_civic_timeline
 from waldo_probate import render_waldo_probate
 from family_origins_casework import render_family_origins
 from family_exhibits import render_person_exhibit
+from research_integrity_dashboard import render_integrity_dashboard
 
 
 def render_family_discoveries(people_by_id: dict, events: list | None = None,
                               relationships: dict | None = None) -> None:
+    if str(st.query_params.get("view", "") or "") == "integrity":
+        render_integrity_dashboard(people_by_id, events or [],
+                                   relationships or relationship_index(people_by_id.values()))
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
     if str(st.query_params.get("view", "") or "") == "person-exhibit":
         person_id = str(st.query_params.get("person", "") or "")
         render_person_exhibit(person_id, people_by_id, events or [], relationships)
@@ -61,6 +67,8 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
         "All historical findings are shown, including possible and disputed connections. "
         "Original sources and evidence explanations remain available with each discovery."
     )
+    route_link("WHOLE FAMILY AUDIT: disconnected branches, source coverage and research gaps",
+               "?page=collection&view=integrity")
     route_link("Open the complete Family Research Workbench — search every source, "
                "original book page and relationship",
                "?page=collection&view=workbench")
