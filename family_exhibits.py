@@ -11,12 +11,13 @@ from typing import Mapping
 
 import streamlit as st
 
-from evidence_explorer import evidence_catalog, for_person, render_source_card, source_items
-from family_data import life_span, format_date, relationship_index
+from evidence_explorer import evidence_catalog, for_event, for_person, render_source_card, source_items
+from family_data import life_span, format_date, date_sort_key, friendly_identifier, relationship_index
 from family_research_index import build_index
 from profile_life_stories import (life_record_overview, linked_book_illustrations,
                                   profile_milestones)
 from family_books import load_books, book_pdf_path
+from family_navigation import branch_context, unresolved_relative_ids
 from colony_photos import source_photo_preview
 from routing_ui import route_link
 
@@ -73,12 +74,42 @@ def exhibit_research_rows(person_id: str, indexed: list[dict]) -> list[dict]:
     ))
 
 
+def event_evidence_for_person(person_id: str, events: list[dict],
+                              catalog: list[dict] | None = None) -> list[dict]:
+    """Expose event-level sources only for events explicitly linked by exact ID.
+
+    A bibliography is not necessarily an original scan. Do not use a name/OCR
+    match to attribute an event to a person, and never filter out unlinked refs.
+    """
+    curated = catalog if catalog is not None else evidence_catalog()
+    found = []
+    for event in events:
+        if person_id not in (event.get("people_involved") or []):
+            continue
+        event_id = str(event.get("id") or "")
+        if not event_id:
+            continue
+        sources = source_items(for_event(event_id, curated), event.get("sources") or [])
+        if sources:
+            found.append({
+                "event_id": event_id,
+                "title": str(event.get("title") or event_id),
+                "date": format_date(event.get("date"), event.get("date_precision")),
+                "date_key": date_sort_key(event),
+                "sources": sources,
+                "linked": sum(bool(item.get("url")) for item in sources),
+            })
+    return sorted(found, key=lambda item: (item["date_key"],
+                                           item["title"].casefold(), item["event_id"]))
+
+
 def exhibit_overview(person: dict, events: list[dict], indexed: list[dict],
                      catalog: list[dict] | None = None,
                      pictures: list[dict] | None = None) -> dict:
     """Full counts include unlinked references but do not call them scanned originals."""
     pid = str(person["id"])
-    curated = for_person(pid, catalog if catalog is not None else evidence_catalog())
+    evidence = catalog if catalog is not None else evidence_catalog()
+    curated = for_person(pid, evidence)
     citations = source_items(curated, person.get("sources") or [])
     rows = exhibit_research_rows(pid, indexed)
     photos = pictures if pictures is not None else linked_book_illustrations(pid)
@@ -88,6 +119,7 @@ def exhibit_overview(person: dict, events: list[dict], indexed: list[dict],
         "milestones": milestones,
         "research": rows,
         "citations": citations,
+        "event_evidence": event_evidence_for_person(pid, events, evidence),
         "photos": photos,
         "linked_citations": sum(bool(source.get("url")) for source in citations),
         "linked_research": sum(bool(row.get("sources")) for row in rows),
@@ -178,6 +210,32 @@ def _records_section(overview: dict) -> None:
                     source, context="museum-" + overview["id"],
                     number=(chosen - 1) * CITATION_PAGE_SIZE + offset,
                 )
+    st.markdown("**Sources attached to this relative's dated events**")
+    event_items = overview["event_evidence"]
+    if not event_items:
+        st.caption("No dated event with a citation is attributed to this exact person ID.")
+    else:
+        st.caption(f"{len(event_items)} dated event(s) with citations, including references "
+                   "without scans. An event citation may describe an index, book, or "
+                   "secondary account rather than original proof.")
+        page_size = 5
+        pages = max(1, (len(event_items) + page_size - 1) // page_size)
+        key = "museum_event_evidence_page_" + overview["id"]
+        if st.session_state.get(key) not in range(1, pages + 1):
+            st.session_state[key] = 1
+        chosen = st.selectbox("Dated evidence page", range(1, pages + 1),
+                              format_func=lambda n: f"{n} of {pages}", key=key) if pages > 1 else 1
+        for event in event_items[(chosen - 1) * page_size:chosen * page_size]:
+            heading = (event["date"] + " · " + event["title"] + " · " +
+                       str(len(event["sources"])) + " citation(s)")
+            with st.expander(heading):
+                st.caption(str(event["linked"]) + " accessible source link(s); "
+                           "all source labels are retained even where no digital original is available.")
+                route_link("Read this event in the full timeline",
+                           "?page=timeline&event=" + quote(event["event_id"], safe=""))
+                for number, source in enumerate(event["sources"]):
+                    render_source_card(source, context="event-in-exhibit-" +
+                                       overview["id"] + "-" + event["event_id"], number=number)
     st.markdown("**Research findings linked to this exact relative**")
     if not records:
         st.caption("No additional finding has been linked by a reviewed person ID. "
@@ -261,6 +319,17 @@ def _family_section(overview: dict, people: Mapping[str, dict],
     st.subheader("Move through documented family connections")
     st.caption("These are the archive's recorded relationships. Some are "
                "disputed or still being checked; open each profile to see its evidence.")
+    branch = branch_context(pid, people, relationships)
+    if branch:
+        st.caption("Recorded family group " + str(branch["number"]) + " of " +
+                   str(branch["total"]) + " · " + str(branch["size"]) +
+                   " indexed people with a path through recorded family links.")
+        if branch["total"] > 1:
+            st.info("Other separately recorded groups have not been connected by a "
+                    "supported relationship in this archive. A shared surname or "
+                    "nearby residence is not enough to join family branches.")
+            route_link("Explore every recorded family group",
+                       "?page=collection&view=integrity&section=branches")
     for key, title in RELATIONSHIP_LABELS:
         ids = sorted(relationships.get(key, {}).get(pid, set()),
                      key=lambda ident: (str(people.get(ident, {}).get("full_name") or ident).casefold(), ident))
@@ -274,7 +343,12 @@ def _family_section(overview: dict, people: Mapping[str, dict],
                     route_link(str(known.get("full_name") or related) + " · " + life_span(known),
                                exhibit_route(related))
                 else:
-                    st.caption(related + " · unresolved reference; no profile is available")
+                    st.caption(friendly_identifier(related) +
+                               " · unresolved reference; no verified profile is available")
+    missing = unresolved_relative_ids(pid, people, relationships)
+    if missing:
+        st.caption(str(len(missing)) + " family-reference ID(s) above remain unresolved. "
+                   "These are not extra confirmed ancestors or selectable profiles.")
     route_link("Center this relative in the focused family tree",
                "?page=tree&profile=" + quote(pid, safe=""))
     route_link("Find this person in the complete family map",
