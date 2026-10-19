@@ -58,3 +58,22 @@ def unresolved_relative_ids(person_id: str, people: Mapping[str, dict],
             if pid not in people
         )
     return sorted(unknown)
+
+
+def branch_context(person_id: str, people: Mapping[str, dict],
+                   relationships: Mapping[str, Mapping[str, set[str]]]) -> dict | None:
+    """Locate an indexed relative in the existing graph, without bridging gaps.
+
+    Group numbering is deterministic and purely descriptive: being in the same
+    component is not individualized proof of every relationship along the path.
+    Unknown IDs are excluded from groups, not added as placeholder ancestors.
+    """
+    if person_id not in people:
+        return None
+    from genealogy_integrity import connected_components
+    groups = connected_components(people, relationships)
+    for number, member_ids in enumerate(groups, 1):
+        if person_id in member_ids:
+            return {"number": number, "total": len(groups), "size": len(member_ids),
+                    "member_ids": member_ids}
+    return None
