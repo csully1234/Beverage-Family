@@ -546,6 +546,18 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertTrue(any("court record" in str(e.value).lower()
                             for e in page.caption))
 
+    def test_phase30_fox_islands_original_map_and_manuscript_trail(self):
+        page = self.logged_in_app(page="collection", view="fox-originals")
+        self.assertFalse(page.exception, [error.value for error in page.exception])
+        self.assertTrue(any("Fox Islands" in str(e.value) for e in page.title))
+        self.assertTrue(any("Digitized archival map" in e.label for e in page.metric))
+        self.assertTrue(any("Specific original paper" in e.label for e in page.metric))
+        self.assertTrue(any("Verified Matthew parentage" in e.label for e in page.metric))
+        self.assertTrue(any("original" in str(e.value).lower() for e in page.warning))
+        origins = self.logged_in_app(page="collection", view="family-origins")
+        self.assertFalse(origins.exception, [error.value for error in origins.exception])
+        self.assertTrue(any("Open exact Fox Islands survey" in b.label for b in origins.button))
+
     def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
         app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
         self.assertFalse(app.exception, [error.value for error in app.exception])
