@@ -134,5 +134,16 @@
       "url": "https://www.familysearch.org/en/search/collection/2040534",
       "instructions": "Search surname variations in Waldo Probate Court indexes 1826–1892; obtain any case number and book/page. No estate identified yet. Compare Hope municipal term with an authenticated death/probate record."
     }
-  ]
+  ],
+  "jurisdiction_context": {
+    "title": "Historic court jurisdiction for Hope's records",
+    "finding": "An official Maine legislative history identifies Hope among Lincoln County towns set off into Waldo County in 1827, and Hope subsequently among towns forming Knox County in 1860. Thus the county wording changes while the municipality is the same; original-era court and probate records must be sought in the jurisdiction used at filing time.",
+    "source": "Maine legislative historical report, WALDO COUNTY, p. 57",
+    "url": "https://lldc.mainelegislature.org/Open/Rpts/js451_m25c68_1982.pdf",
+    "dates": [
+      "1827-07-03",
+      "1860-04-01"
+    ],
+    "limit": "This government history supplies jurisdictional context, not a Matthew personal migration record, family residence address or probate case."
+  }
 }
