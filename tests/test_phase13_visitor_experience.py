@@ -44,7 +44,9 @@ class VisitorJourneyTests(unittest.TestCase):
         target=suggested_paths("People",pid)
         self.assertEqual(target[0][1],"?page=tree&profile="+pid)
         route=suggested_paths("Full Family Map",pid)[0][1]
-        self.assertEqual(route,"?page=people&profile="+pid)
+        self.assertEqual(route,"?page=tree&profile="+pid)
+        self.assertEqual(suggested_paths("Full Family Map",pid)[1][1],
+                         "?page=people&profile="+pid)
         self.assertIn("profile="+pid,suggested_paths("Timeline",pid)[0][1])
 
     def test_recent_visits_use_only_ephemeral_valid_profile_ids(self):
@@ -61,6 +63,9 @@ class VisitorJourneyTests(unittest.TestCase):
             self.assertEqual(len(recent_people(self.people)),5)
             fake.query_params={"profile":ids[-2]}
             self.assertEqual(current_person(self.people,"People"),ids[-2])
+            # A direct tree permalink must take priority over an older visit.
+            self.assertEqual(current_person(self.people,"Explore the Tree"),ids[-2])
+            fake.query_params={}
             self.assertEqual(current_person(self.people,"Explore the Tree"),ids[-3])
 
     def test_full_tree_supports_search_keyboard_and_full_overview(self):
