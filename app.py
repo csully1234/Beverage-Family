@@ -362,6 +362,25 @@ def apply_theme() -> None:
             font-size: .86rem;
         }
 
+        /* Accessible keyboard navigation across cards, form fields and source links. */
+        :is(button, a, input, select, textarea):focus-visible {
+            outline: 3px solid #2b7e8d !important;
+            outline-offset: 3px;
+        }
+        [data-testid="stVerticalBlock"],
+        [data-testid="stHorizontalBlock"],
+        [data-testid="stColumn"] { min-width: 0; }
+        [data-testid="stImage"] img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        /* Prevent long historical archive URLs and citations from forcing
+           the entire page wider than a phone viewport. */
+        [data-testid="stMarkdownContainer"],
+        [data-testid="stCaptionContainer"] {
+            overflow-wrap: anywhere;
+        }
         @media (max-width: 700px) {
             .block-container { padding-top: 3.5rem; padding-left: .85rem; padding-right: .85rem; }
             .bev-hero { border-radius: 16px; padding: 2rem 1.35rem 2.5rem; }
@@ -376,7 +395,10 @@ def apply_theme() -> None:
             }
             [data-testid="stTabs"] [role="tab"] { flex: 0 0 auto; scroll-snap-align: start; }
             [data-testid="stVerticalBlockBorderWrapper"] { padding: .25rem; }
-            .stButton > button { white-space: normal; height: auto; }
+            .stButton > button { white-space: normal; min-height: 44px; height: auto; }
+            .stLinkButton > a { min-height: 44px; white-space: normal; }
+            [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] { min-width: min(100%, 15rem); }
+            [data-testid="stGraphVizChart"], [data-testid="stCustomComponentV1"] { width: 100%; max-width: 100%; }
             [data-testid="stDataFrame"] { max-width: 100%; overflow-x: auto; }
         }
         </style>
