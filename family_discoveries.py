@@ -19,6 +19,7 @@ from hope_matthew_civic import render_hope_civic_timeline
 from waldo_probate import render_waldo_probate
 from family_origins_casework import render_family_origins
 from family_exhibits import render_person_exhibit
+from fox_islands_originals import render_fox_originals
 from research_integrity_dashboard import render_integrity_dashboard
 
 
@@ -32,6 +33,10 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
     if str(st.query_params.get("view", "") or "") == "person-exhibit":
         person_id = str(st.query_params.get("person", "") or "")
         render_person_exhibit(person_id, people_by_id, events or [], relationships)
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
+    if str(st.query_params.get("view", "") or "") == "fox-originals":
+        render_fox_originals()
         route_link("← Return to Historical Discoveries", "?page=collection")
         return
     if str(st.query_params.get("view", "") or "") == "family-origins":
@@ -76,6 +81,8 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
     if not requested:
         route_link("EXPLORE A LIFE: Matthew's family, court records and historical timeline",
                    "?page=collection&view=person-exhibit&person=matthew_beveridge_hope_1837")
+        route_link("FOX ISLANDS ORIGINALS: 1785 survey plans and exact 1786 petition/report archival locators",
+                   "?page=collection&view=fox-originals")
         route_link("NEW RESEARCH: Clarissa Cobb's 1786 Carver birth family and Matthew's unresolved origins",
                    "?page=collection&view=family-origins")
         route_link("NEW: Matthew's 1837 Waldo probate — Clarissa, eight heirs and court papers",
