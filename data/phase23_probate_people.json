@@ -1,0 +1,242 @@
+[
+  {
+    "id": "matthew_beveridge_hope_1837",
+    "full_name": "Matthew Beveridge (of Hope)",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": "1837-02-14",
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "clarissa_beveridge_widow_1837"
+    ],
+    "children": [
+      "achsa_heald_matthew_child",
+      "james_m_beverage_matthew_child",
+      "polly_tucker_matthew_child",
+      "thomas_j_beverage_matthew_child",
+      "sarah_a_beverage_matthew_child",
+      "george_w_beverage_matthew_child",
+      "martha_beverage_matthew_child",
+      "ezekiel_g_beverage_matthew_child"
+    ],
+    "residences": [
+      {
+        "location": "Hope, Maine",
+        "period": "Before February 1837"
+      }
+    ],
+    "notes": "Capt. Matthew Beverage of Hope, Waldo County: Clarissa's March 1837 administration petition reports death on 14 February 1837. Court partition warrant of October 1837 explicitly names eight children. Probate does not identify Matthew's parents, link him to Capt. Thomas Beverage or the 1785 Fox Islands minor, or establish the maternity of the named children. Eaton (1865) separately reports Abigail Dyer as first wife and Clarissa Cobb as second; those birth surnames and the first marriage await original proof.",
+    "sources": [
+      "Waldo County Probate Court, Clarissa's petition of 6 March 1837 (received scan 10)",
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)",
+      "Cyrus Eaton, History of Thomaston, Rockland and South Thomaston, vol II (1865), pp 146–147 (published account; not marriage proof)"
+    ]
+  },
+  {
+    "id": "clarissa_beveridge_widow_1837",
+    "full_name": "Clarissa Beveridge (widow of Matthew)",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [],
+    "siblings": [],
+    "spouses": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "children": [],
+    "residences": [
+      {
+        "location": "Hope, Waldo County, Maine",
+        "period": "1837"
+      }
+    ],
+    "notes": "Named as Clarissa Beverage/Beveridge and widow of Matthew of Hope in 1837 Waldo probate records; her birth surname Cobb is reported by Eaton (1851/1865), not independently certified by this estate packet. Do not infer that Clarissa was the biological mother of all eight court-listed children.",
+    "sources": [
+      "Waldo County Probate Court, Clarissa's March 1837 administration petition (received scan 10)",
+      "Waldo County Probate Court, widow's dower warrant and decree (received scans 07, 18, 24)"
+    ]
+  },
+  {
+    "id": "achsa_heald_matthew_child",
+    "full_name": "Achsa Heald",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "james_m_beverage_matthew_child",
+    "full_name": "James M. Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "polly_tucker_matthew_child",
+    "full_name": "Polly Tucker",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [
+      {
+        "location": "Lowell, Massachusetts",
+        "period": "1837 (probate agency record)"
+      }
+    ],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence. The probate agency record names Polly Tucker of Lowell; identity with Eaton's Mary Miles Beverage Tucker remains a hypothesis.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "thomas_j_beverage_matthew_child",
+    "full_name": "Thomas J. Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "sarah_a_beverage_matthew_child",
+    "full_name": "Sarah A. Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "george_w_beverage_matthew_child",
+    "full_name": "George W. Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "martha_beverage_matthew_child",
+    "full_name": "Martha Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence. The court uses Martha Beverage; do not assign later married surname Allen solely from the petition.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  },
+  {
+    "id": "ezekiel_g_beverage_matthew_child",
+    "full_name": "Ezekiel G. Beverage",
+    "birth_date": null,
+    "birth_place": null,
+    "death_date": null,
+    "death_place": null,
+    "parents": [
+      "matthew_beveridge_hope_1837"
+    ],
+    "siblings": [],
+    "spouses": [],
+    "children": [],
+    "residences": [
+      {
+        "location": "Hope, Waldo County, Maine",
+        "period": "1837 (probate petition)"
+      }
+    ],
+    "notes": "Waldo County Probate Court's October 1837 partition warrant explicitly names this person among Matthew's 'children.' Biological maternity, birth date and further identity correspondence to Eaton's 1865 household require separate original evidence. Middle initials vary between sources; do not assume the full form in Eaton's text is confirmed by this handwriting.",
+    "sources": [
+      "Waldo County Probate Court, estate of Matthew Beverage, Oct 1837 partition warrant (received scan 09)",
+      "Ezekiel G. Beverage, Sep 1837 estate petition (received scan 31)",
+      "Waldo County Probate Court, Polly Tucker agency instrument (received scan 14)"
+    ]
+  }
+]
