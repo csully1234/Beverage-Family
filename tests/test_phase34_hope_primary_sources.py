@@ -31,7 +31,7 @@ class Phase34OriginalReelAndCivicVotes(unittest.TestCase):
         self.assertEqual(record["source_url"],
                          "https://archive.org/details/populationsc18200036unit")
         self.assertIn("Hope", record["locator"])
-        self.assertIn("Heirlooms", record.get("companion_title", "Heirlooms Reunited"))
+        self.assertIn("heirloomsreunited.com", record["companion_url"])
         self.assertFalse(record["original_line_inspected"])
         self.assertFalse(record["manuscript_verified"])
         self.assertIn("not", record["limits"].casefold())
