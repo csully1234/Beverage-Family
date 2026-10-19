@@ -71,6 +71,11 @@ def render_matthew_reconciliation(*, compact: bool=False) -> None:
                "?page=family-books&book_page=17")
     route_link("New: dated Hope Town Clerk evidence, 1811–1827, and the 1820 census lead",
                "?page=collection&view=hope-matthew")
+    st.info("Update: the original-era Waldo County probate packet has since been located. "
+            "Its records identify Clarissa as Matthew's widow and eight estate heirs. "
+            "Some older case notes below preserve what was still missing when written.")
+    route_link("Explore 1837 probate records, named heirs and the complete 31-scan index",
+               "?page=collection&view=waldo-probate")
     st.info("New original-era evidence: a Waldo County probate packet for Matthew "
             "has now been obtained. It names Clarissa as widow and eight heirs. "
             "The earlier 2026 research notes below describe what was missing "
