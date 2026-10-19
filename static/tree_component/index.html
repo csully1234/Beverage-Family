@@ -31,7 +31,7 @@ function adjustHeight(height) {
   requestedHeight=Number.isFinite(size)?Math.max(520,Math.min(size,1200)):850;
   // The map must remain usable on phones without occupying several vertical
   // screens. Its inner SVG already supports pan/zoom and touch interactions.
-  const small=window.matchMedia("(max-width:680px)").matches;
+  const small=window.innerWidth<=680;
   const available=Math.max(430,Math.min(620,Math.round(window.innerHeight*0.68)));
   const value=small?Math.min(requestedHeight,available):requestedHeight;
   graph.style.height=value+"px";
