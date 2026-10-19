@@ -1,0 +1,154 @@
+[
+  {
+    "id": "phase30-fox-islands-original-record-targets",
+    "research_date": "2026-10-19",
+    "question": "Is the Matthew Beveridge called a minor in a copied 1785 Fox Islands petition the later Hope town clerk and 1837 probate decedent, and what specific family/land evidence could identify him?",
+    "conclusion": "Three separately cataloged 1785–1786 Maine State Archives map/list artifacts have accessible institutional digital records. The Massachusetts settlers' petition has a scholarly archive series/chapter locator, while the March 18 1786 Putnam settlers' declarations have a Maine Archives paper-box locator. None establishes Matthew's parentage or joins the petition minor to the 1837 Hope decedent. The 1889 printed petition transcript identifies three separately named Beveridges but no relationship between them.",
+    "sources": [
+      {
+        "id": "fox-1785-knox-plan7",
+        "title": "Fox Islands land survey: Knox County Plan Book page 7",
+        "date": "1785-10 to 1785-11",
+        "repository": "Maine State Archives / DigitalMaine",
+        "identifier": "Plan Book Knox County, page 07; digital identifier 302962; based on Massachusetts Archives Maps and Plans #1343",
+        "category": "digitized_historical_cartographic_copy",
+        "access": "digitized_plan_hosted_by_archive",
+        "url": "https://digitalmaine.com/planbook_knox_county/8/",
+        "inspected": "Institutional catalog, transcription of cartographic description and hosted-image availability; full-resolution place or person names on the plan not independently transcribed.",
+        "establishes": "The archived plan describes Fox Islands boundaries and an October–November 1785 Commonwealth survey by Jonathan Stone and John Mathews, attested by Rufus Putnam; it cites a conditional grant to John Calderwood and others in March 1786.",
+        "does_not_establish": "Not an original signed settlers' petition, the March 1786 individual settlement-declaration report, Matthew's father, age, exact parcel, or identity with the 1837 Hope decedent.",
+        "person_ids": [],
+        "priority": 1,
+        "request": "Inspect the archive-hosted plan at original resolution, record any labelled lots or names, then compare the relevant boundary/lot descriptions to the independent Putnam settlement report. Do not treat its cartographic grant date as a birth or family link."
+      },
+      {
+        "id": "fox-1785-planbook9-list",
+        "title": "Rufus Putnam's 1785 geographic list of the Fox Islands",
+        "date": "1785-11",
+        "repository": "Maine State Archives / DigitalMaine",
+        "identifier": "Plan Book 9, page 01.5; digital identifier 210870",
+        "category": "digitized_historical_cartographic_copy",
+        "access": "digitized_list_hosted_by_archive",
+        "url": "https://digitalmaine.com/planbook_9/2/",
+        "inspected": "Original-institution digital catalog text and preview availability; full-size scanned document not transcribed person by person.",
+        "establishes": "The repository describes a November 1785 listing of North Fox Island, South Fox Island, and neighboring islands surveyed under the Fox Islands division.",
+        "does_not_establish": "A geographic island inventory is not a list of household heads or proof that Matthew Beveridge was resident or related to anyone named Beverage.",
+        "person_ids": [],
+        "priority": 2,
+        "request": "Inspect the high-resolution archived page, identify its contents and exact title before indexing persons; cross-reference geographic names to the 1785 plan. Preserve this as a separate artifact."
+      },
+      {
+        "id": "fox-1785-planbook8-plan16",
+        "title": "Alternate archived Fox Islands plan: Plan Book 8 page 16",
+        "date": "1785–1786 (catalog title and date differ)",
+        "repository": "Maine State Archives / DigitalMaine",
+        "identifier": "Plan Book 8, page 16; digital identifier 209714",
+        "category": "digitized_historical_cartographic_copy",
+        "access": "digitized_plan_hosted_by_archive",
+        "url": "https://digitalmaine.com/planbook_8/17/",
+        "inspected": "Repository record and description; not authenticated as an independent person-by-person settler roll.",
+        "establishes": "A second Maine archive plan record locates Fox Islands including North Haven, Pulpit Harbor, Crabtree's Point and a conditional Calderwood-associated grant.",
+        "does_not_establish": "Title says 1785 but the catalog's exact creation date says 1786; their discrepancy must be preserved. The listing may derive from the same survey underlying the Knox County copy, so should not be counted as independent witness testimony.",
+        "person_ids": [],
+        "priority": 3,
+        "request": "Compare the archived original map image to Plan Book Knox County p. 7 and Massachusetts Maps and Plans #1343; reconcile date labeling and confirm if these are copies of one map."
+      },
+      {
+        "id": "fox-1785-petition-mass-resolve",
+        "title": "Fox Islands settlers' petition: archival manuscript locator",
+        "date": "1785 petition / 1786-03-13 resolution",
+        "repository": "Massachusetts Archives, Boston",
+        "identifier": "SC1 / Series 228, Passed Resolves, Resolves 1785, February Session, Chapter 97; resolution dated 13 March 1786",
+        "category": "located_original_document_not_inspected",
+        "access": "original_located_by_scholarly_footnote_request_pending",
+        "url": "https://rsc.byu.edu/banner-gospel-wilford-woodruff/lord-told-me-go-i-went",
+        "inspected": "Published scholarly citation at notes 2–3; the named archival petition and actual signer sheet have not been obtained or verified.",
+        "establishes": "A published study citing and having received a copy of the Massachusetts Archives petition gives an exact archives series/session/chapter locator for the Fox Islands grant proceedings.",
+        "does_not_establish": "The scholarly footnote is not the original petition image. It does not verify the minor's signature, exact age, household relationship, or identity with Matthew who died in 1837.",
+        "person_ids": [],
+        "priority": 1,
+        "request": "Request SC1/Series 228 Passed Resolves, Resolves 1785 February Session ch. 97 (March 13, 1786) with complete petition, subscription/signature sheets and endorsements. Ask for copy/usage conditions and folio references. Compare names verbatim to 1889 publication."
+      },
+      {
+        "id": "fox-1786-putnam-settler-report",
+        "title": "General Putnam's March 1786 individual-settlement report",
+        "date": "1786-03-18",
+        "repository": "Maine State Archives, Augusta",
+        "identifier": "General Putnam's Report and Description in the County of Lincoln with an Estimate of Lands Surveyed There in 1785 ... 1786-03-18; Box 001 (paper)",
+        "category": "located_original_document_not_inspected",
+        "access": "paper_box_identified_no_verified_online_page",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "inspected": "The Maine Genealogist 47(4) (2025), printed pp. 170–171, note 6, cites original paper box; complete report and Matthew-specific lines have not been seen.",
+        "establishes": "The modern article states island settlers individually reported previous settlement durations during Putnam's original survey and names a physical archival report.",
+        "does_not_establish": "It is NOT identical to the digitized 1785 cartographic survey plans. No entry for Matthew, no parentage, and no relation to Capt. Thomas has been demonstrated in the report.",
+        "person_ids": [],
+        "priority": 1,
+        "request": "Ask Maine State Archives for the March 18, 1786 original Putnam report in paper Box 001, especially every Fox Islands claimant/survey-settler list with name, settlement years, lot, household/minor notes and original page/folio numbers. Request a complete copy rather than an index hit."
+      },
+      {
+        "id": "fox-1785-petition-vinalhaven-1889",
+        "title": "1889 printed transcription of Fox Islands 1785 settlers' petition",
+        "date": "1785 petition republished 1889",
+        "repository": "Library of Congress (digitized 1889 town history)",
+        "identifier": "A Brief Historical Sketch of the Town of Vinalhaven (1889), printed pp. 9–10 (locate exact printed page per scanned edition)",
+        "category": "digitized_published_secondary_transcription",
+        "access": "digitized_historic_printing_hosted_by_library_of_congress",
+        "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+        "inspected": "Digital 1889 publication and relevant extracted petition transcript, not the 1785 original manuscript.",
+        "establishes": "The published settler list names James Beveridge, Thomas Beveridge and Matthew Beveridge described as a minor, separately; subsequent text reports conditional 1786 land-grant resolutions.",
+        "does_not_establish": "The listing does not say the three Beveridges were siblings, name Matthew's parents, establish his birth date, or identify the minor with the man later serving as Hope town clerk and dying in 1837. Typographic transcription could differ from manuscript.",
+        "person_ids": [],
+        "priority": 1,
+        "request": "Transcribe exact lines with the 1889 printed page number and compare signatures/annotations with the complete Massachusetts Archives petition. Keep each person as a historical name mention until original and life-course identity proof."
+      },
+      {
+        "id": "fox-1785-petition-museum",
+        "title": "Historical Society holds a copy of the settlers' petition",
+        "date": "1785 record / modern exhibit notice",
+        "repository": "Vinalhaven Historical Society",
+        "identifier": "Early Days exhibition, Fox Islands settlement petition display",
+        "category": "archive_copy_locator_only",
+        "access": "physical_museum_copy_reported_not_inspected",
+        "url": "https://www.vinalhavenhistoricalsociety.org/summerexhibit/2013exhibitearlydays.html",
+        "inspected": "Exhibit page text states a copy of the petition can be viewed at the museum; physical document has not been examined.",
+        "establishes": "A potential second access route to a petition copy for comparison with the state manuscript.",
+        "does_not_establish": "No verified original signature, familial identity or reliable independent petition witness; a museum copy could be derived from a published transcription.",
+        "person_ids": [],
+        "priority": 4,
+        "request": "Ask the society for a photo/scan of the exhibit's full petition copy, its provenance and whether the copy includes original names and minor annotations. Do not assume a separate original."
+      }
+    ],
+    "identity_status": [
+      {
+        "id": "fox-1785-petition-matthew",
+        "name": "Matthew Beveridge (minor, 1785 published petition)",
+        "current_link": "Unproven connection to Hope 1837 Matthew; retain as a documentary name mention, not a new exact-ID person."
+      },
+      {
+        "id": "hope-1811-1827-clerk",
+        "name": "Matthew Beveridge (Hope clerk, 1811–1827)",
+        "current_link": "Recorded original-era local office, but no birth parent or uniquely identifying bridge to Fox Islands minor."
+      },
+      {
+        "id": "hope-1837-probate",
+        "name": "Matthew Beverage/Beveridge (Hope decedent, 1837)",
+        "current_link": "Contemporary probate proves widow Clarissa and eight court-named children; neither pre-1785 birthplace nor parentage."
+      }
+    ],
+    "publication_status": "Source links lead to holding institutions. Neither the 1785 petition manuscript nor the 1786 Putnam paper report has been republished or uploaded to the site. Public domain map records remain hosted by Maine archives; no new image copies imported.",
+    "key_document_requests": [
+      {
+        "source_id": "fox-1785-petition-mass-resolve",
+        "addressee": "Massachusetts Archives",
+        "query": "SC1/Series 228, Passed Resolves, Feb 1785 Session, Ch. 97, dated 13 March 1786; full original settlers' petition, signature sheets, endorsements and resolved decree.",
+        "why": "Verify the exact name, minor annotation and any contemporary family/lot grouping."
+      },
+      {
+        "source_id": "fox-1786-putnam-settler-report",
+        "addressee": "Maine State Archives",
+        "query": "18 March 1786 General Putnam's report, Box 001 paper, especially all Fox Islands settlers' declarations and assigned parcels.",
+        "why": "Determine whether any recorded Matthew appears with residence history, land claim or other identifying particulars."
+      }
+    ]
+  }
+]

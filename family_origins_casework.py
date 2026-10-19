@@ -83,6 +83,8 @@ def render_family_origins() -> None:
                "?page=people&profile=clarissa_beveridge_widow_1837")
     route_link("Explore the focused Cobb–Beveridge family tree",
                "?page=tree&profile=clarissa_beveridge_widow_1837")
+    route_link("NEW: Open exact Fox Islands survey, petition and 1786 settlement-report sources",
+               "?page=collection&view=fox-originals")
     first, second, third, fourth = st.tabs([
         "Clarissa's birth family", "Matthew's identity question",
         "Historical sources", "Next original documents"])
@@ -120,6 +122,8 @@ def render_family_origins() -> None:
                 st.caption("Evidence limitation: " + candidate["limitation"])
         for id in ("matthew-fox-minor", "matthew-deeds", "fox-putnam-original-target"):
             _finding_card(next(f for f in data["findings"] if f["id"] == id), sources)
+        route_link("Open the original-era Fox Islands maps and manuscript locators",
+                   "?page=collection&view=fox-originals")
         route_link("Read the original-era Hope town-clerk research",
                    "?page=collection&view=hope-matthew")
         route_link("Read Matthew's 1837 court evidence and children",
