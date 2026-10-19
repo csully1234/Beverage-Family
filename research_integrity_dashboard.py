@@ -205,7 +205,7 @@ def _records(data: dict, people: dict) -> None:
     cols = st.columns(3)
     cols[0].metric("Profiles without birth date", s["birth_dates_unrecorded"])
     cols[1].metric("Profiles without death date", s["death_dates_unrecorded"])
-    cols[2].metric("Events without linked original URL", s["events_without_direct_citation_url"])
+    cols[2].metric("Events without direct source URL", s["events_without_direct_citation_url"])
     selected = st.selectbox("Find profiles needing documentation", [
         "No direct citation URL", "No profile citation",
         "Birth date not recorded", "Death date not recorded",
@@ -246,6 +246,24 @@ def _records(data: dict, people: dict) -> None:
             st.caption(str(event.get("title") or event["id"]))
             route_link("Read event context", "?page=timeline&event=" +
                        quote(str(event["id"]), safe=""))
+    no_link = [event for event in data["events_no_direct_link"] if event.get("sources")]
+    with st.expander("Cited events without an accessible direct source URL · " + str(len(no_link))):
+        st.caption("These events have bibliographic references but no HTTP(S) link in "
+                   "their own citations. A direct link may lead to a catalog, not "
+                   "necessarily an original record. Curated exhibits elsewhere can "
+                   "provide additional context; this queue audits event fields only.")
+        size = 10
+        pages = max(1, (len(no_link) + size - 1) // size)
+        key = "integrity_event_no_link_page"
+        if st.session_state.get(key) not in range(1, pages + 1):
+            st.session_state[key] = 1
+        page = st.selectbox("Unlinked event page", range(1, pages + 1), key=key,
+                            format_func=lambda n: f"{n} of {pages}") if pages > 1 else 1
+        for event in no_link[(page - 1) * size:page * size]:
+            st.caption(str(event.get("date") or "Undated") + " · " +
+                       str(event.get("title") or event["id"]))
+            route_link("Inspect event and bibliography", "?page=timeline&event=" +
+                       quote(str(event["id"]), safe=""))
     with st.expander("Mechanical chronology screening · " + str(len(data["chronology"]))):
         st.caption("A screening is only a clue to re-check records and date precision.")
         for row in data["chronology"]:
@@ -273,6 +291,11 @@ def _exports(data: dict) -> None:
         data=audit_csv(data["edges"], ("kind","from_id","to_id","status","origin",
                                       "finding","limitations")),
         file_name="family-relationship-evidence-audit.csv", mime="text/csv",
+    )
+    st.download_button(
+        "Download events missing direct citation links (CSV)",
+        data=audit_csv(data["events_no_direct_link"], ("id", "date", "title")),
+        file_name="family-event-source-link-audit.csv", mime="text/csv",
     )
     st.caption("Source collection links, original interpretation and legal reuse "
                "terms remain in the archive; a CSV does not establish a relationship.")

@@ -9,21 +9,14 @@ import csv
 import io
 from collections import Counter, defaultdict
 from typing import Any, Mapping
-from urllib.parse import urlsplit
-
 from family_data import year_from_date
 from relationship_evidence import audited_edges, review_summary
+from routing_ui import safe_external_url
 
 
 def _known_url(source: Any) -> bool:
-    if not isinstance(source, dict):
-        return False
-    link = str(source.get("url") or "").strip()
-    try:
-        parsed = urlsplit(link)
-        return parsed.scheme in {"https", "http"} and bool(parsed.hostname)
-    except ValueError:
-        return False
+    """Count only URLs the existing visitor link control would actually open."""
+    return isinstance(source, dict) and safe_external_url(source.get("url"))
 
 
 def connected_components(people: Mapping[str, dict],
