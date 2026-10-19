@@ -515,6 +515,37 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertTrue(any("life, documents and family photographs" in b.label
                             for b in profile.button))
 
+    def test_phase29_integrity_dashboard_all_research_sections_render(self):
+        app = self.logged_in_app(page="collection", view="integrity", section="overview")
+        self.assertFalse(app.exception, [e.value for e in app.exception])
+        self.assertTrue(any("Family history" in str(e.value) for e in app.title))
+        self.assertTrue(any("Family links" in str(e.label) for e in app.metric))
+        for section in ("branches", "relationships", "records", "exports"):
+            page = self.logged_in_app(page="collection", view="integrity", section=section)
+            self.assertFalse(page.exception, [e.value for e in page.exception])
+            self.assertEqual(page.radio(key="family_integrity_section").value, section)
+            if section == "branches":
+                self.assertTrue(any("Disconnected family groups" in str(e.value)
+                                    for e in page.subheader))
+            if section == "relationships":
+                self.assertTrue(any("Audit every recorded relationship" in str(e.value)
+                                    for e in page.subheader))
+            if section == "records":
+                self.assertTrue(any("Profile and original-record coverage" in str(e.value)
+                                    for e in page.subheader))
+            if section == "exports":
+                self.assertGreaterEqual(len(page.get("button")), 1)
+
+    def test_phase29_person_specific_relationship_provenance(self):
+        person = "matthew_beveridge_hope_1837"
+        page = self.logged_in_app(page="collection", view="integrity",
+                                  section="relationships", person=person)
+        self.assertFalse(page.exception, [e.value for e in page.exception])
+        self.assertTrue(any(person.replace("_", " ") not in str(e.value)
+                            for e in page.caption))
+        self.assertTrue(any("court record" in str(e.value).lower()
+                            for e in page.caption))
+
     def test_original_waldo_probate_deep_links_show_reviewed_court_evidence(self):
         app = self.logged_in_app(page="collection", view="waldo-probate", scan="31")
         self.assertFalse(app.exception, [error.value for error in app.exception])
