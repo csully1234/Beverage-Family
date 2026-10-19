@@ -76,6 +76,13 @@ def render_hope_civic_timeline(*, compact:bool=False) -> None:
         records=[r for r in records if r["date"].startswith("1827")]
     for row in records:
         _card(row)
+    jurisdiction=data.get("jurisdiction_context")
+    if jurisdiction:
+        with st.expander("Why Hope's records switch counties in 1827 and 1860"):
+            st.write(jurisdiction["finding"])
+            st.caption(jurisdiction["limit"])
+            route_link("Read Maine's legislative county history (PDF, p. 57)",
+                       jurisdiction["url"])
     with st.expander("How to check the original manuscript, census and probate",expanded=not compact):
         for target in data["original_retrieval"]:
             st.markdown("**"+target["target"]+"**")
