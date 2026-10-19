@@ -44,7 +44,7 @@ class OriginalEraHopeClerkResearchTests(unittest.TestCase):
                 self.assertIn(row["category"],{"town_clerk_transcription","census_index_secondary"})
         self.assertIsNone(record_for_id("missing",self.hope))
         self.assertIn("original",self.records[0]["limit"].lower())
-        self.assertIn("NOT",self.records[3]["limit"])
+        self.assertIn("NOT",self.records[5]["limit"])
 
     def test_census_index_does_not_pretend_original_sheet_was_seen(self):
         census=next(r for r in self.records if r["category"]=="census_index_secondary")
