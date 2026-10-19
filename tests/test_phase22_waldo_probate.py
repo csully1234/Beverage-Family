@@ -64,7 +64,7 @@ class MatthewWaldoProbateEvidenceTests(unittest.TestCase):
         self.assertEqual(by_id["letters-1837"]["date"], "1837-03-06")
         self.assertIn("Clarissa", by_id["widow-clarissa"]["finding"])
         self.assertIn("maiden surname Cobb", by_id["widow-clarissa"]["limits"])
-        self.assertIn("not", by_id["land-and-dower"]["limits"].lower())
+        self.assertIn("no modern parcel", by_id["land-and-dower"]["limits"].lower())
         self.assertIn("not", by_id["heirs-1837"]["limits"].lower())
 
     def test_all_heirs_are_recorded_as_heirs_not_new_genealogy_edges(self):
