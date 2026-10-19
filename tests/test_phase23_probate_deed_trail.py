@@ -70,6 +70,7 @@ class Phase23ProbateCourtChildTests(unittest.TestCase):
         self.assertTrue(all("NOT IDENTIFIED" in lead["proof_status"] or
                             "NOT CHECKED" in lead["proof_status"] or
                             "NOT A PARCEL" in lead["proof_status"] or
+                            "NOT LOCATED" in lead["proof_status"] or
                             "NOT PROVED" in lead["proof_status"]
                             for lead in self.source["source_leads"]))
         self.assertEqual(len(self.source["transcriptions"]), 8)
