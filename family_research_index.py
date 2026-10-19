@@ -179,6 +179,46 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=row["date"],
         ))
 
+    # One probate source family, not 31 independent proofs. The source-file
+    # index contains text and provenance only; scans await permission to publish.
+    probate = _read_records("phase22_matthew_waldo_probate.json", root)[0]
+    for claim in probate["claims"]:
+        pages = claim["review_pages"]
+        records.append(_item(
+            id="waldo-probate-claim:" + claim["id"],
+            category="Historical investigations",
+            title="1837 Waldo probate · " + claim["label"],
+            summary=claim["finding"],
+            limits=claim["limits"] + " Original supplied images not publicly published.",
+            people_ids=(), pages=(),
+            route="?page=collection&view=waldo-probate&scan=" + str(pages[0]),
+            keywords="Matthew Beverage Beveridge Clarissa widow heir estate probate Hope Waldo "
+                     + claim["status"],
+            status=claim["status"], source_date=claim["date"],
+        ))
+    for scan in probate["scans"]:
+        number = scan["review_page"]
+        records.append(_item(
+            id="waldo-probate-scan:" + str(number).zfill(2),
+            category="Historical investigations",
+            title="Matthew probate · received scan " + str(number).zfill(2)
+                  + " · " + scan["label"],
+            summary="Source-office scan index and checksum; this label is a "
+                    "preliminary editorial classification, not the court's file order.",
+            limits=("Exact duplicate of source scan " + str(scan["duplicate_of"])
+                    if scan.get("duplicate_of") else
+                    "Underlying court image retained offline pending reproduction clearance."),
+            people_ids=(), pages=(),
+            route="?page=collection&view=waldo-probate&scan=" + str(number),
+            keywords="Matthew Beverage Beveridge Waldo Hope probate 1837 "
+                     + scan["provisional_type"].replace("_", " ") + " "
+                     + (" ".join(h["name"] for h in probate["heirs"])
+                        if number in (9, 14, 31) else ""),
+            status="Source scan cataloged · not public" if not scan.get("duplicate_of")
+                   else "Exact duplicate scan · not new evidence",
+            source_date="1837",
+        ))
+
     for row in _read_records("phase19_matthew_reconciliation_cases.json", root):
         records.append(_item(
             id="matthew:" + row["id"], category="Historical investigations",
