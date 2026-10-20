@@ -16,4 +16,6 @@ showErrorLinks = false
 gatherUsageStats = false
 
 [server]
-enableStaticServing = true
+# Do not serve copyrighted book scans or other local files anonymously.
+# The full PDF reader uses st.pdf *inside* the existing family login.
+enableStaticServing = false
