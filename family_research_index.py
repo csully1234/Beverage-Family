@@ -530,7 +530,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
     for source in expedition["sources"]:
         records.append(_item(
             id="expedition-source:" + source["id"],
-            category="Original source register",
+            category="Historical record trails",
             title=source["title"],
             summary=source["establishes"] + " · " + source["locator"],
             limits=source["limits"],
