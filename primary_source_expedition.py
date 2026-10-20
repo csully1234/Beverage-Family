@@ -18,6 +18,7 @@ from genealogy_integrity import connected_components
 from family_bridge_lab import PROPOSALS, bridge_preview, proposal_worklist
 from identity_claim_review import render_conflict_review
 from original_record_intake import render_acquisition_center
+from vinalhaven_civic_history import render_vinalhaven_civic, civic_route
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -187,6 +188,19 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
         render_acquisition_center(people, selected=requested_source)
         st.divider()
 
+    # Historical civic office names are real printed entries, but profile
+    # identity must not be inferred. Deep links show the selected year first.
+    requested_civic = str(st.query_params.get("civic") or "")
+    if requested_civic == "1":
+        render_vinalhaven_civic(
+            people,
+            source_name=str(st.query_params.get("officer") or ""),
+            focus_year=str(st.query_params.get("office_year") or ""),
+        )
+        st.divider()
+    else:
+        route_link("Explore the 1889 Vinalhaven civic history: 55 original printed office entries",
+                   civic_route())
     valid_ids = ["", *(case["id"] for case in cases)]
     requested_option = requested if requested in case_by_id else ""
     if st.session_state.get("_origins_last_case_query") != requested_option:

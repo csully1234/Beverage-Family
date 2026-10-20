@@ -593,6 +593,29 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             status="Original source NOT inspected · request/inspect original",
             source_date=target["event"].split(" ")[0],
         ))
+    # Phase 43: every published annual office entry is a source-search item,
+    # but there is NO proven stable person ID in the 1889 printed name list.
+    # This must never become a dated family-timeline event by surname inference.
+    from vinalhaven_civic_history import load_civic_roster, civic_route
+    civic = load_civic_roster(root / "phase43_vinalhaven_civic_officers.json")
+    for row in civic["records"]:
+        records.append(_item(
+            id="vinalhaven-civic:" + row["id"],
+            category="Historical record trails",
+            title=f"{row['year']} Vinalhaven {row['office']}: {row['printed_name']}",
+            summary=f"{row['printed_name']} appears in the {row['year']} "
+                    f"municipal {row['office'].lower()} roster; 1889 edition p. "
+                    f"{row['printed_page']}.",
+            limits="1889 retrospective printed list only; original town "
+                   "minutes not read and exact indexed genealogy person NOT verified.",
+            people_ids=[],
+            route=civic_route(row["printed_name"], row["year"]),
+            sources=_links([{"title":"1889 Vinalhaven centennial, p. " +
+                             str(row["printed_page"]), "url":row["source_url"]}]),
+            keywords="town clerk treasurer selectman Fox Islands 1889 Vinalhaven",
+            status="Retrospective civic source · individual identity unverified",
+            source_date=row["year"],
+        ))
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(

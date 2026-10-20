@@ -811,6 +811,8 @@ def render_home(
             ("Complete evidence-access atlas", "?page=collection&view=integrity&section=access"),
             ("Investigate missing family references", "?page=collection&view=integrity&section=branches"),
             ("Family origins expedition: original records & mysteries", "?page=collection&view=source-expedition"),
+            ("1790–1846 Vinalhaven Beverage town officers — civic history",
+             "?page=collection&view=source-expedition&civic=1"),
         ]
         for label, url in secondary_actions:
             route_link(label, url, type="tertiary")
