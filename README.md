@@ -544,3 +544,10 @@ archival sources remain functional. The original scanned-book work is unchanged.
   until a verified original link/scan is acquired; the count never implies
   that digitized clips are hosted.
 - Original internal research notebooks remain outside visitor navigation.
+
+
+### Phase 36 — verified family-archive recovery and privacy transition
+
+Every successful main-branch validation creates a checksum-pinned recovery ZIP. The new process verifies **every archived file**, rejects unsafe archive paths, restores the complete tracked-site snapshot into a clean test directory, and retains the backup artifact for up to **90 days** (subject to GitHub retention policy). `python -m tools.verify_release_backup path/to/family-release-backup.zip --against-checkout . --restore-to /new/empty/recovery-folder` can verify a downloaded snapshot and rehearse a controlled recovery.
+
+CI also runs `python -m tools.privacy_audit` to catch newly committed credential/private-scan filenames and ensure the normal family login precedes loading archive records. This is **not a claim that a public GitHub repository or Streamlit static book URLs are private**. The repository currently holds living-family data and the authorized complete book, so GitHub public visibility, raw document serving and the legacy password fallback require a separate coordinated cutover. **Do not change the current family password, public source access or Render linkage solely based on passing these automated checks.** See `research/phase36_recovery_privacy_migration_2026-10-19.md` for the non-disruptive migration and rollback checklist.

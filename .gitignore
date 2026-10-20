@@ -7,3 +7,16 @@ venv/
 .DS_Store
 .streamlit/secrets.toml
 node_modules/
+
+# Phase 36: keep local credentials and recovery outputs out of public Git
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+.streamlit/secrets.toml
+private_scans/
+offline_probate/
+dist/
