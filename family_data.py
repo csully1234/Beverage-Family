@@ -329,15 +329,30 @@ def shortest_relationship_path(
     relationships: Mapping[str, Mapping[str, set[str]]],
     start_id: str,
     end_id: str,
+    *,
+    known_ids: Iterable[str] | None = None,
 ) -> list[str]:
-    """Return the shortest supported family connection, or an empty list."""
+    """Return a recorded path, optionally restricted to real indexed profiles.
 
+    Raw relationship references can contain IDs lacking any profile. The public
+    relationship finder must pass known_ids to avoid traversing those ghost
+    identities as though they were documented family members.
+    """
+    allowed = set(str(item) for item in known_ids) if known_ids is not None else None
+    if allowed is not None and (start_id not in allowed or end_id not in allowed):
+        return []
     if start_id == end_id:
         return [start_id]
     neighbors: defaultdict[str, set[str]] = defaultdict(set)
     for mapping in relationships.values():
         for person_id, related_ids in mapping.items():
-            neighbors[str(person_id)].update(str(item) for item in related_ids)
+            person_id = str(person_id)
+            if allowed is not None and person_id not in allowed:
+                continue
+            neighbors[person_id].update(
+                str(item) for item in related_ids
+                if allowed is None or str(item) in allowed
+            )
 
     queue: deque[list[str]] = deque([[start_id]])
     visited = {start_id}
