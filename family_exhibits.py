@@ -20,6 +20,7 @@ from family_books import load_books, book_pdf_path
 from family_navigation import branch_context, unresolved_relative_ids
 from primary_source_expedition import cases_for_person, expedition_route
 from identity_claim_review import cases_for_person as conflicting_cases_for_person, claim_review_route
+from original_record_intake import acquisition_for_person, acquisition_route
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
@@ -408,6 +409,12 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
         for dispute in conflicting:
             route_link("Compare sources: " + dispute["title"],
                        claim_review_route(dispute["id"]))
+    original_targets = acquisition_for_person(person_id)
+    if original_targets:
+        st.caption("Original records still needed to verify this relative's ancestry")
+        for target in original_targets:
+            route_link("Find original: " + target["title"],
+                       acquisition_route(target["id"]))
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):
