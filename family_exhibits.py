@@ -19,6 +19,7 @@ from profile_life_stories import (life_record_overview, linked_book_illustration
 from family_books import load_books, book_pdf_path
 from family_navigation import branch_context, unresolved_relative_ids
 from primary_source_expedition import cases_for_person, expedition_route
+from identity_claim_review import cases_for_person as conflicting_cases_for_person, claim_review_route
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
@@ -401,6 +402,12 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
         st.caption("Open family-origin research questions connected to this record")
         for item in open_cases:
             route_link("Investigate: " + item["title"], expedition_route(item["id"]))
+    conflicting = conflicting_cases_for_person(person_id)
+    if conflicting:
+        st.caption("Historical identity and parentage questions requiring original records")
+        for dispute in conflicting:
+            route_link("Compare sources: " + dispute["title"],
+                       claim_review_route(dispute["id"]))
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):
