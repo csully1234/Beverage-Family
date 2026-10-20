@@ -116,6 +116,24 @@ def expedition_csv(data: dict) -> str:
     return buf.getvalue()
 
 
+def cases_for_person(person_id: str, data: dict | None = None) -> list[dict]:
+    """Show exactly attributed research *questions* on existing profiles."""
+    current = data if data is not None else load_expedition()
+    return sorted((case for case in current["cases"]
+                   if person_id in case["people_ids"]),
+                  key=lambda case: (case["priority"], case["title"]))
+
+
+def _selected_case_changed() -> None:
+    """Keep the selected case shareable, even when switched via the dropdown."""
+    case_id = str(st.session_state.get("origins_expedition_selected_case") or "")
+    if case_id:
+        st.query_params["case"] = case_id
+    elif "case" in st.query_params:
+        del st.query_params["case"]
+    st.session_state["_origins_last_case_query"] = case_id
+
+
 def _source_card(source: dict) -> None:
     with st.container(border=True):
         st.markdown("**" + source["title"] + "**")
@@ -152,15 +170,19 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
     columns[1].metric("Cited source records", progress["sources"])
     columns[2].metric("Originals to read or verify", progress["retrieval_targets"])
 
+    valid_ids = ["", *(case["id"] for case in cases)]
+    requested_option = requested if requested in case_by_id else ""
+    if st.session_state.get("_origins_last_case_query") != requested_option:
+        st.session_state["origins_expedition_selected_case"] = requested_option
+        st.session_state["_origins_last_case_query"] = requested_option
     selected_case = st.selectbox(
         "Choose a family mystery to investigate",
-        ["", *(case["id"] for case in cases)],
-        index=([ "", *(case["id"] for case in cases)].index(requested)
-               if requested in case_by_id else 0),
+        valid_ids,
         format_func=lambda cid: ("All investigations" if not cid else
                                  str(case_by_id[cid]["priority"]) + " · " +
                                  case_by_id[cid]["title"]),
         key="origins_expedition_selected_case",
+        on_change=_selected_case_changed,
     )
     if requested and requested not in case_by_id:
         st.info("The bookmarked research case was not found; all current cases remain accessible.")
