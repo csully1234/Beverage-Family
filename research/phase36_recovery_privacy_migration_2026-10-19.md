@@ -58,3 +58,7 @@ The regular Python 3.12/3.13 validation adds the filename/login privacy check; t
 3. Deploy only after CI is green to the existing Render service with `autoDeploy=no`, and confirm `live` with the expected merge SHA.
 4. Test that the old family login works; all trees, person evidence, timeline, 305-page book and photo index remain available to authorized family visitors.
 5. Confirm the repository remains intentionally public until a separate, reviewed visibility/authentication cutover. **This phase is a safety foundation, not the full privacy migration.**
+
+## Phase 36 backup-completeness follow-up
+
+The initial backup script retained source, data, research and approved web assets, but omitted some essential **tracked** runtime files, notably `.streamlit/config.toml`, JSON schemas and Node package-lock metadata. The recovery snapshot is now revised to collect **every tracked non-secret repository file**, excluding credential-path candidates and dummy local secret templates, so it can reconstruct a runnable checkout instead of just a research archive. The existing release verifier validates each byte against the checkout and the CI recovery drill explicitly checks those runtime/configuration files along with the complete PDF and genealogy records. This change does not capture Render secret variables, Git history, unpublished external source data or any untracked local material.

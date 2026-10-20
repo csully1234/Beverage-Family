@@ -9,6 +9,7 @@ import warnings
 import zipfile
 from pathlib import Path
 
+from tools.create_release_backup import tracked_files
 from tools.privacy_audit import (
     archive_privacy_report, blocked_source_path, gate_before_archive_load,
 )
@@ -130,6 +131,21 @@ class Phase36RecoveryAndPrivacyTests(unittest.TestCase):
                 self.assertTrue(blocked_source_path(danger))
         self.assertFalse(blocked_source_path("static/books/approved-family-book.pdf"))
         self.assertFalse(blocked_source_path("data/people.json"))
+
+    def test_complete_site_recovery_includes_configs_and_build_files(self):
+        paths = tracked_files(ROOT)
+        must_restore = {
+            "app.py", ".streamlit/config.toml",
+            "schemas/archive.schema.json", "package.json", "package-lock.json",
+            "requirements.txt", "data/people.json", "data/events.json",
+            "static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf",
+            "tools/verify_release_backup.py", ".github/workflows/validate.yml",
+        }
+        self.assertTrue(must_restore <= set(paths),
+                        "A recoverable site must preserve runtime config and build inputs")
+        self.assertFalse(any(blocked_source_path(p) for p in paths))
+        self.assertFalse(any("secrets.toml" in p or ".env" in p for p in paths))
+        self.assertGreater(len(paths), 200)
 
     def test_real_app_runs_family_gate_before_loading_any_archive(self):
         report = archive_privacy_report(ROOT)

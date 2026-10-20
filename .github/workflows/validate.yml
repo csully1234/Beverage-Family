@@ -75,6 +75,10 @@ jobs:
           test -f dist/recovered-source/app.py
           test -f dist/recovered-source/data/people.json
           test -f dist/recovered-source/static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf
+          test -f dist/recovered-source/.streamlit/config.toml
+          test -f dist/recovered-source/schemas/archive.schema.json
+          test -f dist/recovered-source/package.json
+          test -f dist/recovered-source/package-lock.json
 
       - name: Upload verified recoverable site snapshot and restore report
         uses: actions/upload-artifact@v4

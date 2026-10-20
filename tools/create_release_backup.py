@@ -13,6 +13,11 @@ import sys
 import zipfile
 from pathlib import Path
 
+try:
+    from tools.privacy_audit import blocked_source_path
+except ModuleNotFoundError:  # Support python tools/create_release_backup.py too.
+    from privacy_audit import blocked_source_path
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -21,11 +26,15 @@ def tracked_files(root: Path) -> list[str]:
         ["git", "-C", str(root), "ls-files", "-z"],
         check=True, stdout=subprocess.PIPE,
     )
-    prefixes = ("data/", "research/", "static/", "tests/", ".github/workflows/")
-    exact = {"README.md", "requirements.txt", "app.py"}
-    return sorted(path for path in results.stdout.decode("utf-8").split("\0")
-                  if path and (path.startswith(prefixes) or path in exact or path.endswith(".py"))
-                  and not path.endswith("/.env") and not path.endswith("/secrets.toml"))
+    # A working disaster-recovery checkout needs config, schemas and package
+    # metadata as well as Python, histories and assets. Do not silently omit
+    # tracked files simply because their extension is unfamiliar.
+    return sorted(
+        path for path in results.stdout.decode("utf-8").split("\0")
+        if path and not blocked_source_path(path)
+        and "secrets.toml" not in path.lower()
+        and ".env" not in path.lower()
+    )
 
 
 def create_backup(destination: Path, root: Path = ROOT) -> dict:
@@ -33,7 +42,7 @@ def create_backup(destination: Path, root: Path = ROOT) -> dict:
     archive_files = tracked_files(root)
     manifest = {
         "format": "beverage-family-source-backup-v1",
-        "scope": "tracked source, data, research, approved website assets and CI tests only",
+        "scope": "all Git-tracked non-secret files needed to reconstruct a source checkout",
         "excludes": ["Render environment variables", "offline probate archive",
                      "untracked local files", "historical external websites"],
         "files": {},
