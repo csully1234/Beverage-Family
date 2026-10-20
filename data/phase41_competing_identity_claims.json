@@ -1,0 +1,189 @@
+[
+  {
+    "id": "rachel-surname-conflict",
+    "title": "Rachel's identity: Crosby versus Luce Tarr",
+    "priority": 1,
+    "period": "1778–1863",
+    "question": "Was John White Beverage's wife Rachel born Crosby, Tarr, or known by another surname? Are these two separate historical women?",
+    "person_ids": [
+      "rachel_crosby_1778",
+      "john_white_beverage_1774",
+      "nathaniel_beverage_1804_rockland",
+      "josiah_b_beverage_1821"
+    ],
+    "status": "CONFLICT: derivative sources disagree; original marriage and town records not read",
+    "claims": [
+      {
+        "id": "rachel-crosby",
+        "value": "Rachel Lucy Crosby",
+        "status": "current_profile_and_derivative_compilation",
+        "source_family": "genealogyofnewengland-compilation",
+        "url": "https://genealogyofnewengland.com/f_86c8.htm",
+        "basis": "Compiled family list names spouse of John White Beverage as Rachel Lucy Crosby; records marriage 2 February 1800 and children, including Nathaniel; the website currently indexes this name.",
+        "original_inspected": false
+      },
+      {
+        "id": "rachel-luce-tarr",
+        "value": "Rachel Luce Tarr",
+        "status": "contributed_ancestry_pedigree",
+        "source_family": "ancestry-contributed-family-pedigree",
+        "url": "https://www.ancestry.com.au/genealogy/records/josiah-b-si-beverage-24-tsnws0",
+        "basis": "Ancestry-contributed pedigree for Josiah B 'Si' Beverage names mother Rachel Luce Tarr; second Ancestry page for Jane McKenny Beverage repeats the designation.",
+        "original_inspected": false
+      }
+    ],
+    "corroborating_context": [
+      {
+        "title": "Ancestry contributed Jane McKenny Beverage family page",
+        "url": "https://www.ancestry.com.au/genealogy/records/jane-mckenny-beverage-24-y5g9s",
+        "source_family": "ancestry-contributed-family-pedigree",
+        "limits": "Same online provider/source family as the Josiah B pedigree, not an independent original witness."
+      }
+    ],
+    "source_target": "February 1800 John White Beverage–Rachel marriage original register; town household/vital records; Rachel's 1863 death record naming birthplace or parents if surviving; possible probate identification",
+    "research_tasks": [
+      "Inspect John White's 2 February 1800 original marriage register; transcribe Rachel's name exactly, volume, page, witnesses and source's contemporaneity.",
+      "Locate Rachel's 1863 North Haven death record and any parental details; independently check Edgartown/Dukes County births around 25 May 1778.",
+      "Check whether Luce, Tarr, Crosby could represent two women, variant middle/married names, or contributed-tree conflation; do not create an extra spouse or change an established name without proof."
+    ],
+    "limits": "Two contributed online family trees use conflicting surname strings. 'Luce Tarr' cannot be interpreted as a settled maiden name, and two pages from Ancestry cannot be counted as independent original records. Both sides remain unverified."
+  },
+  {
+    "id": "josiah-si-parents",
+    "title": "Josiah B. 'Si' Beverage (1821): two competing parent pairs",
+    "priority": 2,
+    "period": "1821–1918",
+    "question": "Who were the parents of Josiah B. 'Si' Beverage, and is the Ancestry pedigree identifying the same historical man as the existing website profile?",
+    "person_ids": [
+      "josiah_b_beverage_1821",
+      "josiah_winslow_beverage_1793",
+      "mary_dyer_1795",
+      "john_white_beverage_1774",
+      "rachel_crosby_1778"
+    ],
+    "status": "CONFLICT: current tree parents differ from contributed genealogy; identity itself must be checked",
+    "claims": [
+      {
+        "id": "josiah-existing",
+        "value": "Josiah Winslow Beverage and Mary Dyer (existing site parent links)",
+        "status": "existing_canonical_tree_needs_original_review",
+        "source_family": "existing-family-tree-profile",
+        "url": "",
+        "basis": "The site's current indexed Josiah B. 'Si' Beverage record (birth modeled as 1821) lists Josiah Winslow Beverage and Mary Dyer as parents; original named-parent proof not confirmed here.",
+        "original_inspected": false
+      },
+      {
+        "id": "josiah-ancestry",
+        "value": "John White Beverage and Rachel Luce Tarr (Ancestry-contributed)",
+        "status": "conflicting_contributed_pedigree",
+        "source_family": "ancestry-contributed-family-pedigree",
+        "url": "https://www.ancestry.com.au/genealogy/records/josiah-b-si-beverage-24-tsnws0",
+        "basis": "Contributed Ancestry page reports Josiah B 'SI' BEVERAGE born April 5, 1821, father John White Beverage and mother Rachel Luce Tarr; its own displayed mother surname differs from the site's Rachel Lucy Crosby.",
+        "original_inspected": false
+      }
+    ],
+    "corroborating_context": [
+      {
+        "title": "Genealogy of New England, Rachel Crosby household, child 'Josiah' (June 1821)",
+        "url": "https://genealogyofnewengland.com/f_86c8.htm",
+        "source_family": "genealogyofnewengland-compilation",
+        "limits": "Separate derivative compilation agrees there was a Josiah born around 1821 to John White, but gives June rather than April; it does not inspect a new original record and may be duplicating a named person."
+      }
+    ],
+    "source_target": "Vinalhaven/North Haven original 1821 town birth register and 1844 Josiah–Jane Young marriage return; 1918 death certificate with parents; confirm exact DOB and nickname identity",
+    "research_tasks": [
+      "Inspect original 1821 North Haven/Vinalhaven Josiah birth entry; record exact date, parents, handwriting and possible later transcript alterations.",
+      "Find 1918 Maine death record for 'Josiah B Si Beverage' and compare age, parents, spouse, birthplace and documentary quality.",
+      "Compare October 13, 1844 Josiah–Jane Young marriage record with original family and descendant documents; explicitly rule out separate same-named men."
+    ],
+    "limits": "The website's existing parent edges and two outside derivative pedigrees must all be treated as leads until original records identify this particular Josiah. Do NOT replace parent IDs from one public genealogy page."
+  },
+  {
+    "id": "nathaniel-birth-identity",
+    "title": "Nathaniel of Rockland: 1803 or circa 1804, and who were his parents?",
+    "priority": 3,
+    "period": "1803–1886",
+    "question": "Is the Rockland Nathaniel born 20 October 1803 to John White and Rachel, or a separate same-named person currently modeled as born approximately 1804?",
+    "person_ids": [
+      "nathaniel_beverage_1804_rockland",
+      "john_white_beverage_1774",
+      "rachel_crosby_1778"
+    ],
+    "status": "OPEN: no original birth or parent record inspected",
+    "claims": [
+      {
+        "id": "nathaniel-current",
+        "value": "Birth circa 1804; no verified canonical father or mother",
+        "status": "current_separate_profile",
+        "source_family": "existing-family-tree-profile",
+        "url": "",
+        "basis": "Site maintains Rockland Nathaniel as an unconnected profile, birth approximately 1804, not a proved son of John White or Rachel.",
+        "original_inspected": false
+      },
+      {
+        "id": "nathaniel-compiled",
+        "value": "Born 20 October 1803; father John White Beverage; mother Rachel Lucy Crosby",
+        "status": "derivative_parentage_hypothesis",
+        "source_family": "genealogyofnewengland-compilation",
+        "url": "https://genealogyofnewengland.com/f_86c9.htm",
+        "basis": "One contributed compilation supplies the exact birth date, Rockland death, spouse Sarah Alexander and both named parents.",
+        "original_inspected": false
+      }
+    ],
+    "corroborating_context": [
+      {
+        "title": "Cyrus Eaton, 1865, history of Thomaston, vol. II, pp. 146–147",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "source_family": "cyrus-eaton-1865-history",
+        "limits": "Calls Nathaniel a nephew of Capt. Matthew, but does not identify his father or mother; the label 'nephew' might include marriage kinship."
+      }
+    ],
+    "source_target": "Original 1803 Vinalhaven/North Haven register; 1838 Sarah Alexander marriage return; John White 1839 probate heir list",
+    "research_tasks": [
+      "Retrieve and transcribe the contemporary 20 October 1803 birth with both original parents, if recorded; do not assume the index is complete.",
+      "Inspect April 26, 1838 marriage entry for Nathaniel and Sarah Alexander to bridge the correct Rockland identity.",
+      "Inspect John White Beverage's 1839 probate or land division for an explicitly named son Nathaniel and compare residence/marriage."
+    ],
+    "limits": "Eaton's nephew statement is not named-parent evidence. The 1803 precise date comes from a contributed database, while the site's 1804 approximation has different precision. Multiple citations on one webpage do not create independent original witnesses."
+  },
+  {
+    "id": "thomas-1837-deed-chronology",
+    "title": "A deed dated 1837 names Thomas Beverage after Capt. Thomas's recorded 1834 death",
+    "priority": 4,
+    "period": "1834–1837",
+    "question": "Which Thomas executed the June 1837 deed to James Beverage and others, and is the date the execution, registration or transcription date?",
+    "person_ids": [
+      "thomas_beverage_1750",
+      "james_beverage_1789"
+    ],
+    "status": "CONFLICT: deed locator exists; original image has not been viewed",
+    "claims": [
+      {
+        "id": "captain-death",
+        "value": "Existing Capt. Thomas Beverage recorded deceased 4 October 1834",
+        "status": "current_canonical_date",
+        "source_family": "existing-family-tree-profile",
+        "url": "",
+        "basis": "Main family profile death entry precedes the date of the deed alleged to have been made by a Thomas Beverage.",
+        "original_inspected": false
+      },
+      {
+        "id": "1837-deed",
+        "value": "Thomas Beverage to James Beverage and others, dated 28 June 1837",
+        "status": "uninspected_exact_archival_image_locator",
+        "source_family": "woodruff-papers-editorial-apparatus",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "basis": "Scholarly profile cites Hancock County deeds p. 387, DGS 8296915 image 207/601, but deed original has not been read.",
+        "original_inspected": false
+      }
+    ],
+    "corroborating_context": [],
+    "source_target": "Hancock County Deeds p. 387; FamilySearch DGS 8296915 image 207/601, actual grantor, acknowledgment, indexing, recording and legal capacity",
+    "research_tasks": [
+      "Open the actual 1837 Hancock County grant entry and transcribe its complete heading, dated signatures, parties, rights and recording dates.",
+      "Determine whether deed references an estate, attorney, earlier instrument or another Thomas Beverage; keep this unassigned to a profile until identified.",
+      "Compare the captain's death entry with original funeral, probate or town records before changing either timeline event."
+    ],
+    "limits": "A later-cited land conveyance cannot be assigned to a captain recorded dead three years earlier solely from matching the grantor's name."
+  }
+]

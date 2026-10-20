@@ -550,6 +550,26 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             source_date=source["year"],
         ))
 
+    # Phase 41: competing online-parentage identities are searchable as
+    # questions, never imported as confirmed person-edge source records.
+    from identity_claim_review import load_claims, claim_review_route
+    for conflict in load_claims(root / "phase41_competing_identity_claims.json"):
+        records.append(_item(
+            id="identity-dispute:" + conflict["id"],
+            category="Open identity questions",
+            title=conflict["title"], summary=conflict["question"],
+            limits=conflict["limits"],
+            people_ids=[pid for pid in conflict["person_ids"] if pid in people_by_id],
+            route=claim_review_route(conflict["id"]),
+            sources=_links([{"title": claim["value"], "url": claim.get("url")}
+                            for claim in conflict["claims"]] +
+                           [{"title": row["title"], "url": row["url"]}
+                            for row in conflict.get("corroborating_context", [])]),
+            keywords=" ".join([conflict["source_target"],
+                               *conflict["research_tasks"]]),
+            status=conflict["status"], source_date=conflict["period"].split("–")[0],
+        ))
+
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(
