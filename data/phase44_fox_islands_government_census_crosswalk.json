@@ -1,0 +1,167 @@
+[
+  {
+    "id": "early-fox-islands-independently-dated-trail",
+    "edition_note": "Some federal register online identifiers are labeled 1827 although the extracted page discusses 1829 appointees. Treat year 1827–1829 as unresolved, not as a fact.",
+    "sources": [
+      {
+        "id": "vinalhaven-1889-narrative",
+        "title": "Vinalhaven Centennial Committee, A Brief Historical Sketch (1889), municipal narrative pp. 11–12",
+        "source_family": "1889-vinalhaven-historical-sketch",
+        "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+        "witness_type": "retrospective_1889_published_meeting_summary",
+        "original_manuscript_read": false,
+        "limits": "One retrospective 1889 editorial narrative, related to and NOT independent from the 1889 annual officer roster; original 1785–1789 meeting book has not been read. LOC PDF text extraction available; PDF page image not visually confirmed here."
+      },
+      {
+        "id": "vinalhaven-1820-index",
+        "title": "Heirlooms Reunited 2019, Vinalhaven heads of households indexed from the 1820 U.S. census",
+        "source_family": "2019-transcribed-1820-head-index",
+        "url": "https://www.heirloomsreunited.com/2019/09/vinalhaven-maine-in-1820-census-then-in.html",
+        "witness_type": "modern_transcription_original_census_unread",
+        "original_manuscript_read": false,
+        "limits": "Transcribes household HEAD names; not an original 1820 manuscript reading and supplies no ages, relationships, dates of birth, landholding, or middle names."
+      },
+      {
+        "id": "federal-official-register",
+        "title": "U.S. Official Register of federal officers, Treasury Customs / Penobscot district (scanned edition with date conflict)",
+        "source_family": "federal-register-scanned-text-single-edition",
+        "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/officialregister37unit/officialregister37unit.pdf",
+        "alternate_url": "https://commons.wikimedia.org/wiki/File:Official_register_of_the_United_States_.._(IA_officialregister22unit).pdf",
+        "witness_type": "period_government_publication_OCR_only",
+        "original_manuscript_read": false,
+        "limits": "Extracted text places 'John Beverage' and 'Vinalhaven' in a Customs Inspector line. Portal calls the files an 1827 edition while OCR on the same scan includes reference to 1829 appointments. Exact publication date, source page and original printed line require image/title-page checking. Two scans of the same volume are not two independent witnesses."
+      }
+    ],
+    "records": [
+      {
+        "id": "meeting-1785-thomas",
+        "sort_year": 1785,
+        "date_label": "March 11, 1785",
+        "printed_name": "Thomas Beverage",
+        "event_type": "Plantation clerk chosen at the earliest recorded meeting described by the 1889 author",
+        "details": "The 1889 municipal narrative reports the first meeting of which the author knew was at Benjamin Kent's North Island house, and Thomas Beverage was chosen clerk.",
+        "source_id": "vinalhaven-1889-narrative",
+        "page": "printed page 11",
+        "candidate_person_ids": [
+          "thomas_beverage_1750"
+        ],
+        "next_original": "Original plantation meeting minute, March 11 1785, with signatures, election wording and other clerk entries",
+        "identity_status": "printed_name_only_unassigned"
+      },
+      {
+        "id": "meeting-1788-thomas",
+        "sort_year": 1788,
+        "date_label": "October 28, 1788",
+        "printed_name": "Thomas Beverage",
+        "event_type": "Plantation clerk elected at meeting",
+        "details": "The 1889 municipal narrative dates a plantation meeting electing Thomas Beverage clerk, alongside assessors Joseph Waterman, William Vinal and George White.",
+        "source_id": "vinalhaven-1889-narrative",
+        "page": "printed page 12",
+        "candidate_person_ids": [
+          "thomas_beverage_1750"
+        ],
+        "next_original": "Original October 28 1788 plantation meeting entry and any clerk oath/signature",
+        "identity_status": "printed_name_only_unassigned"
+      },
+      {
+        "id": "meeting-1789-thomas",
+        "sort_year": 1789,
+        "date_label": "March 1789 (day not reported)",
+        "printed_name": "Thomas Beverage",
+        "event_type": "Plantation clerk chosen at annual March meeting",
+        "details": "The 1889 municipal narrative reports Thomas Beverage chosen as clerk at the March meeting, with assessors Joseph Waterman, William Vinal and Stephen Carver.",
+        "source_id": "vinalhaven-1889-narrative",
+        "page": "printed page 12",
+        "candidate_person_ids": [
+          "thomas_beverage_1750"
+        ],
+        "next_original": "1789 original March town/plantation election minute and complete dated page",
+        "identity_status": "printed_name_only_unassigned"
+      },
+      {
+        "id": "census-1820-john",
+        "sort_year": 1820,
+        "date_label": "1820 U.S. census (exact enumeration day not read)",
+        "printed_name": "John Beverage",
+        "event_type": "Household head in modern 1820 Vinalhaven name transcription",
+        "details": "Modern 2019 index transcribes the name 'John Beverage' among 1820 Vinalhaven heads; the actual census age tally, address and identity remain uninspected.",
+        "source_id": "vinalhaven-1820-index",
+        "page": "original census sheets 657–664 (exact line and sheet unknown)",
+        "candidate_person_ids": [
+          "john_white_beverage_1774"
+        ],
+        "next_original": "Locate original 1820 sheet and John's handwritten household age boxes; do NOT infer names of household members",
+        "identity_status": "indexed_head_not_original_confirmed"
+      },
+      {
+        "id": "census-1820-nathaniel",
+        "sort_year": 1820,
+        "date_label": "1820 U.S. census (exact enumeration day not read)",
+        "printed_name": "Nathaniel Beverage",
+        "event_type": "Household head in modern 1820 Vinalhaven name transcription",
+        "details": "Modern index lists 'Nathaniel Beverage' as a head, but does not distinguish the older Nathaniel Winslow Beverage from a similarly named later Rockland relative.",
+        "source_id": "vinalhaven-1820-index",
+        "page": "original census sheets 657–664 (exact line and sheet unknown)",
+        "candidate_person_ids": [
+          "nathaniel_winslow_beverage_1776",
+          "nathaniel_beverage_1804_rockland"
+        ],
+        "next_original": "Read the handwritten row/tallies and compare independently dated marriage/land documents, rather than assigning a birth year from the forename",
+        "identity_status": "indexed_head_not_original_confirmed"
+      },
+      {
+        "id": "census-1820-thomas",
+        "sort_year": 1820,
+        "date_label": "1820 U.S. census (exact enumeration day not read)",
+        "printed_name": "Thomas Beverage",
+        "event_type": "Household head in modern 1820 Vinalhaven name transcription",
+        "details": "Index lists Thomas Beverage as a head, but does not identify him as Captain Thomas or disclose unnamed family ages.",
+        "source_id": "vinalhaven-1820-index",
+        "page": "original census sheets 657–664 (exact line and sheet unknown)",
+        "candidate_person_ids": [
+          "thomas_beverage_1750",
+          "thomas_beverage_1810"
+        ],
+        "next_original": "Read original household-row ages and separately identify each possible Thomas",
+        "identity_status": "indexed_head_not_original_confirmed"
+      },
+      {
+        "id": "census-1820-benjamin",
+        "sort_year": 1820,
+        "date_label": "1820 U.S. census (exact enumeration day not read)",
+        "printed_name": "Benjamin Beverage",
+        "event_type": "Household head in modern 1820 Vinalhaven name transcription",
+        "details": "Index lists Benjamin Beverage as a head; a modern genealogy record for Benjamin Crabtree, born 1822, cannot be the same 1820 head.",
+        "source_id": "vinalhaven-1820-index",
+        "page": "original census sheets 657–664 (exact line and sheet unknown)",
+        "candidate_person_ids": [
+          "benjamin_kent_beverage_1779",
+          "benjamin_beverage_1822"
+        ],
+        "next_original": "Read handwritten household row; compare Benjamin Kent's age and avoid conflation with Benjamin Crabtree born after the census year",
+        "identity_status": "indexed_head_not_original_confirmed"
+      },
+      {
+        "id": "register-1827-1829-john",
+        "sort_year": 1827,
+        "date_label": "1827 OR 1829 edition — publication date unresolved",
+        "printed_name": "John Beverage",
+        "event_type": "Customs inspector at Vinalhaven in federal Official Register scanned text",
+        "details": "OCR/extracted text of the federal Treasury Department's customs listing places John Beverage alongside the role 'Inspector' (abbreviated ditto) and location Vinalhaven. Editions are cataloged as 1827, but text mentions officers appointed in 1829. The original page and title/edition must be reconciled before dating the appointment.",
+        "source_id": "federal-official-register",
+        "page": "customs section, printed pagination appears near 275; verify actual leaf and year",
+        "candidate_person_ids": [
+          "john_white_beverage_1774"
+        ],
+        "next_original": "Inspect actual Official Register title leaf, dated issue, Treasury Customs table, full inspector name, column alignment and footnotes; compare 1827 and 1829 editions separately",
+        "identity_status": "OCR_office_name_unassigned_publication_year_inconsistent"
+      }
+    ],
+    "limits": [
+      "1889 municipal narrative and 1889 town officer list are ONE published-source family; the later 1939 Waterman genealogy repeats the same meeting story and is not a new contemporaneous witness.",
+      "The 1820 heads are named in a modern alphabetical index, NOT verified from the original handwritten census schedule; no ages or unnamed household members may be inferred.",
+      "The federal customs line is extracted/OCR text of a scanned official register: title-page, year and page remain unverified, and two online copies are a single printed-source family.",
+      "No record identifies a named officeholder as John WHITE Beverage or proves parentage of Nathaniel or Josiah; name/age compatibility is never confirmation."
+    ]
+  }
+]

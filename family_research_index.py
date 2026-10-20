@@ -616,6 +616,27 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             status="Retrospective civic source · individual identity unverified",
             source_date=row["year"],
         ))
+    # Phase 44: corroborating publication families with zero verified person
+    # identifications. Distinct name appearances never become ancestry edges.
+    from fox_islands_government_trail import load_government_trail,trail_route
+    island_trail=load_government_trail(root/"phase44_fox_islands_government_census_crosswalk.json")
+    island_sources={s["id"]:s for s in island_trail["sources"]}
+    for record in island_trail["records"]:
+        source=island_sources[record["source_id"]]
+        records.append(_item(
+            id="island-document:" + record["id"],
+            category="Historical record trails",
+            title=record["date_label"] + " · " + record["printed_name"] +
+                  " — " + record["event_type"],
+            summary=record["details"] + " · " + record["page"],
+            limits=source["limits"] + " Exact genealogy identity UNVERIFIED.",
+            people_ids=[],
+            route=trail_route(record["id"]),
+            sources=_links([{"title":source["title"],"url":source["url"]}]),
+            keywords=record["next_original"]+" "+record["identity_status"],
+            status="Historical publication name · ancestry identity not proved",
+            source_date=record["date_label"],
+        ))
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(

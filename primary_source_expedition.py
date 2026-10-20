@@ -19,6 +19,7 @@ from family_bridge_lab import PROPOSALS, bridge_preview, proposal_worklist
 from identity_claim_review import render_conflict_review
 from original_record_intake import render_acquisition_center
 from vinalhaven_civic_history import render_vinalhaven_civic, civic_route
+from fox_islands_government_trail import render_fox_islands_government_trail, trail_route
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -201,6 +202,15 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
     else:
         route_link("Explore the 1889 Vinalhaven civic history: 55 original printed office entries",
                    civic_route())
+    # Three distinct historical publication families compared side-by-side,
+    # with recorded name strings never promoted to person-event/parent facts.
+    community_target = str(st.query_params.get("community_record") or "")
+    if st.query_params.get("community") == "1" or community_target:
+        render_fox_islands_government_trail(people,selected=community_target)
+        st.divider()
+    else:
+        route_link("Trace Fox Islands residents through plantation, census and customs records",
+                   trail_route())
     valid_ids = ["", *(case["id"] for case in cases)]
     requested_option = requested if requested in case_by_id else ""
     if st.session_state.get("_origins_last_case_query") != requested_option:

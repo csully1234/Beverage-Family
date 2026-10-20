@@ -813,6 +813,8 @@ def render_home(
             ("Family origins expedition: original records & mysteries", "?page=collection&view=source-expedition"),
             ("1790–1846 Vinalhaven Beverage town officers — civic history",
              "?page=collection&view=source-expedition&civic=1"),
+            ("Fox Islands early government, 1820 census and customs source trail",
+             "?page=collection&view=source-expedition&community=1"),
         ]
         for label, url in secondary_actions:
             route_link(label, url, type="tertiary")
