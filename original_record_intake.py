@@ -61,6 +61,10 @@ def request_draft(targets: list[dict], custodian: dict) -> str:
         "",
         "Hello,",
         "",
+        "I'm contacting " + custodian["name"] + " because your office or "
+        "collection may be able to identify records relevant to the "
+        "following family-history questions.",
+        "",
         "I'm researching the early Beverage/Beveridge family of the Fox Islands "
         "and surrounding Maine towns for a family-history archive. Could you "
         "help identify whether your office or collection holds original or "
@@ -205,8 +209,7 @@ def render_acquisition_center(people: dict, *, selected: str = "") -> None:
     if selected_targets:
         draft = request_draft([by_id[x] for x in selected_targets],
                               custodians[owner_choice])
-        st.text_area("Review and copy the unsent inquiry", value=draft, height=260,
-                     key="acquisition_draft_preview")
+        st.text_area("Review and copy the unsent inquiry", value=draft, height=260)
         st.download_button(
             "Download unsent archival inquiry (.txt)", draft,
             file_name="family-original-document-request-draft.txt",
