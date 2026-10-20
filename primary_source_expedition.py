@@ -20,6 +20,7 @@ from identity_claim_review import render_conflict_review
 from original_record_intake import render_acquisition_center
 from vinalhaven_civic_history import render_vinalhaven_civic, civic_route
 from fox_islands_government_trail import render_fox_islands_government_trail, trail_route
+from early_fox_island_atlas import render_early_island_atlas, early_islands_route
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -211,6 +212,15 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
     else:
         route_link("Trace Fox Islands residents through plantation, census and customs records",
                    trail_route())
+    # Modern scholarship, a true 1790 published count and the newly located
+    # 1820 original M33-34 reel, without claiming unread manuscript values.
+    requested_early=str(st.query_params.get("island_find") or "")
+    if st.query_params.get("early-islands") == "1" or requested_early:
+        render_early_island_atlas(people,selected=requested_early)
+        st.divider()
+    else:
+        route_link("Explore the 1790 Thomas Beverege household and the original 1820 reel",
+                   early_islands_route())
     valid_ids = ["", *(case["id"] for case in cases)]
     requested_option = requested if requested in case_by_id else ""
     if st.session_state.get("_origins_last_case_query") != requested_option:

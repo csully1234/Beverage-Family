@@ -1,0 +1,164 @@
+[
+  {
+    "id": "phase45-early-island-original-manuscript-guide",
+    "date": "2026-10-20",
+    "focus": "Practical source-verified original-reel access, the Thomas Beverege 1790 population categories, and the published 2025 migration study; no new parentage.",
+    "sources": [
+      {
+        "id": "fed1790printed",
+        "title": "Heads of Families at the First Census of the United States Taken in 1790: Maine (U.S. Census Office, printed 1908), p. 32, Hancock County Vinalhaven",
+        "url": "https://archives.mainegenealogy.net/2006/10/1790-census-vinalhaven-hancock-county.html",
+        "original_type": "retrospective_federal_1908_tabulation_transcribed_online",
+        "read_status": "1908_publication_transcribed_row_reviewed_original_1790_schedule_unread",
+        "limitations": "Original 1790 handwritten schedule NOT inspected; spelling Beverege and counts are as published in the 1908 federal book's 21st-century transcription. Household categories DO NOT name members or prove familial relationships."
+      },
+      {
+        "id": "scholar2025",
+        "title": "David Flanagan and Barbara Beverage Reeves, The Ebenezer Eames Family: Early Settlers of North Fox Island, The Maine Genealogist 47(4) (Nov. 2025), pp. 170–182",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "original_type": "scholarly_modern_peer_reviewed_genealogical_study",
+        "read_status": "published_scholarly_article_read_2025_not_original_1769_1786_manuscripts",
+        "limitations": "2025 published research synthesizing manuscripts. Original cited 1769 Plymouth deed, 1785 petition, 1786 paper-box survey and special 1800 return have not been independently inspected. Do not copy/rehost the copyrighted PDF without permission; link to publisher-hosted source."
+      },
+      {
+        "id": "census1820reel",
+        "title": "Original 1820 Hancock County, Maine census, National Archives microfilm M33 reel 34 (Internet Archive scan, 194 frames)",
+        "url": "https://archive.org/details/populationsc18200034unit",
+        "original_type": "digitized_microfilm_of_original_1820_census",
+        "read_status": "reel_archival_metadata_verified_manuscript_Vinalhaven_rows_not_read",
+        "limitations": "Internet Archive 194-page reel metadata verified as M33 roll 34, Cumberland (part) and Hancock Counties. Vinalhaven manuscript pp. 657–664 supported by independent index. Exact book-reader frame numbers, handwritten Beverly/Beverage rows and tallies NOT inspected."
+      },
+      {
+        "id": "census1820index",
+        "title": "Heirlooms Reunited (2019), Vinalhaven Maine in 1820 Census, transcribed alphabetical heads, manuscript sheets 657–664",
+        "url": "https://www.heirloomsreunited.com/2019/09/vinalhaven-maine-in-1820-census-then-in.html",
+        "original_type": "modern_2019_head_name_transcription",
+        "read_status": "published_index_read_original_m33_m33_34_census_not_read",
+        "limitations": "Name-only head transcription; alphabetically reordered. Cannot infer manuscript row sequence, household age groups, names of co-residents or a specific family-tree identity."
+      },
+      {
+        "id": "nara1820guide",
+        "title": "National Archives, 1820 Census original schedule guidance (M33 microfilm, 142 rolls)",
+        "url": "https://www.archives.gov/research/census/1820",
+        "original_type": "government_finding_aid",
+        "read_status": "official_census_microfilm_guidance_reviewed",
+        "limitations": "A finding aid is not a claim to have viewed particular household entries."
+      },
+      {
+        "id": "maine1820guide",
+        "title": "Maine Genealogy 1820 Hancock County guide (Vinalhaven starts manuscript p. 657)",
+        "url": "https://www.mainegenealogy.net/census_guide.asp?censusyear=1820&county=hancock",
+        "original_type": "modern_original_page_locator_guide",
+        "read_status": "published_manuscript_page_locator_reviewed",
+        "limitations": "Only town-start manuscript page locator; not an original household-row reading."
+      }
+    ],
+    "findings": [
+      {
+        "id": "1769-eames-origins",
+        "year": 1769,
+        "title": "Fox Islands settlement documented in a Marshfield deed",
+        "source_id": "scholar2025",
+        "kind": "neighboring_settler_migration_context",
+        "name_as_printed": "Ebenezer Eames",
+        "detail": "The 2025 study reports a 15 May 1769 sale of his Marshfield homestead by Ebenezer Eames, described in that deed as residing at the Fox Islands in Lincoln County. Cited original: Plymouth County, Massachusetts Deeds 58:29, NOT independently inspected. His wife Margaret released dower in October 1773.",
+        "profile_candidates": [],
+        "manuscript_target": "Inspect Plymouth County Deeds 58:29 and 22 October 1773 dower release; compare actual residence wording and seals.",
+        "limits": "This is about the EAMES neighboring settler family, not documented Beverage emigration, ancestry, or a birth record. Scholarly original-source citation does not substitute for reading the original deed."
+      },
+      {
+        "id": "1785-settlement-petition-context",
+        "year": 1785,
+        "title": "North Fox Island settlers' petition described by current scholarship",
+        "source_id": "scholar2025",
+        "kind": "source_context_existing_record_crossreference",
+        "name_as_printed": "Early Fox Islands settlers",
+        "detail": "The 2025 study summarizes the 1 June 1785 petition from settlers after their wartime displacement, citing Norwood P. Beveridge's The North Island (1989), pp. 21–25. The petition and 1785 survey are ALREADY separately cataloged in the website's Phase 30 archive.",
+        "profile_candidates": [],
+        "manuscript_target": "Continue Phase 30: retrieve original Massachusetts legislative petition series rather than counting a second printed mention as independent proof.",
+        "limits": "Same 1785 petition studied in earlier archive records, NOT a second original. This article does not prove Matthew minor's father."
+      },
+      {
+        "id": "1786-putnam-context",
+        "year": 1786,
+        "title": "Putnam settlers' report precisely cited as Maine State Archives Box 001",
+        "source_id": "scholar2025",
+        "kind": "source_context_existing_original_target",
+        "name_as_printed": "General Rufus Putnam",
+        "detail": "The 2025 article footnote 6 specifies 'General Putnam's Report and Description ...' 18 March 1786, Box 001 (paper), Maine State Archives, Augusta. This exact original manuscript target was ALREADY cataloged in Phase 30; its individual settler declarations are NOT read.",
+        "profile_candidates": [],
+        "manuscript_target": "Request the 18 March 1786 paper Box 001 report and complete list of settler declarations, exact actual folios and lot identifiers.",
+        "limits": "An archival shelf reference is not verification of any specific Beverage settler's age, parentage or settlement year."
+      },
+      {
+        "id": "1790-thomas-household",
+        "year": 1790,
+        "title": "1790 Vinalhaven census: Thomas Beverege household, 11 enumerated persons",
+        "source_id": "fed1790printed",
+        "kind": "positive_printed_census_household_totals",
+        "name_as_printed": "Thomas Beverege",
+        "detail": "Published federal 1908 census transcription for Vinalhaven (p.32) lists Thomas Beverege with 2 males aged at least 16 (including head), 4 males under 16, 5 females, 0 other free persons and 0 enslaved people: 11 people total.",
+        "profile_candidates": [
+          "thomas_beverage_1750"
+        ],
+        "manuscript_target": "Examine original 1790 NARA M637 roll 2, Vinalhaven handwritten p. 58 onward; compare exact surname, columns, adjacent heads and any age tally errors.",
+        "limits": "Two adult males is NOT proof of two fathers. Four younger males are NOT necessarily four sons; five females are NOT necessarily wife and daughters. Original census manuscript and precise head identity are not independently read."
+      },
+      {
+        "id": "1800-migration-question",
+        "year": 1800,
+        "title": "Unusual 1800 Vinalhaven census may note settlers' origins",
+        "source_id": "scholar2025",
+        "kind": "settlement_origin_methodological_lead",
+        "name_as_printed": "Fox Islands households in 1800",
+        "detail": "The 2025 study cites Walter Goodwin Davis, 'Part of Hancock County, Maine, in 1800,' NEHGR 105 (1951): 204–206 and discusses Vinalhaven 'from whence emigrated' entries such as Marshfield, Cape Cod and Martha's Vineyard. No Beverage-specific migration line is established here.",
+        "profile_candidates": [],
+        "manuscript_target": "Read entire original 1800 Vinalhaven census schedule with 'from whence emigrated' column and Davis NEHGR 105:204–213; search all Beverage/Beveridge spelling variants without assuming a shared origin.",
+        "limits": "Sources describe a valuable COLUMN, not a demonstrated Beverage birthplace or family migration route. Related Eames migration to Marshfield does NOT mean Beverage emigrated from the same town."
+      },
+      {
+        "id": "1820-m33-original-reel",
+        "year": 1820,
+        "title": "Original 1820 Vinalhaven census reel now positively located",
+        "source_id": "census1820reel",
+        "kind": "original_microfilm_reel_found_households_unread",
+        "name_as_printed": "Vinalhaven, Hancock County",
+        "detail": "NARA Fourth Census M33 roll 34 is digitally preserved at Internet Archive as populationsc18200034unit (194 scanned frames). Vinalhaven occupies handwritten census sheets 657–664, according to an independent town index.",
+        "profile_candidates": [],
+        "manuscript_target": "Open the 194-frame item; navigate to manuscript sheets 657–664; transcribe each Beverage/Beveridge household-name row and every original column, using official NARA labels. Save exact frame URL/page identification.",
+        "limits": "Reel is FOUND, not yet read. Eight handwritten sheets are NOT the same as eight browser frame numbers. Do not invent scan offsets or ages."
+      }
+    ],
+    "census_1790": {
+      "person_name_as_printed": "Thomas Beverege",
+      "town": "Vinalhaven",
+      "printed_page": 32,
+      "year": 1790,
+      "adult_males_16_plus_including_head": 2,
+      "males_under_16": 4,
+      "free_white_females_all_ages": 5,
+      "all_other_free_persons": 0,
+      "enslaved_persons": 0,
+      "total_people": 11,
+      "original_handwritten_scheduled_inspected": false,
+      "head_matches_canonical_profile": false
+    },
+    "original_1820": {
+      "nara_publication": "M33",
+      "roll": 34,
+      "archive_item": "populationsc18200034unit",
+      "archive_scanned_pages": 194,
+      "manuscript_start": 657,
+      "manuscript_end": 664,
+      "handwritten_heads_uninspected": true,
+      "known_head_names_from_modern_index": [
+        "John Beverage",
+        "Nathaniel Beverage",
+        "Thomas Beverage",
+        "Benjamin Beverage"
+      ]
+    },
+    "no_tree_edits": true,
+    "no_copyrighted_journal_rehosting": true
+  }
+]
