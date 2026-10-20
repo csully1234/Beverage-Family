@@ -88,8 +88,12 @@ def candidate_age_status(record: dict, people: dict[str,dict]) -> list[dict]:
             continue
         birth = p.get("birth")
         death = p.get("death")
-        birth_year = _year(birth.get("date") if isinstance(birth,dict) else birth)
-        death_year = _year(death.get("date") if isinstance(death,dict) else death)
+        birth_year = _year(p.get("birth_date") or (
+            birth.get("date") if isinstance(birth,dict) else birth
+        ))
+        death_year = _year(p.get("death_date") or (
+            death.get("date") if isinstance(death,dict) else death
+        ))
         age = year - birth_year if birth_year is not None else None
         if age is not None and age < 18:
             status = "excluded_by_youth"
