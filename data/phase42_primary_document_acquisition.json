@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "reviewed_date": "2026-10-20",
+  "statement": "Original registers and requests not yet read or sent. No original parentage proof or new tree links.",
+  "custodians": [
+    {
+      "id": "vinalhaven-clerk",
+      "name": "Vinalhaven Town Clerk",
+      "url": "https://www.townofvinalhaven.org/1256/Administration---Town-Office",
+      "contact": "townclerk@townofvinalhaven.org",
+      "role": "Historic Vinalhaven / North Fox Island town record inquiry; ask where pre-1847 North Island volumes now reside"
+    },
+    {
+      "id": "northhaven-clerk",
+      "name": "North Haven Municipal Clerk",
+      "url": "https://www.maine.gov/sos/elections-voting/find-a-municipal-clerk-or-registrar?title=North+Haven",
+      "contact": "207-867-4433",
+      "role": "Ask for custody/location of older North Island register books and noncertified historic copies"
+    },
+    {
+      "id": "northhaven-history",
+      "name": "North Haven Historical Society",
+      "url": "https://www.northhavenmainehistoricalsociety.org/visit.html",
+      "contact": "207-867-4752",
+      "role": "Community archive; inquire about birth, marriage, family papers and 19th-century photographic transcriptions"
+    },
+    {
+      "id": "maine-archives",
+      "name": "Maine State Archives",
+      "url": "https://www.maine.gov/sos/archives/archives-services/genealogy-research",
+      "contact": "https://www.maine.gov/sos/archives/archives-services",
+      "role": "Pre-1892 municipal record copies or microfilm; archival location guidance, not a guarantee of an indexed name"
+    },
+    {
+      "id": "familysearch",
+      "name": "FamilySearch catalog/viewer",
+      "url": "https://www.familysearch.org/en/search/catalog/",
+      "contact": "Use free account, DGS search 7596929",
+      "role": "Browse specific Vinalhaven Town Clerk microfilm and inspect original page images, subject to institutional access"
+    },
+    {
+      "id": "hancock-deeds",
+      "name": "Hancock County deed registry",
+      "url": "https://hancockcountydeeds.com/search",
+      "contact": "Search catalog, request full original book page if available",
+      "role": "Confirm 1837 grantor, witnesses, execution date and recording date"
+    },
+    {
+      "id": "vinalhaven-history",
+      "name": "Vinalhaven Historical Society",
+      "url": "https://www.vinalhavenhistoricalsociety.org/summerexhibit/2013exhibitearlydays.html",
+      "contact": "207-863-4410",
+      "role": "Exhibits cite a copy of the original 1785 settlers' petition at the museum"
+    }
+  ],
+  "targets": [
+    {
+      "id": "john-rachel-1800",
+      "priority": 1,
+      "title": "1800 marriage: John White Beverage and Rachel",
+      "event": "Marriage 2 February 1800 (reported in a compiled genealogy)",
+      "places": "Vinalhaven, both Fox Islands; North Haven not separately incorporated until 1847",
+      "claim_ids": [
+        "rachel-surname-conflict",
+        "josiah-si-parents"
+      ],
+      "person_ids": [
+        "john_white_beverage_1774",
+        "rachel_crosby_1778"
+      ],
+      "custodian_ids": [
+        "vinalhaven-clerk",
+        "northhaven-clerk",
+        "familysearch",
+        "maine-archives"
+      ],
+      "source_locator": "Vinalhaven town and vital register 1785–1892, DGS 7596929; exact bride-entry original image NOT established. Neighboring 1800 marriage entries in an edited scholarly source cite p.421 / image 231; this is a search neighborhood, NOT this couple's location.",
+      "initial_query": "Search around 2 February 1800; inspect the handwritten original name of Rachel, witnesses, execution vs intention and source publication context.",
+      "evidence_needed": "Original register image/full dated entry, name as written, actual book and page, and certification of what it says (not a name guessed from later genealogies).",
+      "status": "uninspected_register_target",
+      "url": "https://www.familysearch.org/en/search/catalog/",
+      "proof_weight": "Potential direct contemporaneous identity evidence, not necessarily maiden/birth-surname proof"
+    },
+    {
+      "id": "nathaniel-1803",
+      "priority": 2,
+      "title": "1803 birth: Nathaniel Beverage of Rockland",
+      "event": "Birth 20 October 1803 (derivative claim; website approximate 1804)",
+      "places": "North Fox Island, then recorded under Vinalhaven (pre-1847)",
+      "claim_ids": [
+        "nathaniel-birth-identity"
+      ],
+      "person_ids": [
+        "nathaniel_beverage_1804_rockland",
+        "john_white_beverage_1774",
+        "rachel_crosby_1778"
+      ],
+      "custodian_ids": [
+        "vinalhaven-clerk",
+        "northhaven-clerk",
+        "familysearch",
+        "northhaven-history"
+      ],
+      "source_locator": "Vinalhaven town register DGS 7596929 cited by Woodruff project for other relatives; Nathaniel's precise image/folio remains UNLOCATED.",
+      "initial_query": "Search births in 1803–1805; do not conflate Nathaniel of Rockland with Nathaniel Winslow Beverage b.1776.",
+      "evidence_needed": "Full entry naming this Nathaniel and both parents, folio/image and whether written contemporaneously or copied later.",
+      "status": "uninspected_register_target",
+      "url": "https://www.familysearch.org/en/search/catalog/",
+      "proof_weight": "Potential proof of cross-branch parentage, requires identity bridge to Rockland husband"
+    },
+    {
+      "id": "josiah-1821",
+      "priority": 3,
+      "title": "1821 birth: Josiah B. 'Si' Beverage",
+      "event": "Birth reported April 5 or June 1821 in conflicting online pedigrees",
+      "places": "North Fox Island, then Vinalhaven",
+      "claim_ids": [
+        "josiah-si-parents"
+      ],
+      "person_ids": [
+        "josiah_b_beverage_1821",
+        "josiah_winslow_beverage_1793",
+        "john_white_beverage_1774",
+        "rachel_crosby_1778"
+      ],
+      "custodian_ids": [
+        "vinalhaven-clerk",
+        "northhaven-clerk",
+        "familysearch",
+        "northhaven-history"
+      ],
+      "source_locator": "Original 1821 birth/town register entry NOT located; FamilySearch DGS 7596929 houses other contemporaneous Vinalhaven town records, but no image number for Josiah has been verified.",
+      "initial_query": "Inspect EVERY Josiah/Joseph B. Beverage/Beveridge birth 1820–1823, note recorded father and mother and date precision.",
+      "evidence_needed": "Birth return/manuscript naming parents, original folio, image and whether separate Josiah individuals are possible.",
+      "status": "uninspected_register_target",
+      "url": "https://www.familysearch.org/en/search/catalog/",
+      "proof_weight": "Decisive original candidate for correcting a possibly inaccurate existing parentage"
+    },
+    {
+      "id": "nathaniel-sarah-1838",
+      "priority": 4,
+      "title": "1838 marriage: Nathaniel Beverage and Sarah Alexander",
+      "event": "Marriage reported 26 April 1838",
+      "places": "Vinalhaven, North Fox Island (pre-1847)",
+      "claim_ids": [
+        "nathaniel-birth-identity"
+      ],
+      "person_ids": [
+        "nathaniel_beverage_1804_rockland"
+      ],
+      "custodian_ids": [
+        "vinalhaven-clerk",
+        "northhaven-clerk",
+        "familysearch",
+        "northhaven-history"
+      ],
+      "source_locator": "Vinalhaven town marriage/intentions collection; specific original page/film image not independently located.",
+      "initial_query": "Inspect Nathaniel and Sarah marriage/intentions return and record witnesses, residence, age, any parents and original source book.",
+      "evidence_needed": "Original entry and identity clues tying the Rockland man to his birth family; a marriage lacking parents cannot alone prove them.",
+      "status": "uninspected_register_target",
+      "url": "https://www.familysearch.org/en/search/catalog/",
+      "proof_weight": "Strong identity bridge if matched to other contemporary records"
+    },
+    {
+      "id": "john-white-1839-probate",
+      "priority": 5,
+      "title": "John White Beverage's 1839 estate and children",
+      "event": "John White reported death 1 June 1839",
+      "places": "North Island, now North Haven; county record jurisdiction must be verified",
+      "claim_ids": [
+        "nathaniel-birth-identity",
+        "josiah-si-parents"
+      ],
+      "person_ids": [
+        "john_white_beverage_1774",
+        "nathaniel_beverage_1804_rockland",
+        "josiah_b_beverage_1821"
+      ],
+      "custodian_ids": [
+        "maine-archives",
+        "northhaven-history"
+      ],
+      "source_locator": "Specific original probate docket, county, page and distribution list NOT located.",
+      "initial_query": "Find original estate probate/heirs for John White; check whether Nathaniel and Josiah are named *as sons* and whether Rachel is widow.",
+      "evidence_needed": "Contemporaneous family relationship words and original court signatures, index and docket. Absence from one index is not evidence of no kinship.",
+      "status": "unlocated_original_probate",
+      "url": "https://www.maine.gov/sos/archives/archives-services/genealogy-research",
+      "proof_weight": "Could support several contested children at once"
+    },
+    {
+      "id": "josiah-1918-death",
+      "priority": 6,
+      "title": "1918 death certificate: Josiah B. Beverage",
+      "event": "Death reported 16 November 1918",
+      "places": "Vinalhaven, Knox County",
+      "claim_ids": [
+        "josiah-si-parents"
+      ],
+      "person_ids": [
+        "josiah_b_beverage_1821"
+      ],
+      "custodian_ids": [
+        "maine-archives",
+        "familysearch"
+      ],
+      "source_locator": "Maine death returns, 1892–1921, FamilySearch collection 1803978; exact state return/film image not inspected.",
+      "initial_query": "Locate original 1918 Maine death record; transcribe parent names and who supplied them. Compare spouse Jane Young and birth date.",
+      "evidence_needed": "Original certificate image, informant/parent details. Recorded parents in a death return are secondary informant testimony, not automatically first-hand proof.",
+      "status": "uninspected_death_certificate",
+      "url": "https://www.familysearch.org/en/search/collection/1803978",
+      "proof_weight": "Potential independent parentage claim subject to informant reliability"
+    },
+    {
+      "id": "thomas-deed-1837",
+      "priority": 7,
+      "title": "1837 Hancock deed: which Thomas Beverage?",
+      "event": "Deed reported 28 June 1837",
+      "places": "Hancock County",
+      "claim_ids": [
+        "thomas-1837-deed-chronology"
+      ],
+      "person_ids": [
+        "thomas_beverage_1750"
+      ],
+      "custodian_ids": [
+        "hancock-deeds",
+        "familysearch"
+      ],
+      "source_locator": "Original deed book p.387, DGS 8296915 image 207/601 according to scholarly Wilford Woodruff Papers subject citation; source scan not personally inspected.",
+      "initial_query": "Read grantor, grantees, actual execution date, acknowledgment, recorded date, trustee capacity and index; compare Capt. Thomas death 1834.",
+      "evidence_needed": "Full original deed image. Do not assign after-death deed to Capt. Thomas unless legal capacity/earlier instrument explains it.",
+      "status": "exact_image_locator_uninspected",
+      "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+      "proof_weight": "Resolve chronological contradiction before linking any property transaction"
+    },
+    {
+      "id": "fox-petition-1785",
+      "priority": 8,
+      "title": "Original 1785 Fox Islands settlers' petition",
+      "event": "1785 Massachusetts petition and minor Matthew Beveridge",
+      "places": "North and South Fox Islands",
+      "claim_ids": [],
+      "person_ids": [
+        "matthew_beveridge_hope_1837"
+      ],
+      "custodian_ids": [
+        "vinalhaven-history",
+        "maine-archives"
+      ],
+      "source_locator": "Vinalhaven Historical Society says a copy of the petition may be viewed at its museum; original Massachusetts archive packet not yet inspected.",
+      "initial_query": "Inspect high-resolution original or faithful copy and adjoining signatures/survey, including status of James/Thomas/Matthew and named parents, if any.",
+      "evidence_needed": "The petition's wording, dating, signatures and legal descriptions—not assumptions about minor Matthew's father or later Hope estate identity.",
+      "status": "published_transcription_original_uninspected",
+      "url": "https://www.vinalhavenhistoricalsociety.org/summerexhibit/2013exhibitearlydays.html",
+      "proof_weight": "Foundational early settlement evidence; no proven link to the Hope decedent"
+    },
+    {
+      "id": "hope-1820",
+      "priority": 9,
+      "title": "1820 original Hope census: Mathew Beveridge",
+      "event": "1820 household-head listing (later name transcription)",
+      "places": "Hope, Lincoln County 1820",
+      "claim_ids": [],
+      "person_ids": [
+        "matthew_beveridge_hope_1837"
+      ],
+      "custodian_ids": [
+        "familysearch",
+        "maine-archives"
+      ],
+      "source_locator": "NARA M33 roll 36, digitized at Internet Archive item populationsc18200036unit; Hope original sheet 276 as reported by modern index. Original household row not read.",
+      "initial_query": "Read every tally column exactly from manuscript, do not name age-box occupants, compare separately to 1810 and 1837 probate.",
+      "evidence_needed": "Original head spelling, column headings and household tally plus scan folio, not a fabricated child roster.",
+      "status": "exact_reel_uninspected",
+      "url": "https://archive.org/details/populationsc18200036unit",
+      "proof_weight": "Household age composition can narrow identity without naming others"
+    }
+  ]
+}
