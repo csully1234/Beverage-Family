@@ -498,6 +498,58 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
                 status=record["access"].replace("_", " "),
             ))
 
+    # Phase 39: editor-graded original image retrieval targets and unresolved
+    # branch hypotheses. Exact-person search matching describes a RESEARCH
+    # QUESTION, never verified parentage. Individual deed mentions with a
+    # conflicting chronology have NO canonical person attribution.
+    expedition = _read_records("phase39_primary_record_expedition.json", root)[0]
+    _source_person_ids = {
+        "vinalhaven-josiah-1793": ["josiah_winslow_beverage_1793"],
+        "trinity-1774-thomas-mercy": ["thomas_beverage_1750", "mercy_kent_1754"],
+        "woodruff-1838-josiah": ["josiah_winslow_beverage_1793"],
+        "lewiston-josiah-1858": ["josiah_winslow_beverage_1793"],
+        "nathaniel-compiled-1803": ["nathaniel_beverage_1804_rockland"],
+        "nathaniel-eaton-1865": ["nathaniel_beverage_1804_rockland"],
+        "hope-1837-probate": ["matthew_beveridge_hope_1837",
+                              "clarissa_beveridge_widow_1837"],
+    }
+    for case in expedition["cases"]:
+        records.append(_item(
+            id="expedition-case:" + case["id"],
+            category="Open identity questions",
+            title=case["title"], summary=case["question"],
+            limits=case["not_proved"],
+            people_ids=[pid for pid in case["people_ids"] if pid in people_by_id],
+            route="?page=collection&view=source-expedition&case=" + quote(case["id"]),
+            sources=_links([source for source in expedition["sources"]
+                            if source["id"] in case["source_ids"]]),
+            keywords=" ".join([case["place"], case["working_theory"],
+                               " ".join(case["next_checks"])]),
+            status=case["status"], source_date=case["period"].split("–")[0],
+        ))
+    for source in expedition["sources"]:
+        records.append(_item(
+            id="expedition-source:" + source["id"],
+            category="Historical record trails",
+            title=source["title"],
+            summary=source["establishes"] + " · " + source["locator"],
+            limits=source["limits"],
+            people_ids=[pid for pid in _source_person_ids.get(source["id"], [])
+                        if pid in people_by_id],
+            route="?page=collection&view=source-expedition",
+            sources=_links([
+                {"title": source["repository"], "url": source.get("url")},
+                {"title": "Find original record in institutional catalog",
+                 "url": source.get("original_access")},
+            ]),
+            keywords=(source["class"] + " " + source["repository"] + " " +
+                      source["locator"]),
+            status=("Original-era scan previously reviewed"
+                    if source["original_inspected"] else
+                    "Original image NOT independently inspected"),
+            source_date=source["year"],
+        ))
+
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(

@@ -18,6 +18,7 @@ from profile_life_stories import (life_record_overview, linked_book_illustration
                                   profile_milestones)
 from family_books import load_books, book_pdf_path
 from family_navigation import branch_context, unresolved_relative_ids
+from primary_source_expedition import cases_for_person, expedition_route
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
@@ -393,6 +394,13 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
         route_link("Full family map", "?page=full-tree&profile=" + quote(person_id, safe=""),
                    width="stretch")
 
+    # Offer relevant original-document investigations where a precise indexed
+    # person's identity is being studied. A case link is not family-link proof.
+    open_cases = cases_for_person(person_id)
+    if open_cases:
+        st.caption("Open family-origin research questions connected to this record")
+        for item in open_cases:
+            route_link("Investigate: " + item["title"], expedition_route(item["id"]))
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):

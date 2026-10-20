@@ -117,6 +117,8 @@ def _branches(data: dict, people: dict, relationships: dict) -> None:
             st.caption("Use the profile's Family tab or focused tree to inspect "
                        "the actual steps and each relationship's evidence.")
     st.divider()
+    route_link("Investigate these separate groups with original historical sources",
+               "?page=collection&view=source-expedition")
     st.subheader("Similar names that warrant comparison")
     st.caption("These are exact normalized display-name collisions, NOT deduplications. "
                "Names frequently repeat across different generations.")

@@ -810,6 +810,7 @@ def render_home(
             ("Research and unresolved questions", "?page=collection&view=workbench"),
             ("Complete evidence-access atlas", "?page=collection&view=integrity&section=access"),
             ("Investigate missing family references", "?page=collection&view=integrity&section=branches"),
+            ("Family origins expedition: original records & mysteries", "?page=collection&view=source-expedition"),
         ]
         for label, url in secondary_actions:
             route_link(label, url, type="tertiary")
@@ -839,6 +840,8 @@ def render_home(
     with st.expander("About this family history"):
         st.write(f"{len(people)} relatives · {len(events)} recorded family events · {span}. Dates, identities and relationships may be incomplete or disputed; original historical sources are linked wherever possible.")
         route_link("Browse historical discoveries", "?page=collection")
+        route_link("Investigate four family lineage mysteries and exact original source records",
+                   "?page=collection&view=source-expedition")
         route_link("Read original historical sources", "?page=archive")
 
     st.divider()
