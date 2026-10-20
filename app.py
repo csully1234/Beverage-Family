@@ -1578,6 +1578,8 @@ def render_tree_page(
                "Only documented profile IDs appear in the selector.")
     route_link("Read this person's complete original-evidence exhibit",
                exhibit_route(focus_id, "Original records"))
+    route_link("See this relative's photographs and original scanned captions",
+               photo_gallery_route(person_id=focus_id))
     with st.expander("Dates, identities and relationship evidence"):
         render_profile_review(focus_id, load_collection(), people_by_id)
     graph = build_family_graph(people_by_id, relationships, focus_id, view, generations)
@@ -1737,6 +1739,8 @@ def render_full_tree_page(
         )
         route_link("Explore this person's life and supporting records",
                    exhibit_route(active_id))
+        route_link("Browse this relative's attributed family photographs",
+                   photo_gallery_route(person_id=active_id))
     else:
         st.caption("Choose a person above or on the tree to reveal their connected relatives.")
 
