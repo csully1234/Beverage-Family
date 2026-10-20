@@ -56,6 +56,7 @@ from relationship_evidence import render_profile_relationship_review, render_rel
 from ancestry_bridge_casework import render_person_bridge_casework
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
 from family_exhibits import exhibit_route
+from family_photo_navigation import photo_gallery_route
 from family_navigation import connected_relatives, connected_profile_ids, unresolved_relative_ids
 from conflict_review_ui import render_profile_review, review_data, review_link
 from research_collection import matches as research_matches_query
@@ -1061,6 +1062,8 @@ def render_person_profile(
                exhibit_route(person_id), type="primary")
     route_link("Read all historical sources for this person",
                exhibit_route(person_id, "Original records"))
+    route_link("Browse photographs attributed to this relative",
+               photo_gallery_route(person_id=person_id))
     route_link("See this relative's sources across the entire archive",
                "?page=collection&view=integrity&section=access&person=" +
                quote(person_id, safe=""))
@@ -1575,6 +1578,8 @@ def render_tree_page(
                "Only documented profile IDs appear in the selector.")
     route_link("Read this person's complete original-evidence exhibit",
                exhibit_route(focus_id, "Original records"))
+    route_link("See this relative's photographs and original scanned captions",
+               photo_gallery_route(person_id=focus_id))
     with st.expander("Dates, identities and relationship evidence"):
         render_profile_review(focus_id, load_collection(), people_by_id)
     graph = build_family_graph(people_by_id, relationships, focus_id, view, generations)
@@ -1734,6 +1739,8 @@ def render_full_tree_page(
         )
         route_link("Explore this person's life and supporting records",
                    exhibit_route(active_id))
+        route_link("Browse this relative's attributed family photographs",
+                   photo_gallery_route(person_id=active_id))
     else:
         st.caption("Choose a person above or on the tree to reveal their connected relatives.")
 

@@ -19,6 +19,7 @@ from profile_life_stories import (life_record_overview, linked_book_illustration
 from family_books import load_books, book_pdf_path
 from family_navigation import branch_context, unresolved_relative_ids
 from colony_photos import source_photo_preview
+from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
 
 SECTIONS = (
@@ -279,6 +280,8 @@ def _records_section(overview: dict) -> None:
 
 def _photographs_section(overview: dict) -> None:
     st.subheader("Photographs and illustrations from the family book")
+    route_link("View this relative's photographs in the full family gallery",
+               photo_gallery_route(person_id=overview["id"]))
     photos = overview["photos"]
     st.caption("Book-page links come from a reviewed exact-person cross-reference, "
                "not an OCR name match. Captions describe the book author's "

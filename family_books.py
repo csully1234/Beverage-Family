@@ -12,6 +12,7 @@ from pathlib import Path
 import streamlit as st
 
 from routing_ui import route_link
+from family_photo_navigation import photo_gallery_route
 from family_data import index_people, load_site_data
 from identity_casework import cases_for_page, render_case_evidence, render_identity_explorer
 
@@ -159,18 +160,28 @@ def render_book_reader(book: dict) -> None:
             on_click=jump_to_book_page, args=(int(selected) + 1,),
         )
     with col3:
-        st.caption("The complete illustrated edition is available in the reader below. The selected-page controls also display a large scan.")
-    if path and path.is_file():
-        st.caption("Full 305-page book viewer. Browse, zoom and use available PDF controls. For the exact page selected above, open the large source scan below.")
-        display_authorized_book(book)
-        st.caption("The book is image-based, so built-in text search may be limited. Scanned pages and photo captions remain searchable through the existing research index.")
-    else:
-        st.warning("The authorized book PDF is not available to this running deployment. "
-                   "The source-file audit should verify the published asset before release.")
-        st.code(book.get("pdf_asset", ""), language=None)
-    with st.expander("Large, readable scan of the selected page"):
-        render_scanned_page(book, int(selected), width=1150)
+        st.caption("Page " + str(int(selected)) + " of " + str(page_count) +
+                   " · Your selected historical source page appears immediately below.")
+    st.markdown("**Original book page " + str(int(selected)) + " — full printed caption**")
+    render_scanned_page(book, int(selected), width=1080)
+    route_link("View this page in the family photograph gallery",
+               photo_gallery_route(pdf_page=int(selected)))
     render_book_page_connections(int(selected))
+    st.divider()
+    st.subheader("Browse the entire original 305-page edition")
+    st.caption("Use the controls above to jump directly to any scanned page. "
+               "Open the complete document reader below for continuous page "
+               "browsing, zoom and browser PDF tools. This avoids repeatedly "
+               "loading the 22 MB book when viewing individual family photos on phones.")
+    if path and path.is_file():
+        if st.toggle("Open complete 305-page PDF viewer",
+                     key="book_show_complete_pdf", value=False):
+            display_authorized_book(book)
+            st.caption("The scanned edition may not support searchable text; "
+                       "the source-index search remains available elsewhere on the site.")
+    else:
+        st.warning("The authorized family book PDF is missing from this deployment. "
+                   "Historical citations and the complete book catalog remain indexed.")
     from colony_source_review import render_page_review_notes
     render_page_review_notes(int(selected))
     route_link("Investigate every indexed source associated with this scanned page",
@@ -423,6 +434,11 @@ def render_book_page_connections(page: int) -> None:
             label += " · candidate"
         route_link("Open family tree profile: " + label,
                    "?page=people&profile=" + person_id)
+        route_link("See this person's attributed photographs in the gallery",
+                   photo_gallery_route(person_id=person_id), type="tertiary")
+        route_link("Read this person's life and original-record exhibit",
+                   "?page=collection&view=person-exhibit&person=" + person_id,
+                   type="tertiary")
     for item in matches["unresolved"]:
         st.info(f"**Identity still under review: {item['name']}** — "
                 f"{item.get('issue', 'Source identification requires corroboration.')}")

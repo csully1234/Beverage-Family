@@ -15,6 +15,7 @@ from family_data import format_date, year_from_date
 from historical_claims import reviewed_event_presentation
 from family_books import book_pages_for_person, load_book_person_crosswalk
 from routing_ui import route_link
+from family_photo_navigation import photo_gallery_route
 
 
 def _known_date(person: Mapping[str, Any], field: str) -> str:
@@ -157,6 +158,8 @@ def render_profile_life_record(person: dict, events: list[dict]) -> None:
 def render_profile_photo_story(person_id: str) -> None:
     """Give the permitted book's associated photographs a place within the story."""
     linked = linked_book_illustrations(person_id)
+    route_link("Explore all photographs attributed to this person in the family gallery",
+               photo_gallery_route(person_id=person_id))
     if not linked:
         return
     from family_books import book_pdf_path, load_books
