@@ -154,7 +154,8 @@ class Phase36RecoveryAndPrivacyTests(unittest.TestCase):
         self.assertTrue(report["existing_legacy_password_fallback"])
         self.assertTrue(report["family_data_committed_to_repository"])
         self.assertTrue(report["complete_family_book_committed_to_repository"])
-        self.assertTrue(report["streamlit_static_serving_enabled"])
+        self.assertFalse(report["streamlit_static_serving_enabled"])
+        self.assertTrue(report["predictable_static_book_urls_disabled"])
         self.assertEqual(report["render_app_password_configuration"],
                          "not inspected; never print secret values")
         self.assertFalse(gate_before_archive_load(
