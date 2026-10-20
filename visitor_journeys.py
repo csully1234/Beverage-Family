@@ -109,6 +109,11 @@ def current_person(people_by_id: dict, page: str = "") -> str:
         return exhibit_person
     if page in {"People", "Explore the Tree", "Full Family Map"} and direct in people_by_id:
         return direct
+    # When following exact-person source gallery/timeline links, keep the
+    # requested person rather than an unrelated previous tree selection.
+    if (page in {"Photographs & Documents", "Timeline", "Family Books"}
+            and exhibit_person in people_by_id):
+        return exhibit_person
     page_selector = {
         "People": "profile_selector",
         "Explore the Tree": "tree_person",
