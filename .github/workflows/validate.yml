@@ -31,6 +31,9 @@ jobs:
       - name: Compile all Python sources, including new exhibit modules
         run: python -m compileall -q .
 
+      - name: Audit public-source privacy and family login gate
+        run: python -m tools.privacy_audit --out dist/privacy-audit.json
+
       - name: Validate genealogy data
         run: python validate_data.py
 
@@ -66,10 +69,19 @@ jobs:
       - name: Create checksum-verified recovery snapshot
         run: python tools/create_release_backup.py dist/family-release-backup.zip
 
-      - name: Upload recoverable site snapshot
+      - name: Verify every saved file and perform a full restore drill
+        run: |
+          python -m tools.verify_release_backup dist/family-release-backup.zip --against-checkout . --restore-to dist/recovered-source --report dist/recovery-proof.json
+          test -f dist/recovered-source/app.py
+          test -f dist/recovered-source/data/people.json
+          test -f dist/recovered-source/static/books/The_Colony_Lowell_Beveridge_2016_Web_Optimized.pdf
+
+      - name: Upload verified recoverable site snapshot and restore report
         uses: actions/upload-artifact@v4
         with:
           name: family-release-backup-${{ github.sha }}
-          path: dist/family-release-backup.zip
-          retention-days: 14
+          path: |
+            dist/family-release-backup.zip
+            dist/recovery-proof.json
+          retention-days: 90
           if-no-files-found: error
