@@ -86,6 +86,16 @@ def conflict_report_csv(cases: list[dict]) -> str:
     return buffer.getvalue()
 
 
+def _selected_conflict_changed() -> None:
+    selected = str(st.session_state.get("phase41_identity_case") or "")
+    if selected:
+        st.query_params["conflict"] = "1"
+        st.query_params["conflict_case"] = selected
+    else:
+        st.query_params.pop("conflict_case", None)
+    st.session_state["_phase41_last_query_case"] = selected
+
+
 def render_conflict_review(people: dict, *, selected: str = "") -> None:
     cases = load_claims()
     st.subheader("Competing evidence — review before changing the tree")
@@ -97,8 +107,12 @@ def render_conflict_review(people: dict, *, selected: str = "") -> None:
                "contributed pages can depend on the same copied family tree.")
     requested = selected if selected in {row["id"] for row in cases} else ""
     valid = ["", *(row["id"] for row in cases)]
-    # Stable case-specific widget avoids wiping a visitor's selection whenever
-    # they switch other sections of this historically large Streamlit page.
+    # Incoming deep links take priority over an older widget choice; widget
+    # callbacks make later changes shareable without overwriting the control
+    # after Streamlit instantiates it.
+    if st.session_state.get("_phase41_last_query_case") != requested:
+        st.session_state["phase41_identity_case"] = requested
+        st.session_state["_phase41_last_query_case"] = requested
     chosen = st.selectbox(
         "Compare a historical identity question",
         valid, index=valid.index(requested),
@@ -106,6 +120,7 @@ def render_conflict_review(people: dict, *, selected: str = "") -> None:
             "All family history conflicts" if not cid else
             next(row["title"] for row in cases if row["id"] == cid)),
         key="phase41_identity_case",
+        on_change=_selected_conflict_changed,
     )
     for case in ([next(row for row in cases if row["id"] == chosen)]
                  if chosen else cases):
