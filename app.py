@@ -1614,7 +1614,8 @@ def render_tree_page(
             key="relationship_end",
         )
 
-    path = shortest_relationship_path(relationships, start_id, end_id)
+    path = shortest_relationship_path(relationships, start_id, end_id,
+                                      known_ids=people_by_id)
     if not path:
         st.info("No connection is established by the current records.")
     elif len(path) == 1:
