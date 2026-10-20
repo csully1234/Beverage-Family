@@ -172,6 +172,13 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
     columns[1].metric("Cited source records", progress["sources"])
     columns[2].metric("Originals to read or verify", progress["retrieval_targets"])
 
+    # An exact-person exhibit deep-link should show its contested record FIRST,
+    # not make a visitor scroll through four other case reports on a phone.
+    requested_conflict = str(st.query_params.get("conflict_case") or "")
+    if requested_conflict:
+        render_conflict_review(people, selected=requested_conflict)
+        st.divider()
+
     valid_ids = ["", *(case["id"] for case in cases)]
     requested_option = requested if requested in case_by_id else ""
     if st.session_state.get("_origins_last_case_query") != requested_option:
@@ -228,8 +235,9 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
             route_link("Open or bookmark this exact research investigation",
                        expedition_route(case["id"]), type="tertiary")
     st.divider()
-    render_conflict_review(people, selected=str(st.query_params.get("conflict_case") or ""))
-    st.divider()
+    if not requested_conflict:
+        render_conflict_review(people)
+        st.divider()
     st.subheader("Family connection laboratory — explore without changing the tree")
     st.write("What would happen if a proposed parent-child relationship were eventually "
              "proved by an original register? Compare the recorded family groups "
