@@ -67,8 +67,8 @@ class Phase37FamilyBookStaticExposure(unittest.TestCase):
         self.assertTrue(report["predictable_static_book_urls_disabled"])
         self.assertTrue(report["existing_legacy_password_fallback"])
         self.assertTrue(report["complete_family_book_committed_to_repository"])
-        self.assertIn("GitHub repository visibility",
-                      report["approval_required_before"])
+        self.assertTrue(any("GitHub repository visibility" in reason
+                            for reason in report["approval_required_before"]))
 
 
 if __name__ == "__main__":
