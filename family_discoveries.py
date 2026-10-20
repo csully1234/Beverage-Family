@@ -22,6 +22,7 @@ from family_origins_casework import render_family_origins
 from family_exhibits import render_person_exhibit
 from fox_islands_originals import render_fox_originals
 from research_integrity_dashboard import render_integrity_dashboard
+from primary_source_expedition import render_source_expedition
 
 
 def render_family_discoveries(people_by_id: dict, events: list | None = None,
@@ -38,6 +39,10 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
         return
     if str(st.query_params.get("view", "") or "") == "fox-originals":
         render_fox_originals()
+        route_link("← Return to Historical Discoveries", "?page=collection")
+        return
+    if str(st.query_params.get("view", "") or "") == "source-expedition":
+        render_source_expedition(people_by_id, relationships or relationship_index(people_by_id.values()))
         route_link("← Return to Historical Discoveries", "?page=collection")
         return
     if str(st.query_params.get("view", "") or "") == "family-origins":
@@ -77,6 +82,8 @@ def render_family_discoveries(people_by_id: dict, events: list | None = None,
         "All historical findings are shown, including possible and disputed connections. "
         "Original sources and evidence explanations remain available with each discovery."
     )
+    route_link("MAJOR RESEARCH: original register images and the four family-branch mysteries",
+               "?page=collection&view=source-expedition")
     route_link("WHOLE FAMILY AUDIT: disconnected branches, source coverage and research gaps",
                "?page=collection&view=integrity")
     route_link("Open the complete Family Research Workbench — search every source, "
