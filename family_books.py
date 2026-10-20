@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from urllib.parse import urlsplit
 
 import streamlit as st
 
@@ -42,21 +41,19 @@ def available_book_pdf(book: dict) -> bool:
     return bool(path and path.is_file())
 
 
-def full_book_url(book: dict, page: int = 1) -> str:
-    """Browser-native PDF with direct page navigation and user-visible credit."""
-    asset = str(book.get("pdf_asset", "")).removeprefix("static/")
-    # This is an allowlisted repository path, not a user-submitted external URL.
-    if book_pdf_path(book) is None:
-        return ""
-    relative = "/app/static/" + asset
-    try:
-        parsed = urlsplit(str(st.context.url))
-        origin = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme and parsed.netloc else ""
-    except Exception:
-        origin = ""
-    if not origin:
-        origin = "https://beverage-family.onrender.com"
-    return origin + relative + f"#page={int(page)}"
+def display_authorized_book(book: dict, *, height: int = 720) -> bool:
+    """Render the complete book inside Streamlit, never via public /app/static.
+
+    Called only from a password-gated family page. st.pdf uses the runtime media
+    manager; its opaque media URLs are not a substitute for HTTP-layer access
+    controls. Moving GitHub private and enforcing file-response authorization
+    remain separate migration steps.
+    """
+    local = book_pdf_path(book)
+    if not local or not local.is_file():
+        return False
+    st.pdf(local, height=height, key="family_original_book_pdf")
+    return True
 
 
 @st.cache_data(show_spinner=False, max_entries=42)
@@ -162,11 +159,11 @@ def render_book_reader(book: dict) -> None:
             on_click=jump_to_book_page, args=(int(selected) + 1,),
         )
     with col3:
-        if path and path.is_file():
-            st.link_button("Open full book PDF in a new tab", full_book_url(book, selected), width="stretch")
+        st.caption("The complete illustrated edition is available in the reader below. The selected-page controls also display a large scan.")
     if path and path.is_file():
-        st.iframe(full_book_url(book, selected), height=720)
-        st.caption("Use browser PDF controls to zoom, search within any browser-indexed text, or navigate all 305 pages. The edition supplied is image-based and may not support full-text search.")
+        st.caption("Full 305-page book viewer. Browse, zoom and use available PDF controls. For the exact page selected above, open the large source scan below.")
+        display_authorized_book(book)
+        st.caption("The book is image-based, so built-in text search may be limited. Scanned pages and photo captions remain searchable through the existing research index.")
     else:
         st.warning("The authorized book PDF is not available to this running deployment. "
                    "The source-file audit should verify the published asset before release.")
