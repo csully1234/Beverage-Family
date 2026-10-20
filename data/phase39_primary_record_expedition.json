@@ -1,0 +1,293 @@
+[
+  {
+    "id": "phase39-primary-record-expedition",
+    "reviewed_date": "2026-10-19",
+    "publication_status": "link_only_no_new_scans",
+    "basis": "New scholarly edited source locators and reviewed previous original-era documents",
+    "foundational_rule": "Exact image locators are NOT inspected original pages, and published parentage hypotheses are NOT proved relationships.",
+    "sources": [
+      {
+        "id": "vinalhaven-josiah-1793",
+        "title": "Josiah Beverage birth entry — Vinalhaven town register",
+        "year": "1793",
+        "class": "exact_original_image_locator_uninspected",
+        "source_family": "Vinalhaven town clerk birth register",
+        "repository": "FamilySearch digital town and vital records, 1785–1892",
+        "locator": "Original register p. 380; FamilySearch DGS 7596929, image 209 of 837; editorial citation in Wilford Woodruff Papers Josiah subject entry",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "original_access": "https://www.familysearch.org/en/search/collection/1803978",
+        "establishes": "A scholarly subject entry provides an exact image location for a town-register birth recorded as Josiah Beverage, 10 July 1793, Vinalhaven.",
+        "limits": "The town-register image has NOT been opened or independently read here; verify exact spelling, parents, annotations and original date. This is one cited manuscript location, not a second independent birth witness.",
+        "original_inspected": false,
+        "rights": "Use institutional viewer; no image republished"
+      },
+      {
+        "id": "trinity-1774-thomas-mercy",
+        "title": "Thomas Beverage–Mercy Kent church marriage entry",
+        "year": "1774",
+        "class": "exact_original_image_locator_uninspected",
+        "source_family": "Trinity Church Boston original marriage register",
+        "repository": "FamilySearch Church records 1737–1896; Trinity Church, Boston",
+        "locator": "13 April 1774; FamilySearch DGS 8130800, image 459 of 798; editorial citation in Wilford Woodruff Papers Josiah subject entry",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "original_access": "https://www.familysearch.org/en/search/collection/1803978",
+        "establishes": "The scholarly Josiah profile points to an exact original Boston church-register image as a marriage-source candidate for Thomas Beverage and Mercy Kent.",
+        "limits": "Original register NOT inspected, named parties and spelling not transcribed from its image; birth relationship to Josiah must be checked separately. The original image may be restricted behind a reader login.",
+        "original_inspected": false,
+        "rights": "Use institutional viewer; no image republished"
+      },
+      {
+        "id": "woodruff-1838-josiah",
+        "title": "Wilford Woodruff encounter with Josiah Beverage, 3 April 1838",
+        "year": "1838",
+        "class": "editorially_identified_contemporaneous_journal",
+        "source_family": "Wilford Woodruff contemporaneous journal, 1838",
+        "repository": "Wilford Woodruff Papers digital journal edition",
+        "locator": "April 3, 1838 diary entry; editorial person entry Josiah Beverage; journal volume covers Jan 1838–Dec 1839",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "original_access": "https://www.documents.wilfordwoodruffpapers.org/documents/22e14db2-30f8-4a6d-af51-132c66e05d8b/transcript",
+        "establishes": "The project's edited person page identifies Josiah Beverage as having spent the afternoon with Woodruff on North Fox Island on 3 April 1838; the 1838 journal transcription contains that dated day.",
+        "limits": "The web transcript's April 3 entry omits or suppresses tagged visitor names; the word 'Josiah' is NOT legible there in the accessible text. Treat the visit as an EDITORIAL attribution until the original page/tagged witness is checked. Not evidence of Josiah's parents or a marriage.",
+        "original_inspected": false,
+        "rights": "Institutional transcript/external viewer; no reproduction"
+      },
+      {
+        "id": "deed-1837-thomas-to-james",
+        "title": "1837 Hancock County deed: Thomas Beverage to James Beverage and others",
+        "year": "1837",
+        "class": "chronology_conflict_original_locator_uninspected",
+        "source_family": "Hancock County Registry of Deeds",
+        "repository": "FamilySearch Hancock County deed book 1791–1861, editor-cited",
+        "locator": "28 June 1837; deed book p. 387; FamilySearch DGS 8296915, image 207 of 601; footnote to Josiah Beverage subject profile",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "original_access": "https://www.familysearch.org/en/search/collection/list?fcs=placeId%3A16",
+        "establishes": "An editorial citation provides a precise deed-book image for a conveyance headed Thomas Beverage to James Beverage and others dated June 28, 1837.",
+        "limits": "IMPORTANT CHRONOLOGY CONFLICT: existing Capt. Thomas Beverage of the principal tree is reported dead 4 October 1834. A Thomas executing a 1837 deed cannot automatically be that captain. The record may involve a same-named descendant, representative, estate transcription or a mistaken cited date. DO NOT link this deed to the captain, his son James or any tree person before examining original grantor/grantee and execution details.",
+        "original_inspected": false,
+        "rights": "Link to catalog only; no scan reproduced"
+      },
+      {
+        "id": "lewiston-josiah-1858",
+        "title": "Josiah Beverage death notice, Lewiston Falls Journal",
+        "year": "1858",
+        "class": "exact_newspaper_image_locator_uninspected",
+        "source_family": "Lewiston Falls Journal newspaper death notices",
+        "repository": "FamilySearch marriage and death notices May 1854–Dec 1861",
+        "locator": "8 January 1858 published notice; FamilySearch DGS 8203644, image 392 of 814; footnote in scholarly Josiah profile",
+        "url": "https://wilfordwoodruffpapers.org/subjects/josiah-beverage",
+        "original_access": "https://www.familysearch.org/en/search/collection/1803978",
+        "establishes": "Editorial scholarly note locates an 8 January 1858 notice relevant to Josiah Beverage; this is after the family tree's reported 20 December 1857 death.",
+        "limits": "Image and actual newspaper wording have NOT been read; notice date does not independently confirm 1857 death date or family relationships.",
+        "original_inspected": false,
+        "rights": "Link rather than republish"
+      },
+      {
+        "id": "nathaniel-compiled-1803",
+        "title": "Nathaniel Beverage parentage claim — compiled New England genealogy",
+        "year": "1803",
+        "class": "derivative_parentage_hypothesis",
+        "source_family": "Collaborative compiled genealogy of New England, parent hypothesis",
+        "repository": "Genealogy of New England contributed/compiled database",
+        "locator": "Nathaniel Beverage b. 20 Oct 1803 North Haven, d. 18 Sep 1886 Rockland; reported parents John White Beverage and Rachel Lucy Crosby; Sarah Alexander marriage 26 Apr 1838",
+        "url": "https://genealogyofnewengland.com/f_86c9.htm",
+        "establishes": "The compilation reports the precise parent pair that—IF verified by a birth entry—could explain why Eaton calls Nathaniel a nephew of Matthew.",
+        "limits": "Submitted tree and undetermined citations; NOT original birth record, NOT license to add a Nathaniel parent edge. Distinct from Nathaniel Winslow Beverage born 1776. Must confirm birth and marriage identities via contemporaneous town register; could reflect copying another family tree.",
+        "original_inspected": false,
+        "rights": "Link to derivative database"
+      },
+      {
+        "id": "nathaniel-eaton-1865",
+        "title": "Cyrus Eaton (1865): Nathaniel and Sarah as nephew/niece of Capt. Matthew",
+        "year": "1865",
+        "class": "near_contemporary_published_kinship_claim",
+        "source_family": "One published Cyrus Eaton genealogy, 1865",
+        "repository": "Internet Archive / History of Thomaston, Rockland and South Thomaston, vol. II",
+        "locator": "Printed pp. 146–147, Nathaniel Beverage paragraph",
+        "url": "https://archive.org/details/historyofthomast02eato",
+        "establishes": "Eaton describes Nathaniel Beverage and Sarah Alexander as nephew and niece respectively of Capt. Matthew Beverage.",
+        "limits": "Eaton does NOT name either one's birth parent. May include affinity-related kinship; this is a secondary narrative, not a birth certificate. One author's book is one source family.",
+        "original_inspected": false,
+        "rights": "Historic publication linked at host"
+      },
+      {
+        "id": "north-haven-vital-access",
+        "title": "North Haven / Vinalhaven pre-1892 town vital records",
+        "year": "1785–1892",
+        "class": "record_collection_locator_not_person_entry",
+        "source_family": "North Haven municipal vital and town clerk registers",
+        "repository": "FamilySearch Library and Maine State Archives",
+        "locator": "North Haven 1786–1875 computer birth printout; town/vital records 1847–1890; Vinalhaven 1785–1892 source noted on Woodruff profile; check whether old North Fox Island books continue under Vinalhaven vs North Haven",
+        "url": "https://ldsgenealogy.com/ME/North-Haven.htm",
+        "original_access": "https://www1.maine.gov/sos/archives/archives-services/genealogy-research",
+        "establishes": "Identifies catalogs and responsible original-record custodians that can be searched for Nathaniel's 1803 birth and 1838 marriage.",
+        "limits": "No 1803 Nathaniel birth or 1838 marriage image inspected. A collection listing does NOT establish that any particular entry survives.",
+        "original_inspected": false,
+        "rights": "Institutional catalog URLs"
+      },
+      {
+        "id": "hope-1820-manuscript",
+        "title": "1820 Hope census — Mathew Beveridge reported household-head, manuscript uninspected",
+        "year": "1820",
+        "class": "original_reel_located_person_row_uninspected",
+        "source_family": "1820 US federal census National Archives M33 roll 36",
+        "repository": "Internet Archive digitized census microfilm",
+        "locator": "Hope manuscript sheets 275–278; modern 2019 index reports Mathew Beveridge on manuscript sheet 276; digitized original county roll M33-36",
+        "url": "https://archive.org/details/populationsc18200036unit",
+        "establishes": "A digitized original roll is accessible; independent modern name transcription places Mathew on sheet 276.",
+        "limits": "Neither the original row nor 1820 household tally columns have been read, so no birth year, spouse, family structure, child or identity link may be inferred.",
+        "original_inspected": false,
+        "rights": "Historical reel linked; not reproduced"
+      },
+      {
+        "id": "hope-1837-probate",
+        "title": "1837 Hope probate — widow Clarissa and eight court-named children",
+        "year": "1837",
+        "class": "reviewed_original_era_court_scans_not_public",
+        "source_family": "One Waldo County probate estate case, not separate independent witnesses per scan",
+        "repository": "Waldo County probate office scans supplied by user",
+        "locator": "Research review scans 9 / 31 for child status, scan 10 death petition, scans 7/18/24 widow; original docket and record volume unknown",
+        "url": "",
+        "establishes": "Contemporary court documents describe Clarissa as Matthew's widow and expressly identify eight people as his children, supporting already reviewed 1837 family-tree relationships.",
+        "limits": "Does NOT identify parents of Matthew, prove Clarissa biological mother of all heirs, prove 1785 Fox Islands minor is the same man, or independently establish 1820 census household members. Do not publish raw court scans without clearance.",
+        "original_inspected": true,
+        "rights": "Scans withheld from public GitHub pending permission"
+      },
+      {
+        "id": "fox-1785-minor",
+        "title": "1785 Fox Islands settlers petition — Matthew Beveridge recorded as a minor",
+        "year": "1785",
+        "class": "published_petition_transcription_original_uninspected",
+        "source_family": "1889 Vinalhaven town-history reproduction of 1785 petition; original Massachusetts Archives petition distinct",
+        "repository": "Library of Congress digitization of 1889 town history",
+        "locator": "A Brief Historical Sketch of the Town of Vinalhaven, 1889, printed pp. 9–10; 1785 petition of Fox Islands settlers",
+        "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+        "establishes": "The printed transcription separately names James, Thomas and Matthew Beveridge and describes Matthew as a minor.",
+        "limits": "The published list does not name Matthew's parents or relationship to James/Thomas. The Massachusetts original petition is not yet inspected. This cannot identify the same man with the 1837 Hope decedent.",
+        "original_inspected": false,
+        "rights": "Published facsimile linked externally"
+      }
+    ],
+    "cases": [
+      {
+        "id": "nathaniel-rockland-parentage",
+        "title": "Can Nathaniel's Rockland family rejoin the main Beverage tree?",
+        "priority": 1,
+        "period": "1803–1886",
+        "place": "North Fox Island / North Haven / Rockland, Maine",
+        "status": "OPEN — probable research lead; original parentage not proved",
+        "people_ids": [
+          "nathaniel_beverage_1804_rockland",
+          "john_white_beverage_1774",
+          "rachel_crosby_1778",
+          "thomas_beverage_1750"
+        ],
+        "source_ids": [
+          "nathaniel-eaton-1865",
+          "nathaniel-compiled-1803",
+          "north-haven-vital-access"
+        ],
+        "question": "Did the Nathaniel who married Sarah Alexander in 1838 have parents John White Beverage and Rachel Lucy Crosby, and was he the nephew of Capt. Matthew as the 1865 history states?",
+        "working_theory": "A collaborative compilation supplies the precise John White/Rachel parent pair; existing tree indexes those parents but currently records no Nathaniel child. Eaton separately says Nathaniel is a nephew of Capt. Matthew.",
+        "strong_evidence": "1865 Eaton's published nephew/niece description is an explicit historical claim; 1803 parentage is derivative only.",
+        "not_proved": "No original 1803 North Haven/Vinalhaven birth register, 1838 marriage return, parent-named probate or direct ancestral bridge inspected; do not add father or mother or connect graph components.",
+        "next_checks": [
+          "Find the actual 20 October 1803 town birth/baptism entry and transcribe both parents, volume/page and original witness.",
+          "Check 26 April 1838 Nathaniel–Sarah Alexander original marriage return for parties, occupations, residence and witnesses.",
+          "Compare 1865 Eaton's nephew and niece language with Thomas/Matthew sibling evidence; test affine vs blood relationship.",
+          "Check John White Beverage's 1839 estate/probate for son Nathaniel, not merely a same-surname witness."
+        ],
+        "existing_route": "?page=collection&view=integrity&section=branches",
+        "research_value": "Highest-priority possible bridge: an original named-parent entry could reconnect an established Rockland group without speculation."
+      },
+      {
+        "id": "josiah-original-record-chain",
+        "title": "Prove the early Fox Islands generation using named original registers",
+        "priority": 2,
+        "period": "1774–1858",
+        "place": "Boston, Vinalhaven and North Fox Island",
+        "status": "NEW EXACT LOCATORS — original images not inspected",
+        "people_ids": [
+          "josiah_winslow_beverage_1793",
+          "thomas_beverage_1750",
+          "mercy_kent_1754"
+        ],
+        "source_ids": [
+          "trinity-1774-thomas-mercy",
+          "vinalhaven-josiah-1793",
+          "woodruff-1838-josiah",
+          "deed-1837-thomas-to-james",
+          "lewiston-josiah-1858"
+        ],
+        "question": "Can original town, church, deed and newspaper records independently corroborate the Thomas/Mercy/Josiah household and clarify similarly named generations?",
+        "working_theory": "The Wilford Woodruff Papers' editorial source apparatus gives reproducible DGS image pointers for a Vinalhaven birth and Boston marriage; its subject entry reports a dated 1838 interaction with Josiah.",
+        "strong_evidence": "Each repository/index pointer has a precise original-image number; distinct Vinalhaven, Boston, deed and newspaper record families can be compared.",
+        "not_proved": "None of these DGS images has been read. The 1838 diary transcript as displayed omits tagged visitor names; the Josiah visit is an editorial attribution. A June 1837 'Thomas Beverage' deed conflicts with the main Captain Thomas's recorded death in October 1834: DO NOT attribute this deed to the deceased captain.",
+        "next_checks": [
+          "Open FamilySearch DGS 7596929 image 209/837 and inspect Vinalhaven birth register p. 380 for Josiah, parents and corrections.",
+          "Open DGS 8130800 image 459/798 and transcribe Thomas/Mercy Trinity Church Boston marriage entry dated 13 April 1774.",
+          "Compare Woodruff journal's original April 3 1838 page with editorial entity annotations, avoiding assigning names missing from text.",
+          "Open Hancock deed DGS 8296915 image 207/601; distinguish 1837 Thomas grantor from Capt. Thomas deceased 1834 and check deed execution date.",
+          "Read Jan 8, 1858 Josiah death notice on DGS 8203644 image 392/814; confirm whether it identifies kin or residence."
+        ],
+        "existing_route": "?page=people&profile=josiah_winslow_beverage_1793",
+        "research_value": "A concrete sequence of original register page targets (rather than unsourced online trees) for the earliest documented generations."
+      },
+      {
+        "id": "matthew-hope-identity-chain",
+        "title": "Are the Hope clerk, 1820 head and 1837 probate decedent one identifiable person?",
+        "priority": 3,
+        "period": "1806–1837",
+        "place": "Hope, Lincoln/Waldo County, Maine",
+        "status": "OPEN — multiple different record types; no exclusive identity bridge",
+        "people_ids": [
+          "matthew_beveridge_hope_1837",
+          "clarissa_beveridge_widow_1837"
+        ],
+        "source_ids": [
+          "hope-1820-manuscript",
+          "hope-1837-probate"
+        ],
+        "question": "Which original evidence links Matthew's 1820 household, Hope civic office and 1837 court estate without manufacturing census household members?",
+        "working_theory": "The same name and place across the clerk, census and court papers suggest a life-course trail; the original 1820 sheet 276 has not yet been visually checked.",
+        "strong_evidence": "1837 court papers explicitly give widow Clarissa and eight children; that is substantially more than a generic online genealogical claim.",
+        "not_proved": "1820 row/demographic counts unexamined; no verified birth parents or direct Fox Islands minor link. Clarissa is not necessarily birth mother of all eight children.",
+        "next_checks": [
+          "Inspect the 1820 original M33 roll 36 Hope manuscript sheet 276; log exact original folio, scan image index, tally columns and neighbors.",
+          "Inspect 1810 Hope M252 roll 12 sheets 136–141; do not infer absence if a surname variant is missed.",
+          "Compare named heirs and ages from 1837 probate with independent marriage and other family registrations.",
+          "Verify 1821 town clerk vote's conflicting dates against original ledger manuscript."
+        ],
+        "existing_route": "?page=collection&view=waldo-probate",
+        "research_value": "Critical bridge between early Fox Islands settlers and later Hope lineage; census original plus probate can sharply narrow chronology."
+      },
+      {
+        "id": "fox-islands-1785-lineage",
+        "title": "Did the 1785 Fox Islands minor Matthew become the later Hope captain?",
+        "priority": 4,
+        "period": "1750–1837",
+        "place": "Topsham / Fox Islands / Hope, Maine",
+        "status": "OPEN — no original manuscript parentage; DO NOT connect",
+        "people_ids": [
+          "thomas_beverage_1750",
+          "james_beveridge_jr_1724"
+        ],
+        "source_ids": [
+          "fox-1785-minor",
+          "hope-1820-manuscript"
+        ],
+        "question": "Who was the 'Matthew Beveridge a minor' in the 1785 settlers petition, and is there an original document naming his parents?",
+        "working_theory": "Published later histories place a minor Matthew among James and Thomas in 1785, while another retrospective book calls Matthew a younger brother of Thomas.",
+        "strong_evidence": "1889 petition transcription documents a named minor; the separately cataloged 1786 Putnam manuscript might preserve settlement years and parcel details.",
+        "not_proved": "Co-occurrence on a petition is not sibling proof, no source establishes birth parents, and the unreviewed 1820 census does not equate the minor with the 1837 decedent.",
+        "next_checks": [
+          "Retrieve Massachusetts Archives SC1/Series 228 original 1785 petition and signatures/annotations, not just the 1889 printing.",
+          "Read Rufus Putnam's 18 March 1786 manuscript report/settlers' lot list from Maine State Archives Box 001.",
+          "Compare exact settlement parcels, ages and residence sequence with identified Hope records and pre-1785 Topsham originals.",
+          "Do not add a parent, sibling or generational connection until an original contemporary identity bridge is documented."
+        ],
+        "existing_route": "?page=collection&view=fox-originals",
+        "research_value": "Potential eighteenth-century origin connection but higher uncertainty; preserve as an open historical identity question."
+      }
+    ]
+  }
+]
