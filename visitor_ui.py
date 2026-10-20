@@ -437,6 +437,10 @@ def render_media_page() -> None:
          "Explore original evidence"]
     )
     with photos_tab:
+        if str(st.query_params.get("person") or ""):
+            st.caption("The selected-relative filter applies to the family "
+                       "photographs below. The other historical source tabs "
+                       "remain complete and independent.")
         render_colony_photographs()
     with images_tab:
         search = st.text_input("Search images, captions, people or places", key="media_search").strip()
