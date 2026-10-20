@@ -17,6 +17,7 @@ import streamlit as st
 from genealogy_integrity import connected_components
 from family_bridge_lab import PROPOSALS, bridge_preview, proposal_worklist
 from identity_claim_review import render_conflict_review
+from original_record_intake import render_acquisition_center
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -179,6 +180,13 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
         render_conflict_review(people, selected=requested_conflict)
         st.divider()
 
+    # Original-document recovery is the priority for research visitors.
+    # Keep direct book-marked source targets close to the top of the view.
+    requested_source = str(st.query_params.get("source_target") or "")
+    if requested_source or st.query_params.get("acquire") == "1":
+        render_acquisition_center(people, selected=requested_source)
+        st.divider()
+
     valid_ids = ["", *(case["id"] for case in cases)]
     requested_option = requested if requested in case_by_id else ""
     if st.session_state.get("_origins_last_case_query") != requested_option:
@@ -268,6 +276,9 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
                        expedition_route(item["case"]))
             route_link("Compare the currently separate family groups",
                        "?page=collection&view=integrity&section=branches")
+    if not (requested_source or st.query_params.get("acquire") == "1"):
+        st.divider()
+        render_acquisition_center(people)
     st.divider()
     st.subheader("Take the evidence checklist to the archives")
     st.write("Every case includes its exact reel, register, page or image "
