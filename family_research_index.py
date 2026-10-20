@@ -637,6 +637,30 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             status="Historical publication name · ancestry identity not proved",
             source_date=record["date_label"],
         ))
+    # Phase 45: a counted 1790 household, original 1820 reel, and
+    # new scholarly migration context. Do not duplicate Phase 30's existing
+    # 1785 petition / 1786 Putnam box references in the discovery index.
+    from early_fox_island_atlas import load_early_islands, early_islands_route
+    earliest=load_early_islands(root/"phase45_early_island_census_settlement_context.json")
+    earliest_sources={s["id"]:s for s in earliest["sources"]}
+    already_indexed={"1785-settlement-petition-context","1786-putnam-context"}
+    for item in earliest["findings"]:
+        if item["id"] in already_indexed:
+            continue
+        source=earliest_sources[item["source_id"]]
+        records.append(_item(
+            id="early-islands:" + item["id"],
+            category="Historical record trails",
+            title=f"{item['year']} · {item['title']}",
+            summary=item["detail"],
+            limits=item["limits"]+" "+source["limitations"],
+            people_ids=[],
+            route=early_islands_route(item["id"]),
+            sources=_links([{"title":source["title"],"url":source["url"]}]),
+            keywords=item["manuscript_target"]+" "+item["name_as_printed"],
+            status="Published source or finding aid · original genealogical identity unverified",
+            source_date=item["year"],
+        ))
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(
