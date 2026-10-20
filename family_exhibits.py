@@ -22,6 +22,7 @@ from primary_source_expedition import cases_for_person, expedition_route
 from identity_claim_review import cases_for_person as conflicting_cases_for_person, claim_review_route
 from original_record_intake import acquisition_for_person, acquisition_route
 from vinalhaven_civic_history import civic_for_candidate, civic_route
+from fox_islands_government_trail import trail_for_candidate,trail_route
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
@@ -424,6 +425,13 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
         for printed_name in printed:
             route_link("Compare historical civic name: " + printed_name,
                        civic_route(printed_name))
+    early_community = trail_for_candidate(person_id)
+    if early_community:
+        st.caption("Earlier Fox Islands government and household source-name "
+                   "comparisons (NOT verified identities)")
+        for item in early_community:
+            route_link("Compare source name: " + item["date_label"] + " · " +
+                       item["printed_name"], trail_route(item["id"]))
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):
