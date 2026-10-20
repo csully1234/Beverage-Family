@@ -570,6 +570,29 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             status=conflict["status"], source_date=conflict["period"].split("–")[0],
         ))
 
+    # Phase 42: finding aids and open document requests; never describe an
+    # uninspected original as a confirmed parentage citation.
+    from original_record_intake import load_acquisition, acquisition_route
+    retrieval = load_acquisition(root / "phase42_primary_document_acquisition.json")
+    owners = {x["id"]: x for x in retrieval["custodians"]}
+    for target in retrieval["targets"]:
+        records.append(_item(
+            id="original-retrieval:" + target["id"],
+            category="Open identity questions",
+            title=target["title"],
+            summary=target["event"] + ". " + target["source_locator"],
+            limits="NOT INSPECTED: " + target["evidence_needed"],
+            people_ids=[pid for pid in target["person_ids"] if pid in people_by_id],
+            route=acquisition_route(target["id"]),
+            sources=_links([{"title": "Original research finding aid",
+                             "url": target["url"]}] + [
+                             {"title": owners[oid]["name"], "url": owners[oid]["url"]}
+                             for oid in target["custodian_ids"]
+                        ]),
+            keywords=target["initial_query"] + " " + target["places"],
+            status="Original source NOT inspected · request/inspect original",
+            source_date=target["event"].split(" ")[0],
+        ))
     for pid, person in people_by_id.items():
         from family_data import life_span
         records.append(_item(
