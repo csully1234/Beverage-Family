@@ -15,6 +15,7 @@ from urllib.parse import quote
 import streamlit as st
 
 from genealogy_integrity import connected_components
+from family_bridge_lab import PROPOSALS, bridge_preview, proposal_worklist
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -225,6 +226,37 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
                     st.write(str(index) + ". " + task)
             route_link("Open or bookmark this exact research investigation",
                        expedition_route(case["id"]), type="tertiary")
+    st.divider()
+    st.subheader("Family connection laboratory — explore without changing the tree")
+    st.write("What would happen if a proposed parent-child relationship were eventually "
+             "proved by an original register? Compare the recorded family groups "
+             "with a hypothetical view. **No relationship is added or saved.**")
+    st.caption("Both possible parents below come from ONE contributed genealogy, "
+               "not two independent witnesses. The printed 1865 kinship clue "
+               "does not identify the parents.")
+    selected_bridges = st.multiselect(
+        "Research a potential parentage connection",
+        [p["id"] for p in PROPOSALS],
+        format_func=lambda pid: next(p["title"] for p in PROPOSALS
+                                     if p["id"] == pid),
+        key="origins_unproved_bridge_preview",
+    )
+    preview = bridge_preview(PROPOSALS, people, relationships, selected_bridges)
+    col_before, col_after = st.columns(2)
+    col_before.metric("Recorded separate family groups", preview["before"])
+    col_after.metric("IF selected theories were proven",
+                     preview["hypothetical_after"])
+    st.caption("The hypothetical count is an in-memory illustration only. The "
+               "published graph and every person's parents remain unchanged.")
+    for item in proposal_worklist(PROPOSALS, people):
+        with st.expander(item["title"] + " — ORIGINAL PROOF REQUIRED"):
+            st.write(item["basis"])
+            st.warning("Before changing the family tree: " + item["needed"])
+            st.caption("Current evidence status: " + item["status"])
+            route_link("Read all original-record targets for this bridge",
+                       expedition_route(item["case"]))
+            route_link("Compare the currently separate family groups",
+                       "?page=collection&view=integrity&section=branches")
     st.divider()
     st.subheader("Take the evidence checklist to the archives")
     st.write("Every case includes its exact reel, register, page or image "
