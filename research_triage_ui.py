@@ -89,9 +89,11 @@ def render_archive_access(people: dict, events: list[dict],
     st.caption(str(len(filtered)) + " profile(s) match. A missing external URL "
                "is an archival retrieval task, not proof no evidence exists.")
     if filtered:
+        ids = [row["id"] for row in filtered]
+        requested = str(st.query_params.get("person") or "")
         selected_id = st.selectbox(
             "Read one relative's complete source-access paths",
-            [row["id"] for row in filtered],
+            ids, index=ids.index(requested) if requested in ids else 0,
             format_func=lambda pid: str(people[pid].get("full_name") or pid),
         )
         row = next(r for r in filtered if r["id"] == selected_id)
