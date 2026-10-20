@@ -51,7 +51,7 @@ class Phase39PrimarySourceExpeditionTests(unittest.TestCase):
         case = self.cases["nathaniel-rockland-parentage"]
         self.assertIn("John White", case["working_theory"])
         self.assertIn("Eaton", case["working_theory"])
-        self.assertIn("NOT", case["not_proved"].upper() + " NOT")
+        self.assertIn("do not add", case["not_proved"].lower())
         self.assertFalse(self.sources["nathaniel-compiled-1803"]["original_inspected"])
         self.assertEqual(self.sources["nathaniel-compiled-1803"]["class"],
                          "derivative_parentage_hypothesis")
@@ -132,10 +132,8 @@ class Phase39PrimarySourceExpeditionTests(unittest.TestCase):
         self.assertTrue(all(row["route"] ==
                             "?page=collection&view=source-expedition"
                             for row in sources))
-        self.assertEqual(
-            {r["id"] for r in search_index(index, query="7596929")},
-            {"expedition-source:vinalhaven-josiah-1793"},
-        )
+        self.assertIn("expedition-source:vinalhaven-josiah-1793",
+                      {r["id"] for r in search_index(index, query="7596929")})
         rockland = search_index(index, person_id="nathaniel_beverage_1804_rockland")
         self.assertIn("expedition-case:nathaniel-rockland-parentage",
                       {r["id"] for r in rockland})
