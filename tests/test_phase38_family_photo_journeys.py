@@ -153,7 +153,7 @@ class Phase38PhotographsNavigationTests(unittest.TestCase):
         self.assertLess(gallery.index("if target is not None:"),
                         gallery.index("remaining = [photo for photo in matches"))
         self.assertLess(book.index("    render_scanned_page(book, int(selected), width=1080)"),
-                        book.index("        if st.toggle(\"Open complete 305-page PDF viewer\""))
+                         book.index('        if st.toggle("Open complete 305-page PDF viewer"'))
         self.assertIn("photo_gallery_route(pdf_page=int(selected))", book)
         self.assertIn("photo_gallery_route(person_id=overview[\"id\"])",
                       (ROOT / "family_exhibits.py").read_text(encoding="utf-8"))
