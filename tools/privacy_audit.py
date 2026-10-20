@@ -105,7 +105,7 @@ def archive_privacy_report(root: Path = ROOT, paths: list[str] | None = None) ->
             bool(re.search(r"(?m)^\s*enableStaticServing\s*=\s*true\b", config,
                            flags=re.IGNORECASE)),
         "predictable_static_book_urls_disabled":
-            bool(re.search(r"(?m)^\\s*enableStaticServing\\s*=\\s*false\\b",
+            bool(re.search(r"(?m)^\s*enableStaticServing\s*=\s*false\b",
                            config, flags=re.IGNORECASE)),
         "repository_visibility": "check GitHub repository settings; not inferred from checkout",
         "render_app_password_configuration": "not inspected; never print secret values",
