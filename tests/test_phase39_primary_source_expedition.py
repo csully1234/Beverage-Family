@@ -12,6 +12,7 @@ from family_research_index import build_index, search_index
 from genealogy_integrity import connected_components
 from primary_source_expedition import (
     load_expedition, branch_status, source_progress, expedition_csv,
+    cases_for_person,
     expedition_route,
 )
 from validation import validate_site_data
@@ -46,6 +47,12 @@ class Phase39PrimarySourceExpeditionTests(unittest.TestCase):
             self.assertTrue(all(pid in self.people for pid in case["people_ids"]))
         self.assertIn("case=nathaniel-rockland-parentage",
                       expedition_route("nathaniel-rockland-parentage"))
+        self.assertEqual(
+            [item["id"] for item in cases_for_person(
+                "nathaniel_beverage_1804_rockland", self.research)],
+            ["nathaniel-rockland-parentage"],
+        )
+        self.assertEqual(cases_for_person("not-an-indexed-person", self.research), [])
 
     def test_nathaniel_reported_parentage_is_only_a_derivative_candidate(self):
         case = self.cases["nathaniel-rockland-parentage"]
