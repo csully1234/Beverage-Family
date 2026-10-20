@@ -104,6 +104,9 @@ def archive_privacy_report(root: Path = ROOT, paths: list[str] | None = None) ->
         "streamlit_static_serving_enabled":
             bool(re.search(r"(?m)^\s*enableStaticServing\s*=\s*true\b", config,
                            flags=re.IGNORECASE)),
+        "predictable_static_book_urls_disabled":
+            bool(re.search(r"(?m)^\s*enableStaticServing\s*=\s*false\b",
+                           config, flags=re.IGNORECASE)),
         "repository_visibility": "check GitHub repository settings; not inferred from checkout",
         "render_app_password_configuration": "not inspected; never print secret values",
         "approval_required_before":
@@ -113,8 +116,9 @@ def archive_privacy_report(root: Path = ROOT, paths: list[str] | None = None) ->
              "moving or republishing copyright-controlled family materials"],
         "notes": [
             "The current website password gates the app UI, not a public Git repository.",
-            "Static file serving may expose book PDF files without the Streamlit login; "
-            "verify actual direct URLs and migrate assets to an authenticated path.",
+            "Predictable /app/static book URLs are disabled in checked-in configuration, "
+            "but runtime overrides and Streamlit session media URLs still require "
+            "HTTP-layer access-control review.",
             "Existing legacy password fallback must be migrated without changing family access.",
             "A filename audit cannot certify that living-family data are safe to publish.",
         ],
@@ -131,8 +135,12 @@ def main() -> int:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(text, encoding="utf-8")
     print(text)
-    if result["blocked_tracked_paths"] or not result["web_login_precedes_archive_load"]:
-        print("Privacy guard failed: tracked restricted file or login gate regression.")
+    if (result["blocked_tracked_paths"] or
+            not result["web_login_precedes_archive_load"] or
+            not result["predictable_static_book_urls_disabled"] or
+            result["streamlit_static_serving_enabled"]):
+        print("Privacy guard failed: forbidden tracked file, login ordering, "
+              "or public static serving regression.")
         return 1
     print("Safe-source filename and login-order guard passed. Full privacy cutover remains outstanding.")
     return 0
