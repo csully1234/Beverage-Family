@@ -21,6 +21,7 @@ from family_navigation import branch_context, unresolved_relative_ids
 from primary_source_expedition import cases_for_person, expedition_route
 from identity_claim_review import cases_for_person as conflicting_cases_for_person, claim_review_route
 from original_record_intake import acquisition_for_person, acquisition_route
+from vinalhaven_civic_history import civic_for_candidate, civic_route
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
@@ -415,6 +416,14 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
         for target in original_targets:
             route_link("Find original: " + target["title"],
                        acquisition_route(target["id"]))
+    possible_civic = civic_for_candidate(person_id)
+    if possible_civic:
+        st.caption("Same-name officeholders in the 1889 Vinalhaven civic history — "
+                   "identity NOT verified by this printed name")
+        printed = sorted({row["printed_name"] for row in possible_civic})
+        for printed_name in printed:
+            route_link("Compare historical civic name: " + printed_name,
+                       civic_route(printed_name))
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):
