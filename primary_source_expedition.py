@@ -16,6 +16,7 @@ import streamlit as st
 
 from genealogy_integrity import connected_components
 from family_bridge_lab import PROPOSALS, bridge_preview, proposal_worklist
+from identity_claim_review import render_conflict_review
 from routing_ui import route_link, safe_external_url
 
 DATA = Path(__file__).resolve().parent / "data" / "phase39_primary_record_expedition.json"
@@ -226,6 +227,8 @@ def render_source_expedition(people: dict, relationships: dict) -> None:
                     st.write(str(index) + ". " + task)
             route_link("Open or bookmark this exact research investigation",
                        expedition_route(case["id"]), type="tertiary")
+    st.divider()
+    render_conflict_review(people, selected=str(st.query_params.get("conflict_case") or ""))
     st.divider()
     st.subheader("Family connection laboratory — explore without changing the tree")
     st.write("What would happen if a proposed parent-child relationship were eventually "
