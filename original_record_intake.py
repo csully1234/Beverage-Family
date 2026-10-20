@@ -18,7 +18,10 @@ FILE = Path(__file__).resolve().parent / "data" / "phase42_primary_document_acqu
 
 
 def load_acquisition(path: Path = FILE) -> dict:
-    content = json.loads(path.read_text(encoding="utf-8"))
+    records = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(records, list) or len(records) != 1 or not isinstance(records[0], dict):
+        raise ValueError("Expected one versioned primary-source acquisition register")
+    content = records[0]
     targets = content.get("targets") or []
     custodians = content.get("custodians") or []
     if len(targets) != 9 or len(custodians) < 5:
