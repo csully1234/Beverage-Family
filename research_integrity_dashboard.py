@@ -12,6 +12,7 @@ from urllib.parse import quote
 import streamlit as st
 
 from family_data import life_span
+from research_triage_ui import render_archive_access, render_missing_reference_cases
 from genealogy_integrity import audit_family_archive, audit_csv
 from relationship_evidence import KIND_NAMES, STATUS_NAMES
 from routing_ui import route_link
@@ -88,7 +89,7 @@ def _summary(data: dict, people: dict) -> None:
             route_link("Open the relevant evidence", route)
 
 
-def _branches(data: dict, people: dict) -> None:
+def _branches(data: dict, people: dict, relationships: dict) -> None:
     st.subheader("Disconnected family groups")
     st.write("All groups below are complete connected components of the recorded "
              "family links. Separate groups may be historically related, but that "
@@ -131,12 +132,7 @@ def _branches(data: dict, people: dict) -> None:
     st.subheader("Incomplete referenced relatives")
     st.caption("The following are relationship IDs mentioned in a source profile "
                "but not fully represented as profiles. Some may remain unresolved.")
-    for entry in data["unresolved"]:
-        with st.container(border=True):
-            st.markdown("**" + entry["id"].replace("_", " ") + "**")
-            st.caption("Referenced by " + str(len(entry["referenced_by"])) + " indexed relative(s)")
-            for pid in entry["referenced_by"]:
-                _person_link(pid, people, prefix="Referenced from")
+    render_missing_reference_cases(people, relationships)
 
 
 def _relationship_row(row: dict, people: dict) -> None:
@@ -310,7 +306,7 @@ def render_integrity_dashboard(people: dict, events: list[dict],
     st.caption("Built from today's effective genealogy overlays; no people, tree edges, "
                "historical claims or images are edited by this dashboard.")
     section = str(st.query_params.get("section") or "overview")
-    options = ("overview", "branches", "relationships", "records", "exports")
+    options = ("overview", "branches", "relationships", "records", "access", "exports")
     if section not in options:
         section = "overview"
     control_key = "family_integrity_section"
@@ -321,6 +317,7 @@ def render_integrity_dashboard(people: dict, events: list[dict],
                       format_func=lambda value: {
                           "overview":"Overview","branches":"Disconnected branches",
                           "relationships":"Relationship evidence","records":"Missing records",
+                           "access":"Source access for all",
                           "exports":"Download checklists",
                       }[value], horizontal=True, key=control_key)
     st.session_state["_integrity_route"] = chosen
@@ -329,10 +326,12 @@ def render_integrity_dashboard(people: dict, events: list[dict],
     if chosen == "overview":
         _summary(data, people)
     elif chosen == "branches":
-        _branches(data, people)
+        _branches(data, people, relationships)
     elif chosen == "relationships":
         _relationships(data, people)
     elif chosen == "records":
         _records(data, people)
+    elif chosen == "access":
+        render_archive_access(people, events, relationships, data["edges"])
     else:
         _exports(data)

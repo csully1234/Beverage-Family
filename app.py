@@ -807,6 +807,8 @@ def render_home(
             ("Historical sources", "?page=archive"),
             ("Full illustrated family book", "?page=family-books"),
             ("Research and unresolved questions", "?page=collection&view=workbench"),
+            ("Complete evidence-access atlas", "?page=collection&view=integrity&section=access"),
+            ("Investigate missing family references", "?page=collection&view=integrity&section=branches"),
         ]
         for label, url in secondary_actions:
             route_link(label, url, type="tertiary")
@@ -1059,6 +1061,9 @@ def render_person_profile(
                exhibit_route(person_id), type="primary")
     route_link("Read all historical sources for this person",
                exhibit_route(person_id, "Original records"))
+    route_link("See this relative's sources across the entire archive",
+               "?page=collection&view=integrity&section=access&person=" +
+               quote(person_id, safe=""))
     route_link("Explore this person's family branch", "?page=tree&profile="+quote(person_id))
     route_link("View this person's timeline", "?page=timeline&person="+quote(person_id))
 
@@ -1614,7 +1619,8 @@ def render_tree_page(
             key="relationship_end",
         )
 
-    path = shortest_relationship_path(relationships, start_id, end_id)
+    path = shortest_relationship_path(relationships, start_id, end_id,
+                                      known_ids=people_by_id)
     if not path:
         st.info("No connection is established by the current records.")
     elif len(path) == 1:
