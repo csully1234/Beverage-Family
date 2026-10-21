@@ -856,28 +856,14 @@ def render_home(
     st.divider()
     left, right = st.columns([1.05, 1], gap="large")
     with left:
-        route_markdown("<div class='bev-eyebrow'>Start with a name</div>", unsafe_allow_html=True)
-        st.subheader("Find a family member")
-        ordered = sorted_people(people)
-        person_ids = [str(person["id"]) for person in ordered]
-        chosen = st.selectbox(
-            "Search the profile index",
-            options=[None, *person_ids],
-            format_func=lambda person_id: (
-                "Choose a person…" if person_id is None else
-                f"{surname_first_label(people_by_id[person_id])} · "
-                f"{life_span(people_by_id[person_id])}"
-            ),
-            key="home_person_lookup",
-            label_visibility="collapsed",
-        )
-        st.button(
-            "View this profile",
-            type="primary",
-            on_click=open_profile,
-            args=(chosen,) if chosen else (),
-            disabled=chosen is None,
-        )
+        route_markdown("<div class='bev-eyebrow'>Browse the whole family</div>", unsafe_allow_html=True)
+        st.subheader("Every relative stays accessible")
+        st.write("Use the name search at the top of this page for a quick start, "
+                 "or browse the full, continuous alphabetical directory—"
+                 "all indexed relatives remain available, with no page cap.")
+        route_link("See the complete people directory", "?page=people", width="stretch")
+        route_link("Search historical events and original documents", "?page=search",
+                   width="stretch")
 
         route_markdown("<div class='bev-eyebrow'>Research standard</div>", unsafe_allow_html=True)
         st.subheader("Evidence stays visible")
