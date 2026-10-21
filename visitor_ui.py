@@ -415,90 +415,134 @@ def render_stories_page() -> None:
                 route_link("Explore story", "?page=stories&story=" + item["id"], width="stretch")
 
 
+MEDIA_SECTIONS = {
+    "photos": "Family photographs",
+    "images": "Historical images & maps",
+    "documents": "Historical documents",
+    "evidence": "Original evidence & investigations",
+}
+
+
+def _media_section_changed() -> None:
+    value = str(st.session_state.get("visitor_media_section") or "photos")
+    if value in MEDIA_SECTIONS:
+        st.query_params["media_view"] = value
+        st.session_state["_media_last_route_section"] = value
+
+
 def render_media_page() -> None:
-    collection = load_collection()
-    st.title("Photographs & Documents")
-    st.write("Explore archival items and read historical records. We display original image files only when reuse rights and source identification are established.")
-    route_link("Explore the newly received Matthew Beverage 1837 probate document catalog",
-               "?page=collection&view=waldo-probate")
-    with st.container(border=True):
-        st.markdown("**The Colony — Complete Illustrated Family Book (2016)**")
-        st.write("Explore all 305 original pages, including 82 cataloged historic-photo pages and 103 photographic, map and illustration pages altogether, with author credits and their printed captions.")
-        route_link("Open the complete book and its visual collection", "?page=family-books")
+    st.title("Family Photographs & Original Documents")
+    st.caption("Choose what you want to explore. Only that collection loads, "
+               "so photographs and archive pages open faster on phones.")
     requested_case = str(st.query_params.get("case", "") or "")
     case_is_known = requested_case in {case["id"] for case in investigation_catalog()}
-    if case_is_known:
-        # Deep links from a relative profile lead straight to the case file.
-        render_investigations()
-        st.divider()
-    from colony_photos import render_colony_photographs
-    photos_tab, images_tab, documents_tab, evidence_tab = st.tabs(
-        ["Family photographs", "Other historical images", "Historical documents",
-         "Explore original evidence"]
+    requested_section = str(st.query_params.get("media_view") or "")
+    if requested_section not in MEDIA_SECTIONS:
+        requested_section = "evidence" if case_is_known else "photos"
+    if st.session_state.get("_media_last_route_section") != requested_section:
+        st.session_state["visitor_media_section"] = requested_section
+        st.session_state["_media_last_route_section"] = requested_section
+    section = st.selectbox(
+        "Browse the family archive",
+        list(MEDIA_SECTIONS),
+        format_func=lambda slug: MEDIA_SECTIONS[slug],
+        key="visitor_media_section",
+        on_change=_media_section_changed,
     )
-    with photos_tab:
+    st.caption("All historical media and original-source collections remain available "
+               "from this selector. No items have been removed.")
+    if section == "photos":
+        from colony_photos import render_colony_photographs
         if str(st.query_params.get("person") or ""):
-            st.caption("The selected-relative filter applies to the family "
-                       "photographs below. The other historical source tabs "
-                       "remain complete and independent.")
+            st.caption("This gallery is filtered to the selected relative; "
+                       "other collections remain complete.")
         render_colony_photographs()
-    with images_tab:
-        search = st.text_input("Search images, captions, people or places", key="media_search").strip()
-        order = st.selectbox("Order", ["Oldest associated year", "Newest associated year", "Holding institution"], key="media_order")
+        with st.expander("Read the complete illustrated family book"):
+            st.write("The Colony (2016) contains 305 original pages, 82 cataloged "
+                     "photograph-bearing pages and further illustrations and maps.")
+            route_link("Open the original 305-page edition", "?page=family-books")
+    elif section == "images":
+        collection = load_collection()
+        st.write("Explore historical image descriptions. The original scans remain "
+                 "linked to their holding archives when we cannot host them.")
+        search = st.text_input("Search images, captions, people or places",
+                               key="media_search").strip()
+        order = st.selectbox("Order", [
+            "Oldest associated year", "Newest associated year", "Holding institution"
+        ], key="media_order")
         rows = [r for r in collection.inventory_rows("Images and Maps")
-                if not search or search.casefold() in json.dumps(r, ensure_ascii=False, default=str).casefold()]
+                if not search or search.casefold() in
+                json.dumps(r, ensure_ascii=False, default=str).casefold()]
         if order == "Holding institution":
             rows.sort(key=lambda r: str(r.get("Holding institution", "")).casefold())
         else:
-            rows.sort(key=lambda r: _year(r.get("Date")) or 9999, reverse=order == "Newest associated year")
-        st.caption(f"{len(rows)} archival item descriptions. An associated research year is not necessarily the photograph's capture date.")
+            rows.sort(key=lambda r: _year(r.get("Date")) or 9999,
+                      reverse=order == "Newest associated year")
+        st.caption(f"{len(rows)} archive descriptions. A historical associated "
+                   "year is not always a photo capture date.")
         approved = approved_assets()
         if not approved:
-            st.info("Original thumbnails will appear here after approved scans and rights information are added. Until then, use each item's holding-institution link.")
+            st.info("Original thumbnails will appear when approved scans are available. "
+                    "The holding-institution links remain accessible.")
         page_count = max(1, (len(rows) + 7) // 8)
-        page = st.selectbox("Catalog page", range(1, page_count + 1), format_func=lambda n: f"{n} of {page_count}", key="media_page")
+        # Avoid retaining a stale out-of-range page after a new search.
+        if st.session_state.get("media_page") not in range(1, page_count + 1):
+            st.session_state["media_page"] = 1
+        page = st.selectbox("Catalog page", range(1, page_count + 1),
+                            format_func=lambda n: f"{n} of {page_count}",
+                            key="media_page")
         for index in range((page - 1) * 8, min(page * 8, len(rows)), 2):
-            for col, record in zip(st.columns(2), rows[index:index+2]):
-                key = str(record.get("Collection or item identifier") or record.get("Item ID") or "")
+            for col, record in zip(st.columns(2), rows[index:index + 2]):
+                key = str(record.get("Collection or item identifier")
+                          or record.get("Item ID") or "")
                 asset = approved.get(key)
                 with col.container(border=True):
                     if asset:
-                        st.image(asset["path"], caption=asset.get("credit") or record.get("Holding institution"))
+                        st.image(asset["path"],
+                                 caption=asset.get("credit") or
+                                 record.get("Holding institution"))
                     else:
                         st.caption("Original scan not hosted")
                     st.markdown("**" + str(record.get("Subject", "Untitled archival item")) + "**")
-                    st.caption(str(record.get("Date", "Undated")) + " · " + str(record.get("Holding institution", "")))
+                    st.caption(str(record.get("Date", "Undated")) + " · " +
+                               str(record.get("Holding institution", "")))
                     st.write(str(record.get("Item or caption", "")))
                     link = record.get("Direct item page")
                     if isinstance(link, str) and link.startswith(("https://", "http://")):
-                        route_link("View original at archive", link)
-                        with st.expander("Show original archive page here"):
-                            st.caption("The holding institution controls whether previews are permitted. If blocked, use the original link above.")
-                            st.components.v1.iframe(link, height=520, scrolling=True)
+                        route_link("View the original at its historical archive", link)
                     with st.expander("Identification, rights & citation"):
                         st.write("Identifier: " + key)
                         st.write("Rights: " + str(record.get("Rights", "Unknown")))
                         st.write("Review: " + str(record.get("Viewed status", "Not reviewed")))
                         st.write("Resolution: " + str(record.get("High resolution", "Unknown")))
-    with documents_tab:
+    elif section == "documents":
+        st.write("Read the original historical documents with their source context.")
         for id_, document in DOCUMENTS.items():
             with st.container(border=True):
                 st.markdown("**" + document["title"] + "**")
                 st.caption(document["date"])
                 st.write(document["summary"])
-                route_link("Read document and original pages", "?page=documents&doc=" + id_)
-    with evidence_tab:
-        if not case_is_known:
-            cases_tab, sources_tab = st.tabs(
-                ["Family history investigations", "All linked source records"]
-            )
-            with cases_tab:
-                render_investigations()
-            with sources_tab:
+                route_link("Read document and original pages",
+                           "?page=documents&doc=" + id_)
+    else:
+        st.write("Explore researched family-history questions and the linked source library.")
+        if case_is_known:
+            render_investigations()
+            with st.expander("Browse all linked source records"):
                 render_exhibit_library()
         else:
-            render_exhibit_library()
-
+            evidence_choice = st.selectbox(
+                "Choose evidence collection",
+                ("Family history investigations", "All linked source records"),
+                key="visitor_evidence_collection",
+            )
+            if evidence_choice == "Family history investigations":
+                render_investigations()
+            else:
+                render_exhibit_library()
+    if section != "documents":
+        route_link("Explore Matthew Beverage's 1837 probate document catalog",
+                   "?page=collection&view=waldo-probate", type="tertiary")
 
 def render_document_page() -> None:
     doc_id = st.query_params.get("doc", "thomas-1786")
