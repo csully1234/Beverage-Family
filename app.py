@@ -55,6 +55,7 @@ from profile_life_stories import render_profile_life_record, render_profile_phot
 from relationship_evidence import render_profile_relationship_review, render_relationship_coverage
 from ancestry_bridge_casework import render_person_bridge_casework
 from visitor_journeys import (render_journey_bar, render_recent_profile_links, visit_person)
+from visitor_fast_paths import render_home_fast_find
 from family_exhibits import exhibit_route
 from family_photo_navigation import photo_gallery_route
 from family_navigation import connected_relatives, connected_profile_ids, unresolved_relative_ids
@@ -786,6 +787,8 @@ def render_home(
         unsafe_allow_html=True,
     )
 
+    render_home_fast_find(dict(people_by_id))
+    st.divider()
     st.subheader("Start exploring")
     st.caption("Six ways into the archive. Each brings you back to relatives, "
                "historical places or the evidence behind a story.")
