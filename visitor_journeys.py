@@ -11,6 +11,7 @@ from urllib.parse import quote
 import streamlit as st
 
 from routing_ui import route_link
+from visitor_fast_paths import family_shortcuts
 
 
 JOURNEYS = {
@@ -138,13 +139,23 @@ def render_journey_bar(page: str, people_by_id: dict) -> None:
         return
     selected = current_person(people_by_id, page)
     with st.container(border=True):
-        st.caption("KEEP EXPLORING · " + page)
         if selected:
-            st.caption("Selected relative: " + str(people_by_id[selected].get("full_name") or selected))
-        columns = st.columns(3)
-        for col, (label, url) in zip(columns, suggested_paths(page, selected)):
-            with col:
-                route_link(label + " →", url, width="stretch")
+            st.caption("FOLLOW THIS RELATIVE · " +
+                       str(people_by_id[selected].get("full_name") or selected))
+            paths = family_shortcuts(selected, people_by_id)
+            for offset in (0, 2):
+                for col, (label, url) in zip(st.columns(2), paths[offset:offset + 2]):
+                    with col:
+                        route_link(label, url, width="stretch")
+            with st.expander("More places to explore"):
+                for label, url in suggested_paths(page, selected):
+                    route_link(label + " →", url, type="tertiary")
+        else:
+            st.caption("KEEP EXPLORING · " + page)
+            columns = st.columns(3)
+            for col, (label, url) in zip(columns, suggested_paths(page)):
+                with col:
+                    route_link(label + " →", url, width="stretch")
 
 
 def render_recent_profile_links(people_by_id: dict) -> None:

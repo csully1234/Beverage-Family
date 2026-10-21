@@ -118,7 +118,7 @@ class StreamlitSmokeTests(unittest.TestCase):
     def test_family_photo_gallery_and_event_citation_access(self):
         app = self.logged_in_app(page="media")
         self.assertFalse(app.exception, [e.value for e in app.exception])
-        self.assertTrue(any("Family photographs" in tab.label for tab in app.tabs))
+        self.assertEqual(app.selectbox(key="visitor_media_section").value, "photos")
         self.assertTrue(any("82 cataloged photo-bearing pages" in str(x.value) for x in app.caption))
         self.assertIn("Load 12 more photographs", app.button(key="colony_photo_load_more").label)
         app.button(key="colony_photo_load_more").click().run()
@@ -478,15 +478,18 @@ class StreamlitSmokeTests(unittest.TestCase):
         pid = "matthew_beveridge_hope_1837"
         app = self.logged_in_app(page="collection", view="person-exhibit", person=pid)
         self.assertFalse(app.exception, [error.value for error in app.exception])
-        self.assertEqual(app.radio(key="exhibit_section_" + pid).value, "Life & timeline")
+        self.assertEqual(app.selectbox(key="exhibit_section_" + pid).value, "Life & timeline")
         self.assertTrue(any("Matthew" in str(e.value) for e in app.title))
-        self.assertTrue(any("Dated entries" in e.label for e in app.metric))
-        app.radio(key="exhibit_section_" + pid).set_value("Original records").run()
+        # Family life and documents should appear before specialist research
+        # controls, not beneath a wall of source queues on a phone.
+        self.assertTrue(any("A life told through recorded events" in str(e.value)
+                            for e in app.subheader))
+        app.selectbox(key="exhibit_section_" + pid).select("Original records").run()
         self.assertFalse(app.exception, [error.value for error in app.exception])
         self.assertEqual(app.query_params.get("section"), ["Original records"])
         self.assertTrue(any("Find the actual evidence" in str(e.value)
                             for e in app.subheader))
-        app.radio(key="exhibit_section_" + pid).set_value("Family connections").run()
+        app.selectbox(key="exhibit_section_" + pid).select("Family connections").run()
         self.assertFalse(app.exception, [error.value for error in app.exception])
         self.assertIn("Clarissa", " ".join(b.label for b in app.button))
 
@@ -495,7 +498,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         app = self.logged_in_app(page="collection", view="person-exhibit",
                                  person=pid, section="Photographs & book")
         self.assertFalse(app.exception, [error.value for error in app.exception])
-        self.assertEqual(app.radio(key="exhibit_section_" + pid).value, "Photographs & book")
+        self.assertEqual(app.selectbox(key="exhibit_section_" + pid).value, "Photographs & book")
         self.assertTrue(any("original PDF page" in str(e.value) for e in app.caption))
         missing = self.logged_in_app(page="collection", view="person-exhibit",
                                      person="nonexistent_hist_person")
