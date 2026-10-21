@@ -27,6 +27,7 @@ from early_fox_island_atlas import source_atlas_for_candidate, early_islands_rou
 from colony_photos import source_photo_preview
 from family_photo_navigation import photo_gallery_route
 from routing_ui import route_link
+from visitor_fast_paths import family_shortcuts
 
 SECTIONS = (
     "Life & timeline", "Original records", "Photographs & book", "Family connections"
@@ -383,74 +384,24 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
     st.caption(life_span(person))
     st.write("Explore the recorded life, follow family connections, "
              "and examine the records behind the story.")
-    info = st.columns(3)
-    info[0].metric("Dated entries", len(overview["milestones"]))
-    info[1].metric("Attributed research items", len(overview["research"]))
-    info[2].metric("Book-photo pages", len(overview["photos"]))
-    st.caption("These are catalog counts, not counts of independently verified events or original manuscripts.")
-    nav = st.columns(3)
-    with nav[0]:
-        route_link("Open person's profile", "?page=people&profile=" + quote(person_id, safe=""),
-                   width="stretch")
-    with nav[1]:
-        route_link("Focused tree", "?page=tree&profile=" + quote(person_id, safe=""),
-                   width="stretch")
-    with nav[2]:
-        route_link("Full family map", "?page=full-tree&profile=" + quote(person_id, safe=""),
-                   width="stretch")
-
-    # Offer relevant original-document investigations where a precise indexed
-    # person's identity is being studied. A case link is not family-link proof.
-    open_cases = cases_for_person(person_id)
-    if open_cases:
-        st.caption("Open family-origin research questions connected to this record")
-        for item in open_cases:
-            route_link("Investigate: " + item["title"], expedition_route(item["id"]))
-    conflicting = conflicting_cases_for_person(person_id)
-    if conflicting:
-        st.caption("Historical identity and parentage questions requiring original records")
-        for dispute in conflicting:
-            route_link("Compare sources: " + dispute["title"],
-                       claim_review_route(dispute["id"]))
-    original_targets = acquisition_for_person(person_id)
-    if original_targets:
-        st.caption("Original records still needed to verify this relative's ancestry")
-        for target in original_targets:
-            route_link("Find original: " + target["title"],
-                       acquisition_route(target["id"]))
-    possible_civic = civic_for_candidate(person_id)
-    if possible_civic:
-        st.caption("Same-name officeholders in the 1889 Vinalhaven civic history — "
-                   "identity NOT verified by this printed name")
-        printed = sorted({row["printed_name"] for row in possible_civic})
-        for printed_name in printed:
-            route_link("Compare historical civic name: " + printed_name,
-                       civic_route(printed_name))
-    early_community = trail_for_candidate(person_id)
-    if early_community:
-        st.caption("Earlier Fox Islands government and household source-name "
-                   "comparisons (NOT verified identities)")
-        for item in early_community:
-            route_link("Compare source name: " + item["date_label"] + " · " +
-                       item["printed_name"], trail_route(item["id"]))
-    earlier_census=source_atlas_for_candidate(person_id)
-    if earlier_census:
-        st.caption("Historic surname-matched 1790 household research, "
-                   "not evidence of a confirmed profile identity")
-        for row in earlier_census:
-            route_link("Read original census context: " + row["title"],
-                       early_islands_route(row["id"]))
+    # Navigation and the actual requested content come FIRST; mobile visitors
+    # should never scroll past dozens of unresolved-source controls to see
+    # their chosen life story, photograph or primary document.
+    for offset in (0, 2):
+        for col, (label, url) in zip(st.columns(2),
+                                     family_shortcuts(person_id, dict(people))[offset:offset+2]):
+            with col:
+                route_link(label, url, width="stretch")
     requested = str(st.query_params.get("section", "") or "")
     state_key = "exhibit_section_" + person_id
     if st.session_state.get("_last_exhibit_route") != (person_id, requested):
         st.session_state[state_key] = requested if requested in SECTIONS else SECTIONS[0]
         st.session_state["_last_exhibit_route"] = (person_id, requested)
-    selected = st.radio("Explore this relative", SECTIONS,
-                        key=state_key, horizontal=True,
-                        on_change=sync_exhibit_section, args=(person_id,))
-    # Remember the selection after Streamlit updates the URL in a widget callback.
-    st.session_state["_last_exhibit_route"] = (person_id, str(st.query_params.get("section", "") or ""))
-
+    selected = st.selectbox("Explore this relative",
+                            SECTIONS, key=state_key,
+                            on_change=sync_exhibit_section, args=(person_id,))
+    st.session_state["_last_exhibit_route"] = (
+        person_id, str(st.query_params.get("section", "") or ""))
     if selected == SECTIONS[0]:
         _life_section(person, overview)
     elif selected == SECTIONS[1]:
@@ -458,4 +409,67 @@ def render_person_exhibit(person_id: str, people: Mapping[str, dict],
     elif selected == SECTIONS[2]:
         _photographs_section(overview)
     else:
-        _family_section(overview, people, relationships or relationship_index(people.values()))
+        _family_section(overview, people,
+                        relationships or relationship_index(people.values()))
+    # Specialist investigations and long candidate-name lists are optional,
+    # never deleted; only load them when visitors actually request them.
+    st.divider()
+    if st.toggle("Show deeper research, open questions and additional family views",
+                 value=False, key="exhibit_extra_research_" + person_id):
+        info = st.columns(3)
+        info[0].metric("Dated entries", len(overview["milestones"]))
+        info[1].metric("Attributed research items", len(overview["research"]))
+        info[2].metric("Book-photo pages", len(overview["photos"]))
+        st.caption("These are catalog counts, not counts of independently verified events or original manuscripts.")
+        nav = st.columns(3)
+        with nav[0]:
+            route_link("Open person's profile", "?page=people&profile=" + quote(person_id, safe=""),
+                       width="stretch")
+        with nav[1]:
+            route_link("Focused tree", "?page=tree&profile=" + quote(person_id, safe=""),
+                       width="stretch")
+        with nav[2]:
+            route_link("Full family map", "?page=full-tree&profile=" + quote(person_id, safe=""),
+                       width="stretch")
+
+        # Offer relevant original-document investigations where a precise indexed
+        # person's identity is being studied. A case link is not family-link proof.
+        open_cases = cases_for_person(person_id)
+        if open_cases:
+            st.caption("Open family-origin research questions connected to this record")
+            for item in open_cases:
+                route_link("Investigate: " + item["title"], expedition_route(item["id"]))
+        conflicting = conflicting_cases_for_person(person_id)
+        if conflicting:
+            st.caption("Historical identity and parentage questions requiring original records")
+            for dispute in conflicting:
+                route_link("Compare sources: " + dispute["title"],
+                           claim_review_route(dispute["id"]))
+        original_targets = acquisition_for_person(person_id)
+        if original_targets:
+            st.caption("Original records still needed to verify this relative's ancestry")
+            for target in original_targets:
+                route_link("Find original: " + target["title"],
+                           acquisition_route(target["id"]))
+        possible_civic = civic_for_candidate(person_id)
+        if possible_civic:
+            st.caption("Same-name officeholders in the 1889 Vinalhaven civic history — "
+                       "identity NOT verified by this printed name")
+            printed = sorted({row["printed_name"] for row in possible_civic})
+            for printed_name in printed:
+                route_link("Compare historical civic name: " + printed_name,
+                           civic_route(printed_name))
+        early_community = trail_for_candidate(person_id)
+        if early_community:
+            st.caption("Earlier Fox Islands government and household source-name "
+                       "comparisons (NOT verified identities)")
+            for item in early_community:
+                route_link("Compare source name: " + item["date_label"] + " · " +
+                           item["printed_name"], trail_route(item["id"]))
+        earlier_census=source_atlas_for_candidate(person_id)
+        if earlier_census:
+            st.caption("Historic surname-matched 1790 household research, "
+                       "not evidence of a confirmed profile identity")
+            for row in earlier_census:
+                route_link("Read original census context: " + row["title"],
+                           early_islands_route(row["id"]))
