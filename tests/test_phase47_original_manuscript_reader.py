@@ -108,10 +108,12 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertEqual(len(original), 7)
         self.assertTrue(all(x["category"] == "Historical source exhibits" for x in original))
         self.assertTrue(all(x["person_ids"] == [] for x in original))
-        self.assertTrue(all(x["route"] == "?page=collection&view=fox-originals"
-                            for x in original))
+        self.assertTrue(all(x["route"] == "?page=collection&view=fox-originals&leaf=" +
+                            x["id"].split(":", 1)[1] for x in original))
         names = search_index(findings, query="Matthew Beveridge")
         self.assertIn("fox-manuscript:petition-3", {r["id"] for r in names})
+        matched = next(x for x in names if x["id"] == "fox-manuscript:petition-3")
+        self.assertTrue(matched["route"].endswith("&leaf=petition-3"))
 
     def test_gallery_prevents_file_path_traversal(self):
         with self.assertRaises(ValueError):
