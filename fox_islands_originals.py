@@ -112,7 +112,7 @@ def render_fox_originals() -> None:
     a,b,c = st.columns(3)
     a.metric("Digitized archival map/list records", len(grouped["digitized_maps"]))
     b.metric("Still-outstanding Putnam manuscript", 1)
-    c.metric("Full original images now on site", 7)
+    c.metric("Prepared images · publication pending", 7)
     st.caption("These figures count **different catalog entries**, not "
                "independent witnesses to one person's ancestry. Two map "
                "entries may reproduce the same historic plan.")
