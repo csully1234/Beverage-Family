@@ -71,16 +71,22 @@ def _source_card(source: dict) -> None:
         st.caption(source["date"] + " · " + source["repository"])
         st.caption("Exact locator: " + source["identifier"])
         st.write(source["establishes"])
-        st.caption("What was examined: " + source["inspected"])
+        if source["id"] == "fox-1785-petition-mass-resolve":
+            st.info("Historical October 19 access record. The actual seven-page "
+                    "petition/resolve scans were supplied October 26 and are "
+                    "now displayed and downloadable above. This old entry "
+                    "is retained to show the research chain.")
+        st.caption("What had been examined in the October 19 register: " +
+                   source["inspected"])
         st.caption("Does NOT prove: " + source["does_not_establish"])
         route_link("Open the holding institution's catalog or source", source["url"])
         with st.expander("Original document retrieval or examination checklist"):
             st.write(source["request"])
             if source["category"] in MANUSCRIPT:
                 st.code(request_note(source), language=None)
-                st.caption("This is a draft retrieval specification. "
-                           "No archivist was contacted, no purchase was made, and "
-                           "no unpublished scan was added to the website.")
+                st.caption("This is the original October 19 draft request, "
+                           "not evidence that a message was sent. Subsequent "
+                           "manuscript scans are independently documented above.")
 
 
 def render_fox_originals() -> None:
@@ -105,12 +111,12 @@ def render_fox_originals() -> None:
                "Capt. Thomas, or identity with Matthew of Hope (1837).")
     a,b,c = st.columns(3)
     a.metric("Digitized archival map/list records", len(grouped["digitized_maps"]))
-    b.metric("Specific original paper targets", len(grouped["original_requests"]))
-    c.metric("Verified Matthew parentage documents", 0)
+    b.metric("Still-outstanding Putnam manuscript", 1)
+    c.metric("Full original images now on site", 7)
     st.caption("These figures count **different catalog entries**, not "
                "independent witnesses to one person's ancestry. Two map "
                "entries may reproduce the same historic plan.")
-    tabs = st.tabs(("Digitized plans", "Original manuscripts to obtain",
+    tabs = st.tabs(("Digitized plans", "Earlier manuscript retrieval requests",
                     "Published records & access", "Three Matthews identity test"))
     with tabs[0]:
         st.subheader("Start with the state archives' original-era plan records")
