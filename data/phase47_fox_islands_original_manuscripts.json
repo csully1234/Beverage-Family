@@ -212,7 +212,14 @@
       }
     ],
     "published_images_date": "2026-10-26",
-    "published_image_policy": "Seven optimized JPEG derivatives are hosted with the family site. The original full-resolution TIFFs are retained in the separate preserved research package, not in GitHub. Citation: Massachusetts Archives SC1 Series 228 Chapter 97; scans supplied by project researcher; reproduction conditions to be checked with custodian.",
-    "manuscript_image_directory": "static/approved_media/fox_islands_1785"
+    "published_image_policy": "Seven optimized JPEG manuscript derivatives are staged in the repository, but the visitor-facing image display and downloads must be disabled until Massachusetts Archives Permission to Publish form and attribution terms are verified. Full-size original TIFFs are retained separately.",
+    "manuscript_image_directory": "static/approved_media/fox_islands_1785",
+    "publication_clearance": {
+      "status": "pending_massachusetts_archives_permission_to_publish_form",
+      "form_received": false,
+      "archive_credit_verified": false,
+      "source": "https://www.sec.state.ma.us/divisions/archives/research/research-services.htm",
+      "notes": "Source JPGs technically staged in a public GitHub development branch, but the web viewer must not enable full-image display/download until archive publication requirements are satisfied. Do not claim permission granted."
+    }
   }
 ]
