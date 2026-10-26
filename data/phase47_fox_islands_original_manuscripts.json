@@ -1,0 +1,150 @@
+{
+  "id": "fox-islands-massachusetts-legislative-manuscripts-1785-1786",
+  "edition_date": "2026-10-26",
+  "origin": "Seven supplied high-resolution TIFF scans of Massachusetts Archives, SC1 / Series 228, Passed Resolves, Feb. 1785 Session, ch. 97, and seven companion camera JPEGs.",
+  "manuscript_images_status": "original_scans_received_and_examined_not_hosted_in_repository",
+  "manuscripts_locally_available": 7,
+  "archival_identifier": "SC1 / Series 228, Passed Resolves, February 1785 session, Chapter 97",
+  "key_findings": [
+    {
+      "id": "fox-1785-james",
+      "name": "James Beveridge",
+      "document": "petition",
+      "leaf": 3,
+      "column": "left",
+      "evidence": "Name clearly written in the inhabitant list.",
+      "identity_status": "name-only; no confirmed link to a canonical person"
+    },
+    {
+      "id": "fox-1785-thomas",
+      "name": "Thomas Beveridge",
+      "document": "petition",
+      "leaf": 3,
+      "column": "right",
+      "evidence": "Name clearly written in the inhabitant list.",
+      "identity_status": "name-only; this manuscript does not identify him as the later town clerk"
+    },
+    {
+      "id": "fox-1785-matthew",
+      "name": "Matthew Beveridge",
+      "document": "petition",
+      "leaf": 3,
+      "column": "right",
+      "evidence": "Name followed by an annotation identifying him as 'a minor'.",
+      "identity_status": "name-only; no proved connection to the Matthew of Hope who died in 1837"
+    }
+  ],
+  "eligibility_date": "1784-01-01",
+  "survey_acres": 16527,
+  "settler_count_in_resolve": 72,
+  "entry_note": "'Seventy two settlers before the first day of January 1784' is a recited survey finding, not an individually named list of eligible grantees. The 75 inhabitants quoted in later accounts are a different count.",
+  "limits": "The list is reproduced in a manuscript petition; an individual entry is not itself proof that the person signed personally, occupied a particular lot, paid the grant assessment, or had any stated familial relationship.",
+  "leaves": [
+    {
+      "id": "petition-1",
+      "group": "Petition",
+      "leaf": 1,
+      "label": "Petition · leaf 1",
+      "description": "The inhabitants' account of earlier settlement, wartime evacuation and losses at Bagaduce.",
+      "excerpt": "That your Petitioners or their Ancestors did about Twenty Years since settle on the small Islands known by the Name of the Fox Islands …",
+      "confidence": "selected reading; spelling/punctuation normalized for search",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p1(1).tif"
+    },
+    {
+      "id": "petition-2",
+      "group": "Petition",
+      "leaf": 2,
+      "label": "Petition · leaf 2",
+      "description": "Request for recognition of the settlers' claims and the opening of the names list.",
+      "excerpt": "Your Petitioners are now peaceably resettled upon the said Islands … and also to found a Public School for the Education of their Children.",
+      "confidence": "selected reading; manuscript orthography retained in part",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p2(1).tif"
+    },
+    {
+      "id": "petition-3",
+      "group": "Petition",
+      "leaf": 3,
+      "label": "Petition · leaf 3",
+      "description": "Two-column settler-name list, including James, Thomas and Matthew Beveridge; legislative endorsement dated June 1, 1785.",
+      "excerpt": "James Beveridge [left column]; Thomas Beveridge [right column]; Matthew Beveridge — a minor [right column].",
+      "confidence": "direct visual reading of original, with abbreviation expanded for indexing",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif"
+    },
+    {
+      "id": "petition-4",
+      "group": "Petition",
+      "leaf": 4,
+      "label": "Petition · leaf 4 / endorsements",
+      "description": "Committee endorsement and rotated docket annotations; several marginal notes require second paleographic reading.",
+      "excerpt": "The Committee to whom was committed the aforesaid Petition have attended the Service assigned them & report the Resolve herewith presented.",
+      "confidence": "selected reading of main note; docket not fully transcribed",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p4(1).tif"
+    },
+    {
+      "id": "resolve-1",
+      "group": "Resolve",
+      "leaf": 1,
+      "label": "Resolve · leaf 1",
+      "description": "Senate resolve dated March 11, 1786; reports 16,527 acres and 72 settlers before January 1, 1784; grant and reserved public acreage.",
+      "excerpt": "… the said Islands contain in the whole sixteen thousand, five hundred and twenty seven acres … whereon were seventy two settlers before the first day of January 1784 …",
+      "confidence": "selected reading of original; punctuation regularized",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p1(1).tif"
+    },
+    {
+      "id": "resolve-2",
+      "group": "Resolve",
+      "leaf": 2,
+      "label": "Resolve · leaf 2",
+      "description": "Protection for bona fide purchasers of improvements and House approval dated March 13, 1786.",
+      "excerpt": "… the purchaser of such improvements, his heirs and assigns shall hold the same lands which such original settler would have held by virtue of this Resolve …",
+      "confidence": "selected reading of original",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p2(1).tif"
+    },
+    {
+      "id": "resolve-3",
+      "group": "Resolve",
+      "leaf": 3,
+      "label": "Resolve · leaf 3 / docket",
+      "description": "Exterior docket naming the Fox Islands settlers and legislative resolution; rotated text and endorsements remain to be transcribed.",
+      "excerpt": "Petition of the Settlers on Fox Islands [docket — partial reading].",
+      "confidence": "partial reading; docket requires verification",
+      "full_transcription_verified": false,
+      "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p3(1).tif"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Supplied 1785–1786 Massachusetts Archives TIFFs",
+      "url": null,
+      "type": "Original manuscript copies supplied in this project"
+    },
+    {
+      "title": "Maine State Archives, Fox Islands plan, identifier 302962",
+      "url": "https://digitalmaine.com/planbook_knox_county/8/",
+      "type": "Contemporary cartographic copy"
+    },
+    {
+      "title": "Flanagan & Reeves, The Maine Genealogist 47(4), 170–182",
+      "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+      "type": "Modern scholarly article citing outstanding Putnam 1786 report"
+    },
+    {
+      "title": "Vinalhaven, A Brief Historical Sketch (1889)",
+      "url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/briefhistoricals00vinl/briefhistoricals00vinl.pdf",
+      "type": "Later printed transcription"
+    }
+  ],
+  "outstanding": [
+    "Find the original March 18, 1786 Putnam settlers' declarations in paper Box 001, Maine State Archives; they have not been inspected.",
+    "Identify individually assigned lots, grantee deeds, or proprietors' books for James, Thomas, and Matthew.",
+    "Compare any discovered guardianship or probate for Matthew named a minor, without identifying him with the 1837 Hope decedent prematurely.",
+    "Publish the seven provided TIFFs or optimized derivatives in permanent site storage with provenance and archival permission review; this JSON does not contain or publish the scans.",
+    "Complete independent paleographic verification of all seven leaves and docket annotations."
+  ]
+}
