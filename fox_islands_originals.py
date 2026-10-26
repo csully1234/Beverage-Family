@@ -10,6 +10,7 @@ from pathlib import Path
 
 import streamlit as st
 from routing_ui import route_link
+from fox_islands_manuscript import render_original_manuscripts
 
 SOURCE_FILE = Path(__file__).resolve().parent / "data" / "phase30_fox_islands_original_source_access.json"
 DIGITIZED = ("digitized_historical_cartographic_copy",)
@@ -86,7 +87,13 @@ def render_fox_originals() -> None:
     data = load_fox_islands_sources()
     grouped = original_access_register(data)
     st.title("Fox Islands, 1785–1786: the original-document trail")
-    st.write("The island settlement papers are now traceable to specific archival "
+    render_original_manuscripts()
+    st.divider()
+    st.subheader("Historical source-access register · 19 October 2026")
+    st.caption("This register documents the earlier retrieval state. Its assertion "
+               "that the manuscript was unavailable was superseded when seven "
+               "original manuscript scans were supplied on October 26.")
+    st.write("In the archived October 19 source-access study, island papers were traced to "
              "plan books and two manuscript collections. Those records are not "
              "interchangeable: **a surveyed coastline, an original petition, a "
              "claimant's settlement statement, and a later printed history are "
@@ -113,9 +120,11 @@ def render_fox_originals() -> None:
             _source_card(row)
     with tabs[1]:
         st.subheader("Exact archival shelf references, not merely a web search")
-        st.write("The **Massachusetts petition/resolve** and **Maine Putnam "
+        st.write("In the October 19 source register, **Massachusetts petition/resolve** and **Maine Putnam 
                  "settlement report** now have detailed, published archive "
-                 "locators. Neither underlying manuscript was obtained here.")
+                 "locators. On October 26, the Massachusetts manuscripts were "
+                 "subsequently supplied and examined (see above); the Putnam "
+                 "report remains outstanding.")
         for row in grouped["original_requests"]:
             _source_card(row)
     with tabs[2]:
