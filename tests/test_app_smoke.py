@@ -567,7 +567,7 @@ class StreamlitSmokeTests(unittest.TestCase):
         self.assertTrue(any("Fox Islands" in str(e.value) for e in page.title))
         self.assertTrue(any("Digitized archival map" in e.label for e in page.metric))
         self.assertTrue(any("Still-outstanding Putnam manuscript" in e.label for e in page.metric))
-        self.assertTrue(any("Full original images now on site" in e.label for e in page.metric))
+        self.assertTrue(any("Prepared images · publication pending" in e.label for e in page.metric))
         self.assertTrue(any("Beveridge name occurrences" in e.label for e in page.metric))
         self.assertTrue(any("parents" in str(e.value).lower() for e in page.warning))
         origins = self.logged_in_app(page="collection", view="family-origins")
