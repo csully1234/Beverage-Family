@@ -80,6 +80,14 @@ def load_fox_manuscripts(path: Path = DATA_FILE, image_dir: Path = IMAGES_DIR) -
     return record
 
 
+def manuscript_publication_ready(record: dict) -> bool:
+    """A positive, documented archive publication approval is mandatory."""
+    rights = record.get("publication_clearance") or {}
+    return bool(rights.get("form_received") is True and
+                rights.get("archive_credit_verified") is True and
+                rights.get("status") == "confirmed")
+
+
 def name_mentions(data: dict | None = None) -> list[dict]:
     return list((data or load_fox_manuscripts())["key_findings"])
 
@@ -133,6 +141,27 @@ def render_original_manuscripts() -> None:
         "copies; original full-resolution TIFFs are preserved separately."
     )
     st.caption("Original provenance: " + record["archival_identifier"])
+    if not manuscript_publication_ready(record):
+        st.warning(
+            "The seven image files have been prepared in a development branch, "
+            "but Massachusetts Archives requires a Permission to Publish form "
+            "and approved credit before manuscript images are published. "
+            "The full-page public viewer and downloads remain disabled until "
+            "those requirements are documented."
+        )
+        st.write(
+            "The petition names James, Thomas and Matthew Beveridge. Matthew "
+            "is annotated 'a minor' with another lower word possibly reading "
+            "'major'; its meaning is unresolved. The handwritten 1786 resolve "
+            "reads 72 settlers before January 1, 1784, while the 1889 "
+            "printed edition reads 75 in the same sentence. Neither fact "
+            "establishes genealogical relationships."
+        )
+        route_link("Read the Maine State Archives 1785 island survey",
+                   "https://digitalmaine.com/planbook_knox_county/8/")
+        st.caption("Manuscript citation: Massachusetts Archives, SC1 / "
+                   "Series 228, February 1785 session, Chapter 97.")
+        return
     left, middle, right = st.columns(3)
     left.metric("Original manuscript leaves", 7)
     middle.metric("Beveridge name occurrences", 3)
