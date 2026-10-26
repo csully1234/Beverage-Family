@@ -1,7 +1,7 @@
 """Fox Islands archive reader: directly examined 1785/1786 originals plus legacy access register.
 
 October 26 manuscript scans supersede Phase 30's older 'not obtained' status for
-the Massachusetts petition/resolve; the separate Putnam report is outstanding.
+the Massachusetts petition/resolve. An eight-page 1785/1786 Putnam report excerpt was subsequently supplied, with archival box-level attribution still to be confirmed.
 """
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ import streamlit as st
 from routing_ui import route_link
 from fox_islands_manuscript import render_original_manuscripts
 from fox_islands_primary_bridge import render_fox_source_bridge
+from putnam_original import render_putnam_original
 
 SOURCE_FILE = Path(__file__).resolve().parent / "data" / "phase30_fox_islands_original_source_access.json"
 DIGITIZED = ("digitized_historical_cartographic_copy",)
@@ -88,14 +89,17 @@ def render_fox_originals() -> None:
     data = load_fox_islands_sources()
     grouped = original_access_register(data)
     st.title("Fox Islands, 1785–1786: the original-document trail")
+    render_putnam_original()
+    st.divider()
     render_original_manuscripts()
     st.divider()
     render_fox_source_bridge()
     st.divider()
-    st.subheader("Historical source-access register · 19 October 2026")
-    st.caption("This register documents the earlier retrieval state. Its assertion "
-               "that the manuscript was unavailable was superseded when seven "
-               "original manuscript scans were supplied on October 26.")
+    st.subheader("Historical source-access register · 19 October 2026 (superseded)")
+    st.caption("This register preserves a prior research state. The Massachusetts "
+               "petition scans and a separate eight-page Putnam report excerpt "
+               "have since been supplied. Individual original source cards "
+               "are retained unchanged for chronological research audit.")
     st.write("In the archived October 19 source-access study, island papers were traced to "
              "plan books and two manuscript collections. Those records are not "
              "interchangeable: **a surveyed coastline, an original petition, a "
@@ -113,7 +117,7 @@ def render_fox_originals() -> None:
     st.caption("These figures count **different catalog entries**, not "
                "independent witnesses to one person's ancestry. Two map "
                "entries may reproduce the same historic plan.")
-    tabs = st.tabs(("Digitized plans", "Original manuscripts to obtain",
+    tabs = st.tabs(("Digitized plans", "Historical manuscript retrieval targets",
                     "Published records & access", "Three Matthews identity test"))
     with tabs[0]:
         st.subheader("Start with the state archives' original-era plan records")
@@ -124,10 +128,12 @@ def render_fox_originals() -> None:
             _source_card(row)
     with tabs[1]:
         st.subheader("Exact archival shelf references, not merely a web search")
-        st.write("The original October 19 register located the Massachusetts "
-                 "petition and the Maine Putnam report. The Massachusetts "
-                 "petition and resolution scans were supplied and examined on "
-                 "October 26. The separate Putnam report is still outstanding.")
+        st.write("The October 19 register located both source groups. Since "
+                 "then, Massachusetts petition/resolve scans and an eight-page "
+                 "Putnam report excerpt have been obtained and visually read. "
+                 "The supplied Putnam document contains a March 18, 1786 "
+                 "supplementary settlers list, but its Box 001 shelf identity "
+                 "and the completeness of the report remain to be verified.")
         for row in grouped["original_requests"]:
             _source_card(row)
     with tabs[2]:
