@@ -79,7 +79,7 @@
     "url": "https://www.mainememory.net/record/20801",
     "citation": "Maine Historical Society via Maine Memory Network. History of Vinalhaven, 1819. 1819-12-20.",
     "excerpt": null,
-    "summary": "Benjamin Beverage authored a December 20, 1819 manuscript describing Vinalhaven settlement, land distribution, vessels and religion",
+    "summary": "Benjamin Beverage's two-page handwritten letter of December 20, 1819 describes island settlement and naming, the 1785 survey and Massachusetts land grant, fishing vessels, farms, schools and local religion. The institutional manuscript and transcription were both examined; authorship and life circumstances beyond the letter require separate genealogy evidence.",
     "people_ids": [
       "benjamin_kent_beverage_1779"
     ],
@@ -91,10 +91,13 @@
     ],
     "evidence_level": "verified",
     "notes": [
-      "Maine Memory Network item 20801; ink on paper. Catalog metadata confirms creator, collection and date. No transcription is supplied here."
+      "Maine Memory Network item 20801; original ink-on-paper letter, Maine Historical Society, William D. Williamson Papers, Coll. 62.",
+      "Original manuscript page images and complete accompanying host-produced transcription visually examined 2026-10-26. The source image and transcription are linked at the custodian rather than copied into the site.",
+      "The letter reports first settlement in 1765 and rounds the surveyed island area to roughly 17,000 acres; the Massachusetts 1786 resolution gives 16,527 acres, which should be cited independently.",
+      "Letter ends with an express author caveat about using his name as an authority. This is a first-hand 1819 perspective, not proof of the writer's ancestry or all historical details."
     ],
     "conflicts": [],
-    "accessed": "2026-09-02",
+    "accessed": "2026-10-26",
     "provenance": {
       "origin": "merged research citation",
       "base_commit": "73ba56a",
