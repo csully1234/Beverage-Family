@@ -515,7 +515,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
                     "document. Its selected reading is NOT an independently "
                     "verified full transcription and does not prove kinship."),
             people_ids=[],
-            route="?page=collection&view=fox-originals",
+            route="?page=collection&view=fox-originals&leaf=" + leaf["id"],
             sources=[],
             keywords=(names + " Fox Islands 1785 1786 petition resolve "
                       + leaf["source_file"] + " " + leaf["excerpt"]),
