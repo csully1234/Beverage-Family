@@ -822,6 +822,8 @@ def render_home(
              "?page=collection&view=source-expedition&community=1"),
             ("1790 Beverege household and original 1820 census microfilm reel",
              "?page=collection&view=source-expedition&early-islands=1"),
+            ("NEW original Putnam 1786: Thomas Beverage settled about 15 years",
+             "?page=collection&view=fox-originals"),
         ]
         for label, url in secondary_actions:
             route_link(label, url, type="tertiary")
