@@ -92,7 +92,7 @@
         "detail": "A Thomas Beverege appears as a household head with 11 people in a later printed 1790 Vinalhaven enumeration; his exact identity relative to 1786 Thomas is unproven."
       }
     ],
-    "other_name_reading_caution": "Potential similarly shaped name on page 7 near the word 'right of possession' is not independently verified as Beveridge; do not import as additional family member.",
+    "other_name_reading_caution": "A nearby John surname appears similar to 'Berverich' or 'Beverich', with 'right of possession' written below it and a 20-year duration; the spelling has NOT been verified as Beveridge/Beverage. Do not count this as a second family member or genealogical discovery.",
     "full_diplomatic_transcription_verified": false,
     "digital_facsimile_hosted_publicly": false,
     "site_imported_record_only": true,
@@ -104,6 +104,20 @@
       "Find a dated 1769–1785 deed, tax entry, or proprietors allotment naming Thomas Beverage and identifying his land or prior residence.",
       "Compare original 1785 petition Thomas Beveridge to Putnam-list Thomas Beverage using independent documentary identifiers.",
       "Transcribe all relevant neighbors and surname variants in the complete Fox Island division roster before constructing a geographical allotment hypothesis."
-    ]
+    ],
+    "duplicate_upload_verification": {
+      "same_bytes_as_original": true,
+      "second_filename": "4-29462-F012(1).pdf",
+      "sha256": "a5baeec543e7c7f4a9e4cc0e32f3f2a6fb27257c0ea8606e10464c7ceeb8d404",
+      "note": "October 26 second PDF upload is byte-for-byte identical; do not count as a second original witness or independent historical source."
+    },
+    "unresolved_nearby_name": {
+      "location": "PDF page 7, center column, directly above James Heard and below a Cooper entry",
+      "diplomatic_candidate": "John Berverich [?] (handwriting unresolved)",
+      "qualifier": "right of possession",
+      "reported_duration": "20",
+      "status": "tentative surname reading only; NOT assigned to Beveridge, and NOT established as an additional relative",
+      "next_action": "Request an independent archival paleographic reading of the exact name and compare contemporary surname variants; do not conflate with Thomas Beverage."
+    }
   }
 ]
