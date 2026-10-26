@@ -25,6 +25,12 @@ class Phase50PutnamOriginalTests(unittest.TestCase):
         self.assertEqual(c["paper_part_dates"][0]["date"], "1785-12-16")
         self.assertEqual(c["paper_part_dates"][1]["date"], "1786-03-18")
         self.assertFalse(c["full_diplomatic_transcription_verified"])
+        self.assertTrue(c["duplicate_upload_verification"]["same_bytes_as_original"])
+        self.assertEqual(c["duplicate_upload_verification"]["sha256"],
+                         c["uploaded_pdf_sha256"])
+        self.assertIn("not count", c["duplicate_upload_verification"]["note"])
+        self.assertIn("NOT assigned", c["unresolved_nearby_name"]["status"])
+
         self.assertFalse(c["digital_facsimile_hosted_publicly"])
         self.assertEqual(c["related_source_targets"][0]["status"],
                          "likely_related_archive_record_not_exact_box_proven")
