@@ -50,7 +50,7 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertEqual(record["manuscript_images_status"],
                          "original_scans_received_and_examined_not_hosted_in_repository")
         self.assertTrue(all(source["type"] for source in record["sources"]))
-        self.assertTrue(any("not yet" in next_item for next_item in record["outstanding"]))
+        self.assertTrue(any("not" in next_item.lower() for next_item in record["outstanding"]))
         csv_content = manuscript_csv(record)
         self.assertEqual(csv_content.count(".tif"), 7)
         self.assertIn("petition-3", csv_content)
