@@ -31,14 +31,17 @@
         "document": "petition",
         "leaf": 3,
         "column": "right",
-        "evidence": "Name followed by an annotation identifying him as 'a minor'.",
-        "identity_status": "name-only; no proved connection to the Matthew of Hope who died in 1837"
+        "evidence": "Matthew Beveridge is followed by the handwritten phrase 'a minor'; beneath an underline is an additional marginal word that appears to read 'major'. The second hand, date and correction status are unverified.",
+        "identity_status": "name-only; age annotation disputed; no proved connection to the Matthew of Hope who died in 1837",
+        "age_status": "disputed_from_original_handwriting",
+        "age_annotation_diplomatic": "a minor [underlined]; below: major [?]",
+        "age_interpretation": "Neither an age nor legally confirmed minority may be inferred from this conflicting notation until its sequence and meaning are independently established."
       }
     ],
     "eligibility_date": "1784-01-01",
     "survey_acres": 16527,
     "settler_count_in_resolve": 72,
-    "entry_note": "'Seventy two settlers before the first day of January 1784' is a recited survey finding, not an individually named list of eligible grantees. The 75 inhabitants quoted in later accounts are a different count.",
+    "entry_note": "'Seventy two settlers before the first day of January 1784' is visible in the March 1786 original resolution; the 1889 Vinalhaven town history prints 'seventy-five settlers before ... January 1784' in its purported transcription of that same clause. This is a material textual discrepancy, not simply different populations.",
     "limits": "The list is reproduced in a manuscript petition; an individual entry is not itself proof that the person signed personally, occupied a particular lot, paid the grant assessment, or had any stated familial relationship.",
     "leaves": [
       {
@@ -68,9 +71,9 @@
         "group": "Petition",
         "leaf": 3,
         "label": "Petition · leaf 3",
-        "description": "Two-column settler-name list, including James, Thomas and Matthew Beveridge; legislative endorsement dated June 1, 1785.",
-        "excerpt": "James Beveridge [left column]; Thomas Beveridge [right column]; Matthew Beveridge — a minor [right column].",
-        "confidence": "direct visual reading of original, with abbreviation expanded for indexing",
+        "description": "Two-column settler-name list, including James, Thomas and Matthew Beveridge; legislative endorsement dated June 1, 1785. The handwritten age annotation is ambiguous: 'a minor' is underlined and 'major' appears below; edition and timing unresolved.",
+        "excerpt": "James Beveridge [left column]; Thomas Beveridge [right column]; Matthew Beveridge [right column]; 'a minor' underlined; below 'major' [?].",
+        "confidence": "Names directly legible; adjacent age-status annotations conflict or may represent an amendment. Do not assign legal age.",
         "full_transcription_verified": false,
         "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif"
       },
@@ -90,7 +93,7 @@
         "group": "Resolve",
         "leaf": 1,
         "label": "Resolve · leaf 1",
-        "description": "Senate resolve dated March 11, 1786; reports 16,527 acres and 72 settlers before January 1, 1784; grant and reserved public acreage.",
+        "description": "Senate resolve dated March 11, 1786; reports 16,527 acres and 72 settlers before January 1, 1784; grant and reserved public acreage. The 1889 printed town history transcribes this very sentence as 'seventy-five' rather than manuscript 'seventy two'.",
         "excerpt": "… the said Islands contain in the whole sixteen thousand, five hundred and twenty seven acres … whereon were seventy two settlers before the first day of January 1784 …",
         "confidence": "selected reading of original; punctuation regularized",
         "full_transcription_verified": false,
@@ -146,7 +149,46 @@
       "Identify individually assigned lots, grantee deeds, or proprietors' books for James, Thomas, and Matthew.",
       "Compare any discovered guardianship or probate for Matthew named a minor, without identifying him with the 1837 Hope decedent prematurely.",
       "Publish the seven provided TIFFs or optimized derivatives in permanent site storage with provenance and archival permission review; this JSON does not contain or publish the scans.",
-      "Complete independent paleographic verification of all seven leaves and docket annotations."
+      "Complete independent paleographic verification of all seven leaves and docket annotations.",
+      "Establish the handwriting sequence and intention of the paired 'a minor' / possible 'major' notes beside Matthew in petition leaf 3; check whether contemporary Senate/House folios, endorsements, or a second certified copy preserve a correction.",
+      "Compare the original 1786 resolve's 'seventy two' with the 1889 printed 'seventy-five' and any 1786 session laws, avoiding circular reliance on later reproductions."
+    ],
+    "primary_secondary_variants": [
+      {
+        "id": "fox-count-original-72",
+        "source": "Original Massachusetts Archives resolve, leaf 1 (March 11 1786)",
+        "reading": "seventy two settlers before the first day of January 1784",
+        "status": "original_manuscript_reading",
+        "notes": "Handwritten source visibly spells 'seventy two'; this is not the same text as the 1889 printed resolution."
+      },
+      {
+        "id": "fox-count-1889-75",
+        "source": "A Brief Historical Sketch of the Town of Vinalhaven (1889), printed p. 10",
+        "reading": "seventy-five settlers before the first day of January, 1784",
+        "status": "later_printed_variant",
+        "notes": "Published text changes the resolve's numerical wording from 72 to 75 at the same sentence, not merely the number of names in a separate list."
+      },
+      {
+        "id": "fox-matthew-first-note",
+        "source": "Original 1785 petition, leaf 3, right column",
+        "reading": "Matthew Beveridge — a minor",
+        "status": "original_handwritten_annotation",
+        "notes": "The handwritten words 'a minor' are underlined; an additional word appears below."
+      },
+      {
+        "id": "fox-matthew-later-note",
+        "source": "Original 1785 petition, leaf 3, directly below Matthew's name",
+        "reading": "major [?]",
+        "status": "unresolved_original_handwritten_annotation",
+        "notes": "The lower word appears to read 'major'. The scribe, order of writing and whether it corrects the first label remain unknown."
+      },
+      {
+        "id": "fox-matthew-1889-note",
+        "source": "A Brief Historical Sketch of the Town of Vinalhaven (1889), printed p. 10",
+        "reading": "Matthew Beveridge (a minor)",
+        "status": "later_printed_variant",
+        "notes": "The published transcription reproduces the first label but does not discuss the lower apparent 'major' annotation."
+      }
     ]
   }
 ]
