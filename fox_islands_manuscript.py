@@ -131,14 +131,25 @@ def render_original_manuscripts() -> None:
 
     st.markdown("**Find the original handwriting — Petition leaf 3**")
     cols = st.columns(3)
-    for col, mention in zip(cols, name_mentions(record)):
+    detail_files = ("james_beveridge.jpg", "thomas_beveridge.jpg",
+                    "matthew_beveridge.jpg")
+    for col, mention, name in zip(cols, name_mentions(record), detail_files):
         with col.container(border=True):
             st.markdown("**" + mention["name"] + "**")
+            st.image(str(IMAGES_DIR / "details" / name),
+                     caption="Close reading, original petition leaf 3",
+                     width="stretch")
             st.caption(mention["column"].capitalize() + " column")
             st.write(mention["evidence"])
             if mention.get("age_status"):
                 st.warning("Age status disputed: " + mention["age_annotation_diplomatic"])
             st.caption("No verified person-ID or family relationship assigned.")
+    with st.expander("Enlarge Matthew's disputed lower annotation"):
+        st.image(str(IMAGES_DIR / "details" / "matthew_age_annotation.jpg"),
+                 caption="Enlarged excerpt: 'a minor' above apparent 'major' note",
+                 width="stretch")
+        st.caption("The lower word's transcription, author, date and purpose "
+                   "remain unverified. Read it in context on petition leaf 3.")
 
     if st.session_state.get(SELECTOR_KEY) not in EXPECTED_LEAVES:
         st.session_state[SELECTOR_KEY] = EXPECTED_LEAVES[0]
