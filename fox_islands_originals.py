@@ -1,7 +1,7 @@
-"""An evidence reader distinguishing original maps from unpublished manuscript leads.
+"""Fox Islands archive reader: directly examined 1785/1786 originals plus legacy access register.
 
-Maine archive-hosted images are opened at their custodial pages; the original
-Massachusetts petition and Putnam report have NOT been obtained or uploaded.
+October 26 manuscript scans supersede Phase 30's older 'not obtained' status for
+the Massachusetts petition/resolve; the separate Putnam report is outstanding.
 """
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from pathlib import Path
 
 import streamlit as st
 from routing_ui import route_link
+from fox_islands_manuscript import render_original_manuscripts
 
 SOURCE_FILE = Path(__file__).resolve().parent / "data" / "phase30_fox_islands_original_source_access.json"
 DIGITIZED = ("digitized_historical_cartographic_copy",)
@@ -86,13 +87,19 @@ def render_fox_originals() -> None:
     data = load_fox_islands_sources()
     grouped = original_access_register(data)
     st.title("Fox Islands, 1785–1786: the original-document trail")
-    st.write("The island settlement papers are now traceable to specific archival "
+    render_original_manuscripts()
+    st.divider()
+    st.subheader("Historical source-access register · 19 October 2026")
+    st.caption("This register documents the earlier retrieval state. Its assertion "
+               "that the manuscript was unavailable was superseded when seven "
+               "original manuscript scans were supplied on October 26.")
+    st.write("In the archived October 19 source-access study, island papers were traced to "
              "plan books and two manuscript collections. Those records are not "
              "interchangeable: **a surveyed coastline, an original petition, a "
              "claimant's settlement statement, and a later printed history are "
              "different types of evidence.**")
     st.warning("No source in this collection proves that the Matthew Beveridge "
-               "called a minor in a copied 1785 petition became Matthew of "
+               "called a minor in the original 1785 petition became Matthew of "
                "Hope who died in 1837. His parents and link to Capt. Thomas "
                "remain unverified.")
     a,b,c = st.columns(3)
@@ -113,9 +120,10 @@ def render_fox_originals() -> None:
             _source_card(row)
     with tabs[1]:
         st.subheader("Exact archival shelf references, not merely a web search")
-        st.write("The **Massachusetts petition/resolve** and **Maine Putnam "
-                 "settlement report** now have detailed, published archive "
-                 "locators. Neither underlying manuscript was obtained here.")
+        st.write("The original October 19 register located the Massachusetts "
+                 "petition and the Maine Putnam report. The Massachusetts "
+                 "petition and resolution scans were supplied and examined on "
+                 "October 26. The separate Putnam report is still outstanding.")
         for row in grouped["original_requests"]:
             _source_card(row)
     with tabs[2]:
