@@ -1,8 +1,8 @@
 """Primary-manuscript register for the newly supplied 1785/1786 Fox Islands leaves.
 
 A selected-reading edition, NOT a complete diplomatic transcription or a claim
-that the original TIFF pixels are served by GitHub. The 1785 minor is NOT
-automatically linked to any canonical genealogy profile.
+that the original TIFF pixels are served by GitHub. Matthew's underlined 'a minor' has a possible 'major' annotation below;
+legal age is unverified, and no canonical genealogy profile link is inferred.
 """
 from __future__ import annotations
 
@@ -45,6 +45,15 @@ def load_fox_manuscripts(path: Path = DATA_FILE) -> dict:
         raise ValueError("Name mentions must remain separately identified on petition leaf 3")
     if any(row["full_transcription_verified"] for row in record["leaves"]):
         raise ValueError("Unverified selected passages must not be labelled complete transcriptions")
+    variants = record.get("primary_secondary_variants", [])
+    if len(variants) != 5 or len({row["id"] for row in variants}) != 5:
+        raise ValueError("Require five explicitly sourced documentary reading variants")
+    matthew = record["key_findings"][2]
+    if matthew.get("age_status") != "disputed_from_original_handwriting":
+        raise ValueError("Do not treat manuscript Matthew's legal age as established")
+    if not ("a minor" in matthew["age_annotation_diplomatic"]
+            and "major" in matthew["age_annotation_diplomatic"]):
+        raise ValueError("Retain both original manuscript age annotation readings")
     return record
 
 
@@ -93,6 +102,10 @@ def render_original_manuscripts() -> None:
             st.caption("Petition leaf " + str(mention["leaf"]) + " · " + mention["column"] + " column")
             st.write(mention["evidence"])
             st.caption("Identity limit: " + mention["identity_status"])
+            if mention.get("age_status"):
+                st.warning("Age notation contested: " +
+                           mention["age_annotation_diplomatic"] +
+                           ". " + mention["age_interpretation"])
     st.warning(
         "These are names on a contemporary petition list, not proof of "
         "three individually signed declarations, a family group, specific "
@@ -106,10 +119,19 @@ def render_original_manuscripts() -> None:
         "cutoff relates to eligibility for the conditional grant, not proof "
         "that each of the three named Beveridges personally met the condition."
     )
-    st.caption(
-        "Later histories' count of 75 petitioning inhabitants is a different "
-        "measurement from the resolve's count of 72 early settlers."
+    st.warning(
+        "Textual discrepancy: The handwritten March 1786 resolve says **seventy two "
+        "settlers before January 1, 1784**, but the 1889 Vinalhaven book prints "
+        "**seventy-five settlers** in its purported transcription of that same "
+        "sentence. This is not simply a difference in categories or populations."
     )
+    with st.expander("Compare the original handwriting with the 1889 printed version"):
+        for variant in data["primary_secondary_variants"]:
+            st.markdown("**" + variant["source"] + "**")
+            st.write(variant["reading"])
+            st.caption(variant["notes"])
+        st.caption("Reading status is editorial and provenance-specific, not proof "
+                   "of which historical settlers qualified for an individual grant.")
     by_id = {row["id"]: row for row in data["leaves"]}
     selected = st.selectbox(
         "Read the manuscript page notes",
