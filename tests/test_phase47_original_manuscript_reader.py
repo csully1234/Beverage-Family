@@ -16,6 +16,7 @@ from fox_islands_manuscript import (
     leaf_image_path,
     load_fox_manuscripts,
     manuscript_csv,
+    manuscript_publication_ready,
     name_mentions,
 )
 
@@ -114,6 +115,20 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertIn("fox-manuscript:petition-3", {r["id"] for r in names})
         matched = next(x for x in names if x["id"] == "fox-manuscript:petition-3")
         self.assertTrue(matched["route"].endswith("&leaf=petition-3"))
+
+    def test_visitor_publication_requires_explicit_archival_clearance(self):
+        record = load_fox_manuscripts()
+        self.assertFalse(manuscript_publication_ready(record))
+        self.assertFalse(record["publication_clearance"]["form_received"])
+        self.assertFalse(record["publication_clearance"]["archive_credit_verified"])
+        candidate = dict(record)
+        candidate["publication_clearance"] = dict(record["publication_clearance"])
+        candidate["publication_clearance"]["form_received"] = True
+        self.assertFalse(manuscript_publication_ready(candidate))
+        candidate["publication_clearance"]["archive_credit_verified"] = True
+        self.assertFalse(manuscript_publication_ready(candidate))
+        candidate["publication_clearance"]["status"] = "confirmed"
+        self.assertTrue(manuscript_publication_ready(candidate))
 
     def test_gallery_prevents_file_path_traversal(self):
         with self.assertRaises(ValueError):
