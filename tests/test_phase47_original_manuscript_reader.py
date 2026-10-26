@@ -2,9 +2,16 @@
 from __future__ import annotations
 
 import unittest
+import io
+import zipfile
+from pathlib import Path
 
 from fox_islands_manuscript import (
     EXPECTED_LEAVES,
+    IMAGE_STATUS,
+    IMAGES_DIR,
+    all_scans_zip,
+    leaf_image_path,
     load_fox_manuscripts,
     manuscript_csv,
     name_mentions,
@@ -63,16 +70,39 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertIn("major", leaf["excerpt"])
         self.assertFalse(leaf["full_transcription_verified"])
 
-    def test_online_reader_does_not_claim_images_published(self):
+    def test_live_optimized_images_are_published_with_original_tiff_provenance(self):
         record = load_fox_manuscripts()
-        self.assertEqual(record["manuscript_images_status"],
-                         "original_scans_received_and_examined_not_hosted_in_repository")
-        self.assertTrue(all(source["type"] for source in record["sources"]))
-        self.assertTrue(any("not" in next_item.lower() for next_item in record["outstanding"]))
+        self.assertEqual(record["manuscript_images_status"], IMAGE_STATUS)
+        self.assertEqual(len(record["leaves"]), 7)
+        for row in record["leaves"]:
+            with self.subTest(leaf=row["id"]):
+                file = leaf_image_path(row)
+                self.assertTrue(file.is_file(), file)
+                self.assertTrue(file.is_relative_to(IMAGES_DIR))
+                self.assertGreater(file.stat().st_size, 8000)
+                with file.open("rb") as handle:
+                    self.assertEqual(handle.read(3), b"\\xff\\xd8\\xff")
+                self.assertEqual(len(row["original_tiff_sha256"]), 64)
+                self.assertEqual(row["image_status"], "published_optimized_scan")
+
+    def test_downloadable_manuscript_bundle_contains_all_seven_images(self):
+        record = load_fox_manuscripts()
+        with zipfile.ZipFile(io.BytesIO(all_scans_zip(record))) as archive:
+            files = archive.namelist()
+            self.assertIn("MANIFEST.csv", files)
+            self.assertEqual(len(files), 8)
+            self.assertIn("fox_islands_1785/petition_page_3.jpg", files)
+            self.assertIn("fox_islands_1785/resolve_page_3.jpg", files)
+            self.assertIn("original_tiff_sha256", archive.read("MANIFEST.csv").decode())
         csv_content = manuscript_csv(record)
-        self.assertEqual(csv_content.count(".tif"), 7)
         self.assertIn("petition-3", csv_content)
         self.assertIn("resolve-3", csv_content)
+
+    def test_gallery_prevents_file_path_traversal(self):
+        with self.assertRaises(ValueError):
+            leaf_image_path({"id": "petition-1", "image_file": "../leak.jpg"})
+        with self.assertRaises(ValueError):
+            leaf_image_path({"id": "petition-1", "image_file": "petition_page_2.jpg"})
 
 
 if __name__ == "__main__":
