@@ -81,7 +81,7 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
                 self.assertTrue(file.is_relative_to(IMAGES_DIR))
                 self.assertGreater(file.stat().st_size, 8000)
                 with file.open("rb") as handle:
-                    self.assertEqual(handle.read(3), b"\\xff\\xd8\\xff")
+                    self.assertEqual(handle.read(3), b"\xff\xd8\xff")
                 self.assertEqual(len(row["original_tiff_sha256"]), 64)
                 self.assertEqual(row["image_status"], "published_optimized_scan")
 
