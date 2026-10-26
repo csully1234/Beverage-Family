@@ -603,7 +603,7 @@ def clear_archive_route(page: str) -> None:
                                *((key, {"Search"}) for key in ("results_page", "where")),
                                *((key, {"People"}) for key in ("return_q", "return_page", "return_where")),
                                *((key, {"Historical Discoveries"}) for key in
-                                 ("finding", "target", "view", "topic", "status", "inventory", "location"))):
+                                 ("finding", "target", "view", "topic", "status", "inventory", "location", "leaf"))):
         if page not in allowed and parameter in st.query_params:
             del st.query_params[parameter]
 
