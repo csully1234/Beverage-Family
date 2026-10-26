@@ -23,7 +23,10 @@ EXPECTED_PEOPLE = ("James Beveridge", "Thomas Beveridge", "Matthew Beveridge")
 
 def load_fox_manuscripts(path: Path = DATA_FILE) -> dict:
     """Validate that a direct manuscript name is not accidentally promoted to kinship."""
-    record = json.loads(path.read_text(encoding="utf-8"))
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(entries, list) or len(entries) != 1:
+        raise ValueError("Expected a single versioned manuscript collection")
+    record = entries[0]
     if tuple(row["id"] for row in record["leaves"]) != EXPECTED_LEAVES:
         raise ValueError("Seven original leaves required, in canonical manuscript order")
     if record["manuscripts_locally_available"] != len(EXPECTED_LEAVES):
