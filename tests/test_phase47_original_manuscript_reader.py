@@ -5,6 +5,8 @@ import unittest
 import io
 import zipfile
 from pathlib import Path
+from family_data import index_people, load_site_data
+from family_research_index import build_index, search_index
 
 from fox_islands_manuscript import (
     EXPECTED_LEAVES,
@@ -97,6 +99,19 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         csv_content = manuscript_csv(record)
         self.assertIn("petition-3", csv_content)
         self.assertIn("resolve-3", csv_content)
+
+    def test_all_seven_original_image_pages_appear_in_unified_discovery(self):
+        root = Path(__file__).resolve().parents[1]
+        people = index_people(load_site_data(root / "data")["people"])
+        findings = build_index(people)
+        original = [x for x in findings if x["id"].startswith("fox-manuscript:")]
+        self.assertEqual(len(original), 7)
+        self.assertTrue(all(x["category"] == "Historical source exhibits" for x in original))
+        self.assertTrue(all(x["person_ids"] == [] for x in original))
+        self.assertTrue(all(x["route"] == "?page=collection&view=fox-originals"
+                            for x in original))
+        names = search_index(findings, query="Matthew Beveridge")
+        self.assertIn("fox-manuscript:petition-3", {r["id"] for r in names})
 
     def test_gallery_prevents_file_path_traversal(self):
         with self.assertRaises(ValueError):
