@@ -1,7 +1,7 @@
-"""An evidence reader distinguishing original maps from unpublished manuscript leads.
+"""Fox Islands archive reader: directly examined 1785/1786 originals plus legacy access register.
 
-Maine archive-hosted images are opened at their custodial pages; the original
-Massachusetts petition and Putnam report have NOT been obtained or uploaded.
+October 26 manuscript scans supersede Phase 30's older 'not obtained' status for
+the Massachusetts petition/resolve; the separate Putnam report is outstanding.
 """
 from __future__ import annotations
 
@@ -99,7 +99,7 @@ def render_fox_originals() -> None:
              "claimant's settlement statement, and a later printed history are "
              "different types of evidence.**")
     st.warning("No source in this collection proves that the Matthew Beveridge "
-               "called a minor in a copied 1785 petition became Matthew of "
+               "called a minor in the original 1785 petition became Matthew of "
                "Hope who died in 1837. His parents and link to Capt. Thomas "
                "remain unverified.")
     a,b,c = st.columns(3)
