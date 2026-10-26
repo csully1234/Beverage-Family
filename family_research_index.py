@@ -498,6 +498,27 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
                 status=record["access"].replace("_", " "),
             ))
 
+    # Phase 50: a newly supplied original Putnam settlers list now provides
+    # a direct Thomas Beverage name and reported fifteen years' settlement.
+    # This is a name/document observation, not a verified canonical ancestor ID.
+    putnam = _read_records("phase50_putnam_original_settlement_statement.json", root)[0]
+    observed = putnam["observation"]
+    records.append(_item(
+        id="putnam-original:" + observed["id"],
+        category="Historical record trails",
+        title="1786 original Putnam list · Thomas Beverage, 15 years settled",
+        summary=observed["establishes"] + " Approximate settlement c. 1771.",
+        limits=observed["cannot_prove"],
+        people_ids=[],
+        sources=[],
+        route="?page=collection&view=fox-originals",
+        keywords="Rufus Putnam Fox Island division Thomas Beverage Beveridge "
+                 "1786 March 18 1785 December 16 1771 fifteen years manuscript "
+                 "settlement original " + putnam["original_uploaded_file"],
+        source_date="1786-03-18",
+        status="Original manuscript reviewed · canonical identity not established",
+    ))
+
     # Phase 39: editor-graded original image retrieval targets and unresolved
     # branch hypotheses. Exact-person search matching describes a RESEARCH
     # QUESTION, never verified parentage. Individual deed mentions with a
