@@ -43,7 +43,25 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertEqual(record["settler_count_in_resolve"], 72)
         self.assertEqual(record["survey_acres"], 16527)
         self.assertEqual(record["eligibility_date"], "1784-01-01")
-        self.assertIn("different count", record["entry_note"])
+        self.assertIn("material textual discrepancy", record["entry_note"])
+        variants = record["primary_secondary_variants"]
+        self.assertEqual(len(variants), 5)
+        original = next(row for row in variants if row["id"] == "fox-count-original-72")
+        printed = next(row for row in variants if row["id"] == "fox-count-1889-75")
+        self.assertIn("seventy two", original["reading"])
+        self.assertIn("seventy-five", printed["reading"])
+        self.assertIn("same sentence", printed["notes"])
+
+    def test_matthew_minor_and_possible_major_notation_remain_disputed(self):
+        record = load_fox_manuscripts()
+        matthew = name_mentions(record)[2]
+        self.assertEqual(matthew["age_status"], "disputed_from_original_handwriting")
+        self.assertIn("a minor", matthew["age_annotation_diplomatic"])
+        self.assertIn("major", matthew["age_annotation_diplomatic"])
+        self.assertIn("unverified", matthew["evidence"])
+        leaf = next(x for x in record["leaves"] if x["id"] == "petition-3")
+        self.assertIn("major", leaf["excerpt"])
+        self.assertFalse(leaf["full_transcription_verified"])
 
     def test_online_reader_does_not_claim_images_published(self):
         record = load_fox_manuscripts()
