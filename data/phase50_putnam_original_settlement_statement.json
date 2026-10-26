@@ -118,6 +118,65 @@
       "reported_duration": "20",
       "status": "tentative surname reading only; NOT assigned to Beveridge, and NOT established as an additional relative",
       "next_action": "Request an independent archival paleographic reading of the exact name and compare contemporary surname variants; do not conflate with Thomas Beverage."
+    },
+    "phase51_review": {
+      "edition_date": "2026-10-26",
+      "primary_interpretation": "The name Thomas Beverage is followed by 15 in the Time when Settled column on PDF page 7, Fox Island Division, plan page 104.",
+      "time_measurement_limit": "The field may have been assembled during the Oct–Nov 1785 survey and finalized in the Mar 18 1786 report; year of initial settlement is only approximately 1770–1771.",
+      "approximate_settlement_period": "circa 1770–1771",
+      "source_table_context": "The page uses three separate Name / Time when Settled columns. The Fox Island Division heading begins near the bottom of the left column; the enumerated individuals continue at the top of the middle, then the right column.",
+      "transcript_path": "research/phase51_putnam_page7_working_transcription.csv",
+      "working_rows_including_claim_annotations": 94,
+      "transcription_completeness": "provisional_row_by_row_three_column_working_reading_not_certified",
+      "description": "Each uncertain name and damaged numeral is explicitly annotated; the 94 rows include island headings, property annotations and a signed closing, not 94 distinct claimants.",
+      "archive_map_reference": {
+        "manuscript_plan_page": 104,
+        "state_map": "https://digitalmaine.com/planbook_knox_county/8/",
+        "state_map_id": "302962",
+        "historical_schedule": "https://lldc.mainelegislature.org/Open/Rpts/PubDocs/PubDocs1839v1/PD1839v1_00B.pdf",
+        "historical_schedule_printed_page": 63,
+        "interpretation": "Both archive-hosted map description and 1839 public-land schedule refer to Fox Islands division plan p.104. That is a general survey-plan reference, not Thomas Beverage's lot number."
+      },
+      "historical_comparisons": [
+        {
+          "date": "1785",
+          "source": "Massachusetts inhabitants petition, original leaf 3",
+          "name": "Thomas Beveridge",
+          "status": "Original manuscript name occurrence; distinct identity not proved"
+        },
+        {
+          "date": "1785-1786",
+          "source": "Putnam report, PDF p.7",
+          "name": "Thomas Beverage",
+          "status": "15 years reported settlement; contemporary manuscript"
+        },
+        {
+          "date": "1790",
+          "source": "U.S. census 1908 printed household table, p.32",
+          "name": "Thomas Beverege",
+          "status": "2 males age 16+, 4 males younger than 16, 5 females; 11 total; original census not examined"
+        },
+        {
+          "date": "1819",
+          "source": "Benjamin Beverage historical letter",
+          "name": "Benjamin Beverage",
+          "status": "Contemporary retrospective account of Fox Islands community; does not prove relationship to Thomas"
+        }
+      ],
+      "uncertain_same_page_surnames": [
+        {
+          "name_reading": "John B[e/r]verich [?]",
+          "years_reading": "20",
+          "status": "uncertain_surname_not_identified_as_beverage",
+          "note": "A 1790 Vinalhaven transcription independently contains the separate name John Babrick. That is a comparison clue and NOT proof they are identical."
+        },
+        {
+          "name_reading": "Wm Berich [?]",
+          "years_reading": "13",
+          "status": "uncertain_surname_not_identified_as_beverage",
+          "note": "The 1790 census contains a William Barrick; the 1889 settlers list prints William Bassick. Variant letters or separate persons remain unresolved; do not enter a Beveridge."
+        }
+      ]
     }
   }
 ]

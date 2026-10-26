@@ -39,6 +39,27 @@ def load_putnam_original(path: Path = FILE) -> dict:
     return row
 
 
+PAGE7_CSV = Path(__file__).resolve().parent / "research" / "phase51_putnam_page7_working_transcription.csv"
+
+
+def load_putnam_page7(path: Path = PAGE7_CSV) -> list[dict]:
+    """Provisional original-page reading, preserving variant spellings and damage."""
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    if len(rows) != 94:
+        raise ValueError("Working p7 edition has changed; recheck manuscript")
+    if {row["column"] for row in rows} != {"left", "middle", "right"}:
+        raise ValueError("The source has three independent columns")
+    thomas = [row for row in rows if row["name_or_phrase_as_read"] == "Thomas Beverage"]
+    if (len(thomas) != 1 or thomas[0]["time_when_settled_as_read"] != "15"
+            or thomas[0]["column"] != "middle"):
+        raise ValueError("The primary Thomas original-reading reference changed")
+    if not all(row["reading_confidence"] in {"high", "medium", "low"}
+               for row in rows):
+        raise ValueError("Every provisional reading must retain a confidence tag")
+    return rows
+
+
 def putnam_csv(case: dict | None = None) -> str:
     case = case or load_putnam_original()
     event = case["observation"]
@@ -69,12 +90,13 @@ def render_putnam_original() -> None:
     left, middle, right = st.columns(3)
     left.metric("Named settler", "Thomas Beverage")
     middle.metric("Time when settled", "15 years")
-    right.metric("Approximate year", "c. 1771")
+    right.metric("Approximate period", "c. 1770–71")
     st.write(
         "Under the source's **Names / Time when Settled** columns, the Fox Islands "
         "entry reads **Thomas Beverage — 15**. Counting backward from the "
-        "March 1786 supplementary signing suggests settlement around **1771**. "
-        "This is a reported duration, not a dated arrival certificate."
+        "March 1786 supplementary signing suggests settlement around **1771**, "
+        "or **1770** if it measures from the 1785 survey. "
+        "The best interpretation is **circa 1770–1771**, not an exact arrival date."
     )
     st.warning(
         "Identity caution: this Thomas could be the Thomas named in the 1785 "
@@ -85,6 +107,56 @@ def render_putnam_original() -> None:
     )
     st.caption("Other similarly spelled manuscript names have not been assigned "
                "to the Beveridge family without independent verification.")
+    st.info(
+        "Map cross-reference: The handwritten Fox Island Division heading says "
+        "**page 104**. The Maine State Archives 1785 survey and an 1839 Maine "
+        "land schedule independently identify plan page 104 for the Fox Islands. "
+        "This is a survey-map number, NOT Thomas's individual lot number."
+    )
+    route_link("View the 1785 Maine State Archives Fox Islands survey map",
+               "https://digitalmaine.com/planbook_knox_county/8/",
+               type="tertiary")
+    route_link("View the Maine 1839 public land schedule citing plan page 104",
+               "https://lldc.mainelegislature.org/Open/Rpts/PubDocs/PubDocs1839v1/PD1839v1_00B.pdf",
+               type="tertiary")
+    st.markdown("**Working transcription of all three page-seven columns**")
+    st.caption(
+        "94 working entries across three columns, including island headings, "
+        "repeat property claims and the report's signature: NOT 94 "
+        "separate settlers. This is a provisional paleographic reading; "
+        "uncertain names are marked and must be compared with the scanned original."
+    )
+    lines = load_putnam_page7()
+    column = st.selectbox(
+        "Page 7 handwritten column",
+        ["middle", "left", "right", "all"],
+        format_func=lambda x: "All three columns" if x == "all" else x.title() + " column",
+        key="putnam-page7-column",
+    )
+    shown = [row for row in lines if column == "all" or row["column"] == column]
+    st.dataframe(
+        [{
+            "Column": entry["column"],
+            "Reading": entry["name_or_phrase_as_read"],
+            "Time settled": entry["time_when_settled_as_read"],
+            "Certainty": entry["reading_confidence"],
+            "Note": entry["editorial_comment"],
+        } for entry in shown],
+        width="stretch", height=380, hide_index=True,
+    )
+    st.download_button(
+        "Download complete working page-seven transcription (94 rows)",
+        PAGE7_CSV.read_bytes(),
+        file_name="putnam-1786-page7-provisional-transcription.csv",
+        mime="text/csv", key="putnam-page7-full-csv",
+    )
+    st.warning(
+        "Two visually similar nearby surnames read tentatively as "
+        "'John B[e/r]verich' and 'William Berich'. The 1790 census also "
+        "lists John Babrick and William Barrick as separate heads. "
+        "None has been identified as a Beveridge relative."
+    )
+
     with st.expander("Read the source's eight-page inventory"):
         for leaf in case["page_inventory"]:
             st.write("**PDF page " + str(leaf["pdf_page"]) + ":** " + leaf["description"])

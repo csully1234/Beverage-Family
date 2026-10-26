@@ -1,0 +1,95 @@
+column,sequence,section,name_or_phrase_as_read,time_when_settled_as_read,reading_confidence,editorial_comment
+left,1,"Sheep Island, SW of Deer Island",Timothy Saunders,14 years,high,"Island described as SW of Deer Island, on a possession"
+left,2,Little Deer Island (plan p.112),Benjamin Weed,1760,medium,"Year, not 1760 years"
+left,3,Little Deer Island (plan p.112),Eliakim Eaton,1763,medium,Year as handwritten
+left,4,Pickering’s Island (plan p.110),Samuel Pickering [?],10 years,low,Forename partly obscured; earlier reading also suggests Abraham
+left,5,Eagle Island (plan p.109),Allen Calf [?],1770,medium,Name may be Culp/Calf; verify original
+left,6,Great Sprucehead Island (plan p.109),Wm Blas[t]on [?],,low,No duration clearly separated
+left,7,Butter Island (plan p.100),Ralph Annis,1770,high,Year as handwritten
+left,8,Butter Island (plan p.100),Benj. Annis,do,medium,Ditto refers to preceding date
+left,9,[Island name obscured],Wm Eaton,1763,low,Island heading damaged
+left,10,Isle of Holt (plan p.106),James Barton,1783,high,Year as handwritten
+left,11,Isle of Holt (plan p.106),Nathaniel Sheldon,1783,medium,Year as handwritten
+left,12,Isle of Holt (plan p.106),John Baxter,1785,medium,Name spelling possible Baxter/Baster
+left,13,Isle of Holt (plan p.106),Reuben Nobel [?],1785,low,Surname uncertain
+left,14,Isle of Holt (plan p.106),John Holman — on an old possession,,medium,"Separate tenure description, no clear distinct time"
+left,15,Little Isle of Holt (plan p.106),Seth Webb — on a possession,18 years [?],low,Time figure faint/partly cropped
+left,16,York Island (plan p.106),Moses Staples,1785,medium,Year as handwritten
+left,17,White Island (plan p.106),Anthony Merchant,1770,high,Year as handwritten
+left,18,Fox Island Division (plan p.104),Ebenezer Crabtree — on right of possession,19 years,medium,Fox Island Division heading starts on lower left; list continues into middle and right columns
+left,19,Fox Island Division (plan p.104),& 2 other possessions,,medium,"Continuation of preceding claim, not another person"
+middle,1,Fox Island Division (plan p.104),Gilson Penney [?],19 years,low,First forename very uncertain
+middle,2,Fox Island Division (plan p.104),Mark Eames,16 ditto,high,Ditto refers to years
+middle,3,Fox Island Division (plan p.104),John Penney,20,medium,Abbreviation Jn.
+middle,4,Fox Island Division (plan p.104),Nathaniel Worcester,20,high,Abbreviation Nathn.
+middle,5,Fox Island Division (plan p.104),David Worcester,20,high,
+middle,6,Fox Island Division (plan p.104),Anthony Dyer,19,high,Spelling appears Deyer
+middle,7,Fox Island Division (plan p.104),George White — on old possession of,20,medium,Continuation/brace ownership annotation
+middle,8,Fox Island Division (plan p.104),Joseph Dyer,14,medium,Name appears Deyer
+middle,9,Fox Island Division (plan p.104),Benjamin Dyer,10,medium,
+middle,10,Fox Island Division (plan p.104),Justus Eames,20,high,
+middle,11,Fox Island Division (plan p.104),William Dyer,20,high,Written Wm Dier
+middle,12,Fox Island Division (plan p.104),Joseph Waterman,20,high,
+middle,13,Fox Island Division (plan p.104),do — one other bought,20,medium,Second possession/purchase tied to preceding person
+middle,14,Fox Island Division (plan p.104),Charles Stewart — on purchased possession,20,high,Not a second person
+middle,15,Fox Island Division (plan p.104),Samuel Thomas,20,high,
+middle,16,Fox Island Division (plan p.104),Samuel Thomas Jr.,20,medium,Superscript Jr is abbreviated
+middle,17,Fox Island Division (plan p.104),Benjamin Kent,10,high,
+middle,18,Fox Island Division (plan p.104),Joseph Worcester,20,high,
+middle,19,Fox Island Division (plan p.104),Thomas Beverage,15,high,"KEY BEVERAGE NAME: 15 is in the Time when Settled column, not age"
+middle,20,Fox Island Division (plan p.104),Stephen Carver,17,high,
+middle,21,Fox Island Division (plan p.104),John Robbins [?],13,low,Forename abbreviation + surname damaged
+middle,22,Fox Island Division (plan p.104),Ephraim Eaton [or] Miller [?],14,low,Written wording likely two names or one compressed entry; verify
+middle,23,Fox Island Division (plan p.104),James Cooper,20,high,
+middle,24,Fox Island Division (plan p.104),Thomas Cooper,20,high,
+middle,25,Fox Island Division (plan p.104),William Cooper,20,high,
+middle,26,Fox Island Division (plan p.104),James Cooper Jr.,20,medium,Jr. abbreviation
+middle,27,Fox Island Division (plan p.104),Benjamin Robbins — right of possession,20,medium,Right-of-possession annotation belongs to this entry
+middle,28,Fox Island Division (plan p.104),John B[e/r]verich [?] — right of possession,20,low,NOT confirmed as Beveridge. Compare distinct 1790 heads John Babrick and William Barrick; those are not proof of identity.
+middle,29,Fox Island Division (plan p.104),James Heard,15,high,
+middle,30,Fox Island Division (plan p.104),James Dunham — right of possession,15,medium,
+middle,31,Fox Island Division (plan p.104),Benjamin Carr,20,high,
+middle,32,Fox Island Division (plan p.104),John Baston Carr [?],20,low,Middle name/forename may be not two given names
+middle,33,Fox Island Division (plan p.104),Elizabeth Carr,20,medium,
+middle,34,Fox Island Division (plan p.104),William Berich [?],13,low,"NOT confirmed as Beveridge; could match distinct Barrick/Babrick surnames, not proven"
+middle,35,Fox Island Division (plan p.104),Abner S...[?] — right of possession,20,low,Surname obscured
+middle,36,Fox Island Division (plan p.104),James Whaling,20,medium,
+middle,37,Fox Island Division (plan p.104),Widow Winslow — on old settlement,,medium,Duration not individually shown
+middle,38,Fox Island Division (plan p.104),John Burges Jr. [?],20,low,
+middle,39,Fox Island Division (plan p.104),Ezekiel Burges,20,medium,
+middle,40,Fox Island Division (plan p.104),Samuel Young,20,medium,
+middle,41,Fox Island Division (plan p.104),Norton [first name obscured],20,low,Term may be a line of text under Samuel Young
+middle,42,Fox Island Division (plan p.104),Doged/Daggett [surname uncertain],20,low,Right-of-possession brace reaches end of column
+right,1,Fox Island Division / concluding dated memorandum,John Calderwood,,high,
+right,2,Fox Island Division / concluding dated memorandum,John Calderwood Jr.,,medium,Abbreviated Jn.
+right,3,Fox Island Division / concluding dated memorandum,Jonathan Foster — old settlement,,medium,Right edge torn; time not reliably distinguishable
+right,4,Fox Island Division / concluding dated memorandum,Anthony Coomes,16 years,medium,Name appears Comes
+right,5,Fox Island Division / concluding dated memorandum,George Leadbetter Jr.,7,medium,Forename of Leadbetter uncertain
+right,6,Fox Island Division / concluding dated memorandum,Joel Philbrooks,[shared brace],medium,Grouped possession / settlement annotation
+right,7,Fox Island Division / concluding dated memorandum,Job Philbrooks,[shared brace],medium,
+right,8,Fox Island Division / concluding dated memorandum,Joseph Smith,[shared brace],medium,Abbreviation Jos
+right,9,Fox Island Division / concluding dated memorandum,John [surname unclear],19 [?],low,Obscured/ink damage
+right,10,Fox Island Division / concluding dated memorandum,James Jewell,17,high,
+right,11,Fox Island Division / concluding dated memorandum,Isaac Arey,20,high,
+right,12,Fox Island Division / concluding dated memorandum,Israel Carver,18,high,
+right,13,Fox Island Division / concluding dated memorandum,James Douglas,,medium,
+right,14,Fox Island Division / concluding dated memorandum,Stephen Lane,20,high,
+right,15,Fox Island Division / concluding dated memorandum,Widow Mary Coomes,21 [?],low,Listed with Thomas Brown? Braced entry; 21 may belong to adjacent Brown line
+right,16,Fox Island Division / concluding dated memorandum,Thomas Brown,21,medium,
+right,17,Fox Island Division / concluding dated memorandum,Reuben Brown — part of his father’s possession,,medium,No separate individual years
+right,18,Fox Island Division / concluding dated memorandum,Thaddeus Carver,20,medium,
+right,19,Fox Island Division / concluding dated memorandum,James Stinson,16,medium,
+right,20,Fox Island Division / concluding dated memorandum,Jeremiah Philbrooks,12,medium,
+right,21,Fox Island Division / concluding dated memorandum,George Leadbetter,12,medium,
+right,22,Fox Island Division / concluding dated memorandum,William Vinal Esquire — old settlement,,medium,Spelling Vinal
+right,23,Fox Island Division / concluding dated memorandum,John Hamilton — on Israel Island,16,medium,Brace / tenure grouping
+right,24,Fox Island Division / concluding dated memorandum,Joseph Green — on Green Island,16,high,
+right,25,Fox Island Division / concluding dated memorandum,Thomas Ginn — on Green Island,4,medium,
+right,26,Fox Island Division / concluding dated memorandum,Isaac Crockett — on Crockett Island,20,high,
+right,27,Fox Island Division / concluding dated memorandum,John Burges — on a small island,2 years,medium,
+right,28,Fox Island Division / concluding dated memorandum,William Penney — on an old settlement,,medium,
+right,29,Fox Island Division / concluding dated memorandum,James Jewell Jr.,young men,medium,Braced label: young men
+right,30,Fox Island Division / concluding dated memorandum,John Leadbetter,young men,medium,
+right,31,Fox Island Division / concluding dated memorandum,Samuel Calderwood,young men,medium,
+right,32,Fox Island Division / concluding dated memorandum,James Calderwood,young men,medium,
+right,33,Fox Island Division / concluding dated memorandum,"Boston, March 18th 1786 — Rufus Putnam",,high,"Dated signature, not a settler entry"
