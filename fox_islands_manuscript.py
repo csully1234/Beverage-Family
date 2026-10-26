@@ -10,6 +10,7 @@ import csv
 import io
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 import streamlit as st
 
@@ -31,8 +32,15 @@ def load_fox_manuscripts(path: Path = DATA_FILE) -> dict:
         raise ValueError("Seven original leaves required, in canonical manuscript order")
     if record["manuscripts_locally_available"] != len(EXPECTED_LEAVES):
         raise ValueError("Manifest and manuscript leaf count differ")
-    if record["manuscript_images_status"] != "original_scans_received_and_examined_not_hosted_in_repository":
-        raise ValueError("The site must describe image-hosting status accurately")
+    if record["manuscript_images_status"] != "optimized_public_web_facsimiles_hosted_original_tiffs_retained_offline":
+        raise ValueError("The site must accurately distinguish web facsimiles from TIFF masters")
+    base = Path(__file__).resolve().parent
+    for leaf in record["leaves"]:
+        rel = str(leaf.get("site_scan_path") or "")
+        group, leaf_number = leaf["id"].split("-")
+        expected = f"static/fox_islands_manuscripts/{group}_{int(leaf_number):02d}.svg"
+        if rel != expected or not (base / rel).is_file():
+            raise ValueError("Missing or invalid hosted facsimile: " + leaf["id"])
     if record["settler_count_in_resolve"] != 72 or record["survey_acres"] != 16527:
         raise ValueError("Historical figure transcription changed without review")
     if record["eligibility_date"] != "1784-01-01":
@@ -84,11 +92,11 @@ def render_original_manuscripts() -> None:
         "are **selected manuscript readings**, not a complete verified "
         "word-for-word diplomatic transcription."
     )
-    st.info(
-        "The scans are held in the project research package but have **not yet "
-        "been uploaded to the site's static image collection**. This online "
-        "record publishes the verified names, document locations and selected "
-        "readings; it does not pretend to display unavailable images."
+    st.success(
+        "All seven original manuscript pages are now available below as actual "
+        "**optimized color facsimiles**. The full-quality source TIFF masters "
+        "remain in the separate research archive; the online copies are "
+        "smaller access derivatives."
     )
     a, b, c = st.columns(3)
     a.metric("Original manuscript leaves examined", 7)
@@ -145,7 +153,24 @@ def render_original_manuscripts() -> None:
         st.write(row["description"])
         st.code(row["excerpt"], language=None)
         st.caption("Reading quality: " + row["confidence"])
-        st.caption("Original supplied image: " + row["source_file"])
+        scan = Path(__file__).resolve().parent / row["site_scan_path"]
+        st.image(str(scan), caption=row["label"] + " · Massachusetts Archives original",
+                 width="stretch")
+        st.download_button(
+            "Download this page's web facsimile (SVG)",
+            data=scan.read_bytes(),
+            file_name=scan.name,
+            mime="image/svg+xml",
+            key="fox-manuscript-save-" + selected,
+        )
+        route_link(
+            "Open full-size facsimile in a new browser tab",
+            "https://raw.githubusercontent.com/csully1234/Beverage-Family/main/" +
+            quote(row["site_scan_path"], safe="/"),
+            type="tertiary",
+        )
+        st.caption("Original supplied TIFF: " + row["source_file"])
+        st.caption("Image quality: optimized web copy, not archival TIFF master")
         st.caption("Complete verified diplomatic transcription: No")
     st.download_button(
         "Download seven-page documentary inventory (CSV)",

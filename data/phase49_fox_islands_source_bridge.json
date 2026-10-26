@@ -1,0 +1,188 @@
+[
+  {
+    "id": "phase49-fox-islands-primary-voice-and-settlement-bridge",
+    "research_date": "2026-10-26",
+    "focus": "Integrate the newly republished 1785/1786 original scans, the previously indexed but now directly examined 1819 Benjamin Beverage manuscript, and census/settlement hypotheses without creating family-tree edges.",
+    "sources": [
+      {
+        "id": "mass-original",
+        "label": "1785 petition and March 1786 resolve",
+        "type": "supplied_primary_original_manuscript",
+        "url": "https://github.com/csully1234/Beverage-Family/tree/main/static/fox_islands_manuscripts",
+        "access": "seven_user_supplied_manuscript_pages_hosted_as_optimized_facsimiles",
+        "limits": "No surviving individual land lot/title proof is established solely by names on the original petition."
+      },
+      {
+        "id": "benjamin-1819",
+        "label": "Benjamin Beverage, History of Vinalhaven, dated 20 December 1819",
+        "type": "archival_contemporary_correspondence_original_viewed_as_hosted_two_page_images",
+        "url": "https://www.mainememory.net/record/20801",
+        "transcript_url": "https://www.mainememory.net/media/pdf/20801.pdf",
+        "repository": "Maine Historical Society, William D. Williamson papers, Coll. 62; Maine Memory Network 20801",
+        "access": "Both manuscript page images and complete provided transcription visually inspected at institutional host; host restrictions apply",
+        "limits": "The letter's author and date are evidenced by the institutional item, but assigning him to a specific genealogical profile/parentage needs distinct corroboration."
+      },
+      {
+        "id": "1790-thomas",
+        "label": "Thomas Beverege — 1790 Vinalhaven first-census household, 1908 federal reprint",
+        "type": "later_printed_1790_census_transcription",
+        "url": "https://archives.mainegenealogy.net/2006/10/1790-census-vinalhaven-hancock-county.html",
+        "access": "published transcription reviewed, original census schedule not visually inspected",
+        "limits": "Unnamed persons in the household cannot be inferred as sons, daughters, spouse, sibling or the 1785 petition's Matthew."
+      },
+      {
+        "id": "1800-origins",
+        "label": "Walter Goodwin Davis, Part of Hancock County, Maine, in 1800, NEHGR 105 (1951):204–213,276–291",
+        "type": "published_editorial_1800_early_census",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "access": "Modern 2025 historical research cites original census 'from whence emigrated' column. A Beverage-specific origin line has not been read.",
+        "limits": "General origins reported for other settler families do not establish any particular Beveridge family's previous residence."
+      },
+      {
+        "id": "putnam-1786",
+        "label": "Putnam, 18 March 1786 original settler residence declarations, Maine State Archives Box 001",
+        "type": "located_manuscript_not_inspected",
+        "url": "https://maineroots.org/images/Nov25TMG2.pdf",
+        "access": "Finding-aid-grade reference only; actual archive box and Beveridge-specific entries not yet inspected",
+        "limits": "Do not invent arrival dates or grant lots for Beveridges."
+      }
+    ],
+    "observations": [
+      {
+        "id": "reported-1765",
+        "year": 1765,
+        "title": "First settlement year reported in an 1819 letter",
+        "statement": "In December 1819, Benjamin Beverage stated that Vinalhaven/Fox Islands was first settled in 1765.",
+        "source_ids": [
+          "benjamin-1819"
+        ],
+        "evidence": "retrospective_firsthand_local_account",
+        "limits": "A community founding date reported 54 years later, not proof of any named Beveridge arriving in 1765."
+      },
+      {
+        "id": "petition-1785",
+        "year": 1785,
+        "title": "Original settlers' petition names three Beveridges",
+        "statement": "James, Thomas and Matthew Beveridge are legible in the surviving 1785 list; Matthew has conflicting or layered annotations 'a minor' and possibly 'major'.",
+        "source_ids": [
+          "mass-original"
+        ],
+        "evidence": "contemporary_archival_manuscript_copies",
+        "limits": "A community petition list does not independently show the three people's relationships or the age/legal capacity of Matthew."
+      },
+      {
+        "id": "grant-1786",
+        "year": 1786,
+        "title": "Massachusetts resolves a conditional island grant",
+        "statement": "The original March 1786 resolve reports 16,527 surveyed acres and 72 settlers before January 1, 1784; an 1889 printing differs at this number.",
+        "source_ids": [
+          "mass-original"
+        ],
+        "evidence": "contemporary_archival_legislative_manuscript_copy",
+        "limits": "Survey acreage is not an individual Beveridge land allotment or a complete deed record."
+      },
+      {
+        "id": "census-1790",
+        "year": 1790,
+        "title": "Thomas Beverege household counted in Vinalhaven",
+        "statement": "The later federal census transcription counts 2 free white males aged 16+, 4 younger males, 5 females, total 11.",
+        "source_ids": [
+          "1790-thomas"
+        ],
+        "evidence": "derived_from_historical_census_printed_transcript",
+        "limits": "Household co-residents and identity of the enumerated Thomas remain unverified from original schedule."
+      },
+      {
+        "id": "census-1800",
+        "year": 1800,
+        "title": "Early unusual migration-origin column may identify earlier homes",
+        "statement": "The 1800 Vinalhaven return reportedly noted prior towns of emigration. No specific Beverage answer has been recovered or verified.",
+        "source_ids": [
+          "1800-origins"
+        ],
+        "evidence": "archival_research_lead_from_modern_study",
+        "limits": "Never assign a town or colony of origin without the surname's exact original entry."
+      },
+      {
+        "id": "benjamin-1819",
+        "year": 1819,
+        "title": "Benjamin Beverage describes the islands in his own words",
+        "statement": "His two-page surviving letter addresses land titles, farming, schools, fishing, local religious life and names the author's preference not to be treated as an authority.",
+        "source_ids": [
+          "benjamin-1819"
+        ],
+        "evidence": "institutionally_imaged_contemporary_correspondence",
+        "limits": "Contains historically valuable testimony and opinion but does not directly identify Benjamin's parents, children, or links to 1785 petitioners."
+      }
+    ],
+    "letter_analysis": {
+      "manuscript_date": "1819-12-20",
+      "author_as_signed": "Benjamin Beverage",
+      "archive_item": "Maine Memory Network 20801",
+      "manuscript_pages": 2,
+      "selected_facts": [
+        {
+          "topic": "Settlement and naming",
+          "detail": "The letter reports settlement beginning in 1765, incorporation in June 1789, and a name honoring Boston lawyer John Vinal that the inhabitants had not requested and allegedly disliked.",
+          "qualification": "The name sentiment is Benjamin's reported local opinion, not a survey of inhabitants."
+        },
+        {
+          "topic": "Island landholding",
+          "detail": "The letter says the inhabitants held fee-simple title based on a Massachusetts grant, notes a general 1785 survey, and rounds the island area to roughly 17,000 acres.",
+          "qualification": "Compare separately with the exact 16,527-acre figure given in the March 1786 resolve. Rounding is plausible but not proof the two measurements cover exactly identical parcels."
+        },
+        {
+          "topic": "Land value",
+          "detail": "Benjamin estimated land prices from one to twenty dollars per acre in 1819.",
+          "qualification": "A period account of general values, not proof of any Beveridge family's transaction or lot."
+        },
+        {
+          "topic": "Fishing and other industry",
+          "detail": "He reports approximately seven hundred tons of vessels, mostly fishing boats, plus three stores, three sawmills and two gristmills.",
+          "qualification": "Contemporary descriptive count, not a government statistical return."
+        },
+        {
+          "topic": "Education",
+          "detail": "He describes eight school districts, roughly three hundred scholars aged 4–16, and about $400 annually raised for schools.",
+          "qualification": "The figures are Benjamin's own 1819 estimates."
+        },
+        {
+          "topic": "Religion and authorship",
+          "detail": "He describes Baptist and Methodist congregations, supported by voluntary subscriptions, and ends by asking that his name not be used as authority.",
+          "qualification": "His stated authority caveat is important context for evaluating his historical recollections."
+        }
+      ],
+      "image_reproduction": "Do not mirror or rehost Maine Memory Network's image or PDF without rights permission; link directly to the institutional item and its complete hosted transcription.",
+      "existing_site_source_id": "src_vinalhaven_manuscript_1819"
+    },
+    "research_queue": [
+      {
+        "priority": 1,
+        "title": "Obtain the March 18, 1786 Putnam settlers' declarations",
+        "target": "Maine State Archives, General Putnam report, Box 001 paper",
+        "goal": "Locate all variants Beverage, Beveridge, Beverege with original settled-since dates, lots and any minority/guardian declarations"
+      },
+      {
+        "priority": 2,
+        "title": "Read the original 1800 Vinalhaven prior-residence column",
+        "target": "NARA 1800 census M32 and Davis NEHGR 105 (1951)",
+        "goal": "Identify precise original Beverage household arrival location, if one is actually listed; preserve original page/line."
+      },
+      {
+        "priority": 3,
+        "title": "Reconstruct 1786–1820 conveyances",
+        "target": "Lincoln, Hancock and successor deed/registry records; Massachusetts land grants",
+        "goal": "Match individual James, Thomas, Matthew lots and improve title chain without speculative geographical pins."
+      },
+      {
+        "priority": 4,
+        "title": "Resolve Matthew's contradictory age annotations",
+        "target": "Original 1785 petition leaf 3, Massachusetts Archives, SC1/Series 228 ch.97",
+        "goal": "Check paleographic sequence and whether the possible 'major' word is a cancellation, correction or separate commentary."
+      }
+    ],
+    "no_tree_edges_modified": true,
+    "no_outbound_messages_sent": true,
+    "rights_boundary": "Original user-supplied Massachusetts scans are republished as optimized access copies with institutional attribution; Maine Historical Society-hosted 1819 images and 2025 journal article remain at their respective rights holders."
+  }
+]

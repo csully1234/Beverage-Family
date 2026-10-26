@@ -11,6 +11,7 @@ from pathlib import Path
 import streamlit as st
 from routing_ui import route_link
 from fox_islands_manuscript import render_original_manuscripts
+from fox_islands_primary_bridge import render_fox_source_bridge
 
 SOURCE_FILE = Path(__file__).resolve().parent / "data" / "phase30_fox_islands_original_source_access.json"
 DIGITIZED = ("digitized_historical_cartographic_copy",)
@@ -88,6 +89,8 @@ def render_fox_originals() -> None:
     grouped = original_access_register(data)
     st.title("Fox Islands, 1785–1786: the original-document trail")
     render_original_manuscripts()
+    st.divider()
+    render_fox_source_bridge()
     st.divider()
     st.subheader("Historical source-access register · 19 October 2026")
     st.caption("This register documents the earlier retrieval state. Its assertion "

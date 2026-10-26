@@ -809,6 +809,8 @@ def render_home(
         secondary_actions = [
             ("Complete family map", "?page=full-tree"),
             ("Historical sources", "?page=archive"),
+            ("View all seven 1785–1786 original manuscript scans and the 1819 letter",
+             "?page=collection&view=fox-originals"),
             ("Full illustrated family book", "?page=family-books"),
             ("Research and unresolved questions", "?page=collection&view=workbench"),
             ("Complete evidence-access atlas", "?page=collection&view=integrity&section=access"),

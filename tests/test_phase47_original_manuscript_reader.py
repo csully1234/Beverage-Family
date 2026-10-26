@@ -63,10 +63,19 @@ class OriginalManuscriptReaderTests(unittest.TestCase):
         self.assertIn("major", leaf["excerpt"])
         self.assertFalse(leaf["full_transcription_verified"])
 
-    def test_online_reader_does_not_claim_images_published(self):
+    def test_online_reader_has_real_images_and_keeps_tiff_masters_distinct(self):
         record = load_fox_manuscripts()
         self.assertEqual(record["manuscript_images_status"],
-                         "original_scans_received_and_examined_not_hosted_in_repository")
+                         "optimized_public_web_facsimiles_hosted_original_tiffs_retained_offline")
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        for leaf in record["leaves"]:
+            page = root / leaf["site_scan_path"]
+            self.assertTrue(page.is_file())
+            self.assertTrue(str(page).endswith(".svg"))
+            self.assertTrue(page.read_text(encoding="utf-8").startswith("<svg"))
+            self.assertIn("data:image/jpeg;base64,", page.read_text(encoding="utf-8"))
+            self.assertIn("not hosted", leaf["master_status"])
         self.assertTrue(all(source["type"] for source in record["sources"]))
         self.assertTrue(any("not" in next_item.lower() for next_item in record["outstanding"]))
         csv_content = manuscript_csv(record)
