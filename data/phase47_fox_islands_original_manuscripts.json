@@ -3,7 +3,7 @@
     "id": "fox-islands-massachusetts-legislative-manuscripts-1785-1786",
     "edition_date": "2026-10-26",
     "origin": "Seven supplied high-resolution TIFF scans of Massachusetts Archives, SC1 / Series 228, Passed Resolves, Feb. 1785 Session, ch. 97, and seven companion camera JPEGs.",
-    "manuscript_images_status": "original_scans_received_and_examined_not_hosted_in_repository",
+    "manuscript_images_status": "optimized_public_web_facsimiles_hosted_original_tiffs_retained_offline",
     "manuscripts_locally_available": 7,
     "archival_identifier": "SC1 / Series 228, Passed Resolves, February 1785 session, Chapter 97",
     "key_findings": [
@@ -53,7 +53,10 @@
         "excerpt": "That your Petitioners or their Ancestors did about Twenty Years since settle on the small Islands known by the Name of the Fox Islands …",
         "confidence": "selected reading; spelling/punctuation normalized for search",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p1(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p1(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/petition_01.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "petition-2",
@@ -64,7 +67,10 @@
         "excerpt": "Your Petitioners are now peaceably resettled upon the said Islands … and also to found a Public School for the Education of their Children.",
         "confidence": "selected reading; manuscript orthography retained in part",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p2(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p2(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/petition_02.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "petition-3",
@@ -75,7 +81,10 @@
         "excerpt": "James Beveridge [left column]; Thomas Beveridge [right column]; Matthew Beveridge [right column]; 'a minor' underlined; below 'major' [?].",
         "confidence": "Names directly legible; adjacent age-status annotations conflict or may represent an amendment. Do not assign legal age.",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/petition_03.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "petition-4",
@@ -86,7 +95,10 @@
         "excerpt": "The Committee to whom was committed the aforesaid Petition have attended the Service assigned them & report the Resolve herewith presented.",
         "confidence": "selected reading of main note; docket not fully transcribed",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p4(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p4(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/petition_04.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "resolve-1",
@@ -97,7 +109,10 @@
         "excerpt": "… the said Islands contain in the whole sixteen thousand, five hundred and twenty seven acres … whereon were seventy two settlers before the first day of January 1784 …",
         "confidence": "selected reading of original; punctuation regularized",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p1(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p1(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/resolve_01.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "resolve-2",
@@ -108,7 +123,10 @@
         "excerpt": "… the purchaser of such improvements, his heirs and assigns shall hold the same lands which such original settler would have held by virtue of this Resolve …",
         "confidence": "selected reading of original",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p2(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p2(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/resolve_02.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       },
       {
         "id": "resolve-3",
@@ -119,7 +137,10 @@
         "excerpt": "Petition of the Settlers on Fox Islands [docket — partial reading].",
         "confidence": "partial reading; docket requires verification",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p3(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p3(1).tif",
+        "site_scan_path": "static/fox_islands_manuscripts/resolve_03.svg",
+        "image_format": "SVG wrapper containing an optimized color JPEG facsimile",
+        "master_status": "high-resolution original TIFF retained in research package, not hosted online"
       }
     ],
     "sources": [
@@ -148,7 +169,7 @@
       "Find the original March 18, 1786 Putnam settlers' declarations in paper Box 001, Maine State Archives; they have not been inspected.",
       "Identify individually assigned lots, grantee deeds, or proprietors' books for James, Thomas, and Matthew.",
       "Compare any discovered guardianship or probate for Matthew named a minor, without identifying him with the 1837 Hope decedent prematurely.",
-      "Publish the seven provided TIFFs or optimized derivatives in permanent site storage with provenance and archival permission review; this JSON does not contain or publish the scans.",
+      "Preserve public access to the seven optimized website facsimiles; keep original TIFF masters offline, with source attribution and scan-rights review before redistribution of masters.",
       "Complete independent paleographic verification of all seven leaves and docket annotations.",
       "Establish the handwriting sequence and intention of the paired 'a minor' / possible 'major' notes beside Matthew in petition leaf 3; check whether contemporary Senate/House folios, endorsements, or a second certified copy preserve a correction.",
       "Compare the original 1786 resolve's 'seventy two' with the 1889 printed 'seventy-five' and any 1786 session laws, avoiding circular reliance on later reproductions."
@@ -189,6 +210,7 @@
         "status": "later_printed_variant",
         "notes": "The published transcription reproduces the first label but does not discuss the lower apparent 'major' annotation."
       }
-    ]
+    ],
+    "public_image_note": "All seven pages now have embedded-JPEG SVG facsimile images in static/fox_islands_manuscripts. These are optimized access derivatives of user-supplied TIFFs, not original archival TIFF bitstreams. Full original TIFFs remain in the separate offline archive."
   }
 ]
