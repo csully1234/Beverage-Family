@@ -107,11 +107,20 @@ def all_scans_zip(record: dict) -> bytes:
     return output.getvalue()
 
 
+def sync_leaf_url() -> None:
+    """Maintain shareable source citations for each of the seven actual scans."""
+    current = st.session_state.get(SELECTOR_KEY)
+    if current in EXPECTED_LEAVES:
+        st.query_params["leaf"] = current
+        st.session_state["_fox_last_url_leaf"] = current
+
+
 def move_leaf(direction: int) -> None:
-    """Streamlit on_click callback executes before the selectbox is constructed."""
+    """Streamlit on_click runs before the leaf selector is recreated."""
     old = st.session_state.get(SELECTOR_KEY, EXPECTED_LEAVES[0])
     idx = EXPECTED_LEAVES.index(old) if old in EXPECTED_LEAVES else 0
     st.session_state[SELECTOR_KEY] = EXPECTED_LEAVES[(idx + direction) % len(EXPECTED_LEAVES)]
+    sync_leaf_url()
 
 
 def render_original_manuscripts() -> None:
@@ -151,7 +160,14 @@ def render_original_manuscripts() -> None:
         st.caption("The lower word's transcription, author, date and purpose "
                    "remain unverified. Read it in context on petition leaf 3.")
 
-    if st.session_state.get(SELECTOR_KEY) not in EXPECTED_LEAVES:
+    requested_leaf = st.query_params.get("leaf")
+    if isinstance(requested_leaf, list):
+        requested_leaf = requested_leaf[0] if requested_leaf else ""
+    if (requested_leaf in EXPECTED_LEAVES and
+            st.session_state.get("_fox_last_url_leaf") != requested_leaf):
+        st.session_state[SELECTOR_KEY] = requested_leaf
+        st.session_state["_fox_last_url_leaf"] = requested_leaf
+    elif st.session_state.get(SELECTOR_KEY) not in EXPECTED_LEAVES:
         st.session_state[SELECTOR_KEY] = EXPECTED_LEAVES[0]
 
     by_id = {row["id"]: row for row in record["leaves"]}
@@ -163,7 +179,8 @@ def render_original_manuscripts() -> None:
     with q:
         st.selectbox("Manuscript leaf", EXPECTED_LEAVES,
                      format_func=lambda key: by_id[key]["label"],
-                     key=SELECTOR_KEY, label_visibility="collapsed")
+                     key=SELECTOR_KEY, label_visibility="collapsed",
+                     on_change=sync_leaf_url)
     with n:
         st.button("Next", on_click=move_leaf, args=(1,),
                   key="fox-1785-next", width="stretch")
