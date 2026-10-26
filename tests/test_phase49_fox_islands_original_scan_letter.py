@@ -28,7 +28,7 @@ class EarlyIslandPrimaryDocumentsTests(unittest.TestCase):
             self.assertIn('<svg xmlns="http://www.w3.org/2000/svg"', blob)
             self.assertIn('href="data:image/jpeg;base64,', blob)
             self.assertGreater(len(blob), 100000)
-            self.assertIn("master", row["master_status"])
+            self.assertIn("TIFF", row["master_status"])
         self.assertEqual(len(set(names)), 7)
         self.assertEqual(len(names), 7)
         self.assertFalse((ROOT / "static" / "fox_islands_manuscripts" /
