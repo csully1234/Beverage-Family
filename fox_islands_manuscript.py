@@ -37,7 +37,8 @@ def load_fox_manuscripts(path: Path = DATA_FILE) -> dict:
     base = Path(__file__).resolve().parent
     for leaf in record["leaves"]:
         rel = str(leaf.get("site_scan_path") or "")
-        expected = "static/fox_islands_manuscripts/" + leaf["id"].replace("-", "_") + ".svg"
+        group, leaf_number = leaf["id"].split("-")
+        expected = f"static/fox_islands_manuscripts/{group}_{int(leaf_number):02d}.svg"
         if rel != expected or not (base / rel).is_file():
             raise ValueError("Missing or invalid hosted facsimile: " + leaf["id"])
     if record["settler_count_in_resolve"] != 72 or record["survey_acres"] != 16527:
