@@ -41,3 +41,22 @@
 4. **Website integrity:** Keep any Thomas combat/privateering claims explicitly *unverified*. Do not claim that Nathaniel's pension certificate grants Nathaniel or Thomas military service status. Do not merge the two Hopkins source records until originals compared.
 
 **No outbound contact is authorized by this research note; requests to Massachusetts Archives and the Boston Tea Party Ships & Museum were already sent by the site owner.**
+
+
+## C. 6 April 1795: Thomas and Nathaniel Beverage witness deed to John Newbury
+
+**Primary document type:** A **3 March 1923 certified typescript copy** of an instrument entered in Hancock Registry of Deeds, vol. 3, p. 355, as supplied through FamilySearch (`Transcript (5).pdf`). Image group **004356077**, image **74 of 303**: https://www.familysearch.org/ark:/61903/3:1:3QS7-894G-Y9H9?view=fullText . Original 1795 manuscript and preceding page have **not** been inspected.
+
+The copy's final page specifies:
+- **Charles Stewart** as grantor, **John Newbury** as grantee;
+- instrument dated **6 April 1795**, acknowledged by Stewart before **Oliver Parker** on **7 April 1795** and recorded **3 July 1795**;
+- witnesses listed as **Thomas Beverage**, **Nathaniel Beverage**, and **Isaac Parker**;
+- the surviving page refers to land "taken by Execution in favour of me" but starts mid-instrument, so the complete land description and any underlying judgment are **unknown**.
+
+**Identification caution:** Nathaniel Winslow Beverage, reportedly born 17 January 1776, would have been 19 in April 1795, consistent with but not independently proved by this witness name. Their appearance on a single deed demonstrates an association as named witnesses, **not proof of a father-son relationship, actual autograph signatures, occupation, or military service**. A certified typed copy preserves names, not handwriting.
+
+**Important possible court-file crossover:** User-supplied FamilySearch full-text result excerpts from *Suffolk Court Case Files* mention Thomas Beverage, "John Newberry" and a 30 June 1794 deposition; the original full file has not yet been read. The alternation Newberry/Newbury may concern the same man but requires document-level comparison. A secondary John Newbury profile (https://one-barton-family.us/genealogy/getperson.php?personID=I6334&tree=db) identifies a Revolutionary soldier/shipwright of that name, born c.1744, at Vinalhaven by 1790, and reports an **October 1796 assault complaint involving Charles Stewart**. This is an intriguing possible link among the **same** parties, but that profile is **not** original court evidence. It also cites a Lucy Newbury widow pension file **R7613**, reportedly containing a statement by **Benjamin Beverage** (page 50) about Newbury's death. This alleged statement needs inspection in the original pension file before inclusion as a directly verified fact.
+
+**Next high-value original checks:** (1) FamilySearch image **73 of 303** and adjacent pages for the entire Charles Stewart → John Newbury deed and acreage/execution; (2) the complete **1794 Suffolk deposition** of Thomas concerning John Newbery/Newbury; (3) **1796** assault complaint with Charles Stewart; (4) Lucy Newbury's Revolutionary War widow pension file **R7613** for Benjamin Beverage's reported testimony.
+
+**No claim of direct Thomas Beverage revolutionary privateering, Tea Party attendance, or familial link to Newbury follows from these sources.**
