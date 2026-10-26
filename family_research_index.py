@@ -480,7 +480,7 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
             ))
 
     # Source-access casework has no safe Matthew-specific person attribution.
-    # Even the 1889 name Matthew Beveridge (minor) is not linked by identity
+    # Even Matthew's conflicting handwritten age annotations do not establish identity
     # to the Hope 1837 decedent, so none of these cards have a person_id.
     fox_cases = _read_records("phase30_fox_islands_original_source_access.json", root)
     for case in fox_cases:
@@ -497,6 +497,31 @@ def build_index(people_by_id: dict[str, dict], root: Path = ROOT) -> list[dict]:
                 source_date=record["date"],
                 status=record["access"].replace("_", " "),
             ))
+
+    # Seven real 1785–1786 manuscript images, now published, are separate
+    # from the historical Phase 30 *source-access* cards. Never assign the
+    # three 1785 inhabitants to a canonical genealogy person ID.
+    manuscript = _read_records("phase47_fox_islands_original_manuscripts.json", root)[0]
+    for leaf in manuscript["leaves"]:
+        label = str(leaf["label"])
+        names = ("James Beveridge Thomas Beveridge Matthew Beveridge a minor major"
+                 if leaf["id"] == "petition-3" else "")
+        records.append(_item(
+            id="fox-manuscript:" + leaf["id"],
+            category="Historical source exhibits",
+            title="Original manuscript · " + label,
+            summary=leaf["description"],
+            limits=("This is an optimized scan of a contemporary legislative "
+                    "document. Its selected reading is NOT an independently "
+                    "verified full transcription and does not prove kinship."),
+            people_ids=[],
+            route="?page=collection&view=fox-originals",
+            sources=[],
+            keywords=(names + " Fox Islands 1785 1786 petition resolve "
+                      + leaf["source_file"] + " " + leaf["excerpt"]),
+            source_date="1785" if leaf["group"] == "Petition" else "1786",
+            status="Original document scan, selected transcription only",
+        ))
 
     # Phase 39: editor-graded original image retrieval targets and unresolved
     # branch hypotheses. Exact-person search matching describes a RESEARCH
