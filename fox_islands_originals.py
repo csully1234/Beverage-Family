@@ -120,11 +120,10 @@ def render_fox_originals() -> None:
             _source_card(row)
     with tabs[1]:
         st.subheader("Exact archival shelf references, not merely a web search")
-        st.write("In the October 19 source register, **Massachusetts petition/resolve** and **Maine Putnam 
-                 "settlement report** now have detailed, published archive "
-                 "locators. On October 26, the Massachusetts manuscripts were "
-                 "subsequently supplied and examined (see above); the Putnam "
-                 "report remains outstanding.")
+        st.write("The original October 19 register located the Massachusetts "
+                 "petition and the Maine Putnam report. The Massachusetts "
+                 "petition and resolution scans were supplied and examined on "
+                 "October 26. The separate Putnam report is still outstanding.")
         for row in grouped["original_requests"]:
             _source_card(row)
     with tabs[2]:
