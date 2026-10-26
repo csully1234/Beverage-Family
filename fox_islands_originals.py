@@ -98,10 +98,11 @@ def render_fox_originals() -> None:
              "interchangeable: **a surveyed coastline, an original petition, a "
              "claimant's settlement statement, and a later printed history are "
              "different types of evidence.**")
-    st.warning("No source in this collection proves that the Matthew Beveridge "
-               "called a minor in the original 1785 petition became Matthew of "
-               "Hope who died in 1837. His parents and link to Capt. Thomas "
-               "remain unverified.")
+    st.warning("The original 1785 manuscript marks Matthew 'a minor' but "
+               "includes an additional handwritten note apparently reading "
+               "'major'. That word's authorship and meaning need verification. "
+               "Neither note proves his parents, any relationship to "
+               "Capt. Thomas, or identity with Matthew of Hope (1837).")
     a,b,c = st.columns(3)
     a.metric("Digitized archival map/list records", len(grouped["digitized_maps"]))
     b.metric("Specific original paper targets", len(grouped["original_requests"]))
