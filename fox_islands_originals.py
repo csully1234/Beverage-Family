@@ -61,7 +61,7 @@ def request_note(source: dict) -> str:
         "Requested material: " + str(source["request"]),
         "Please advise original folios, any photocopy fees or permissions, "
         "and whether a public catalog scan exists.",
-        "Do not assume the 1785 minor is the Hope 1837 decedent.",
+        "Matthew's original age notes are disputed; do not assume identity with the Hope 1837 decedent.",
     ])
 
 
@@ -130,10 +130,10 @@ def render_fox_originals() -> None:
         st.subheader("Keep nineteenth-century transcriptions separate")
         for row in grouped["published_context"]:
             _source_card(row)
-        st.caption("The 1889 book's transcription names a Matthew Beveridge "
-                   "as a minor alongside separately listed James and Thomas "
-                   "Beveridge. Their appearance on one settler list does not "
-                   "establish siblings or any later identity.")
+        st.caption("The 1889 book prints Matthew as a minor, but does not "
+                   "discuss the original manuscript's apparent 'major' note. "
+                   "The manuscript annotations and published transcript do not "
+                   "establish age, sibling relationships, or a later identity.")
     with tabs[3]:
         st.subheader("What would actually join these historical identities?")
         for row in data["identity_status"]:
