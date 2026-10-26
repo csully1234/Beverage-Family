@@ -3,7 +3,7 @@
     "id": "fox-islands-massachusetts-legislative-manuscripts-1785-1786",
     "edition_date": "2026-10-26",
     "origin": "Seven supplied high-resolution TIFF scans of Massachusetts Archives, SC1 / Series 228, Passed Resolves, Feb. 1785 Session, ch. 97, and seven companion camera JPEGs.",
-    "manuscript_images_status": "original_scans_received_and_examined_not_hosted_in_repository",
+    "manuscript_images_status": "optimized_jpegs_hosted_original_tiffs_archived_offline",
     "manuscripts_locally_available": 7,
     "archival_identifier": "SC1 / Series 228, Passed Resolves, February 1785 session, Chapter 97",
     "key_findings": [
@@ -53,7 +53,10 @@
         "excerpt": "That your Petitioners or their Ancestors did about Twenty Years since settle on the small Islands known by the Name of the Fox Islands …",
         "confidence": "selected reading; spelling/punctuation normalized for search",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p1(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p1(1).tif",
+        "image_file": "petition_page_1.jpg",
+        "original_tiff_sha256": "054dd3dca4f1f129670115f4ac2489269230d1ba7d70bcc4b4a7331d256414af",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "petition-2",
@@ -64,7 +67,10 @@
         "excerpt": "Your Petitioners are now peaceably resettled upon the said Islands … and also to found a Public School for the Education of their Children.",
         "confidence": "selected reading; manuscript orthography retained in part",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p2(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p2(1).tif",
+        "image_file": "petition_page_2.jpg",
+        "original_tiff_sha256": "fb39d77a28725dc6b508f708f203fe683e2137b1b83dcb7db1e0c3b793e8b245",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "petition-3",
@@ -75,7 +81,10 @@
         "excerpt": "James Beveridge [left column]; Thomas Beveridge [right column]; Matthew Beveridge [right column]; 'a minor' underlined; below 'major' [?].",
         "confidence": "Names directly legible; adjacent age-status annotations conflict or may represent an amendment. Do not assign legal age.",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p3(1).tif",
+        "image_file": "petition_page_3.jpg",
+        "original_tiff_sha256": "0909c05539321f65c7dd81424c707984bd850a45f64311ada7b59efe0b9076ce",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "petition-4",
@@ -86,7 +95,10 @@
         "excerpt": "The Committee to whom was committed the aforesaid Petition have attended the Service assigned them & report the Resolve herewith presented.",
         "confidence": "selected reading of main note; docket not fully transcribed",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p4(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 petition p4(1).tif",
+        "image_file": "petition_page_4.jpg",
+        "original_tiff_sha256": "cc3aa5d2458b70f4129d61f241d5ce9e492e44766ed362b9312da79ba4e868cd",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "resolve-1",
@@ -97,7 +109,10 @@
         "excerpt": "… the said Islands contain in the whole sixteen thousand, five hundred and twenty seven acres … whereon were seventy two settlers before the first day of January 1784 …",
         "confidence": "selected reading of original; punctuation regularized",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p1(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p1(1).tif",
+        "image_file": "resolve_page_1.jpg",
+        "original_tiff_sha256": "134392019cfc258bfdcf64ab4770d697d6a1040c34875471c66cd9aab38b2cdc",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "resolve-2",
@@ -108,7 +123,10 @@
         "excerpt": "… the purchaser of such improvements, his heirs and assigns shall hold the same lands which such original settler would have held by virtue of this Resolve …",
         "confidence": "selected reading of original",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p2(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p2(1).tif",
+        "image_file": "resolve_page_2.jpg",
+        "original_tiff_sha256": "bcd8d034e2d995351ae6a148c1542108c19d2612946aeb069f6d7e9cc72e2c13",
+        "image_status": "published_optimized_scan"
       },
       {
         "id": "resolve-3",
@@ -119,14 +137,17 @@
         "excerpt": "Petition of the Settlers on Fox Islands [docket — partial reading].",
         "confidence": "partial reading; docket requires verification",
         "full_transcription_verified": false,
-        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p3(1).tif"
+        "source_file": "SC1 228 Passed Resolves 1785 ch97 resolve p3(1).tif",
+        "image_file": "resolve_page_3.jpg",
+        "original_tiff_sha256": "7e9289e58dbec315b85e8c044e210c7b40ad4ce203f15920a55a840ca0c0df39",
+        "image_status": "published_optimized_scan"
       }
     ],
     "sources": [
       {
         "title": "Supplied 1785–1786 Massachusetts Archives TIFFs",
         "url": null,
-        "type": "Original manuscript copies supplied in this project"
+        "type": "Original legislative manuscript TIFF copies held in project archive; optimized derivatives published"
       },
       {
         "title": "Maine State Archives, Fox Islands plan, identifier 302962",
@@ -148,10 +169,10 @@
       "Find the original March 18, 1786 Putnam settlers' declarations in paper Box 001, Maine State Archives; they have not been inspected.",
       "Identify individually assigned lots, grantee deeds, or proprietors' books for James, Thomas, and Matthew.",
       "Compare any discovered guardianship or probate for Matthew named a minor, without identifying him with the 1837 Hope decedent prematurely.",
-      "Publish the seven provided TIFFs or optimized derivatives in permanent site storage with provenance and archival permission review; this JSON does not contain or publish the scans.",
       "Complete independent paleographic verification of all seven leaves and docket annotations.",
       "Establish the handwriting sequence and intention of the paired 'a minor' / possible 'major' notes beside Matthew in petition leaf 3; check whether contemporary Senate/House folios, endorsements, or a second certified copy preserve a correction.",
-      "Compare the original 1786 resolve's 'seventy two' with the 1889 printed 'seventy-five' and any 1786 session laws, avoiding circular reliance on later reproductions."
+      "Compare the original 1786 resolve's 'seventy two' with the 1889 printed 'seventy-five' and any 1786 session laws, avoiding circular reliance on later reproductions.",
+      "Confirm reproduction/credit terms with the Massachusetts Archives; the online files are research-purpose JPEG derivatives and the TIFFs remain archived separately."
     ],
     "primary_secondary_variants": [
       {
@@ -189,6 +210,9 @@
         "status": "later_printed_variant",
         "notes": "The published transcription reproduces the first label but does not discuss the lower apparent 'major' annotation."
       }
-    ]
+    ],
+    "published_images_date": "2026-10-26",
+    "published_image_policy": "Seven optimized JPEG derivatives are hosted with the family site. The original full-resolution TIFFs are retained in the separate preserved research package, not in GitHub. Citation: Massachusetts Archives SC1 Series 228 Chapter 97; scans supplied by project researcher; reproduction conditions to be checked with custodian.",
+    "manuscript_image_directory": "static/approved_media/fox_islands_1785"
   }
 ]
